@@ -71,23 +71,54 @@ class SampleCollector:
 
     _ITEMS = [
         ("Self-verifying LLMs cut hallucinations",
-         "A line of work shows large models re-checking their own outputs...",
+         "A growing body of work shows large language models can re-check their own "
+         "outputs before answering. The model drafts a response, then runs a second pass "
+         "that looks for unsupported claims, missing citations and logical gaps, and "
+         "revises accordingly. Crucially the technique needs no extra training: it wraps "
+         "an existing model in a verify-then-answer loop. Early benchmarks report a clear "
+         "drop in hallucination rates on question-answering tasks, though the extra pass "
+         "adds latency. Researchers caution that self-verification narrows errors but does "
+         "not eliminate them, and that a sourced, deterministic check still matters for "
+         "high-stakes use.",
          "https://techcrunch.example/self-verify", "en", "AI", "article",
          "https://picsum.photos/seed/ai1/640/360"),
         ("Tactile-Augmented World Models for Legged Humanoids",
-         "We integrate full-body tactile sensing into the world model...",
+         "This paper integrates full-body tactile sensing into the world model of a legged "
+         "humanoid robot. Instead of relying on vision alone, the system fuses thousands of "
+         "skin-level pressure signals with proprioception to predict how the body will "
+         "interact with the ground. On unknown terrain the tactile-augmented model recovers "
+         "from slips and stumbles more often than a vision-only baseline. The authors argue "
+         "that touch gives embodied AI the kind of fast, local feedback cameras cannot, and "
+         "that physical AI is moving from simulation toward real hardware.",
          "https://arxiv.org/abs/2606.01234", "en", "フィジカルAI", "paper",
          "https://picsum.photos/seed/paper/640/360"),
         ("FastVec: vector search in 10 lines",
-         "A tiny OSS library for approximate nearest neighbour search...",
+         "FastVec is a tiny open-source library that implements approximate nearest "
+         "neighbour search in about ten lines of core code. It trades a little accuracy for "
+         "a large speed-up, making it a friendly entry point for developers who want vector "
+         "search without a heavy database. The library has few dependencies and ships with a "
+         "worked example over a small document set. After a popular write-up its star count "
+         "climbed quickly. The maintainers note it is meant for learning and prototyping, "
+         "not as a replacement for production vector stores.",
          "https://github.example/fastvec", "en", "コード", "code",
          "https://picsum.photos/seed/code/640/360"),
         ("How quadruped robots predict stairs",
-         "An explainer video on predictive locomotion control...",
+         "This explainer video walks through how a quadruped robot climbs stairs it has "
+         "never seen. The key is predictive locomotion control: the robot estimates the "
+         "shape of the steps ahead from a short history of foot contacts and joint angles, "
+         "then plans where to place each foot a few moves in advance. The demo shows stable "
+         "ascent and descent on staircases of varying height. The narrator stresses that "
+         "prediction, not reaction, is what keeps the gait smooth when the ground changes.",
          "https://youtube.example/watch?v=stairs", "en", "ロボット技術", "video",
          "https://picsum.photos/seed/robot/640/360"),
         ("Vertical farming cost structure nears open-field",
-         "New analysis on the economics of controlled-environment agriculture...",
+         "A new analysis argues that the cost structure of vertical farming is edging closer "
+         "to open-field agriculture for a handful of crops. Falling prices for LED lighting "
+         "and automation, plus year-round yields in a controlled environment, narrow the gap "
+         "that energy costs once made unbridgeable. The report cautions that the economics "
+         "still favour leafy greens and herbs rather than staple grains, and that cheap "
+         "renewable power is the deciding variable. Scaling, it concludes, depends on siting "
+         "farms where electricity is both clean and inexpensive.",
          "https://nature.example/food/vertical", "en", "農業", "article",
          ""),   # 画像なし → FR-18 プレースホルダで描画
     ]
