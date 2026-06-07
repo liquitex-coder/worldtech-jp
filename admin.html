@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>管理ダッシュボード — NewsMatome</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+.dash{max-width:1080px;margin:0 auto;padding:24px 18px}
+.ds-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:16px 0}
+.ds-card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:16px}
+.ds-val{font-size:26px;font-weight:800;color:#111827}
+.ds-lbl{font-size:12px;color:#6b7280;margin-top:4px}
+.ds-sub{font-size:11px;color:#9ca3af;margin-top:2px}
+.dash h2{margin:26px 0 8px;font-size:16px}
+.dash table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #e5e7eb;border-radius:10px;overflow:hidden}
+.dash td{padding:8px 12px;border-bottom:1px solid #f1f5f9;font-size:13px}
+.dash td.num{text-align:right;font-variant-numeric:tabular-nums;color:#334155}
+.dash ul{margin:8px 0;padding-left:18px;font-size:13px;line-height:1.7}
+.dash code{background:#f1f5f9;padding:1px 5px;border-radius:4px;font-size:12px}
+.muted{color:#9ca3af}
+.note{background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;padding:14px;font-size:13px;line-height:1.7}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:680px){.cols{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="index.html"><span class="dot"></span><span>NewsMatome<small>ADMIN</small></span></a>
+  <span class="topbar-spacer"></span><a class="btn-cta" href="index.html">サイトを見る</a>
+</div></header>
+
+<div class="dash">
+  <h1 style="font-size:20px;">管理ダッシュボード</h1>
+  <p class="muted" style="font-size:13px;">最終実行 <b>2026-06-07T07:00:00+09:00</b> ／ 翻訳エンジン: corpus(human-verified) ／ 収集元: サンプル収集</p>
+
+  <div class="ds-grid">
+    <div class="ds-card"><div class="ds-val">5</div><div class="ds-lbl">収集記事</div></div>
+    <div class="ds-card"><div class="ds-val">5/5</div><div class="ds-lbl">翻訳済み</div></div>
+    <div class="ds-card"><div class="ds-val">5</div><div class="ds-lbl">出典ホスト数</div></div>
+    <div class="ds-card"><div class="ds-val">5/5</div><div class="ds-lbl">権利クリア (NFR-4)</div><div class="ds-sub">ブロック 0</div></div>
+    <div class="ds-card"><div class="ds-val">100%</div><div class="ds-lbl">翻訳品質 (NFR-5)</div></div>
+    <div class="ds-card"><div class="ds-val">✅ 健全</div><div class="ds-lbl">生成物検証 (NFR-7)</div><div class="ds-sub">採用 15 / 省略 0</div></div>
+  </div>
+
+  <div class="cols">
+    <div>
+      <h2>どこのニュースを拾ったか（出典ホスト）</h2>
+      <table><tr><td>arxiv.org</td><td class="num">1</td></tr>
+<tr><td>github.example</td><td class="num">1</td></tr>
+<tr><td>nature.example</td><td class="num">1</td></tr>
+<tr><td>techcrunch.example</td><td class="num">1</td></tr>
+<tr><td>youtube.example</td><td class="num">1</td></tr></table>
+    </div>
+    <div>
+      <h2>収集ソース型</h2>
+      <table><tr><td>記事</td><td class="num">2</td></tr>
+<tr><td>論文</td><td class="num">1</td></tr>
+<tr><td>コード</td><td class="num">1</td></tr>
+<tr><td>動画</td><td class="num">1</td></tr></table>
+      <h2>カテゴリ別</h2>
+      <table><tr><td>AI</td><td class="num">1</td></tr>
+<tr><td>コード</td><td class="num">1</td></tr>
+<tr><td>フィジカルAI</td><td class="num">1</td></tr>
+<tr><td>ロボット技術</td><td class="num">1</td></tr>
+<tr><td>農業</td><td class="num">1</td></tr></table>
+    </div>
+  </div>
+
+  <h2>未翻訳（捏造せず原文・出典のまま保持・NFR-8）</h2>
+  <ul><li class="muted">なし（全件 翻訳済み）</li></ul>
+
+  <h2>権利運用ブロック（NFR-4）</h2>
+  <ul><li class="muted">なし（全件クリア）</li></ul>
+
+  <h2>生成物ガバナンス違反（NFR-7）</h2>
+  <ul><li class="muted">なし（採用claimは全て出典紐付け）</li></ul>
+
+  <h2>収集元フィード</h2>
+  <ul><li class="muted">未登録 → サンプル収集で稼働中。<code>pipeline/feeds.json</code> に登録すると実RSS収集に切替（feeds.example.json 参照）。</li></ul>
+
+  <h2>アクセス解析（読者の所在）</h2>
+  <div class="note">GitHub Pages は静的配信のためサーバーログが無く、訪問者の所在はこのサイト単体では取得できません。<b>Cloudflare Web Analytics</b>（無料・Cookie 不使用）を接続する準備は完了しています。現在は <b>未接続</b>：<code>pipeline/analytics.json</code> の <code>cloudflare_token</code> に beacon トークンを貼るか、GitHub Actions Secret <code>CF_BEACON_TOKEN</code> を設定すると、次のビルドで全公開ページの計測が有効化されます。</div>
+
+  <p class="muted" style="font-size:11px;margin-top:24px;">
+    ※ 本ページは静的生成され URL を知れば閲覧可能です（ログイン保護なし）。公開ソースの運用情報のみを掲載しています。
+  </p>
+</div>
+</body>
+</html>
