@@ -30,6 +30,10 @@ tests = [
     (NS / "tests" / "test_about.py").read_text(encoding="utf-8"),
     (NS / "tests" / "test_nav.py").read_text(encoding="utf-8"),
     (NS / "tests" / "test_seo.py").read_text(encoding="utf-8"),
+    (NS / "tests" / "test_i18n_seo.py").read_text(encoding="utf-8"),     # NFR-6
+    (NS / "tests" / "test_compliance.py").read_text(encoding="utf-8"),   # NFR-4
+    (NS / "tests" / "test_quality.py").read_text(encoding="utf-8"),      # NFR-5
+    (NS / "tests" / "test_governance.py").read_text(encoding="utf-8"),   # NFR-7
 ]
 
 # core（署名・第一マイルストーン＋AI addendum, 実装済み）48 アンカー
