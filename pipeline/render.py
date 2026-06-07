@@ -101,6 +101,86 @@ def inject(index_html: str, cards_html: str) -> str:
     return f"{pre}{START}\n{cards_html}\n        {END}{post}"
 
 
+def _inject_region(text: str, start: str, end: str, content: str) -> str:
+    """start〜end マーカー間を content で冪等に差し替える（マーカーが無ければ無変更）。"""
+    if start not in text or end not in text:
+        return text
+    pre, rest = text.split(start, 1)
+    _, post = rest.split(end, 1)
+    return f"{pre}{start}\n{content}\n      {end}{post}"
+
+
+HERO_START, HERO_END = "<!-- HERO:START -->", "<!-- HERO:END -->"
+RANK_START, RANK_END = "<!-- RANK:START -->", "<!-- RANK:END -->"
+
+
+def _title(a: dict) -> str:
+    return html.escape(a["title_ja"] if a.get("translated") and a.get("title_ja") else a["title_original"])
+
+
+def render_hero(articles: list[dict]) -> str:
+    """先頭記事を大カード＋次の3件をサイドに（実記事へリンク・架空コンテンツなし）。"""
+    if not articles:
+        return ('<div class="empty-state"><div class="ico">🗞️</div>'
+                '<p>まだ記事がありません。今朝の収集をお待ちください。</p></div>')
+    a = articles[0]
+    cat = a["category"]
+    color = CATEGORY_COLOR.get(cat, "#8b93ad")
+    href = f'articles/{a["id"]}.html'
+    img = html.escape(a.get("image") or "")
+    src_lang = (a.get("source_lang", "en") or "en").upper()
+    agent = html.escape(a.get("agent", ""))
+    thumb = (f'<div class="thumb"><img loading="lazy" decoding="async" src="{img}" alt=""></div>'
+             if img else '<div class="thumb is-empty"></div>')
+    badge = (f'<span class="badge-translate">🌐 {src_lang}→JA 翻訳</span>' if a.get("translated")
+             else f'<span class="badge-translate">🌐 {src_lang}（未翻訳）</span>')
+    main = (
+        '<article class="hero-main">\n'
+        f'      <a href="{href}">{thumb}'
+        '<div class="overlay">'
+        f'<span class="chip"><span class="cdot" style="background:{color}"></span>{html.escape(cat)}</span>'
+        f'<h3>{_title(a)}</h3>'
+        f'<div class="meta">{badge}'
+        f'<span class="byline-agent"><span class="av">{cat[0]}</span>{agent} 監修</span>'
+        f'<span>· {_date(a.get("collected_at", ""))}</span></div>'
+        '</div></a>\n    </article>'
+    )
+    sides = []
+    for s in articles[1:4]:
+        scat = s["category"]
+        scolor = CATEGORY_COLOR.get(scat, "#8b93ad")
+        shref = f'articles/{s["id"]}.html'
+        simg = html.escape(s.get("image") or "")
+        sthumb = (f'<a class="thumb" href="{shref}"><img loading="lazy" decoding="async" src="{simg}" alt=""></a>'
+                  if simg else f'<a class="thumb is-empty" href="{shref}"></a>')
+        slang = (s.get("source_lang", "en") or "en").upper()
+        sbadge = f'{slang}→JA' if s.get("translated") else f'{slang}'
+        sides.append(
+            '<article class="mini">'
+            f'{sthumb}<div>'
+            f'<span class="chip"><span class="cdot" style="background:{scolor}"></span>{html.escape(scat)}</span>'
+            f'<h4><a href="{shref}">{_title(s)}</a></h4>'
+            f'<div class="meta"><span class="badge-translate">{sbadge}</span>'
+            f'<span>{_date(s.get("collected_at", ""))}</span></div></div></article>'
+        )
+    return f'{main}\n    <div class="hero-side">\n      {"".join(sides)}\n    </div>'
+
+
+def render_ranklist(articles: list[dict]) -> str:
+    """人気ランキング枠（FR-4）。実記事へリンク・**架空のコメント数は出さない**（NFR-8）。"""
+    if not articles:
+        return '<li><div class="rm">記事がありません</div></li>'
+    lis = []
+    for i, a in enumerate(articles[:5], 1):
+        href = f'articles/{a["id"]}.html'
+        lis.append(
+            f'<li><span class="num">{i}</span><div>'
+            f'<a class="rt" href="{href}">{_title(a)}</a>'
+            f'<div class="rm">{html.escape(a["category"])}</div></div></li>'
+        )
+    return "\n            ".join(lis)
+
+
 ORDER = ["サイエンス", "AI", "テクノロジー", "コード", "アルゴリズム", "ロボット技術",
          "フィジカルAI", "アート", "デザイン", "動画", "動物", "自然", "農業"]
 ARTICLES_DIR = NS / "articles"
@@ -312,6 +392,8 @@ def build(articles_path: Path = ARTICLES, index_path: Path = INDEX) -> dict:
     articles = data.get("articles", [])
     cards = render_cards(articles)
     out = inject(index_path.read_text(encoding="utf-8"), cards)
+    out = _inject_region(out, HERO_START, HERO_END, render_hero(articles))    # 実記事ヒーロー
+    out = _inject_region(out, RANK_START, RANK_END, render_ranklist(articles))  # 実記事ランキング
     index_path.write_text(out, encoding="utf-8")
     n_pages = build_articles(articles)
     return {"rendered": len(articles), "pages": n_pages, "index": str(index_path)}
