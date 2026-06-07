@@ -22,6 +22,8 @@ from collections import Counter
 from pathlib import Path
 from urllib.parse import urlparse
 
+from pipeline.analytics import load_token
+
 NS = Path(__file__).resolve().parent.parent
 DATA = NS / "data"
 OUT = NS / "admin.html"
@@ -99,8 +101,10 @@ def build_dashboard(data_dir: Path = DATA, out: Path = OUT) -> dict:
 
     quality_ratio = qual.get("quality_ratio")
     gov_sound = gov.get("sound")
+    analytics_on = bool(load_token())
 
     return _write(out, {
+        "analytics_on": analytics_on,
         "generated_at": generated_at, "engine": engine,
         "count": len(articles), "translated": translated,
         "n_hosts": len(hosts), "feed_note": feed_note,
@@ -112,6 +116,18 @@ def build_dashboard(data_dir: Path = DATA, out: Path = OUT) -> dict:
         "blocked_html": blocked_html, "viol_html": viol_html,
         "untrans_html": untrans_html, "feed_html": feed_html,
     })
+
+
+def _analytics_note(on: bool) -> str:
+    if on:
+        return ('<b>接続済み：Cloudflare Web Analytics</b>（Cookie 不使用・全公開ページで計測）。'
+                '参照元・国・ページ別の閲覧数は '
+                '<a href="https://dash.cloudflare.com/?to=/:account/web-analytics" rel="noopener" target="_blank">'
+                'Cloudflare ダッシュボード</a> で確認できます（ログイン保護）。')
+    return ('GitHub Pages は静的配信のためサーバーログが無く、訪問者の所在はこのサイト単体では取得できません。'
+            '<b>Cloudflare Web Analytics</b>（無料・Cookie 不使用）を接続する準備は完了しています。'
+            '現在は <b>未接続</b>：<code>pipeline/analytics.json</code> の <code>cloudflare_token</code> に beacon トークンを貼るか、'
+            'GitHub Actions Secret <code>CF_BEACON_TOKEN</code> を設定すると、次のビルドで全公開ページの計測が有効化されます。')
 
 
 def _write(out: Path, c: dict) -> dict:
@@ -189,11 +205,7 @@ def _write(out: Path, c: dict) -> dict:
   <ul>{c['feed_html']}</ul>
 
   <h2>アクセス解析（読者の所在）</h2>
-  <div class="note">
-    GitHub Pages は静的配信のためサーバーログが無く、訪問者の所在はこのサイト単体では取得できません。
-    <b>外部のアクセス解析サービス</b>（無料・プライバシー配慮の選択肢あり）を接続すると、参照元・国・ページ別の閲覧数が見られます。
-    現在は <b>未接続</b>。接続後、ここに各サービスのダッシュボードへのリンク／集計を表示します。
-  </div>
+  <div class="note">{_analytics_note(c['analytics_on'])}</div>
 
   <p class="muted" style="font-size:11px;margin-top:24px;">
     ※ 本ページは静的生成され URL を知れば閲覧可能です（ログイン保護なし）。公開ソースの運用情報のみを掲載しています。

@@ -13,6 +13,7 @@ import json
 
 from pipeline.compliance import screen
 from pipeline.collect_rss import RSSCollector
+from pipeline.analytics import apply_to_site as apply_analytics
 from pipeline.dashboard import build_dashboard
 from pipeline.core import Orchestrator, PassthroughTranslator, SampleCollector, write_articles
 from pipeline.feeds import load_feeds
@@ -80,6 +81,8 @@ def main(now: str = DEFAULT_NOW, out: Path = OUT) -> dict:
     print(f"[run_daily] NFR-5 quality   : translated_pass={qual['passed']}/{qual['translated']} ratio={qual['quality_ratio']}")
     print(f"[run_daily] NFR-7 governance: accepted={gov['accepted']} omitted={gov['omitted']} sound={gov['sound']}")
 
+    ana = apply_analytics()                            # アクセス解析タグ注入（トークン有時のみ）
+    print(f"[run_daily] analytics enabled={ana['enabled']} pages_updated={ana['pages_updated']}")
     dash = build_dashboard()                           # 管理ダッシュボード（admin.html）
     print(f"[run_daily] dashboard -> {dash['path']} (hosts={dash['hosts']})")
 
