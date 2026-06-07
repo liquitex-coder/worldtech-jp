@@ -12,9 +12,12 @@ from pathlib import Path
 import json
 
 from pipeline.compliance import screen
-from pipeline.core import Orchestrator, write_articles
+from pipeline.collect_rss import RSSCollector
+from pipeline.core import Orchestrator, PassthroughTranslator, SampleCollector, write_articles
+from pipeline.feeds import load_feeds
 from pipeline.governance import GovernanceLedger
 from pipeline.i18n import build_en_edition
+from pipeline.llm_client import build_llm_translator
 from pipeline.quality import QualityAuditor
 from pipeline.render import build as render_index
 from pipeline.search import build_search_index
@@ -30,10 +33,33 @@ def _write_json(name: str, payload: dict) -> None:
     (DATA / name).write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
+def build_collector():
+    """feeds.json が登録されていれば実RSS収集、無ければサンプル（FR-12 / FR-20）。"""
+    feeds = load_feeds()
+    return (RSSCollector(feeds), True) if feeds else (SampleCollector(), False)
+
+
+def build_translator(real_feeds: bool):
+    """翻訳エンジンを選ぶ（提案→決定論検証→採用・捏造しない, INV-R2 / FR-21）。
+
+    優先：実翻訳API（ANTHROPIC_API_KEY あり）→ サンプル時はコーパス → 実フィードで鍵無しは原文保持。
+    """
+    llm = build_llm_translator()
+    if llm is not None:
+        return llm, "llm"
+    if not real_feeds:
+        return sample_translator(), "corpus(human-verified)"
+    return PassthroughTranslator(), ""        # 実フィード＋鍵無し→未翻訳のまま出典付き（NFR-8）
+
+
 def main(now: str = DEFAULT_NOW, out: Path = OUT) -> dict:
-    # FR-21：人手検証済みコーパスのトランスレータを接続（提案→決定論検証→採用, INV-R2）
-    orch = Orchestrator(translator=sample_translator(), summarizer=sample_summarizer())
+    # 収集元と翻訳エンジンを環境に応じて選択（既定はサンプル＋コーパス＝現状維持）
+    collector, real_feeds = build_collector()
+    translator, engine = build_translator(real_feeds)
+    orch = Orchestrator(collector=collector, translator=translator, summarizer=sample_summarizer())
+    print(f"[run_daily] collector={type(collector).__name__} translator={engine or 'passthrough'}")
     articles = orch.run(collected_at=now)
+
     summary = write_articles(articles, out)
     rendered = render_index(out)                       # データ駆動描画：index.html を生成
     idx = build_search_index(out)                      # 全文検索インデックス（FR-11）

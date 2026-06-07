@@ -1,0 +1,57 @@
+name: daily-news
+
+# 毎朝 07:00 JST（=22:00 UTC）に収集→日本語化→描画→公開（FR-32）。
+# 手動実行も可能（Actions タブの "Run workflow"）。
+on:
+  schedule:
+    - cron: "0 22 * * *"   # 22:00 UTC = 07:00 JST
+  workflow_dispatch: {}
+
+permissions:
+  contents: write          # 生成物を main に push し、GitHub Pages を更新するため
+
+concurrency:
+  group: daily-news
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest
+          # 翻訳APIを使う場合のみ（ANTHROPIC_API_KEY がある時だけ有効化）
+          if [ -n "${ANTHROPIC_API_KEY}" ]; then pip install anthropic; fi
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      - name: Run tests (gate — 壊れていれば公開しない)
+        run: python -m pytest tests/ -q
+
+      - name: Generate site (collect -> translate -> render)
+        env:
+          # キーがあれば実翻訳、無ければコーパス/原文保持にフォールバック（NFR-8）
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          NOW="$(TZ=Asia/Tokyo date +%Y-%m-%dT07:00:00+09:00)"
+          python -m pipeline.run_daily --now "$NOW"
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ index.html articles/ en/ 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No changes to publish."
+          else
+            git commit -m "Daily update $(TZ=Asia/Tokyo date +%Y-%m-%d) [skip ci]"
+            git push
+          fi
