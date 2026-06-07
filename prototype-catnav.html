@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>カテゴリナビ デザイン比較 — NewsMatome</title>
+<style>
+  :root{
+    --ink:#0e1116; --ink-2:#3a414d; --muted:#7a8190; --line:#e7e9ee; --bg-soft:#f6f7f9;
+    --c-science:#0ea5e9; --c-ai:#3b5bff; --c-tech:#6366f1; --c-code:#111827;
+    --c-algo:#8b5cf6; --c-robotics:#ef4444; --c-physical:#f97316; --c-art:#ec4899;
+    --c-design:#14b8a6; --c-video:#e11d48; --c-animal:#84cc16; --c-nature:#16a34a; --c-agri:#ca8a04;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:#fff;color:var(--ink);
+    font-family:"Inter","Hiragino Sans","Noto Sans JP",system-ui,sans-serif;}
+  .page{max-width:1080px;margin:0 auto;padding:26px 22px 80px;}
+  h1{font-size:19px;letter-spacing:-.01em;margin:0 0 4px;}
+  .lead{color:var(--muted);font-size:13px;margin:0 0 26px;}
+  .variant{margin-bottom:30px;border:1px solid var(--line);border-radius:16px;overflow:hidden;}
+  .vhead{display:flex;align-items:baseline;gap:10px;padding:12px 16px;background:var(--bg-soft);border-bottom:1px solid var(--line);}
+  .vhead b{font-size:13.5px;}
+  .vhead span{font-size:11.5px;color:var(--muted);}
+  .stage{padding:18px 16px;}
+  .stage.dark{background:#0c0f15;}
+
+  /* ===== 案A：モノスペース・チップ（エンジニアド） ===== */
+  .navA{display:flex;flex-wrap:wrap;gap:8px;}
+  .navA a{display:inline-flex;align-items:center;gap:8px;font-family:"SF Mono","JetBrains Mono","Consolas",monospace;
+    font-size:12.5px;font-weight:600;color:var(--ink-2);text-decoration:none;
+    border:1px solid var(--line);border-radius:8px;padding:8px 12px;background:#fff;
+    transition:border-color .18s,color .18s,box-shadow .18s,transform .18s;}
+  .navA a .idx{color:#aeb4c0;font-size:10.5px;}
+  .navA a .sq{width:8px;height:8px;border-radius:2px;}
+  .navA a:hover{color:#000;border-color:var(--cc);transform:translateY(-2px);
+    box-shadow:0 6px 16px -6px var(--cc), inset 0 0 0 1px var(--cc);}
+  .navA a.on{color:#fff;background:var(--ink);border-color:var(--ink);}
+  .navA a.on .idx{color:#7e8696;}
+
+  /* ===== 案B：アンダーライン・タブ（エディトリアル・テック） ===== */
+  .navB{display:flex;flex-wrap:wrap;gap:2px 4px;}
+  .navB a{position:relative;display:flex;flex-direction:column;gap:1px;text-decoration:none;
+    padding:9px 14px 12px;border-radius:10px;transition:background .18s;}
+  .navB a .jp{font-size:14.5px;font-weight:700;color:var(--ink-2);letter-spacing:-.01em;transition:color .18s;}
+  .navB a .en{font-size:9px;font-weight:700;letter-spacing:.14em;color:#b4bac6;text-transform:uppercase;}
+  .navB a::after{content:"";position:absolute;left:14px;right:14px;bottom:5px;height:2px;border-radius:2px;
+    background:var(--cc);transform:scaleX(0);transform-origin:left;transition:transform .22s cubic-bezier(.2,.8,.2,1);}
+  .navB a:hover{background:var(--bg-soft);}
+  .navB a:hover .jp,.navB a.on .jp{color:#000;}
+  .navB a:hover::after,.navB a.on::after{transform:scaleX(1);}
+  .navB a.on::after{box-shadow:0 1px 10px var(--cc);}
+
+  /* ===== 案C：ダーク・グロウピル（テックダッシュボード） ===== */
+  .navC{display:flex;flex-wrap:wrap;gap:8px;}
+  .navC a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-size:13px;font-weight:600;
+    color:#c4cbd9;border:1px solid rgba(255,255,255,.10);border-radius:999px;padding:8px 14px;
+    background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.015));
+    transition:color .18s,border-color .18s,box-shadow .18s,background .18s;}
+  .navC a .dot{width:7px;height:7px;border-radius:50%;background:var(--cc);box-shadow:0 0 8px var(--cc);}
+  .navC a:hover{color:#fff;border-color:var(--cc);
+    box-shadow:0 0 0 1px var(--cc), 0 6px 22px -8px var(--cc);
+    background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.03));}
+  .navC a.on{color:#fff;border-color:transparent;background:var(--cc-soft);box-shadow:0 0 0 1px var(--cc);}
+
+  .switch{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);display:flex;gap:8px;
+    background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px;box-shadow:0 6px 24px rgba(20,24,40,.1);}
+  .switch a{font-size:12px;color:#3a414d;padding:7px 14px;border-radius:999px;text-decoration:none;}
+  .switch a.on{background:#3b5bff;color:#fff;font-weight:700;}
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>カテゴリナビ — 洗練テック 3案</h1>
+  <p class="lead">水滴ギミックは廃止。13カテゴリを「テクノロジっぽく洗練」させた3方向。各案ともマウスを乗せると反応します（上から2番目を選択状態で表示）。</p>
+
+  <!-- 案A -->
+  <div class="variant">
+    <div class="vhead"><b>案A — モノスペース・チップ</b><span>等幅フォント＋連番＋角型カラー。"エンジニアド"で硬質・精密</span></div>
+    <div class="stage">
+      <nav class="navA" id="A"></nav>
+    </div>
+  </div>
+
+  <!-- 案B -->
+  <div class="variant">
+    <div class="vhead"><b>案B — アンダーライン・タブ</b><span>日本語＋英語サブlabel。下線がカラーで光る。エディトリアルで上質</span></div>
+    <div class="stage">
+      <nav class="navB" id="B"></nav>
+    </div>
+  </div>
+
+  <!-- 案C -->
+  <div class="variant">
+    <div class="vhead"><b>案C — ダーク・グロウピル</b><span>暗背景＋ネオンの縁光。テックダッシュボード／管制室の質感</span></div>
+    <div class="stage dark">
+      <nav class="navC" id="C"></nav>
+    </div>
+  </div>
+</div>
+
+<div class="switch">
+  <a class="on" href="prototype-catnav.html">🎛 ナビ3案</a>
+  <a href="index.html">📰 2D版</a>
+</div>
+
+<script>
+const CATS=[
+  ['サイエンス','SCIENCE','science','#0ea5e9'],['AI','AI','ai','#3b5bff'],
+  ['テクノロジー','TECHNOLOGY','tech','#6366f1'],['コード','CODE','code','#111827'],
+  ['アルゴリズム','ALGORITHM','algo','#8b5cf6'],['ロボット技術','ROBOTICS','robotics','#ef4444'],
+  ['フィジカルAI','PHYSICAL AI','physical','#f97316'],['アート','ART','art','#ec4899'],
+  ['デザイン','DESIGN','design','#14b8a6'],['動画','VIDEO','video','#e11d48'],
+  ['動物','ANIMALS','animal','#84cc16'],['自然','NATURE','nature','#16a34a'],['農業','AGRICULTURE','agri','#ca8a04'],
+];
+function softRGBA(hex){const n=parseInt(hex.slice(1),16);return `rgba(${(n>>16)&255},${(n>>8)&255},${n&255},.22)`;}
+const A=document.getElementById('A'),B=document.getElementById('B'),C=document.getElementById('C');
+CATS.forEach((c,i)=>{
+  const [jp,en,slug,col]=c; const on=(i===2)?' on':''; const idx=String(i+1).padStart(2,'0');
+  A.insertAdjacentHTML('beforeend',
+    `<a href="#" class="${on.trim()}" style="--cc:${col}"><span class="idx">${idx}</span><span class="sq" style="background:${col}"></span>${jp}</a>`);
+  B.insertAdjacentHTML('beforeend',
+    `<a href="#" class="${on.trim()}" style="--cc:${col}"><span class="jp">${jp}</span><span class="en">${en}</span></a>`);
+  C.insertAdjacentHTML('beforeend',
+    `<a href="#" class="${on.trim()}" style="--cc:${col};--cc-soft:${softRGBA(col)}"><span class="dot"></span>${jp}</a>`);
+});
+</script>
+</body>
+</html>

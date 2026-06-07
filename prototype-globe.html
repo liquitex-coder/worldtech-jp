@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NewsMatome — 多言語グローブ（3D探索モード 試作）</title>
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;height:100%;background:radial-gradient(120% 90% at 70% 10%,#0b1326 0%,#05070f 60%);overflow:hidden;
+    font-family:"Hiragino Sans","Yu Gothic","Noto Sans JP",system-ui,sans-serif;color:#e9ecf5;}
+  #app{position:fixed;inset:0;}
+  canvas{display:block;}
+  .hud{position:fixed;inset:0;pointer-events:none;z-index:10;}
+  .brand{position:absolute;top:22px;left:26px;display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:-.02em;}
+  .brand .dot{width:11px;height:11px;border-radius:50%;background:#36d39a;box-shadow:0 0 14px #36d39a;}
+  .brand small{display:block;font-size:9.5px;font-weight:600;letter-spacing:.16em;color:#8b93ad;margin-top:-2px;}
+  .mode{position:absolute;top:24px;left:50%;transform:translateX(-50%);font-size:12px;letter-spacing:.32em;color:#7e88a6;text-transform:uppercase;}
+  .stat{position:absolute;top:22px;right:26px;text-align:right;}
+  .stat .big{font-size:13px;font-weight:700;color:#aeb8d8;}
+  .stat .sub{font-size:10.5px;color:#6b7390;letter-spacing:.04em;}
+  .title{position:absolute;left:26px;bottom:84px;max-width:440px;}
+  .title h1{font-size:30px;line-height:1.3;margin:0 0 10px;font-weight:800;letter-spacing:-.02em;text-shadow:0 2px 30px rgba(0,0,0,.8);}
+  .title p{margin:0;font-size:13px;color:#9aa3c0;line-height:1.7;}
+  .hint{position:absolute;left:26px;bottom:30px;font-size:11.5px;color:#6b7390;}
+  .feed{position:absolute;right:26px;bottom:26px;width:250px;background:rgba(10,16,30,.55);backdrop-filter:blur(8px);
+    border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px 14px;}
+  .feed h4{margin:0 0 8px;font-size:11px;letter-spacing:.1em;color:#8a93b2;font-weight:700;}
+  .feed .row{display:flex;gap:8px;align-items:flex-start;padding:6px 0;border-top:1px solid rgba(255,255,255,.06);font-size:11.5px;}
+  .feed .row:first-of-type{border-top:0;}
+  .feed .flag{font-size:13px;}
+  .feed .ar b{color:#fff;font-weight:600;display:block;line-height:1.4;}
+  .feed .ar span{color:#7b83a0;font-size:10px;}
+  .switch{position:fixed;bottom:26px;left:50%;transform:translateX(-50%);z-index:15;pointer-events:auto;display:flex;gap:8px;
+    background:rgba(12,14,24,.55);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.08);border-radius:999px;padding:6px;}
+  .switch a{font-size:12px;color:#aeb8d8;padding:7px 14px;border-radius:999px;text-decoration:none;}
+  .switch a.on{background:#36d39a;color:#04210f;font-weight:700;}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div class="hud">
+  <div class="brand"><span class="dot"></span><span>NewsMatome<small>MULTILINGUAL GLOBE</small></span></div>
+  <div class="mode">探索モード</div>
+  <div class="stat"><div class="big">今朝 07:00 — 世界が更新</div><div class="sub">7言語の収集元 → 東京で日本語化</div></div>
+  <div class="title">
+    <h1>世界が、<br>日本語に流れ込む。</h1>
+    <p>各記事の収集元が地球上で光り、そこから東京へ翻訳の光が伸びます。「世界の一次情報 → 日本語化」という営みが、そのまま地図になります。</p>
+  </div>
+  <div class="hint">ドラッグ＝回転　／　ホイール＝ズーム</div>
+  <div class="feed">
+    <h4>LIVE 翻訳フィード</h4>
+    <div class="row"><span class="flag">🇺🇸</span><div class="ar"><b>大規模モデルの自己検証で幻覚を減らす</b><span>San Francisco → 東京 · EN→JA</span></div></div>
+    <div class="row"><span class="flag">🇬🇧</span><div class="ar"><b>室温超伝導の再現を第三者が確認</b><span>London → 東京 · EN→JA</span></div></div>
+    <div class="row"><span class="flag">🇩🇪</span><div class="ar"><b>四足歩行ロボットの予測制御</b><span>Berlin → 東京 · DE→JA</span></div></div>
+    <div class="row"><span class="flag">🇨🇳</span><div class="ar"><b>エッジ推論の新ランタイム</b><span>Shenzhen → 東京 · ZH→JA</span></div></div>
+  </div>
+</div>
+
+<div class="switch">
+  <a href="prototype-galaxy.html">🌌 銀河</a>
+  <a class="on" href="prototype-globe.html">🌐 グローブ</a>
+  <a href="index.html">📰 2D版</a>
+</div>
+
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+}}
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(55, innerWidth/innerHeight, 0.1, 1000);
+camera.position.set(0, 8, 26);
+const renderer = new THREE.WebGLRenderer({antialias:true, alpha:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer.setSize(innerWidth, innerHeight);
+document.getElementById('app').appendChild(renderer.domElement);
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping=true; controls.dampingFactor=0.06;
+controls.autoRotate=true; controls.autoRotateSpeed=0.5;
+controls.minDistance=14; controls.maxDistance=60;
+
+scene.add(new THREE.AmbientLight(0x55608a, 1.1));
+const key=new THREE.DirectionalLight(0x9fb4ff,1.4); key.position.set(20,18,16); scene.add(key);
+
+const R=8;
+// 地球：ドット球（経緯線状の点群）
+const dots=new THREE.Group();
+(function(){
+  const g=new THREE.BufferGeometry(); const pos=[];
+  for(let lat=-80;lat<=80;lat+=6){
+    const rad=lat*Math.PI/180; const circ=Math.cos(rad);
+    const n=Math.max(6,Math.floor(48*circ));
+    for(let i=0;i<n;i++){
+      const lon=(i/n)*Math.PI*2;
+      pos.push(R*Math.cos(rad)*Math.cos(lon), R*Math.sin(rad), R*Math.cos(rad)*Math.sin(lon));
+    }
+  }
+  g.setAttribute('position', new THREE.Float32BufferAttribute(pos,3));
+  dots.add(new THREE.Points(g, new THREE.PointsMaterial({color:0x2f436e,size:0.10})));
+})();
+// 海の球体（淡い）
+dots.add(new THREE.Mesh(new THREE.SphereGeometry(R*0.985,48,48),
+  new THREE.MeshPhongMaterial({color:0x0c1730,emissive:0x0a1124,shininess:30,transparent:true,opacity:0.95})));
+// 大気グロー
+dots.add(new THREE.Mesh(new THREE.SphereGeometry(R*1.06,48,48),
+  new THREE.MeshBasicMaterial({color:0x3a6bff,transparent:true,opacity:0.06,side:THREE.BackSide})));
+scene.add(dots);
+
+function ll(lat,lon,r=R){ const a=lat*Math.PI/180,b=lon*Math.PI/180;
+  return new THREE.Vector3(r*Math.cos(a)*Math.cos(b), r*Math.sin(a), r*Math.cos(a)*Math.sin(b)); }
+
+const TOKYO=[35.7,139.7];
+const SRC=[
+  [37.7,-122.4,0xffd34e],[51.5,-0.1,0x9fe0ff],[52.5,13.4,0xff9a6b],
+  [22.5,114.0,0xff6b9d],[1.3,103.8,0x7cffc4],[48.8,2.3,0xc792ff],[40.7,-74.0,0xffe08a],
+];
+// 収集元マーカー
+const tokyoV=ll(...TOKYO, R*1.01);
+SRC.forEach(([la,lo,col])=>{
+  const v=ll(la,lo,R*1.01);
+  const m=new THREE.Mesh(new THREE.SphereGeometry(0.13,12,12), new THREE.MeshBasicMaterial({color:col}));
+  m.position.copy(v); dots.add(m);
+  // 翻訳の弧（source → Tokyo）
+  const mid=v.clone().add(tokyoV).multiplyScalar(0.5); mid.setLength(R*1.5);
+  const cv=new THREE.CatmullRomCurve3([v, mid, tokyoV]);
+  const tube=new THREE.Mesh(new THREE.TubeGeometry(cv,40,0.035,8,false),
+    new THREE.MeshBasicMaterial({color:col,transparent:true,opacity:0.6}));
+  dots.add(tube);
+});
+// 東京マーカー（強調）
+const tk=new THREE.Mesh(new THREE.SphereGeometry(0.22,16,16), new THREE.MeshBasicMaterial({color:0x36d39a}));
+tk.position.copy(tokyoV); dots.add(tk);
+const tkHalo=new THREE.Mesh(new THREE.SphereGeometry(0.4,16,16),
+  new THREE.MeshBasicMaterial({color:0x36d39a,transparent:true,opacity:0.25}));
+tkHalo.position.copy(tokyoV); dots.add(tkHalo);
+
+// 背景星
+(function(){ const g=new THREE.BufferGeometry();const n=900;const p=new Float32Array(n*3);
+  for(let i=0;i<n;i++){const r=120+Math.random()*200;const t=Math.random()*6.28;const ph=Math.acos(2*Math.random()-1);
+    p[i*3]=r*Math.sin(ph)*Math.cos(t);p[i*3+1]=r*Math.sin(ph)*Math.sin(t);p[i*3+2]=r*Math.cos(ph);}
+  g.setAttribute('position',new THREE.BufferAttribute(p,3));
+  scene.add(new THREE.Points(g,new THREE.PointsMaterial({color:0x445,size:0.7,sizeAttenuation:false})));
+})();
+
+addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);});
+let t=0;
+(function loop(){requestAnimationFrame(loop); t+=0.016;
+  tk.scale.setScalar(1+Math.sin(t*2)*0.15);
+  controls.update(); renderer.render(scene,camera);
+})();
+</script>
+</body>
+</html>

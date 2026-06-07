@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NewsMatome — 水滴レンズ・カテゴリナビ（試作）</title>
+<style>
+  :root{
+    --ink:#0e1116; --muted:#6b7280; --line:#e7e9ee; --accent:#3b5bff;
+    --c-science:#0ea5e9; --c-ai:#3b5bff; --c-tech:#6366f1; --c-code:#111827;
+    --c-algo:#8b5cf6; --c-robotics:#ef4444; --c-physical:#f97316; --c-art:#ec4899;
+    --c-design:#14b8a6; --c-video:#e11d48; --c-animal:#84cc16; --c-nature:#16a34a; --c-agri:#ca8a04;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;min-height:100vh;background:
+      radial-gradient(120% 80% at 50% -10%, #eef2ff 0%, #f6f7f9 45%, #eef0f4 100%);
+    font-family:"Inter","Hiragino Sans","Noto Sans JP",system-ui,sans-serif;color:var(--ink);}
+  .head{max-width:980px;margin:0 auto;padding:40px 20px 8px;}
+  .head .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px;letter-spacing:-.02em;}
+  .head .brand .dot{width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(59,91,255,.15);}
+  .head p{color:var(--muted);font-size:13.5px;margin:10px 0 0;}
+
+  /* カテゴリナビ本体（実DOM・クリック可能・SEO維持） */
+  .navwrap{position:relative;max-width:980px;margin:26px auto 0;padding:0 20px;}
+  #nav{
+    position:relative;display:flex;flex-wrap:wrap;gap:6px 8px;justify-content:center;
+    background:#fff;border:1px solid var(--line);border-radius:18px;
+    padding:18px 20px;box-shadow:0 10px 40px rgba(20,24,40,.06);
+  }
+  .cat{
+    position:relative;display:inline-flex;align-items:center;gap:8px;
+    padding:11px 16px;border-radius:12px;font-size:16px;font-weight:700;color:#2a313d;
+    text-decoration:none;cursor:pointer;
+    transition:transform .25s cubic-bezier(.2,.9,.2,1.2), color .2s, text-shadow .25s;
+    will-change:transform;
+  }
+  .cat .d{width:9px;height:9px;border-radius:50%;}
+  .cat:hover{color:#000;}
+  /* 水滴がロックした時：カテゴリが浮き上がる */
+  .cat.lifted{
+    transform:translateY(-9px) scale(1.10);
+    color:#000;text-shadow:0 6px 18px rgba(0,0,0,.18);z-index:3;
+  }
+
+  /* 水滴のレンズ（下のナビの拡大コピーをクリップ） */
+  #lens{
+    position:absolute;left:0;top:0;width:96px;height:96px;border-radius:50%;
+    overflow:hidden;pointer-events:none;opacity:0;z-index:8;
+    transition:opacity .25s;
+    filter:url(#water);
+    box-shadow:0 14px 30px rgba(20,30,60,.28);
+  }
+  #lensContent{position:absolute;left:0;top:0;transform-origin:0 0;}
+  /* 水滴のガラス質感オーバーレイ（屈折の縁・ハイライト・影） */
+  #glass{
+    position:absolute;left:0;top:0;width:96px;height:96px;border-radius:50%;
+    pointer-events:none;opacity:0;z-index:9;transition:opacity .25s;
+    background:
+      radial-gradient(38% 32% at 34% 28%, rgba(255,255,255,.95), rgba(255,255,255,0) 60%),
+      radial-gradient(20% 16% at 68% 70%, rgba(255,255,255,.55), rgba(255,255,255,0) 60%),
+      radial-gradient(120% 120% at 50% 120%, rgba(40,70,160,.22), rgba(255,255,255,0) 55%);
+    box-shadow:
+      inset 0 0 0 1.5px rgba(255,255,255,.55),
+      inset 6px 10px 22px rgba(255,255,255,.5),
+      inset -8px -12px 24px rgba(30,50,120,.22);
+  }
+  #glass::after{ /* 上部のスペキュラ */
+    content:"";position:absolute;left:24%;top:14%;width:30%;height:20%;border-radius:50%;
+    background:radial-gradient(closest-side, rgba(255,255,255,.95), rgba(255,255,255,0));
+    transform:rotate(-18deg);
+  }
+
+  .hint{max-width:980px;margin:22px auto 0;padding:0 20px;color:var(--muted);font-size:12.5px;text-align:center;}
+  .switch{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);display:flex;gap:8px;
+    background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px;box-shadow:0 6px 24px rgba(20,24,40,.1);}
+  .switch a{font-size:12px;color:#3a414d;padding:7px 14px;border-radius:999px;text-decoration:none;}
+  .switch a.on{background:var(--accent);color:#fff;font-weight:700;}
+
+  @media (hover:none){ #lens,#glass{display:none!important;} } /* タッチは通常タップ */
+  @media (prefers-reduced-motion:reduce){ #lens,#glass{display:none!important;} .cat{transition:none;} }
+</style>
+</head>
+<body>
+<!-- 水の屈折フィルタ -->
+<svg width="0" height="0" style="position:absolute">
+  <filter id="water">
+    <feTurbulence type="fractalNoise" baseFrequency="0.012 0.015" numOctaves="2" seed="7" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="14" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+
+<div class="head">
+  <div class="brand"><span class="dot"></span>NewsMatome</div>
+  <p>水滴レンズ・カテゴリナビ 試作 — マウスを乗せると水滴が追従し、カテゴリ上で止まると屈折レンズで浮かび上がります。</p>
+</div>
+
+<div class="navwrap">
+  <nav id="nav">
+    <a class="cat" href="#"><span class="d" style="background:var(--c-science)"></span>サイエンス</a>
+    <a class="cat" href="#"><span class="d" style="background:var(--c-ai)"></span>AI</a>
+    <a class="cat" href="#"><span class="d" style="background:var(--c-tech)"></span>テクノロジー</a>
+    <a class="cat" href="#"><span class="d" style="background:var(--c-code)"></span>コード</a>
+    <a class="cat" href="#"><span class="d" style="background:var(--c-algo)"></span>アルゴリズム</a>
+    <a class="cat" href="#"><span class="d" style="background:var(--c-robotics)"></span>ロボット技術</a>
+    <a class="cat" href="#"><span class="d" style="background:var(--c-physical)"></span>フィジカルAI</a>
+    <a class="cat" href="#"><span class="d" style="background:var(--c-art)"></span>アート</a>
+    <a class="cat" href="#"><span class="d" style="background:var(--c-design)"></span>デザイン</a>
+    <a class="cat" href="#"><span class="d" style="background:var(--c-video)"></span>動画</a>
+    <a class="cat" href="#"><span class="d" style="background:var(--c-animal)"></span>動物</a>
+    <a class="cat" href="#"><span class="d" style="background:var(--c-nature)"></span>自然</a>
+    <a class="cat" href="#"><span class="d" style="background:var(--c-agri)"></span>農業</a>
+  </nav>
+
+  <!-- 水滴レンズ（下のナビの拡大コピー） -->
+  <div id="lens"><div id="lensContent"></div></div>
+  <div id="glass"></div>
+</div>
+
+<div class="hint">💡 水滴は装飾レイヤー。下の実カテゴリはそのままクリック可能（SEO・キーボード操作を壊しません）。</div>
+
+<div class="switch">
+  <a class="on" href="prototype-droplet.html">💧 水滴ナビ</a>
+  <a href="index.html">📰 2D版</a>
+  <a href="prototype-galaxy.html">🌌 銀河</a>
+</div>
+
+<script>
+(function(){
+  const nav = document.getElementById('nav');
+  const lens = document.getElementById('lens');
+  const lensContent = document.getElementById('lensContent');
+  const glass = document.getElementById('glass');
+  const cats = [...nav.querySelectorAll('.cat')];
+  const D = 96;            // 水滴の直径
+  const MAG = 1.85;        // レンズ拡大率
+  const wrap = nav.parentElement;
+
+  // レンズの中身＝ナビのクローン
+  const clone = nav.cloneNode(true);
+  clone.removeAttribute('id'); clone.style.margin='0';
+  lensContent.appendChild(clone);
+
+  let mx=-999, my=-999, px=-999, py=-999, lastx=-999, lasty=-999;
+  let active=false, settleT=0, lockedCat=null;
+  let vx=0, vy=0;
+
+  function navRect(){ return nav.getBoundingClientRect(); }
+
+  function syncCloneSize(){
+    const r = navRect();
+    clone.style.width = r.width+'px';
+    // ハイライト等は固定。クローンの色/lifted は本体に同期不要（拡大表示のみ）
+  }
+  syncCloneSize();
+  addEventListener('resize', syncCloneSize);
+
+  nav.addEventListener('pointermove', e=>{
+    if(e.pointerType==='touch') return;
+    const r = navRect();
+    mx = e.clientX - r.left; my = e.clientY - r.top;
+    active = true;
+  });
+  nav.addEventListener('pointerenter', e=>{ if(e.pointerType!=='touch'){active=true; if(px<-100){px=mx;py=my;}} });
+  nav.addEventListener('pointerleave', ()=>{ active=false; });
+
+  function catUnder(cx, cy){
+    const r = navRect();
+    for(const c of cats){
+      const b = c.getBoundingClientRect();
+      const x = b.left - r.left, y = b.top - r.top;
+      if(cx>=x && cx<=x+b.width && cy>=y && cy<=y+b.height) return c;
+    }
+    return null;
+  }
+
+  function setLifted(cat){
+    if(lockedCat===cat) return;
+    if(lockedCat) lockedCat.classList.remove('lifted');
+    lockedCat = cat;
+    if(lockedCat) lockedCat.classList.add('lifted');
+  }
+
+  function frame(){
+    requestAnimationFrame(frame);
+    const r = navRect();
+
+    if(!active){
+      lens.style.opacity=0; glass.style.opacity=0;
+      setLifted(null); settleT=0;
+      lastx=mx; lasty=my;
+      return;
+    }
+    lens.style.opacity=1; glass.style.opacity=1;
+
+    // 速度（マウスの移動量）→ 静止判定
+    const speed = Math.hypot(mx-lastx, my-lasty);
+    lastx=mx; lasty=my;
+
+    // ロック対象：止まっている＆カテゴリ上
+    let targetX=mx, targetY=my;
+    const over = catUnder(mx,my);
+    if(speed < 1.4 && over){
+      settleT = Math.min(settleT+1, 14);
+    } else {
+      settleT = Math.max(settleT-2, 0);
+    }
+    const locked = settleT>=8 && over;
+    if(locked){
+      const b = over.getBoundingClientRect();
+      targetX = b.left - r.left + b.width/2;   // カテゴリ中心へスナップ
+      targetY = b.top  - r.top  + b.height/2;
+      setLifted(over);
+    } else {
+      setLifted(null);
+    }
+
+    // 追従（イージング）。ロック時は強め
+    const ease = locked ? 0.22 : 0.16;
+    px += (targetX-px)*ease;
+    py += (targetY-py)*ease;
+
+    // 速度でゼリー状にスカッシュ
+    vx += ((mx-px) - vx)*0.2; vy += ((my-py) - vy)*0.2;
+    const sp = Math.min(Math.hypot(vx,vy)/40, 0.28);
+    const ang = Math.atan2(vy,vx);
+    const sx = 1+sp, sy = 1-sp;
+
+    // 配置（中心を px,py に）
+    const left = px - D/2, top = py - D/2;
+    const tf = `translate(${left}px,${top}px) rotate(${ang}rad) scale(${sx},${sy}) rotate(${-ang}rad)`;
+    lens.style.transform = tf;
+    glass.style.transform = tf;
+
+    // レンズ拡大率：ロック時に少し強める（浮き上がり感）
+    const M = locked ? MAG+0.18 : MAG;
+    // 拡大鏡：px,py を中心に M 倍表示
+    const cx = px*M - D/2, cy = py*M - D/2;
+    lensContent.style.transform = `translate(${-cx}px,${-cy}px) scale(${M})`;
+  }
+  requestAnimationFrame(frame);
+
+  // ── デモ用フック（スクショ用）：i番目のカテゴリに水滴をロック ──
+  window.__demo = function(i){
+    const c = cats[i] || cats[1];
+    const r = navRect(), b = c.getBoundingClientRect();
+    mx = b.left - r.left + b.width/2; my = b.top - r.top + b.height/2;
+    px=mx; py=my; lastx=mx; lasty=my; active=true; settleT=14;
+    setLifted(c);
+    lens.style.opacity=1; glass.style.opacity=1;
+    const left=px-D/2, top=py-D/2;
+    lens.style.transform = glass.style.transform = `translate(${left}px,${top}px)`;
+    const M=MAG+0.18; lensContent.style.transform=`translate(${-(px*M-D/2)}px,${-(py*M-D/2)}px) scale(${M})`;
+    return c.textContent.trim();
+  };
+})();
+</script>
+</body>
+</html>

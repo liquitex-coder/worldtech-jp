@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>カテゴリ・グロー 動的バリエーション — NewsMatome</title>
+<style>
+  :root{
+    --c-science:#0ea5e9; --c-ai:#3b5bff; --c-tech:#6366f1; --c-code:#cbd5e1;
+    --c-algo:#8b5cf6; --c-robotics:#ef4444; --c-physical:#f97316; --c-art:#ec4899;
+    --c-design:#14b8a6; --c-video:#e11d48; --c-animal:#84cc16; --c-nature:#16a34a; --c-agri:#ca8a04;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:#070a10;color:#e9ecf5;
+    font-family:"Inter","Hiragino Sans","Noto Sans JP",system-ui,sans-serif;padding:24px 0 90px;}
+  .page{max-width:1000px;margin:0 auto;padding:0 20px;}
+  h1{font-size:19px;margin:0 0 4px;}
+  .lead{color:#8b93ad;font-size:13px;margin:0 0 24px;}
+  .variant{margin-bottom:20px;border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;background:#0c0f15;}
+  .vhead{display:flex;align-items:baseline;gap:10px;padding:11px 16px;background:rgba(255,255,255,.03);border-bottom:1px solid rgba(255,255,255,.06);}
+  .vhead b{font-size:13.5px;} .vhead span{font-size:11.5px;color:#8b93ad;}
+  .stage{position:relative;padding:16px;}
+  .nav{display:flex;gap:8px;flex-wrap:wrap;}
+  .nav a{position:relative;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;
+    font-size:13px;font-weight:600;color:#c4cbd9;text-decoration:none;
+    border:1px solid rgba(255,255,255,.10);border-radius:999px;padding:8px 14px;
+    background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015));}
+  .cdot{width:8px;height:8px;border-radius:50%;flex-shrink:0;background:var(--cc);
+    box-shadow:0 0 8px var(--cc),0 0 3px var(--cc);}
+
+  /* V1 ブリーズ（脈動） */
+  .v1 .cdot{animation:breathe 2.6s ease-in-out infinite;}
+  @keyframes breathe{0%,100%{box-shadow:0 0 4px var(--cc),0 0 2px var(--cc);}
+    50%{box-shadow:0 0 16px var(--cc),0 0 9px var(--cc);}}
+
+  /* V2 ホバー・リップル */
+  .v2 .cdot::after{content:"";position:absolute;left:14px;top:50%;width:8px;height:8px;border-radius:50%;
+    border:2px solid var(--cc);transform:translate(-50%,-50%) scale(1);opacity:0;}
+  .v2 a:hover .cdot{box-shadow:0 0 16px var(--cc),0 0 7px var(--cc);}
+  .v2 a:hover .cdot::after{animation:ripple .8s ease-out;}
+  @keyframes ripple{0%{opacity:.85;transform:translate(-50%,-50%) scale(1);}
+    100%{opacity:0;transform:translate(-50%,-50%) scale(4);}}
+
+  /* V3 オーロラ・リング（回転する色光） */
+  .v3 a{isolation:isolate;}
+  .v3 a::before{content:"";position:absolute;inset:-2px;border-radius:999px;z-index:-1;
+    background:conic-gradient(from 0deg,transparent 0%,var(--cc) 18%,transparent 38%,transparent 100%);
+    filter:blur(5px);opacity:.55;animation:spin 3.2s linear infinite;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+
+  /* V4 マウス・スポットライト（追従する光） */
+  .v4 .spot{position:absolute;inset:0;pointer-events:none;border-radius:14px;
+    background:radial-gradient(140px circle at var(--mx,50%) var(--my,0%),rgba(120,160,255,.18),transparent 60%);
+    transition:background .05s;}
+  .v4 a{transition:box-shadow .2s,border-color .2s;}
+
+  .switch{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);display:flex;gap:8px;
+    background:#0c0f15;border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:6px;}
+  .switch a{font-size:12px;color:#aeb8d8;padding:7px 14px;border-radius:999px;text-decoration:none;}
+  .switch a.on{background:#3b5bff;color:#fff;font-weight:700;}
+
+  @media (prefers-reduced-motion:reduce){
+    .v1 .cdot,.v3 a::before{animation:none!important;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>カテゴリ・グロー — 動的バリエーション</h1>
+  <p class="lead">現在は静的グロー。下は「動く」4方式。マウスを乗せて／動かして試してください（コード＝シルバー発光）。</p>
+
+  <div class="variant"><div class="vhead"><b>V1 ブリーズ（脈動）</b><span>ドットがゆっくり明滅。生きてる感・軽量</span></div>
+    <div class="stage"><nav class="nav v1" data-stagger="1"></nav></div></div>
+
+  <div class="variant"><div class="vhead"><b>V2 ホバー・リップル</b><span>乗せると光の輪が広がる。反応が気持ちいい</span></div>
+    <div class="stage"><nav class="nav v2"></nav></div></div>
+
+  <div class="variant"><div class="vhead"><b>V3 オーロラ・リング</b><span>ピル周囲を色光が回転。最もテック</span></div>
+    <div class="stage"><nav class="nav v3"></nav></div></div>
+
+  <div class="variant"><div class="vhead"><b>V4 マウス・スポットライト</b><span>カーソルに光が追従（このバー上で動かして）</span></div>
+    <div class="stage v4"><div class="spot"></div><nav class="nav v4n"></nav></div></div>
+</div>
+
+<div class="switch"><a class="on" href="prototype-glow.html">✨ グロー4案</a><a href="index.html">📰 2D版</a></div>
+
+<script>
+const CATS=[["サイエンス","#0ea5e9"],["AI","#3b5bff"],["テクノロジー","#6366f1"],["コード","#cbd5e1"],
+  ["アルゴリズム","#8b5cf6"],["ロボット技術","#ef4444"],["フィジカルAI","#f97316"],["アート","#ec4899"],
+  ["デザイン","#14b8a6"],["動画","#e11d48"],["動物","#84cc16"],["自然","#16a34a"],["農業","#ca8a04"]];
+function fill(nav, stagger){
+  CATS.forEach((c,i)=>{
+    const a=document.createElement('a'); a.href="#"; a.style.setProperty('--cc',c[1]);
+    if(stagger) a.querySelectorAll && (a.style.cssText+='');
+    a.innerHTML='<span class="cdot"'+(stagger?(' style="animation-delay:'+(i*0.18)+'s"'):'')+'></span>'+c[0];
+    nav.appendChild(a);
+  });
+}
+document.querySelectorAll('.v1').forEach(n=>fill(n,true));
+document.querySelectorAll('.v2,.v3,.v4n').forEach(n=>fill(n,false));
+// V4 スポットライト追従
+const stage=document.querySelector('.stage.v4'), spot=stage.querySelector('.spot');
+stage.addEventListener('pointermove',e=>{
+  const r=stage.getBoundingClientRect();
+  spot.style.setProperty('--mx',(e.clientX-r.left)+'px');
+  spot.style.setProperty('--my',(e.clientY-r.top)+'px');
+});
+</script>
+</body>
+</html>
