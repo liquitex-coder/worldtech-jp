@@ -13,6 +13,7 @@ import json
 
 from pipeline.compliance import screen
 from pipeline.collect_rss import RSSCollector
+from pipeline.dashboard import build_dashboard
 from pipeline.core import Orchestrator, PassthroughTranslator, SampleCollector, write_articles
 from pipeline.feeds import load_feeds
 from pipeline.governance import GovernanceLedger
@@ -78,6 +79,9 @@ def main(now: str = DEFAULT_NOW, out: Path = OUT) -> dict:
     print(f"[run_daily] NFR-4 compliance: cleared={len(comp['cleared'])}/{comp['total']} blocked={len(comp['blocked'])}")
     print(f"[run_daily] NFR-5 quality   : translated_pass={qual['passed']}/{qual['translated']} ratio={qual['quality_ratio']}")
     print(f"[run_daily] NFR-7 governance: accepted={gov['accepted']} omitted={gov['omitted']} sound={gov['sound']}")
+
+    dash = build_dashboard()                           # 管理ダッシュボード（admin.html）
+    print(f"[run_daily] dashboard -> {dash['path']} (hosts={dash['hosts']})")
 
     translated = sum(1 for a in articles if a.translated)
     print(f"[run_daily] rendered {rendered['rendered']} cards -> index.html")
