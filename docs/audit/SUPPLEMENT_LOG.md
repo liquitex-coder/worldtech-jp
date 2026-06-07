@@ -215,6 +215,29 @@ liquitex 指示：ロボット技術→AIへ統合、日本のAI追加、テク�
 - **軽量化**：全 `<img>` に `loading="lazy" decoding="async"` を付与（NFR-1 方向の体感速度向上）。
 - テスト：再実行 20 PASS（壊れなし）。
 
+## Phase J — 残 over（NFR-4/5/6/7）着手：権利運用・翻訳品質・多言語SEO・生成物検証（2026-06-07）
+ロードマップに基づき、**唯一の未 witness だった over 4 件**（NFR-4/5/6/7）を**動く形＋テスト証人**で着手。
+全て「提案→決定論検証→採用、未知/不合格は捏造しない（INV-R2）」を踏襲し、署名 core（48）は不可侵（add-only, INV-R4）。
+
+- **NFR-6 多言語SEO**：`pipeline/i18n.py`。`hreflang`(ja/en/x-default) を JA index/記事に**冪等注入**＋**`/en/` 英語版**生成。
+  英語版は**翻訳を発明せず保持済みの原文（英語）を掲出**（非捏造）。canonical は各言語版・日↔英で相互リンク。`tests/test_i18n_seo.py` 4件。
+- **NFR-4 権利運用**：`pipeline/compliance.py`。`ComplianceVerifier`＝出典必須・**引用範囲上限（全文転載を弾く）**・
+  **収集元 ToS/robots allowlist（未確認ドメインは保守的に不許可）**・翻訳明示。`screen()` で公開前スクリーニング。`tests/test_compliance.py` 5件。
+- **NFR-5 翻訳品質**：`pipeline/quality.py`。採用済み翻訳を決定論採点（原文参照可能・**用語グロッサリ被覆**・長さ妥当）。
+  **未翻訳は減点でなく "untranslated" として正直に集計**（嘘の日本語を作っていない裏返し）。`tests/test_quality.py` 4件。
+- **NFR-7 生成物検証ガバナンス**：`pipeline/governance.py`。各エージェント claim（title_ja/body_ja/tldr）の
+  採用/省略・出典紐付けを台帳化し、不変条件 **`accepted ⇒ provenance`** を機械検証。出典なき採用は violation。`tests/test_governance.py` 4件。
+- `run_daily` に接続 → `data/{compliance-report,quality-report,governance-ledger}.json` 生成、`/en/` 英語版・hreflang 出力。
+  実行結果：compliance cleared=5/5・quality pass=5/5(ratio 1.0)・governance accepted=15/omitted=0/sound=True。
+- **pytest 計 74 PASS**（+17）。**source_coverage**：witnessed **67/67 = 1.000**。**CORE 48/48 維持**、**OVER 被覆 11/15 → 15/15（全 over witness 達成）**。
+  `run_coverage.py` の tests リストに 4 ファイルを追加。
+
+### Auditor 自己適用（meet A↔B 再実行）— 2026-06-07
+`run_supplement.py`（決定論・LLM-free）再実行：**gap=∅ 維持**／core 確定／over=14（NFR系含む）。
+NFR-4/5/6/7 は仕様上は引き続き **over（advisory・未署名）** だが、**実装＋テスト証人が揃い witnessed 100%**。
+Auditor は署名しない（root 化は liquitex の署名のみ・INV-R1）。署名済み 48 core は不可侵（add-only・INV-R4）。
+
 ## 現在の確定状態 — INV-R1
-A・B とも **signed**。core 48 アンカー（milestone-1＋AI addendum）が **root**。over 15 は将来スコープ（未署名・advisory）。
+A・B とも **signed**。core 48 アンカー（milestone-1＋AI addendum）が **root**。over 15 は将来スコープ（未署名・advisory）
+だが **全て実装＋witness 済み（全要件アンカー 67/67 被覆 = 100%）**。
 Auditor／Claude は署名を捏造しない（署名はliquitexの決定を機械転記したもの）。署名済み条項は不可侵（add-only, INV-R4）。

@@ -9,14 +9,25 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
+import json
+
+from pipeline.compliance import screen
 from pipeline.core import Orchestrator, write_articles
+from pipeline.governance import GovernanceLedger
+from pipeline.i18n import build_en_edition
+from pipeline.quality import QualityAuditor
 from pipeline.render import build as render_index
 from pipeline.search import build_search_index
 from pipeline.summarize import sample_summarizer
 from pipeline.translate import sample_translator
 
 DEFAULT_NOW = "2026-06-07T07:00:00+09:00"
-OUT = Path(__file__).resolve().parent.parent / "data" / "articles.json"
+DATA = Path(__file__).resolve().parent.parent / "data"
+OUT = DATA / "articles.json"
+
+
+def _write_json(name: str, payload: dict) -> None:
+    (DATA / name).write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
 def main(now: str = DEFAULT_NOW, out: Path = OUT) -> dict:
@@ -26,7 +37,22 @@ def main(now: str = DEFAULT_NOW, out: Path = OUT) -> dict:
     summary = write_articles(articles, out)
     rendered = render_index(out)                       # データ駆動描画：index.html を生成
     idx = build_search_index(out)                      # 全文検索インデックス（FR-11）
+    en = build_en_edition(out)                         # NFR-6：/en/ 英語版＋hreflang 相互リンク
     print(f"[run_daily] search index {idx['docs']} docs -> {idx['path']}")
+    print(f"[run_daily] en edition {en['en_pages']} pages, hreflang on {en['ja_hreflang_injected']} JA pages")
+
+    # 公開前ガバナンス（決定論・LLM-free）：権利運用 / 翻訳品質 / 生成物検証
+    arts = json.loads(out.read_text(encoding="utf-8"))["articles"]
+    comp = screen(arts)                                # NFR-4：権利運用ゲート
+    qual = QualityAuditor().report(arts)               # NFR-5：翻訳品質レポート
+    gov = GovernanceLedger().audit(arts)               # NFR-7：生成物検証台帳
+    _write_json("compliance-report.json", comp)
+    _write_json("quality-report.json", qual)
+    _write_json("governance-ledger.json", gov)
+    print(f"[run_daily] NFR-4 compliance: cleared={len(comp['cleared'])}/{comp['total']} blocked={len(comp['blocked'])}")
+    print(f"[run_daily] NFR-5 quality   : translated_pass={qual['passed']}/{qual['translated']} ratio={qual['quality_ratio']}")
+    print(f"[run_daily] NFR-7 governance: accepted={gov['accepted']} omitted={gov['omitted']} sound={gov['sound']}")
+
     translated = sum(1 for a in articles if a.translated)
     print(f"[run_daily] rendered {rendered['rendered']} cards -> index.html")
     print(f"[run_daily] {now}  collected={summary['count']}  "

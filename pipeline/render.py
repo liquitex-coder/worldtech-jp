@@ -235,7 +235,7 @@ def render_article(a: dict, others: list[dict]) -> str:
     <span class="update-badge">⟳ 毎朝7時更新</span>
     <span class="topbar-spacer"></span>
     <label class="search semantic"><span class="lead">✦</span><input type="text" placeholder="意味で探す"></label>
-    <div class="lang-select"><a class="on" href="#">日本語</a><a href="#" title="English edition（準備中・/en/）">EN</a></div>
+    <div class="lang-select"><a class="on" href="#">日本語</a><a href="../en/articles/{a['id']}.html" title="English edition（/en/）" hreflang="en">EN</a></div>
     <a class="btn-cta" href="../about.html#contact">お仕事のご依頼</a>
   </div>
   <nav class="catnav"><div class="catnav-inner">
