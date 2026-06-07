@@ -5,6 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>NewsMatome — 世界の科学・AI・技術を毎朝日本語で</title>
 <meta name="description" content="サイエンス・AI・テクノロジー・コード・ロボット技術・フィジカルAI・アート・デザインなど、海外の多言語情報を収集し日本語化してお届けするニュースメディア。毎朝7時更新。">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/">
+<!-- OGP / Twitter（NFR-2 SEO） -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NewsMatome">
+<meta property="og:title" content="NewsMatome — 世界の科学・AI・技術を毎朝日本語で">
+<meta property="og:description" content="海外の多言語情報を収集し日本語化してお届けするニュースメディア。毎朝7時更新。">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<!-- 速度（NFR-1）：画像CDNへ先行接続 -->
+<link rel="preconnect" href="https://picsum.photos" crossorigin>
+<link rel="dns-prefetch" href="https://picsum.photos">
+<!-- 構造化データ（NFR-2） -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"NewsMatome","inLanguage":"ja",
+ "url":"https://liquitex-coder.github.io/worldtech-jp/",
+ "description":"海外の多言語情報を収集し日本語化してお届けするニュースメディア。毎朝7時更新。",
+ "potentialAction":{"@type":"SearchAction","target":"https://liquitex-coder.github.io/worldtech-jp/?q={search_term_string}","query-input":"required name=search_term_string"}}
+</script>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -20,7 +38,8 @@
     <span class="topbar-spacer"></span>
     <label class="search semantic" title="意味で探す（セマンティック検索）">
       <span class="lead">✦</span>
-      <input type="text" placeholder="意味で探す（例：触覚を持つロボット）">
+      <input id="searchInput" type="text" placeholder="意味で探す（例：触覚を持つロボット）" autocomplete="off">
+      <div class="search-results" id="searchResults"></div>
     </label>
     <div class="lang-select"><a class="on" href="#">日本語</a><a href="#" title="English edition（準備中・/en/）">EN</a></div>
     <a class="btn-cta" href="about.html#contact">お仕事のご依頼</a>
@@ -341,6 +360,41 @@ document.querySelectorAll('.cat-trigger').forEach(function(t){
 document.addEventListener('click',function(e){
   if(!e.target.closest('.catgroup'))document.querySelectorAll('.catgroup.open').forEach(function(x){x.classList.remove('open');});
 });
+
+// 全文検索（FR-11）：data/search-index.json を読んでクライアント絞り込み（Python版と同じ規則）
+(function(){
+  var input=document.getElementById('searchInput'), box=document.getElementById('searchResults');
+  if(!input||!box) return;
+  var INDEX=null, CAT={'サイエンス':'#0ea5e9','AI':'#3b5bff','テクノロジー':'#6366f1','コード':'#cbd5e1',
+    'アルゴリズム':'#8b5cf6','ロボット技術':'#ef4444','フィジカルAI':'#f97316','日本のAI':'#e60033',
+    'アート':'#ec4899','デザイン':'#14b8a6','動画':'#e11d48','動物':'#84cc16','自然':'#16a34a','農業':'#ca8a04'};
+  function load(){ return INDEX ? Promise.resolve(INDEX)
+    : fetch('data/search-index.json').then(function(r){return r.json();}).then(function(j){INDEX=j.docs||[];return INDEX;}).catch(function(){return [];}); }
+  function search(docs,q){
+    q=(q||'').trim().toLowerCase(); if(!q) return [];
+    var out=[];
+    docs.forEach(function(d){
+      var n=(d.text||'').toLowerCase().split(q).length-1;
+      if(n>0) out.push({s:n+((d.title||'').toLowerCase().indexOf(q)>=0?3:0), d:d});
+    });
+    out.sort(function(a,b){return b.s-a.s || (a.d.id<b.d.id?-1:1);});
+    return out.slice(0,8).map(function(x){return x.d;});
+  }
+  function render(res,q){
+    if(!q){ box.classList.remove('show'); box.innerHTML=''; return; }
+    if(!res.length){ box.innerHTML='<div class="sr-empty">「'+q+'」に一致する記事はありません</div>'; box.classList.add('show'); return; }
+    var html='<div class="sr-head">検索結果 '+res.length+'件</div>';
+    res.forEach(function(d){
+      var c=CAT[d.category]||'#8b93ad';
+      html+='<a class="sr" href="'+d.url+'"><span class="dot" style="background:'+c+'"></span>'
+        +'<span><b>'+d.title+'</b><br><small>'+d.category+'</small></span></a>';
+    });
+    box.innerHTML=html; box.classList.add('show');
+  }
+  input.addEventListener('input',function(){ var q=input.value; load().then(function(docs){ render(search(docs,q),q); }); });
+  input.addEventListener('focus',function(){ if(input.value) box.classList.add('show'); });
+  document.addEventListener('click',function(e){ if(!e.target.closest('.search')) box.classList.remove('show'); });
+})();
 </script>
 
 </body>

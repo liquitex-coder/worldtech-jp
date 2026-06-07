@@ -198,13 +198,34 @@ def render_article(a: dict, others: list[dict]) -> str:
         for o in others[:3]
     )
 
+    pub_iso = html.escape(a.get("collected_at", ""))
+    canon = f"https://liquitex-coder.github.io/worldtech-jp/articles/{a['id']}.html"
+    img = html.escape(a.get("image") or "")
+    og_img = f'<meta property="og:image" content="{img}">' if img else ""
+    desc = f"{title}（{src_lang}→JA 翻訳・出典付き）"
     return f"""<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title} — NewsMatome</title>
-<meta name="description" content="{title}（{src_lang}→JA 翻訳・出典付き）">
+<meta name="description" content="{desc}">
+<link rel="canonical" href="{canon}">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="NewsMatome">
+<meta property="og:title" content="{title}">
+<meta property="og:description" content="{desc}">
+<meta property="og:locale" content="ja_JP">
+{og_img}
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://picsum.photos" crossorigin>
+<script type="application/ld+json">
+{{"@context":"https://schema.org","@type":"NewsArticle","headline":"{title}",
+ "inLanguage":"ja","datePublished":"{pub_iso}","dateModified":"{pub_iso}",
+ "author":{{"@type":"Organization","name":"{agent}"}},
+ "publisher":{{"@type":"Organization","name":"NewsMatome"}},
+ "isBasedOn":"{src}","url":"{canon}"}}
+</script>
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>

@@ -29,6 +29,7 @@ tests = [
     (NS / "tests" / "test_search.py").read_text(encoding="utf-8"),
     (NS / "tests" / "test_about.py").read_text(encoding="utf-8"),
     (NS / "tests" / "test_nav.py").read_text(encoding="utf-8"),
+    (NS / "tests" / "test_seo.py").read_text(encoding="utf-8"),
 ]
 
 # core（署名・第一マイルストーン＋AI addendum, 実装済み）48 アンカー
