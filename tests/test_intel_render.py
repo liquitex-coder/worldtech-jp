@@ -1,4 +1,4 @@
-"""インテリジェンス可視化ページ：確度ラベル・出典リンク・空状態・エスケープ・決定論のテスト。"""
+"""インテリジェンス可視化ページ：確度ラベル・出典リンク・空状態・エスケープ・決定論・導線のテスト。"""
 import json
 
 from pipeline.intel_render import build_page, render_intel
@@ -59,3 +59,23 @@ def test_render_intel_writes_file_and_is_deterministic(tmp_path):
     render_intel(tmp_path, out2)
     assert out1.read_text(encoding="utf-8") == out2.read_text(encoding="utf-8")
     assert "確度: 高" in out1.read_text(encoding="utf-8")
+
+
+def test_inject_intel_nav_idempotent():
+    # covers: ニュース面トップバーに intel 導線を冪等注入
+    from pipeline.intel_render import inject_intel_nav
+    base = '<div class="topbar-inner"><div class="lang-select">JA</div></div>'
+    once = inject_intel_nav(base)
+    assert "nav-intel" in once and 'href="intel.html"' in once
+    assert inject_intel_nav(once) == once                       # 二度目は無変更（冪等）
+    assert inject_intel_nav("<div>no anchor</div>") == "<div>no anchor</div>"
+
+
+def test_ensure_nav_link_writes_and_is_idempotent(tmp_path):
+    # covers: index.html への注入（冪等）
+    from pipeline.intel_render import _ensure_nav_link
+    idx = tmp_path / "index.html"
+    idx.write_text('<div class="topbar-inner"><div class="lang-select">JA</div></div>', encoding="utf-8")
+    assert _ensure_nav_link(idx) is True
+    assert "nav-intel" in idx.read_text(encoding="utf-8")
+    assert _ensure_nav_link(idx) is False                       # 既にあれば無変更
