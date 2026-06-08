@@ -19,6 +19,7 @@ from pipeline.core import Orchestrator, PassthroughTranslator, SampleCollector, 
 from pipeline.feeds import load_feeds
 from pipeline.governance import GovernanceLedger
 from pipeline.i18n import build_en_edition
+from pipeline.intel_pipeline import run_intel
 from pipeline.llm_client import build_llm_translator
 from pipeline.quality import QualityAuditor
 from pipeline.render import build as render_index
@@ -80,6 +81,9 @@ def main(now: str = DEFAULT_NOW, out: Path = OUT) -> dict:
     print(f"[run_daily] NFR-4 compliance: cleared={len(comp['cleared'])}/{comp['total']} blocked={len(comp['blocked'])}")
     print(f"[run_daily] NFR-5 quality   : translated_pass={qual['passed']}/{qual['translated']} ratio={qual['quality_ratio']}")
     print(f"[run_daily] NFR-7 governance: accepted={gov['accepted']} omitted={gov['omitted']} sound={gov['sound']}")
+
+    intel = run_intel(now, DATA)                       # インテリジェンス基盤（A→B→C）→ data/intel.json
+    print(f"[run_daily] intel briefs={intel['count']} engine={intel['engine'] or 'deterministic'} -> {intel['path']}")
 
     ana = apply_analytics()                            # アクセス解析タグ注入（トークン有時のみ）
     print(f"[run_daily] analytics enabled={ana['enabled']} pages_updated={ana['pages_updated']}")

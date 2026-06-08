@@ -23,6 +23,11 @@ ALLOWED_SOURCES: dict[str, dict] = {
     "github.example": {"quote": True, "robots": True},
     "youtube.example": {"quote": True, "robots": True},     # 公式埋め込み＋出典リンク
     "nature.example": {"quote": True, "robots": True},
+    # インテリジェンス基盤のサンプル周辺信号ソース（example ドメイン）。
+    # 本番の EDINET/EDGAR 等は robots/ToS 確認のうえ実ホストをここに登録する（NFR-4）。
+    "edinet.example": {"quote": True, "robots": True},      # 法定開示（持分異動）サンプル
+    "press.example": {"quote": True, "robots": True},       # 取引先/納品先サンプル
+    "energy.example": {"quote": True, "robots": True},      # 使用電力量サンプル
 }
 
 
