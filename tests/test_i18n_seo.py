@@ -45,6 +45,20 @@ def test_en_index_links_and_hreflang():
     assert f'articles/{ART["id"]}.html' in idx
 
 
+def test_en_index_card_container_is_styled():
+    # covers: NFR-6
+    # 回帰防止：EN版のカード格子は CSS で定義済みのクラスを使う（未定義 .cardgrid だと
+    # 全カードが全幅化し空サムネが画面を覆い「空白」に見えるバグの再発を防ぐ）。
+    import re
+    from pathlib import Path
+    css = (Path(__file__).resolve().parent.parent / "css" / "style.css").read_text(encoding="utf-8")
+    idx = render_en_index([ART])
+    assert '<div class="grid">' in idx                      # JA と同じ実証済みの格子
+    assert "cardgrid" not in idx                            # 未定義クラスを使わない
+    # EN index がカード格子に使う格子クラスは CSS に必ず定義がある
+    assert re.search(r"\.grid\s*\{", css)                   # .grid 定義の存在を証人化
+
+
 def test_build_en_edition_writes_pages(tmp_path):
     # covers: NFR-6
     import json

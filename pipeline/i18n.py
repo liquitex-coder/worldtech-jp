@@ -114,9 +114,9 @@ def render_en_index(articles: list[dict]) -> str:
   <span class="topbar-spacer"></span>
   <div class="lang-select"><a href="../index.html" title="日本語版">日本語</a><a class="on" href="#">EN</a></div>
 </div></header>
-<div class="wrap"><main class="feed">
+<div class="wrap"><main>
   <p class="source-bar"><span class="lang">EN</span><span>Original-language edition. Each article links to its Japanese translation (hreflang).</span></p>
-  <div class="cardgrid">
+  <div class="grid">
 {cards}
   </div>
 </main></div>
