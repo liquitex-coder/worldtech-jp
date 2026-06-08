@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fine-Tuning and Serving Gemma 4 31B on Google Cloud TPU: A Technical Comparison with GPU Baselines — NewsMatome (EN)</title>
+<meta name="description" content="Fine-Tuning and Serving Gemma 4 31B on Google Cloud TPU: A Technical Comparison with GPU Baselines — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/574b1b2eac4b.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/574b1b2eac4b.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/574b1b2eac4b.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/574b1b2eac4b.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fine-Tuning and Serving Gemma 4 31B on Google Cloud TPU: A Technical Comparison with GPU Baselines">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Fine-Tuning and Serving Gemma 4 31B on Google Cloud TPU: A Technical Comparison with GPU Baselines",
+ "inLanguage":"en","datePublished":"2026-06-09T07:00:00+09:00","dateModified":"2026-06-09T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2605.25645","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/574b1b2eac4b.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/574b1b2eac4b.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Fine-Tuning and Serving Gemma 4 31B on Google Cloud TPU: A Technical Comparison with GPU Baselines</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/06/09</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/574b1b2eac4b.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2605.25645" rel="nofollow noopener">https://arxiv.org/abs/2605.25645</a></span></div>
+  <div class="article-body"><p>arXiv:2605.25645v3 Announce Type: replace-cross 
+Abstract: We present the first end-to-end demonstration of fine-tuning and serving Google&#x27;s Gemma 4 31B model on TPU hardware, providing an empirical comparison of TPU and GPU platforms for large language model adaptation. Using LoRA on a Google TPU v5p-8 for training and TPU v6e-8 (Trillium) for inference, we document the full set of code-level adaptations required to port a GPU-native training recipe - built on PyTorch, HuggingFace TRL, and FSDP - to the JAX + Tunix/Qwix stack. These adaptations span mesh configuration, LoRA module naming conventions, sharding annotation corrections, gradient checkpoint, data pipeline restructuring, and a custom Orbax-to-safetensor checkpoint merging procedure. For inference, we detail the vLLM-TPU Docker setup necessary to serve Gemma 4 on v6e-8 and characterize the resulting latency and throughput profile. Compared with a similar-costing 2xH100 GPU baseline under identical hyperparameters, TPU training completes 1.61x faster at 2.12x lower cost. For inference, we cover the vLLM-TPU Docker setup required to serve Gemma 4 on v6e-8 and explain the observed latency and throughput characteristics across a QPS sweep spanning 512 to 16k input tokens. Across both workloads we compare performance and cost against a 2xH100 GPU baseline running identical hyperparameters. The TPU completes training 1.61x faster at 2.12x lower cost. For inference, TPU v6e-8 matches GPU at short context (&lt;=2048 tokens) and decisively outperforms at long context: 66% higher throughput and 23.6x faster TTFT at 4096-token inputs (61 ms vs 1,443 ms at QPS=4). Our work removes a critical gap in the open tooling ecosystem and provides practitioners with a recipe for Gemma 4 Dense 31B deployment on the TPU infrastructure.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
