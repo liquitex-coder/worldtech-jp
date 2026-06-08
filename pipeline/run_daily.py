@@ -20,6 +20,7 @@ from pipeline.feeds import load_feeds
 from pipeline.governance import GovernanceLedger
 from pipeline.i18n import build_en_edition
 from pipeline.intel_pipeline import run_intel
+from pipeline.intel_render import render_intel
 from pipeline.llm_client import build_llm_translator
 from pipeline.quality import QualityAuditor
 from pipeline.render import build as render_index
@@ -84,6 +85,8 @@ def main(now: str = DEFAULT_NOW, out: Path = OUT) -> dict:
 
     intel = run_intel(now, DATA)                       # インテリジェンス基盤（A→B→C）→ data/intel.json
     print(f"[run_daily] intel briefs={intel['count']} engine={intel['engine'] or 'deterministic'} -> {intel['path']}")
+    intel_page = render_intel(DATA)                    # 可視化ページ（別ページ・index.html は不変）
+    print(f"[run_daily] intel page {intel_page['entities']} entities -> {intel_page['path']}")
 
     ana = apply_analytics()                            # アクセス解析タグ注入（トークン有時のみ）
     print(f"[run_daily] analytics enabled={ana['enabled']} pages_updated={ana['pages_updated']}")
