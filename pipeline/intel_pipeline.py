@@ -22,6 +22,13 @@ from pipeline.tasking import covered_channels, plan
 DATA = Path(__file__).resolve().parent.parent / "data"
 
 
+class _NullCollector:
+    """実ソース未登録時のフォールバック：何も収集しない（公開ページを空に保つ）。"""
+
+    def collect_facts(self, observed_at: str) -> list:
+        return []
+
+
 def _cleared(brief: IntelBrief, verifier: ComplianceVerifier) -> bool:
     """記事の全出典ホストが ToS 確認済みか（NFR-4）。出典なしは不可。"""
     if not brief.sources:
@@ -41,8 +48,14 @@ def _next_tasks(entity: str, facts: list, *, limit: int = 3) -> list[dict]:
 
 def run_intel(now: str, data_dir: Path = DATA, *, collector=None, reporter=None,
               verifier: ComplianceVerifier | None = None) -> dict:
-    """Fact 収集 → 起草 → ガバナンス選別 → intel.json 生成（決定論）。"""
-    collector = collector or build_intel_collector()[0]
+    """Fact 収集 → 起草 → ガバナンス選別 → intel.json 生成（決定論）。
+
+    実ソース（intel_sources.json）未登録の間は **空**にする（サンプルのデモ情報を公開しない）。
+    サンプルはテスト/デモ用で、明示的に collector を渡した時のみ使う。
+    """
+    if collector is None:
+        built, real = build_intel_collector()
+        collector = built if real else _NullCollector()   # 未登録時は公開せず空
     reporter = reporter or build_reporter()
     verifier = verifier or ComplianceVerifier()
 
