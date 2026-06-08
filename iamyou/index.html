@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>I am You — Your eyes, hands & feet in Japan</title>
+<meta name="description" content="A real human-agent platform. On-site inspection, purchase &amp; shipping proxy, visit filming — Japanese agents move for you. お金・時間・距離の非対称を解消するリアル人間エージェント。I can be your eyes in Japan.">
+<!-- 公開 表紙ミラー：会員/エージェントの実体（認証・見積・応募管理）は非公開（iamyou private / backend）。
+     本ページは非会員向け公開LP（FR-17 アクセス3層の「表紙のみ」）。会員系CTAは LINE相談へ導線。 -->
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/iamyou/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="I am You — Your eyes, hands & feet in Japan">
+<meta property="og:description" content="リアル人間エージェントPF。現地視察・購入/発送代行・訪問動画。I can be your eyes in Japan.">
+<meta property="og:url" content="https://liquitex-coder.github.io/worldtech-jp/iamyou/">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root{
+    --ink:#11131a; --ink-2:#3b414f; --muted:#7c8395; --line:#e7e9f0; --bg:#ffffff; --bg-soft:#f6f7fb;
+    --accent:#ff6a3d; --accent-d:#e6552a; --gold:#c9a24b; --eye:#3b82f6; --hand:#ef5da8; --foot:#22b07d;
+    --radius:14px; --maxw:1080px; --shadow:0 1px 3px rgba(17,19,26,.05),0 12px 32px rgba(17,19,26,.07);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Hiragino Sans","Yu Gothic","Noto Sans JP",system-ui,sans-serif;line-height:1.75;font-size:15.5px;}
+  a{color:inherit;text-decoration:none;} img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px;}
+  .eyebrow{font-size:11.5px;font-weight:800;letter-spacing:.22em;color:var(--accent);text-transform:uppercase;}
+  .topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line);}
+  .topbar .in{max-width:var(--maxw);margin:0 auto;padding:13px 22px;display:flex;align-items:center;gap:16px;}
+  .logo{display:flex;align-items:center;gap:9px;font-weight:900;font-size:20px;letter-spacing:-.02em;}
+  .logo .m{width:30px;height:30px;border-radius:9px;background:linear-gradient(140deg,var(--accent),#ff9a3d);color:#fff;display:grid;place-items:center;font-size:15px;font-weight:900;}
+  .nav{display:flex;gap:20px;margin-left:12px;}
+  .nav a{font-size:13.5px;font-weight:600;color:var(--ink-2);}
+  .nav a:hover{color:var(--ink);}
+  .spacer{flex:1;}
+  .lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+  .lang button{border:0;background:#fff;font:inherit;font-size:12px;font-weight:800;color:var(--muted);padding:6px 11px;cursor:pointer;}
+  .lang button.on{background:var(--ink);color:#fff;}
+  .btn{display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:13.5px;padding:9px 16px;border-radius:999px;cursor:pointer;border:1px solid var(--line);background:#fff;color:var(--ink);}
+  .btn:hover{border-color:var(--ink);}
+  .btn.primary{background:var(--ink);color:#fff;border-color:var(--ink);}
+  .btn.primary:hover{background:var(--accent);border-color:var(--accent);}
+  .btn.accent{background:var(--accent);color:#fff;border-color:var(--accent);}
+  .btn.accent:hover{background:var(--accent-d);border-color:var(--accent-d);}
+  @media(max-width:820px){ .nav{display:none;} }
+  .hero{position:relative;overflow:hidden;background:radial-gradient(120% 90% at 80% -10%,#1d2440 0%,#0e1016 55%);color:#fff;}
+  .hero .in{max-width:var(--maxw);margin:0 auto;padding:74px 22px 70px;}
+  .hero h1{font-size:clamp(30px,6vw,46px);line-height:1.12;letter-spacing:-.03em;margin:14px 0 10px;font-weight:900;}
+  .hero h1 .acc{color:var(--accent);}
+  .hero .lead{font-size:17px;color:#c9cee0;max-width:640px;margin:0 0 12px;}
+  .hero .sub{font-size:14px;color:#9aa2bd;max-width:620px;margin:0 0 26px;}
+  .hero .cta{display:flex;gap:12px;flex-wrap:wrap;}
+  .hero .note{margin-top:18px;font-size:12px;color:#8b93b0;display:flex;align-items:center;gap:7px;}
+  .hero .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);flex-shrink:0;}
+  section{padding:64px 0;}
+  .shead{text-align:center;max-width:660px;margin:0 auto 38px;}
+  .shead h2{font-size:28px;letter-spacing:-.02em;margin:8px 0 8px;font-weight:800;}
+  .shead p{color:var(--muted);font-size:14.5px;margin:0;}
+  .three{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .vcard{border:1px solid var(--line);border-radius:var(--radius);padding:26px 22px;background:#fff;transition:transform .15s,box-shadow .15s;}
+  .vcard:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
+  .vcard .ic{width:54px;height:54px;border-radius:14px;display:grid;place-items:center;font-size:26px;color:#fff;margin-bottom:14px;}
+  .vcard h3{font-size:19px;margin:0 0 4px;font-weight:800;} .vcard .en{font-size:11px;font-weight:800;letter-spacing:.14em;color:var(--muted);}
+  .vcard p{font-size:13.5px;color:var(--ink-2);margin:8px 0 0;}
+  .svc{background:var(--bg-soft);}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .scard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;}
+  .scard .ph{font-size:10.5px;font-weight:800;letter-spacing:.06em;color:var(--accent);}
+  .scard h3{font-size:16.5px;margin:6px 0 6px;font-weight:800;}
+  .scard p{font-size:13px;color:var(--ink-2);margin:0 0 14px;}
+  .scard .price{margin-top:auto;font-size:20px;font-weight:900;letter-spacing:-.02em;}
+  .svc-more{text-align:center;margin-top:26px;font-size:13px;color:var(--muted);}
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .tier{border:1px solid var(--line);border-radius:var(--radius);padding:24px;background:#fff;text-align:center;}
+  .tier .t{font-size:13px;font-weight:800;color:var(--muted);letter-spacing:.04em;}
+  .tier h3{font-size:18px;margin:6px 0 8px;}
+  .tier p{font-size:13px;color:var(--ink-2);min-height:40px;}
+  .tier.hot{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent);}
+  .agent{background:linear-gradient(160deg,#11131a,#23284a);color:#fff;}
+  .agent .grid{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;}
+  .agent h2{font-size:28px;font-weight:800;letter-spacing:-.02em;margin:8px 0 12px;}
+  .agent p{color:#c2c8de;font-size:14.5px;}
+  .points{display:flex;gap:10px;margin:18px 0;flex-wrap:wrap;}
+  .pt{border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:6px 13px;font-size:12px;font-weight:700;}
+  .pt.b{color:#cd7f32;border-color:rgba(205,127,50,.5);} .pt.s{color:#cdd2dc;border-color:rgba(205,210,220,.5);} .pt.g{color:var(--gold);border-color:rgba(201,162,75,.6);}
+  .pt.d{color:#67e8f9;border-color:rgba(103,232,249,.5);} .pt.p{color:#a5b4fc;border-color:rgba(165,180,252,.6);}
+  .protect{margin-top:16px;font-size:12.5px;color:#aeb6d6;border-left:3px solid var(--accent);padding-left:12px;}
+  .reg{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:22px;}
+  .reg h3{margin:0 0 12px;font-size:16px;}
+  .reg label{display:block;font-size:12px;font-weight:700;color:#c2c8de;margin:12px 0 5px;}
+  .reg input,.reg select{width:100%;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);color:#fff;border-radius:9px;padding:10px 12px;font:inherit;font-size:14px;outline:none;}
+  .reg input::placeholder{color:#7e87a6;}
+  .reg .btn.accent{width:100%;justify-content:center;margin-top:14px;}
+  .reg .hint{font-size:10.5px;color:#8b93b0;margin-top:8px;text-align:center;}
+  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .rev{border:1px solid var(--line);border-radius:var(--radius);padding:22px;}
+  .rev h3{font-size:15px;margin:0 0 6px;} .rev p{font-size:13px;color:var(--ink-2);margin:0;}
+  .legal{background:var(--bg-soft);}
+  .legal .box{border:1px dashed #c9cdd8;border-radius:var(--radius);padding:20px 22px;font-size:12.5px;color:var(--ink-2);}
+  .legal b{color:var(--ink);}
+  .footer{background:var(--ink);color:#aeb4c6;padding:34px 0 26px;}
+  .footer .in{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center;}
+  .footer .soc a{color:#cdd2e0;font-size:13px;margin-left:14px;}
+  .foot-note{font-size:11.5px;color:#6f7795;margin-top:16px;text-align:center;}
+  .modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;background:rgba(8,9,14,.6);padding:20px;}
+  .modal.show{display:flex;}
+  .modal .card{background:#fff;border-radius:16px;max-width:380px;width:100%;padding:26px;text-align:center;}
+  .modal .card h3{margin:0 0 8px;font-size:19px;} .modal .card p{color:var(--ink-2);font-size:13.5px;margin:0 0 16px;}
+  .modal .card .small{font-size:11.5px;color:var(--muted);} .modal .x{margin-top:14px;}
+  @media(max-width:760px){ .three,.svc-grid,.tiers,.rev-grid{grid-template-columns:1fr;} .agent .grid{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="in">
+    <a class="logo" href="#"><span class="m">IY</span>I am You</a>
+    <nav class="nav">
+      <a href="#how" data-i18n="nav.how"></a><a href="#services" data-i18n="nav.services"></a>
+      <a href="#agent" data-i18n="nav.agent"></a><a href="#pricing" data-i18n="nav.pricing"></a>
+    </nav>
+    <span class="spacer"></span>
+    <div class="lang"><button id="lang-ja" onclick="setLang('ja')">日本語</button><button id="lang-en" onclick="setLang('en')">EN</button></div>
+    <a class="btn" href="#" onclick="openModal('line');return false;" data-i18n="btn.login"></a>
+    <a class="btn primary" href="#" onclick="openModal('line');return false;" data-i18n="btn.signup"></a>
+  </div>
+</header>
+
+<section class="hero" style="padding:0;">
+  <div class="in">
+    <div class="eyebrow" data-i18n="hero.eyebrow"></div>
+    <h1 data-i18n="hero.h1"></h1>
+    <p class="lead" data-i18n="hero.lead"></p>
+    <p class="sub" data-i18n="hero.sub"></p>
+    <div class="cta">
+      <a class="btn accent" href="#" onclick="openModal('line');return false;" data-i18n="hero.cta1"></a>
+      <a class="btn" style="background:#1f2740;color:#fff;border-color:#2c365a;" href="#" onclick="openModal('line');return false;" data-i18n="hero.cta2"></a>
+    </div>
+    <div class="note"><span class="dot"></span><span data-i18n="hero.note"></span></div>
+  </div>
+</section>
+
+<section id="how" class="wrap">
+  <div class="shead"><div class="eyebrow">CORE CONCEPT</div><h2 data-i18n="how.h2"></h2><p data-i18n="how.p"></p></div>
+  <div class="three">
+    <div class="vcard"><div class="ic" style="background:var(--eye)">👁</div><div class="en">EYES</div><h3 data-i18n="v.eye.h"></h3><p data-i18n="v.eye.p"></p></div>
+    <div class="vcard"><div class="ic" style="background:var(--hand)">✋</div><div class="en">HANDS</div><h3 data-i18n="v.hand.h"></h3><p data-i18n="v.hand.p"></p></div>
+    <div class="vcard"><div class="ic" style="background:var(--foot)">🦶</div><div class="en">FEET</div><h3 data-i18n="v.foot.h"></h3><p data-i18n="v.foot.p"></p></div>
+  </div>
+</section>
+
+<section id="services" class="svc">
+  <div class="wrap">
+    <div class="shead"><div class="eyebrow">SERVICES · PHASE 1</div><h2 data-i18n="svc.h2"></h2><p data-i18n="svc.p"></p></div>
+    <div class="svc-grid">
+      <div class="scard"><span class="ph">PHASE 1</span><h3 data-i18n="svc.1.h"></h3><p data-i18n="svc.1.p"></p><div class="price">$200〜</div></div>
+      <div class="scard"><span class="ph">PHASE 1</span><h3 data-i18n="svc.2.h"></h3><p data-i18n="svc.2.p"></p><div class="price" data-i18n="svc.2.price"></div></div>
+      <div class="scard"><span class="ph">PHASE 1</span><h3 data-i18n="svc.3.h"></h3><p data-i18n="svc.3.p"></p><div class="price">$150〜</div></div>
+    </div>
+    <div class="svc-more" data-i18n="svc.more"></div>
+  </div>
+</section>
+
+<section id="member" class="wrap">
+  <div class="shead"><div class="eyebrow">ACCESS</div><h2 data-i18n="mem.h2"></h2><p data-i18n="mem.p"></p></div>
+  <div class="tiers">
+    <div class="tier"><div class="t" data-i18n="mem.t1.t"></div><h3 data-i18n="mem.t1.h"></h3><p data-i18n="mem.t1.p"></p><a class="btn" href="#services" data-i18n="mem.t1.b"></a></div>
+    <div class="tier hot"><div class="t" data-i18n="mem.t2.t"></div><h3 data-i18n="mem.t2.h"></h3><p data-i18n="mem.t2.p"></p><a class="btn accent" href="#" onclick="openModal('line');return false;" data-i18n="mem.t2.b"></a></div>
+    <div class="tier"><div class="t" data-i18n="mem.t3.t"></div><h3 data-i18n="mem.t3.h"></h3><p data-i18n="mem.t3.p"></p><a class="btn" href="#agent" data-i18n="mem.t3.b"></a></div>
+  </div>
+</section>
+
+<section id="agent" class="agent">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <div class="eyebrow">BECOME AN AGENT</div>
+        <h2 data-i18n="ag.h2"></h2>
+        <p data-i18n="ag.p"></p>
+        <div class="points"><span class="pt b" data-i18n="ag.b"></span><span class="pt s" data-i18n="ag.s"></span><span class="pt g" data-i18n="ag.g"></span><span class="pt d" data-i18n="ag.d"></span><span class="pt p" data-i18n="ag.p"></span></div>
+        <div class="protect" data-i18n="ag.protect"></div>
+      </div>
+      <form class="reg" onsubmit="return fakeSubmit(event);">
+        <h3 data-i18n="reg.h"></h3>
+        <label data-i18n="reg.name"></label><input id="rg-name" type="text" data-i18n-ph="reg.name.ph">
+        <label data-i18n="reg.area"></label><input id="rg-area" type="text" data-i18n-ph="reg.area.ph">
+        <label data-i18n="reg.role"></label>
+        <select id="rg-role"><option value="eyes" data-i18n="reg.role.1"></option><option value="hands" data-i18n="reg.role.2"></option><option value="feet" data-i18n="reg.role.3"></option><option value="specialist" data-i18n="reg.role.4"></option></select>
+        <label data-i18n="reg.contact"></label><input id="rg-contact" type="text" data-i18n-ph="reg.contact.ph">
+        <button class="btn accent" type="submit" data-i18n="reg.submit"></button>
+        <div class="hint" data-i18n="reg.hint"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" class="wrap">
+  <div class="shead"><div class="eyebrow">HOW IT WORKS</div><h2 data-i18n="pr.h2"></h2><p data-i18n="pr.p"></p></div>
+  <div class="rev-grid">
+    <div class="rev"><h3 data-i18n="pr.1.h"></h3><p data-i18n="pr.1.p"></p></div>
+    <div class="rev"><h3 data-i18n="pr.2.h"></h3><p data-i18n="pr.2.p"></p></div>
+    <div class="rev"><h3 data-i18n="pr.3.h"></h3><p data-i18n="pr.3.p"></p></div>
+  </div>
+</section>
+
+<section class="legal"><div class="wrap"><div class="box" data-i18n="legal"></div></div></section>
+
+<footer class="footer">
+  <div class="wrap in">
+    <a class="logo" style="color:#fff;" href="#"><span class="m">IY</span>I am You</a>
+    <div class="soc"><a href="#" onclick="openModal('line');return false;">LINE</a><a href="#">Instagram</a><a href="#" onclick="openModal('line');return false;" data-i18n="btn.signup"></a></div>
+  </div>
+  <div class="foot-note" data-i18n="foot"></div>
+</footer>
+
+<div class="modal" id="modal"><div class="card"><h3 id="m-title"></h3><p id="m-body"></p><div class="small" id="m-small"></div><button class="btn x" onclick="closeModal()" data-i18n="modal.close"></button></div></div>
+
+<script>
+const I18N={
+  ja:{
+    "nav.how":"3つの価値","nav.services":"サービス","nav.agent":"エージェント募集","nav.pricing":"料金",
+    "btn.login":"ログイン","btn.signup":"会員登録",
+    "hero.eyebrow":"REAL HUMAN AGENTS · 目・手・足",
+    "hero.h1":'I can be your <span class="acc">eyes</span> in Japan.<br>あなたの<span class="acc">目・手・足</span>が、世界中で動く。',
+    "hero.lead":"お金・時間・距離の非対称を解消する、リアル人間エージェントプラットフォーム。AI と人間が分身となって、行けない場所・できない手続きを代行します。",
+    "hero.sub":"現地視察・写真レポート／購入・国際発送代行／訪問動画撮影 — 日本のエージェントが、あなたの代わりに動きます。",
+    "hero.cta1":"会員登録して依頼する →","hero.cta2":"LINEで相談",
+    "hero.note":"Phase 1 は受付上限あり・ウェイトリスト制で品質を担保しています。",
+    "how.h2":"分身が、あなたの代わりに動く","how.p":"AI と現地の人間エージェントが、3つの役割であなたを世界とつなぎます。",
+    "v.eye.h":"目 — 見る","v.eye.p":"現地視察・確認・写真レポート・情報収集。物件確認や現地の「本当のところ」を、あなたの目の代わりに。",
+    "v.hand.h":"手 — 動かす","v.hand.p":"購入代行・手続き・制作の実行。日本限定品の購入から国際発送、面倒な手続きまで代行します。",
+    "v.foot.h":"足 — 移動する","v.foot.p":"現地訪問・聖地巡礼・場所へのアクセス代行。行きたいのに行けない場所へ、代わりに足を運びます。",
+    "svc.h2":"いま頼めること","svc.p":"日本国内・ひろしが直接対応。想定単価の目安です（内容により変動）。",
+    "svc.1.h":"現地視察レポート","svc.1.p":"写真50枚＋コメント、物件・店舗・現地状況の確認。",
+    "svc.2.h":"購入・発送代行","svc.2.p":"日本限定品の購入、検品、国際発送まで。","svc.2.price":"商品代 + $50〜",
+    "svc.3.h":"訪問動画撮影","svc.3.p":"聖地巡礼・特定スポット訪問を動画で。",
+    "svc.more":"旅行者スポット案内（$30〜/h）・現地住民ガイド（$50〜/h）・通訳/交渉/法務などの専門エージェントは Phase 2 / 3 で展開予定。",
+    "mem.h2":"会員になると、できること","mem.p":"このページは概要です。具体的なご提案・お見積り・ご依頼は会員ログイン後にご利用いただけます。",
+    "mem.t1.t":"非会員（このページ）","mem.t1.h":"まず知る","mem.t1.p":"サービスの概要・価値・料金の目安を確認できます。","mem.t1.b":"サービスを見る",
+    "mem.t2.t":"会員（ログイン）","mem.t2.h":"依頼する","mem.t2.p":"具体的なサービス提案・お見積り・ご依頼・進捗確認。","mem.t2.b":"会員登録 / ログイン",
+    "mem.t3.t":"エージェント希望","mem.t3.h":"稼ぐ","mem.t3.p":"あなたの「目・手・足」を提供して報酬を得る。","mem.t3.b":"登録フォームへ",
+    "ag.h2":"あなたの日常が、誰かの「目・手・足」になる","ag.p":"旅行中のスキマ時間や、住んでいる街の知識をマネタイズ。タスク完了とユーザー評価でポイントが貯まり、ランクが上がります。",
+    "ag.b":"Bronze 基本時給","ag.s":"Silver +20% 指名可","ag.g":"Gold +50% 高額案件優先","ag.d":"Diamond +80% 時給¥12,000+","ag.p":"Platinum +120% 時給¥15,000+",
+    "ag.protect":"🛡 エージェント保護：ユーザーの無理難題・理不尽クレーム・物理的に不可能な要求は減点対象外。エージェントを守る設計が、品質担保に直結します。",
+    "reg.h":"エージェント登録（応募）","reg.name":"お名前 / ニックネーム","reg.name.ph":"例：Hiroshi",
+    "reg.area":"活動エリア","reg.area.ph":"例：東京 / 関西 / オンライン","reg.role":"提供できる役割",
+    "reg.role.1":"目（視察・撮影）","reg.role.2":"手（購入・手続き代行）","reg.role.3":"足（訪問・案内）","reg.role.4":"専門（通訳・交渉・法務 等）",
+    "reg.contact":"連絡先（メール / LINE ID）","reg.contact.ph":"you@example.com","reg.submit":"応募する",
+    "reg.hint":"※ 雛形のため送信は無効です（受付・審査は将来のバックエンドで対応）。",
+    "pr.h2":"料金のしくみ","pr.p":"AI エージェント機能は月額定額。実際に人が動く案件は別途、実費＋手数料で。",
+    "pr.1.h":"基本サブスク","pr.1.p":"月額定額。AI エージェント機能込み（相談・下調べ・マッチング）。",
+    "pr.2.h":"アクション課金","pr.2.p":"実動案件ごとに別途（移動・購入・撮影などの実費・稼働）。",
+    "pr.3.h":"プラットフォーム手数料","pr.3.p":"エージェント報酬から一定率。安心・品質担保の運営に充当。",
+    "legal":"<b>ご利用にあたって（重要）</b>：案件の内容により、<b>古物商許可・旅行業法・資金決済法</b>等の適用可能性があります。案件類型ごとに適法性を確認のうえ対応します。違法・危険・他者の権利を侵害する依頼はお受けできません。撮影・購入対象の権利やプライバシーにも配慮します。",
+    "foot":"© 2026 I am You. リアル人間エージェントプラットフォーム（MVP・試作）。掲載の料金・内容はサンプルです。",
+    "modal.close":"閉じる"
+  },
+  en:{
+    "nav.how":"The 3 Roles","nav.services":"Services","nav.agent":"Become an Agent","nav.pricing":"Pricing",
+    "btn.login":"Log in","btn.signup":"Sign up",
+    "hero.eyebrow":"REAL HUMAN AGENTS · EYES · HANDS · FEET",
+    "hero.h1":'I can be your <span class="acc">eyes</span> in Japan.<br>Your <span class="acc">eyes, hands &amp; feet</span> — moving across the world.',
+    "hero.lead":"A real human-agent platform that closes the gap of money, time and distance. AI and real people become your avatar — doing what you can’t reach or handle yourself.",
+    "hero.sub":"On-site inspection &amp; photo reports / purchase &amp; international shipping proxy / visit video filming — Japanese agents move for you.",
+    "hero.cta1":"Sign up & request →","hero.cta2":"Chat on LINE",
+    "hero.note":"Phase 1 has limited capacity — a waitlist keeps quality high.",
+    "how.h2":"An avatar that moves for you","how.p":"AI and local human agents connect you to the world in three roles.",
+    "v.eye.h":"Eyes — see","v.eye.p":"On-site inspection, verification, photo reports, research. See the “real” of a place through our eyes.",
+    "v.hand.h":"Hands — act","v.hand.p":"Purchase proxy, paperwork, making things happen — from Japan-only goods to international shipping.",
+    "v.foot.h":"Feet — go","v.foot.p":"Site visits, pilgrimages, access by proxy. We go to the places you want to reach but can’t.",
+    "svc.h2":"What you can request now","svc.p":"Handled directly by Hiroshi in Japan. Prices are estimates (vary by scope).",
+    "svc.1.h":"On-site inspection report","svc.1.p":"50 photos + comments; check a property, shop or local situation.",
+    "svc.2.h":"Purchase & shipping proxy","svc.2.p":"Buy Japan-only items, inspect, and ship internationally.","svc.2.price":"item + $50〜",
+    "svc.3.h":"Visit video filming","svc.3.p":"Film a pilgrimage or a specific spot for you.",
+    "svc.more":"Traveler spot guide ($30/h), local resident guide ($50/h) and specialist agents (interpreting / negotiation / legal) come in Phase 2 / 3.",
+    "mem.h2":"What members can do","mem.p":"This page is an overview. Concrete proposals, quotes and requests are available after you log in.",
+    "mem.t1.t":"Guest (this page)","mem.t1.h":"Discover","mem.t1.p":"See the overview, value and price estimates.","mem.t1.b":"See services",
+    "mem.t2.t":"Member (login)","mem.t2.h":"Request","mem.t2.p":"Concrete proposals, quotes, requests and progress.","mem.t2.b":"Sign up / Log in",
+    "mem.t3.t":"Agent applicant","mem.t3.h":"Earn","mem.t3.p":"Offer your eyes, hands & feet and get paid.","mem.t3.b":"Go to the form",
+    "ag.h2":"Your everyday becomes someone’s eyes, hands & feet","ag.p":"Monetize your spare travel time or your local knowledge. Completed tasks and ratings earn points and raise your rank.",
+    "ag.b":"Bronze base rate","ag.s":"Silver +20% nominated","ag.g":"Gold +50% premium first","ag.d":"Diamond +80% ¥12,000+/h","ag.p":"Platinum +120% ¥15,000+/h",
+    "ag.protect":"🛡 Agent protection: unreasonable demands, unfair complaints and physically impossible requests are NOT counted against you. Protecting agents is what guarantees quality.",
+    "reg.h":"Agent registration","reg.name":"Name / nickname","reg.name.ph":"e.g. Hiroshi",
+    "reg.area":"Area","reg.area.ph":"e.g. Tokyo / Kansai / Online","reg.role":"Roles you can offer",
+    "reg.role.1":"Eyes (inspect / film)","reg.role.2":"Hands (purchase / paperwork)","reg.role.3":"Feet (visit / guide)","reg.role.4":"Specialist (interpret / negotiate / legal)",
+    "reg.contact":"Contact (email / LINE ID)","reg.contact.ph":"you@example.com","reg.submit":"Apply",
+    "reg.hint":"* Demo only — submission is disabled (intake & review come with the backend).",
+    "pr.h2":"How pricing works","pr.p":"AI agent features are a flat monthly fee. Real-world tasks are billed separately at cost + fee.",
+    "pr.1.h":"Base subscription","pr.1.p":"Flat monthly. Includes AI agent features (consult, research, matching).",
+    "pr.2.h":"Action billing","pr.2.p":"Per active task (travel, purchase, filming, etc. — cost & labor).",
+    "pr.3.h":"Platform fee","pr.3.p":"A set rate from agent payouts, funding safe, quality operations.",
+    "legal":"<b>Before you use (important)</b>: depending on the task, regulations such as Japan’s <b>antiques dealer license, Travel Agency Act and Payment Services Act</b> may apply. We check legality per task type. We decline illegal, dangerous or rights-infringing requests, and respect the rights and privacy of subjects.",
+    "foot":"© 2026 I am You. Real human-agent platform (MVP prototype). Prices and content are samples.",
+    "modal.close":"Close"
+  }
+};
+var LANG='ja';
+function applyI18n(){
+  document.documentElement.lang=LANG;
+  document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.getAttribute('data-i18n');if(I18N[LANG][k]!=null)el.innerHTML=I18N[LANG][k];});
+  document.querySelectorAll('[data-i18n-ph]').forEach(function(el){var k=el.getAttribute('data-i18n-ph');if(I18N[LANG][k]!=null)el.setAttribute('placeholder',I18N[LANG][k]);});
+  document.getElementById('lang-ja').classList.toggle('on',LANG==='ja');
+  document.getElementById('lang-en').classList.toggle('on',LANG==='en');
+}
+function setLang(l){ LANG=l; applyI18n(); }
+applyI18n();
+
+const MODAL={
+  ja:{login:['ログイン','会員ログインは現在準備中です。','認証・会員エリアは将来のバックエンドで提供予定です。'],
+      signup:['会員登録','具体的なご提案・お見積り・ご依頼は会員エリアで提供予定です。','現在はMVP（表紙）のため、登録は受付前です。LINEからのご相談を歓迎します。'],
+      line:['LINEで相談','MVP段階では LINE での個別相談から承ります。','正式な LINE 公式アカウントは開設準備中です。'],
+      applied:['ご応募ありがとうございます','応募を受け付けました。','審査ののち、ご連絡します。'],
+      invalid:['入力をご確認ください','お名前・活動エリア・連絡先・役割をご確認ください。','検証を通った応募のみ受理します（捏造しません）。'],
+      offline:['送信は準備中です','バックエンド未接続のため、現在は受付前です。','LINE からのご相談を歓迎します。']},
+  en:{login:['Log in','Member login is being prepared.','Auth and the member area will arrive with the backend.'],
+      signup:['Sign up','Concrete proposals, quotes and requests will live in the member area.','This is an MVP cover page; signup is not open yet. We welcome inquiries via LINE.'],
+      line:['Chat on LINE','At MVP stage we take inquiries via LINE.','An official LINE account is being set up.'],
+      applied:['Thanks for applying','Your application was received.','We will contact you after review.'],
+      invalid:['Please check your input','Check name, area, contact and role.','Only validated applications are accepted (no fabrication).'],
+      offline:['Submission not open yet','The backend is not connected, so intake is not open.','You are welcome to reach us on LINE.']}
+};
+function openModal(kind){
+  var m=MODAL[LANG][kind]||MODAL[LANG].signup;
+  document.getElementById('m-title').textContent=m[0];
+  document.getElementById('m-body').textContent=m[1];
+  document.getElementById('m-small').textContent=m[2];
+  document.getElementById('modal').classList.add('show');
+}
+function closeModal(){ document.getElementById('modal').classList.remove('show'); }
+document.getElementById('modal').addEventListener('click',function(e){ if(e.target===this) closeModal(); });
+function showMsg(a){ document.getElementById('m-title').textContent=a[0]; document.getElementById('m-body').textContent=a[1];
+  document.getElementById('m-small').textContent=a[2]; document.getElementById('modal').classList.add('show'); }
+function val(id){ var e=document.getElementById(id); return e?e.value:''; }
+function fakeSubmit(e){ e.preventDefault();
+  var data={name:val('rg-name'),area:val('rg-area'),role:val('rg-role'),contact:val('rg-contact')};
+  fetch('/api/agent/apply',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
+    .then(function(r){ return r.json().then(function(j){ return {ok:r.ok,j:j}; }); })
+    .then(function(res){ showMsg((res.ok&&res.j&&res.j.accepted)?MODAL[LANG].applied:MODAL[LANG].invalid); })
+    .catch(function(){ showMsg(MODAL[LANG].offline); });   // 静的（API無し）＝受付前を正直に表示
+  return false; }
+</script>
+</body>
+</html>

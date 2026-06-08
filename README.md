@@ -8,7 +8,7 @@ This repository hosts two products to keep management in one place:
 | Path | Product | Status |
 |---|---|---|
 | repo root (`index.html`, `pipeline/`, ...) | **NewsMatome** — collect world tech/science news, Japanese-ize with source attribution, publish every 07:00 JST | working prototype |
-| `iamyou/` | **I am You** — (service concept TBD) | reserved / not started |
+| `iamyou/` | **I am You** — real human-agent service. Public landing page only (表紙); member/agent internals stay in the private repo/backend | public LP live |
 
 ## NewsMatome (root)
 
@@ -42,5 +42,11 @@ original source always linked.
 
 ## I am You (`iamyou/`)
 
-Reserved for a separate service kept in the same repo to avoid multi-repo overhead.
-Concept to be defined.
+**Public landing page (表紙)** for the *I am You* real-human-agent service — "I can be your
+eyes in Japan" (現地視察・購入/発送代行・訪問動画). Served on Pages at `/iamyou/`.
+
+This is the **non-member public layer only** (FR-17 access tiers): concept, values
+(eyes/hands/feet), Phase-1 menu and indicative prices, agent-protection policy, legal
+notice. The **member area and agent application internals** (auth, quotes, application
+management — concrete pricing/strategy) live in the **private `iamyou` repo / backend**
+and are intentionally **not published here**. Member CTAs route to LINE intake (MVP).
