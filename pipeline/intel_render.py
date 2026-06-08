@@ -1,7 +1,8 @@
 """インテリジェンス可視化ページ生成：data/intel.json → intel.html（公開・別ページ）。
 
-既存ニュース面（index.html）には触れず、独立した静的ページを生成する。各 entity の観測を
+既存ニュース面（index.html）には記事を加えず、独立した静的ページを生成する。各 entity の観測を
 **確度ラベル＋出典リンク＋次タスク**で表示する。`data/graph.json` があれば関係グラフ節も描く。
+またニュース面のトップバーに intel ページへの導線を冪等注入する。
 
 非捏造（INV-R2）：intel.json に載っているのは publishable かつ出典つきの項目のみ。本ページは
 それをそのまま描くだけで、新たな主張は作らない。確度はコード算定値をラベル表示する。
@@ -144,8 +145,38 @@ def build_page(payload: dict, graph: dict | None = None) -> str:
 """
 
 
+# ニュース面トップバーから intel.html への導線。ビルド時に index.html へ冪等注入する。
+NAV_INTEL = (
+    '<a class="nav-intel" href="intel.html" title="公開情報から積み上げた観測（出典・確度つき）" '
+    'style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;'
+    'color:#0ea5e9;text-decoration:none;margin-right:10px">📊 インテリジェンス</a>'
+)
+
+
+def inject_intel_nav(text: str) -> str:
+    """トップバーの言語切替の直前に intel 導線を冪等挿入（既にあれば／アンカー無しは無変更）。"""
+    if "nav-intel" in text:
+        return text
+    anchor = '<div class="lang-select">'
+    if anchor not in text:
+        return text
+    return text.replace(anchor, f'{NAV_INTEL}\n    {anchor}', 1)
+
+
+def _ensure_nav_link(index_path: Path) -> bool:
+    """index.html に intel 導線を冪等注入（変更したら True）。"""
+    if not index_path.exists():
+        return False
+    text = index_path.read_text(encoding="utf-8")
+    injected = inject_intel_nav(text)
+    if injected != text:
+        index_path.write_text(injected, encoding="utf-8")
+        return True
+    return False
+
+
 def render_intel(data_dir: Path = DATA, out: Path = INTEL_HTML) -> dict:
-    """data/intel.json（＋あれば graph.json）から intel.html を生成する。"""
+    """data/intel.json（＋あれば graph.json）から intel.html を生成し、ニュース面に導線を注入する。"""
     intel_path = data_dir / "intel.json"
     if not intel_path.exists():
         payload = {"generated_at": "", "count": 0, "engine": "", "entities": []}
@@ -154,4 +185,5 @@ def render_intel(data_dir: Path = DATA, out: Path = INTEL_HTML) -> dict:
     graph_path = data_dir / "graph.json"
     graph = json.loads(graph_path.read_text(encoding="utf-8")) if graph_path.exists() else None
     out.write_text(build_page(payload, graph), encoding="utf-8")
-    return {"entities": len(payload.get("entities", [])), "path": str(out)}
+    nav = _ensure_nav_link(out.parent / "index.html")   # 同階層の index.html に導線（冪等・テスト安全）
+    return {"entities": len(payload.get("entities", [])), "path": str(out), "nav_injected": nav}
