@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SNN-MLIR: An MLIR Dialect for Compiling Neuromorphic SNNs from NIR to Bare-Metal C — NewsMatome (EN)</title>
+<meta name="description" content="SNN-MLIR: An MLIR Dialect for Compiling Neuromorphic SNNs from NIR to Bare-Metal C — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/fb03e9f5516e.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/fb03e9f5516e.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/fb03e9f5516e.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/fb03e9f5516e.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SNN-MLIR: An MLIR Dialect for Compiling Neuromorphic SNNs from NIR to Bare-Metal C">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"SNN-MLIR: An MLIR Dialect for Compiling Neuromorphic SNNs from NIR to Bare-Metal C",
+ "inLanguage":"en","datePublished":"2026-06-10T07:00:00+09:00","dateModified":"2026-06-10T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2606.09213","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/fb03e9f5516e.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/fb03e9f5516e.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>SNN-MLIR: An MLIR Dialect for Compiling Neuromorphic SNNs from NIR to Bare-Metal C</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/06/10</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/fb03e9f5516e.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.09213" rel="nofollow noopener">https://arxiv.org/abs/2606.09213</a></span></div>
+  <div class="article-body"><p>arXiv:2606.09213v1 Announce Type: cross 
+Abstract: Spiking neural networks (SNNs) are increasingly trained in a wide range of frameworks (SnnTorch, Lava, Norse, and others) each with its own model format. The Neuromorphic Intermediate Representation (NIR) addresses this fragmentation by providing a common, framework-independent format for exchanging trained SNN models. NIR solves the exchange problem, but it stops there. It provides a description of a network, not a path to running one. Each backend is still left to implement deployment on its own, with no shared, transformable compiler representation in between. This paper presents snn-mlir, an outof-tree MLIR dialect for SNNs together with a NIR-MLIR-C compilation bridge. The dialect provides a small set of typepolymorphic operations that work identically on floating-point (f32/f64) and quantized data, so a single intermediate representation serves both simulation and hardware-oriented deployment. A Python front end reads any NIR file and emits dialect IR, automatically inserting rescaling operations to keep quantization scales consistent across layers. A reference lowering pass converts the dialect to standard linalg and arith operations, from which the toolchain produces self-contained, dependency free C11 code that compiles and runs on any C-capable CPU or embedded target. We evaluate numerical fidelity against reference outputs, portability across CPU targets, and the cost of quantization. The current scope is feedforward, fully-connected networks with a CPU backend. snn-mlir is released as open source under the Apache-2.0 license with LLVM-exception and it is already available on Github.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

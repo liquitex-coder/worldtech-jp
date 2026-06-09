@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fast LLM-Based Semantic Filtering: From a Unified Framework to an Adaptive Two-Phase Method — NewsMatome (EN)</title>
+<meta name="description" content="Fast LLM-Based Semantic Filtering: From a Unified Framework to an Adaptive Two-Phase Method — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/2da9d1aa902c.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/2da9d1aa902c.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/2da9d1aa902c.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/2da9d1aa902c.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fast LLM-Based Semantic Filtering: From a Unified Framework to an Adaptive Two-Phase Method">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Fast LLM-Based Semantic Filtering: From a Unified Framework to an Adaptive Two-Phase Method",
+ "inLanguage":"en","datePublished":"2026-06-10T07:00:00+09:00","dateModified":"2026-06-10T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2606.08090","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/2da9d1aa902c.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/2da9d1aa902c.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Fast LLM-Based Semantic Filtering: From a Unified Framework to an Adaptive Two-Phase Method</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/06/10</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/2da9d1aa902c.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.08090" rel="nofollow noopener">https://arxiv.org/abs/2606.08090</a></span></div>
+  <div class="article-body"><p>arXiv:2606.08090v1 Announce Type: cross 
+Abstract: Evaluating a natural-language yes/no predicate over a document corpus under an accuracy target - the semantic filter - is a cornerstone of LLM-based data processing. Calling the LLM on every document (the oracle) is prohibitive, so cascades pair the oracle with a fast proxy. As deployed today, they leave four limitations on the table. (1) Each cascade family - model-free clustering, prebuilt small-LLM proxies, online-trained proxies - commits to a single representation and pipeline, and wins on only a narrow query regime. (2) The strongest online proxy invests in a custom training scheme on a bi-encoder over dense embeddings, missing the token-level evidence richer predicates require. (3) The proxy is trained against binary yes/no labels, wasting the LLM&#x27;s per-document confidence at the boundary documents it most needs to learn. (4) Existing calibrations add a uniform safety margin, conflating genuine proxy uncertainty with small-sample noise and inflating cascade cost.
+  We address these by (1) composing families adaptively - model-free clustering first, online proxy only when needed, with oracle calls shared across phases; (2) replacing the cosine bi-encoder with a hybrid of off-the-shelf token-aware models; (3) training the proxy with the oracle&#x27;s per-document confidence as a soft label; and (4) a calibration that adds the safety margin only where the labeled sample is sparse. We are also the first to use the oracle&#x27;s per-document confidence for three purposes: a query-level difficulty compass, a lower bound on the minimum oracle calls any proxy-based cascade can make, and the proxy&#x27;s soft training label.
+  At a 90% accuracy target on three 10K-document corpora, our methods are 1.6-2.0x faster than the best prior method per corpus and meet the target on 95% of queries; the BER-derived lower bound indicates a further ~4-20x of headroom for future work.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

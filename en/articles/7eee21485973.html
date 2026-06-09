@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cost-Aware Speculative Execution for LLM-Agent Workflows: An Integrated Five-Dimension Method — NewsMatome (EN)</title>
+<meta name="description" content="Cost-Aware Speculative Execution for LLM-Agent Workflows: An Integrated Five-Dimension Method — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/7eee21485973.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/7eee21485973.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/7eee21485973.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/7eee21485973.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cost-Aware Speculative Execution for LLM-Agent Workflows: An Integrated Five-Dimension Method">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Cost-Aware Speculative Execution for LLM-Agent Workflows: An Integrated Five-Dimension Method",
+ "inLanguage":"en","datePublished":"2026-06-10T07:00:00+09:00","dateModified":"2026-06-10T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2606.07846","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/7eee21485973.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/7eee21485973.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Cost-Aware Speculative Execution for LLM-Agent Workflows: An Integrated Five-Dimension Method</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/06/10</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/7eee21485973.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.07846" rel="nofollow noopener">https://arxiv.org/abs/2606.07846</a></span></div>
+  <div class="article-body"><p>arXiv:2606.07846v1 Announce Type: cross 
+Abstract: LLM-agent workflows chain model calls and tool invocations, and spend most of their wall-clock time waiting on upstream operations before downstream ones can start. Speculative execution can reclaim that idle time by launching a downstream operation with a predicted upstream input, but here each speculation costs real money (per-token billing) and its success probability is hard to estimate and drifts over time. This paper presents a method organized around five design decisions: (D1) start a downstream operation before its upstream completes; (D2) price each speculation in real dollars at separate input and output rates; (D3) expose a single operator dial for latency versus cost; (D4) decide via an expected-value rule with a failure-weighted cost term and a preference-adjusted threshold; and (D5) estimate the success probability with a Bayesian Beta-Binomial posterior whose prior is keyed to a dependency-type taxonomy. Variants of these ideas appear in recent work; the combination, with every decision logged in dollars, is what is new. The rule fires only on edges passing an admissibility precondition (side-effect-free, idempotent, or stageable behind a commit barrier), since a wrong speculation is rolled back by re-execution, which refunds tokens but cannot un-send an irreversible side effect. We specify the runtime mechanics, a closed-form result that the rule self-limits as the upstream branching factor grows, a five-stage calibration pipeline (offline replay, shadow, canary, online calibration, drift-triggered kill-switch), and a workload-fit rubric over eight production archetypes. Contrast tables against the four closest published systems (DSP, Speculative Actions v2, Sherlock, B-PASTE) show differentiators on every dimension, and a synthetic validation suite confirms the predicted decision boundary, probability threshold, posterior recovery, and streaming-cancellation behavior.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

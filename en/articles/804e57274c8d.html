@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aperon Technical Report: Hierarchical No-Pointer Tangent-Local Search for High-Dimensional Approximate Nearest Neighbors — NewsMatome (EN)</title>
+<meta name="description" content="Aperon Technical Report: Hierarchical No-Pointer Tangent-Local Search for High-Dimensional Approximate Nearest Neighbors — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/804e57274c8d.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/804e57274c8d.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/804e57274c8d.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/804e57274c8d.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Aperon Technical Report: Hierarchical No-Pointer Tangent-Local Search for High-Dimensional Approximate Nearest Neighbors">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Aperon Technical Report: Hierarchical No-Pointer Tangent-Local Search for High-Dimensional Approximate Nearest Neighbors",
+ "inLanguage":"en","datePublished":"2026-06-10T07:00:00+09:00","dateModified":"2026-06-10T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2606.08813","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/804e57274c8d.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/804e57274c8d.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Aperon Technical Report: Hierarchical No-Pointer Tangent-Local Search for High-Dimensional Approximate Nearest Neighbors</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/06/10</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/804e57274c8d.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.08813" rel="nofollow noopener">https://arxiv.org/abs/2606.08813</a></span></div>
+  <div class="article-body"><p>arXiv:2606.08813v1 Announce Type: cross 
+Abstract: We present HNTL (Hierarchical No-pointer Tangent-Local), the core vector indexing and candidate generation framework of the Aperon vector memory system. Proximity graphs (e.g., HNSW) incur a heavy pointer tax in memory overhead and induce irregular memory accesses that stall CPU pipelines. HNTL resolves this by partitioning the high-dimensional space into local, coherent grains, representing vectors as low-dimensional coordinates on local tangent spaces, and scanning them sequentially using a pointerless Block-SoA (Structure-of-Arrays) layout.
+  On anisotropic manifold data (d=768, N=10,000), local PCA captures 96.3% of the variance, allowing HNTL to achieve a final Rerank Recall@10 of 1.0000 with a candidate pool size of only C=20 vectors. Hardware profiling via Apple kperf CPU Performance Monitoring Unit (PMU) counters demonstrates a 3.61x speedup (4.137 ns/vector vs. 14.951 ns/vector) for our NEON auto-vectorized C++ Block-SoA scan engine over standard pointer-chasing graph traversals, driven by a 3.59x IPC (Instructions Per Cycle) and near-zero L1/L2 data cache misses.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

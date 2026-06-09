@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Unifying View of Attention Sinks: Two Algorithms, Two Solutions — NewsMatome (EN)</title>
+<meta name="description" content="A Unifying View of Attention Sinks: Two Algorithms, Two Solutions — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/1d6c55765369.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/1d6c55765369.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/1d6c55765369.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/1d6c55765369.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A Unifying View of Attention Sinks: Two Algorithms, Two Solutions">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"A Unifying View of Attention Sinks: Two Algorithms, Two Solutions",
+ "inLanguage":"en","datePublished":"2026-06-10T07:00:00+09:00","dateModified":"2026-06-10T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2606.08105","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/1d6c55765369.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/1d6c55765369.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>A Unifying View of Attention Sinks: Two Algorithms, Two Solutions</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/06/10</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/1d6c55765369.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.08105" rel="nofollow noopener">https://arxiv.org/abs/2606.08105</a></span></div>
+  <div class="article-body"><p>arXiv:2606.08105v1 Announce Type: new 
+Abstract: When attention concentrates on a single token, a sink, what is the model actually computing? Attention sinks are ubiquitous in softmax transformers, yet this shared visual signature can hide fundamentally different algorithms. We show that visually similar sink patterns can reflect two distinct mechanisms: {i} adaptive nop, where a head suppresses its update by routing to a null token, and {ii} broadcast, where a sink aggregates and redistributes global information. In that case, sinks serve an analogous role: a safe destination when there is nothing useful to compute. Proposed interventions like gating or registers work because they implicitly target one or the other, revealing a duality between method and assumed mechanism: gating implicitly assumes nop; registers implicitly assume broadcast. Each mechanism leaves distinct traces (nop sinks exhibit negligible value norms; broadcast sinks induce low-rank outputs) which we formalize on synthetic tasks and use to derive practical diagnostics. Applied to pretrained vision transformers, these diagnostics reveal that both mechanisms exist at scale: sinks transition from CLS in early layers to patches in deeper layers, and concentrate in specialized heads. Strikingly, register tokens, designed for broadcast, are repurposed to also serve nop, confirming that neither intervention alone suffices. Combining gating with registers yields complementary gains in stability and performance. Overall, we find that the same attention pattern can reflect two very different computations and effective intervention requires first asking what the model is actually computing.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

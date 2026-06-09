@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>When Hard Negatives Hurt: Bridging the Generative-Discriminative Gap in Hard Negative Synthesis for Retrieval — NewsMatome (EN)</title>
+<meta name="description" content="When Hard Negatives Hurt: Bridging the Generative-Discriminative Gap in Hard Negative Synthesis for Retrieval — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/f59ad67dd411.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/f59ad67dd411.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/f59ad67dd411.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/f59ad67dd411.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="When Hard Negatives Hurt: Bridging the Generative-Discriminative Gap in Hard Negative Synthesis for Retrieval">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"When Hard Negatives Hurt: Bridging the Generative-Discriminative Gap in Hard Negative Synthesis for Retrieval",
+ "inLanguage":"en","datePublished":"2026-06-10T07:00:00+09:00","dateModified":"2026-06-10T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2606.01304","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/f59ad67dd411.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/f59ad67dd411.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>When Hard Negatives Hurt: Bridging the Generative-Discriminative Gap in Hard Negative Synthesis for Retrieval</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/06/10</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/f59ad67dd411.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.01304" rel="nofollow noopener">https://arxiv.org/abs/2606.01304</a></span></div>
+  <div class="article-body"><p>arXiv:2606.01304v2 Announce Type: replace 
+Abstract: Hard negative mining has become the dominant strategy for training retrievers, yet it faces intrinsic limitations: negatives are bounded by corpus availability, selected by retriever score rather than diagnostic value, and increasingly contaminated by false positives as the retriever improves. LLM-based synthesis offers a principled alternative, where negatives that are unconstrained, targeted, and free from false positive risk. But we show that naively incorporating generated negatives into contrastive learning often degrades retrieval performance. We identify and formalize the root cause as a generative-discriminative gap: LLM generation optimizes for fluent, plausible text, while contrastive learning demands strategic violations of relevance at the decision boundary. Our analysis reveals two compounding failure modes: discriminative-agnostic generation, where the LLM lacks an explicit model of query information needs and defaults to generic or topic-drifted text that provides no contrastive signal; and source-dependent shortcuts, where distributional artifacts enable the model to distinguish negatives by origin rather than relevance, causing gradient drift that actively corrupts optimization. To close this gap, we propose CausalNeg consisting of two main modules: (1) CoT-guided counterfactual perturbation for data construction: decomposes why a document satisfies a query into explicit information requirements, then surgically violates individual requirements to construct negatives with controlled, interpretable hardness. (2) Query-view entropy maximization during training: disperses generated negatives across the similarity spectrum, minimizing the mutual information between source identity and similarity scores to suppress shortcut exploitation. We make our code publicly available at https://github.com/mzhangzhicheng/CausalNeg.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
