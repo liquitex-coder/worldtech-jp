@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catching One in Five: LLM-as-Judge Blind Spots in Production Multi-Turn Transaction Agents — NewsMatome (EN)</title>
+<meta name="description" content="Catching One in Five: LLM-as-Judge Blind Spots in Production Multi-Turn Transaction Agents — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/0e2eeb48986c.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/0e2eeb48986c.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/0e2eeb48986c.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/0e2eeb48986c.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Catching One in Five: LLM-as-Judge Blind Spots in Production Multi-Turn Transaction Agents">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Catching One in Five: LLM-as-Judge Blind Spots in Production Multi-Turn Transaction Agents",
+ "inLanguage":"en","datePublished":"2026-06-11T07:00:00+09:00","dateModified":"2026-06-11T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2606.10315","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/0e2eeb48986c.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/0e2eeb48986c.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Catching One in Five: LLM-as-Judge Blind Spots in Production Multi-Turn Transaction Agents</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/06/11</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/0e2eeb48986c.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.10315" rel="nofollow noopener">https://arxiv.org/abs/2606.10315</a></span></div>
+  <div class="article-body"><p>arXiv:2606.10315v1 Announce Type: cross 
+Abstract: LLM-as-judge is the default instrument for evaluating conversational agents, yet its reliability is almost always reported as agreement with human ratings, not recall of real defects. We study a deployed multi-turn food-and-beverage ordering agent and measure how many genuine quality problems its built-in LLM judge catches, using exhaustive human transcript review as ground truth. Across three batches the judge surfaces well under a quarter of human-confirmed systematic problems -- 2 of 9 patterns (22%) in one batch, and its operational gate flagged zero of 100 rounds in a batch where humans confirmed 23 distinct defects and 7 new cross-cutting patterns. Our blind-spot taxonomy shows the failure is structured, not random: the judge catches turn-local issues (a fabricated statistic, a wrong language) but misses cross-turn state issues (confirm-gate lockout, cart hallucination, escalation lockout, stale referents). The mechanism: the scoring rubric exposes only three coarse axes (intent, brand-voice, personalization) and has no category for the behavioural dimensions -- state-tracking, guardrails, recovery -- where most defects cluster. The failure is routing, not perception: 113 of 114 rounds whose raw judge note describes a confirm-gate or cart-state defect are scored &quot;brand voice&quot;, and none reach an operational failure -- the gate is wired to hangs and hard assertions, not the rubric -- so the 0% is a routing-and-wiring failure, not blindness. The consequence for prevalence estimation is sharp: when the apparent defect rate is zero the Rogan-Gladen correction degenerates -- no signal can recover the true rate -- while where the gate reports a nonzero rate the same estimator implies a 3-6x undercount under our measured sensitivity. For production multi-turn agents, automated judging is a regression floor, not a substitute for human review.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Post-Training Augmentation Invariance — NewsMatome (EN)</title>
+<meta name="description" content="Post-Training Augmentation Invariance — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/76cfea5ec774.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/76cfea5ec774.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/76cfea5ec774.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/76cfea5ec774.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Post-Training Augmentation Invariance">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Post-Training Augmentation Invariance",
+ "inLanguage":"en","datePublished":"2026-06-11T07:00:00+09:00","dateModified":"2026-06-11T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2505.11702","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/76cfea5ec774.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/76cfea5ec774.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Post-Training Augmentation Invariance</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/06/11</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/76cfea5ec774.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2505.11702" rel="nofollow noopener">https://arxiv.org/abs/2505.11702</a></span></div>
+  <div class="article-body"><p>arXiv:2505.11702v3 Announce Type: replace 
+Abstract: This work develops a framework for post-training augmentation invariance, in which our goal is to add invariance properties to a pretrained network without altering its behavior on the original, non-augmented input distribution. We define this notion precisely and additionally introduce augmented encoders, which are probabilistic encoders that formalize augmentation-based encoding processes and that serve as our fundamental object of study. We introduce two losses for augmented encoders, namely, Markov-Wasserstein minimization and Wasserstein correlation maximization, and we demonstrate empirically that both losses can be used to train lightweight, one-hidden-layer MLP adapter networks $E_{\theta}$ that, when appended to the latent space of a pretrained network $F$, do indeed lead to (approximate) post-training augmentation invariance. For example, on STL10 with $F=\text{DINO}$ features, the composite network $C\circ E_{\theta}\circ F$, where $C$ is a linear classifier and where $E_{\theta}$ is one of our proposed adapter networks, achieves 94% classification accuracy on arbitrarily rotated images, whereas a network of the form $C\circ F$ without the adapter $E_{\theta}$ drops to 71% accuracy. Similarly, we can boost noise-invariant classification results from 58% up to 86%. Significantly, we obtain these results with no fine-tuning (the weights of $F$ remain frozen throughout), and our methods introduce little corruption to the original features, since $E_{\theta}$ acts nearly isometrically on the non-augmented latent distribution. In contrast, we show that adapter networks trained with alternative candidate losses, specifically SimCLR and HSIC maximization, produce uncompetitive classification results and fundamentally corrupt the original latent space. Code available at https://github.com/keenan-eikenberry/augmentation_invariance</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

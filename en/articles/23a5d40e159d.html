@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quality Is Not a Safety Proxy Under Quantization — NewsMatome (EN)</title>
+<meta name="description" content="Quality Is Not a Safety Proxy Under Quantization — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/23a5d40e159d.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/23a5d40e159d.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/23a5d40e159d.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/23a5d40e159d.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Quality Is Not a Safety Proxy Under Quantization">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Quality Is Not a Safety Proxy Under Quantization",
+ "inLanguage":"en","datePublished":"2026-06-11T07:00:00+09:00","dateModified":"2026-06-11T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2606.10154","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/23a5d40e159d.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/23a5d40e159d.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Quality Is Not a Safety Proxy Under Quantization</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/06/11</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/23a5d40e159d.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.10154" rel="nofollow noopener">https://arxiv.org/abs/2606.10154</a></span></div>
+  <div class="article-body"><p>arXiv:2606.10154v1 Announce Type: new 
+Abstract: Quantized checkpoints are often screened first with quality metrics and only later, if at all, with direct safety tests. This paper audits that shortcut on a matched 51-row matrix spanning 6 models, 4 families, a 7-level GGUF ladder, and AWQ/GPTQ INT4 checkpoints. In this matrix the shortcut fails: all 36 quality-safety pairings split direction across models, and 9 hidden-danger rows plus 1 near-hidden-danger row show quality stable or improved while refusal falls by 12-68 percentage points. Seven of the 11 AWQ/GPTQ rows are hidden-danger. A four-probe mechanistic follow-up over the 17 Hugging Face-backed FP16/AWQ/GPTQ cells does not rescue it: entropy, refusal-direction, and calibration probes are weak or null separators of dangerous rows, and although probe-identified safety-associated neurons absorb 1.39$\times$ more quantization error overall ($p &lt; 5 \times 10^{-7}$), the effect is not regime-specific. Claude Sonnet 4 relabels 11,470 items in a predefined stratified set, agrees with the primary gemma3:12b judge on 89.9\% of rows ($\kappa = 0.873$, 95\% CI [0.866, 0.881]), and changes 0/10 hidden-danger cells. A calibrated study-internal behavioral screen -- the Refusal Template Stability Index (RTSI), built from four refusal-template drift features and calibrated on this matrix -- routes 10/10 hidden- or near-hidden-danger rows to direct safety testing (Wilson 95\% CI lower bound 0.72) while leaving 23 of 45 non-baseline rows in a low-risk bucket under both in-sample scoring and row-level leave-one-out validation; on the same matrix, the best single-feature baselines (unique-prefix-rate-delta, raw refusal-rate delta) recover 9/10 and 8/10 respectively at matched bucket size, and cross-stack transfer requires recalibration. For the quantized checkpoints, model families, and safety outcomes studied here, retained quality cannot waive direct safety evaluation.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
