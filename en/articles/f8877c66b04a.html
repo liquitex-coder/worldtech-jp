@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Libra: Efficient Resource Management for Agentic RL Post-Training — NewsMatome (EN)</title>
+<meta name="description" content="Libra: Efficient Resource Management for Agentic RL Post-Training — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/f8877c66b04a.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/f8877c66b04a.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/f8877c66b04a.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/f8877c66b04a.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Libra: Efficient Resource Management for Agentic RL Post-Training">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Libra: Efficient Resource Management for Agentic RL Post-Training",
+ "inLanguage":"en","datePublished":"2026-06-12T07:00:00+09:00","dateModified":"2026-06-12T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2606.03077","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/f8877c66b04a.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/f8877c66b04a.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Libra: Efficient Resource Management for Agentic RL Post-Training</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/06/12</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/f8877c66b04a.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.03077" rel="nofollow noopener">https://arxiv.org/abs/2606.03077</a></span></div>
+  <div class="article-body"><p>arXiv:2606.03077v2 Announce Type: replace 
+Abstract: Reinforcement learning (RL) has emerged as a standard post-training paradigm for shaping large language models (LLMs) into capable agents. In agentic RL, the rollout stage generates trajectories while invoking tools, producing long-tailed and non-stationary workloads that expose two fundamental challenges in resource management. First, due to the long-tail distribution, a small fraction of trajectories dominates rollout makespan. Second, rollout and training are subject to cross-stage imbalance, as they exhibit strong asymmetry in compute patterns, memory demands, and sensitivity to sequence length. Compounding this asymmetry, the sequence length distribution drifts continuously as the policy evolves, rendering any static resource split progressively suboptimal.
+  We present Libra, a resource management system to address both challenges via two core mechanisms. The first is a global resource planner that jointly optimizes GPU allocation across rollout and training clusters. It leverages an elastic hybrid pool to enable lightweight, non-blocking worker reallocation between stages. The second is a causality-driven multi-level feedback queue (C-MLFQ) scheduler, which routes requests to heterogeneous rollout buckets based on causal signals derived from tool-return outcomes, rather than relying on fragile length predictions. Evaluated on 48 A800 GPUs, Libra achieves up to 3.0x higher throughput and converges up to 2.5x faster in reward compared to the baselines.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

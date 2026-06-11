@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SPEAR: A System for Post-Quantization Error-Adaptive Recovery Enabling Efficient Low-Bit LLM Serving — NewsMatome (EN)</title>
+<meta name="description" content="SPEAR: A System for Post-Quantization Error-Adaptive Recovery Enabling Efficient Low-Bit LLM Serving — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/3cb38000673c.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/3cb38000673c.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/3cb38000673c.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/3cb38000673c.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SPEAR: A System for Post-Quantization Error-Adaptive Recovery Enabling Efficient Low-Bit LLM Serving">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"SPEAR: A System for Post-Quantization Error-Adaptive Recovery Enabling Efficient Low-Bit LLM Serving",
+ "inLanguage":"en","datePublished":"2026-06-12T07:00:00+09:00","dateModified":"2026-06-12T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2606.11244","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/3cb38000673c.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/3cb38000673c.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>SPEAR: A System for Post-Quantization Error-Adaptive Recovery Enabling Efficient Low-Bit LLM Serving</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/06/12</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/3cb38000673c.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.11244" rel="nofollow noopener">https://arxiv.org/abs/2606.11244</a></span></div>
+  <div class="article-body"><p>arXiv:2606.11244v1 Announce Type: cross 
+Abstract: Efficient large language model (LLM) serving is increasingly constrained by deployment cost. Quantization is a key technique for reducing serving cost, yet even state-of-the-art 4-bit quantizers exhibit a noticeable quality gap from FP16, particularly for smaller models where low-bit serving is most beneficial. We identify a fundamental cause of this gap: quantization error is highly input-dependent and varies substantially across tokens, while existing post-quantization compensation methods are static and apply identical corrections to all inputs. As a result, easy tokens are over-corrected while hard tokens remain under-corrected.
+  We present SPEAR, a system for post-quantization error-adaptive recovery that improves low-bit LLM serving. SPEAR introduces lightweight Error Compensators (ECs) modulated by per-token gates and places them only at the most error-sensitive layers identified through a CKA-guided entropy-aware diagnostic. This focuses a small parameter budget where it is most effective.
+  Efficient deployment of ECs presents several systems challenges, including additional computation, tensor-parallel synchronization caused by input-dependent gating, and latency instability across configurations. SPEAR addresses these issues through adaptive kernel-fusion dispatch, combining an epilogue-integrated peer-reduction kernel with P2P dual-write to fuse the post-EC computation into low-bit GEMMs, and an SLO-constrained EC-aware scheduler for predictable serving performance.
+  Across challenging per-channel quantization settings, SPEAR recovers 56-75% of the perplexity gap between W4 and FP16 while adding less than 1% model memory overhead and maintaining latency comparable to a widely used 4-bit serving deployment.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
