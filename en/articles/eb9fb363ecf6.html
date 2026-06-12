@@ -17,8 +17,8 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"When Does Delegation Beat Majority? A Delegation-Based Aggregator for Multi-Sample LLM Inference",
- "inLanguage":"en","datePublished":"2026-06-10T07:00:00+09:00","dateModified":"2026-06-10T07:00:00+09:00",
- "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "inLanguage":"en","datePublished":"2026-06-13T07:00:00+09:00","dateModified":"2026-06-13T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.08098","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/eb9fb363ecf6.html"}
 </script>
@@ -32,14 +32,14 @@
 </div></header>
 <div class="wrap"><article class="article">
   <div class="article-head">
-    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
     <h1>When Does Delegation Beat Majority? A Delegation-Based Aggregator for Multi-Sample LLM Inference</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/06/10</span></div>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/06/13</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/eb9fb363ecf6.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.08098" rel="nofollow noopener">https://arxiv.org/abs/2606.08098</a></span></div>
-  <div class="article-body"><p>arXiv:2606.08098v1 Announce Type: cross 
-Abstract: Majority voting over sampled answers is the dominant unsupervised aggregator for multi-sample LLM inference. We show that piping the signals every sample carries into a delegation-based aggregator (Propagational Proxy Voting, PPV) yields an unsupervised consensus rule that beats majority on MMLU-Pro by +1.5 pp overall and +2.24 pp on the non-trivial subset (paired McNemar p ~ 1.0e-14, n = 8,099). Majority discards two free signals every sample carries: within-group letter entropy and between-group reasoning geometry. PPV exposes two per-voter levers that consume exactly these signals: WHEN (how much weight a voter keeps on its own pick) and WHOM (how it splits the remainder across peers). We drive WHEN with letter entropy and WHOM with per-question-centered embedding cosine. The method needs no gold labels and no auxiliary training: per question, we partition 128 sampled generations into 16 groups, compute each group&#x27;s letter-level semantic entropy and reasoning embedding centroid, and feed both into a stochastic delegation matrix whose stationary distribution selects the consensus answer. We walk through an example in which PPV overturns a clear 10-6 majority for the wrong letter: the 10-voter majority cluster is geometrically incoherent (mean within-cluster cosine -0.02) while the 6-voter minority is tight (+0.26), so propagated delegation mass concentrates on the minority&#x27;s answer even though entropy alone would keep the majority ahead. We further report delegation strategies with negative results that constrain the design space for unsupervised LLM aggregation: no within-question ensemble of confidence modes closes the oracle gap.</p></div>
+  <div class="article-body"><p>arXiv:2606.08098v2 Announce Type: replace 
+Abstract: Majority voting over sampled answers is the dominant unsupervised aggregator for multi-sample LLM inference. In this paper, we show a delegation-based aggregator (Propagational Proxy Voting, PPV; Sakai et al., 2025) yields an unsupervised consensus rule that beats majority on MMLU-Pro by +1.5 pp overall and +2.24 pp on the non-trivial subset (paired McNemar p ~ 1.0e-14, n = 8,099). Majority discards two signals that every sample carries: within-group letter entropy and between-group reasoning geometry. PPV exposes per-voter levers that consume exactly these two signals: When (how much weight a voter keeps on its own pick) and Whom (how it splits the remainder across peers). We drive When with letter entropy and Whom with per-question-centered embedding cosine. Our method needs no gold labels and no auxiliary training: per-question, we partition 128 sampled generations into 16 groups, compute each group&#x27;s letter-level semantic entropy and reasoning embedding centroid, and feed both into a stochastic delegation matrix whose stationary distribution selects the consensus answer. We walk through an example in which PPV overturns a clear 10-6 majority for the wrong letter: the 10-voter majority cluster is geometrically incoherent (mean within-cluster cosine -0.02) while the 6-voter minority is tight (+0.26), so propagated delegation mass concentrates on the minority&#x27;s answer even though entropy alone would keep the majority ahead. We further report delegation strategies with negative results that constrain the design space for unsupervised LLM aggregation. No within-question ensemble of confidence modes closes the oracle gap.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

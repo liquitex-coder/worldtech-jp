@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MiniPIC: Flexible Position-Independent Caching in &lt;100LOC — NewsMatome</title>
+<meta name="description" content="MiniPIC: Flexible Position-Independent Caching in &lt;100LOC（EN→JA 翻訳・出典付き）">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/dc2f0f2eb374.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/dc2f0f2eb374.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/dc2f0f2eb374.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/dc2f0f2eb374.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="NewsMatome">
+<meta property="og:title" content="MiniPIC: Flexible Position-Independent Caching in &lt;100LOC">
+<meta property="og:description" content="MiniPIC: Flexible Position-Independent Caching in &lt;100LOC（EN→JA 翻訳・出典付き）">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://picsum.photos" crossorigin>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"MiniPIC: Flexible Position-Independent Caching in &lt;100LOC",
+ "inLanguage":"ja","datePublished":"2026-06-13T07:00:00+09:00","dateModified":"2026-06-13T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2606.13126","url":"https://liquitex-coder.github.io/worldtech-jp/articles/dc2f0f2eb374.html"}
+</script>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH, IN JAPANESE</small></span></a>
+    <span class="update-badge">⟳ 毎朝7時更新</span>
+    <span class="topbar-spacer"></span>
+    <label class="search semantic"><span class="lead">✦</span><input type="text" placeholder="意味で探す"></label>
+    <div class="lang-select"><a class="on" href="#">日本語</a><a href="../en/articles/dc2f0f2eb374.html" title="English edition（/en/）" hreflang="en">EN</a></div>
+    <a class="btn-cta" href="../about.html#contact">お仕事のご依頼</a>
+  </div>
+  <nav class="catnav"><div class="catnav-inner">
+      <a href="../index.html" style="--cc:#5b78ff">すべて</a>
+      <div class="catgroup"><a href="#" class="cat-trigger" style="--cc:#0ea5e9"><span class="cdot"></span>サイエンス<span class="caret">▾</span></a><div class="dropdown"><a href="#" style="--cc:#0ea5e9"><span class="cdot"></span>サイエンス</a><a href="#" style="--cc:#6366f1"><span class="cdot"></span>テクノロジー</a></div></div>
+      <div class="catgroup"><a href="#" class="cat-trigger active" style="--cc:#3b5bff"><span class="cdot"></span>AI<span class="caret">▾</span></a><div class="dropdown"><a href="#" class="active" style="--cc:#3b5bff"><span class="cdot"></span>AI</a><a href="#" style="--cc:#f97316"><span class="cdot"></span>フィジカルAI</a><a href="#" style="--cc:#ef4444"><span class="cdot"></span>ロボット技術</a><a href="#" style="--cc:#e60033"><span class="cdot"></span>日本のAI</a></div></div>
+      <div class="catgroup"><a href="#" class="cat-trigger" style="--cc:#cbd5e1"><span class="cdot"></span>コード<span class="caret">▾</span></a><div class="dropdown"><a href="#" style="--cc:#cbd5e1"><span class="cdot"></span>コード</a><a href="#" style="--cc:#8b5cf6"><span class="cdot"></span>アルゴリズム</a></div></div>
+      <a href="#" style="--cc:#ec4899"><span class="cdot"></span>アート</a>
+      <a href="#" style="--cc:#14b8a6"><span class="cdot"></span>デザイン</a>
+      <a href="#" style="--cc:#e11d48"><span class="cdot"></span>動画</a>
+      <a href="#" style="--cc:#84cc16"><span class="cdot"></span>動物</a>
+      <a href="#" style="--cc:#16a34a"><span class="cdot"></span>自然</a>
+      <a href="#" style="--cc:#ca8a04"><span class="cdot"></span>農業</a>
+      <div class="catgroup"><a href="#" class="cat-trigger" style="--cc:#a855f7"><span class="cdot"></span>面白<span class="caret">▾</span></a><div class="dropdown"><a href="#" style="--cc:#fb7185"><span class="cdot"></span>アニメ</a><a href="#" style="--cc:#64748b"><span class="cdot"></span>ガジェット</a><a href="#" style="--cc:#f59e0b"><span class="cdot"></span>漫画</a></div></div>
+  </div></nav>
+</header>
+
+<div class="wrap">
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">AI</a><span class="sep">›</span><span>MiniPIC: Flexible Position-Independent Caching in &lt;100LOC</span></div>
+  <article class="article">
+    <div class="article-head">
+      <div class="toprow">
+        <span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+        <span class="kind-tag kind-paper">Paper</span>
+        <span class="badge-translate">🌐 EN→JA 翻訳</span>
+      </div>
+      <h1>MiniPIC: Flexible Position-Independent Caching in &lt;100LOC</h1>
+      <div class="article-byline">
+        <span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b>収集・日本語化・監修</span></span>
+        <span>公開 2026/06/13 07:00</span><span>· 更新 2026/06/13</span>
+      </div>
+    </div>
+    
+    <div class="depth">
+      <span class="lbl"><span class="ai-mark">読む深さ</span></span>
+      <div class="seg" id="depthSeg"><button data-d="easy">やさしく</button><button data-d="normal" class="on">標準</button><button data-d="expert">専門</button></div>
+      <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
+    </div>
+    <div class="source-bar"><span class="lang">EN → JA</span>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2606.13126" rel="nofollow noopener">MiniPIC: Flexible Position-Independent Caching in &lt;100LOC</a>。引用は範囲に留め、原文を併記します。</span></div>
+    <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
+    <div class="parallel" id="parallelView" style="display:none;">
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2606.13126v1 Announce Type: cross 
+Abstract: Retrieval-augmented and agentic workloads repeatedly prefill recurring predictable structured inputs (which we call &quot;spans&quot;) such as documents and code files. Yet, prefix caching in engines such as vLLM cannot reuse their KV entries unless they share identical prefixes with another request, while Position-Independent Caching (PIC) implementations within production-grade inference servers typically either require substantial server code changes or keep KV state outside the server, incurring host-to-device transfer overhead. We present Minimalistic PIC (MiniPIC): a minimal, flexible and fast vLLM design built from two ingredients: positional-encoding-free KV cache and user-controlled cache-reuse primitives. MiniPIC stores unrotated K vectors in the KV cache, applies RoPE to K tiles inside attention using per-request logical positions, and exposes three user-facing and token-level primitives: block-aligned padding, span separator (SSep), and prompt depend (PDep), that modify hashing behavior and effective block-level causal attention structure. With fewer than 100 lines of core-engine changes plus a custom attention backend, these primitives are sufficient to realize multiple PIC methods, including Block-Attention, EPIC, and Prompt Cache, within the same running vLLM instance, while natively integrating with KV cache CPU offload implementations. On 2WikiMultihopQA, MiniPIC with interleaved scheduling improves prefill throughput by 49% over baseline vLLM, reduces cached-span time-to-first-token by up to two orders of magnitude, preserves the linear prefill scaling of uncached spans, and incurs only 5.7% worst-case overhead.</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2606.13126v1 Announce Type: cross 
+Abstract: Retrieval-augmented and agentic workloads repeatedly prefill recurring predictable structured inputs (which we call &quot;spans&quot;) such as documents and code files. Yet, prefix caching in engines such as vLLM cannot reuse their KV entries unless they share identical prefixes with another request, while Position-Independent Caching (PIC) implementations within production-grade inference servers typically either require substantial server code changes or keep KV state outside the server, incurring host-to-device transfer overhead. We present Minimalistic PIC (MiniPIC): a minimal, flexible and fast vLLM design built from two ingredients: positional-encoding-free KV cache and user-controlled cache-reuse primitives. MiniPIC stores unrotated K vectors in the KV cache, applies RoPE to K tiles inside attention using per-request logical positions, and exposes three user-facing and token-level primitives: block-aligned padding, span separator (SSep), and prompt depend (PDep), that modify hashing behavior and effective block-level causal attention structure. With fewer than 100 lines of core-engine changes plus a custom attention backend, these primitives are sufficient to realize multiple PIC methods, including Block-Attention, EPIC, and Prompt Cache, within the same running vLLM instance, while natively integrating with KV cache CPU offload implementations. On 2WikiMultihopQA, MiniPIC with interleaved scheduling improves prefill throughput by 49% over baseline vLLM, reduces cached-span time-to-first-token by up to two orders of magnitude, preserves the linear prefill scaling of uncached spans, and incurs only 5.7% worst-case overhead.</div>
+    </div>
+    <div class="article-body">
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2606.13126v1 Announce Type: cross 
+Abstract: Retrieval-augmented and agentic workloads repeatedly prefill recurring predictable structured inputs (which we call &quot;spans&quot;) such as documents and code files. Yet, prefix caching in engines such as vLLM cannot reuse their KV entries unless they share identical prefixes with another request, while Position-Independent Caching (PIC) implementations within production-grade inference servers typically either require substantial server code changes or keep KV state outside the server, incurring host-to-device transfer overhead. We present Minimalistic PIC (MiniPIC): a minimal, flexible and fast vLLM design built from two ingredients: positional-encoding-free KV cache and user-controlled cache-reuse primitives. MiniPIC stores unrotated K vectors in the KV cache, applies RoPE to K tiles inside attention using per-request logical positions, and exposes three user-facing and token-level primitives: block-aligned padding, span separator (SSep), and prompt depend (PDep), that modify hashing behavior and effective block-level causal attention structure. With fewer than 100 lines of core-engine changes plus a custom attention backend, these primitives are sufficient to realize multiple PIC methods, including Block-Attention, EPIC, and Prompt Cache, within the same running vLLM instance, while natively integrating with KV cache CPU offload implementations. On 2WikiMultihopQA, MiniPIC with interleaved scheduling improves prefill throughput by 49% over baseline vLLM, reduces cached-span time-to-first-token by up to two orders of magnitude, preserves the linear prefill scaling of uncached spans, and incurs only 5.7% worst-case overhead.</p><a href="https://arxiv.org/abs/2606.13126" rel="nofollow noopener">原論文を読む →</a></div>
+    </div>
+    <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2606.13126" rel="nofollow noopener">https://arxiv.org/abs/2606.13126</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
+    <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
+    <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
+      <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
+        <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="eb83c7a671a4.html"><div class="sim">関連</div><div class="info"><b>ToolSense: A Diagnostic Framework for Auditing Parametric Tool Knowledge in LLMs</b><div class="m">AI</div></div></a><a class="r" href="9cd2892acc41.html"><div class="sim">関連</div><div class="info"><b>Arbor: Tree Search as a Cognition Layer for Autonomous Agents</b><div class="m">AI</div></div></a><a class="r" href="5d140f9775a9.html"><div class="sim">関連</div><div class="info"><b>Strategic Decision Support for AI Agents</b><div class="m">AI</div></div></a></div>
+    <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
+      <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
+      <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>
+  </article>
+</div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. 海外記事は引用の範囲で紹介し、必ず原文出典へリンク。翻訳・要約は各分野の専門エージェントが担当し原文を併記。<div class="legal">本ページは収集→日本語化パイプラインの自動生成（サンプル）です。</div></div></footer>
+<script>
+(function(){var seg=document.getElementById('depthSeg'),note=document.getElementById('depthNote'),body=document.querySelector('.article-body');
+var msg={easy:'— やさしい言葉で表示中',normal:'— 標準の文章で表示中',expert:'— 専門レベルで表示中'};
+seg.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;[].forEach.call(seg.children,function(x){x.classList.remove('on');});b.classList.add('on');note.textContent=msg[b.dataset.d];});})();
+(function(){var sw=document.getElementById('parallelSwitch'),pv=document.getElementById('parallelView');sw.addEventListener('click',function(){var on=sw.classList.toggle('on');sw.setAttribute('aria-checked',on);pv.style.display=on?'grid':'none';});})();
+(function(){var ans=document.getElementById('askAns');document.getElementById('askSend').addEventListener('click',function(){ans.style.display='block';});})();
+document.querySelectorAll('.cat-trigger').forEach(function(t){t.addEventListener('click',function(e){e.preventDefault();var g=t.closest('.catgroup'),was=g.classList.contains('open');document.querySelectorAll('.catgroup.open').forEach(function(x){x.classList.remove('open');});if(!was)g.classList.add('open');});});
+document.addEventListener('click',function(e){if(!e.target.closest('.catgroup'))document.querySelectorAll('.catgroup.open').forEach(function(x){x.classList.remove('open');});});
+</script>
+</body>
+</html>
