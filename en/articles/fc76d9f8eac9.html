@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OmniOPD: Logit-Free On-Policy Distillation via Speculative Verification — NewsMatome (EN)</title>
+<meta name="description" content="OmniOPD: Logit-Free On-Policy Distillation via Speculative Verification — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/fc76d9f8eac9.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/fc76d9f8eac9.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/fc76d9f8eac9.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/fc76d9f8eac9.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OmniOPD: Logit-Free On-Policy Distillation via Speculative Verification">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"OmniOPD: Logit-Free On-Policy Distillation via Speculative Verification",
+ "inLanguage":"en","datePublished":"2026-06-16T07:00:00+09:00","dateModified":"2026-06-16T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2606.01476","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/fc76d9f8eac9.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/fc76d9f8eac9.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>OmniOPD: Logit-Free On-Policy Distillation via Speculative Verification</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/06/16</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/fc76d9f8eac9.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.01476" rel="nofollow noopener">https://arxiv.org/abs/2606.01476</a></span></div>
+  <div class="article-body"><p>arXiv:2606.01476v2 Announce Type: replace 
+Abstract: On-Policy Distillation (OPD) trains a student model on its own generative trajectories under dense token-level feedback from a stronger teacher, mitigating both the off-policy distribution shift of Supervised Fine-Tuning (SFT) and the sparse credit assignment of Reinforcement Learning (RL). However, standard OPD faces two coupled limitations. First, it requires direct access to the teacher&#x27;s token-level logits, excluding a broad class of capable proprietary models from serving as teachers. Second, the token-level logit signal itself is brittle, depending on a narrow overlap of plausible next tokens between teacher and student, and prone to amplifying degenerate patterns such as repetition loops. In this paper, we introduce OmniOPD, a novel framework that addresses both limitations through a logit-free, chunk-level supervision signal. OmniOPD replaces deterministic logit matching with Monte Carlo rollouts that approximate the teacher&#x27;s local preferences through a continuous semantic similarity metric over multi-token chunks, and concentrates this supervision via a peak-entropy scheduler that audits the student only at its high-uncertainty reasoning forks. A Dirichlet-Multinomial Bayesian prior and a base-model KL anchor further bound the variance of discrete sampling and prevent policy collapse across unaudited tokens. Across competitive benchmarks, OmniOPD surpasses the standard OPD approach by up to +28.64% on math, confirming that chunk-level semantic verification extracts a more reliable learning signal than token-level logit matching, whose high information density is offset by significant noise and brittleness. Furthermore, when paired with stronger black-box teachers such as Claude-4.5-Haiku and Gemini-2.5-Flash, OmniOPD achieves an additional +9.54% relative on math over its open-weight teacher counterpart, advancing the student past the performance of self-exploratory RL.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

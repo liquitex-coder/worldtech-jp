@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neither Parallel Nor Sequential: How DiffusionGemma Actually Commits Tokens — NewsMatome (EN)</title>
+<meta name="description" content="Neither Parallel Nor Sequential: How DiffusionGemma Actually Commits Tokens — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/80a4c85a4168.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/80a4c85a4168.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/80a4c85a4168.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/80a4c85a4168.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Neither Parallel Nor Sequential: How DiffusionGemma Actually Commits Tokens">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Neither Parallel Nor Sequential: How DiffusionGemma Actually Commits Tokens",
+ "inLanguage":"en","datePublished":"2026-06-16T07:00:00+09:00","dateModified":"2026-06-16T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2606.14620","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/80a4c85a4168.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/80a4c85a4168.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Neither Parallel Nor Sequential: How DiffusionGemma Actually Commits Tokens</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/06/16</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/80a4c85a4168.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.14620" rel="nofollow noopener">https://arxiv.org/abs/2606.14620</a></span></div>
+  <div class="article-body"><p>arXiv:2606.14620v1 Announce Type: new 
+Abstract: Open diffusion language models are marketed as parallel, non-autoregressive decoders, yet the order in which a shipped checkpoint actually commits its tokens is almost never measured. We instrument DiffusionGemma 26B, a masked discrete-diffusion mixture-of-experts model built on Gemma 4, hooking its sampler&#x27;s accept step to record which canvas positions commit, when, and at what confidence. Across a 686-prompt, six-regime probe suite we find that its decoding is neither parallel nor block-autoregressive: it follows a partial left-to-right commit bias whose apparent strength depends almost entirely on the granularity at which you look. Order is weak token by token and strengthens smoothly as the analysis is coarsened, so the model&#x27;s &quot;block size&quot; turns out to be an artifact of the measuring ruler rather than the architecture. The model commits in large simultaneous batches, leaving much of the within-batch order genuinely undefined rather than merely unobserved. The behaviour is regime-dependent: structured JSON is committed in essentially arbitrary order, and a position&#x27;s commit confidence tracks correctness on mathematical reasoning but carries no signal on factual recall. Commitment is aggressive, finishing in a short late burst well inside the step budget, while task accuracy matches the model&#x27;s autoregressive Gemma-4 sibling. Beyond these findings, our central contribution is methodological: measuring decoding order honestly demands handling trailing-EOS padding, within-regime confounding, commit non-monotonicity, block-size sensitivity, and large commit-batch ties, each of which can otherwise manufacture a decoding-order result that is not really there.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

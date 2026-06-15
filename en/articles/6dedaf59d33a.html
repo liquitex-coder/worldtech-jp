@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NeST: Neuron Selective Tuning for LLM Safety — NewsMatome (EN)</title>
+<meta name="description" content="NeST: Neuron Selective Tuning for LLM Safety — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/6dedaf59d33a.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/6dedaf59d33a.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/6dedaf59d33a.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/6dedaf59d33a.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NeST: Neuron Selective Tuning for LLM Safety">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"NeST: Neuron Selective Tuning for LLM Safety",
+ "inLanguage":"en","datePublished":"2026-06-16T07:00:00+09:00","dateModified":"2026-06-16T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2602.16835","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/6dedaf59d33a.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/6dedaf59d33a.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>NeST: Neuron Selective Tuning for LLM Safety</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/06/16</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/6dedaf59d33a.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2602.16835" rel="nofollow noopener">https://arxiv.org/abs/2602.16835</a></span></div>
+  <div class="article-body"><p>arXiv:2602.16835v2 Announce Type: replace-cross 
+Abstract: Safety alignment is essential for the responsible deployment of Large Language Models (LLMs). Yet, existing approaches often rely on heavyweight fine-tuning that is costly to update, audit, and maintain across model families. Full fine-tuning incurs substantial computational and storage overhead, while parameter-efficient methods, e.g., Low-Rank Adaptation (LoRA), trade efficiency for inconsistent safety gains and sensitivity to design choices. Safety intervention mechanisms reduce unsafe outputs without modifying model weights, but do not directly shape or preserve the internal representations that govern safety behavior.
+  We present NeST, a Neuron-Selective Tuning framework for efficient post-hoc safety alignment. NeST identifies safety-relevant feed-forward neurons via activation probing on vanilla harmful and benign prompts, clusters neurons with similar activation profiles, and trains shared cluster-level updates while freezing the rest of the model. Importantly, NeST is trained only on vanilla malicious prompts, without using jailbreak-specific attack data, yet generalizes robustly to diverse jailbreaks. The learned updates are then folded into the original weights, incurring no inference-time overhead. Evaluated on 14 open-weight language and multimodal models, NeST outperforms lightweight baselines and approaches full fine-tuning robustness with significantly fewer trainable parameters. On text-only models, NeST reduces average jailbreak attack success rate from 44.5% to 1.1% while training only 0.4M parameters on average. Across multimodal settings, it reduces ASR from 55.3% to 1.1%, and for downstream fine-tuned variants, it restores safety by reducing ASR from 53.8% to 0.8%. These results show that robust, maintainable safety alignment can be achieved by concentrating adaptation on localized, functionally coherent safety structures.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
