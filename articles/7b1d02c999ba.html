@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"Projection and Quantisation: A Unifying View of Learning to Hash, from Random Projections to the RAG Era",
- "inLanguage":"ja","datePublished":"2026-06-10T07:00:00+09:00","dateModified":"2026-06-10T07:00:00+09:00",
+ "inLanguage":"ja","datePublished":"2026-06-17T07:00:00+09:00","dateModified":"2026-06-17T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2510.04127","url":"https://liquitex-coder.github.io/worldtech-jp/articles/7b1d02c999ba.html"}
@@ -64,7 +64,7 @@
       <h1>Projection and Quantisation: A Unifying View of Learning to Hash, from Random Projections to the RAG Era</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/06/10 07:00</span><span>· 更新 2026/06/10</span>
+        <span>公開 2026/06/17 07:00</span><span>· 更新 2026/06/17</span>
       </div>
     </div>
     
@@ -77,66 +77,21 @@
       <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2510.04127" rel="nofollow noopener">Projection and Quantisation: A Unifying View of Learning to Hash, from Random Projections to the RAG Era</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2510.04127v2 Announce Type: replace-cross 
-Abstract: Approximate nearest neighbour (ANN) search underpins large-scale retrieval, increasingly within the retrieval-augmented
-  generation pipelines that ground large language models, yet the methods that address it have multiplied across communities
-  until they are seldom read as a single field. We argue they form one field with three design choices, and develop the
-  projection-quantisation-organisation (PQO) lens, under which locality-sensitive hashing, learned binary hashing, deep
-  end-to-end hashing, product quantisation, graph-based indexes, and the binary embeddings of modern vector databases are all
-  settings of three coupled questions: where to place the projections, where to place the quantisation thresholds, and how to
-  organise the resulting codes. The projection-then-quantisation reading is established; our contribution is the third,
-  co-equal organisation stage, a demonstration that the three run unbroken from the field&#x27;s origins to the deep,
-  product-quantisation, graph, and retrieval-augmented eras, and a reproducible measurement that turns the lens from
-  classifying methods to predicting them. The measurement yields three findings. First, memory is won on the quantisation axis:
-  a one-bit code is a thirty-second the size of the float, and a single full-precision re-ranking pass over a short candidate
-  list recovers uncompressed quality in full. Second, the trade-off orderings the lens anticipates recur unchanged as the
-  embedding grows. Third, where supervision is available, an eight-byte code more than doubles the quality of the two-kilobyte
-  float it replaces. We release these measurements as BitBudget, an extensible benchmark with a live leaderboard, recast
-  generative retrieval&#x27;s &quot;semantic identifiers&quot; as quantisation codes, and identify the open problems that follow as compact
-  codes return to the centre of large-scale retrieval.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2510.04127v2 Announce Type: replace-cross 
-Abstract: Approximate nearest neighbour (ANN) search underpins large-scale retrieval, increasingly within the retrieval-augmented
-  generation pipelines that ground large language models, yet the methods that address it have multiplied across communities
-  until they are seldom read as a single field. We argue they form one field with three design choices, and develop the
-  projection-quantisation-organisation (PQO) lens, under which locality-sensitive hashing, learned binary hashing, deep
-  end-to-end hashing, product quantisation, graph-based indexes, and the binary embeddings of modern vector databases are all
-  settings of three coupled questions: where to place the projections, where to place the quantisation thresholds, and how to
-  organise the resulting codes. The projection-then-quantisation reading is established; our contribution is the third,
-  co-equal organisation stage, a demonstration that the three run unbroken from the field&#x27;s origins to the deep,
-  product-quantisation, graph, and retrieval-augmented eras, and a reproducible measurement that turns the lens from
-  classifying methods to predicting them. The measurement yields three findings. First, memory is won on the quantisation axis:
-  a one-bit code is a thirty-second the size of the float, and a single full-precision re-ranking pass over a short candidate
-  list recovers uncompressed quality in full. Second, the trade-off orderings the lens anticipates recur unchanged as the
-  embedding grows. Third, where supervision is available, an eight-byte code more than doubles the quality of the two-kilobyte
-  float it replaces. We release these measurements as BitBudget, an extensible benchmark with a live leaderboard, recast
-  generative retrieval&#x27;s &quot;semantic identifiers&quot; as quantisation codes, and identify the open problems that follow as compact
-  codes return to the centre of large-scale retrieval.</div>
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2510.04127v3 Announce Type: replace-cross 
+Abstract: Approximate nearest-neighbour search underpins large-scale retrieval and retrieval-augmented generation, yet its methods are studied in communities that seldom read one another. We argue that they form one field with three design choices. We develop the projection-quantisation-organisation lens: every method places its projections, places its quantisation thresholds, and organises the resulting codes for search. We test the lens with a reproducible measurement, released as the open BitBudget benchmark, and report three findings. First, the quantisation axis delivers the largest memory savings: a one-bit code with full-precision re-ranking matches uncompressed quality for six of seven embedders, the scanned code one thirty-second of the float&#x27;s size. Second, the orderings the lens anticipates, including a learned-embedding regime where binary codes overtake an inverted-file product quantiser at a matched byte budget, recur as the embedding is enlarged. Third, given class labels, an eight-byte supervised code more than doubles the retrieval quality of the two-kilobyte task-agnostic float it replaces. We also recast the semantic identifiers of generative retrieval as quantisation codes. The main contribution is a single, tested account of compact-code search, from random projections to the retrieval-augmented era.</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2510.04127v3 Announce Type: replace-cross 
+Abstract: Approximate nearest-neighbour search underpins large-scale retrieval and retrieval-augmented generation, yet its methods are studied in communities that seldom read one another. We argue that they form one field with three design choices. We develop the projection-quantisation-organisation lens: every method places its projections, places its quantisation thresholds, and organises the resulting codes for search. We test the lens with a reproducible measurement, released as the open BitBudget benchmark, and report three findings. First, the quantisation axis delivers the largest memory savings: a one-bit code with full-precision re-ranking matches uncompressed quality for six of seven embedders, the scanned code one thirty-second of the float&#x27;s size. Second, the orderings the lens anticipates, including a learned-embedding regime where binary codes overtake an inverted-file product quantiser at a matched byte budget, recur as the embedding is enlarged. Third, given class labels, an eight-byte supervised code more than doubles the retrieval quality of the two-kilobyte task-agnostic float it replaces. We also recast the semantic identifiers of generative retrieval as quantisation codes. The main contribution is a single, tested account of compact-code search, from random projections to the retrieval-augmented era.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2510.04127v2 Announce Type: replace-cross 
-Abstract: Approximate nearest neighbour (ANN) search underpins large-scale retrieval, increasingly within the retrieval-augmented
-  generation pipelines that ground large language models, yet the methods that address it have multiplied across communities
-  until they are seldom read as a single field. We argue they form one field with three design choices, and develop the
-  projection-quantisation-organisation (PQO) lens, under which locality-sensitive hashing, learned binary hashing, deep
-  end-to-end hashing, product quantisation, graph-based indexes, and the binary embeddings of modern vector databases are all
-  settings of three coupled questions: where to place the projections, where to place the quantisation thresholds, and how to
-  organise the resulting codes. The projection-then-quantisation reading is established; our contribution is the third,
-  co-equal organisation stage, a demonstration that the three run unbroken from the field&#x27;s origins to the deep,
-  product-quantisation, graph, and retrieval-augmented eras, and a reproducible measurement that turns the lens from
-  classifying methods to predicting them. The measurement yields three findings. First, memory is won on the quantisation axis:
-  a one-bit code is a thirty-second the size of the float, and a single full-precision re-ranking pass over a short candidate
-  list recovers uncompressed quality in full. Second, the trade-off orderings the lens anticipates recur unchanged as the
-  embedding grows. Third, where supervision is available, an eight-byte code more than doubles the quality of the two-kilobyte
-  float it replaces. We release these measurements as BitBudget, an extensible benchmark with a live leaderboard, recast
-  generative retrieval&#x27;s &quot;semantic identifiers&quot; as quantisation codes, and identify the open problems that follow as compact
-  codes return to the centre of large-scale retrieval.</p><a href="https://arxiv.org/abs/2510.04127" rel="nofollow noopener">原論文を読む →</a></div>
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2510.04127v3 Announce Type: replace-cross 
+Abstract: Approximate nearest-neighbour search underpins large-scale retrieval and retrieval-augmented generation, yet its methods are studied in communities that seldom read one another. We argue that they form one field with three design choices. We develop the projection-quantisation-organisation lens: every method places its projections, places its quantisation thresholds, and organises the resulting codes for search. We test the lens with a reproducible measurement, released as the open BitBudget benchmark, and report three findings. First, the quantisation axis delivers the largest memory savings: a one-bit code with full-precision re-ranking matches uncompressed quality for six of seven embedders, the scanned code one thirty-second of the float&#x27;s size. Second, the orderings the lens anticipates, including a learned-embedding regime where binary codes overtake an inverted-file product quantiser at a matched byte budget, recur as the embedding is enlarged. Third, given class labels, an eight-byte supervised code more than doubles the retrieval quality of the two-kilobyte task-agnostic float it replaces. We also recast the semantic identifiers of generative retrieval as quantisation codes. The main contribution is a single, tested account of compact-code search, from random projections to the retrieval-augmented era.</p><a href="https://arxiv.org/abs/2510.04127" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2510.04127" rel="nofollow noopener">https://arxiv.org/abs/2510.04127</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
     <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="18fcbfef5bac.html"><div class="sim">関連</div><div class="info"><b>PathoSage: Towards Multi-Source Evidence Adjudication in Pathology via Experience-Aware Agentic Workflow</b><div class="m">AI</div></div></a><a class="r" href="e30333db820f.html"><div class="sim">関連</div><div class="info"><b>OmniMem: Perturbation-aware Memory Compression for Streaming Audio-Visual LLMs</b><div class="m">AI</div></div></a><a class="r" href="edd14ebd644f.html"><div class="sim">関連</div><div class="info"><b>Syll: Open-Source Personal Automation with Cross-Surface Execution</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="382fddd10128.html"><div class="sim">関連</div><div class="info"><b>A Definition of Good Explanations and the Challenges Explaining LLM Outputs</b><div class="m">AI</div></div></a><a class="r" href="5313cfc573a5.html"><div class="sim">関連</div><div class="info"><b>Dr-DCI: Scaling Direct Corpus Interaction via Dynamic Workspace Expansion</b><div class="m">AI</div></div></a><a class="r" href="abd21f614eae.html"><div class="sim">関連</div><div class="info"><b>Relational Structural Causal Models</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

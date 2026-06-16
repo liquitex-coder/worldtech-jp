@@ -17,7 +17,7 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"From Detection to Recovery: Operational Analysis on LLM Pre-training with 504 GPUs",
- "inLanguage":"en","datePublished":"2026-06-11T07:00:00+09:00","dateModified":"2026-06-11T07:00:00+09:00",
+ "inLanguage":"en","datePublished":"2026-06-17T07:00:00+09:00","dateModified":"2026-06-17T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2605.09370","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/fb0809944bb1.html"}
@@ -35,10 +35,10 @@
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
     <h1>From Detection to Recovery: Operational Analysis on LLM Pre-training with 504 GPUs</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/06/11</span></div>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/06/17</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/fb0809944bb1.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2605.09370" rel="nofollow noopener">https://arxiv.org/abs/2605.09370</a></span></div>
-  <div class="article-body"><p>arXiv:2605.09370v4 Announce Type: replace-cross 
+  <div class="article-body"><p>arXiv:2605.09370v5 Announce Type: replace-cross 
 Abstract: Large-scale AI training is fundamentally a distributed systems problem, where hardware failures are routine operating conditions rather than rare exceptions, yet public operational evidence from production training clusters remains limited. This report presents an empirical analysis of a 63-node NVIDIA B200 production cluster (504 GPUs), using 55 days of Prometheus time-series data and 73 days of operational logs covering 224 multi-node training sessions.
   The environment is cross-organizational: five parties (SKT, Upstage, Lablup, NVIDIA Korea, VAST Data) share a unified monitoring pipeline. This enabled joint diagnosis of a 60-node-scale storage I/O bottleneck absent in 2-4-node tests, a production-scale phenomenon no single team could isolate alone.
   We perform three quantitative analyses yielding four findings. First, over 751 Prometheus metrics and 10 XID-identified GPU failures, no single metric is consistently dominant across failure types, motivating multi-signal detection. Second, 523 checkpoint events trace the save/load path from GPU VRAM to the NFS server: restart loading reaches 21.5% of maximum read bandwidth (700 GB/s) and save bursts 16.0% of maximum write bandwidth (250 GB/s), with NFS/RPC queueing and transport-layer backlog rising together. Third, across 224 sessions over 73 days, node exclusions concentrate so the top 3 of 63 nodes account for over 50%. Fourth, auto-retry chain analysis shows a 33.3% success rate over 12 chains (73 attempts), 2.7x the 12.5% manual rate, with a median retry interval of 11 minutes (IQR 10-11).

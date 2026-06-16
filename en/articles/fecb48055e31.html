@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KATANA: A Fast, Low-Power Mapping of Kalman Filters onto Edge NPUs for Real-Time Tracking — NewsMatome (EN)</title>
+<meta name="description" content="KATANA: A Fast, Low-Power Mapping of Kalman Filters onto Edge NPUs for Real-Time Tracking — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/fecb48055e31.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/fecb48055e31.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/fecb48055e31.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/fecb48055e31.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="KATANA: A Fast, Low-Power Mapping of Kalman Filters onto Edge NPUs for Real-Time Tracking">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"KATANA: A Fast, Low-Power Mapping of Kalman Filters onto Edge NPUs for Real-Time Tracking",
+ "inLanguage":"en","datePublished":"2026-06-17T07:00:00+09:00","dateModified":"2026-06-17T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2606.14992","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/fecb48055e31.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/fecb48055e31.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>KATANA: A Fast, Low-Power Mapping of Kalman Filters onto Edge NPUs for Real-Time Tracking</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/06/17</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/fecb48055e31.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.14992" rel="nofollow noopener">https://arxiv.org/abs/2606.14992</a></span></div>
+  <div class="article-body"><p>arXiv:2606.14992v1 Announce Type: cross 
+Abstract: State estimation is the closed-loop core of every real-time tracking system, from radar surveillance and counter-UAV defense to autonomous driving and robotics. These deployments run on edge platforms, where defense systems mount on vehicles and drones, and civilian pipelines live on cars and handheld devices. Here, every additional watt of compute erodes mission duration or operational range. Two hard constraints follow: each new measurement must be fused before the next control cycle, and the total compute must fit within a strict battery and thermal power envelope. The Linear and Extended Kalman Filters (LKF, EKF) are dominant estimators on these systems, but today they execute almost exclusively on CPUs, which serialize multi-object tracking (MOT) updates, or on custom FPGA/ASIC accelerators that lengthen design cycles. Contemporary AI-PC SoCs, like the Intel Core Ultra Series 1 and 2, integrate a low-power, data-parallel Neural Processing Unit (NPU). We therefore ask whether the Kalman filter can be mapped onto this existing matrix engine to meet real-time and low-power budgets simultaneously, avoiding a dedicated accelerator and keeping the CPU and GPU free for primary workloads. We present KATANA, an NPU-aware optimization framework delivering the first end-to-end mapping of the LKF and EKF onto a commercial NPU, alongside a cross-platform characterization on shipping AI-PC silicon. KATANA applies three algebraic graph rewrites: subtract-to-add reformulation via a precomputed negative-projection matrix H_neg, static-shape tensor fusion, and block-diagonal batched parallelization, ensuring 100% of operations execute on the DPU matrix engine. On the Series 2, the optimized batched EKF reaches 223.35 FPS at 13.43 W active power, and the LKF reaches 408.73 FPS at 14.05 W, delivering up to a 97.9% reduction in dynamic energy versus the CPU implementation.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

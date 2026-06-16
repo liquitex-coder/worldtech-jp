@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FP8 is All You Need (Part 1): Debunking Hardware FP64 as the HPC Holy Grail — NewsMatome (EN)</title>
-<meta name="description" content="FP8 is All You Need (Part 1): Debunking Hardware FP64 as the HPC Holy Grail — original-language edition. Japanese translation available.">
+<title>FP8 is All You Need (Part 1): Debunking Hardware FP64 as the HPC Holy Grail (June 13th version) — NewsMatome (EN)</title>
+<meta name="description" content="FP8 is All You Need (Part 1): Debunking Hardware FP64 as the HPC Holy Grail (June 13th version) — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/eac1489f8a91.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/eac1489f8a91.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/eac1489f8a91.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/eac1489f8a91.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="FP8 is All You Need (Part 1): Debunking Hardware FP64 as the HPC Holy Grail">
+<meta property="og:title" content="FP8 is All You Need (Part 1): Debunking Hardware FP64 as the HPC Holy Grail (June 13th version)">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"FP8 is All You Need (Part 1): Debunking Hardware FP64 as the HPC Holy Grail",
- "inLanguage":"en","datePublished":"2026-06-09T07:00:00+09:00","dateModified":"2026-06-09T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"FP8 is All You Need (Part 1): Debunking Hardware FP64 as the HPC Holy Grail (June 13th version)",
+ "inLanguage":"en","datePublished":"2026-06-17T07:00:00+09:00","dateModified":"2026-06-17T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.06510","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/eac1489f8a91.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>FP8 is All You Need (Part 1): Debunking Hardware FP64 as the HPC Holy Grail</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/06/09</span></div>
+    <h1>FP8 is All You Need (Part 1): Debunking Hardware FP64 as the HPC Holy Grail (June 13th version)</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/06/17</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/eac1489f8a91.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.06510" rel="nofollow noopener">https://arxiv.org/abs/2606.06510</a></span></div>
-  <div class="article-body"><p>arXiv:2606.06510v1 Announce Type: cross 
-Abstract: Conventional HPC dogma holds that native hardware FP64 silicon is the irreducible foundation of scientific computing -- the &quot;holy grail&quot; of double-precision simulation. This paper argues the dogma is wrong: on AI-optimised GPUs of the B300 generation and beyond, abundant FP8 tensor throughput combined with the Chinese Remainder Theorem-based Ozaki Scheme II recovers memory-roof execution at full FP64 accuracy across the canonical HPC kernel spectrum. NVIDIA&#x27;s Blackwell Ultra (B300) collapses native FP64 to ~1.3 TFLOPS -- a 31x regression from the B200 -- rendering even memory-bound kernels (SpMV, GEMV, stencils) compute-bound. We make four contributions. First, a unified analytic model, the Tensor-Memory Equilibrium (TME) model, augmenting the Roofline with a compute multiplier alpha, a bandwidth multiplier beta, and a reconstruction latency gamma. Second, we identify register-level fusion as the mechanism driving beta -&gt; 1, making emulation essentially free behind the memory wall. Third, we project that Ozaki II vaults emulated FP64 from the ~1 TFLOPS native floor to ~500 TFLOPS (B300) and ~400 TFLOPS (Rubin R200), exceeding even B200&#x27;s native FP64 ceiling by over an order of magnitude in the compute-bound regime while matching the memory roof in the bandwidth-bound regime. Fourth, against an H100 baseline, Ozaki II matches or exceeds H100 on every workload studied, versus the up-to-50x regression that B300 native FP64 imposes. Combined with a companion FFT analysis (Kulisch fixed-point reconstruction on the surviving INT32 pipe) and FP32+Kahan reductions reported in the companion Part(2) paper, every surveyed kernel class on B300 reaches the memory roof at full FP64. The evidence supports the title&#x27;s claim: FP8, with Ozaki II and Kulisch escape routes, is all one needs for production HPC; native FP64 silicon is no longer the holy grail it has been taken to be.</p></div>
+  <div class="article-body"><p>arXiv:2606.06510v2 Announce Type: replace-cross 
+Abstract: Conventional HPC holds that native hardware FP64 is the irreducible foundation of scientific computing. On AI-optimized GPUs of the NVIDIA B300 generation and beyond, native FP64 throughput has collapsed to ~1.3 TFLOPS even as FP8 tensor throughput has grown to multiple PFLOPS. We argue something stronger than that this is survivable: the FP8 tensor-core matrix-multiply is the sole computational primitive on which double-precision scientific computing needs to be built. Every canonical kernel -- dense and sparse linear algebra, spectral transforms, stencils -- and every application composing them reduces, via the Chinese Remainder Theorem-based Ozaki Scheme II, to sequences of FP8 matrix operations; the only non-FP8 arithmetic is a bounded, fixed-width integer accumulation at reconstruction. Native FP64 is thereby demoted from a hardware requirement to a derived accuracy guarantee obtained by composition over the FP8 primitive. We organize the claim as a five-layer hierarchy -- the FP8 op, Ozaki II, the basic kernels or Berkeley &quot;dwarfs&quot;, composite solvers, and full applications -- and, because the dwarf taxonomy already spans scientific computing, establish it by exhibiting the reduction for every dwarf rather than a sample. The claim is falsifiable, and we build the instrument that tests it: a Tensor-Memory Equilibrium (TME) model extending the Roofline with emulation parameters (alpha, beta, gamma). We identify register-level fusion as the mechanism that keeps emulation memory-bound, project recovered FP64 performance across B300 and Rubin against an H100 baseline, and close the kernel coverage with a companion FFT analysis and compensated reductions. The model could have returned a negative verdict; instead it passes across the dwarfs and their compositions. This is the analytical half of a two-part program, with a follow-on implementation to validate the thesis on real silicon.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

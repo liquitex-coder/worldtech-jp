@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Re-feeding Is Not Replaying: Measuring Replay Noise in Counterfactual Token-Credit Estimation — NewsMatome (EN)</title>
+<meta name="description" content="Re-feeding Is Not Replaying: Measuring Replay Noise in Counterfactual Token-Credit Estimation — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/7ecba79fa51e.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/7ecba79fa51e.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/7ecba79fa51e.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/7ecba79fa51e.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Re-feeding Is Not Replaying: Measuring Replay Noise in Counterfactual Token-Credit Estimation">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Re-feeding Is Not Replaying: Measuring Replay Noise in Counterfactual Token-Credit Estimation",
+ "inLanguage":"en","datePublished":"2026-06-17T07:00:00+09:00","dateModified":"2026-06-17T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2606.15621","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/7ecba79fa51e.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/7ecba79fa51e.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Re-feeding Is Not Replaying: Measuring Replay Noise in Counterfactual Token-Credit Estimation</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/06/17</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/7ecba79fa51e.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.15621" rel="nofollow noopener">https://arxiv.org/abs/2606.15621</a></span></div>
+  <div class="article-body"><p>arXiv:2606.15621v1 Announce Type: new 
+Abstract: Per-token counterfactual credit estimation asks which token in a language-model rollout caused the final answer to be right or wrong: cut the transcript at a pivot, substitute an alternative token, replay continuations, and compare outcomes. Published methods re-feed the transcript prefix as a fresh prompt, assuming this reproduces the state the model passed through during generation. We measure what that assumption costs on a stock inference engine, with a three-pass design: continuations resumed from the verified decode-time KV state, an identical second exact pass (a replica noise floor), and a re-feed pass. Across six configurations and three models (including a GRPO-trained checkpoint), at low-margin decision tokens, re-feeding changes the credit estimate at rates 14-28 percentage points above the replica floor (7-21pp under a treatment-independent conditioning; problem-clustered t = 2.9-6.4). Most changes are zero-boundary crossings of the quantized estimator rather than polarity reversals, and the perturbation is consistent with mean-zero, so averaged quantities are largely safe; but selection is not: a critical-token set chosen by thresholding $|\hat{A}_t|$ under re-feed overlaps the exact-resume selection at Jaccard 0.34-0.90, versus a 0.63-0.96 replica ceiling. A causal confirmation closes the loop: under vLLM&#x27;s batch-invariant kernels all three passes are identical on every measured channel, with both disagreement rates exactly zero. Replica passes themselves disagree on 9-23% of eligible estimates: single-sample credit measurements at decision tokens are unreliable under any replay. Settings were fixed in advance; exact-pass cache hits in the second campaign are instrumented (100% hit rate, 3,434 pivots); total compute was under 10 USD. We recommend that counterfactual credit studies resume decoder state or use batch-invariant kernels, and report a replica floor.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SPI: Query-Depth-Adaptive Indexing for Streaming RAG in Vector Databases — NewsMatome (EN)</title>
+<meta name="description" content="SPI: Query-Depth-Adaptive Indexing for Streaming RAG in Vector Databases — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/8f4bcd15bda4.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/8f4bcd15bda4.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/8f4bcd15bda4.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/8f4bcd15bda4.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SPI: Query-Depth-Adaptive Indexing for Streaming RAG in Vector Databases">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"SPI: Query-Depth-Adaptive Indexing for Streaming RAG in Vector Databases",
+ "inLanguage":"en","datePublished":"2026-06-17T07:00:00+09:00","dateModified":"2026-06-17T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2511.16681","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/8f4bcd15bda4.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/8f4bcd15bda4.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>SPI: Query-Depth-Adaptive Indexing for Streaming RAG in Vector Databases</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/06/17</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/8f4bcd15bda4.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2511.16681" rel="nofollow noopener">https://arxiv.org/abs/2511.16681</a></span></div>
+  <div class="article-body"><p>arXiv:2511.16681v3 Announce Type: replace-cross 
+Abstract: Vector databases (VecDBs) are increasingly deployed in retrieval-augmented generation (RAG) pipelines where query processing and document ingestion occur concurrently. The index layer needs to provide low-latency search while incorporating new vectors without frequent global rebuilding. Existing VecDB pipelines typically operate within a uniform representation regime, despite substantial variation in the semantic granularity required across queries. This motivates an index design that supports incremental updates while adapting retrieval depth to query distribution and complexity.
+  We propose \textbf{Semantic Pyramid Indexing (SPI)}, a VecDB-layer indexing framework that organizes embeddings into $L$ semantically aligned resolution levels and selects retrieval depth per query via a lightweight uncertainty-aware controller. SPI supports progressive coarse-to-fine ANN search, level-wise streaming insertion without global rebuilds, and distributed execution through LSH partitioning with asynchronous gRPC coordination. Unlike hierarchical ANN structures with fixed traversal rules (e.g., SPANN), SPI adapts resolution at query time while remaining compatible with FAISS and Qdrant backends.
+  On MS MARCO and Natural Questions, SPI achieves competitive Recall@10 with lower latency under the same dense encoder family, yielding a \textbf{1.4--2.3$\times$} average retrieval latency reduction under fixed Recall@10 targets relative to comparable approximate-ANN baselines. A prototype scaling study up to 8 nodes shows $6.2\times$ throughput scaling (${\approx}73\%$ efficiency); the 16-node configuration is included for completeness but shows diminishing efficiency. We provide a top-$K$ stability guarantee: queries with sufficient retrieval margin return an identical top-$K$ set at a shallower level. Code and configurations are available at https://github.com/FastLM/SPI_VecDB.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
