@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Decomposing Prediction Mechanisms for In-Context Recall — NewsMatome (EN)</title>
+<meta name="description" content="Decomposing Prediction Mechanisms for In-Context Recall — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/a2b1741a2b68.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/a2b1741a2b68.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/a2b1741a2b68.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/a2b1741a2b68.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Decomposing Prediction Mechanisms for In-Context Recall">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Decomposing Prediction Mechanisms for In-Context Recall",
+ "inLanguage":"en","datePublished":"2026-06-19T07:00:00+09:00","dateModified":"2026-06-19T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2507.01414","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/a2b1741a2b68.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/a2b1741a2b68.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Decomposing Prediction Mechanisms for In-Context Recall</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/06/19</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/a2b1741a2b68.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2507.01414" rel="nofollow noopener">https://arxiv.org/abs/2507.01414</a></span></div>
+  <div class="article-body"><p>arXiv:2507.01414v2 Announce Type: replace 
+Abstract: We introduce a new family of toy problems that combine features of linear-regression-style continuous in-context learning (ICL) with discrete associative recall. We pretrain transformer models on sample traces from this toy, specifically symbolically-labeled interleaved state observations from randomly drawn linear deterministic dynamical systems. We study if the transformer models can recall the state of a sequence previously seen in its context when prompted to do so with the corresponding in-context label. Taking a closer look at this task, it becomes clear that the model must perform two functions: (1) identify which system&#x27;s state should be recalled and apply that system to its last seen state, and (2) continuing to apply the correct system to predict the subsequent states. Training dynamics reveal that the first capability emerges well into a model&#x27;s training. Surprisingly, the second capability, of continuing the prediction of a resumed sequence, develops much earlier.
+  Via out-of-distribution experiments, and a mechanistic analysis on model weights via edge pruning, we find that next-token prediction for this toy problem involves at least two separate mechanisms. One mechanism uses the discrete symbolic labels to do the associative recall required to predict the start of a resumption of a previously seen sequence. The second mechanism, which is largely agnostic to the discrete symbolic labels, performs a &quot;Bayesian-style&quot; prediction based on the previous token and the context. These two mechanisms have different learning dynamics.
+  To confirm that this multi-mechanism (manifesting as separate phase transitions) phenomenon is not just an artifact of our toy setting, we used OLMo training checkpoints on an ICL translation task to see a similar phenomenon: a decisive gap in the emergence of first-task-token performance vs second-task-token performance.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>WAV: Multi-Resolution Block Residual Routing for Deep Decoder-Only Transformers — NewsMatome</title>
-<meta name="description" content="WAV: Multi-Resolution Block Residual Routing for Deep Decoder-Only Transformers（EN→JA 翻訳・出典付き）">
+<title>HAARES Half-Split Residual Basis Routing for Deep Transformers — NewsMatome</title>
+<meta name="description" content="HAARES Half-Split Residual Basis Routing for Deep Transformers（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/9daefe9d3d18.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/9daefe9d3d18.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/9daefe9d3d18.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="WAV: Multi-Resolution Block Residual Routing for Deep Decoder-Only Transformers">
-<meta property="og:description" content="WAV: Multi-Resolution Block Residual Routing for Deep Decoder-Only Transformers（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="HAARES Half-Split Residual Basis Routing for Deep Transformers">
+<meta property="og:description" content="HAARES Half-Split Residual Basis Routing for Deep Transformers（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"WAV: Multi-Resolution Block Residual Routing for Deep Decoder-Only Transformers",
- "inLanguage":"ja","datePublished":"2026-06-09T07:00:00+09:00","dateModified":"2026-06-09T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"HAARES Half-Split Residual Basis Routing for Deep Transformers",
+ "inLanguage":"ja","datePublished":"2026-06-19T07:00:00+09:00","dateModified":"2026-06-19T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.06564","url":"https://liquitex-coder.github.io/worldtech-jp/articles/9daefe9d3d18.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>WAV: Multi-Resolution Block Residual Routing for Deep Decoder-Only Transformers</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>HAARES Half-Split Residual Basis Routing for Deep Transformers</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>WAV: Multi-Resolution Block Residual Routing for Deep Decoder-Only Transformers</h1>
+      <h1>HAARES Half-Split Residual Basis Routing for Deep Transformers</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/06/09 07:00</span><span>· 更新 2026/06/09</span>
+        <span>公開 2026/06/19 07:00</span><span>· 更新 2026/06/19</span>
       </div>
     </div>
     
@@ -74,24 +74,24 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2606.06564" rel="nofollow noopener">WAV: Multi-Resolution Block Residual Routing for Deep Decoder-Only Transformers</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2606.06564" rel="nofollow noopener">HAARES Half-Split Residual Basis Routing for Deep Transformers</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2606.06564v1 Announce Type: new 
-Abstract: Residual connections are central to training deep Transformers, but standard PreNorm residual streams aggregate sublayer updates with fixed unit weights. Recent Attention Residuals replace this fixed accumulation with content-dependent depth-wise routing, and Block Attention Residuals make the mechanism efficient by routing over block-level residual summaries. However, a single block summary stores only the low-frequency total residual displacement inside a block, discarding directional structure such as attention-vs-MLP imbalance and early-vs-late block dynamics. We propose WAV v1, a lightweight multi-resolution residual routing method for decoder-only Transformers. Instead of representing each block only by its accumulated residual sum, WAV v1 augments every block with two directional detail bases: a phase basis that contrasts attention and MLP updates, and a split basis that contrasts early and late sublayer updates. These bases are routed together with standard block summaries through the same depth-wise softmax mixer, while negative detail-source initialization and detached RMS matching stabilize training. On character-level TinyStories and Text8 language modeling, WAV v1 shows a clear depth-dependent benefit. Although it is not consistently beneficial at 12 layers, it becomes competitive at 24 layers and outperforms all baselines at 48 layers. At 48 layers, WAV v1 reduces validation loss relative to Block AttnRes from 0.4960 to 0.4738 on TinyStories and from 0.9363 to 0.9305 on Text8, with negligible additional parameters. These results suggest that directional residual details, not only block-level sums, are important for scaling residual routing in deeper Transformers.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2606.06564v1 Announce Type: new 
-Abstract: Residual connections are central to training deep Transformers, but standard PreNorm residual streams aggregate sublayer updates with fixed unit weights. Recent Attention Residuals replace this fixed accumulation with content-dependent depth-wise routing, and Block Attention Residuals make the mechanism efficient by routing over block-level residual summaries. However, a single block summary stores only the low-frequency total residual displacement inside a block, discarding directional structure such as attention-vs-MLP imbalance and early-vs-late block dynamics. We propose WAV v1, a lightweight multi-resolution residual routing method for decoder-only Transformers. Instead of representing each block only by its accumulated residual sum, WAV v1 augments every block with two directional detail bases: a phase basis that contrasts attention and MLP updates, and a split basis that contrasts early and late sublayer updates. These bases are routed together with standard block summaries through the same depth-wise softmax mixer, while negative detail-source initialization and detached RMS matching stabilize training. On character-level TinyStories and Text8 language modeling, WAV v1 shows a clear depth-dependent benefit. Although it is not consistently beneficial at 12 layers, it becomes competitive at 24 layers and outperforms all baselines at 48 layers. At 48 layers, WAV v1 reduces validation loss relative to Block AttnRes from 0.4960 to 0.4738 on TinyStories and from 0.9363 to 0.9305 on Text8, with negligible additional parameters. These results suggest that directional residual details, not only block-level sums, are important for scaling residual routing in deeper Transformers.</div>
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2606.06564v2 Announce Type: replace 
+Abstract: Block-level residual routing makes learned residual aggregation practical by routing over block summaries, but each summary compresses an ordered sequence of attention and MLP updates into one cumulative vector. We propose \method{}, a lightweight residual basis router that keeps the cumulative block source and adds one half-split detail basis, computed as the difference between first-half and second-half residual updates. The detail basis is RMS-matched and updated online, exposing coarse intra-block trajectory information without dense sublayer-level routing. Across OpenWebText, cross-domain character-level benchmarks, and BPE-tokenized OpenWebText, the empirical pattern is depth-dependent: gains are small or mixed at shallow depth and most reliable in 48-layer models. In the 201M 48-layer setting, \method{} improves over Block AttnRes across all three seeds, while a 453M two-seed probe shows the same direction. Ablations rule out source duplication, random signed details, fixed detail-source biases, or block-count changes alone. Cost analysis shows that the method is FLOP-light but not wall-clock-free: it adds memory and routing overhead, yet its relative arithmetic cost is amortized as width grows and earlier convergence can reduce time-to-target.</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2606.06564v2 Announce Type: replace 
+Abstract: Block-level residual routing makes learned residual aggregation practical by routing over block summaries, but each summary compresses an ordered sequence of attention and MLP updates into one cumulative vector. We propose \method{}, a lightweight residual basis router that keeps the cumulative block source and adds one half-split detail basis, computed as the difference between first-half and second-half residual updates. The detail basis is RMS-matched and updated online, exposing coarse intra-block trajectory information without dense sublayer-level routing. Across OpenWebText, cross-domain character-level benchmarks, and BPE-tokenized OpenWebText, the empirical pattern is depth-dependent: gains are small or mixed at shallow depth and most reliable in 48-layer models. In the 201M 48-layer setting, \method{} improves over Block AttnRes across all three seeds, while a 453M two-seed probe shows the same direction. Ablations rule out source duplication, random signed details, fixed detail-source biases, or block-count changes alone. Cost analysis shows that the method is FLOP-light but not wall-clock-free: it adds memory and routing overhead, yet its relative arithmetic cost is amortized as width grows and earlier convergence can reduce time-to-target.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2606.06564v1 Announce Type: new 
-Abstract: Residual connections are central to training deep Transformers, but standard PreNorm residual streams aggregate sublayer updates with fixed unit weights. Recent Attention Residuals replace this fixed accumulation with content-dependent depth-wise routing, and Block Attention Residuals make the mechanism efficient by routing over block-level residual summaries. However, a single block summary stores only the low-frequency total residual displacement inside a block, discarding directional structure such as attention-vs-MLP imbalance and early-vs-late block dynamics. We propose WAV v1, a lightweight multi-resolution residual routing method for decoder-only Transformers. Instead of representing each block only by its accumulated residual sum, WAV v1 augments every block with two directional detail bases: a phase basis that contrasts attention and MLP updates, and a split basis that contrasts early and late sublayer updates. These bases are routed together with standard block summaries through the same depth-wise softmax mixer, while negative detail-source initialization and detached RMS matching stabilize training. On character-level TinyStories and Text8 language modeling, WAV v1 shows a clear depth-dependent benefit. Although it is not consistently beneficial at 12 layers, it becomes competitive at 24 layers and outperforms all baselines at 48 layers. At 48 layers, WAV v1 reduces validation loss relative to Block AttnRes from 0.4960 to 0.4738 on TinyStories and from 0.9363 to 0.9305 on Text8, with negligible additional parameters. These results suggest that directional residual details, not only block-level sums, are important for scaling residual routing in deeper Transformers.</p><a href="https://arxiv.org/abs/2606.06564" rel="nofollow noopener">原論文を読む →</a></div>
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2606.06564v2 Announce Type: replace 
+Abstract: Block-level residual routing makes learned residual aggregation practical by routing over block summaries, but each summary compresses an ordered sequence of attention and MLP updates into one cumulative vector. We propose \method{}, a lightweight residual basis router that keeps the cumulative block source and adds one half-split detail basis, computed as the difference between first-half and second-half residual updates. The detail basis is RMS-matched and updated online, exposing coarse intra-block trajectory information without dense sublayer-level routing. Across OpenWebText, cross-domain character-level benchmarks, and BPE-tokenized OpenWebText, the empirical pattern is depth-dependent: gains are small or mixed at shallow depth and most reliable in 48-layer models. In the 201M 48-layer setting, \method{} improves over Block AttnRes across all three seeds, while a 453M two-seed probe shows the same direction. Ablations rule out source duplication, random signed details, fixed detail-source biases, or block-count changes alone. Cost analysis shows that the method is FLOP-light but not wall-clock-free: it adds memory and routing overhead, yet its relative arithmetic cost is amortized as width grows and earlier convergence can reduce time-to-target.</p><a href="https://arxiv.org/abs/2606.06564" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2606.06564" rel="nofollow noopener">https://arxiv.org/abs/2606.06564</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
     <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="109d5073d60a.html"><div class="sim">関連</div><div class="info"><b>Detecting and Mitigating Bias by Treating Fairness as a Symmetry Operation</b><div class="m">AI</div></div></a><a class="r" href="94f50285ad41.html"><div class="sim">関連</div><div class="info"><b>DiBS: Diffusion-Informed Branch Selection</b><div class="m">AI</div></div></a><a class="r" href="6c87f0a8f1ed.html"><div class="sim">関連</div><div class="info"><b>SafeGene: Reusable Adapters for Transferable Safety Alignment</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="1a55aef7460c.html"><div class="sim">関連</div><div class="info"><b>NAVI-Orbital: First In-Orbit Demonstration of a Zero-Shot Vision-Language Model for Autonomous Earth Observation</b><div class="m">AI</div></div></a><a class="r" href="a9e559eb0ec7.html"><div class="sim">関連</div><div class="info"><b>CaVe-VLM-CoT: An Interpretable Vision-Language Model Framework</b><div class="m">AI</div></div></a><a class="r" href="8833c581d577.html"><div class="sim">関連</div><div class="info"><b>Searching for Synergy in Shared Workspace Human-AI Collaboration</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

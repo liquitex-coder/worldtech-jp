@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>WAV: Multi-Resolution Block Residual Routing for Deep Decoder-Only Transformers — NewsMatome (EN)</title>
-<meta name="description" content="WAV: Multi-Resolution Block Residual Routing for Deep Decoder-Only Transformers — original-language edition. Japanese translation available.">
+<title>HAARES Half-Split Residual Basis Routing for Deep Transformers — NewsMatome (EN)</title>
+<meta name="description" content="HAARES Half-Split Residual Basis Routing for Deep Transformers — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/9daefe9d3d18.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/9daefe9d3d18.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/9daefe9d3d18.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/9daefe9d3d18.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="WAV: Multi-Resolution Block Residual Routing for Deep Decoder-Only Transformers">
+<meta property="og:title" content="HAARES Half-Split Residual Basis Routing for Deep Transformers">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"WAV: Multi-Resolution Block Residual Routing for Deep Decoder-Only Transformers",
- "inLanguage":"en","datePublished":"2026-06-09T07:00:00+09:00","dateModified":"2026-06-09T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"HAARES Half-Split Residual Basis Routing for Deep Transformers",
+ "inLanguage":"en","datePublished":"2026-06-19T07:00:00+09:00","dateModified":"2026-06-19T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.06564","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/9daefe9d3d18.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>WAV: Multi-Resolution Block Residual Routing for Deep Decoder-Only Transformers</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/06/09</span></div>
+    <h1>HAARES Half-Split Residual Basis Routing for Deep Transformers</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/06/19</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/9daefe9d3d18.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.06564" rel="nofollow noopener">https://arxiv.org/abs/2606.06564</a></span></div>
-  <div class="article-body"><p>arXiv:2606.06564v1 Announce Type: new 
-Abstract: Residual connections are central to training deep Transformers, but standard PreNorm residual streams aggregate sublayer updates with fixed unit weights. Recent Attention Residuals replace this fixed accumulation with content-dependent depth-wise routing, and Block Attention Residuals make the mechanism efficient by routing over block-level residual summaries. However, a single block summary stores only the low-frequency total residual displacement inside a block, discarding directional structure such as attention-vs-MLP imbalance and early-vs-late block dynamics. We propose WAV v1, a lightweight multi-resolution residual routing method for decoder-only Transformers. Instead of representing each block only by its accumulated residual sum, WAV v1 augments every block with two directional detail bases: a phase basis that contrasts attention and MLP updates, and a split basis that contrasts early and late sublayer updates. These bases are routed together with standard block summaries through the same depth-wise softmax mixer, while negative detail-source initialization and detached RMS matching stabilize training. On character-level TinyStories and Text8 language modeling, WAV v1 shows a clear depth-dependent benefit. Although it is not consistently beneficial at 12 layers, it becomes competitive at 24 layers and outperforms all baselines at 48 layers. At 48 layers, WAV v1 reduces validation loss relative to Block AttnRes from 0.4960 to 0.4738 on TinyStories and from 0.9363 to 0.9305 on Text8, with negligible additional parameters. These results suggest that directional residual details, not only block-level sums, are important for scaling residual routing in deeper Transformers.</p></div>
+  <div class="article-body"><p>arXiv:2606.06564v2 Announce Type: replace 
+Abstract: Block-level residual routing makes learned residual aggregation practical by routing over block summaries, but each summary compresses an ordered sequence of attention and MLP updates into one cumulative vector. We propose \method{}, a lightweight residual basis router that keeps the cumulative block source and adds one half-split detail basis, computed as the difference between first-half and second-half residual updates. The detail basis is RMS-matched and updated online, exposing coarse intra-block trajectory information without dense sublayer-level routing. Across OpenWebText, cross-domain character-level benchmarks, and BPE-tokenized OpenWebText, the empirical pattern is depth-dependent: gains are small or mixed at shallow depth and most reliable in 48-layer models. In the 201M 48-layer setting, \method{} improves over Block AttnRes across all three seeds, while a 453M two-seed probe shows the same direction. Ablations rule out source duplication, random signed details, fixed detail-source biases, or block-count changes alone. Cost analysis shows that the method is FLOP-light but not wall-clock-free: it adds memory and routing overhead, yet its relative arithmetic cost is amortized as width grows and earlier convergence can reduce time-to-target.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>
