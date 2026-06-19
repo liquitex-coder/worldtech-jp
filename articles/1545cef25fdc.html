@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"Multimodal Evaluator Preference Collapse: Cross-Modal Contagion in Self-Evolving Agents",
- "inLanguage":"ja","datePublished":"2026-06-17T07:00:00+09:00","dateModified":"2026-06-17T07:00:00+09:00",
+ "inLanguage":"ja","datePublished":"2026-06-20T07:00:00+09:00","dateModified":"2026-06-20T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.16682","url":"https://liquitex-coder.github.io/worldtech-jp/articles/1545cef25fdc.html"}
@@ -64,7 +64,7 @@
       <h1>Multimodal Evaluator Preference Collapse: Cross-Modal Contagion in Self-Evolving Agents</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/06/17 07:00</span><span>· 更新 2026/06/17</span>
+        <span>公開 2026/06/20 07:00</span><span>· 更新 2026/06/20</span>
       </div>
     </div>
     
@@ -77,21 +77,90 @@
       <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2606.16682" rel="nofollow noopener">Multimodal Evaluator Preference Collapse: Cross-Modal Contagion in Self-Evolving Agents</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2606.16682v1 Announce Type: new 
-Abstract: When AI agents use language models to evaluate their own outputs in a feedback loop, systematic biases emerge. We show that Evaluator Preference Collapse (EPC) is dramatically amplified in multimodal settings. Using GPT-4o to evaluate DeepSeek-chat across text and visual tasks, we find that a single strategy (step_by_step) absorbs 48.4% of all weight -- 3.2x the collapse observed in text-only self-evaluation -- while three visual-domain strategies receive only 9.1% combined weight. We then demonstrate a novel phenomenon we term cross-modal contagion: evaluator preferences acquired on one modality transfer to and corrupt strategy selection on another. Through a four-phase isolation training paradigm, we measure contagion coefficients and document strategy inversion -- the optimal strategy for a modality reverses after cross-modal exposure. A Phase 3 statistical validation across four evaluator configurations (N=53 total independent repetitions, 15,592 API calls) reveals a clear hierarchy: cross-model evaluation (GPT-4o, N=8) produces strong but symmetric bidirectional contagion (mean gamma_{T-&gt;V}=1.176, gamma_{V-&gt;T}=1.089, Delta=-0.088, p=0.575, Cohen&#x27;s d=0.29); high round counts (DashScope, 50 rounds) cause collapse to single-strategy dominance (70% zero contagion); and self-evaluation provides near-complete immunity -- 97% of runs (N=30, DeepSeek-chat) yield exactly zero contagion (mean gamma=0.033, 95% CI [-0.031, 0.010], p=0.642, d=0.07). No evaluator condition shows statistically significant directional asymmetry. We introduce the contagion matrix indexed by evaluator identity, release the MM-EPC experimental framework, and identify cross-model evaluator architecture as the primary risk factor for preference contagion.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2606.16682v1 Announce Type: new 
-Abstract: When AI agents use language models to evaluate their own outputs in a feedback loop, systematic biases emerge. We show that Evaluator Preference Collapse (EPC) is dramatically amplified in multimodal settings. Using GPT-4o to evaluate DeepSeek-chat across text and visual tasks, we find that a single strategy (step_by_step) absorbs 48.4% of all weight -- 3.2x the collapse observed in text-only self-evaluation -- while three visual-domain strategies receive only 9.1% combined weight. We then demonstrate a novel phenomenon we term cross-modal contagion: evaluator preferences acquired on one modality transfer to and corrupt strategy selection on another. Through a four-phase isolation training paradigm, we measure contagion coefficients and document strategy inversion -- the optimal strategy for a modality reverses after cross-modal exposure. A Phase 3 statistical validation across four evaluator configurations (N=53 total independent repetitions, 15,592 API calls) reveals a clear hierarchy: cross-model evaluation (GPT-4o, N=8) produces strong but symmetric bidirectional contagion (mean gamma_{T-&gt;V}=1.176, gamma_{V-&gt;T}=1.089, Delta=-0.088, p=0.575, Cohen&#x27;s d=0.29); high round counts (DashScope, 50 rounds) cause collapse to single-strategy dominance (70% zero contagion); and self-evaluation provides near-complete immunity -- 97% of runs (N=30, DeepSeek-chat) yield exactly zero contagion (mean gamma=0.033, 95% CI [-0.031, 0.010], p=0.642, d=0.07). No evaluator condition shows statistically significant directional asymmetry. We introduce the contagion matrix indexed by evaluator identity, release the MM-EPC experimental framework, and identify cross-model evaluator architecture as the primary risk factor for preference contagion.</div>
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2606.16682v2 Announce Type: replace 
+Abstract: When AI agents use language models to evaluate their own outputs in a
+  feedback loop, systematic biases emerge. We show that Evaluator Preference
+  Collapse (EPC) is dramatically amplified in multimodal settings. Using
+  GPT-4o to evaluate DeepSeek-chat across text and visual tasks, we find
+  that a single strategy (step_by_step) absorbs 48.4% of all weight -- 3.2x
+  the collapse observed in text-only self-evaluation -- while three
+  visual-domain strategies receive only 9.1% combined weight. We then
+  demonstrate a novel phenomenon we term cross-modal contagion: evaluator
+  preferences acquired on one modality transfer to and corrupt strategy
+  selection on another. Through a four-phase isolation training paradigm, we
+  measure contagion coefficients and document strategy inversion -- the
+  optimal strategy for a modality reverses after cross-modal exposure. A
+  Phase 3 statistical validation across five evaluator configurations (N=80
+  total independent repetitions, ~35,000 API calls) with both text-proxy and
+  real-image visual tasks finds: cross-model evaluation produces strong
+  contagion (JSD~0.19-0.34), real-image inputs yield the most directionally
+  consistent signal (mean gamma_{T-&gt;V}=1.145, gamma_{V-&gt;T}=0.937, 70% T-&gt;V,
+  Cohen&#x27;s d=0.56), and self-evaluation provides near-complete immunity --
+  97% of runs (N=30) yield zero contagion (JSD=0.003, d=0.07). Three
+  methodological ablations and multi-executor validation confirm the effect
+  is not a structural artifact. We introduce the contagion matrix indexed by
+  evaluator identity, release the MM-EPC framework, and identify
+  cross-model evaluator architecture as the primary risk factor for
+  preference drift. Code and data: https://github.com/aidless/mm-epc.</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2606.16682v2 Announce Type: replace 
+Abstract: When AI agents use language models to evaluate their own outputs in a
+  feedback loop, systematic biases emerge. We show that Evaluator Preference
+  Collapse (EPC) is dramatically amplified in multimodal settings. Using
+  GPT-4o to evaluate DeepSeek-chat across text and visual tasks, we find
+  that a single strategy (step_by_step) absorbs 48.4% of all weight -- 3.2x
+  the collapse observed in text-only self-evaluation -- while three
+  visual-domain strategies receive only 9.1% combined weight. We then
+  demonstrate a novel phenomenon we term cross-modal contagion: evaluator
+  preferences acquired on one modality transfer to and corrupt strategy
+  selection on another. Through a four-phase isolation training paradigm, we
+  measure contagion coefficients and document strategy inversion -- the
+  optimal strategy for a modality reverses after cross-modal exposure. A
+  Phase 3 statistical validation across five evaluator configurations (N=80
+  total independent repetitions, ~35,000 API calls) with both text-proxy and
+  real-image visual tasks finds: cross-model evaluation produces strong
+  contagion (JSD~0.19-0.34), real-image inputs yield the most directionally
+  consistent signal (mean gamma_{T-&gt;V}=1.145, gamma_{V-&gt;T}=0.937, 70% T-&gt;V,
+  Cohen&#x27;s d=0.56), and self-evaluation provides near-complete immunity --
+  97% of runs (N=30) yield zero contagion (JSD=0.003, d=0.07). Three
+  methodological ablations and multi-executor validation confirm the effect
+  is not a structural artifact. We introduce the contagion matrix indexed by
+  evaluator identity, release the MM-EPC framework, and identify
+  cross-model evaluator architecture as the primary risk factor for
+  preference drift. Code and data: https://github.com/aidless/mm-epc.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2606.16682v1 Announce Type: new 
-Abstract: When AI agents use language models to evaluate their own outputs in a feedback loop, systematic biases emerge. We show that Evaluator Preference Collapse (EPC) is dramatically amplified in multimodal settings. Using GPT-4o to evaluate DeepSeek-chat across text and visual tasks, we find that a single strategy (step_by_step) absorbs 48.4% of all weight -- 3.2x the collapse observed in text-only self-evaluation -- while three visual-domain strategies receive only 9.1% combined weight. We then demonstrate a novel phenomenon we term cross-modal contagion: evaluator preferences acquired on one modality transfer to and corrupt strategy selection on another. Through a four-phase isolation training paradigm, we measure contagion coefficients and document strategy inversion -- the optimal strategy for a modality reverses after cross-modal exposure. A Phase 3 statistical validation across four evaluator configurations (N=53 total independent repetitions, 15,592 API calls) reveals a clear hierarchy: cross-model evaluation (GPT-4o, N=8) produces strong but symmetric bidirectional contagion (mean gamma_{T-&gt;V}=1.176, gamma_{V-&gt;T}=1.089, Delta=-0.088, p=0.575, Cohen&#x27;s d=0.29); high round counts (DashScope, 50 rounds) cause collapse to single-strategy dominance (70% zero contagion); and self-evaluation provides near-complete immunity -- 97% of runs (N=30, DeepSeek-chat) yield exactly zero contagion (mean gamma=0.033, 95% CI [-0.031, 0.010], p=0.642, d=0.07). No evaluator condition shows statistically significant directional asymmetry. We introduce the contagion matrix indexed by evaluator identity, release the MM-EPC experimental framework, and identify cross-model evaluator architecture as the primary risk factor for preference contagion.</p><a href="https://arxiv.org/abs/2606.16682" rel="nofollow noopener">原論文を読む →</a></div>
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2606.16682v2 Announce Type: replace 
+Abstract: When AI agents use language models to evaluate their own outputs in a
+  feedback loop, systematic biases emerge. We show that Evaluator Preference
+  Collapse (EPC) is dramatically amplified in multimodal settings. Using
+  GPT-4o to evaluate DeepSeek-chat across text and visual tasks, we find
+  that a single strategy (step_by_step) absorbs 48.4% of all weight -- 3.2x
+  the collapse observed in text-only self-evaluation -- while three
+  visual-domain strategies receive only 9.1% combined weight. We then
+  demonstrate a novel phenomenon we term cross-modal contagion: evaluator
+  preferences acquired on one modality transfer to and corrupt strategy
+  selection on another. Through a four-phase isolation training paradigm, we
+  measure contagion coefficients and document strategy inversion -- the
+  optimal strategy for a modality reverses after cross-modal exposure. A
+  Phase 3 statistical validation across five evaluator configurations (N=80
+  total independent repetitions, ~35,000 API calls) with both text-proxy and
+  real-image visual tasks finds: cross-model evaluation produces strong
+  contagion (JSD~0.19-0.34), real-image inputs yield the most directionally
+  consistent signal (mean gamma_{T-&gt;V}=1.145, gamma_{V-&gt;T}=0.937, 70% T-&gt;V,
+  Cohen&#x27;s d=0.56), and self-evaluation provides near-complete immunity --
+  97% of runs (N=30) yield zero contagion (JSD=0.003, d=0.07). Three
+  methodological ablations and multi-executor validation confirm the effect
+  is not a structural artifact. We introduce the contagion matrix indexed by
+  evaluator identity, release the MM-EPC framework, and identify
+  cross-model evaluator architecture as the primary risk factor for
+  preference drift. Code and data: https://github.com/aidless/mm-epc.</p><a href="https://arxiv.org/abs/2606.16682" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2606.16682" rel="nofollow noopener">https://arxiv.org/abs/2606.16682</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
     <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="382fddd10128.html"><div class="sim">関連</div><div class="info"><b>A Definition of Good Explanations and the Challenges Explaining LLM Outputs</b><div class="m">AI</div></div></a><a class="r" href="5313cfc573a5.html"><div class="sim">関連</div><div class="info"><b>Dr-DCI: Scaling Direct Corpus Interaction via Dynamic Workspace Expansion</b><div class="m">AI</div></div></a><a class="r" href="abd21f614eae.html"><div class="sim">関連</div><div class="info"><b>Relational Structural Causal Models</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="14d2b1b92bb8.html"><div class="sim">関連</div><div class="info"><b>Deontic Policies for Runtime Governance of Agentic AI Systems</b><div class="m">AI</div></div></a><a class="r" href="d7713b509e3f.html"><div class="sim">関連</div><div class="info"><b>Measuring Curriculum Alignment across Topical Coverage, Competency, and Cognitive Depth: A Longitudinal Framework Applied to CS2013 and CS2023</b><div class="m">AI</div></div></a><a class="r" href="c3297c469ff1.html"><div class="sim">関連</div><div class="info"><b>Diffusion Language Models: An Experimental Analysis</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>
