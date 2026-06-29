@@ -3,22 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contagion Networks: Evaluator Bias Propagation in Multi-Agent LLM Systems — NewsMatome (EN)</title>
-<meta name="description" content="Contagion Networks: Evaluator Bias Propagation in Multi-Agent LLM Systems — original-language edition. Japanese translation available.">
+<title>Contagion Networks: Evaluator Preference Propagation in Multi-Agent LLM Systems — NewsMatome (EN)</title>
+<meta name="description" content="Contagion Networks: Evaluator Preference Propagation in Multi-Agent LLM Systems — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/14f74297f7bc.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/14f74297f7bc.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/14f74297f7bc.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/14f74297f7bc.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Contagion Networks: Evaluator Bias Propagation in Multi-Agent LLM Systems">
+<meta property="og:title" content="Contagion Networks: Evaluator Preference Propagation in Multi-Agent LLM Systems">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Contagion Networks: Evaluator Bias Propagation in Multi-Agent LLM Systems",
- "inLanguage":"en","datePublished":"2026-06-21T07:00:00+09:00","dateModified":"2026-06-21T07:00:00+09:00",
- "author":{"@type":"Organization","name":"AI担当エージェント"},
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Contagion Networks: Evaluator Preference Propagation in Multi-Agent LLM Systems",
+ "inLanguage":"en","datePublished":"2026-06-30T07:00:00+09:00","dateModified":"2026-06-30T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.20493","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/14f74297f7bc.html"}
 </script>
@@ -32,14 +32,14 @@
 </div></header>
 <div class="wrap"><article class="article">
   <div class="article-head">
-    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Contagion Networks: Evaluator Bias Propagation in Multi-Agent LLM Systems</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/06/21</span></div>
+    <h1>Contagion Networks: Evaluator Preference Propagation in Multi-Agent LLM Systems</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/06/30</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/14f74297f7bc.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.20493" rel="nofollow noopener">https://arxiv.org/abs/2606.20493</a></span></div>
-  <div class="article-body"><p>arXiv:2606.20493v1 Announce Type: cross 
-Abstract: When large language models serve as evaluators in multi-agent systems, their systematic evaluation biases propagate through the agent network. We introduce Contagion Networks, a formal framework for measuring how evaluator biases spread across interacting LLM agents. In a controlled 3-agent experiment using DeepSeek-chat with three distinct evaluator bias profiles (structured, balanced, evidence-based), we measure the Cross-Agent Contagion Matrix Gamma_3 and find that evaluator biases consistently propagate between agents (gamma in [0.157, 0.352]), even within the same underlying model. We identify three propagation regimes governed by the spectral radius rho(Gamma_N), and demonstrate that homogeneous-model agents produce contagion coefficients 3-5x weaker than cross-model coefficients observed in prior work (MM-EPC: gamma approx 0.85-1.3), placing them in the suppression regime. We show that increasing evaluator committee size from k=1 to k=3 reduces effective contagion by 72.4%, providing an actionable mitigation strategy. We release the open-source Contagion Network experimental framework.</p></div>
+  <div class="article-body"><p>arXiv:2606.20493v2 Announce Type: replace 
+Abstract: When large language models serve as evaluators in multi-agent systems, their strategy preferences -- whether induced by explicit prompts or by shared architectural priors -- propagate through the agent network. We introduce Contagion Networks, a formal framework for measuring how evaluator preferences spread across interacting LLM agents. In a controlled 3-agent experiment using DeepSeek-chat with three distinct evaluator preference profiles (structured, balanced, evidence-based), we measure the Cross-Agent Contagion Matrix Gamma_3 and find that preferences consistently propagate between agents (gamma in [0.157, 0.352]). A neutral-prompt control experiment reveals a counter-intuitive result: shared architectural priors dominate explicit preference prompts as the driver of contagion (rho_neutral = 1.498 vs. rho_mixed = 1.299; prompt contribution: -63.5%). We identify three propagation regimes governed by the spectral radius rho(Gamma_N) and demonstrate that the same agents suppress preference contagion in chain topology (beta_3 = 0.0126 +/- 0.0038, 95% CI [0.0089, 0.0163], n=4 seeds) but cascade in fully-connected topology (Delta H_avg = -0.020) -- a topology-dependent regime transition validated both for homogeneous and cross-model agent pools (rho^cross = 1.296 +/- 0.016, n=4). We show that increasing evaluator committee size from k=1 to k=3 reduces effective contagion by 68.9% +/- 14.1% (n=4 seeds), providing an actionable mitigation strategy. We release the open-source Contagion Network experimental framework.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>
