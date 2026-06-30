@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Optimizer Memory Makes Shuffle Order a First-Order Source of Fine-Tuning Noise — NewsMatome (EN)</title>
+<meta name="description" content="Optimizer Memory Makes Shuffle Order a First-Order Source of Fine-Tuning Noise — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/047900cd59c3.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/047900cd59c3.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/047900cd59c3.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/047900cd59c3.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Optimizer Memory Makes Shuffle Order a First-Order Source of Fine-Tuning Noise">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Optimizer Memory Makes Shuffle Order a First-Order Source of Fine-Tuning Noise",
+ "inLanguage":"en","datePublished":"2026-07-01T07:00:00+09:00","dateModified":"2026-07-01T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2606.29554","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/047900cd59c3.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/047900cd59c3.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Optimizer Memory Makes Shuffle Order a First-Order Source of Fine-Tuning Noise</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/01</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/047900cd59c3.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.29554" rel="nofollow noopener">https://arxiv.org/abs/2606.29554</a></span></div>
+  <div class="article-body"><p>arXiv:2606.29554v1 Announce Type: new 
+Abstract: Shuffle order can be a larger source of fine-tuning noise than a memoryless analysis predicts: fixed-clock optimizer memory makes local equal-multiset contrasts first order in the learning rate rather than second order, and the resulting order channel can be large enough for a single seed to flip a close A/B comparison. We isolate this mechanism and derive a fit-free way to size the noise it produces. For a memoryless optimizer, reordering an equal multiset has no first-order endpoint term; the leading local contrast is the $O(\eta^2)$ gradient bracket. Fixed-clock optimizers such as AdamW are different. Their moment buffers, preconditioner state, and de-biasing counters advance with the step index rather than with the learning-rate-scaled time $\tau=\eta k$, so the same gradient can receive a position-dependent endpoint weight. For any fixed finite measurement window, a lifted-state expansion gives an $O(\eta)$ equal-multiset contrast whenever the first-order replay coefficient is nonzero, while regular and clock-matched controls remain $O(\eta^2)$; a bare fixed-$\beta$ momentum buffer is already enough. A bitwise-deterministic replay from one warmed optimizer state isolates the mechanism, giving order-variance slopes 1.83 for AdamW, 2.00 for fixed-$\beta$ momentum, and 4.00 for SGD; matching the memory clock to $\tau$ restores the regular exponent. For AdamW with a frozen preconditioner, the same impulse-weight kernel gives a closed-form asymptotic order-variance floor after the local potentials are measured, with no fitted coefficients. The result is local to the measurement window (independent reshuffling can average the channel across windows), but it yields order-noise error bars, positional attribution weights, and a seed-budget criterion for fine-tuning comparisons.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

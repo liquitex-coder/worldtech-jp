@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IG-Lens: Exact Additive Probability Attribution Across Transformer Layers via Telescoping Integrated Gradients — NewsMatome (EN)</title>
+<meta name="description" content="IG-Lens: Exact Additive Probability Attribution Across Transformer Layers via Telescoping Integrated Gradients — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/30683aa2b3cb.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/30683aa2b3cb.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/30683aa2b3cb.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/30683aa2b3cb.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IG-Lens: Exact Additive Probability Attribution Across Transformer Layers via Telescoping Integrated Gradients">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"IG-Lens: Exact Additive Probability Attribution Across Transformer Layers via Telescoping Integrated Gradients",
+ "inLanguage":"en","datePublished":"2026-07-01T07:00:00+09:00","dateModified":"2026-07-01T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2606.29693","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/30683aa2b3cb.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/30683aa2b3cb.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>IG-Lens: Exact Additive Probability Attribution Across Transformer Layers via Telescoping Integrated Gradients</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/01</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/30683aa2b3cb.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.29693" rel="nofollow noopener">https://arxiv.org/abs/2606.29693</a></span></div>
+  <div class="article-body"><p>arXiv:2606.29693v1 Announce Type: new 
+Abstract: We ask a simple question about decoder-only transformers: \emph{between which two layers is the probability of a predicted token actually produced?} Existing layer-wise readout tools answer only approximately. The logit lens and its trained variant report a per-layer \emph{level} of probability but give no additive decomposition; their estimates are biased and non-monotone across depth. Direct Logit Attribution and related residual-stream methods are additive, but only in \emph{logit} space -- the softmax nonlinearity breaks additivity in probability space, precisely the quantity one usually cares about. Layer Conductance integrates gradients per layer, but attributes each to its own baseline and so does not sum to the total change in prediction. We introduce \textbf{IG-Lens}, a telescoping application of Integrated Gradients along a single path through the hidden states from a baseline to the final layer. Crediting each segment to the layer it terminates at yields a layer-wise attribution whose sum is \emph{exactly} the change in target probability, with the softmax inside the integration path rather than linearized away. Our default estimator credits each integration step its \emph{observed} change in target probability -- a prediction-aware reweighting in the spirit of IDGI -- rather than its raw gradient. Because the readout is a one-dimensional probability, this collapses each segment to a telescoping sum of endpoint values, so completeness holds exactly (to floating point) at \emph{any} step count, removing Riemann discretization error while suppressing steps that show gradient sensitivity without a change in output. We give the telescoping identity and its proof, verify completeness to floating point, and describe a single-pass batched implementation computing the full token-by-layer map without any backward call. Code: https://github.com/anhnda/IGLens.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

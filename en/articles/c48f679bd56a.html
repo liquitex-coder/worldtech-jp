@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Multi-Block Diffusion Language Models — NewsMatome (EN)</title>
+<meta name="description" content="Multi-Block Diffusion Language Models — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/c48f679bd56a.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/c48f679bd56a.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/c48f679bd56a.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/c48f679bd56a.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Multi-Block Diffusion Language Models">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Multi-Block Diffusion Language Models",
+ "inLanguage":"en","datePublished":"2026-07-01T07:00:00+09:00","dateModified":"2026-07-01T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2606.29215","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/c48f679bd56a.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/c48f679bd56a.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Multi-Block Diffusion Language Models</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/01</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/c48f679bd56a.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.29215" rel="nofollow noopener">https://arxiv.org/abs/2606.29215</a></span></div>
+  <div class="article-body"><p>arXiv:2606.29215v1 Announce Type: new 
+Abstract: Block Diffusion Language Models (BD-LMs) improve diffusion-based text generation with KV caching and flexible-length generation. A natural next step is to extend them from Single-Block Diffusion (SingleBD) to Multi-Block Diffusion (MultiBD), where a \textit{running-set} of consecutive blocks is decoded concurrently for inter-block parallelism. However, existing BD-LMs are mostly trained under teacher forcing, where the model observes only one noisy block conditioned on a clean prefix. While the recent diffusion forcing strategy introduces visibility among multiple noisy blocks, its training states still differ from MultiBD inference, where decoding operates on a bounded \textit{running-set} with heterogeneous slot-wise noise patterns. To bridge this gap, we propose \textit{Multi-Block Diffusion Language Models} (MBD-LMs), obtained by post-training BD-LMs with \textit{Multi-block Teacher Forcing} (MultiTF). MultiTF integrates teacher forcing and diffusion forcing by training on bounded \textit{noise-groups} conditioned on clean prefixes, with randomized \textit{noise-schedulers} that better match MultiBD inference states. To make MultiBD practically executable, we further introduce an optimized decoding algorithm based on the \textit{Block Buffer} mechanism that preserves prefix-cache reuse, keeps input shapes static, and translates increased decoding parallelism into wall-clock acceleration. Empirically, MBD-LLaDA2-Mini increases average Tokens Per Forward pass (TPF) from 3.47 to \textbf{6.19} and improves average accuracy from 79.95\% to \textbf{81.03\%}; when combined with DMax, MBD-LLaDA2-Mini-DMax reaches an average TPF of \textbf{9.34} with only a 1.02\% accuracy drop on math and code benchmarks.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

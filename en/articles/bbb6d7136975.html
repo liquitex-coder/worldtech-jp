@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LLM Serving Optimization with Variable Prefill and Decode Lengths — NewsMatome (EN)</title>
+<meta name="description" content="LLM Serving Optimization with Variable Prefill and Decode Lengths — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/bbb6d7136975.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/bbb6d7136975.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/bbb6d7136975.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/bbb6d7136975.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LLM Serving Optimization with Variable Prefill and Decode Lengths">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"LLM Serving Optimization with Variable Prefill and Decode Lengths",
+ "inLanguage":"en","datePublished":"2026-07-01T07:00:00+09:00","dateModified":"2026-07-01T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2508.06133","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/bbb6d7136975.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/bbb6d7136975.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>LLM Serving Optimization with Variable Prefill and Decode Lengths</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/01</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/bbb6d7136975.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2508.06133" rel="nofollow noopener">https://arxiv.org/abs/2508.06133</a></span></div>
+  <div class="article-body"><p>arXiv:2508.06133v4 Announce Type: replace-cross 
+Abstract: We study offline scheduling for large language model (LLM) serving under a fixed KV-cache memory budget, where requests have heterogeneous prompt (prefill) and response (decode) lengths. Prompt tokens determine initial KV-cache usage, while each generated token further increases memory consumption, creating dynamic memory constraints during autoregressive decoding. Given a backlog of n requests arriving together, the goal is to form mixed prefill and decode batches over time to minimize total end-to-end latency. We show that heterogeneous prompt lengths fundamentally change the scheduling problem: the problem is NP-hard, and standard policies such as first-come-first-served, shortest-output-first, and total-size-based prioritization can have unbounded approximation ratios. We propose Sorted-F, a scheduling algorithm that repeatedly forms feasible batches using an F-metric that balances batch size against downstream decode cost. We prove that Sorted-F achieves a constant-factor approximation guarantee in the offline/backlogged model. We also develop practical implementations, including an exact dynamic program for small instances and scalable local-search and greedy heuristics for larger instances, as well as LP-guided and receding-horizon variants. Experiments on public workloads that combine short conversations and long-document summarization show that F-metric-based scheduling consistently reduces latency relative to standard baselines and remains close to the LP relaxation lower bound for tractable instances.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

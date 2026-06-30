@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dead-Direction Conditioners: Gauge-Equivariant Preconditioning for Deep Networks — NewsMatome (EN)</title>
+<meta name="description" content="Dead-Direction Conditioners: Gauge-Equivariant Preconditioning for Deep Networks — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/93006c67ec9f.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/93006c67ec9f.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/93006c67ec9f.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/93006c67ec9f.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dead-Direction Conditioners: Gauge-Equivariant Preconditioning for Deep Networks">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Dead-Direction Conditioners: Gauge-Equivariant Preconditioning for Deep Networks",
+ "inLanguage":"en","datePublished":"2026-07-01T07:00:00+09:00","dateModified":"2026-07-01T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2606.29176","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/93006c67ec9f.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/93006c67ec9f.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Dead-Direction Conditioners: Gauge-Equivariant Preconditioning for Deep Networks</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/01</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/93006c67ec9f.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.29176" rel="nofollow noopener">https://arxiv.org/abs/2606.29176</a></span></div>
+  <div class="article-body"><p>arXiv:2606.29176v1 Announce Type: new 
+Abstract: A deep network&#x27;s loss is invariant to continuous symmetries of its parameters: the logit shift, the ReLU rescaling, the LayerNorm scale, the per-head attention rotation. Adam&#x27;s per-coordinate preconditioner drifts along each symmetry orbit, which pulls the trajectory off the symmetry quotient where the optimization lives and blurs the singular-learning rate the quotient makes readable. We build DDC, a Dead-Direction Conditioner that lifts a base optimizer into a $G$-equivariant one: it conditions the optimizer&#x27;s state in the orbit decomposition of a $G$-invariant metric, so the trajectory stays a preconditioned gradient flow on the quotient $\bar\Theta = \Theta/G$. The construction carries four architectural gauges (cross-entropy shift, ReLU and SwiGLU rescaling, LayerNorm and RMSNorm scale, and a per-head $O(d_{\rm head})$ attention rotation matched to RoPE), proves exactly equivariant on an Adam base, and composes with a Muon base through a gauge-equivariant orthogonaliser. Respecting the symmetry changes both the minimum the optimizer reaches and what it leaves measurable there. On a language model trained past the point of fit, DDCAdam resists the over-training collapse AdamW falls into, holding a validation-train loss gap of 0.67 against 5.88, and reads the dead-direction rate in 32 of 65 layer-by-observable cells where AdamW reads it in 7. A vision transformer trained from scratch reaches lower validation loss (1.71 against 2.12) while compressing spare feed-forward capacity a matched AdamW leaves intact. On a Muon base, where the rotation gauge composes exactly, DDCMuon groks ten of eleven seeds at depth 24 that a plain Muon never reaches. Built into the optimizer, a network&#x27;s gauge symmetry sharpens the minimum it finds and turns that minimum&#x27;s geometry into something the trajectory can measure.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
