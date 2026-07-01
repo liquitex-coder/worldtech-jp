@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GraphMend: Code Transformations for Fixing Graph Breaks in PyTorch 2 — NewsMatome (EN)</title>
+<meta name="description" content="GraphMend: Code Transformations for Fixing Graph Breaks in PyTorch 2 — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/d73ebf384b55.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/d73ebf384b55.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/d73ebf384b55.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/d73ebf384b55.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GraphMend: Code Transformations for Fixing Graph Breaks in PyTorch 2">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"GraphMend: Code Transformations for Fixing Graph Breaks in PyTorch 2",
+ "inLanguage":"en","datePublished":"2026-07-02T07:00:00+09:00","dateModified":"2026-07-02T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2509.16248","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/d73ebf384b55.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/d73ebf384b55.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>GraphMend: Code Transformations for Fixing Graph Breaks in PyTorch 2</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/02</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/d73ebf384b55.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2509.16248" rel="nofollow noopener">https://arxiv.org/abs/2509.16248</a></span></div>
+  <div class="article-body"><p>arXiv:2509.16248v4 Announce Type: replace-cross 
+Abstract: This paper presents GraphMend, a compiler technique that automatically fixes FX graph breaks in PyTorch 2 programs. Although PyTorch 2 introduced TorchDynamo and TorchInductor to enable just-in-time graph compilation, certain code patterns still cause graph breaks that force execution to fall back to Python eager mode, introducing costly CPU-GPU synchronization and reducing optimization opportunities. Our investigation of 195 Hugging Face models reveals that 13.8% of models exhibit graph breaks. GraphMend automatically eliminates fixable breaks through source-level program analysis and transformations. It analyzes AST-level program structure to identify graph-break patterns and applies transformations only when their semantic preservation can be statically established. These transformations enable PyTorch to capture larger, uninterrupted FX graphs without manual refactoring by developers. We evaluate GraphMend on all 27 models found to exhibit graph breaks in our investigation. GraphMend eliminates 107 of 147 graph breaks (73%), fully fixing all breaks in 21 models. In our experiments on NVIDIA GPUs, GraphMend achieves up to 26x cold-start speedup, 5x on average, and up to 1.39x steady-state forward pass speedup. These results demonstrate that semantics-aware source-level analysis and transformation are effective complements to PyTorch&#x27;s dynamic JIT compilation pipeline, substantially improving both usability and performance.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
