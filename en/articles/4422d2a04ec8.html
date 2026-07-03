@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rethinking Post-Hoc Calibration in Semantic Segmentation — NewsMatome (EN)</title>
+<meta name="description" content="Rethinking Post-Hoc Calibration in Semantic Segmentation — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/4422d2a04ec8.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/4422d2a04ec8.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/4422d2a04ec8.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/4422d2a04ec8.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Rethinking Post-Hoc Calibration in Semantic Segmentation">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Rethinking Post-Hoc Calibration in Semantic Segmentation",
+ "inLanguage":"en","datePublished":"2026-07-04T07:00:00+09:00","dateModified":"2026-07-04T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2607.01902","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/4422d2a04ec8.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/4422d2a04ec8.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Rethinking Post-Hoc Calibration in Semantic Segmentation</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/04</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/4422d2a04ec8.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.01902" rel="nofollow noopener">https://arxiv.org/abs/2607.01902</a></span></div>
+  <div class="article-body"><p>arXiv:2607.01902v1 Announce Type: cross 
+Abstract: Reliable confidence estimates are essential in semantic segmentation, especially in safety-critical settings where overconfident errors can mislead downstream decisions. Yet modern segmentation models often remain miscalibrated. Post-hoc calibration offers a practical way to correct confidence estimates without retraining the segmentation model, but its use in dense prediction raises structural issues that are often overlooked. We study two such issues. First, adding a constant to all logits leaves the softmax probabilities unchanged, but several standard calibrators can still depend on this arbitrary offset. As a result, two logit representations encoding the same predictive distribution may yield different calibrated probabilities. We define translation-invariant (TI) calibrators as those whose outputs are unchanged under such shifts, characterize which common calibrators satisfy this property, and construct TI counterparts of shift-sensitive calibrators to isolate the effect of removing representation dependence. Second, post-hoc calibration is typically fitted by minimizing a likelihood-based objective, whereas segmentation models are trained with task-specific metrics such as Dice. This mismatch can cause calibration to alter class orderings and degrade the deployed segmentation map. We study decision-preserving calibration under argmax- and order-preservation constraints. Since enforcing these constraints collapses affine softmax calibrators to temperature scaling, we introduce class-conditional affine calibrators that can be made argmax- or order-preserving while retaining greater expressivity, allowing us to quantify the calibration-segmentation trade-off induced by decision preservation. Across natural-image and medical segmentation benchmarks, and under corruption-based covariate shift, matched comparisons show that TI variants generally improve calibration metrics, while decision-preserving variants prevent segmentation degradation and retain strong calibration performance. These results provide practical design principles for well-defined post-hoc calibration pipelines in semantic segmentation.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Locality-Aware Continual Unlearning for Diffusion Models — NewsMatome (EN)</title>
+<meta name="description" content="Locality-Aware Continual Unlearning for Diffusion Models — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/aab39a89ff71.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/aab39a89ff71.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/aab39a89ff71.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/aab39a89ff71.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Locality-Aware Continual Unlearning for Diffusion Models">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Locality-Aware Continual Unlearning for Diffusion Models",
+ "inLanguage":"en","datePublished":"2026-07-04T07:00:00+09:00","dateModified":"2026-07-04T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2512.02657","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/aab39a89ff71.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/aab39a89ff71.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Locality-Aware Continual Unlearning for Diffusion Models</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/04</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/aab39a89ff71.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2512.02657" rel="nofollow noopener">https://arxiv.org/abs/2512.02657</a></span></div>
+  <div class="article-body"><p>arXiv:2512.02657v2 Announce Type: replace 
+Abstract: Real-world deployment of text-to-image diffusion models requires continual concept removal as new privacy, copyright, or safety obligations arise over time. Existing unlearning methods, however, are designed for single-step deletion and collapse after only 3-5 sequential applications. We trace this instability to two compounding factors: (i) coarse mapping targets that cause degradation to accumulate unnecessarily across steps, and (ii) the absence of local protection for semantically neighboring concepts, whose shared internal representations make them the first to suffer collateral damage. Because this damage is strongest in the local semantic neighborhood of the forget concept, global replay alone cannot prevent it. Building on this analysis, we propose Locality-Aware Continual Unlearning (LACU), a framework with two complementary mechanisms. Locality-Aware Target Selection chooses, for each forget prompt, the context-preserving mapping prompt that the diffusion model itself treats as most similar to the original prompt, measured by score-prediction distance (how differently the model denoises the same noisy image under two text conditions), ensuring each update is as small and targeted as possible. Locality-Aware Replay uses the same metric to identify the retain concepts closest to the forget concept in the model&#x27;s own representation and replays them as a local functional regularizer, directly shielding the most vulnerable neighborhood. Combined with teacher-student distillation and lightweight $\ell_2$ parameter regularization, LACU maintains stable unlearning over 10 sequential steps, preserving significantly higher related retention ($RR_{\text{acc}}$) and general retention ($GR_{\text{acc}}$) than recent baselines.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
