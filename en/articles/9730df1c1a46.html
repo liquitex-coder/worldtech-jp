@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ProbeLogits: Kernel-Level LLM Inference Primitives for AI-Native Operating Systems — NewsMatome (EN)</title>
+<meta name="description" content="ProbeLogits: Kernel-Level LLM Inference Primitives for AI-Native Operating Systems — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/9730df1c1a46.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/9730df1c1a46.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/9730df1c1a46.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/9730df1c1a46.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ProbeLogits: Kernel-Level LLM Inference Primitives for AI-Native Operating Systems">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"ProbeLogits: Kernel-Level LLM Inference Primitives for AI-Native Operating Systems",
+ "inLanguage":"en","datePublished":"2026-07-08T07:00:00+09:00","dateModified":"2026-07-08T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2604.11943","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/9730df1c1a46.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/9730df1c1a46.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>ProbeLogits: Kernel-Level LLM Inference Primitives for AI-Native Operating Systems</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/08</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/9730df1c1a46.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2604.11943" rel="nofollow noopener">https://arxiv.org/abs/2604.11943</a></span></div>
+  <div class="article-body"><p>arXiv:2604.11943v3 Announce Type: replace-cross 
+Abstract: An OS kernel that runs LLM inference internally can read the model&#x27;s own next-token logit distribution before any text is generated, and act on it as a governance primitive. I present ProbeLogits, a kernel-level operation that performs a single forward pass and reads specific token logits to classify an agent&#x27;s action as safe or dangerous, with zero learned parameters. Because the probe reads a logit from the same base model the agent already runs, it removes the second model a fine-tuned guard requires: the marginal cost of a safety check becomes a single logit read.
+  I evaluate ProbeLogits on three base models (Qwen2.5-7B, Llama-3-8B, Mistral-7B) across three external benchmarks (HarmBench, XSTest, ToxicChat). On HarmBench non-copyright, all three reach a 97-99% block rate. On ToxicChat (n=1,000), ProbeLogits attains F1 parity-or-better against Llama Guard 3: Qwen2.5-7B Safe/Dangerous reaches F1=0.812 (+13.7 pp, bootstrap 95% CIs disjoint), Llama-3 matches within CI (+0.4 pp), and Mistral exceeds by +4.4 pp. Classification is a measured 2.4-3.4x faster than Llama Guard 3 (332-556 ms vs. 851-1,142 ms), because it reads a single logit position instead of generating tokens. A calibration strength alpha acts as a deployment-time policy knob rather than a learned hyperparameter, trading recall for precision per operation class.
+  I implement ProbeLogits within Anima OS, a bare-metal x86-64 kernel written in ~285,000 lines of Rust. Because agent actions must pass through kernel-mediated host functions, enforcement operates below the WASM sandbox boundary, making it substantially harder to circumvent than application-layer classifiers.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fine-Grained Computation Offload for Off-the-Shelf Servers in Tens of Lines — NewsMatome (EN)</title>
+<meta name="description" content="Fine-Grained Computation Offload for Off-the-Shelf Servers in Tens of Lines — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/22e7450bf95c.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/22e7450bf95c.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/22e7450bf95c.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/22e7450bf95c.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fine-Grained Computation Offload for Off-the-Shelf Servers in Tens of Lines">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Fine-Grained Computation Offload for Off-the-Shelf Servers in Tens of Lines",
+ "inLanguage":"en","datePublished":"2026-07-08T07:00:00+09:00","dateModified":"2026-07-08T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2607.02630","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/22e7450bf95c.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/22e7450bf95c.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Fine-Grained Computation Offload for Off-the-Shelf Servers in Tens of Lines</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/08</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/22e7450bf95c.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.02630" rel="nofollow noopener">https://arxiv.org/abs/2607.02630</a></span></div>
+  <div class="article-body"><p>arXiv:2607.02630v1 Announce Type: cross 
+Abstract: Hardware accelerators now sit on the critical path of online serving. GPUs, FPGAs, and increasingly remote services such as hardware security modules, post-quantum KEMs, and inference servers. For fine-grained offloads (microseconds to a few milliseconds) the classic responses to the resulting stall both fail: a context switch costs as much as the offload, and a busy-wait burns the core. Overlapping the offload with other requests is the fix, and prior systems obtain it by adding concurrency: an async-framework rewrite, a new runtime or dataplane OS, or a hand-tuned point integration.
+  We observe that the concurrency already exists: serving concurrent requests is suspending and resuming them, so every server ships the machinery overlap needs. Overlap is then a routing problem, not a rewrite problem: submit the offload to an executor, suspend the request with the server&#x27;s own deferred-response primitive, resume it on completion. Across ten off-the-shelf servers spanning every production concurrency model, this recipe takes 22-138 lines added, at most one modified, and recovers 1.2-5.4x on real hardware; the server&#x27;s concurrency model and the offload&#x27;s weight predict both numbers in advance, and the win is bounded by device throughput and the server&#x27;s own overlap capacity. At the limit, an LD_PRELOAD fiber runtime injects the reroute into an unmodified thread-per-connection binary (17.3x) within a characterized envelope. Rerouting suspends run-to-completion atomicity; a measured taxonomy confines the hazard to unlocked shared aggregates, and a transparent page-protection detector guards exactly those, validated on stock Redis.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

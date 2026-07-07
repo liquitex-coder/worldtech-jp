@@ -17,7 +17,7 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"FP8 is All You Need (Part 1): Debunking Hardware FP64 as the HPC Holy Grail (June 13th version)",
- "inLanguage":"en","datePublished":"2026-06-17T07:00:00+09:00","dateModified":"2026-06-17T07:00:00+09:00",
+ "inLanguage":"en","datePublished":"2026-07-08T07:00:00+09:00","dateModified":"2026-07-08T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.06510","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/eac1489f8a91.html"}
@@ -35,10 +35,10 @@
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
     <h1>FP8 is All You Need (Part 1): Debunking Hardware FP64 as the HPC Holy Grail (June 13th version)</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/06/17</span></div>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/08</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/eac1489f8a91.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.06510" rel="nofollow noopener">https://arxiv.org/abs/2606.06510</a></span></div>
-  <div class="article-body"><p>arXiv:2606.06510v2 Announce Type: replace-cross 
+  <div class="article-body"><p>arXiv:2606.06510v3 Announce Type: replace-cross 
 Abstract: Conventional HPC holds that native hardware FP64 is the irreducible foundation of scientific computing. On AI-optimized GPUs of the NVIDIA B300 generation and beyond, native FP64 throughput has collapsed to ~1.3 TFLOPS even as FP8 tensor throughput has grown to multiple PFLOPS. We argue something stronger than that this is survivable: the FP8 tensor-core matrix-multiply is the sole computational primitive on which double-precision scientific computing needs to be built. Every canonical kernel -- dense and sparse linear algebra, spectral transforms, stencils -- and every application composing them reduces, via the Chinese Remainder Theorem-based Ozaki Scheme II, to sequences of FP8 matrix operations; the only non-FP8 arithmetic is a bounded, fixed-width integer accumulation at reconstruction. Native FP64 is thereby demoted from a hardware requirement to a derived accuracy guarantee obtained by composition over the FP8 primitive. We organize the claim as a five-layer hierarchy -- the FP8 op, Ozaki II, the basic kernels or Berkeley &quot;dwarfs&quot;, composite solvers, and full applications -- and, because the dwarf taxonomy already spans scientific computing, establish it by exhibiting the reduction for every dwarf rather than a sample. The claim is falsifiable, and we build the instrument that tests it: a Tensor-Memory Equilibrium (TME) model extending the Roofline with emulation parameters (alpha, beta, gamma). We identify register-level fusion as the mechanism that keeps emulation memory-bound, project recovered FP64 performance across B300 and Rubin against an H100 baseline, and close the kernel coverage with a companion FFT analysis and compensated reductions. The model could have returned a negative verdict; instead it passes across the dwarfs and their compositions. This is the analytical half of a two-part program, with a follow-on implementation to validate the thesis on real silicon.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>

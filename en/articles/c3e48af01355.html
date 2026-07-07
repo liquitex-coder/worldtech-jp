@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Near-Linear-Time Solver for Graph $p$-Laplacian Semi-Supervised Learning via Continuation in $p$ — NewsMatome (EN)</title>
+<meta name="description" content="A Near-Linear-Time Solver for Graph $p$-Laplacian Semi-Supervised Learning via Continuation in $p$ — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/c3e48af01355.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/c3e48af01355.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/c3e48af01355.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/c3e48af01355.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A Near-Linear-Time Solver for Graph $p$-Laplacian Semi-Supervised Learning via Continuation in $p$">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"A Near-Linear-Time Solver for Graph $p$-Laplacian Semi-Supervised Learning via Continuation in $p$",
+ "inLanguage":"en","datePublished":"2026-07-08T07:00:00+09:00","dateModified":"2026-07-08T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2607.03503","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/c3e48af01355.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/c3e48af01355.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>A Near-Linear-Time Solver for Graph $p$-Laplacian Semi-Supervised Learning via Continuation in $p$</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/08</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/c3e48af01355.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.03503" rel="nofollow noopener">https://arxiv.org/abs/2607.03503</a></span></div>
+  <div class="article-body"><p>arXiv:2607.03503v1 Announce Type: new 
+Abstract: Graph-based semi-supervised learning (SSL) propagates a few labels over a similarity graph by minimizing a Dirichlet-type energy. The standard quadratic ($p=2$) energy reduces to a single graph-Laplacian solve, but it degenerates exactly where SSL is most useful when labels are scarce: gathering more unlabeled data drives the $p=2$ estimate to a near-constant function whenever $d\ge2$ (Nadler-Srebro-Zhou). Well-posedness requires the nonlinear $p$-Laplacian energy with $p&gt;d$. Existing solvers reduce this to a sequence of weighted Laplacian solves, but their reference implementations use a direct sparse factorization or ichol-preconditioned CG instead. Plugging a near-linear Laplacian solver is not straightforward: at large $p$ the conductance weights degenerate near flat-gradient edges, making the system nearly singular and causing stagnation without a damped outer iteration. We close this gap. Recasting $p$-Laplacian SSL as a source-form nonlinear Laplacian flow $B\rho_p(B^\top x)=b$ and solving by damped chord-Newton continuation in $p$, every linearized system stays well-conditioned and can be delegated to a near-linear Laplacian engine. On size-scaled graph families the wall-clock is empirically $m^{0.96}$-$m^{1.02}$ per family (approximate Cholesky default), and a pooled fit across 228 SuiteSparse graphs gives $m^{1.19}$ vs.\ $m^{1.45}$ for direct factorization; the solver handles a $6.8\times10^7$-edge social network in minutes. Memory is the binding constraint: Cholesky fill reaches $10$-$280\times$ the graph nonzeros vs.\ our $O(m)$ hierarchy. Against the released FCL solver we are $1.5$-$14\times$ faster at matched accuracy. On MNIST $10$-NN, $p=3$ scores $64\%$ at one label per class vs.\ $36\%$ for $p=2$. Code: https://github.com/orenlivne/np.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

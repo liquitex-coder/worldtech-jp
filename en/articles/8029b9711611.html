@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Attention is Just Another Name for Coupling?: A Fast-Slow ODE Perspective on Hierarchical Pretraining — NewsMatome (EN)</title>
-<meta name="description" content="Attention is Just Another Name for Coupling?: A Fast-Slow ODE Perspective on Hierarchical Pretraining — original-language edition. Japanese translation available.">
+<title>Attention is Just Another Name for Coupling? A Fast-Slow ODE Perspective on Hierarchical Pretraining — NewsMatome (EN)</title>
+<meta name="description" content="Attention is Just Another Name for Coupling? A Fast-Slow ODE Perspective on Hierarchical Pretraining — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/8029b9711611.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/8029b9711611.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/8029b9711611.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/8029b9711611.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Attention is Just Another Name for Coupling?: A Fast-Slow ODE Perspective on Hierarchical Pretraining">
+<meta property="og:title" content="Attention is Just Another Name for Coupling? A Fast-Slow ODE Perspective on Hierarchical Pretraining">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Attention is Just Another Name for Coupling?: A Fast-Slow ODE Perspective on Hierarchical Pretraining",
- "inLanguage":"en","datePublished":"2026-06-17T07:00:00+09:00","dateModified":"2026-06-17T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Attention is Just Another Name for Coupling? A Fast-Slow ODE Perspective on Hierarchical Pretraining",
+ "inLanguage":"en","datePublished":"2026-07-08T07:00:00+09:00","dateModified":"2026-07-08T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.16730","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/8029b9711611.html"}
@@ -34,13 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Attention is Just Another Name for Coupling?: A Fast-Slow ODE Perspective on Hierarchical Pretraining</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/06/17</span></div>
+    <h1>Attention is Just Another Name for Coupling? A Fast-Slow ODE Perspective on Hierarchical Pretraining</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/08</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/8029b9711611.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.16730" rel="nofollow noopener">https://arxiv.org/abs/2606.16730</a></span></div>
-  <div class="article-body"><p>arXiv:2606.16730v1 Announce Type: cross 
-Abstract: Causal self-attention is a coupling mechanism: each token&#x27;s hidden state is updated by a learned mixture of preceding tokens at the same timescale. This paper asks whether a second, temporally slower coupling-a slow sub-system operating on a temporally-downsampled view of the sequence and fed back into the fast path through a zero-initialised gate-complements it. The question is framed in the language of singularly perturbed ordinary differential equations (ODEs), where the fast variable $x$ evolves at the token rate, the slow variable $y$ evolves at one update per $P$ tokens, and the timescale ratio $\varepsilon = 1/P$ is enforced structurally by causal block-mean pooling.
-  The paper instantiates the fast-slow ODE formalism as a concrete neural network: a fast path of standard causal attention over $T$ tokens, a slow path of full attention over $T/P$ pooled tokens ($P^2 \times$ cheaper per layer), and a zero-initialised additive gate. In addition, under a linear-generator assumption on the fast dynamics, we prove that the equilibrium manifold $x = \phi(y)$ is exactly the master-equation (ME) stationary distribution $p_{\mathrm{st}}(y)$; in that regime a learned MLP $\phi_\theta(y)$ is a variational approximation of it (the trained block is not a generator, so this identity is the structured limit, not a claim about the network as trained). Empirically, at $500$k tokens the coupling is neutral -- the gate stays closed and the coupled and frozen ablations are within run-to-run noise -- at a wall-clock cost comparable to a dense baseline. The contribution is the precise, gap-marked mapping itself, not a performance gain.</p></div>
+  <div class="article-body"><p>arXiv:2606.16730v2 Announce Type: replace-cross 
+Abstract: We re-interpret Transformer pretraining as a fast-slow, singularly perturbed flow along depth, with untied weights as its non-autonomous feature. The linearised dynamics is a depth-ordered product of layer maps. Along a token-homogeneous reference trajectory, the linearised layer factorises along the eigenbasis of a frozen attention kernel. Past a computable saturation depth, the flow factors through the block coarse-graining -- in other words, running the layers is running the coarse variable, dually. Weight perturbations supported on the decaying bundle move neither the persistent component of the distinguished trajectory nor the frozen kernel to first order, so the framework partitions parameter space into visible and invisible directions, with the cross-block coupling of the slow path sitting entirely on the visible side. How large a gate the slow path can carry is bounded by a stability margin. On the data side: if block emissions follow an exponential family, block-mean pooling captures all the information the slow path can use; but if neighbouring blocks carry no shared structure, no cross-block channel can help the prediction, and the gate amplitude is invisible in the prediction risk. Stability delimits what the architecture may do; the data decides what it will.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

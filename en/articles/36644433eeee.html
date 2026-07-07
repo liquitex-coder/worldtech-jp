@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Evaluating LLM-Based Regression Test Generation — NewsMatome (EN)</title>
+<meta name="description" content="Evaluating LLM-Based Regression Test Generation — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/36644433eeee.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/36644433eeee.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/36644433eeee.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/36644433eeee.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Evaluating LLM-Based Regression Test Generation">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Evaluating LLM-Based Regression Test Generation",
+ "inLanguage":"en","datePublished":"2026-07-08T07:00:00+09:00","dateModified":"2026-07-08T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2501.11086","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/36644433eeee.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/36644433eeee.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Evaluating LLM-Based Regression Test Generation</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/08</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/36644433eeee.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2501.11086" rel="nofollow noopener">https://arxiv.org/abs/2501.11086</a></span></div>
+  <div class="article-body"><p>arXiv:2501.11086v2 Announce Type: replace-cross 
+Abstract: Large Language Models (LLMs) have shown tremendous promise in automated software engineering. In this paper, we investigate LLMs for just-in-time regression test generation for programs, like parsers, interpreters, or compilers, that take highly structured, human-readable inputs. When a bug fix or code change is committed, the repository (as part of CI/CD) runs an LLM for a few minutes to generate regression tests that exercise the changed code and potentially trigger bugs.
+  We frame LLM-based regression test generation as a machine translation task that takes the developer-provided commit message, the code change, and the input format name (e.g., XML), and produces regression tests for the described change in that format. Testing 72 commits to Mujs, Libxml2, Poppler, JerryScript, Z3, PHP, JQ, and MicroPython, our feedback-directed, zero-shot prototype Cleverest performed well, even without the code change. In under 2 minutes on average, Cleverest found as many bugs as the state-of-the-art directed greybox fuzzer WAFLGo did in 24 hours, even though WAFLGo started with a commit-reaching seed corpus in most cases. Using the Cleverest-generated tests as a seed corpus in coverage-guided greybox fuzzing doubles the number of bugs found; we call this integration ClevFuzz.
+  We also find that some commit messages are more expressive than others, thus we ask how it impacts Cleverest&#x27;s effectiveness. Cleverest picks up on the change intention: e.g., given a commit message that a patch changes how floating point variables are treated in the Mujs JavaScript interpreter, Cleverest generates JavaScript programs that contain floating point variables. Minimally changing commit messages to reduce or increase their information substantially impacts effectiveness: adding 17 words on average (max. 43) to make ineffective commit messages more expressive significantly increased the number of bugs found.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

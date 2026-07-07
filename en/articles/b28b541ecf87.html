@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GLM-5 Serving Parameter Tuning for OpenClaw: Single-Deployment MaaS Inference Optimization for Long-Context Agent Workloads — NewsMatome (EN)</title>
+<meta name="description" content="GLM-5 Serving Parameter Tuning for OpenClaw: Single-Deployment MaaS Inference Optimization for Long-Context Agent Workloads — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/b28b541ecf87.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/b28b541ecf87.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/b28b541ecf87.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/b28b541ecf87.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GLM-5 Serving Parameter Tuning for OpenClaw: Single-Deployment MaaS Inference Optimization for Long-Context Agent Workloads">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"GLM-5 Serving Parameter Tuning for OpenClaw: Single-Deployment MaaS Inference Optimization for Long-Context Agent Workloads",
+ "inLanguage":"en","datePublished":"2026-07-08T07:00:00+09:00","dateModified":"2026-07-08T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2607.02518","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/b28b541ecf87.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/b28b541ecf87.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>GLM-5 Serving Parameter Tuning for OpenClaw: Single-Deployment MaaS Inference Optimization for Long-Context Agent Workloads</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/08</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/b28b541ecf87.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.02518" rel="nofollow noopener">https://arxiv.org/abs/2607.02518</a></span></div>
+  <div class="article-body"><p>arXiv:2607.02518v1 Announce Type: cross 
+Abstract: OpenClaw requests are dominated by long, tool-augmented prefixes, including system prompts, conversation history, and tool outputs fed back into the context window. For this workload, with about 28k-30k input tokens and 500 output tokens per request, serving quality is governed by throughput, TTFT, and tail latency rather than short-prompt throughput alone.
+  This report studies GLM-5 serving-parameter tuning within a MaaS multi-model inference optimization architecture. The scope is the Single-Node Optimization block of the inference-optimization layer, where chunked prefill, tensor parallelism (TP), pipeline parallelism (PP), and request concurrency are tuned for one GLM-5 serving deployment; in this report, &quot;Single-Node Optimization&quot; denotes the architecture block, while experiments run on a two-node, sixteen-GPU cluster.
+  Within the tested space, the best configuration is chunked-prefill-size=3072, tp=4, pp-size=4, and max-running-requests=24. Compared with the conservative 2048/4/4/16 baseline, it increases request throughput from 0.43 to 0.48 req/s and total token throughput from 9029.64 to 9993.23 tok/s, while reducing average TTFT from 8.98 to 6.69 s and latency P90 from 40.23 to 32.64 s. Under the same hardware footprint, this corresponds to an estimated 10.4% lower serving cost per request and 9.6% lower cost per token. The results show that the optimum is workload-specific: larger chunk sizes and deeper queueing do not monotonically improve performance. We therefore recommend 3072 / tp4 / pp4 / max24 as the default OpenClaw deployment profile.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

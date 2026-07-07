@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kara: Efficient Reasoning LLM Serving via Sliding-Window KV Cache Compression — NewsMatome</title>
-<meta name="description" content="Kara: Efficient Reasoning LLM Serving via Sliding-Window KV Cache Compression（EN→JA 翻訳・出典付き）">
+<title>KARA: Efficient Reasoning LLM Serving via Sliding-Window KV Cache Compression — NewsMatome</title>
+<meta name="description" content="KARA: Efficient Reasoning LLM Serving via Sliding-Window KV Cache Compression（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/40ee94fece59.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/40ee94fece59.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/40ee94fece59.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="Kara: Efficient Reasoning LLM Serving via Sliding-Window KV Cache Compression">
-<meta property="og:description" content="Kara: Efficient Reasoning LLM Serving via Sliding-Window KV Cache Compression（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="KARA: Efficient Reasoning LLM Serving via Sliding-Window KV Cache Compression">
+<meta property="og:description" content="KARA: Efficient Reasoning LLM Serving via Sliding-Window KV Cache Compression（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Kara: Efficient Reasoning LLM Serving via Sliding-Window KV Cache Compression",
- "inLanguage":"ja","datePublished":"2026-07-04T07:00:00+09:00","dateModified":"2026-07-04T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"KARA: Efficient Reasoning LLM Serving via Sliding-Window KV Cache Compression",
+ "inLanguage":"ja","datePublished":"2026-07-08T07:00:00+09:00","dateModified":"2026-07-08T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.01237","url":"https://liquitex-coder.github.io/worldtech-jp/articles/40ee94fece59.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">AI</a><span class="sep">›</span><span>Kara: Efficient Reasoning LLM Serving via Sliding-Window KV Cache Compression</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">AI</a><span class="sep">›</span><span>KARA: Efficient Reasoning LLM Serving via Sliding-Window KV Cache Compression</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>Kara: Efficient Reasoning LLM Serving via Sliding-Window KV Cache Compression</h1>
+      <h1>KARA: Efficient Reasoning LLM Serving via Sliding-Window KV Cache Compression</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/07/04 07:00</span><span>· 更新 2026/07/04</span>
+        <span>公開 2026/07/08 07:00</span><span>· 更新 2026/07/08</span>
       </div>
     </div>
     
@@ -74,16 +74,16 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2607.01237" rel="nofollow noopener">Kara: Efficient Reasoning LLM Serving via Sliding-Window KV Cache Compression</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2607.01237" rel="nofollow noopener">KARA: Efficient Reasoning LLM Serving via Sliding-Window KV Cache Compression</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2607.01237v1 Announce Type: cross 
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2607.01237v2 Announce Type: replace-cross 
 Abstract: Reasoning language models often generate long chain-of-thought (CoT), which accumulates a massive KV cache during the decoding phase and incurs high decoding latency and limited throughput. To address these issues, KV cache compression has emerged as a promising technique for reducing memory overhead by selectively removing unimportant KV pairs while preserving useful ones for subsequent decoding. Nevertheless, we identify two key limitations in existing KV cache compression methods: 1) their threshold-triggered compression policy may provide limited throughput improvement or even reduce throughput, and may fully eliminate KV pairs from certain blocks of the sequence, potentially worsening information loss. 2) they typically retain either isolated KV pairs or fixed-size chunks with rigid boundaries, failing to preserve important flexible-sized chunks at arbitrary token positions. To overcome these limitations, we propose Kara, a sliding-window KV cache compression method that performs decoding-time compression by operating only on the recently generated context. Kara leverages bidirectional attention to score and select informative KV pairs in the window. To enable flexible preservation of important semantic information, we design a Token2Chunk module to expand a subset of selected KV pairs into chunks. Furthermore, we adapt Kara to PagedAttention and develop KvLLM, an inference framework built upon vLLM, which reduces KV cache memory usage and effectively improves output throughput. Extensive experiments demonstrate consistent performance improvements of proposed Kara and KvLLM.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2607.01237v1 Announce Type: cross 
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2607.01237v2 Announce Type: replace-cross 
 Abstract: Reasoning language models often generate long chain-of-thought (CoT), which accumulates a massive KV cache during the decoding phase and incurs high decoding latency and limited throughput. To address these issues, KV cache compression has emerged as a promising technique for reducing memory overhead by selectively removing unimportant KV pairs while preserving useful ones for subsequent decoding. Nevertheless, we identify two key limitations in existing KV cache compression methods: 1) their threshold-triggered compression policy may provide limited throughput improvement or even reduce throughput, and may fully eliminate KV pairs from certain blocks of the sequence, potentially worsening information loss. 2) they typically retain either isolated KV pairs or fixed-size chunks with rigid boundaries, failing to preserve important flexible-sized chunks at arbitrary token positions. To overcome these limitations, we propose Kara, a sliding-window KV cache compression method that performs decoding-time compression by operating only on the recently generated context. Kara leverages bidirectional attention to score and select informative KV pairs in the window. To enable flexible preservation of important semantic information, we design a Token2Chunk module to expand a subset of selected KV pairs into chunks. Furthermore, we adapt Kara to PagedAttention and develop KvLLM, an inference framework built upon vLLM, which reduces KV cache memory usage and effectively improves output throughput. Extensive experiments demonstrate consistent performance improvements of proposed Kara and KvLLM.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2607.01237v1 Announce Type: cross 
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2607.01237v2 Announce Type: replace-cross 
 Abstract: Reasoning language models often generate long chain-of-thought (CoT), which accumulates a massive KV cache during the decoding phase and incurs high decoding latency and limited throughput. To address these issues, KV cache compression has emerged as a promising technique for reducing memory overhead by selectively removing unimportant KV pairs while preserving useful ones for subsequent decoding. Nevertheless, we identify two key limitations in existing KV cache compression methods: 1) their threshold-triggered compression policy may provide limited throughput improvement or even reduce throughput, and may fully eliminate KV pairs from certain blocks of the sequence, potentially worsening information loss. 2) they typically retain either isolated KV pairs or fixed-size chunks with rigid boundaries, failing to preserve important flexible-sized chunks at arbitrary token positions. To overcome these limitations, we propose Kara, a sliding-window KV cache compression method that performs decoding-time compression by operating only on the recently generated context. Kara leverages bidirectional attention to score and select informative KV pairs in the window. To enable flexible preservation of important semantic information, we design a Token2Chunk module to expand a subset of selected KV pairs into chunks. Furthermore, we adapt Kara to PagedAttention and develop KvLLM, an inference framework built upon vLLM, which reduces KV cache memory usage and effectively improves output throughput. Extensive experiments demonstrate consistent performance improvements of proposed Kara and KvLLM.</p><a href="https://arxiv.org/abs/2607.01237" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2607.01237" rel="nofollow noopener">https://arxiv.org/abs/2607.01237</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
@@ -91,7 +91,7 @@ Abstract: Reasoning language models often generate long chain-of-thought (CoT), 
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="f6a5a50f3b43.html"><div class="sim">関連</div><div class="info"><b>PACE: A Neuro-Symbolic Framework for Plausible and Actionable Counterfactual Explanations</b><div class="m">AI</div></div></a><a class="r" href="6a36368812d3.html"><div class="sim">関連</div><div class="info"><b>Auto-FL-Research: Agentic Search for Federated Learning Algorithms</b><div class="m">AI</div></div></a><a class="r" href="866a16741271.html"><div class="sim">関連</div><div class="info"><b>The Wiola Architecture for Efficient Small Language Models</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="75ce61c86b70.html"><div class="sim">関連</div><div class="info"><b>iFLYTEK-Embodied-Omni Technical Report</b><div class="m">AI</div></div></a><a class="r" href="83654496cd83.html"><div class="sim">関連</div><div class="info"><b>Internal Pluralism and the Limits of Pairwise Comparisons</b><div class="m">AI</div></div></a><a class="r" href="3b7f7894795b.html"><div class="sim">関連</div><div class="info"><b>ASK in the Dark: Uncertainty-Gated LLM Assistance under Partial Observability</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

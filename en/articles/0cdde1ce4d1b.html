@@ -17,7 +17,7 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"CoT-X: An Adaptive Framework for Cross-Model Chain-of-Thought Transfer and Optimization",
- "inLanguage":"en","datePublished":"2026-07-03T07:00:00+09:00","dateModified":"2026-07-03T07:00:00+09:00",
+ "inLanguage":"en","datePublished":"2026-07-08T07:00:00+09:00","dateModified":"2026-07-08T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2511.05747","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/0cdde1ce4d1b.html"}
@@ -35,11 +35,11 @@
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
     <h1>CoT-X: An Adaptive Framework for Cross-Model Chain-of-Thought Transfer and Optimization</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/03</span></div>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/08</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/0cdde1ce4d1b.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2511.05747" rel="nofollow noopener">https://arxiv.org/abs/2511.05747</a></span></div>
-  <div class="article-body"><p>arXiv:2511.05747v3 Announce Type: replace 
-Abstract: Chain-of-Thought (CoT) reasoning enhances the problem-solving ability of large language models (LLMs) but leads to substantial inference overhead, limiting deployment in resource-constrained settings. This paper investigates efficient CoT transfer across models of different scales and architectures through an adaptive reasoning summarization framework. The proposed method compresses reasoning traces via semantic segmentation with importance scoring, budget-aware dynamic compression, and coherence reconstruction, preserving critical reasoning steps while significantly reducing token usage. Experiments on 7{,}501 medical examination questions across 10 specialties show up to 40% higher accuracy than truncation under the same token budgets. Evaluations on 64 model pairs from eight LLMs (1.5B-32B parameters, including DeepSeek-R1 and Qwen3) confirm strong cross-model transferability. Furthermore, a Gaussian Process-based Bayesian optimization module reduces evaluation cost by 84% and reveals a power-law relationship between model size and cross-domain robustness. These results demonstrate that reasoning summarization provides a practical path toward efficient CoT transfer, enabling advanced reasoning under tight computational constraints. Code will be released upon publication.</p></div>
+  <div class="article-body"><p>arXiv:2511.05747v4 Announce Type: replace 
+Abstract: Long Chain-of-Thought (CoT) traces can improve reasoning accuracy, but repeatedly generating them is costly for smaller or latency-constrained language models. This paper studies a practical alternative: produce a rich rationale once with a capable \emph{thinking} model, compress it, and reuse the compressed trace as context for a cheaper \emph{answering} model. We introduce CoT-X, an adaptive framework for cross-model CoT transfer. CoT-X segments reasoning traces into semantic units, scores their diagnostic and logical importance, selects budget-feasible evidence paths, and reconstructs a coherent compressed rationale for the answering model. On $7,501$ Japanese medical licensing questions spanning $10$ specialties, CoT-X improves accuracy over direct truncation by up to $40.5\%$ under the same token budget, with the largest gains at $64$--$256$ tokens. Across $64$ thinking--answering pairs from eight DeepSeek-R1 and Qwen3 models (1.5B--32B parameters), reasoning transfer is most reliable within a model family, yet remains effective across families once compression normalizes the trace. A Gaussian Process Bayesian optimization layer finds near-optimal model--budget configurations with $15$ evaluations rather than an exhaustive search over all $64$ pairs, reducing evaluation cost by $84\%$. These results show that reasoning quality, token budget, and model compatibility can be optimized jointly, making CoT-style reasoning more practical under realistic deployment constraints.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Score Distributions, Not Cells: Evaluating Single-Cell Perturbations Under Class Overlap — NewsMatome (EN)</title>
+<meta name="description" content="Score Distributions, Not Cells: Evaluating Single-Cell Perturbations Under Class Overlap — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/bc513ca684f8.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/bc513ca684f8.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/bc513ca684f8.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/bc513ca684f8.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Score Distributions, Not Cells: Evaluating Single-Cell Perturbations Under Class Overlap">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Score Distributions, Not Cells: Evaluating Single-Cell Perturbations Under Class Overlap",
+ "inLanguage":"en","datePublished":"2026-07-08T07:00:00+09:00","dateModified":"2026-07-08T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2607.04595","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/bc513ca684f8.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/bc513ca684f8.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Score Distributions, Not Cells: Evaluating Single-Cell Perturbations Under Class Overlap</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/08</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/bc513ca684f8.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.04595" rel="nofollow noopener">https://arxiv.org/abs/2607.04595</a></span></div>
+  <div class="article-body"><p>arXiv:2607.04595v1 Announce Type: new 
+Abstract: Most classification problems assume the classes are roughly separable, so that an individual sample can usually be assigned to one class. Single-cell perturbation data violates this assumption: two perturbations can produce different populations of cells while overlapping so much that an individual cell could belong to either. Per-cell accuracy then measures this overlap rather than model quality. We see this on Tahoe-100M and the Virtual Cell Challenge, where a linear classifier, an MLP, and a Transformer all plateau near macro-F1 0.2-0.3 even though almost every pair of perturbations is statistically distinguishable.
+  The fix is to score perturbations across the whole population rather than cell by cell. We average a classifier&#x27;s per-cell probability vectors over all cells of a perturbation to form a population profile, then rank candidate perturbations by this profile; we call the resulting score the Classifier Discrimination Score (CDS). Taking the top-ranked class recovers the winning perturbation. It needs no retraining, costs linear time in the number of cells, and recovers near-perfect identification from the same weak models. CDS differs from the pseudobulk-based Perturbation Discrimination Score (PDS) used in recent benchmarks only in where the average is taken, raw gene expression for PDS versus a learned discriminative space for CDS, and identifies the true perturbation more reliably on both datasets, with the gap widening as cells grow scarce. Because a metric that misranks the ground truth will misrank the models scored against it, per-cell accuracy and raw-pseudobulk scores should be used with caution when comparing perturbation models.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
