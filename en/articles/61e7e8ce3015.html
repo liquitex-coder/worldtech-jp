@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unicode TAG-Block Concealment of Tool-Metadata Payloads in the Model Context Protocol: An Approval-View Fidelity Gap Across Three Independent Server Implementations — NewsMatome (EN)</title>
+<meta name="description" content="Unicode TAG-Block Concealment of Tool-Metadata Payloads in the Model Context Protocol: An Approval-View Fidelity Gap Across Three Independent Server Implementations — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/61e7e8ce3015.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/61e7e8ce3015.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/61e7e8ce3015.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/61e7e8ce3015.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unicode TAG-Block Concealment of Tool-Metadata Payloads in the Model Context Protocol: An Approval-View Fidelity Gap Across Three Independent Server Implementations">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Unicode TAG-Block Concealment of Tool-Metadata Payloads in the Model Context Protocol: An Approval-View Fidelity Gap Across Three Independent Server Implementations",
+ "inLanguage":"en","datePublished":"2026-07-09T07:00:00+09:00","dateModified":"2026-07-09T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2607.05744","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/61e7e8ce3015.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/61e7e8ce3015.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Unicode TAG-Block Concealment of Tool-Metadata Payloads in the Model Context Protocol: An Approval-View Fidelity Gap Across Three Independent Server Implementations</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/09</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/61e7e8ce3015.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.05744" rel="nofollow noopener">https://arxiv.org/abs/2607.05744</a></span></div>
+  <div class="article-body"><p>arXiv:2607.05744v1 Announce Type: cross 
+Abstract: The Model Context Protocol (MCP) is the dominant way coding agents discover and invoke external tools. A server advertises each tool through a tools/list handshake that returns a name, a natural-language description, and a JSON input schema. The client renders this metadata once, in a one-time approval dialog, and then injects it verbatim into the model&#x27;s context on every subsequent turn. Nothing in the protocol requires the rendered approval view and the bytes delivered to the model to match. We isolate that gap as a single structural mechanism, concealment encoding, and show with a model-free, protocol-free analysis that Unicode&#x27;s TAG block (U+E0000 to U+E007F) has no assigned glyph in any mainstream terminal, chat, or IDE renderer, so a payload written in it is absent from what a human reviewer sees while surviving byte-for-byte into the model&#x27;s tokenizer. We then measure whether this mechanism actually defeats today&#x27;s client-side defenses, building a proof-of-concept that speaks the real MCP JSON-RPC/stdio protocol against a genuine client and server. Across 5 distinct MCP metadata surfaces we implement 8 concrete techniques with a deterministic, protocol-level harness. All 8/8 techniques deliver an attacker-controlled payload into the model&#x27;s context, 4/8 evade a representative string-matching sanitizer, and exactly as the mechanism analysis predicts, only the TAG-block encoding (1/8) is invisible in the human approval view while still reaching the model verbatim. MCP forces re-approval for 0/8 techniques even under a time-of-check to time-of-use rug-pull. To test whether these outcomes are a property of the protocol or an artifact of one server codebase, we re-implement the catalogue against 3 independently developed Python MCP server libraries and find total agreement across all 32 cross-library outcome cells. The baseline sanitizer flags 0 of 25 benign descriptions.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diffusion Language Model Parallel Decoding via Product-of-Experts Bridge — NewsMatome (EN)</title>
+<meta name="description" content="Diffusion Language Model Parallel Decoding via Product-of-Experts Bridge — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/963ce8fdba1d.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/963ce8fdba1d.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/963ce8fdba1d.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/963ce8fdba1d.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Diffusion Language Model Parallel Decoding via Product-of-Experts Bridge">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Diffusion Language Model Parallel Decoding via Product-of-Experts Bridge",
+ "inLanguage":"en","datePublished":"2026-07-09T07:00:00+09:00","dateModified":"2026-07-09T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2606.08048","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/963ce8fdba1d.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/963ce8fdba1d.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Diffusion Language Model Parallel Decoding via Product-of-Experts Bridge</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/09</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/963ce8fdba1d.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.08048" rel="nofollow noopener">https://arxiv.org/abs/2606.08048</a></span></div>
+  <div class="article-body"><p>arXiv:2606.08048v1 Announce Type: cross 
+Abstract: Diffusion language models (DLMs) offer substantial speed advantages through parallel decoding, but the lack of token dependencies limits generation quality compared to autoregressive (AR) models. Recent progress attempts to bridge the gap via importance sampling, with DLM being the proposal and AR being the target. However, due to the huge gap between their distributions, the sampling requires a large number of particles and is thus expensive to compute. In this paper, we introduce PoE-Bridge, a novel decoding framework that drastically improves generation speed and accuracy by introducing an intermediate distribution to bridge the gap. The distribution is constructed as a Product-of-Experts (PoE) of the DLM proposal and the AR target. With the intermediate distribution, we first use the DLM to draft multiple continuations in parallel, then apply rejection sampling to verify the drafted tokens and move the resulting candidates toward the PoE. We then use importance sampling to further correct the PoE-aligned candidates toward the AR target. We further propose several improved techniques, including mixed-temperature sampling for enhanced diversity and elastic rejection windows for reducing wasted verification. Empirically, PoE-Bridge achieves significantly improved accuracy with $5\times$ speedup over the standard DLM decoding approach, and recovers at least 95% of the target AR model&#x27;s performance, efficiently advancing most of the quality gap on challenging mathematical reasoning and coding tasks. Our code is available at https://github.com/juntongshi48/poe-bridge.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

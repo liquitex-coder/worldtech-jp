@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BitLogic: Training Framework for Gradient-Based FPGA-Native Neural Networks — NewsMatome (EN)</title>
+<meta name="description" content="BitLogic: Training Framework for Gradient-Based FPGA-Native Neural Networks — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/251b8867afee.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/251b8867afee.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/251b8867afee.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/251b8867afee.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BitLogic: Training Framework for Gradient-Based FPGA-Native Neural Networks">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"BitLogic: Training Framework for Gradient-Based FPGA-Native Neural Networks",
+ "inLanguage":"en","datePublished":"2026-07-09T07:00:00+09:00","dateModified":"2026-07-09T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2602.07400","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/251b8867afee.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/251b8867afee.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>BitLogic: Training Framework for Gradient-Based FPGA-Native Neural Networks</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/09</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/251b8867afee.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2602.07400" rel="nofollow noopener">https://arxiv.org/abs/2602.07400</a></span></div>
+  <div class="article-body"><p>arXiv:2602.07400v2 Announce Type: replace 
+Abstract: Gradient-based LUT- and logic-gate-based neural networks (LUTNet, LogicNets, DiffLogic, PolyLUT, NeuraLUT, WARP-LUT, DWN, LILogicNet, LightLUT) replace multiply-accumulate arithmetic with Boolean lookups. The same trained checkpoint deploys to GPU as bitwise ops on bit-packed activations, to FPGA as LUT primitives, and to ASIC as standard-cell gates, all from one code path. Yet each method ships its own training pipeline, encoder, connectivity rule, fan-in, and hardware-reporting convention. The natural practitioner question, which of these choices actually matter for accuracy and which for hardware cost, therefore has no answer in the current literature. We release \textbf{BitLogic}, a unified framework that factors the field into a five-axis design space (encoder, connectivity, fan-in, node parameterization, head) and instantiates every prior method under one shared training and evaluation protocol. The framework deliberately omits method-specific procedures such as calibration, pruning, and thresholding, and all evaluations are limited to two-layer feed-forward networks. Combining the per-axis winners identifies a new best-of-space configuration that outperforms every retrained prior on every (dataset, width) cell in which every compared prior fits the shared budget, across MNIST, Fashion-MNIST, CIFAR-10, and CIFAR-100. We evaluate the best-of-space model on all three backends. On MNIST, the resulting two-layer network reaches ${\sim}126$\,MSamples/s on FPGA, ${\sim}15\times$ the throughput of a bit-packed GPU forward path that itself processes $64$ samples per $64$-bit operation, at four-to-five orders of magnitude less energy.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
