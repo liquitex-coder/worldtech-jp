@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bag of Dims: Training-Free Mechanistic Interpretability via Dimension-Level Sign Patterns — NewsMatome (EN)</title>
-<meta name="description" content="Bag of Dims: Training-Free Mechanistic Interpretability via Dimension-Level Sign Patterns — original-language edition. Japanese translation available.">
+<title>The Signs Were Always There: Training-Free Concept Detection and Steering in Raw Transformer Dimensions — NewsMatome (EN)</title>
+<meta name="description" content="The Signs Were Always There: Training-Free Concept Detection and Steering in Raw Transformer Dimensions — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/a9032f7d7482.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/a9032f7d7482.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/a9032f7d7482.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/a9032f7d7482.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Bag of Dims: Training-Free Mechanistic Interpretability via Dimension-Level Sign Patterns">
+<meta property="og:title" content="The Signs Were Always There: Training-Free Concept Detection and Steering in Raw Transformer Dimensions">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Bag of Dims: Training-Free Mechanistic Interpretability via Dimension-Level Sign Patterns",
- "inLanguage":"en","datePublished":"2026-06-19T07:00:00+09:00","dateModified":"2026-06-19T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"The Signs Were Always There: Training-Free Concept Detection and Steering in Raw Transformer Dimensions",
+ "inLanguage":"en","datePublished":"2026-07-10T07:00:00+09:00","dateModified":"2026-07-10T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.12629","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/a9032f7d7482.html"}
@@ -34,14 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Bag of Dims: Training-Free Mechanistic Interpretability via Dimension-Level Sign Patterns</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/06/19</span></div>
+    <h1>The Signs Were Always There: Training-Free Concept Detection and Steering in Raw Transformer Dimensions</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/10</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/a9032f7d7482.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.12629" rel="nofollow noopener">https://arxiv.org/abs/2606.12629</a></span></div>
-  <div class="article-body"><p>arXiv:2606.12629v2 Announce Type: replace 
-Abstract: We show the standard basis of transformer hidden states already provides a training-free, architecture-general feature basis. Individual dimensions encode semantic content via their signs (+/-1) and confidence via their magnitudes, acting as independent binary registers; a feature is a subset of dimensions with a consistent sign pattern, read by counting sign agreements with no learned rotation. We validate this Bag of Dims framework across seven models spanning language (Qwen 3.5-4B, Gemma 3-4B, Mistral 7B, Qwen3-32B), vision (DINOv2, ViT-Base), and audio (AST).
-  Signs alone carry predictive content: unit-magnitude sign patterns preserve 60-93% top-5 next-token accuracy through the LM head, and decoder-free Hamming scoring reaches 80-90% top-4096. From a single-token cache (one forward pass per token, no context, no labels), we detect 175 categories at AUC 0.97-0.99 by sign agreement; a trained probe adds only +0.018 AUC and converges to axis-aligned weights. These features are causally operative: they survive the K/V attention projections, trace to the FFN neuron coalitions that write them (random-weight controls never reproduce this), and flipping a feature&#x27;s signs during the live forward pass suppresses its concept across four language models, magnitude-matched and concept-specific. Dimensions stay independent throughout (pairwise mutual information below 0.006 bits).
-  The structure is not specific to language: the same per-dimension signs appear in self-supervised vision (DINOv2, 9/12 ImageNet superclasses), supervised vision (ViT-Base, 11/12), and audio (AST, 50/50 ESC-50 categories), so it reflects transformer training in general, not the language-modeling objective. The standard basis already suffices for feature reading at one forward pass, no optimization, no GPU-days. The open problem shifts from finding the right rotation to cataloging what each dimension encodes.</p></div>
+  <div class="article-body"><p>arXiv:2606.12629v3 Announce Type: replace 
+Abstract: The standard basis of transformer hidden states is a training-free, architecture-general feature basis for detecting concepts and, in language models, steering them; with no learned dictionary. Individual dimensions act as binary registers read one at a time: their signs (+/-1) encode content, their magnitudes strength. A feature is just a subset of dimensions with a consistent sign pattern, read by counting sign agreements. We validate this Bag of Dims (BoD) framework across seven models spanning language, vision, and audio; reading dimensions one at a time loses nothing, as a full-capacity MLP adds zero AUC over per-dim reading. The same per-dimension signs appear in every modality, so they reflect transformer training itself, not the language objective. Sign alone carries predictive content: setting all magnitudes to unity preserves 60-93% top-5 next-token accuracy through the LM head. From a single-token cache (one forward pass per token, no labels) we detect 175 categories at AUC 0.97-0.99 by counting sign agreements, and from random seeds alone discovery scales to 1500 features per model. A trained probe adds only +0.018 AUC and converges to axis-aligned weights: the rotation dictionaries learn buys little. Signs are causally operative: they survive the attention projections, and flipping a concept&#x27;s sign pattern in the live forward pass suppresses it. Reading and steering are separate roles in the same basis: a concept&#x27;s reader dimensions are not its writer dimensions. The writer target is just as cheap, the sign of the summed unembedding rows over a few seeds, no training. Injected through the attention output pathway under closed-loop control, it steers concepts into fluent text on four language models (62-92% of twelve concepts). The signs were in the standard basis all along; the open problem is no longer finding the right rotation but cataloging what each dimension encodes.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>
