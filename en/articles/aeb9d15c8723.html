@@ -17,8 +17,8 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"KG-SoftMAP: Soft Knowledge-Graph Priors for Bayesian Network Structure Learning from Sparse Discrete Data",
- "inLanguage":"en","datePublished":"2026-06-21T07:00:00+09:00","dateModified":"2026-06-21T07:00:00+09:00",
- "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "inLanguage":"en","datePublished":"2026-07-11T07:00:00+09:00","dateModified":"2026-07-11T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.10358","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/aeb9d15c8723.html"}
 </script>
@@ -32,14 +32,14 @@
 </div></header>
 <div class="wrap"><article class="article">
   <div class="article-head">
-    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
     <h1>KG-SoftMAP: Soft Knowledge-Graph Priors for Bayesian Network Structure Learning from Sparse Discrete Data</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/06/21</span></div>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/11</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/aeb9d15c8723.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.10358" rel="nofollow noopener">https://arxiv.org/abs/2606.10358</a></span></div>
-  <div class="article-body"><p>arXiv:2606.10358v2 Announce Type: replace-cross 
-Abstract: Learning Bayesian network (BN) structure from sparse discrete data is hard: when each instance records only a few variables, most variable pairs lack the joint observations needed for reliable scoring, and data-only methods recover little structure. However, imperfect domain knowledge, expressible as a weighted directed knowledge graph (KG), is often available. We propose KG-SoftMAP, which encodes such a KG as a finite-strength, confidence-weighted edge prior and maximizes a MAP objective combining the BDeu score with a logit-form prior; the KG may be expert-curated or LLM-extracted. On synthetic benchmarks with known DAGs, KG-SoftMAP reaches Directed-F1 (DF1) $0.19$--$0.32$ at observation rate $\rho=0.05$ and DF1 $0.44$--$0.97$ at $\rho\geq0.2$, while every data-only learner tested stays near zero under the same sparse masks. Recovery tracks KG quality: controlled corruption degrades it smoothly, a zero-signal KG yields DF1 $0.00$, and a blindly LLM-extracted KG with imperfect precision and recall still drives substantial recovery. On three real sparse educational datasets, the learned BN acts as a concept-level posterior model: on SAF it matches logistic regression (LR) within $0.03$ F1_FAIL while providing an inspectable concept graph, calibrated Fail probabilities, and tractable posterior queries from partial observations.</p></div>
+  <div class="article-body"><p>arXiv:2606.10358v3 Announce Type: replace 
+Abstract: Learning Bayesian network (BN) structure from sparse discrete data is hard: when each instance records only a few variables, most variable pairs lack the joint observations needed for reliable scoring, and data-only methods recover little structure. Imperfect domain knowledge, expressible as a weighted directed knowledge graph (KG), is often available. KG-SoftMAP encodes such a KG as a finite-strength, confidence-weighted edge prior and maximizes a MAP objective that adds this logit-form prior to the BDeu score. With an informative but imperfect KG, KG-SoftMAP recovers partial directed structure even at observation rate rho=0.05, with directed F1 (DF1) of 0.19-0.32 across benchmarks. At higher observation rates within this sparse grid, DF1 reaches 0.44-0.66 at rho=0.20 and 0.46-0.64 at rho=0.40. Across the same three rates, KG-SoftMAP without the KG prior averages DF1 0.00, 0.19, and 0.21. Stress tests that corrupt, remove, or blur the KG signal, together with checks on LLM-extracted graphs beyond canonical benchmarks, show that recovery rises and falls with KG quality. On three real sparse educational datasets without ground-truth DAGs, we evaluate prediction, calibration, and KG-consistency. On Short Answer Feedback (SAF), KG-SoftMAP+VE reaches Fail-class F1 0.75 versus 0.78 for logistic regression while also providing an inspectable concept graph, calibrated Fail probabilities, and posterior queries from partially observed concept evidence. The remaining datasets sharpen the operating picture: weak heuristic KG signal leaves prediction unchanged, while an independent expert ontology moves the learned graph toward expert relatedness.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

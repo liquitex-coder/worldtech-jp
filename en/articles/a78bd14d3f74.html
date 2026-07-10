@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GAP-GDRNet: Geometry-Aware Monocular Visual Pose Sensing on a Single-Target Synthetic Spacecraft Dataset — NewsMatome (EN)</title>
-<meta name="description" content="GAP-GDRNet: Geometry-Aware Monocular Visual Pose Sensing on a Single-Target Synthetic Spacecraft Dataset — original-language edition. Japanese translation available.">
+<title>GAP-GDRNet: Geometry-aware monocular 6D pose estimation for spacecraft using synthetic geometric supervision — NewsMatome (EN)</title>
+<meta name="description" content="GAP-GDRNet: Geometry-aware monocular 6D pose estimation for spacecraft using synthetic geometric supervision — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/a78bd14d3f74.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/a78bd14d3f74.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/a78bd14d3f74.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/a78bd14d3f74.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GAP-GDRNet: Geometry-Aware Monocular Visual Pose Sensing on a Single-Target Synthetic Spacecraft Dataset">
+<meta property="og:title" content="GAP-GDRNet: Geometry-aware monocular 6D pose estimation for spacecraft using synthetic geometric supervision">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"GAP-GDRNet: Geometry-Aware Monocular Visual Pose Sensing on a Single-Target Synthetic Spacecraft Dataset",
- "inLanguage":"en","datePublished":"2026-07-08T07:00:00+09:00","dateModified":"2026-07-08T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"GAP-GDRNet: Geometry-aware monocular 6D pose estimation for spacecraft using synthetic geometric supervision",
+ "inLanguage":"en","datePublished":"2026-07-11T07:00:00+09:00","dateModified":"2026-07-11T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.02360","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/a78bd14d3f74.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>GAP-GDRNet: Geometry-Aware Monocular Visual Pose Sensing on a Single-Target Synthetic Spacecraft Dataset</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/08</span></div>
+    <h1>GAP-GDRNet: Geometry-aware monocular 6D pose estimation for spacecraft using synthetic geometric supervision</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/11</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/a78bd14d3f74.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.02360" rel="nofollow noopener">https://arxiv.org/abs/2607.02360</a></span></div>
-  <div class="article-body"><p>arXiv:2607.02360v2 Announce Type: replace-cross 
-Abstract: Monocular relative pose sensing is a central perception problem in non-cooperative rendezvous and on-orbit servicing. In spacecraft images, however, weak surface texture, thin appendages, illumination changes, and partial occlusion often leave only sparse and unstable geometric evidence. This article presents GAP-GDRNet, a geometry-aware attention-enhanced framework for monocular RGB-based 6D pose sensing. The method follows the geometry-guided direct regression paradigm of GDR-Net and modifies two points in the pipeline: an attention-based feature refinement (AFR) module is placed before dense geometric prediction, and a patch-level geometric self-attention (PGSA) module is inserted into Patch-PnP. AFR reinforces global spacecraft structure together with local weak-texture cues; PGSA then relates downsampled geometric patches before final pose regression. A Blender-based annotation process supplies target masks, visible-region masks, dense model-coordinate maps, camera intrinsics, and 6D pose labels for supervised training.The primary evaluation uses a single-target synthetic spacecraft dataset built from one CAD model. GAP-GDRNet reaches a rotation error of $1.96^\circ$, a translation error of 0.0165 m, and an ADD@0.02 m accuracy of 95.16\%, exceeding the reproduced GDR-Net baseline by 3.88 percentage points while running at 35.97 FPS for pose-network inference. Supplementary evaluations on T-LESS and LM-O give BOP AR gains of 6.8 and 3.1 percentage points over the reproduced baseline.</p></div>
+  <div class="article-body"><p>arXiv:2607.02360v3 Announce Type: replace-cross 
+Abstract: Monocular spacecraft 6D pose estimation remains difficult under weak texture, thin structures, illumination variation, and occlusion. This article presents GAP-GDRNet, a geometry-aware RGB framework built on GDR-Net for a single-target synthetic spacecraft benchmark. The method strengthens the geometry-guided regression pipeline at two points. First, AFR is placed before dense geometric prediction to combine global structural attention with local weak-texture enhancement. Second, PGSA is inserted into Patch-PnP to relate downsampled geometric regions before final pose regression. Dense supervision is obtained from a Blender-based rendering and annotation process that provides masks, model-coordinate maps, camera intrinsics, and 6D pose labels. On the self-built spacecraft dataset, GAP-GDRNet achieves a rotation error of $1.96^\circ$, a translation error of 0.0165 m, and 95.16\% ADD@0.02 m, outperforming the reproduced GDR-Net baseline by 3.88 percentage points while running at 35.97 FPS. Tests on T-LESS and LM-O further show consistent gains over the reproduced baseline on textureless and occluded non-spacecraft objects.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

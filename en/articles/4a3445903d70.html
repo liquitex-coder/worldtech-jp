@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZAPS-DA: Zero-Phase Action Policy Smoothing with Decoupled Actor for Continuous Control in Reinforcement Learning — NewsMatome (EN)</title>
+<meta name="description" content="ZAPS-DA: Zero-Phase Action Policy Smoothing with Decoupled Actor for Continuous Control in Reinforcement Learning — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/4a3445903d70.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/4a3445903d70.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/4a3445903d70.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/4a3445903d70.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ZAPS-DA: Zero-Phase Action Policy Smoothing with Decoupled Actor for Continuous Control in Reinforcement Learning">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"ZAPS-DA: Zero-Phase Action Policy Smoothing with Decoupled Actor for Continuous Control in Reinforcement Learning",
+ "inLanguage":"en","datePublished":"2026-07-11T07:00:00+09:00","dateModified":"2026-07-11T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2605.30612","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/4a3445903d70.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/4a3445903d70.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>ZAPS-DA: Zero-Phase Action Policy Smoothing with Decoupled Actor for Continuous Control in Reinforcement Learning</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/11</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/4a3445903d70.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2605.30612" rel="nofollow noopener">https://arxiv.org/abs/2605.30612</a></span></div>
+  <div class="article-body"><p>arXiv:2605.30612v2 Announce Type: replace-cross 
+Abstract: Continuous control policies trained with off-policy reinforcement learning frequently exhibit high-frequency action jitter, impractical for direct deployment on physical actuators. Post-hoc filtering attenuates jitter but adds phase lag; embedding smoothness penalties in the actor&#x27;s loss couples them with the RL gradient and conflates reward regression with over-aggressive smoothing. We present ZAPS-DA, which reduces action jitter at deployment with negligible phase lag and no post-processing. ZAPS-DA pairs an unmodified main actor (trained by the base RL loss) with a separate decoupled actor trained via supervised imitation of zero-phase filtered targets stored in the replay buffer. The deployed policy is the decoupled actor: a feed-forward map from observation to smooth action, with no inference-time filter and no action-history input -- causal distillation of a non-causal filter. A magnitude-matched MSE loss gives zero-hyperparameter portability across optimizer classes. Validated with Soft Actor-Critic and a Savitzky-Golay filter in two driving simulators (paired n=150): on MetaDrive (anchor protocol), ZAPS-DA cuts steering jitter 14-21x and throttle jitter 3-5x (all $p&lt;10^{-4}$, Bonferroni) while matching task-completion (p=0.28 success, p=0.31 crash) at 6.3% reward cost; on a custom Webots adaptive cruise control task, the same configuration yields a Pareto improvement -- reward parity (p=0.121), 8-45x steering-jitter reduction, task-failure rate 2.0% to 0.7%. Against CAPS, the standard penalty-based baseline -- at both its auto-entropy and native fixed-entropy operating points, with penalty weight, spatial noise, and entropy coefficient re-tuned per environment -- ZAPS-DA reaches 14.7x steering-jitter reduction versus CAPS&#x27;s best 3.2x at matched seeds, a ~4.6x gap, with no per-environment tuning of the smoothness signal and post-hoc applicability to trained policies.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
