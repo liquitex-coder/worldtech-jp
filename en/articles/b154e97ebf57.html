@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Memory-Managed Long-Context Attention: A Preliminary Study of Editable Request-Local Memory — NewsMatome (EN)</title>
-<meta name="description" content="Memory-Managed Long-Context Attention: A Preliminary Study of Editable Request-Local Memory — original-language edition. Japanese translation available.">
+<title>Memory-Managed Long-Context Attention: Bounded Editable Memory with a Hard Lifecycle and Calibrated Sparse Fallback — NewsMatome (EN)</title>
+<meta name="description" content="Memory-Managed Long-Context Attention: Bounded Editable Memory with a Hard Lifecycle and Calibrated Sparse Fallback — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/b154e97ebf57.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/b154e97ebf57.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/b154e97ebf57.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/b154e97ebf57.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Memory-Managed Long-Context Attention: A Preliminary Study of Editable Request-Local Memory">
+<meta property="og:title" content="Memory-Managed Long-Context Attention: Bounded Editable Memory with a Hard Lifecycle and Calibrated Sparse Fallback">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Memory-Managed Long-Context Attention: A Preliminary Study of Editable Request-Local Memory",
- "inLanguage":"en","datePublished":"2026-07-01T07:00:00+09:00","dateModified":"2026-07-01T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Memory-Managed Long-Context Attention: Bounded Editable Memory with a Hard Lifecycle and Calibrated Sparse Fallback",
+ "inLanguage":"en","datePublished":"2026-07-14T07:00:00+09:00","dateModified":"2026-07-14T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.28876","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/b154e97ebf57.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Memory-Managed Long-Context Attention: A Preliminary Study of Editable Request-Local Memory</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/01</span></div>
+    <h1>Memory-Managed Long-Context Attention: Bounded Editable Memory with a Hard Lifecycle and Calibrated Sparse Fallback</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/14</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/b154e97ebf57.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.28876" rel="nofollow noopener">https://arxiv.org/abs/2606.28876</a></span></div>
-  <div class="article-body"><p>arXiv:2606.28876v1 Announce Type: cross 
-Abstract: Long-context language models often conflate two different goals: compressing history into an efficient state, and maintaining reliable long-term memory. Linear, recurrent, and sparse attention reduce the cost of processing long sequences, but they do not by themselves specify when a fact should be written, overwritten, protected from distractors, or discarded. We study memory-managed long-context attention, a research route that separates a fast recurrent or sparse backbone from explicit editable request-local memory slots and query-time sparse fallback. Across structured synthetic tasks, token/chunk/sequence bridges, generated natural language, and local frozen-model diagnostics, pure fixed-state or pure sparse methods fail some overwrite, version, anti-pollution, or no-write-signal cases, while a hybrid covers both routes. A small 2,097,152-token mechanism stress test reaches 50/50 pooled accuracy with 2-132 active chunks. A 2.74M-parameter minimal causal event-token model reaches 595/600 with lite write supervision, supporting proof of trainability rather than scale. A six-family frozen-hidden-state bridge reaches 1079/1080 controlled pointer accuracy, but it uses generator-provided integer key IDs and separately encoded canonical key strings; it is an oracle-metadata probe, not open-text entity resolution. Local non-leaderboard RULER 4K diagnostics remain close to full context, whereas a 33-record LongBench v1 16K subset shows that naive lexical selection is not general. The evidence separates three claims: controlled slot lifecycle is feasible, sparse fallback is needed when writes lack future-query signals, and learned open-domain selection remains the main architectural bottleneck. We do not claim a final generative architecture, global slot-trajectory convergence, or systems superiority.</p></div>
+  <div class="article-body"><p>arXiv:2606.28876v2 Announce Type: replace-cross 
+Abstract: We study memory-managed long-context attention: explicit bounded memory with a learned query-independent writer, lifecycle control, query-aware reading, calibrated sparse fallback, and frozen-LLM generation from raw evidence. Track A is a controlled versioned-variable task where last-mention retrieval is wrong by construction. Its full lifecycle scores 1.000 on all three seeds versus a 0.333 lexical baseline, and generation reaches 300/300 at 146 prompt tokens, compared with 172/300 for full-context reading at 729 tokens. Track B uses held-out HotpotQA questions and train-derived, answer-excluded distractors at natural and 8.2k-word lengths. A learned two-hop selector with a bounded 32-passage cache and fallback beats dense retrieval by 5.5--16.6 F1 and reaches 102--116% of full-context F1 at 10% of the evidence words. These real-text gains come from the learned selector; the cache preserves quality at a 0--2.9 F1 cost, and static QA text does not exercise overwrite or protection. The original Llama budget gate failure and the forward-adjudicated Qwen follow-up are reported explicitly. All backbones are frozen; joint training, faithful architecture baselines, and systems measurements remain future work.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

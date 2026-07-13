@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Self-Improving Neural Pruning: A Graph Neural Network Framework for Scalable Mixed Bundle Pricing — NewsMatome (EN)</title>
-<meta name="description" content="Self-Improving Neural Pruning: A Graph Neural Network Framework for Scalable Mixed Bundle Pricing — original-language edition. Japanese translation available.">
+<title>Self-Improving Neural-Guided Pruning: A Graph Neural Network Framework for Scalable Mixed Bundle Pricing — NewsMatome (EN)</title>
+<meta name="description" content="Self-Improving Neural-Guided Pruning: A Graph Neural Network Framework for Scalable Mixed Bundle Pricing — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/66a1099f776a.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/66a1099f776a.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/66a1099f776a.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/66a1099f776a.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Self-Improving Neural Pruning: A Graph Neural Network Framework for Scalable Mixed Bundle Pricing">
+<meta property="og:title" content="Self-Improving Neural-Guided Pruning: A Graph Neural Network Framework for Scalable Mixed Bundle Pricing">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Self-Improving Neural Pruning: A Graph Neural Network Framework for Scalable Mixed Bundle Pricing",
- "inLanguage":"en","datePublished":"2026-07-08T07:00:00+09:00","dateModified":"2026-07-08T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Self-Improving Neural-Guided Pruning: A Graph Neural Network Framework for Scalable Mixed Bundle Pricing",
+ "inLanguage":"en","datePublished":"2026-07-14T07:00:00+09:00","dateModified":"2026-07-14T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2509.22557","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/66a1099f776a.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Self-Improving Neural Pruning: A Graph Neural Network Framework for Scalable Mixed Bundle Pricing</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/08</span></div>
+    <h1>Self-Improving Neural-Guided Pruning: A Graph Neural Network Framework for Scalable Mixed Bundle Pricing</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/14</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/66a1099f776a.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2509.22557" rel="nofollow noopener">https://arxiv.org/abs/2509.22557</a></span></div>
-  <div class="article-body"><p>arXiv:2509.22557v4 Announce Type: replace 
-Abstract: Mixed bundle pricing is a classic revenue management problem arising in industries such as e-commerce, tourism, and video games. It refers to designing product combinations (i.e., bundles) and determining their prices to maximize expected profit. Exact mixed-bundling formulations capture this structure but are computationally intractable because the number of possible bundles grows exponentially with the number of products. We propose a graph neural network (GNN)-guided pruning framework for scalable (non-)additive bundle pricing. Instead of learning on the exponential bundle-level formulation, we encode each instance as a compact customer-product graph and train an edge-output GNN to learn the product-assignment probabilities from optimal mixed-bundling solutions. The predicted probabilities are then converted into restricted candidate bundle families through fixed cutoff pruning and progressive cutoff pruning; the final prices and assignments are obtained by solving the mixed bundling formulation over the retained bundles. We further introduce a GNN-guided local search and an iterative self-improvement procedure for larger instances. The local search refines the retained bundle family by prioritizing high-confidence add/drop moves, while the iterative self-improvement procedure generates high-quality solutions on larger instances for retraining. Theoretically, we show that under mild distinguishability conditions the proposed edge-output GNN class is expressive enough to recover the optimal product-assignment mapping. Experiments show that the proposed policies recover over 98% of the optimal profit on small instances and outperform bundle-size pricing on larger instances with substantial runtime savings.</p></div>
+  <div class="article-body"><p>arXiv:2509.22557v5 Announce Type: replace 
+Abstract: Mixed bundle pricing is a classic revenue management problem arising in industries such as e-commerce, tourism, and video games. It refers to designing product combinations (i.e., bundles) and determining their prices to maximize expected profit. Exact mixed bundling models capture this structure but become computationally intractable because the number of candidate bundles grows exponentially with the number of products. We develop a graph neural network (GNN)-guided pruning-then-optimization framework for bundle pricing with (non-)additive valuations. The method represents each instance as a compact segment-product graph, predicts segment-product inclusion probabilities, and accordingly prunes the exponential bundle space into a small candidate family; the final prices and bundle offerings are obtained by solving the mixed bundling formulation over the retained bundles, possibly refined by a GNN-guided local search. Because exact labels are available only at small scales, we further propose an iterative self-improvement procedure: the current GNN policies generate high-quality solutions on large-scale instances, which serve as near-optimal labels for training a stronger model at larger scales. Theoretically, we show that under mild conditions the proposed edge-output GNN class is expressive enough to represent the optimal product-assignment mapping, justifying the edge-level learning target. Numerical experiments show that the fastest proposed policy delivers 13-21% higher profit than bundle-size pricing on instances with up to 100 products at about 2% of its runtime.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

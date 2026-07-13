@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ECHO: Prune to act, trace to learn with selective turn memory in agentic RL — NewsMatome (EN)</title>
-<meta name="description" content="ECHO: Prune to act, trace to learn with selective turn memory in agentic RL — original-language edition. Japanese translation available.">
+<title>ECHO: Prune To Act, Trace To Learn With Selective Turn Memory In Agentic RL — NewsMatome (EN)</title>
+<meta name="description" content="ECHO: Prune To Act, Trace To Learn With Selective Turn Memory In Agentic RL — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/7d1cffda79a2.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/7d1cffda79a2.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/7d1cffda79a2.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/7d1cffda79a2.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ECHO: Prune to act, trace to learn with selective turn memory in agentic RL">
+<meta property="og:title" content="ECHO: Prune To Act, Trace To Learn With Selective Turn Memory In Agentic RL">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"ECHO: Prune to act, trace to learn with selective turn memory in agentic RL",
- "inLanguage":"en","datePublished":"2026-07-02T07:00:00+09:00","dateModified":"2026-07-02T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"ECHO: Prune To Act, Trace To Learn With Selective Turn Memory In Agentic RL",
+ "inLanguage":"en","datePublished":"2026-07-14T07:00:00+09:00","dateModified":"2026-07-14T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.31650","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/7d1cffda79a2.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>ECHO: Prune to act, trace to learn with selective turn memory in agentic RL</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/02</span></div>
+    <h1>ECHO: Prune To Act, Trace To Learn With Selective Turn Memory In Agentic RL</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/14</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/7d1cffda79a2.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.31650" rel="nofollow noopener">https://arxiv.org/abs/2606.31650</a></span></div>
-  <div class="article-body"><p>arXiv:2606.31650v1 Announce Type: new 
-Abstract: Long-horizon language agents must repeatedly interact with tools, accumulate evidence, and make decisions under bounded context windows. Existing context-management methods make such rollouts feasible by truncating distant history, folding past turns into summaries, or selecting compact memory states. However, these breakthroughs introduce two coupled limitations. First, as the number of turns grows, historical observations are progressively removed or collapsed into compressed states, making it harder for the policy to reuse fine-grained evidence. Second, once the original turns are no longer source-addressable, outcome-based RL loses an explicit path for aligning policy updates with the evidence that supported a successful final answer. To this end, we propose ECHO, a selective turn-memory framework that jointly addresses history collapse and traceable learning through source-indexed reconstruction. Specifically, ECHO compresses each completed environment turn into a compact memory record, reconstructs bounded policy contexts by selecting from these records, and reuses the selected source indices to route positive outcome credit to the evidence and selection actions that support successful answers. On BrowseComp-Plus, ECHO reaches 43.4% held-out accuracy, outperforming GRPO (28.9%) and the rolling-summary baseline SUPO (36.1%), while using fewer turns and lower trajectory volume than SUPO (Figure 1). Additionally, the trained policy improves zero-shot generalization across multi-objective QA, code generation, and deep information-seeking benchmarks on both dense and MoE backbones.</p></div>
+  <div class="article-body"><p>arXiv:2606.31650v2 Announce Type: replace 
+Abstract: Long-horizon language agents must repeatedly interact with tools, accumulate evidence, and make decisions under bounded context windows. Context-management methods make such rollouts feasible by simplifying past interactions through deletion, folding, or memory editing. However, when useful history is collapsed into compressed states, the reconstructed context may no longer reveal which earlier observations support a successful final answer. This creates a mismatch between bounded-context acting and outcome-based reinforcement learning: the policy acts on reconstructed context, while the learner lacks source-level provenance for assigning credit to the evidence that mattered. We propose ECHO, a selective turn-memory framework for traceable context reconstruction in Agentic RL. ECHO compresses each completed environment turn into a compact source-indexed memory record, reconstructs bounded policy contexts by selecting useful records, and reuses the selected source indices to route positive outcome credit to the final trajectory segment, reused evidence turns, memory findings, and memory-selection actions. On BrowseComp-Plus, ECHO reaches 43.4% held-out accuracy, outperforming GRPO at 28.9% and the rolling-summary baseline SUPO at 36.1%, while using fewer turns and lower trajectory volume than SUPO. The trained policy also improves zero-shot generalization across multi-objective QA, code generation, and deep information-seeking benchmarks on both dense and MoE backbones.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Patchwork Problem in LLM-Generated Code — NewsMatome (EN)</title>
+<meta name="description" content="The Patchwork Problem in LLM-Generated Code — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/550d09afcbca.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/550d09afcbca.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/550d09afcbca.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/550d09afcbca.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Patchwork Problem in LLM-Generated Code">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"The Patchwork Problem in LLM-Generated Code",
+ "inLanguage":"en","datePublished":"2026-07-14T07:00:00+09:00","dateModified":"2026-07-14T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2607.08981","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/550d09afcbca.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/550d09afcbca.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>The Patchwork Problem in LLM-Generated Code</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/14</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/550d09afcbca.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.08981" rel="nofollow noopener">https://arxiv.org/abs/2607.08981</a></span></div>
+  <div class="article-body"><p>arXiv:2607.08981v1 Announce Type: cross 
+Abstract: LLM-generated code often compiles, passes tests, and appears correct, yet breaks once deployed. The root cause is frequently structural rather than logical. A generated endpoint references configuration keys never declared in the project, an import targets a package that does not exist in any registry, or a new route omits the authentication guard applied to every sibling endpoint. Each patch is locally valid but globally incoherent, and standard CI toolchains rarely surface these failures. As LLM-powered coding tools see widespread adoption, this blind spot poses a growing risk to software quality. We call this the \textbf{patchwork problem}. This paper formalizes structural coherence as consistency invariants over graph representations of repository artifacts, including import, call, dependency, configuration, schema, resource, control-flow, and routing graphs, and introduces an eight-category failure taxonomy distinguishing defects specific to LLM generation from those merely amplified by it. We present a hybrid verification framework that delegates to mature static analysis tools where they already excel and deploys purpose-built detectors for cross-cutting invariants underserved by existing toolchains, targeting provable constraint violations rather than heuristic pattern matching. Empirical evaluation across two frontier models under four prompting strategies reveals that the vast majority of structural failures evade type checking, testing, and SAST entirely, and that failure patterns diverge qualitatively between models in ways that challenge model-agnostic mitigation strategies. External validation on real-world AI-generated repositories confirms that these failures are not artifacts of controlled experimentation but are prevalent wherever LLMs write code with minimal human oversight.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
