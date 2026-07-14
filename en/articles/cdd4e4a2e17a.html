@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Curriculum Learning for Efficient Chain-of-Thought Distillation via Structure-Aware Masking and GRPO — NewsMatome (EN)</title>
-<meta name="description" content="Curriculum Learning for Efficient Chain-of-Thought Distillation via Structure-Aware Masking and GRPO — original-language edition. Japanese translation available.">
+<title>BRIDGE: Bridging Reasoning In Distillation Gap Elimination via Structure-Aware Masking — NewsMatome (EN)</title>
+<meta name="description" content="BRIDGE: Bridging Reasoning In Distillation Gap Elimination via Structure-Aware Masking — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/cdd4e4a2e17a.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/cdd4e4a2e17a.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/cdd4e4a2e17a.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/cdd4e4a2e17a.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Curriculum Learning for Efficient Chain-of-Thought Distillation via Structure-Aware Masking and GRPO">
+<meta property="og:title" content="BRIDGE: Bridging Reasoning In Distillation Gap Elimination via Structure-Aware Masking">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Curriculum Learning for Efficient Chain-of-Thought Distillation via Structure-Aware Masking and GRPO",
- "inLanguage":"en","datePublished":"2026-07-11T07:00:00+09:00","dateModified":"2026-07-11T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"BRIDGE: Bridging Reasoning In Distillation Gap Elimination via Structure-Aware Masking",
+ "inLanguage":"en","datePublished":"2026-07-15T07:00:00+09:00","dateModified":"2026-07-15T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2602.17686","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/cdd4e4a2e17a.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Curriculum Learning for Efficient Chain-of-Thought Distillation via Structure-Aware Masking and GRPO</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/11</span></div>
+    <h1>BRIDGE: Bridging Reasoning In Distillation Gap Elimination via Structure-Aware Masking</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/15</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/cdd4e4a2e17a.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2602.17686" rel="nofollow noopener">https://arxiv.org/abs/2602.17686</a></span></div>
-  <div class="article-body"><p>arXiv:2602.17686v4 Announce Type: replace 
-Abstract: Distilling Chain-of-Thought (CoT) reasoning from large language models into compact student models presents a fundamental challenge: teacher rationales are often too verbose for smaller models to faithfully reproduce. Existing approaches either compress reasoning into single-step, losing the interpretability that makes CoT valuable. We present a three-stage curriculum learning framework that addresses this capacity mismatch through progressive skill acquisition. First, we establish structural understanding via masked shuffled reconstruction. Second, we apply Group Relative Policy Optimization (GRPO) on masked completion tasks, enabling the model to discover its own balance between accuracy and brevity. Third, we identify persistent failure cases and guide the student to internalize teacher knowledge through targeted rewriting, again optimized with GRPO. Experiments on GSM8K demonstrate that our approach enables Qwen2.5-3B-Base to achieve an 11.29 percent accuracy improvement while reducing output length by 27.4 percent, surpassing both instruction-tuned variants and prior distillation methods.</p></div>
+  <div class="article-body"><p>arXiv:2602.17686v5 Announce Type: replace 
+Abstract: Chain-of-Thought (CoT) reasoning has significantly improved LLMs&#x27; mathematical problem-solving capabilities, but distilling such capabilities into smaller models remains challenging due to the capacity mismatch between verbose teachers and compact students. Directly copying teachers&#x27; lengthy reasoning chains causes capacity overload, resulting in truncated outputs or repetitive failure. Existing remedies each sacrifice a critical property of CoT: implicit reasoning methods (e.g., compressing reasoning into hidden states) trade away interpretability and verifiability, while heuristic compression strategies (e.g., random step pruning) destroy logical integrity. To address this, we propose BRIDGE, a curriculum framework that first establishes structural understanding via masked reconstruction, then uses GRPO-based reinforcement learning to guide students in self-discovering the optimal balance between accuracy and brevity, and finally internalizes complex reasoning through teacher-guided rewriting on failure cases. On GSM8K, BRIDGE enables Qwen2.5-3B to achieve 11.29% accuracy improvement and 27.4% token reduction over the original model, outperforming instruction-tuned variants and distillation baselines. Zero-shot transfer experiments on SVAMP and MATH-500 further confirm the generalization of internalized reasoning. Our code and model checkpoints are publicly available at https://github.com/Applied-Machine-Learning-Lab/SDM2026_BRIDGE and https://huggingface.co/bowen0815/BRIDGE.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

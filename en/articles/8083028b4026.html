@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Impedance MPC with Patient-Torque Estimation for Knee Rehabilitation Exoskeletons — NewsMatome (EN)</title>
-<meta name="description" content="Impedance MPC with Patient-Torque Estimation for Knee Rehabilitation Exoskeletons — original-language edition. Japanese translation available.">
+<title>Interaction Dynamics MPC for Knee Rehabilitation Exoskeletons: A Series-Elastic Instantiation — NewsMatome (EN)</title>
+<meta name="description" content="Interaction Dynamics MPC for Knee Rehabilitation Exoskeletons: A Series-Elastic Instantiation — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/8083028b4026.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/8083028b4026.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/8083028b4026.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/8083028b4026.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Impedance MPC with Patient-Torque Estimation for Knee Rehabilitation Exoskeletons">
+<meta property="og:title" content="Interaction Dynamics MPC for Knee Rehabilitation Exoskeletons: A Series-Elastic Instantiation">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Impedance MPC with Patient-Torque Estimation for Knee Rehabilitation Exoskeletons",
- "inLanguage":"en","datePublished":"2026-06-17T07:00:00+09:00","dateModified":"2026-06-17T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Interaction Dynamics MPC for Knee Rehabilitation Exoskeletons: A Series-Elastic Instantiation",
+ "inLanguage":"en","datePublished":"2026-07-15T07:00:00+09:00","dateModified":"2026-07-15T07:00:00+09:00",
  "author":{"@type":"Organization","name":"ロボット技術担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.13485","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/8083028b4026.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#ef4444"></span>ロボット技術</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Impedance MPC with Patient-Torque Estimation for Knee Rehabilitation Exoskeletons</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b></span></span><span>2026/06/17</span></div>
+    <h1>Interaction Dynamics MPC for Knee Rehabilitation Exoskeletons: A Series-Elastic Instantiation</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b></span></span><span>2026/07/15</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/8083028b4026.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.13485" rel="nofollow noopener">https://arxiv.org/abs/2606.13485</a></span></div>
-  <div class="article-body"><p>arXiv:2606.13485v1 Announce Type: cross 
-Abstract: Knee rehabilitation exoskeletons must enforce a prescribed joint trajectory while remaining safely compliant with involuntary spasm and voluntary patient effort-objectives in tension for any fixed-gain impedance controller. We present an Impedance Model Predictive Control framework for knee rehabilitation exoskeletons, demonstrated on a series-elastic-actuator (SEA) platform: an algebraic feedforward reduces the knee dynamics to a constant-coefficient scalar double integrator, and a receding-horizon quadratic program (QP) computes corrective torques while enforcing hard range-of-motion, torque, and velocity limits (ISO 13482). A Kalman disturbance state driven by direct SEA-based torque sensing (the series-elastic spring deflection measured through the elastic element - an intrinsic, EMG-free patient-torque estimate, not a separate load cell) gives a nominal offset-free guarantee and, via its sign and the desired-motion direction, sensorless Assist-as-Needed. The constant state matrix permits offline precomputation of the QP cost inverse, enabling 500 Hz operation with a multi-step horizon. Across seven-controller benchmarks (sinusoidal tracking, isometric hold), the 500 Hz Kalman MPC is offset free 0.1 mrad RMS, 0.1 mrad steady-state, 0.2 mrad peak under 15 Nm spasm, versus a 515 mrad steady-state offset for classical impedance at the same stiffness - the direct-measurement channel converging the estimate near-immediately (within a few sampling periods). Without the estimator it realizes a classical impedance (4.8 mrad RMS, 8.3 mrad steady-state). All MPC variants meet the 87 mrad clinical criterion; no classical controller does. The architecture is formulated for the 20 DOF MyoSuite myoLeg via coupling-aware per-joint QPs.</p></div>
+  <div class="article-body"><p>arXiv:2606.13485v2 Announce Type: replace-cross 
+Abstract: Safe rehabilitation is an interaction-dynamics problem: the controller must regulate a prescribed motion while absorbing involuntary spasm, voluntary effort, actuator compliance, and model mismatch as interaction disturbances. This paper instantiates the predictive interaction-dynamics framework of the base pHRI formulation on a series-elastic-actuated knee joint. SEA feedforward reduces the gravity-compensated knee to the same constant-coefficient scalar double integrator used in the base framework, while a dynamic-residual measurement from spring deflection supplies an interaction-disturbance observation. A steady-state target converts the estimated disturbance into a cancelling input, and a finite-horizon quadratic program regulates deviations from that target under range-of-motion, torque, and velocity constraints. The evaluation is stiffness- and damping-matched so improvements cannot be attributed to higher impedance. Under a motion-opposing $15\unit{Nm}$ step, classical impedance and MPC without estimation produce about $500\unit{mrad}$ steady-state error, whereas Kalman-augmented interaction MPC reduces this to $1.17\unit{mrad}$ at 100~Hz and $0.70\unit{mrad}$ at 500~Hz; the 500~Hz peak is $7.27\unit{mrad}$. In 30 randomized trials, the 95th-percentile peak is $21.57\unit{mrad}$. Bounded Assist-as-Needed scheduling, a corrective-channel energy tank, inequality-constrained OSQP stress cases, direct MuJoCo execution, and a posture-clamped MyoSuite knee-slice run are implemented. The results support the SEA-knee instantiation of the interaction-dynamics framework while separating it from clinical intent recognition, full-system passivity, safety certification, hardware trials, and free-standing multi-joint validation.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

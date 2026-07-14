@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Controllably Efficient Language Models — NewsMatome (EN)</title>
+<meta name="description" content="Controllably Efficient Language Models — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/70af3f1330e1.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/70af3f1330e1.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/70af3f1330e1.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/70af3f1330e1.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Controllably Efficient Language Models">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Controllably Efficient Language Models",
+ "inLanguage":"en","datePublished":"2026-07-15T07:00:00+09:00","dateModified":"2026-07-15T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2511.05313","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/70af3f1330e1.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/70af3f1330e1.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Controllably Efficient Language Models</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/15</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/70af3f1330e1.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2511.05313" rel="nofollow noopener">https://arxiv.org/abs/2511.05313</a></span></div>
+  <div class="article-body"><p>arXiv:2511.05313v2 Announce Type: replace 
+Abstract: The substantial inference costs of attention in transformers motivated the development of efficient sequence mixers: namely sparse and sliding window attention, convolutions and linear attention. Although these approaches result in impressive reductions in inference costs, they often trade-off with quality, specifically in-context recall. Apriori fixing this quality-cost tradeoff at training time means being suboptimal from the get-go: some downstream applications might fundamentally require more memory for in-context recall, while other tasks may require lower latency and memory.
+  We propose a conceptually simple meta-sequence mixer with inference-cost controllability: the Compress &amp; Attend Transformer (CAT). CAT decodes chunks of tokens by attending to compressed chunks of the sequence so far. Both compression and decoding can use any existing sequence mixer. Decoding from the compressed sequence yields compute and memory savings, with chunk size setting the operating point on the quality-cost trade-off. Importantly, training CAT across multiple chunk sizes at once unlocks test-time control of this trade-off without any retraining, all in a single model.
+  Instantiated with the most basic choice, dense attention as the mixer, CAT surprisingly suffices to match 10 popular and diverse efficient models (linear, hybrids, sparse) on real-world long-context recall at comparable inference costs, all from a single trained model. CAT further performs competitively on long-context understanding benchmarks while providing 1.4-3.7x higher generation throughput than a dense transformer. Code is at: https://github.com/rajesh-lab/cat-transformer</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

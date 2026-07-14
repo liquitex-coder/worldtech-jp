@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>A Spectral Phase Diagram for Binary Few-Shot Classification: Intrinsic Dimensionality, Geometric Saturation, and Representational Diagnosis — NewsMatome (EN)</title>
-<meta name="description" content="A Spectral Phase Diagram for Binary Few-Shot Classification: Intrinsic Dimensionality, Geometric Saturation, and Representational Diagnosis — original-language edition. Japanese translation available.">
+<title>The Geometry of Saturation: Effective Rank Predicts When Labels Stop Helping in Few-Shot Classification — NewsMatome (EN)</title>
+<meta name="description" content="The Geometry of Saturation: Effective Rank Predicts When Labels Stop Helping in Few-Shot Classification — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/ad045d50228d.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/ad045d50228d.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/ad045d50228d.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/ad045d50228d.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="A Spectral Phase Diagram for Binary Few-Shot Classification: Intrinsic Dimensionality, Geometric Saturation, and Representational Diagnosis">
+<meta property="og:title" content="The Geometry of Saturation: Effective Rank Predicts When Labels Stop Helping in Few-Shot Classification">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"A Spectral Phase Diagram for Binary Few-Shot Classification: Intrinsic Dimensionality, Geometric Saturation, and Representational Diagnosis",
- "inLanguage":"en","datePublished":"2026-06-26T07:00:00+09:00","dateModified":"2026-06-26T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"The Geometry of Saturation: Effective Rank Predicts When Labels Stop Helping in Few-Shot Classification",
+ "inLanguage":"en","datePublished":"2026-07-15T07:00:00+09:00","dateModified":"2026-07-15T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.24903","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/ad045d50228d.html"}
@@ -34,13 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>A Spectral Phase Diagram for Binary Few-Shot Classification: Intrinsic Dimensionality, Geometric Saturation, and Representational Diagnosis</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/06/26</span></div>
+    <h1>The Geometry of Saturation: Effective Rank Predicts When Labels Stop Helping in Few-Shot Classification</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/15</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/ad045d50228d.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.24903" rel="nofollow noopener">https://arxiv.org/abs/2606.24903</a></span></div>
-  <div class="article-body"><p>arXiv:2606.24903v1 Announce Type: new 
-Abstract: Deciding when to stop collecting labeled examples is a fundamental but undertheorized problem in applied machine learning. The saturation index $S(K) = \operatorname{erank}(\widehat{\Sigma}_W^{(K)}) / K$ measures the ratio of the effective rank of the pooled within-class sample covariance to the shot count; we prove it falls below a threshold precisely when the covariance estimator is well-concentrated around the population covariance and the linear discriminant has stabilized. The index is computable in $O(d^3)$ time from support features alone, requiring no test labels or trained classifier.
-  Evaluated across $N = 246$ doubling-pair observations from seventeen binary tasks and six datasets, sixteen of seventeen tasks have a positive within-task Spearman correlation between $S(K)$ and marginal accuracy gain (median $\rho = 0.811$). The pooled Spearman correlation is $\rho = 0.548$ ($p = 1.1 \times 10^{-20}$, $N = 246$). A three-phase diagram (exploration, transition, saturation) with mean marginal gains of $3.48\%$, $2.40\%$, and $0.82\%$ is supported by all pairwise significance tests ($p \leq 0.008$). As a binary stopping rule, the index achieves AUC $= 0.752$, providing meaningful probabilistic guidance for annotation decisions. Asymptotic effective rank and peak accuracy show no significant monotone relationship across tasks (Spearman $r_s = 0.380$, $p = 0.133$, $N = 17$). A small saturation index paired with low accuracy diagnoses representational inadequacy. All results are for binary classification with a fixed linear classifier; extensions to $N$-way settings and pretrained backbone representations are discussed as future work.</p></div>
+  <div class="article-body"><p>arXiv:2606.24903v2 Announce Type: replace 
+Abstract: Few-shot label acquisition lacks a label-free signal for when additional labels cease to improve accuracy: existing stopping criteria either require a held-out validation set (violating the few-shot premise) or rely on theoretically ungrounded heuristics, so we introduce the spectral saturation index $S(K)=\mathrm{erank}(\hat{\Sigma}_W^{(K)})/K$, the exponential spectral entropy of the pooled within-class covariance normalized by per-class support size $K$, which measures the exploration rate per label and falls below a fixed threshold $\tau=0.02$ once the explored spectral subspace saturates and marginal accuracy gains vanish; across 49 real tasks (binary, 5-way, 10-way) and three frozen backbones (PCA-50, CLIP ViT-B/32, DINOv2 ViT-S/14), $S(K)$ correlates strongly with the marginal gain on doubling the support set ($\rho_{\text{pool}}=0.6366$, $p=2.9\times10^{-57}$, cluster-bootstrap 95\% CI $[0.551,0.720]$), a fixed $\tau=0.02$ classifies stop/continue decisions with cluster-bootstrap $\mathrm{AUC}=0.787$ (95\% CI $[0.713,0.860]$) with high recall on meaningful gains ($\Delta A&gt;1\%$), and a partial correlation controlling for $\log K$ yields $\rho_{\text{partial}}=0.324$ ($p=1.65\times10^{-13}$), confirming $S(K)$ carries spectral information beyond shared $K$-dependence; theory predicts this from first principles, since the population effective rank sets the saturation scale $K_{\text{sat}}\approx\mathrm{erank}(\Sigma_W)/\tau$, $\tau=0.02$ sits at the boundary between the first and second descent (Nakkiran et al., 2021), and $O(1/K)$ bias in the sample effective rank explains the small-$K$ hump in $S(K)$; for unregularized linear probes ($C=\infty$), practitioners should halt when $S(K)&lt;0.02$ (PCA-50, hard stop) or monitor $S(K)$ dropping from $\sim0.3\to0.05$ (foundation models, diminishing-returns signal), with computation costing $\sim1$ ms at $d=50$.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Power-Budgeted Underwater Vehicle Control via Constrained Reinforcement Learning — NewsMatome</title>
-<meta name="description" content="Power-Budgeted Underwater Vehicle Control via Constrained Reinforcement Learning（EN→JA 翻訳・出典付き）">
+<title>Average-Power-Budgeted Underwater Vehicle Control via Constrained Reinforcement Learning — NewsMatome</title>
+<meta name="description" content="Average-Power-Budgeted Underwater Vehicle Control via Constrained Reinforcement Learning（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/1ce8cc4950a7.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/1ce8cc4950a7.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/1ce8cc4950a7.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="Power-Budgeted Underwater Vehicle Control via Constrained Reinforcement Learning">
-<meta property="og:description" content="Power-Budgeted Underwater Vehicle Control via Constrained Reinforcement Learning（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="Average-Power-Budgeted Underwater Vehicle Control via Constrained Reinforcement Learning">
+<meta property="og:description" content="Average-Power-Budgeted Underwater Vehicle Control via Constrained Reinforcement Learning（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Power-Budgeted Underwater Vehicle Control via Constrained Reinforcement Learning",
- "inLanguage":"ja","datePublished":"2026-06-26T07:00:00+09:00","dateModified":"2026-06-26T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Average-Power-Budgeted Underwater Vehicle Control via Constrained Reinforcement Learning",
+ "inLanguage":"ja","datePublished":"2026-07-15T07:00:00+09:00","dateModified":"2026-07-15T07:00:00+09:00",
  "author":{"@type":"Organization","name":"ロボット技術担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.25680","url":"https://liquitex-coder.github.io/worldtech-jp/articles/1ce8cc4950a7.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">ロボット技術</a><span class="sep">›</span><span>Power-Budgeted Underwater Vehicle Control via Constrained Reinforcement Learning</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">ロボット技術</a><span class="sep">›</span><span>Average-Power-Budgeted Underwater Vehicle Control via Constrained Reinforcement Learning</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>Power-Budgeted Underwater Vehicle Control via Constrained Reinforcement Learning</h1>
+      <h1>Average-Power-Budgeted Underwater Vehicle Control via Constrained Reinforcement Learning</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/06/26 07:00</span><span>· 更新 2026/06/26</span>
+        <span>公開 2026/07/15 07:00</span><span>· 更新 2026/07/15</span>
       </div>
     </div>
     
@@ -74,16 +74,16 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2606.25680" rel="nofollow noopener">Power-Budgeted Underwater Vehicle Control via Constrained Reinforcement Learning</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2606.25680" rel="nofollow noopener">Average-Power-Budgeted Underwater Vehicle Control via Constrained Reinforcement Learning</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2606.25680v1 Announce Type: new 
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2606.25680v2 Announce Type: replace 
 Abstract: Underwater vehicles operate from a fixed onboard energy budget that propulsion rapidly depletes, so a controller that completes its task while drawing less thruster power directly extends mission range and endurance. Reinforcement learning yields capable model-free controllers for station-keeping and trajectory tracking, but optimizing task accuracy alone drives the policy toward oscillatory, energy-wasting actuation. The established remedy subtracts an energy penalty from the reward, yet this sets the task-power trade-off through a single weight with no physical units: a target power level cannot be specified, the weight must be re-tuned for every vehicle and task, and a mismatched weight can even raise power. This paper instead formulates energy-efficient underwater control as a constrained Markov decision process in which average thruster power is subject to an explicit budget, solved with a PPO-Lagrangian algorithm. The power level is set by declaring a budget in physical units, and a single dual variable is updated online to meet it for each vehicle and task, without manual weight search. Across three vehicles and four tasks in the MarineGym simulator, the energy-constrained policy draws the least power in all twelve settings, reducing it by 14--65\% (up to 64.9\%) over a task-only baseline and below an energy-reward baseline everywhere, while remaining the smoothest in ten settings and preserving task accuracy except in one deliberately power-limited regime. Imposing energy as an explicit constraint thus offers a tuning-free route to energy-efficient underwater control that needs no per-vehicle, per-task weight search.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2606.25680v1 Announce Type: new 
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2606.25680v2 Announce Type: replace 
 Abstract: Underwater vehicles operate from a fixed onboard energy budget that propulsion rapidly depletes, so a controller that completes its task while drawing less thruster power directly extends mission range and endurance. Reinforcement learning yields capable model-free controllers for station-keeping and trajectory tracking, but optimizing task accuracy alone drives the policy toward oscillatory, energy-wasting actuation. The established remedy subtracts an energy penalty from the reward, yet this sets the task-power trade-off through a single weight with no physical units: a target power level cannot be specified, the weight must be re-tuned for every vehicle and task, and a mismatched weight can even raise power. This paper instead formulates energy-efficient underwater control as a constrained Markov decision process in which average thruster power is subject to an explicit budget, solved with a PPO-Lagrangian algorithm. The power level is set by declaring a budget in physical units, and a single dual variable is updated online to meet it for each vehicle and task, without manual weight search. Across three vehicles and four tasks in the MarineGym simulator, the energy-constrained policy draws the least power in all twelve settings, reducing it by 14--65\% (up to 64.9\%) over a task-only baseline and below an energy-reward baseline everywhere, while remaining the smoothest in ten settings and preserving task accuracy except in one deliberately power-limited regime. Imposing energy as an explicit constraint thus offers a tuning-free route to energy-efficient underwater control that needs no per-vehicle, per-task weight search.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2606.25680v1 Announce Type: new 
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2606.25680v2 Announce Type: replace 
 Abstract: Underwater vehicles operate from a fixed onboard energy budget that propulsion rapidly depletes, so a controller that completes its task while drawing less thruster power directly extends mission range and endurance. Reinforcement learning yields capable model-free controllers for station-keeping and trajectory tracking, but optimizing task accuracy alone drives the policy toward oscillatory, energy-wasting actuation. The established remedy subtracts an energy penalty from the reward, yet this sets the task-power trade-off through a single weight with no physical units: a target power level cannot be specified, the weight must be re-tuned for every vehicle and task, and a mismatched weight can even raise power. This paper instead formulates energy-efficient underwater control as a constrained Markov decision process in which average thruster power is subject to an explicit budget, solved with a PPO-Lagrangian algorithm. The power level is set by declaring a budget in physical units, and a single dual variable is updated online to meet it for each vehicle and task, without manual weight search. Across three vehicles and four tasks in the MarineGym simulator, the energy-constrained policy draws the least power in all twelve settings, reducing it by 14--65\% (up to 64.9\%) over a task-only baseline and below an energy-reward baseline everywhere, while remaining the smoothest in ten settings and preserving task accuracy except in one deliberately power-limited regime. Imposing energy as an explicit constraint thus offers a tuning-free route to energy-efficient underwater control that needs no per-vehicle, per-task weight search.</p><a href="https://arxiv.org/abs/2606.25680" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2606.25680" rel="nofollow noopener">https://arxiv.org/abs/2606.25680</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
@@ -91,7 +91,7 @@ Abstract: Underwater vehicles operate from a fixed onboard energy budget that pr
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="ad1b57a5b6e9.html"><div class="sim">関連</div><div class="info"><b>RIFT-Bench: Dynamic Red-teaming For Agentic AI Systems</b><div class="m">AI</div></div></a><a class="r" href="a2529be54991.html"><div class="sim">関連</div><div class="info"><b>Neuro-Symbolic Drive: Rule-Grounded Faithful Reasoning for Driving VLAs</b><div class="m">AI</div></div></a><a class="r" href="9b56c7961636.html"><div class="sim">関連</div><div class="info"><b>Critique of Agent Model</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="dfaf7657e614.html"><div class="sim">関連</div><div class="info"><b>From ML Predictions to Informed Diagnostic Assistance Using the Toulmin Model of Argumentation</b><div class="m">AI</div></div></a><a class="r" href="91e1069db29a.html"><div class="sim">関連</div><div class="info"><b>Format Sensitivity Index: Token-Controlled Prompt Wrapper Robustness and Schema Compliance in LLM Benchmarking</b><div class="m">AI</div></div></a><a class="r" href="6a85e31e8e89.html"><div class="sim">関連</div><div class="info"><b>Faithful, Not Corrective: Message-Format Effects in Multi-Hop Agent Relays Are Tier-Dependent</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

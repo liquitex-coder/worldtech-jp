@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Confining Nondeterminism: AI-Driven Research Systems as DBMSs for Reliable, Non-Wasteful, Transparent, and Collaborative Research [Vision] — NewsMatome (EN)</title>
+<meta name="description" content="Confining Nondeterminism: AI-Driven Research Systems as DBMSs for Reliable, Non-Wasteful, Transparent, and Collaborative Research [Vision] — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/d973adb29cd7.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/d973adb29cd7.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/d973adb29cd7.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/d973adb29cd7.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Confining Nondeterminism: AI-Driven Research Systems as DBMSs for Reliable, Non-Wasteful, Transparent, and Collaborative Research [Vision]">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Confining Nondeterminism: AI-Driven Research Systems as DBMSs for Reliable, Non-Wasteful, Transparent, and Collaborative Research [Vision]",
+ "inLanguage":"en","datePublished":"2026-07-15T07:00:00+09:00","dateModified":"2026-07-15T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2607.10508","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/d973adb29cd7.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/d973adb29cd7.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Confining Nondeterminism: AI-Driven Research Systems as DBMSs for Reliable, Non-Wasteful, Transparent, and Collaborative Research [Vision]</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/15</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/d973adb29cd7.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.10508" rel="nofollow noopener">https://arxiv.org/abs/2607.10508</a></span></div>
+  <div class="article-body"><p>arXiv:2607.10508v1 Announce Type: cross 
+Abstract: LLM agents that conduct research (proposing ideas, writing and running code, analyzing results) can already carry a study from research question to figures, yet cannot be fully trusted. The same question asked twice in a row returns different answers; the agent announces a number that no execution produced, and tool use does not prevent this, because nothing binds what the agent reports to what its tools returned; a small upstream change leaves downstream results silently stale, with no way to list which ones; and the agent re-runs preprocessing and rewrites code it has already produced. We argue these failures share one root: every step of today&#x27;s agent loop is a stochastic LLM call whose internal state nobody, including the agent, can check. Rather than trying to see inside the LLM, we take a lesson from databases, which earn trust without being watched, because deterministic operators over well-defined state make their guarantees hold by construction. We propose organizing a research project the same way. The project lives in a deterministic, versioned dataflow engine (in effect, a query plan over materialized views), and the LLM, together with the user, is a stochastic compiler that may only edit that plan. The executor never calls the LLM; LLM output enters only as versioned code and data that the executor then runs, and any asserted result enters the record only with an execution behind it. Five design rules at this boundary turn familiar database machinery, from versioning and provenance to incremental maintenance and cost-based scheduling, into guarantees that make research reliable, non-wasteful, transparent, and collaborative. This report presents the diagnosis, the requirements, and the design; the guarantee walkthrough, a prototype, and the research agenda appear in the full version, in preparation. The LLM, we argue, should be the query compiler, never the executor.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
