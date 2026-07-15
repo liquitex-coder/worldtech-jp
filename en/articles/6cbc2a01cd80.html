@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Do You Remember? Toward Memory-Centric Multimodal AI — NewsMatome (EN)</title>
+<meta name="description" content="Do You Remember? Toward Memory-Centric Multimodal AI — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/6cbc2a01cd80.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/6cbc2a01cd80.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/6cbc2a01cd80.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/6cbc2a01cd80.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Do You Remember? Toward Memory-Centric Multimodal AI">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Do You Remember? Toward Memory-Centric Multimodal AI",
+ "inLanguage":"en","datePublished":"2026-07-16T07:00:00+09:00","dateModified":"2026-07-16T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2607.11919","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/6cbc2a01cd80.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/6cbc2a01cd80.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Do You Remember? Toward Memory-Centric Multimodal AI</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/16</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/6cbc2a01cd80.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.11919" rel="nofollow noopener">https://arxiv.org/abs/2607.11919</a></span></div>
+  <div class="article-body"><p>arXiv:2607.11919v1 Announce Type: cross 
+Abstract: Human memory is reconstructive, not a faithful recording. Current multimodal LLMs (MLLMs) lack this capability: they process images through a frozen visual encoder, produce a one-shot text output, and discard internal representations. We present DoYouRemember, a three-stage architecture introducing reconstructive memory into MLLMs: (1) a VQ-VAE compresses images into discrete visual tokens, (2) a LoRA-fine-tuned LLM jointly attends to visual and text tokens, and (3) a Diffusion Decoder reconstructs images from the LLM&#x27;s hidden states. On 1,000 3D facial skin texture maps and 99,000 unlabeled facial images, we find that LLM hidden states contain approximately zero recoverable visual information -- the same Decoder producing clear reconstructions from VQ-VAE tokens (pre-LLM) produces pure noise from LLM hidden states (post-LLM), demonstrating that the LLM understands images but does not remember them. Training a shared memory matrix M under backpropagation systematically fails due to gradient cancellation (O(1/sqrt(N)) attenuation). We identify three root causes and show that local EMA updating resolves all three: each image updates only its top-8 slots out of 64, preserving inter-slot diversity. The resulting M (229K parameters, 16x compressed) approaches the VQ upper bound on unseen test images. Scaling to 1,024 slots surpasses it (LPIPS 0.056 vs. 0.071), as M&#x27;s continuous representation avoids VQ quantization error. We unify these findings under an information-theoretic framework: memory is lossy compression, recall is decompression, and hallucination is an inherent property of lossy decompression rather than a defect.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

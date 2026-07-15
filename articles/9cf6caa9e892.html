@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>When Does Depth Survive Composition? Compute--Quality Regimes in Latent World Models — NewsMatome</title>
-<meta name="description" content="When Does Depth Survive Composition? Compute--Quality Regimes in Latent World Models（EN→JA 翻訳・出典付き）">
+<title>Adaptive Compute in Latent World Models: When Depth Helps, Hurts, or Doesn&#x27;t Matter — NewsMatome</title>
+<meta name="description" content="Adaptive Compute in Latent World Models: When Depth Helps, Hurts, or Doesn&#x27;t Matter（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/9cf6caa9e892.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/9cf6caa9e892.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/9cf6caa9e892.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="When Does Depth Survive Composition? Compute--Quality Regimes in Latent World Models">
-<meta property="og:description" content="When Does Depth Survive Composition? Compute--Quality Regimes in Latent World Models（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="Adaptive Compute in Latent World Models: When Depth Helps, Hurts, or Doesn&#x27;t Matter">
+<meta property="og:description" content="Adaptive Compute in Latent World Models: When Depth Helps, Hurts, or Doesn&#x27;t Matter（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"When Does Depth Survive Composition? Compute--Quality Regimes in Latent World Models",
- "inLanguage":"ja","datePublished":"2026-07-15T07:00:00+09:00","dateModified":"2026-07-15T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Adaptive Compute in Latent World Models: When Depth Helps, Hurts, or Doesn&#x27;t Matter",
+ "inLanguage":"ja","datePublished":"2026-07-16T07:00:00+09:00","dateModified":"2026-07-16T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.10203","url":"https://liquitex-coder.github.io/worldtech-jp/articles/9cf6caa9e892.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>When Does Depth Survive Composition? Compute--Quality Regimes in Latent World Models</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>Adaptive Compute in Latent World Models: When Depth Helps, Hurts, or Doesn&#x27;t Matter</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>When Does Depth Survive Composition? Compute--Quality Regimes in Latent World Models</h1>
+      <h1>Adaptive Compute in Latent World Models: When Depth Helps, Hurts, or Doesn&#x27;t Matter</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/07/15 07:00</span><span>· 更新 2026/07/15</span>
+        <span>公開 2026/07/16 07:00</span><span>· 更新 2026/07/16</span>
       </div>
     </div>
     
@@ -74,16 +74,16 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2607.10203" rel="nofollow noopener">When Does Depth Survive Composition? Compute--Quality Regimes in Latent World Models</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2607.10203" rel="nofollow noopener">Adaptive Compute in Latent World Models: When Depth Helps, Hurts, or Doesn&#x27;t Matter</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2607.10203v1 Announce Type: new 
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2607.10203v2 Announce Type: replace 
 Abstract: Adaptive-compute world models -- early-exit or mixture-of-depths predictors that spend variable depth per step -- assume depth buys better predictions and can be routed adaptively. In autoregressive rollouts, the first assumption requires depth&#x27;s per-step precision to survive composition. We test this with a pre-registered instrument, the shallow penalty $\rho=\mathrm{err}(\text{shallowest-exit rollout})/\mathrm{err}(\text{full-depth rollout})$, across nine DeepMind Control tasks under matched single-step ($K=1$) and multi-step ($K=4$) training, three seeds each. We find three regimes: on 6/9 tasks depth helps rollouts (intrinsic, $\rho$ up to $4.7\times$), on 2/9 the shallow exits beat the full stack (inversion, $\rho$ down to $0.85\times$), and one is flat. The robust inversion (cheetah) is not a property of the dynamics but is created by training: an ablation supervising early exits only at the first rollout step erases it ($\rho: 0.87\to1.18$, $n=8$, $\Delta=+0.31$), while an intrinsic-tradeoff task is unaffected -- a double dissociation we call the routability catch-22, since the supervision that makes exits routable is what trains them to out-roll the full stack. The regime is partly predictable a priori: observation/action dimensionality and one-step model error correlate with $\rho$ at $|\text{Spearman}|\approx0.75$ ($n=9$). Inside a CEM planner, $\rho$&#x27;s sign predicts whether planning benefits from depth, most sharply on the inversion task, where shallow planning beats deep. Finally, three cautions: a task&#x27;s regime depends on the metric space, the rollout horizon, and the encoder. All thresholds and gates were fixed before the compute campaign, including a pre-registered negative for the hypothesis that motivated the study.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2607.10203v1 Announce Type: new 
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2607.10203v2 Announce Type: replace 
 Abstract: Adaptive-compute world models -- early-exit or mixture-of-depths predictors that spend variable depth per step -- assume depth buys better predictions and can be routed adaptively. In autoregressive rollouts, the first assumption requires depth&#x27;s per-step precision to survive composition. We test this with a pre-registered instrument, the shallow penalty $\rho=\mathrm{err}(\text{shallowest-exit rollout})/\mathrm{err}(\text{full-depth rollout})$, across nine DeepMind Control tasks under matched single-step ($K=1$) and multi-step ($K=4$) training, three seeds each. We find three regimes: on 6/9 tasks depth helps rollouts (intrinsic, $\rho$ up to $4.7\times$), on 2/9 the shallow exits beat the full stack (inversion, $\rho$ down to $0.85\times$), and one is flat. The robust inversion (cheetah) is not a property of the dynamics but is created by training: an ablation supervising early exits only at the first rollout step erases it ($\rho: 0.87\to1.18$, $n=8$, $\Delta=+0.31$), while an intrinsic-tradeoff task is unaffected -- a double dissociation we call the routability catch-22, since the supervision that makes exits routable is what trains them to out-roll the full stack. The regime is partly predictable a priori: observation/action dimensionality and one-step model error correlate with $\rho$ at $|\text{Spearman}|\approx0.75$ ($n=9$). Inside a CEM planner, $\rho$&#x27;s sign predicts whether planning benefits from depth, most sharply on the inversion task, where shallow planning beats deep. Finally, three cautions: a task&#x27;s regime depends on the metric space, the rollout horizon, and the encoder. All thresholds and gates were fixed before the compute campaign, including a pre-registered negative for the hypothesis that motivated the study.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2607.10203v1 Announce Type: new 
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2607.10203v2 Announce Type: replace 
 Abstract: Adaptive-compute world models -- early-exit or mixture-of-depths predictors that spend variable depth per step -- assume depth buys better predictions and can be routed adaptively. In autoregressive rollouts, the first assumption requires depth&#x27;s per-step precision to survive composition. We test this with a pre-registered instrument, the shallow penalty $\rho=\mathrm{err}(\text{shallowest-exit rollout})/\mathrm{err}(\text{full-depth rollout})$, across nine DeepMind Control tasks under matched single-step ($K=1$) and multi-step ($K=4$) training, three seeds each. We find three regimes: on 6/9 tasks depth helps rollouts (intrinsic, $\rho$ up to $4.7\times$), on 2/9 the shallow exits beat the full stack (inversion, $\rho$ down to $0.85\times$), and one is flat. The robust inversion (cheetah) is not a property of the dynamics but is created by training: an ablation supervising early exits only at the first rollout step erases it ($\rho: 0.87\to1.18$, $n=8$, $\Delta=+0.31$), while an intrinsic-tradeoff task is unaffected -- a double dissociation we call the routability catch-22, since the supervision that makes exits routable is what trains them to out-roll the full stack. The regime is partly predictable a priori: observation/action dimensionality and one-step model error correlate with $\rho$ at $|\text{Spearman}|\approx0.75$ ($n=9$). Inside a CEM planner, $\rho$&#x27;s sign predicts whether planning benefits from depth, most sharply on the inversion task, where shallow planning beats deep. Finally, three cautions: a task&#x27;s regime depends on the metric space, the rollout horizon, and the encoder. All thresholds and gates were fixed before the compute campaign, including a pre-registered negative for the hypothesis that motivated the study.</p><a href="https://arxiv.org/abs/2607.10203" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2607.10203" rel="nofollow noopener">https://arxiv.org/abs/2607.10203</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
@@ -91,7 +91,7 @@ Abstract: Adaptive-compute world models -- early-exit or mixture-of-depths predi
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="dfaf7657e614.html"><div class="sim">関連</div><div class="info"><b>From ML Predictions to Informed Diagnostic Assistance Using the Toulmin Model of Argumentation</b><div class="m">AI</div></div></a><a class="r" href="91e1069db29a.html"><div class="sim">関連</div><div class="info"><b>Format Sensitivity Index: Token-Controlled Prompt Wrapper Robustness and Schema Compliance in LLM Benchmarking</b><div class="m">AI</div></div></a><a class="r" href="6a85e31e8e89.html"><div class="sim">関連</div><div class="info"><b>Faithful, Not Corrective: Message-Format Effects in Multi-Hop Agent Relays Are Tier-Dependent</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="a5c14178dab3.html"><div class="sim">関連</div><div class="info"><b>Optimal Adaptive Market Making: A Theoretical Framework for High-Yield Liquidity Provision in Perpetual Futures Markets</b><div class="m">AI</div></div></a><a class="r" href="aa5c3a854e4c.html"><div class="sim">関連</div><div class="info"><b>In-Context Reinforcement Learning under Non-Stationarity: A Survey</b><div class="m">AI</div></div></a><a class="r" href="ac3ce273b680.html"><div class="sim">関連</div><div class="info"><b>Ontology-Amplified Distillation and Contextuality Auditing for Sovereign Enterprise Language Models: A Combined Proof-of-Mechanism and Negative-Results Method Study</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

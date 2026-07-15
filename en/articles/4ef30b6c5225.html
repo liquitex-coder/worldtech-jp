@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>When Close Enough Is Not Enough: Autoregressive Drift in Quantum Circuit Synthesis — NewsMatome (EN)</title>
+<meta name="description" content="When Close Enough Is Not Enough: Autoregressive Drift in Quantum Circuit Synthesis — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/4ef30b6c5225.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/4ef30b6c5225.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/4ef30b6c5225.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/4ef30b6c5225.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="When Close Enough Is Not Enough: Autoregressive Drift in Quantum Circuit Synthesis">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"When Close Enough Is Not Enough: Autoregressive Drift in Quantum Circuit Synthesis",
+ "inLanguage":"en","datePublished":"2026-07-16T07:00:00+09:00","dateModified":"2026-07-16T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2607.12780","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/4ef30b6c5225.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/4ef30b6c5225.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>When Close Enough Is Not Enough: Autoregressive Drift in Quantum Circuit Synthesis</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/16</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/4ef30b6c5225.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.12780" rel="nofollow noopener">https://arxiv.org/abs/2607.12780</a></span></div>
+  <div class="article-body"><p>arXiv:2607.12780v1 Announce Type: cross 
+Abstract: Quantum circuit optimization for fault-tolerant computing requires exact functional equivalence while minimizing expensive non-Clifford resources such as T gates. We study this problem using a compact 44.8M-parameter encoder-decoder transformer with structured circuit tokenization, evaluating on parameterized circuits (2-6 qubits) and Clifford+T circuits (3-6 qubits). On parameterized circuits, a hybrid approach -- structure from the transformer, angles from classical optimization -- achieves median fidelity 1.000 on 3-6 qubit circuits. On Clifford+T circuits, where all gates are discrete and no post-processing is possible, the model learns valid syntax and accurate T-Count statistics, yet exact equivalence degrades sharply with target length -- from 88% on circuits with &lt;=9 gates to near zero beyond 26 gates.
+  We trace this failure to autoregressive drift: early-token divergence cascading irrecoverably through left-to-right decoding. Two levers partially mitigate the drift: inference-time strategies that generate multiple candidates and select via equivalence verification raise exact-match rates from 7% to 22.5%, while scaling training data by 2.5x pushes them to 39.5%. Yet the degradation with target length persists -- even with more data, exact equivalence drops from 94% on short circuits to under 4% beyond 26 gates.
+  The contrast between settings is our central finding: when approximate outputs can be rescued by post-processing, the transformer succeeds; when exact discrete correctness is required, autoregressive drift limits reliability, with both inference-time search and data scaling as effective levers while training-side fine-tuning and model-level diversification are not.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
