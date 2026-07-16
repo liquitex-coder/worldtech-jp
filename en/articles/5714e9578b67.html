@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WNOJ-LIO: A White-Noise-on-Jerk Motion-Prior EKF for High-Dynamic LiDAR-IMU Fusion — NewsMatome (EN)</title>
+<meta name="description" content="WNOJ-LIO: A White-Noise-on-Jerk Motion-Prior EKF for High-Dynamic LiDAR-IMU Fusion — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/5714e9578b67.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/5714e9578b67.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/5714e9578b67.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/5714e9578b67.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WNOJ-LIO: A White-Noise-on-Jerk Motion-Prior EKF for High-Dynamic LiDAR-IMU Fusion">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"WNOJ-LIO: A White-Noise-on-Jerk Motion-Prior EKF for High-Dynamic LiDAR-IMU Fusion",
+ "inLanguage":"en","datePublished":"2026-07-17T07:00:00+09:00","dateModified":"2026-07-17T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"ロボット技術担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2607.13405","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/5714e9578b67.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/5714e9578b67.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#ef4444"></span>ロボット技術</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>WNOJ-LIO: A White-Noise-on-Jerk Motion-Prior EKF for High-Dynamic LiDAR-IMU Fusion</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b></span></span><span>2026/07/17</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/5714e9578b67.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.13405" rel="nofollow noopener">https://arxiv.org/abs/2607.13405</a></span></div>
+  <div class="article-body"><p>arXiv:2607.13405v1 Announce Type: new 
+Abstract: LiDAR-inertial odometry (LIO) is a key component of autonomous navigation, but high-dynamic driving exposes two coupled challenges: intra-scan motion distortion and vibration-contaminated inertial measurements. Most real-time LiDAR-inertial pipelines propagate the system state by integrating raw IMU measurements and then use the propagated trajectory for point cloud de-distortion, thereby propagating inertial noise into both the corrected scan and the subsequent scan-to-map registration. This paper presents WNOJ-LIO, a LiDAR-IMU fusion framework based on a White-Noise-on-Jerk (WNOJ) Extended Kalman Filter (EKF). WNOJ-LIO employs a decoupled WNOJ prior on $\R^3 \times \SO(3)$ for state prediction and treats the IMU as a high-frequency measurement source rather than the driver of state propagation. The resulting posterior state history is then used for LiDAR scan de-distortion and subsequent point-to-plane LiDAR updates. The decoupled process model enables closed-form covariance propagation, thereby bridging the gap between batch WNOJ Gaussian process (GP) trajectory priors and recursive filtering.
+  Simulation results demonstrate improvements in acceleration and angular-velocity denoising, scan de-distortion, and localization accuracy over a FAST-LIO-style baseline.
+  Real-world experiments were conducted using an autonomous racing car on four driving segments with maximum speeds ranging from 53 to 208~km/h, covering a wide range of vehicle vibration levels. The experiments further validate the proposed method and provide a comprehensive evaluation of its performance in estimating acceleration, angular velocity, body-frame linear velocity, attitude, and position under highly dynamic driving. The source code of WNOJ-LIO is publicly available at https://github.com/LvJohny/wnoj-ekf-lio.git.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
