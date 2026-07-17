@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Per-Token Fixed-Point Convergence in Depth-Recurrent Transformers — NewsMatome (EN)</title>
+<meta name="description" content="Per-Token Fixed-Point Convergence in Depth-Recurrent Transformers — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/84cb3bf677d7.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/84cb3bf677d7.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/84cb3bf677d7.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/84cb3bf677d7.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Per-Token Fixed-Point Convergence in Depth-Recurrent Transformers">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Per-Token Fixed-Point Convergence in Depth-Recurrent Transformers",
+ "inLanguage":"en","datePublished":"2026-07-18T07:00:00+09:00","dateModified":"2026-07-18T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2607.14427","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/84cb3bf677d7.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/84cb3bf677d7.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Per-Token Fixed-Point Convergence in Depth-Recurrent Transformers</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/18</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/84cb3bf677d7.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.14427" rel="nofollow noopener">https://arxiv.org/abs/2607.14427</a></span></div>
+  <div class="article-body"><p>arXiv:2607.14427v1 Announce Type: new 
+Abstract: A depth-recurrent transformer applies a weight-tied core a variable number of times, and prior work has shown that training with a randomized recursion count yields one checkpoint usable across a range of inference depths. We ask what such a model actually computes per token, and measure it directly. On a 135M-class model trained on FineWeb-Edu, the recurrent state converges to a per-token fixed point: mean successive-output KL divergence falls from 3.9e-1 at the second loop to 8.5e-6 by the sixteenth, and per-token state change decays in step. Crucially, this convergence is not uniform across tokens. The median token converges by loop six, while approximately 10 percent of tokens continue to update at the training-mean depth of eight, and mean convergence depth is ordered by token type (whitespace shallowest, content words deepest). This per-token variation is the central object of the paper. We show it is directly readable and that reading it outperforms learning to predict it: a training-free rule that halts each token once its output stabilizes attains uniform depth-8 quality at 4.94 average loops (a 38 percent reduction in average depth) and matches uniform depth across the average-depth range, whereas a linear router trained on convergence labels harvested from the same model requires nearly full depth and yields no reduction. The elasticity that makes this possible reproduces here as background (validation loss decreases monotonically from 3.80 at one loop to 3.20 at eight and remains stable to 32 loops). We report average depth as a FLOP proxy with a three-point wall-clock bracket rather than a realized speedup, make no FLOP-matched parity claim, and note that the allocation results are established at a single scale and seed. The complete study runs on a single RTX 4090 in approximately 100 GPU-hours.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

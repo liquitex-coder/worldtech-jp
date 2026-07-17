@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adaptive Runge-Kutta Step Control Buys Training Loss, Not Generalization: An Honest Compute-Matched Study of RK-Adam Optimizers — NewsMatome (EN)</title>
+<meta name="description" content="Adaptive Runge-Kutta Step Control Buys Training Loss, Not Generalization: An Honest Compute-Matched Study of RK-Adam Optimizers — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/5b6f15cdf053.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/5b6f15cdf053.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/5b6f15cdf053.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/5b6f15cdf053.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Adaptive Runge-Kutta Step Control Buys Training Loss, Not Generalization: An Honest Compute-Matched Study of RK-Adam Optimizers">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Adaptive Runge-Kutta Step Control Buys Training Loss, Not Generalization: An Honest Compute-Matched Study of RK-Adam Optimizers",
+ "inLanguage":"en","datePublished":"2026-07-18T07:00:00+09:00","dateModified":"2026-07-18T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2607.14516","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/5b6f15cdf053.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/5b6f15cdf053.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Adaptive Runge-Kutta Step Control Buys Training Loss, Not Generalization: An Honest Compute-Matched Study of RK-Adam Optimizers</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/18</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/5b6f15cdf053.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.14516" rel="nofollow noopener">https://arxiv.org/abs/2607.14516</a></span></div>
+  <div class="article-body"><p>arXiv:2607.14516v1 Announce Type: new 
+Abstract: Interpreting optimizers as gradient-flow discretizations has motivated applying higher-order Runge-Kutta (RK) integrators to neural networks. We build a representative Adam variant (Bogacki-Shampine 3(2) RK pair, FSAL reuse, local-error step control) and evaluate it under a strict compute-matched protocol giving every method the same gradient-evaluation budget - an accounting this literature rarely enforces. Under it the RK variant loses to plain Adam on training loss in both minibatch and full-batch (RK&#x27;s best-case) training. Instrumenting it shows the &quot;adaptivity&quot; is illusory: normalized error stays far below tolerance, the step size pins at its growth cap from step one (98-100 percent of steps), and no rtol x hmax x h0 setting makes it act; tolerances spanning 100x give bit-identical trajectories. The method is exactly fixed-step Adam with an averaged gradient at 3-4x cost. Repairing it (true reject branch; error on the applied map) reverses the full-batch result - about 40x lower training loss than tuned Adam - and a fixed-step control isolates adaptivity (an emergent warmup-and-growth schedule) as the mechanism. But the gain is fragile to the initial step size and does not reach test accuracy. A pre-registered follow-up rules out the obvious explanations: deeper minimization does not overfit, and an explicit temperature knob only hurts - leaving a trajectory effect, the controller selecting a minimum generalizing 1.3-3.4 points below first-order descent at equal depth. An n=10 study confirms one secondary effect: gradient averaging is a genuine implicit regularizer, beating lr-matched Adam and AdamW on 10/10 seeds - yet RMSprop and NAdam match or beat it at a third the per-step cost. Higher-order adaptive integration buys deeper deterministic minimization and a small regularization effect, but nothing a cheaper, well-tuned first-order baseline does not already provide.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

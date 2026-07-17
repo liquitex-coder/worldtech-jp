@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Modern Multimodal Assistant on a 6 GB 2011 GPU: Stage-Validated, All-GPU CUDA Inference for Fermi — NewsMatome (EN)</title>
+<meta name="description" content="A Modern Multimodal Assistant on a 6 GB 2011 GPU: Stage-Validated, All-GPU CUDA Inference for Fermi — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/0e85a7d158df.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/0e85a7d158df.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/0e85a7d158df.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/0e85a7d158df.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A Modern Multimodal Assistant on a 6 GB 2011 GPU: Stage-Validated, All-GPU CUDA Inference for Fermi">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"A Modern Multimodal Assistant on a 6 GB 2011 GPU: Stage-Validated, All-GPU CUDA Inference for Fermi",
+ "inLanguage":"en","datePublished":"2026-07-18T07:00:00+09:00","dateModified":"2026-07-18T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2607.14568","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/0e85a7d158df.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/0e85a7d158df.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>A Modern Multimodal Assistant on a 6 GB 2011 GPU: Stage-Validated, All-GPU CUDA Inference for Fermi</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/18</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/0e85a7d158df.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.14568" rel="nofollow noopener">https://arxiv.org/abs/2607.14568</a></span></div>
+  <div class="article-body"><p>arXiv:2607.14568v1 Announce Type: cross 
+Abstract: A companion study ran a 35B mixture-of-experts model on a 2011 NVIDIA Tesla C2075 (Fermi, sm_20, 6GB) as a GPU-prefill/CPU-decode hybrid, because the 4-bit model did not fit in device memory (arXiv:2606.24031). This report keeps the hardware and asks what a model that fits can do: we deploy MiniCPM-V-4.6, a modern multimodal assistant pairing a SigLIP2 vision encoder and window-attention merger (16x visual token compression) with a compact hybrid gated-delta-net backbone, entirely on the GPU. Three results. (i) An all-GPU engine built on measured foundations: projections that dequantize 8-bit weights once and call the vendor SGEMM still in the last Fermi toolchain (64% of FP32 peak; our best hand-written GEMM hit 37%, wrongly called the ceiling); a chunked delta-rule rewrite of the recurrent layers, 2.8x faster than the sequential scan once attribution exposed one bad kernel; and a measured negative: 4-bit weights make decode slower than 8-bit here, since Fermi issues nibble-unpacking shifts at half rate. (ii) The vision side is a port with a proof obligation: we translate tower, merger, and projector to sm_20 CUDA, validating every stage against a locally generated reference forward (full tower 1.4e-5). One failure, position-embedding bucketization differing on exact rational ties, generalizes to a rule: float tie-breaking in index arithmetic is implementation-defined; call the reference operator, do not reimplement it. (iii) Long context exposes an O(N^2) wall short benchmarks hide: prefill falls from 114 tok/s at 2k tokens to 21 at 10k in a naive attention kernel; per-head vendor-GEMM calls writing into the existing score buffer (zero extra memory) restore a flat profile (408 at 2k, 361 at 10k; 17x), verified by exact needle retrieval from 60% depth. The same rewrite cuts image encoding 6x, to 0.93s. The system answers an image question end-to-end in 1.7s.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

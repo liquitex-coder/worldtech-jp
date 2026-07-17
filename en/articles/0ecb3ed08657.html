@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SAGA: Scene-Aware, Goal-Evolving Agents for Long-Horizon CivRealm Strategy Planning — NewsMatome (EN)</title>
-<meta name="description" content="SAGA: Scene-Aware, Goal-Evolving Agents for Long-Horizon CivRealm Strategy Planning — original-language edition. Japanese translation available.">
+<title>SAGA: Scene-Aware, Goal-Evolving Agents for Long-Horizon Strategy Game Planning — NewsMatome (EN)</title>
+<meta name="description" content="SAGA: Scene-Aware, Goal-Evolving Agents for Long-Horizon Strategy Game Planning — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/0ecb3ed08657.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/0ecb3ed08657.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/0ecb3ed08657.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/0ecb3ed08657.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SAGA: Scene-Aware, Goal-Evolving Agents for Long-Horizon CivRealm Strategy Planning">
+<meta property="og:title" content="SAGA: Scene-Aware, Goal-Evolving Agents for Long-Horizon Strategy Game Planning">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"SAGA: Scene-Aware, Goal-Evolving Agents for Long-Horizon CivRealm Strategy Planning",
- "inLanguage":"en","datePublished":"2026-07-04T07:00:00+09:00","dateModified":"2026-07-04T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"SAGA: Scene-Aware, Goal-Evolving Agents for Long-Horizon Strategy Game Planning",
+ "inLanguage":"en","datePublished":"2026-07-18T07:00:00+09:00","dateModified":"2026-07-18T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.29932","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/0ecb3ed08657.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>SAGA: Scene-Aware, Goal-Evolving Agents for Long-Horizon CivRealm Strategy Planning</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/04</span></div>
+    <h1>SAGA: Scene-Aware, Goal-Evolving Agents for Long-Horizon Strategy Game Planning</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/18</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/0ecb3ed08657.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.29932" rel="nofollow noopener">https://arxiv.org/abs/2606.29932</a></span></div>
-  <div class="article-body"><p>arXiv:2606.29932v2 Announce Type: replace 
-Abstract: Long-horizon strategic planning in complex strategy games demands concurrent reasoning across multiple decision domains under imperfect information and sparse reward. Existing LLM-based agents suffer from three systematic failures: scene blindness from raw tile coordinates, context overflow and domain coupling from monolithic state dumps, and shallow cross-game learning that treats each episode in isolation. We present SAGA, an LLM multi-agent framework with three mechanisms each directly targeting one class of failure: (i) a Map-Semantic Scene Graph that encodes typed spatial relations among game entities into per-unit natural-language context, resolving spatial blindness without global token inflation; (ii) a Tool-Augmented Planner that pulls fine-grained domain state on demand and dispatches per-domain directives to dedicated specialist controllers, eliminating context overflow, domain coupling, and mechanical constraint violations; and (iii) a Dual-Horizon Feedback Loop that combines periodic within-game goal generation with structured cross-game causal post-mortem, enabling principled strategic evolution without manual reward engineering. Evaluated on FreeCiv, SAGA attains the highest mean civilization score -- the environment&#x27;s sole sparse objective reward -- with lower variance than the two strongest baselines, and is the only method that significantly surpasses every baseline on infrastructure construction, the resource axis most readily sacrificed under multi-objective conflict. It outscores the two strongest baselines in most head-to-head games while cutting output tokens (the dominant decoding cost) by 27%. Equipped with the cross-game evolution module, SAGA reaches the highest end-of-chain score across five successive episodes. Ablation studies confirm that each architectural component contributes independently to this advantage.</p></div>
+  <div class="article-body"><p>arXiv:2606.29932v3 Announce Type: replace 
+Abstract: Long-horizon strategic planning in complex strategy games requires coordinating tightly coupled decision domains, including technology, economy, diplomacy, and military, across hundreds of turns under imperfect information. Existing LLM-based agents face three challenges in this setting. They recover little relational structure, such as distance or threat, from raw coordinate observations. They serialize the entire growing game state into every prompt and plan all domains in a single output, so the context eventually overflows and urgent domains crowd out long-term ones. The only reward is a lagged final score, which provides no progress signal within or across games.&lt;br/&gt;&lt;br/&gt;We present SAGA, an LLM multi-agent framework that addresses these challenges with three mechanisms: a Map-Semantic Scene Graph that renders typed entity relations as concise per-entity text, a Tool-Augmented Planner that retrieves state on demand and routes disjoint per-domain directives to specialist controllers, and a Dual-Horizon Feedback Loop that sets intermediate goals within a game and distills causal lessons across games. On CivRealm, a benchmark built on the strategy game FreeCiv, SAGA attains the highest mean final score among six methods, the statistically strongest gains on infrastructure, and a 27% reduction in output tokens. With cross-game evolution enabled, it reaches the highest score over five successive games.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

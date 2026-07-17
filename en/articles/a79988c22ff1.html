@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>xHC: Expanded Hyper-Connections — NewsMatome (EN)</title>
+<meta name="description" content="xHC: Expanded Hyper-Connections — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/a79988c22ff1.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/a79988c22ff1.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/a79988c22ff1.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/a79988c22ff1.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="xHC: Expanded Hyper-Connections">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"xHC: Expanded Hyper-Connections",
+ "inLanguage":"en","datePublished":"2026-07-18T07:00:00+09:00","dateModified":"2026-07-18T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2607.14530","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/a79988c22ff1.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/a79988c22ff1.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>xHC: Expanded Hyper-Connections</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/18</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/a79988c22ff1.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.14530" rel="nofollow noopener">https://arxiv.org/abs/2607.14530</a></span></div>
+  <div class="article-body"><p>arXiv:2607.14530v1 Announce Type: new 
+Abstract: Hyper-Connections (HC) expand the residual stream of Transformers into $N$ parallel streams, providing a form of memory scaling beyond model width and depth. Manifold-Constrained HC (mHC) stabilizes this formulation at scale. The large gains from $N{=}1$ to $N{=}4$ suggest residual-stream expansion as a promising scaling axis. However, existing HC-family methods typically stop at $N{=}4$. Our experiments reveal why: scaling mHC beyond this point yields diminishing performance gains and rapidly increasing training cost. We attribute this limitation to two bottlenecks: insufficient write-back information for an expanding number of streams and residual-mixing generation whose cost scales cubically with $N$. To address both bottlenecks, we propose xHC (Expanded Hyper-Connections), the first HC-family method to achieve meaningful expansion beyond $N{=}4$. xHC combines temporal feature augmentation for richer write-back with a sparse residual-stream architecture that updates only $k=4$ of the $N=16$ streams while retaining dense access to the full residual state. Across 18B and 28B MoE models, xHC delivers strong and consistent downstream improvements. On an 18B MoE model, xHC improves the average downstream score by 4.0 points over mHC, while adding only modest training FLOPs over the vanilla baseline. Scaling-law experiments show that the vanilla and mHC require $1.50\times$ and $1.19\times$ the compute of xHC, respectively, to reach the same loss. Practical large-$N$ training also requires controlling memory traffic from the expanded residual state. We therefore introduce xHC-Flash, which reduces the per-sublayer memory traffic from $73.5C$ to $40C$, comparable to the $34C$ required by mHC at $N{=}4$, while retaining the gains of full xHC. Together, xHC and xHC-Flash make large-$N$ residual-stream expansion effective and practical for LLM pre-training.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Code Correctness Signals in LLM Hidden States: Pre-Generation Probing and Repair Geometry — NewsMatome</title>
-<meta name="description" content="Code Correctness Signals in LLM Hidden States: Pre-Generation Probing and Repair Geometry（EN→JA 翻訳・出典付き）">
+<title>Code Correctness Is Linearly Decodable from LLM Hidden States Before Generation — NewsMatome</title>
+<meta name="description" content="Code Correctness Is Linearly Decodable from LLM Hidden States Before Generation（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/5ed6bd47af05.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/5ed6bd47af05.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/5ed6bd47af05.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="Code Correctness Signals in LLM Hidden States: Pre-Generation Probing and Repair Geometry">
-<meta property="og:description" content="Code Correctness Signals in LLM Hidden States: Pre-Generation Probing and Repair Geometry（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="Code Correctness Is Linearly Decodable from LLM Hidden States Before Generation">
+<meta property="og:description" content="Code Correctness Is Linearly Decodable from LLM Hidden States Before Generation（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Code Correctness Signals in LLM Hidden States: Pre-Generation Probing and Repair Geometry",
- "inLanguage":"ja","datePublished":"2026-07-14T07:00:00+09:00","dateModified":"2026-07-14T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Code Correctness Is Linearly Decodable from LLM Hidden States Before Generation",
+ "inLanguage":"ja","datePublished":"2026-07-18T07:00:00+09:00","dateModified":"2026-07-18T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.14530","url":"https://liquitex-coder.github.io/worldtech-jp/articles/5ed6bd47af05.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>Code Correctness Signals in LLM Hidden States: Pre-Generation Probing and Repair Geometry</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>Code Correctness Is Linearly Decodable from LLM Hidden States Before Generation</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>Code Correctness Signals in LLM Hidden States: Pre-Generation Probing and Repair Geometry</h1>
+      <h1>Code Correctness Is Linearly Decodable from LLM Hidden States Before Generation</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/07/14 07:00</span><span>· 更新 2026/07/14</span>
+        <span>公開 2026/07/18 07:00</span><span>· 更新 2026/07/18</span>
       </div>
     </div>
     
@@ -74,24 +74,24 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2606.14530" rel="nofollow noopener">Code Correctness Signals in LLM Hidden States: Pre-Generation Probing and Repair Geometry</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2606.14530" rel="nofollow noopener">Code Correctness Is Linearly Decodable from LLM Hidden States Before Generation</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2606.14530v2 Announce Type: replace 
-Abstract: Large language models encode rich information in their hidden states. This work asks whether code correctness is legible in the hidden states of Qwen3-4B-Instruct-2507, before it generates and as it repairs a failed attempt, studied on 444 LiveCodeBench tasks. It reports two findings connected by a single confound-control tool: residualization. First, the correctness of the model&#x27;s first-attempt code is linearly decodable from the prompt-final hidden state, with a leakage-free held-out AUC of 0.955 +/- 0.006 across 50 outer splits. After the linear effect of prompt length is removed from each hidden state dimension, the probe still reaches 0.940 +/- 0.009, well above a prompt-length baseline of 0.720 +/- 0.015. Second, on 246 cleaned cases where the model attempts to repair a failed first attempt, the hidden state shift from the failing attempt to its repair carries a robust geometric direction of repair success, significant on both a magnitude and a split-half test against label-shuffled nulls. This direction remains significant on both tests after a conditional residualization against three repair-context covariates that differ between successful and failed repairs, indicating a genuine repair-success signal that the observable repair context does not account for. The contribution is as much methodological as empirical, a confound-control diagnostic that reports each signal only to the extent it survives the control.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2606.14530v2 Announce Type: replace 
-Abstract: Large language models encode rich information in their hidden states. This work asks whether code correctness is legible in the hidden states of Qwen3-4B-Instruct-2507, before it generates and as it repairs a failed attempt, studied on 444 LiveCodeBench tasks. It reports two findings connected by a single confound-control tool: residualization. First, the correctness of the model&#x27;s first-attempt code is linearly decodable from the prompt-final hidden state, with a leakage-free held-out AUC of 0.955 +/- 0.006 across 50 outer splits. After the linear effect of prompt length is removed from each hidden state dimension, the probe still reaches 0.940 +/- 0.009, well above a prompt-length baseline of 0.720 +/- 0.015. Second, on 246 cleaned cases where the model attempts to repair a failed first attempt, the hidden state shift from the failing attempt to its repair carries a robust geometric direction of repair success, significant on both a magnitude and a split-half test against label-shuffled nulls. This direction remains significant on both tests after a conditional residualization against three repair-context covariates that differ between successful and failed repairs, indicating a genuine repair-success signal that the observable repair context does not account for. The contribution is as much methodological as empirical, a confound-control diagnostic that reports each signal only to the extent it survives the control.</div>
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2606.14530v3 Announce Type: replace 
+Abstract: Large language models encode rich information in their hidden states. This work asks whether the correctness of code that Qwen3-4B-Instruct-2507 has not yet generated is already legible in its hidden states, evaluated on a set of 444 tasks from LiveCodeBench. The correctness of the model&#x27;s first-attempt code is linearly decodable from the hidden state at the final prompt token, captured before any output token is generated, with a leakage-free held-out AUC of 0.881 +/- 0.008 across 50 outer splits. To assess whether this signal is explained by prompt length, each hidden state dimension is residualized with respect to its linear effect. The probe still achieves an AUC of 0.842 +/- 0.010, substantially above a logistic prompt-length baseline of 0.657 +/- 0.014, and none of the nonlinear models tested improves upon it. A companion question about whether self-repair leaves a geometric signature in the model&#x27;s hidden states could not be answered, because successful repairs following a failed first attempt are too rare in this setting to support the analysis. The contribution is both empirical and methodological, providing evidence that pre-generation hidden states contain a robust signal of eventual code correctness, together with a confound-control diagnostic that quantifies how much of that signal survives adjustment for prompt length.</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2606.14530v3 Announce Type: replace 
+Abstract: Large language models encode rich information in their hidden states. This work asks whether the correctness of code that Qwen3-4B-Instruct-2507 has not yet generated is already legible in its hidden states, evaluated on a set of 444 tasks from LiveCodeBench. The correctness of the model&#x27;s first-attempt code is linearly decodable from the hidden state at the final prompt token, captured before any output token is generated, with a leakage-free held-out AUC of 0.881 +/- 0.008 across 50 outer splits. To assess whether this signal is explained by prompt length, each hidden state dimension is residualized with respect to its linear effect. The probe still achieves an AUC of 0.842 +/- 0.010, substantially above a logistic prompt-length baseline of 0.657 +/- 0.014, and none of the nonlinear models tested improves upon it. A companion question about whether self-repair leaves a geometric signature in the model&#x27;s hidden states could not be answered, because successful repairs following a failed first attempt are too rare in this setting to support the analysis. The contribution is both empirical and methodological, providing evidence that pre-generation hidden states contain a robust signal of eventual code correctness, together with a confound-control diagnostic that quantifies how much of that signal survives adjustment for prompt length.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2606.14530v2 Announce Type: replace 
-Abstract: Large language models encode rich information in their hidden states. This work asks whether code correctness is legible in the hidden states of Qwen3-4B-Instruct-2507, before it generates and as it repairs a failed attempt, studied on 444 LiveCodeBench tasks. It reports two findings connected by a single confound-control tool: residualization. First, the correctness of the model&#x27;s first-attempt code is linearly decodable from the prompt-final hidden state, with a leakage-free held-out AUC of 0.955 +/- 0.006 across 50 outer splits. After the linear effect of prompt length is removed from each hidden state dimension, the probe still reaches 0.940 +/- 0.009, well above a prompt-length baseline of 0.720 +/- 0.015. Second, on 246 cleaned cases where the model attempts to repair a failed first attempt, the hidden state shift from the failing attempt to its repair carries a robust geometric direction of repair success, significant on both a magnitude and a split-half test against label-shuffled nulls. This direction remains significant on both tests after a conditional residualization against three repair-context covariates that differ between successful and failed repairs, indicating a genuine repair-success signal that the observable repair context does not account for. The contribution is as much methodological as empirical, a confound-control diagnostic that reports each signal only to the extent it survives the control.</p><a href="https://arxiv.org/abs/2606.14530" rel="nofollow noopener">原論文を読む →</a></div>
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2606.14530v3 Announce Type: replace 
+Abstract: Large language models encode rich information in their hidden states. This work asks whether the correctness of code that Qwen3-4B-Instruct-2507 has not yet generated is already legible in its hidden states, evaluated on a set of 444 tasks from LiveCodeBench. The correctness of the model&#x27;s first-attempt code is linearly decodable from the hidden state at the final prompt token, captured before any output token is generated, with a leakage-free held-out AUC of 0.881 +/- 0.008 across 50 outer splits. To assess whether this signal is explained by prompt length, each hidden state dimension is residualized with respect to its linear effect. The probe still achieves an AUC of 0.842 +/- 0.010, substantially above a logistic prompt-length baseline of 0.657 +/- 0.014, and none of the nonlinear models tested improves upon it. A companion question about whether self-repair leaves a geometric signature in the model&#x27;s hidden states could not be answered, because successful repairs following a failed first attempt are too rare in this setting to support the analysis. The contribution is both empirical and methodological, providing evidence that pre-generation hidden states contain a robust signal of eventual code correctness, together with a confound-control diagnostic that quantifies how much of that signal survives adjustment for prompt length.</p><a href="https://arxiv.org/abs/2606.14530" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2606.14530" rel="nofollow noopener">https://arxiv.org/abs/2606.14530</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
     <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="5f978c026084.html"><div class="sim">関連</div><div class="info"><b>Interval Certifications for Multilayered Perceptrons via Lattice Traversal</b><div class="m">AI</div></div></a><a class="r" href="8d75ea8a3d7c.html"><div class="sim">関連</div><div class="info"><b>CogniConsole: Externalizing Inference-Time Control as a Formal Abstraction for Reliable LLM Interactions</b><div class="m">AI</div></div></a><a class="r" href="9ef86e16f82b.html"><div class="sim">関連</div><div class="info"><b>GATS: Graph-Augmented Tree Search with Layered World Models for Efficient Agent Planning</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="7d1eed8c6164.html"><div class="sim">関連</div><div class="info"><b>Intelligent Three Level Learning Architecture for Autonomous UAV Swarms in Search and Rescue</b><div class="m">AI</div></div></a><a class="r" href="50e350980818.html"><div class="sim">関連</div><div class="info"><b>HG-RAG: Hierarchy-Guided Retrieval-Augmented Generation for Structured Knowledge Graphs</b><div class="m">AI</div></div></a><a class="r" href="396e428869ba.html"><div class="sim">関連</div><div class="info"><b>IMEX Interaction-Based Model Explanation</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>
