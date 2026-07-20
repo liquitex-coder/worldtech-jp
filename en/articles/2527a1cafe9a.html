@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diagnosing Overhead in Dispatch Operations: Cross-architecture Observatory — NewsMatome (EN)</title>
+<meta name="description" content="Diagnosing Overhead in Dispatch Operations: Cross-architecture Observatory — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/2527a1cafe9a.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/2527a1cafe9a.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/2527a1cafe9a.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/2527a1cafe9a.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Diagnosing Overhead in Dispatch Operations: Cross-architecture Observatory">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Diagnosing Overhead in Dispatch Operations: Cross-architecture Observatory",
+ "inLanguage":"en","datePublished":"2026-07-21T07:00:00+09:00","dateModified":"2026-07-21T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2605.20982","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/2527a1cafe9a.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/2527a1cafe9a.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Diagnosing Overhead in Dispatch Operations: Cross-architecture Observatory</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/21</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/2527a1cafe9a.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2605.20982" rel="nofollow noopener">https://arxiv.org/abs/2605.20982</a></span></div>
+  <div class="article-body"><p>arXiv:2605.20982v2 Announce Type: replace-cross 
+Abstract: AlltoAll dispatch is the dominant bottleneck of MoE expert parallelism, and the interconnect community has responded with four families of mitigations: predictive sample placement, adaptive expert relayout, hierarchical collectives, and EP-aware topology. All four rest on two assumptions about the workload: that routing imbalance is correctable by the system layer, and that the mock-token benchmarks evaluating them faithfully represent production routing. We introduce DODOCO to test both, instrumenting five open MoE checkpoints that span today&#x27;s sequence-mixer designs (MHA, MLA, GQA, Gated DeltaNet and Mamba-2 SSM) under a factorial grid of six data conditions and a matched expert-parallelism scan on H100 clusters. Both assumptions fail. Scaling EP leaves per-expert load concentration essentially unchanged: the straggler is intrinsic to the routing decision the model makes, not to how its experts land on ranks. Mock tokens overestimate routing imbalance by up to a factor of 2.35, and the error is a level offset rather than a trend: it stays flat across a $32\times$ batch-size sweep. Skewing the synthetic distribution toward realism (Zipf) widens the gap instead of closing it. A third pattern organizes the results: the architectures separate into a data-resilient band (MHA, Mamba-2), whose routing approaches uniform on real text, and a persistently concentrated band (MLA, GDN), with GQA intermediate. These bands, not the EP degree or the mock-data profile, are the right workload input to AlltoAll-aware interconnect and dispatch design.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
