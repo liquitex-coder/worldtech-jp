@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Q-VGM: Q-Guided Value-Gradient Matching for Flow-Matching VLA Policies — NewsMatome (EN)</title>
-<meta name="description" content="Q-VGM: Q-Guided Value-Gradient Matching for Flow-Matching VLA Policies — original-language edition. Japanese translation available.">
+<title>Q-VGM: Q-Value-Gradient Matching for Off-Policy Reinforcement Learning of Flow-Matching VLA — NewsMatome (EN)</title>
+<meta name="description" content="Q-VGM: Q-Value-Gradient Matching for Off-Policy Reinforcement Learning of Flow-Matching VLA — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/71a83f259095.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/71a83f259095.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/71a83f259095.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/71a83f259095.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Q-VGM: Q-Guided Value-Gradient Matching for Flow-Matching VLA Policies">
+<meta property="og:title" content="Q-VGM: Q-Value-Gradient Matching for Off-Policy Reinforcement Learning of Flow-Matching VLA">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Q-VGM: Q-Guided Value-Gradient Matching for Flow-Matching VLA Policies",
- "inLanguage":"en","datePublished":"2026-06-10T07:00:00+09:00","dateModified":"2026-06-10T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Q-VGM: Q-Value-Gradient Matching for Off-Policy Reinforcement Learning of Flow-Matching VLA",
+ "inLanguage":"en","datePublished":"2026-07-22T07:00:00+09:00","dateModified":"2026-07-22T07:00:00+09:00",
  "author":{"@type":"Organization","name":"ロボット技術担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.08015","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/71a83f259095.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#ef4444"></span>ロボット技術</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Q-VGM: Q-Guided Value-Gradient Matching for Flow-Matching VLA Policies</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b></span></span><span>2026/06/10</span></div>
+    <h1>Q-VGM: Q-Value-Gradient Matching for Off-Policy Reinforcement Learning of Flow-Matching VLA</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b></span></span><span>2026/07/22</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/71a83f259095.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.08015" rel="nofollow noopener">https://arxiv.org/abs/2606.08015</a></span></div>
-  <div class="article-body"><p>arXiv:2606.08015v1 Announce Type: new 
-Abstract: We propose Q-Guided Value-Gradient Matching (Q-VGM), an off-policy reinforcement learning (RL) method that tackles a long-standing challenge in fine-tuning flow-matching vision-language-action (VLA) policies: efficiently improving an expressive flow-matching action expert with respect to a learned Q-function. Effective improvement must exploit the first-order (gradient) information of the critic, but this is difficult for flow policies, because directly back-propagating the value through their multi-step denoising process is numerically unstable at VLA scale, while the tractable action likelihoods required by policy-gradient methods are unavailable under iterative denoising. Existing value-based methods either backpropagate through the full denoising chain, use the critic only at test time without updating the policy, or distill critic-improved actions as terminal labels without supervising the velocity field. Q-VGM sidesteps these issues by leveraging VGG-Flow, a value-gradient view of flow alignment in generative modeling that transforms value gradient into a denoising-time value-gradient field rather than an unstable end-to-end objective. This requires no action likelihoods and no backpropagation through the denoising chain, and operates on a fixed replay buffer. The critic is an action-sensitive Cal-QL ensemble over compact RLT features with per-layer action injection. Q-VGM enables a practical few-shot initialization then learn-from-experience paradigm: starting from a few-shot-SFT pi0.5 VLA, the method leverages self-generated rollout data to substantially improve task performance without additional expert supervision. On LIBERO, Q-VGM raises the average success rate from 75.0% to 92.5%; on RoboTwin 2.0, from 76.4% to 87.2%; and on two real-robot tabletop tasks, from 40.0% to 67.5%, outperforming all same-backbone, same-critic baselines across all three settings.</p></div>
+  <div class="article-body"><p>arXiv:2606.08015v2 Announce Type: replace 
+Abstract: We propose Q-Guided Value-Gradient Matching (Q-VGM), an off-policy reinforcement learning method for a central difficulty in fine-tuning flow-matching vision-language-action (VLA) policies: improving an expressive flow-matching action expert with a learned $Q$-function. Effective improvement must exploit the critic&#x27;s first-order signal $\nabla_A Q$, yet flow policies make this hard: backpropagating values through the multi-step denoising chain is unstable at VLA scale, and the tractable action likelihoods required by policy gradients are unavailable under iterative denoising. Existing value-based methods therefore backpropagate through the full chain, use the critic only for test-time selection or guidance, or distill critic-improved actions as terminal labels that never supervise the velocity field. Q-VGM instead casts policy improvement as optimal control over the denoising dynamics, where the optimal residual velocity is the gradient of a denoising-time value function: clean-action estimates improved by iterative $Q$-gradient ascent with keep-best selection are converted into residual velocity targets that directly supervise the velocity field -- no action likelihoods, no backpropagation through the denoising chain, fully offline on a fixed replay buffer, and no critic at inference time. The critic is an action-sensitive stepwise IQL critic on compact latent states from the frozen VLA backbone. This enables a few-shot-initialization, learn-from-experience paradigm: starting from a few-shot-SFT $\pi_{0.5}$ policy, Q-VGM improves the policy from its own rollouts without additional expert supervision, raising the average LIBERO success rate from 79.0% to 92.5%, outperforming all same-backbone, same-critic baselines, and attaining high success rates on four real-robot manipulation tasks, including fine-grained plug insertion.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PsiLogic: Chaos-Aware Active Cancellation for Adam with a Fair Cross-Domain Benchmark — NewsMatome (EN)</title>
+<meta name="description" content="PsiLogic: Chaos-Aware Active Cancellation for Adam with a Fair Cross-Domain Benchmark — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/c4240e09a3c5.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/c4240e09a3c5.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/c4240e09a3c5.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/c4240e09a3c5.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PsiLogic: Chaos-Aware Active Cancellation for Adam with a Fair Cross-Domain Benchmark">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"PsiLogic: Chaos-Aware Active Cancellation for Adam with a Fair Cross-Domain Benchmark",
+ "inLanguage":"en","datePublished":"2026-07-22T07:00:00+09:00","dateModified":"2026-07-22T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2607.16268","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/c4240e09a3c5.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/c4240e09a3c5.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>PsiLogic: Chaos-Aware Active Cancellation for Adam with a Fair Cross-Domain Benchmark</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/22</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/c4240e09a3c5.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.16268" rel="nofollow noopener">https://arxiv.org/abs/2607.16268</a></span></div>
+  <div class="article-body"><p>arXiv:2607.16268v1 Announce Type: new 
+Abstract: Adaptive optimizers such as Adam and AdamW apply the same update rule regardless of whether training is in a chaotic early phase or near convergence. We introduce PsiLogic, an optimizer that augments Adam with a dynamic Active Cancellation Term gated by a dual exponential moving average (EMA) of scale-normalized gradient norms. The resulting chaos detector strengthens damping when gradient statistics are unstable and fades to zero as training stabilizes, providing an implicit warmup without a hand-tuned schedule.
+  We evaluate PsiLogic against Adam, AdamW, and Lion using FairBench -- a reproducible benchmark protocol with per-optimizer learning-rate sweeps, identical initialization per seed, and Welch t-tests. On an NVIDIA H100 80GB reference run (4 arenas, 3 seeds, 2000 steps, bf16 AMP), PsiLogic achieves the best validation metric in three of four arenas: NLP perplexity 7.79 +/- 0.18 vs. 8.17 +/- 0.08 (AdamW, p = 0.049), ViT top-1 accuracy 0.244 +/- 0.006 vs. 0.223 +/- 0.002 (AdamW, p = 0.015), and ResNet top-1 accuracy 0.222 +/- 0.001 vs. 0.172 +/- 0.004 (Adam, p = 0.001). On diffusion, validation MSE is statistically tied with Adam/AdamW (p = 0.49). ResNet accuracy vs. AdamW is a numerical tie without significance at three seeds (p = 0.44). Peak GPU memory is comparable across optimizers; PsiLogic incurs 1.2--1.8x wall-clock overhead on transformer-heavy arenas (implementation-bound).
+  We release an open-source PyTorch implementation, the full FairBench harness, and all raw CSV outputs to support independent verification.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

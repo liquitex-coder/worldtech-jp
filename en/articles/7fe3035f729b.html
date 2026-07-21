@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taurus: Accelerating Out-of-Core Graph Neural Network Inference on Billion-Scale Graphs — NewsMatome (EN)</title>
+<meta name="description" content="Taurus: Accelerating Out-of-Core Graph Neural Network Inference on Billion-Scale Graphs — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/7fe3035f729b.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/7fe3035f729b.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/7fe3035f729b.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/7fe3035f729b.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Taurus: Accelerating Out-of-Core Graph Neural Network Inference on Billion-Scale Graphs">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Taurus: Accelerating Out-of-Core Graph Neural Network Inference on Billion-Scale Graphs",
+ "inLanguage":"en","datePublished":"2026-07-22T07:00:00+09:00","dateModified":"2026-07-22T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2607.17374","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/7fe3035f729b.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/7fe3035f729b.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Taurus: Accelerating Out-of-Core Graph Neural Network Inference on Billion-Scale Graphs</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/22</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/7fe3035f729b.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.17374" rel="nofollow noopener">https://arxiv.org/abs/2607.17374</a></span></div>
+  <div class="article-body"><p>arXiv:2607.17374v1 Announce Type: cross 
+Abstract: Graph Neural Network (GNN) inference on billion-scale graphs is challenging due to the large memory footprint of features and embeddings and high disk I/O costs in out-of-core settings. Existing distributed GNN systems incur high communication times and infrastructure costs, while disk-based GNN systems are primarily tailored to training and experience massive wasted reads during inference on the entire graph. We present Taurus, a single-machine system for GNN inference on graphs that do not fit in RAM, supporting both \textit{exact} full-graph inference and fanout-sampled inference. To avoid random and repeated feature gathers, Taurus reformulates layer-wise inference as source-centric broadcasts over sequential SSD scans, backed by a pipelined GPU-CPU-SSD hierarchy, topology-aware reordering, pending-message eviction, and a GPU-resident store for high-degree vertices. It further uses non-buffered sequential reads and GPU-backed writes to reduce page-cache pollution, host-memory pressure, and write overheads. On out-of-core graphs with up to $269M$ vertices, $4B$ edges, and $514$ GiB of features, Taurus outperforms the strongest layer-wise baseline, DGI, by $7$-$25\times$, and vertex-wise baselines by $40$-$140\times$.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

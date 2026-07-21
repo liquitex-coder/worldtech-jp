@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ask the Right Comparison:Bias-Aware Bayesian Active Top-$k$ Ranking with LLM Judges — NewsMatome (EN)</title>
-<meta name="description" content="Ask the Right Comparison:Bias-Aware Bayesian Active Top-$k$ Ranking with LLM Judges — original-language edition. Japanese translation available.">
+<title>When Can You Debias an LLM Judge? Identifiability Limits, a Test, and Designs for Top-k Ranking — NewsMatome (EN)</title>
+<meta name="description" content="When Can You Debias an LLM Judge? Identifiability Limits, a Test, and Designs for Top-k Ranking — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/0cbb17af78e5.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/0cbb17af78e5.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/0cbb17af78e5.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/0cbb17af78e5.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ask the Right Comparison:Bias-Aware Bayesian Active Top-$k$ Ranking with LLM Judges">
+<meta property="og:title" content="When Can You Debias an LLM Judge? Identifiability Limits, a Test, and Designs for Top-k Ranking">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Ask the Right Comparison:Bias-Aware Bayesian Active Top-$k$ Ranking with LLM Judges",
- "inLanguage":"en","datePublished":"2026-07-04T07:00:00+09:00","dateModified":"2026-07-04T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"When Can You Debias an LLM Judge? Identifiability Limits, a Test, and Designs for Top-k Ranking",
+ "inLanguage":"en","datePublished":"2026-07-22T07:00:00+09:00","dateModified":"2026-07-22T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.02104","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/0cbb17af78e5.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Ask the Right Comparison:Bias-Aware Bayesian Active Top-$k$ Ranking with LLM Judges</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/04</span></div>
+    <h1>When Can You Debias an LLM Judge? Identifiability Limits, a Test, and Designs for Top-k Ranking</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/22</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/0cbb17af78e5.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.02104" rel="nofollow noopener">https://arxiv.org/abs/2607.02104</a></span></div>
-  <div class="article-body"><p>arXiv:2607.02104v1 Announce Type: new 
-Abstract: Large language models (LLMs) are increasingly used as cheap, scalable judges that compare candidate outputs pairwise -- to rank responses, select models, or triage papers. Yet LLM judges are both noisy and systematically biased: they favor verbose or well-formatted answers and exhibit position effects, so simply aggregating their votes recovers a ranking of presentation, not of true quality. We study the practical goal of identifying the \topk{} items under a fixed comparison budget, and make two contributions. First, we cast judging as Bayesian inference over latent quality with explicit, judge-specific bias covariates (verbosity, position), regularized by a shrinkage prior so that the data decide which biases a given judge actually exhibits. Second, we introduce a \topk-aware active acquisition rule that chooses the next comparison to maximally reduce uncertainty about \topk{} \emph{membership}, rather than about the full ranking. On a controlled benchmark with known ground-truth quality, judged by sixteen real LLMs spanning open and proprietary families (Llama, Qwen, Phi-4, GPT-4o-mini/5.1/5.5, Gemini, DeepSeek, and Claude Haiku/Sonnet/Opus), naive aggregation plateaus at a wrong \topk{} on biased judges regardless of budget, while our bias-aware model recovers it; \topk-aware acquisition reaches this ceiling with far fewer comparisons than round-robin or a global-uncertainty (D-optimal) rule. Bias is real but heterogeneous and capability-dependent: cheap and mid-tier judges carry a strong verbosity bias that our model corrects (lifting recall from $\sim$$0.5$--$0.6$ to $0.84$--$1.0$), whereas the frontier judges we tested show little bias and already rank accurately, so bias-aware modeling changes little there.</p></div>
+  <div class="article-body"><p>arXiv:2607.02104v2 Announce Type: replace 
+Abstract: Large language models (LLMs) are increasingly used as cheap, scalable judges that compare candidate outputs pairwise. Because such judges prefer verbose or well-formatted answers, the natural fix is to add bias covariates to a Bradley--Terry model and estimate the bias away. We show this cannot work as advertised: the quality/bias split is \emph{not identified} by pairwise comparisons, and the failure is exact -- across $48$ real judge-pools the profile likelihood over the coefficient is flat to $\mathbf{0.0000}$ \textbf{nats}, and scaling the comparisons $26\times$ buys none. A ``debiased&#x27;&#x27; score is selected by the prior, not recovered from data. Our contribution is accordingly not a better estimator but a characterization of \emph{when prior-based correction is justified}, plus designs that supply the missing information when it is not. The assumption the prior encodes -- quality is a priori uncorrelated with the covariate -- pays only while $\mathrm{corr}(\theta,x)$ stays below a crossing point (configuration-dependent, $0.22$--$0.60$), which is what makes the same model help on LLMBar and hurt on SummEval and Nectar. We give two escapes: a \textbf{trusted-anchor gate} that decides per (judge, covariate, task) (no false enables in $6{,}000$ decisions at $K\ge10$ anchors, a rate our sample bounds at $\le6\%$), and a \textbf{paired rendering design}. Across fifteen real LLM judges bias is heterogeneous and capability-dependent: correction improves \topk{} recall by $0.20$--$0.32$ on five biased-but-competent cheap judges and is a no-op on frontier ones (Spearman $\rho{=}{-}0.84$ between competence and gain over the $14$ competent judges, $p{&lt;}10^{-3}$), concentrating the benefit where at-scale evaluation happens.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

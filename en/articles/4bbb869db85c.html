@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Backpropagation-Free Trunk Training via the Split Forward Gradients — NewsMatome (EN)</title>
+<meta name="description" content="Backpropagation-Free Trunk Training via the Split Forward Gradients — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/4bbb869db85c.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/4bbb869db85c.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/4bbb869db85c.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/4bbb869db85c.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Backpropagation-Free Trunk Training via the Split Forward Gradients">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Backpropagation-Free Trunk Training via the Split Forward Gradients",
+ "inLanguage":"en","datePublished":"2026-07-22T07:00:00+09:00","dateModified":"2026-07-22T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2607.16612","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/4bbb869db85c.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/4bbb869db85c.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Backpropagation-Free Trunk Training via the Split Forward Gradients</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/22</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/4bbb869db85c.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.16612" rel="nofollow noopener">https://arxiv.org/abs/2607.16612</a></span></div>
+  <div class="article-body"><p>arXiv:2607.16612v1 Announce Type: cross 
+Abstract: Backpropagation makes training deep networks memory intensive because it must store intermediate activations. Forward-mode methods avoid this cost, but their gradient estimates become increasingly noisy as the number of trained parameters grows. We introduce Split Forward Gradient (Split-FG), which splits a network at an intermediate representation: it computes the output head gradient exactly and estimates only the trunk gradient with a Jacobian--vector product. This reduces estimator variance and requires no backward pass through the trunk, while retaining an Adam-style convergence guarantee. Our experiments reveal an important practical failure mode. On WikiText-103, naive forward-gradient training of the trunk performs worse than leaving a randomly initialized trunk frozen, likely because Adam updates every noisy, under-determined trunk coordinate too aggressively. Simply using a much smaller learning rate for the trunk reverses this result: a $16$M-parameter GPT-2-style model reaches validation perplexity $387$, compared with $668$ for the frozen-trunk control and $2{,}885$ for a matched pure forward-gradient baseline (backpropagation reaches $150$). Split-FG also produces the strongest backprop-free results on our tabular benchmarks and reaches $60.5\%$ on CIFAR-10 and $35.2\%$ on CIFAR-100 with a heavy-head design. It reduces peak memory by up to $35\%$ relative to matched backpropagation, although the performance gap widens as the forward-mode trunk grows.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
