@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Federated Lightweight Fine-Tuning — NewsMatome (EN)</title>
+<meta name="description" content="Federated Lightweight Fine-Tuning — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/a0cc439f593d.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/a0cc439f593d.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/a0cc439f593d.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/a0cc439f593d.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Federated Lightweight Fine-Tuning">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Federated Lightweight Fine-Tuning",
+ "inLanguage":"en","datePublished":"2026-07-23T07:00:00+09:00","dateModified":"2026-07-23T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2607.18343","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/a0cc439f593d.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/a0cc439f593d.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Federated Lightweight Fine-Tuning</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/23</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/a0cc439f593d.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.18343" rel="nofollow noopener">https://arxiv.org/abs/2607.18343</a></span></div>
+  <div class="article-body"><p>arXiv:2607.18343v1 Announce Type: new 
+Abstract: Federated fine-tuning is bottlenecked by communication: FedAvg and pseudo-gradient schemes transmit a payload that scales with the model, and gradient compression shrinks it by only a constant factor. We take a different lever. Mapping networks generate a network&#x27;s weights from a small trainable latent through a frozen affine projection; because the map is shared and affine, averaging latents is exactly averaging the generated weights. We turn this into a practical low-bandwidth federated channel with two changes: a low-rank, seed-regenerable factorisation of the projection (cutting generator memory from ~80 GB to ~10 MB), and a delta formulation $\theta = \theta^{\mathrm{pre}} + U V^{\top} z$ that learns an additive correction around a shared centrally-pretrained base -- federated fine-tuning, which is what makes the method work at scale. A frozen orthogonal classifier head further removes the head from the payload while improving accuracy. On CIFAR-100 with ResNet-18+GroupNorm, our method (FLITE, Federated Low-rank Iterative Training Engine) communicates 1,280 floats (~5 KB) per client per round -- an 8718x reduction -- and reaches 74.67%, within ~0.5 pp of full-weight FedAvg. The averaging identity holds to floating-point precision ($6 \times 10^{-8}$); the method sits one to two orders of magnitude below PowerSGD and top-k on the bandwidth-accuracy Pareto; it matches or exceeds full-weight FedAvg under strong non-IID skew. int4 latents reach 648 bytes per round at unchanged accuracy, whereas int4 full-weight FedAvg collapses to chance.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

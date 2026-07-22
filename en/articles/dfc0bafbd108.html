@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CompilerKV: Risk-Adaptive KV Compression via Offline Experience Compilation — NewsMatome (EN)</title>
+<meta name="description" content="CompilerKV: Risk-Adaptive KV Compression via Offline Experience Compilation — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/dfc0bafbd108.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/dfc0bafbd108.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/dfc0bafbd108.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/dfc0bafbd108.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CompilerKV: Risk-Adaptive KV Compression via Offline Experience Compilation">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"CompilerKV: Risk-Adaptive KV Compression via Offline Experience Compilation",
+ "inLanguage":"en","datePublished":"2026-07-23T07:00:00+09:00","dateModified":"2026-07-23T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2602.08686","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/dfc0bafbd108.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/dfc0bafbd108.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>CompilerKV: Risk-Adaptive KV Compression via Offline Experience Compilation</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/23</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/dfc0bafbd108.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2602.08686" rel="nofollow noopener">https://arxiv.org/abs/2602.08686</a></span></div>
+  <div class="article-body"><p>arXiv:2602.08686v3 Announce Type: replace 
+Abstract: Prefill-only KV compression freezes a token subset at the end of prefill and decodes from it without further eviction. The retention decision is therefore irreversible, yet existing methods estimate the corrective signals it relies on, per-head reliability and prompt-level compression sensitivity, online from a single noisy prompt. We argue this is the wrong statistical unit: these signals exhibit far higher cross-prompt regularity than within-prompt signal-to-noise. We introduce \textsc{CompilerKV}, a KV-retention policy whose corrective tables are compiled offline from a calibration corpus, reducing online correction after the standard observation-window scan to $O(1)$ lookups plus a budget clamp. We find that compiled retention tables behave as portable architectural priors: rankings transfer across disjoint corpora on four backbones (mean Spearman $\bar\rho{=}0.90$), and direct model-to-model table transfer costs only $0.4$--$0.8$ LongBench points on average. At a 512-token budget, \textsc{CompilerKV} attains compressed-SOTA on all four backbones, improving over the strongest prefill-only baseline by $+1.67$ points on average (task-bootstrap 95\% CI $[+1.08,+2.37]$). Pressure regimes amplify the gap: under a fixed $512/32k$ cache ratio, CompilerKV remains the strongest compressed method through 128k RULER ($\sim\!73$ vs.\ FullKV $\sim\!79$, SnapKV $\sim\!38$); on 32k NIAH it reaches $0.89$ vs.\ SnapKV $0.42$; and at 32k input, retaining only $1.56\%$ of the prefill KV, batch-16 serving remains feasible where FullKV is OOM.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
