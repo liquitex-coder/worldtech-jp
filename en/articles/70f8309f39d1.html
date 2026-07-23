@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LISA: Linear-Indexed Sparse Attention for Efficient Long-Context Reasoning — NewsMatome (EN)</title>
+<meta name="description" content="LISA: Linear-Indexed Sparse Attention for Efficient Long-Context Reasoning — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/70f8309f39d1.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/70f8309f39d1.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/70f8309f39d1.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/70f8309f39d1.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LISA: Linear-Indexed Sparse Attention for Efficient Long-Context Reasoning">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"LISA: Linear-Indexed Sparse Attention for Efficient Long-Context Reasoning",
+ "inLanguage":"en","datePublished":"2026-07-24T07:00:00+09:00","dateModified":"2026-07-24T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2607.19358","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/70f8309f39d1.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/70f8309f39d1.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>LISA: Linear-Indexed Sparse Attention for Efficient Long-Context Reasoning</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/24</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/70f8309f39d1.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.19358" rel="nofollow noopener">https://arxiv.org/abs/2607.19358</a></span></div>
+  <div class="article-body"><p>arXiv:2607.19358v1 Announce Type: new 
+Abstract: Recent advances in long chain-of-thought reasoning models such as DeepSeek-R1 have led to increasingly longer inference context lengths under the test-time scaling paradigm. However, the O(n^2) computational complexity of standard self-attention causes inference costs to grow sharply with long sequences, limiting the deployment of long-CoT reasoning in production settings. To address this, we propose LISA (Linear-Indexed Sparse Attention), a plug-and-play attention replacement module that requires no pretraining from scratch. LISA integrates two lightweight components in parallel within the original model: (1) a Linear Attention module that provides long-range memory with O(n) time complexity; (2) a Lightning Indexer that selects the top-M important tokens from the full context to feed into a Sparse Self-Attention. The two branches are fused via a gating mechanism, reducing inference complexity from O(n^2) to O(nM) (M &lt;&lt; n) for generating n tokens. We design a two-stage training pipeline: Stage 1 initializes the model by integrating the linear attention to capture long-range dependencies, complemented by a sliding-window attention mechanism that is optimized via knowledge distillation to approximate the full self-attention distribution of a frozen teacher model. In Stage 2, we further introduce the Indexer to replace the static sliding-window mechanism, enabling dynamic token selection from broader contexts. The Indexer is trained using a novel per-head KL divergence loss, which aligns its selection behavior with the attention patterns of the teacher model. Experiments on DeepSeek-distilled-Qwen models demonstrate that LISA achieves a 50% inference speedup under 16K-token context, while improving average performance by 5.6% on reasoning benchmarks including AIME and MATH-500.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

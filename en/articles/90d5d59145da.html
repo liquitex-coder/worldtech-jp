@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Fast Can Reward Models Score? A Systems Study of C++ and PyTorch Inference Runtimes for RLHF — NewsMatome (EN)</title>
+<meta name="description" content="How Fast Can Reward Models Score? A Systems Study of C++ and PyTorch Inference Runtimes for RLHF — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/90d5d59145da.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/90d5d59145da.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/90d5d59145da.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/90d5d59145da.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How Fast Can Reward Models Score? A Systems Study of C++ and PyTorch Inference Runtimes for RLHF">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"How Fast Can Reward Models Score? A Systems Study of C++ and PyTorch Inference Runtimes for RLHF",
+ "inLanguage":"en","datePublished":"2026-07-24T07:00:00+09:00","dateModified":"2026-07-24T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2607.19712","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/90d5d59145da.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/90d5d59145da.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>How Fast Can Reward Models Score? A Systems Study of C++ and PyTorch Inference Runtimes for RLHF</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/24</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/90d5d59145da.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.19712" rel="nofollow noopener">https://arxiv.org/abs/2607.19712</a></span></div>
+  <div class="article-body"><p>arXiv:2607.19712v1 Announce Type: new 
+Abstract: In RLHF pipelines, reward scoring blocks policy updates. Slow scoring bottlenecks the entire loop, since no update runs until every rollout gets a score. And yet most setups just default to PyTorch eager mode or torch.compile, no one checks if that&#x27;s actually fastest. Scoring itself is small. Rollout generation eats far more of a typical RLHF step. But scoring and generation fight over the same CPU and GPU resources, so a faster scoring engine doesn&#x27;t shrink step time on its own. It mainly frees up capacity generation can use instead. We built a native C++ inference engine on ONNX Runtime. First step: confirm correctness. Output matched the PyTorch reference to 5.7 x 10^-6 on CPU and 4.2 x 10^-3 on GPU, close enough to trust. Then we tested it against PyTorch eager mode, torch.compile, and FastAPI, on both CPU and GPU. CPU was decisive. Our engine beat every baseline, confidence intervals didn&#x27;t even overlap. GPU gave a different view: we beat PyTorch and FastAPI, but torch.compile came out ahead. Further testing traced the speedup to ONNX Runtime itself, not C++ as a language. And batching strategy mattered more than either the language or the runtime choice, more than we expected. The results are from repeated, independent runs, since single runs just aren&#x27;t reliable enough to trust.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

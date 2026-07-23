@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Memory Merge DQN: Sensitivity Weighted Target Updates for Stable Value Learning — NewsMatome (EN)</title>
+<meta name="description" content="Memory Merge DQN: Sensitivity Weighted Target Updates for Stable Value Learning — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/91ddb96ce26b.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/91ddb96ce26b.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/91ddb96ce26b.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/91ddb96ce26b.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Memory Merge DQN: Sensitivity Weighted Target Updates for Stable Value Learning">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Memory Merge DQN: Sensitivity Weighted Target Updates for Stable Value Learning",
+ "inLanguage":"en","datePublished":"2026-07-24T07:00:00+09:00","dateModified":"2026-07-24T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2607.19397","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/91ddb96ce26b.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/91ddb96ce26b.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Memory Merge DQN: Sensitivity Weighted Target Updates for Stable Value Learning</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/24</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/91ddb96ce26b.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.19397" rel="nofollow noopener">https://arxiv.org/abs/2607.19397</a></span></div>
+  <div class="article-body"><p>arXiv:2607.19397v1 Announce Type: new 
+Abstract: Deep Q-networks use target networks to stabilise bootstrapped value learning, but the standard hard copy update also introduces a tradeoff. Holding the target network fixed, improves short term stability, yet each hard update abruptly replaces the target parameters with the newest online network and discards recent parameter history. This can produce sudden changes in the bootstrap target and may remove value function structure that remains useful later in training. This paper introduces Memory Merge DQN, a target network update mechanism that maintains a short memory of recent historical online network copies and constructs the target network by merging network parameters based on the Q-value sensitivity rather than copying only the newest online network. Memory Merge gives greater influence to parameters that remain locally important for current Q-value behaviour, while using a recency prior to keep the merged target close to the latest online parameters. The method is inspired by Fisher Weight Model Merging, but uses Q-value sensitivity rather than Fisher information as the weighting signal. This paper evaluates Memory Merge DQN on Atari environments against DQN, Averaged DQN, DQN with layer normalisation, and PQN (with gradient clipping). The results show that Memory Merge DQN is highly competitive and it achieves the largest number of first place final performance results among the evaluated methods, beats DQN, Averaged DQN, and PQN (with gradient clipping), and produces substantial gains in several games where preserving useful value-function parameters appears beneficial. These findings suggest that selectively merging recent parameter weights and history can improve the stability and final performance of DQN agents, and that target network design is an important mechanism for preserving useful value function structure during long horizon value learning.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

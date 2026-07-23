@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Anatomically Faithful but Temporally Blind: Auditing Attribution for Left-Ventricular Ejection-Fraction Estimation from Echocardiography — NewsMatome (EN)</title>
-<meta name="description" content="Anatomically Faithful but Temporally Blind: Auditing Attribution for Left-Ventricular Ejection-Fraction Estimation from Echocardiography — original-language edition. Japanese translation available.">
+<title>Anatomically Faithful but Temporally Diffuse: Auditing Attribution for Left-Ventricular Ejection-Fraction Estimation from Echocardiography — NewsMatome (EN)</title>
+<meta name="description" content="Anatomically Faithful but Temporally Diffuse: Auditing Attribution for Left-Ventricular Ejection-Fraction Estimation from Echocardiography — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/72d2cb46b905.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/72d2cb46b905.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/72d2cb46b905.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/72d2cb46b905.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Anatomically Faithful but Temporally Blind: Auditing Attribution for Left-Ventricular Ejection-Fraction Estimation from Echocardiography">
+<meta property="og:title" content="Anatomically Faithful but Temporally Diffuse: Auditing Attribution for Left-Ventricular Ejection-Fraction Estimation from Echocardiography">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Anatomically Faithful but Temporally Blind: Auditing Attribution for Left-Ventricular Ejection-Fraction Estimation from Echocardiography",
- "inLanguage":"en","datePublished":"2026-07-17T07:00:00+09:00","dateModified":"2026-07-17T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Anatomically Faithful but Temporally Diffuse: Auditing Attribution for Left-Ventricular Ejection-Fraction Estimation from Echocardiography",
+ "inLanguage":"en","datePublished":"2026-07-24T07:00:00+09:00","dateModified":"2026-07-24T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.13738","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/72d2cb46b905.html"}
@@ -34,15 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Anatomically Faithful but Temporally Blind: Auditing Attribution for Left-Ventricular Ejection-Fraction Estimation from Echocardiography</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/17</span></div>
+    <h1>Anatomically Faithful but Temporally Diffuse: Auditing Attribution for Left-Ventricular Ejection-Fraction Estimation from Echocardiography</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/24</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/72d2cb46b905.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.13738" rel="nofollow noopener">https://arxiv.org/abs/2607.13738</a></span></div>
-  <div class="article-body"><p>arXiv:2607.13738v1 Announce Type: cross 
-Abstract: Background and Objective: Deep video models estimate left-ventricular ejection fraction (EF) from echocardiography with near-expert accuracy, and post-hoc attribution (Chefer relevance for transformers, Grad-CAM for CNNs) is increasingly used to certify that models &quot;look at the right place.&quot; Yet whether these explanations are faithful both spatially and temporally is unaudited. Because EF is defined by the end-systolic (ES) and end-diastolic (ED) frames, a faithful explanation must localize the left ventricle (space) and the decisive frames (time).
-  Methods: We fine-tune two distinct EF regressors on EchoNet-Dynamic -- a self-supervised VideoMAE transformer and a Kinetics-pretrained R(2+1)D CNN -- and audit each with architecture-matched attribution along three axes: intersection-over-relevance (IoR) against LV masks, deletion AUC, and a temporal localization index on ES/ED frames, each relative to chance with per-case 95% CIs over 50 studies. A tubelet-occlusion probe separates attribution failure from model behavior.
-  Results: Both models are anatomically faithful -- IoR 2.91x (VideoMAE) and 1.98x (R(2+1)D) above chance -- yet temporally blind: temporal localization is indistinguishable from chance (0.97--1.00) and no better than random attribution. Occlusion shows the models do not preferentially rely on ES/ED (0.90x chance), so temporal blindness reflects model behavior, not an attribution artifact.
-  Conclusions: Spatial faithfulness does not imply temporal faithfulness. Attribution can certify anatomical grounding while masking that a model ignores the clinically decisive frames -- a caution for XAI-based validation of video diagnostic models and a call for temporally-aware training and evaluation.</p></div>
+  <div class="article-body"><p>arXiv:2607.13738v2 Announce Type: replace-cross 
+Abstract: Deep video models estimate left-ventricular ejection fraction (EF) from echocardiography with near-expert accuracy, and post-hoc attribution is increasingly used to certify that such models look at the right place. Because EF is defined by the end-systolic (ES) and end-diastolic (ED) frames, a faithful explanation must localize not only the left ventricle in space but also the decisive frames in time. We audit attribution faithfulness along three axes -- spatial grounding, perturbation, and temporal reliance -- for two architecturally distinct regressors fine-tuned on EchoNet-Dynamic: a self-supervised VideoMAE transformer audited with Chefer relevance propagation, and a Kinetics-pretrained R(2+1)D convolutional network audited with Grad-CAM. All statistics are reported with bootstrap 95% confidence intervals over the full 1,276-study test split, against explicit chance baselines and attention-rollout and random-attribution controls. We find a pronounced asymmetry rather than a temporal null. Both models are strongly anatomically faithful (3.04x and 3.76x chance) but only weakly localized in time: tubelet occlusion places causal reliance on ES/ED at 1.05x chance for VideoMAE (95% CI [1.037, 1.068]) and 1.15x for R(2+1)D ([1.134, 1.166]) -- a threefold weaker concentration than in space -- and the attribution faithfully mirrors this weakness. Separating convergence from architecture shows that temporal reliance is architecture-determined and convergence-invariant: R(2+1)D attains 1.14x after a single training epoch and 1.15x at convergence, while both VideoMAE variants stay at 1.05x regardless of pretraining or accuracy. Spatial faithfulness therefore does not imply temporal faithfulness, and the shortfall is not remedied by further training.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DINS-IO: Learned Inertial Odometry via Differentiable INS Consistency — NewsMatome (EN)</title>
+<meta name="description" content="DINS-IO: Learned Inertial Odometry via Differentiable INS Consistency — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/7db742e64986.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/7db742e64986.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/7db742e64986.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/7db742e64986.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DINS-IO: Learned Inertial Odometry via Differentiable INS Consistency">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"DINS-IO: Learned Inertial Odometry via Differentiable INS Consistency",
+ "inLanguage":"en","datePublished":"2026-07-24T07:00:00+09:00","dateModified":"2026-07-24T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"ロボット技術担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2607.20232","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/7db742e64986.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/7db742e64986.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#ef4444"></span>ロボット技術</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>DINS-IO: Learned Inertial Odometry via Differentiable INS Consistency</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b></span></span><span>2026/07/24</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/7db742e64986.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.20232" rel="nofollow noopener">https://arxiv.org/abs/2607.20232</a></span></div>
+  <div class="article-body"><p>arXiv:2607.20232v1 Announce Type: new 
+Abstract: The training of learned inertial odometry depends on dense, high-precision position ground truth from motion capture, visual-inertial odometry or SLAM, which is costly and hard to acquire at scale. We propose DINS-IO, which learns inertial odometry directly from raw IMU streams without position labels. Our key insight is that the strapdown INS velocity recursion is a strong, fully differentiable consistency prior: the predicted velocity, rotated into the navigation frame, must agree with the integrated specific force up to an unknown initial velocity and a constant accelerometer bias. We cast this constraint as a sliding-window least-squares problem with a globally shared bias, solve it in closed form, and use the solver residual as a self-supervised loss whose gradient flows back to the network through the analytic solution. To supply this per-sample constraint, we design a high-frequency network that emits dense body-frame velocity at the IMU rate. Since the self-supervised network learns consistent motion but its velocity is not yet metrically calibrated, we calibrate it to true metric velocity from a few labeled trajectories by directly supervising the predicted body-frame velocity and adapting only low-rank (LoRA) patches. On standard benchmarks, DINS-IO pretrained self-supervised and fine-tuned with a small fraction of labels matches or surpasses fully supervised baselines.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

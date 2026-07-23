@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AGG: Jacobian-Aggregated Group Gradient for Efficient GRPO Training of Diffusion Models — NewsMatome (EN)</title>
-<meta name="description" content="AGG: Jacobian-Aggregated Group Gradient for Efficient GRPO Training of Diffusion Models — original-language edition. Japanese translation available.">
+<title>JAGG: Jacobian-Aggregated Group Gradient for Efficient GRPO Training of Diffusion Models — NewsMatome (EN)</title>
+<meta name="description" content="JAGG: Jacobian-Aggregated Group Gradient for Efficient GRPO Training of Diffusion Models — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/466c8f92e395.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/466c8f92e395.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/466c8f92e395.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/466c8f92e395.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AGG: Jacobian-Aggregated Group Gradient for Efficient GRPO Training of Diffusion Models">
+<meta property="og:title" content="JAGG: Jacobian-Aggregated Group Gradient for Efficient GRPO Training of Diffusion Models">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"AGG: Jacobian-Aggregated Group Gradient for Efficient GRPO Training of Diffusion Models",
- "inLanguage":"en","datePublished":"2026-07-22T07:00:00+09:00","dateModified":"2026-07-22T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"JAGG: Jacobian-Aggregated Group Gradient for Efficient GRPO Training of Diffusion Models",
+ "inLanguage":"en","datePublished":"2026-07-24T07:00:00+09:00","dateModified":"2026-07-24T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.17572","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/466c8f92e395.html"}
@@ -34,11 +34,11 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>AGG: Jacobian-Aggregated Group Gradient for Efficient GRPO Training of Diffusion Models</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/22</span></div>
+    <h1>JAGG: Jacobian-Aggregated Group Gradient for Efficient GRPO Training of Diffusion Models</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/24</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/466c8f92e395.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.17572" rel="nofollow noopener">https://arxiv.org/abs/2607.17572</a></span></div>
-  <div class="article-body"><p>arXiv:2607.17572v1 Announce Type: new 
+  <div class="article-body"><p>arXiv:2607.17572v2 Announce Type: replace 
 Abstract: Group Relative Policy Optimization (GRPO) is a powerful reinforcement learning algorithm for aligning generative models with human preferences. While successful in large language models~\cite{shao2024deepseekmathpushinglimitsmathematical}, its extension to diffusion and flow matching models introduces a severe computational bottleneck: gradients must be back-propagated through the high-capacity DiT backbone at \emph{every} timestep of the sampling trajectory, making high-resolution text-to-image (T2I) training prohibitively expensive. Training-free DiT inference acceleration methods (e.g., $\Delta$-DiT, ScalingCache) exploit the fact that DiT hidden states and velocity predictions vary \emph{smoothly and nearly linearly} along the trajectory. We ask whether the same linearity can reduce the backward-pass cost of DiT RL training, and answer affirmatively with \textbf{JAGG} (\textbf{J}acobian-\textbf{A}ggregated \textbf{G}roup \textbf{G}radient), which reduces full transformer backward passes from $W$ to $2$ per group of $W$ consecutive steps. JAGG approximates intermediate-step Jacobians via $t$-weighted interpolation of the endpoint Jacobians, then aggregates per-step upstream signals into two composite gradients applied through a single joint backward pass. We prove this interpolation is \emph{exact} when the velocity is linear in $(z,t)$, and a cosine-similarity routing rule (\texttt{jagg\_frac}) deploys JAGG only where the assumption holds. Experiments on T2I benchmarks show JAGG delivers $\sim$2$\times$ backward speedup with negligible quality degradation.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
