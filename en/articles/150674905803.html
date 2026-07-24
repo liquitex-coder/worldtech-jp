@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StrideDiffusion: Accelerating Diffusion Models for Time-series Generation — NewsMatome (EN)</title>
+<meta name="description" content="StrideDiffusion: Accelerating Diffusion Models for Time-series Generation — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/150674905803.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/150674905803.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/150674905803.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/150674905803.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="StrideDiffusion: Accelerating Diffusion Models for Time-series Generation">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"StrideDiffusion: Accelerating Diffusion Models for Time-series Generation",
+ "inLanguage":"en","datePublished":"2026-07-25T07:00:00+09:00","dateModified":"2026-07-25T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2607.20545","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/150674905803.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/150674905803.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>StrideDiffusion: Accelerating Diffusion Models for Time-series Generation</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/25</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/150674905803.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.20545" rel="nofollow noopener">https://arxiv.org/abs/2607.20545</a></span></div>
+  <div class="article-body"><p>arXiv:2607.20545v1 Announce Type: new 
+Abstract: Diffusion models have become competitive generators for time series, but their practical use is limited by the large number of sequential denoising steps required at inference time. Existing fast samplers typically use fixed or generic timestep schedules, overlooking a distinctive property of time-series diffusion: different spectral bands evolve at different rates during the reverse process. We introduce StrideDiffusion, a training-free spectral-aware sampler that adaptively selects the denoising stride from band-level activity. At each step, StrideDiffusion monitors relative band energy, log-power drift, and phase velocity to identify whether high- frequency dynamics remain active or whether the trajectory is dominated by stable low-frequency structure. It then takes fine steps when rapidly varying bands are active and larger jumps once only coarse components remain. A bandwise stability analysis shows that inactive frequency bands change only linearly with the jump size under deterministic affine reverse updates, providing a local justification for spectral activity as a step-size indicator. Across six unconditional time-series generation benchmarks, StrideDiffusion uses only 14-66 function evaluations instead of 500/1000 denoising steps, achieving up to 18.9x wall-clock speedup while preserving or improving generation quality. On conditional imputation and forecasting, it further delivers 5-14x average acceleration with comparable predictive accuracy. These results show that spectral evolution provides a practical and principled signal for fast time-series diffusion sampling. Our code is available at https://anonymous.4open.science/r/stridediff-ts.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

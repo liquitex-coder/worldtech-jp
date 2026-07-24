@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SR-TTT Does Not Learn Retrieval: A Correction and Mechanistic Post-Mortem of Surprisal-Aware Residual Test-Time Training — NewsMatome (EN)</title>
+<meta name="description" content="SR-TTT Does Not Learn Retrieval: A Correction and Mechanistic Post-Mortem of Surprisal-Aware Residual Test-Time Training — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/cc1ef9b3efcb.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/cc1ef9b3efcb.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/cc1ef9b3efcb.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/cc1ef9b3efcb.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SR-TTT Does Not Learn Retrieval: A Correction and Mechanistic Post-Mortem of Surprisal-Aware Residual Test-Time Training">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"SR-TTT Does Not Learn Retrieval: A Correction and Mechanistic Post-Mortem of Surprisal-Aware Residual Test-Time Training",
+ "inLanguage":"en","datePublished":"2026-07-25T07:00:00+09:00","dateModified":"2026-07-25T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2603.06642","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/cc1ef9b3efcb.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/cc1ef9b3efcb.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>SR-TTT Does Not Learn Retrieval: A Correction and Mechanistic Post-Mortem of Surprisal-Aware Residual Test-Time Training</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/25</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/cc1ef9b3efcb.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2603.06642" rel="nofollow noopener">https://arxiv.org/abs/2603.06642</a></span></div>
+  <div class="article-body"><p>arXiv:2603.06642v2 Announce Type: replace 
+Abstract: Test-Time Training (TTT) language models replace the KV-cache with fast weights updated during inference, achieving O(1) memory but suffering catastrophic failure on exact-recall tasks. Version 1 of this work proposed SR-TTT, which routes high-surprisal tokens to a sparse exact-attention Residual Cache, and reported large Needle-in-a-Haystack gains. We show those gains were evaluation artifacts: the loss and metric read logits at the answer positions rather than one position earlier, training both models to copy an answer already visible in their input (a model trained on retrieval-impossible data reaches 100% accuracy under the flawed metric); additionally, the cache attended non-causally over future tokens, including the answer itself. We release a corrected implementation with startup causality self-tests, then ask whether the SR-TTT hypothesis survives correction. It does not, and the failure decomposes into two independent, separately measured bottlenecks. Storage: surprisal gating is systematically position-biased - the TTT reconstruction loss requires burn-in before a needle becomes relatively surprising, so early-context needles are stored at near-zero rates (0-1% containment at depth 0.1) exactly where long-context memory matters most. Addressing: with storage solved by an oracle and with new trainable read-time projections, per-slot attention supervision raises addressing mass 2.5x (0.06 -&gt; 0.15) yet token accuracy is statistically unchanged, and retrieval extracts only approx. 0.06 nats of the 2.30-nat needle; position-free content addressing cannot resolve ordered slots whose contents are near-interchangeable. Exact match remains 0% in all 2,250 paired trials across all corrected conditions. We retract the claims of v1 and offer the corrected codebase, diagnostic protocol, and negative results as a cautionary reference for surprise-gated memory architectures.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
