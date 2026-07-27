@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Do Modules Stay in Their Lane? Role Drift in Compound LLM Systems — NewsMatome (EN)</title>
+<meta name="description" content="Do Modules Stay in Their Lane? Role Drift in Compound LLM Systems — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/bc0d2e279e10.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/bc0d2e279e10.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/bc0d2e279e10.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/bc0d2e279e10.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Do Modules Stay in Their Lane? Role Drift in Compound LLM Systems">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Do Modules Stay in Their Lane? Role Drift in Compound LLM Systems",
+ "inLanguage":"en","datePublished":"2026-07-28T07:00:00+09:00","dateModified":"2026-07-28T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2607.21627","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/bc0d2e279e10.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/bc0d2e279e10.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Do Modules Stay in Their Lane? Role Drift in Compound LLM Systems</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/28</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/bc0d2e279e10.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.21627" rel="nofollow noopener">https://arxiv.org/abs/2607.21627</a></span></div>
+  <div class="article-body"><p>arXiv:2607.21627v1 Announce Type: cross 
+Abstract: End-to-end reinforcement learning can improve the accuracy of compound LLM systems, but it does not constrain how modules divide labor internally. We identify Role Drift, a failure mode in which modules preserve or improve end-task performance while deviating from their assigned roles through role-violating shortcuts that remain invisible to system-level evaluation. To make role drift observable and controllable, we propose Role Anchor, a regularizer that modulates how much each module deviates from its assigned role during end-to-end training. The key idea is to preserve how the role prompt shifts the module&#x27;s next-token predictions relative to a neutral prompt, which serves as a proxy for the role&#x27;s intended effect during training. Experiments on two compound LLM pipelines reveal role drift that accuracy alone fails to detect: a decomposer meant to split a question into sub-questions for a separate solver instead plants the answer in them, and a reader meant to answer from retrieved passages instead falls back on parametric memory. In fact, on the decomposer pipeline this shortcut drives most of the apparent RL gain: 86% of it vanishes once the decomposer is held to its role, indicating that terminal accuracy alone can badly overstate how much a compound system has genuinely learned. Across both pipelines, Role Anchor mitigates role drift at a tunable accuracy cost that varies by pipeline and anchor strength. Additional gradient analysis suggests that the regularizer reduces alignment with the role-drift direction rather than simply suppressing learning.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
