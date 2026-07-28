@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Schema-Aware Localisation (SAL): Live Schema Grounding and Hallucination Validation for Oracle NL2SQL — NewsMatome (EN)</title>
+<meta name="description" content="Schema-Aware Localisation (SAL): Live Schema Grounding and Hallucination Validation for Oracle NL2SQL — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/e7354e5737b6.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/e7354e5737b6.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/e7354e5737b6.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/e7354e5737b6.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Schema-Aware Localisation (SAL): Live Schema Grounding and Hallucination Validation for Oracle NL2SQL">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Schema-Aware Localisation (SAL): Live Schema Grounding and Hallucination Validation for Oracle NL2SQL",
+ "inLanguage":"en","datePublished":"2026-07-29T07:00:00+09:00","dateModified":"2026-07-29T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2607.22572","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/e7354e5737b6.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/e7354e5737b6.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Schema-Aware Localisation (SAL): Live Schema Grounding and Hallucination Validation for Oracle NL2SQL</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/29</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/e7354e5737b6.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.22572" rel="nofollow noopener">https://arxiv.org/abs/2607.22572</a></span></div>
+  <div class="article-body"><p>arXiv:2607.22572v1 Announce Type: new 
+Abstract: Large language models can generate fluent SQL from natural language, but on real enterprise Oracle databases they frequently fail at execution time: columns and aliases are hallucinated and dialect-specific syntax is missed, leading to ORA-00904 invalid-identifier errors. In this setting, failures are primarily due to missing schema grounding: the model cannot know which tables and columns actually exist. This paper introduces Schema-Aware Localisation (SAL), a lightweight middleware layer for Oracle NL2SQL that requires no model retraining. SAL queries Oracle&#x27;s USER_TAB_COLUMNS catalog to build a live schema map, selects a relevant table subset for each question (falling back to the full schema for multi-table queries), and injects this ground-truth context into the LLM prompt. Generated SQL is then checked by the Hallucination Index (Hidx), which validates every alias.column reference against the live catalog, automatically rewrites predictable prefix errors, and otherwise triggers a structured retry with itemised corrections. We evaluate SAL on 500 TPC-H natural language questions executed against a live Oracle Autonomous Database 23c instance using GPT-4o-mini. Without any schema grounding, execution-grounded truth (EGT; executes and matches the reference result set) is 2.2% (12/500). A hand-written static schema hint brings EGT to 62.0%. SAL, with no manual schema curation, achieves 62.6% EGT (96% simple, 95% medium, 40.7% complex) while reducing execution failures from 97.6% to 2.6%.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

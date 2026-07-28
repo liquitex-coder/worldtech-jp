@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ConsistencyGate: Preventing Memory Contamination in LLM Agents via Self-Consistency Admission Control — NewsMatome (EN)</title>
+<meta name="description" content="ConsistencyGate: Preventing Memory Contamination in LLM Agents via Self-Consistency Admission Control — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/21b685f0e09b.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/21b685f0e09b.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/21b685f0e09b.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/21b685f0e09b.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ConsistencyGate: Preventing Memory Contamination in LLM Agents via Self-Consistency Admission Control">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"ConsistencyGate: Preventing Memory Contamination in LLM Agents via Self-Consistency Admission Control",
+ "inLanguage":"en","datePublished":"2026-07-29T07:00:00+09:00","dateModified":"2026-07-29T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2607.22962","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/21b685f0e09b.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/21b685f0e09b.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>ConsistencyGate: Preventing Memory Contamination in LLM Agents via Self-Consistency Admission Control</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/29</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/21b685f0e09b.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.22962" rel="nofollow noopener">https://arxiv.org/abs/2607.22962</a></span></div>
+  <div class="article-body"><p>arXiv:2607.22962v1 Announce Type: new 
+Abstract: LLM agents that operate over many turns accumulate facts in an external memory store and reuse them as premises for downstream reasoning. A hallucinated fact written at one step therefore persists as a false premise for every subsequent step, a failure mode we call memory contamination. Existing memory management addresses retrieval and capacity but not write-time correctness; this admission problem cannot be solved by utility- or recency-based criteria, and uncontrolled contamination compounds across long trajectories. We propose ConsistencyGate, a write-time admission gate that, before committing a candidate fact m extracted from context c, queries the LLM K times for a soft support score and admits m only when the average exceeds a threshold. The mechanism is model-agnostic, requires no fine-tuning, and reduces to a single forward pass in a log-probability variant for latency-sensitive deployments. To measure the effect on natural data, we construct two real-conversation benchmarks (LoCoMo-Contam and MSC-Contam) by planting controlled single-detail corruptions in long-term conversations from LoCoMo and MSC, and complement them with a structured synthetic corpus (MemContam) that isolates a near-oracle upper bound. Across four LLM backbones, ConsistencyGate reduces contamination on every benchmark relative to a write-everything baseline, with the cost concentrated on facts that are stated only implicitly in the source context. We release all three benchmarks together with the gate implementation.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

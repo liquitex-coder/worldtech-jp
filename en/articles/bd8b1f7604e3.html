@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>When Calibration Fails the Vulnerable Hospital: Federated Conformal Risk Control via Risk-Curve Shrinkage — NewsMatome (EN)</title>
-<meta name="description" content="When Calibration Fails the Vulnerable Hospital: Federated Conformal Risk Control via Risk-Curve Shrinkage — original-language edition. Japanese translation available.">
+<title>When Average Calibration Fails: Site-Conditional Federated Conformal Risk Control — NewsMatome (EN)</title>
+<meta name="description" content="When Average Calibration Fails: Site-Conditional Federated Conformal Risk Control — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/bd8b1f7604e3.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/bd8b1f7604e3.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/bd8b1f7604e3.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/bd8b1f7604e3.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="When Calibration Fails the Vulnerable Hospital: Federated Conformal Risk Control via Risk-Curve Shrinkage">
+<meta property="og:title" content="When Average Calibration Fails: Site-Conditional Federated Conformal Risk Control">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"When Calibration Fails the Vulnerable Hospital: Federated Conformal Risk Control via Risk-Curve Shrinkage",
- "inLanguage":"en","datePublished":"2026-06-20T07:00:00+09:00","dateModified":"2026-06-20T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"When Average Calibration Fails: Site-Conditional Federated Conformal Risk Control",
+ "inLanguage":"en","datePublished":"2026-07-29T07:00:00+09:00","dateModified":"2026-07-29T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.20115","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/bd8b1f7604e3.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>When Calibration Fails the Vulnerable Hospital: Federated Conformal Risk Control via Risk-Curve Shrinkage</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/06/20</span></div>
+    <h1>When Average Calibration Fails: Site-Conditional Federated Conformal Risk Control</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/29</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/bd8b1f7604e3.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.20115" rel="nofollow noopener">https://arxiv.org/abs/2606.20115</a></span></div>
-  <div class="article-body"><p>arXiv:2606.20115v1 Announce Type: new 
-Abstract: Conformal risk control (CRC) provides distribution-free guarantees on segmentation quality by calibrating a prediction-set threshold on held-out data. In federated deployments, the standard approach pools calibration scores across sites into a single threshold. We provide the first quantification, on real multi-institutional brain tumor data (FeTS-2022, 1,251 subjects, 20 institutions), showing that this naive pooled CRC protects the average hospital but violates coverage at 40% of individual institutions, with the worst site exceeding the target false-negative rate by 7.8 percentage points. The naive alternative, per-site local CRC, largely restores coverage but inflates prediction sets by 83x, rendering them clinically useless. We propose a shrinkage-based federated CRC protocol: each site transmits only its empirical risk curve (G scalars) to a server, which computes a shrinkage-regularized threshold per site. A single hyperparameter n0 smoothly trades worst-case coverage for prediction-set efficiency; leave-one-site-out sensitivity analysis identifies n0=19, achieving 2.7/20 violations at 2.0x stretch. We further show that direct Lagrangian optimization of coverage budgets fails, concentrating risk on vulnerable hospitals, and that the finite-sample correction term is essential: removing it triples violations. The marginal CRC guarantee is preserved by construction under the stated site-mixture assumption; per-site coverage is validated across four targets with three seeds. No patient-level images, masks, or per-volume scores leave any site.</p></div>
+  <div class="article-body"><p>arXiv:2606.20115v3 Announce Type: replace 
+Abstract: Conformal risk control (CRC) provides distribution-free segmentation guarantees by calibrating a prediction-set threshold on held-out data. In federated deployments, the standard approach pools calibration scores into a single threshold. We quantify, on real multi-institutional brain tumor data (FeTS-2022, 1,251 subjects, 20 institutions), a critical failure: naive pooled CRC protects the average hospital but violates coverage at 40% of individual institutions, with the worst site exceeding the target false-negative rate by 7.8 percentage points. We trace this failure to a hidden design choice: the aggregation weights implicitly determine whose coverage is protected. Sample-size weighting optimizes patient-level validity but can sacrifice institution-level reliability; equal-site weighting improves institution-level reliability on this benchmark at comparable efficiency, using only a single scalar per site. We propose risk-curve shrinkage as a principled mechanism: each site transmits its empirical risk curve (G scalars) and a single hyperparameter n0 smoothly interpolates between site-specific local calibration and sample-size-weighted pooled calibration. Leave-one-site-out sensitivity analysis identifies n0=19, achieving 2.7/20 violations at 2.0x stretch. Direct Lagrangian budget optimization fails by concentrating risk on vulnerable hospitals; the finite-sample correction term is essential: removing it triples violations. No patient-level images, masks, or per-volume scores leave any site.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

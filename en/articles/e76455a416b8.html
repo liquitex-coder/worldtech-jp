@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agentic Autoresearch for CT Reconstruction — NewsMatome (EN)</title>
+<meta name="description" content="Agentic Autoresearch for CT Reconstruction — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/e76455a416b8.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/e76455a416b8.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/e76455a416b8.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/e76455a416b8.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Agentic Autoresearch for CT Reconstruction">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Agentic Autoresearch for CT Reconstruction",
+ "inLanguage":"en","datePublished":"2026-07-29T07:00:00+09:00","dateModified":"2026-07-29T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2607.22824","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/e76455a416b8.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/e76455a416b8.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Agentic Autoresearch for CT Reconstruction</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/29</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/e76455a416b8.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.22824" rel="nofollow noopener">https://arxiv.org/abs/2607.22824</a></span></div>
+  <div class="article-body"><p>arXiv:2607.22824v1 Announce Type: cross 
+Abstract: Comparing CT reconstruction methods fairly is labor-intensive and largely manual, and many benchmarks use idealized data. We ask whether a large language model (LLM) agent can do the labor of reconstruction research on its own, and whether a ranking measured on ideal data predicts behavior under realistic noise.
+  We built an agentic loop: the agent edits a solver, runs a short cluster job, reads one frozen metric, and revises. The metric is a calibrated headroom score against the FBP baseline, inside the field of view; every method shares the same differentiable fan-beam projector. We benchmarked 26 methods on Mayo low-dose CT (noise-limited) and a 128-view sparse-view breast task from the noiseless DL-Sparse-View Challenge, with validation-selected iterations scored on a held-out test set. Every trained breast model was then re-scored on noisy inputs (I_0 = 10^5 photons) without retraining, and separately retrained on matched noise.
+  The agent independently implemented, tuned, and benchmarked all 26 methods, and recombined them into a compact solver of 969 parameters that ties the top Mayo tier at the 1% level using 0.4% of the champion&#x27;s parameters. Benchmarking gives a tier of statistically indistinguishable top methods, not one winner. Mild input noise nearly inverts the breast ranking: the noiseless champion (a supervised image denoiser, hr 0.89) collapses to 0.00, while a learned primal-dual method rises to champion (0.72 to 0.93).
+  An ideal-data leaderboard therefore does not predict robustness. The inversion is a transfer effect, not a permanent deficit: retraining on matched noise restores much of the clean ranking (Spearman rho 0.04 to 0.61). Noise is only the easiest confounder in an open-ended set (beam hardening, scatter, anatomy, disease), so no single-factor challenge certifies generality. Benchmarks should model a broad spectrum of realistic factors at once.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

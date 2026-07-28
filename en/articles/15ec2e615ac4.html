@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A scalable online machine learning approach for Stock Recommendation — NewsMatome (EN)</title>
+<meta name="description" content="A scalable online machine learning approach for Stock Recommendation — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/15ec2e615ac4.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/15ec2e615ac4.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/15ec2e615ac4.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/15ec2e615ac4.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A scalable online machine learning approach for Stock Recommendation">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"A scalable online machine learning approach for Stock Recommendation",
+ "inLanguage":"en","datePublished":"2026-07-29T07:00:00+09:00","dateModified":"2026-07-29T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2607.23120","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/15ec2e615ac4.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/15ec2e615ac4.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>A scalable online machine learning approach for Stock Recommendation</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/29</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/15ec2e615ac4.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.23120" rel="nofollow noopener">https://arxiv.org/abs/2607.23120</a></span></div>
+  <div class="article-body"><p>arXiv:2607.23120v1 Announce Type: cross 
+Abstract: Stock recommendation systems face the dual challenge of adapting to rapidly changing market conditions while maintaining low-latency predictions for end users. Traditional batch-trained models fail to capture concept drift, and monolithic architectures struggle to provide fault tolerance under load. This paper presents a scalable online deep learning-based stock recommendation system built on a distributed microservices architecture using Kubernetes, Docker, and RabbitMQ. The system employs a hybrid leader-follower architecture where a primary model continuously trains on streaming financial data, including EPS, MACD, and price, from the Alpha Vantage API while multiple replica models serve user-facing recommendations in parallel. A multilayer perceptron implemented with TensorFlow Recommenders generates content-based recommendations using explicit user ratings (1-5) and transfer learning. The architecture ensures high availability. The leader persists model weights to Google Cloud Object Storage, allowing replicas to recover seamlessly upon failure, while RabbitMQ provides message durability and replay. Results demonstrate that the system serves stock recommendations in 23 seconds per request and processes up to 500 portfolio addition requests per second per follower. Key limitations include data staleness (up to 150 minutes due to API rate limits) and the absence of a service mesh for inter-cluster security. This work contributes a production-ready reference architecture for online recommender systems that balances consistency, availability, and scalability in a financial domain context</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

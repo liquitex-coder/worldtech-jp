@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Denial of Deadline: Network-Driven Accuracy Collapse in Distributed Inference Pipelines — NewsMatome (EN)</title>
+<meta name="description" content="Denial of Deadline: Network-Driven Accuracy Collapse in Distributed Inference Pipelines — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/670494cf52ae.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/670494cf52ae.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/670494cf52ae.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/670494cf52ae.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Denial of Deadline: Network-Driven Accuracy Collapse in Distributed Inference Pipelines">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Denial of Deadline: Network-Driven Accuracy Collapse in Distributed Inference Pipelines",
+ "inLanguage":"en","datePublished":"2026-07-29T07:00:00+09:00","dateModified":"2026-07-29T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2607.24692","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/670494cf52ae.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/670494cf52ae.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Denial of Deadline: Network-Driven Accuracy Collapse in Distributed Inference Pipelines</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/29</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/670494cf52ae.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.24692" rel="nofollow noopener">https://arxiv.org/abs/2607.24692</a></span></div>
+  <div class="article-body"><p>arXiv:2607.24692v1 Announce Type: cross 
+Abstract: Inference systems increasingly combine a fast path that returns predictions within the application&#x27;s latency deadline together with a higher-accuracy slow path that runs higher-compute methods on stronger, remote hardware, so its results can be returned on time and combined with the fast path predictions. Across several application domains, we abstract this inference architecture as a fast path, a slow path, and a coordination layer with two functions: a router that invokes the slow path and a merger that decides whether to incorporate its returned predictions. In this work, we show that this new coordination layer exposes a new attack surface: shaped workload attacks, e.g., Yo-Yo bursts, can exploit contention at shared resources along the slow path to push benign users&#x27; slow-path predictions past their latency deadlines. The merger then discards those predictions, while the fast path continues to return timely outputs. We refer to the resulting loss of slow-path accuracy benefits as accuracy collapse.
+  We demonstrate accuracy collapse in a two-tier edge-cloud multi-object tracking pipeline in autonomous driving. In simulation, approximately 4,000 burst-shaped requests increase benign p99 latency from 92ms to 2s, nearly eliminating the benefit of the slow path&#x27;s cloud inference, reducing object tracking quality by 7.0 HOTA points on average. We further find that accuracy degradation can significantly vary (2.0-18.7 HOTA points), depending on the video intervals that are targeted in the attack, and that certain rare classes (e.g., stop signs) lose nearly half of their pre-attack prediction accuracy. These results show that workload attacks can degrade prediction quality without needing either access to model weights or victim data, and motivate research on attacks and defenses for routing, merging, scheduling, and resource isolation in these emerging inference pipeline architectures.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

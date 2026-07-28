@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MegaSlide-DiT: Memory-Centric Adaptation and Deformable Local Attention for Efficient Video Diffusion — NewsMatome (EN)</title>
+<meta name="description" content="MegaSlide-DiT: Memory-Centric Adaptation and Deformable Local Attention for Efficient Video Diffusion — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/4895bc1ac8c0.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/4895bc1ac8c0.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/4895bc1ac8c0.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/4895bc1ac8c0.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MegaSlide-DiT: Memory-Centric Adaptation and Deformable Local Attention for Efficient Video Diffusion">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"MegaSlide-DiT: Memory-Centric Adaptation and Deformable Local Attention for Efficient Video Diffusion",
+ "inLanguage":"en","datePublished":"2026-07-29T07:00:00+09:00","dateModified":"2026-07-29T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2607.22696","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/4895bc1ac8c0.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/4895bc1ac8c0.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>MegaSlide-DiT: Memory-Centric Adaptation and Deformable Local Attention for Efficient Video Diffusion</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/29</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/4895bc1ac8c0.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.22696" rel="nofollow noopener">https://arxiv.org/abs/2607.22696</a></span></div>
+  <div class="article-body"><p>arXiv:2607.22696v1 Announce Type: cross 
+Abstract: High-resolution video diffusion models built on Diffusion Transformers (DiTs) deliver strong fidelity but quickly exhaust the memory budget of a single workstation. A 100 billion-plus parameter DiT easily requires over a terabyte of persistent state, while naive spatiotemporal self-attention grows quadratically in sequence length. These two walls -- parameter memory and activation memory -- prevent researchers from adapting massive generative models without large GPU clusters. We revisit this problem from a systems perspective and introduce MegaSlide-DiT, a prototype that demonstrates how a pre-trained 105B DiT can be adapted on a single H200 GPU with 1.5 TB of host RAM. Our key insight is that the GPU need not own the model state: all persistent weights, master weights and optimizer moments remain in host memory, while only transient shards are streamed to the GPU on demand. Simultaneously, we replace quadratic global attention with 3D Deformable Slide Attention (3D-DSA), a motion-adaptive local attention operator that reduces both memory and computational complexity to linear in the sequence length. We report detailed memory accounting, execution traces and evaluation results to substantiate our design. MegaSlide-DiT does not claim to train a 105B model from scratch on a single GPU, nor does it magically solve bandwidth limits; rather, it offers a pragmatic path for full-parameter adaptation of massive video diffusion models on high-end workstations.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

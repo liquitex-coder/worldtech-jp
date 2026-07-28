@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DraftExpert: Expansion-Aware Self-Speculative Decoding for End-Device MoE Inference — NewsMatome (EN)</title>
+<meta name="description" content="DraftExpert: Expansion-Aware Self-Speculative Decoding for End-Device MoE Inference — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/cc161d12af95.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/cc161d12af95.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/cc161d12af95.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/cc161d12af95.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DraftExpert: Expansion-Aware Self-Speculative Decoding for End-Device MoE Inference">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"DraftExpert: Expansion-Aware Self-Speculative Decoding for End-Device MoE Inference",
+ "inLanguage":"en","datePublished":"2026-07-29T07:00:00+09:00","dateModified":"2026-07-29T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2607.24434","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/cc161d12af95.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/cc161d12af95.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>DraftExpert: Expansion-Aware Self-Speculative Decoding for End-Device MoE Inference</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/29</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/cc161d12af95.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.24434" rel="nofollow noopener">https://arxiv.org/abs/2607.24434</a></span></div>
+  <div class="article-body"><p>arXiv:2607.24434v1 Announce Type: new 
+Abstract: Large Mixture-of-Experts (MoE) language models are attractive for end-device deployment because only a small subset of experts is active per token, but their routed expert weights often exceed accelerator memory. We target latency-critical single-user settings where routed experts are staged on demand from CPU memory to a GPU or from Flash to a mobile NPU. In this setting, self-speculative decoding faces a new bottleneck: increasing the draft expert set improves accuracy but triggers extra expert loading, while cheap small-footprint drafts have low acceptance; moreover, verifying a multi-token block activates the union of target experts and is no longer close to one target step. We propose DraftExpert, an expansion-aware self-speculative decoding framework for expert-offloaded MoE inference. DraftExpert trains one lightweight accelerator-resident draft expert per layer by self-distilling residual, logit/token, and router-agreement signals from the frozen target MoE. At inference time, it uses a fixed-footprint shared+top-1+draft-expert drafter together with confidence--expansion truncation and target-expert prefetching, while final tokens are still exactly verified by the target model. On DeepSeek-V2-Lite and Moonlight-16B-A3B across CPU-GPU and Flash-NPU offload, DraftExpert improves decode throughput by 1.45x on average, raises draft acceptance to 84~87%, and achieves 86~88% prefetch hit rates.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
