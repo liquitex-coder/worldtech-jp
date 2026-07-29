@@ -3,22 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Reliability Scales Inversely: Bigger Language Models Compound Mistakes Faster — NewsMatome (EN)</title>
-<meta name="description" content="Reliability Scales Inversely: Bigger Language Models Compound Mistakes Faster — original-language edition. Japanese translation available.">
+<title>Reliability Scales Inversely: Hallucinations Snowball Faster in Bigger Language Models — NewsMatome (EN)</title>
+<meta name="description" content="Reliability Scales Inversely: Hallucinations Snowball Faster in Bigger Language Models — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/eaa64356553b.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/eaa64356553b.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/eaa64356553b.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/eaa64356553b.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Reliability Scales Inversely: Bigger Language Models Compound Mistakes Faster">
+<meta property="og:title" content="Reliability Scales Inversely: Hallucinations Snowball Faster in Bigger Language Models">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Reliability Scales Inversely: Bigger Language Models Compound Mistakes Faster",
- "inLanguage":"en","datePublished":"2026-07-28T07:00:00+09:00","dateModified":"2026-07-28T07:00:00+09:00",
- "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Reliability Scales Inversely: Hallucinations Snowball Faster in Bigger Language Models",
+ "inLanguage":"en","datePublished":"2026-07-30T07:00:00+09:00","dateModified":"2026-07-30T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.18292","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/eaa64356553b.html"}
 </script>
@@ -32,14 +32,14 @@
 </div></header>
 <div class="wrap"><article class="article">
   <div class="article-head">
-    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Reliability Scales Inversely: Bigger Language Models Compound Mistakes Faster</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/28</span></div>
+    <h1>Reliability Scales Inversely: Hallucinations Snowball Faster in Bigger Language Models</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/30</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/eaa64356553b.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.18292" rel="nofollow noopener">https://arxiv.org/abs/2607.18292</a></span></div>
-  <div class="article-body"><p>arXiv:2607.18292v2 Announce Type: replace 
-Abstract: As language models scale, answers start truer but degrade faster: scaling buys capability but erodes reliability. The knowledge-gap account -- more data, retrieval, or scale -- misses an auto-regressive risk residual that increases with scale: the model commits to a low-probability token, conditions on it as established, and snowballs. We track this through per-position disagreement $\delta = \log p_M - \log p_O$ against a stronger same-family oracle, whose second moment splits exactly into bias$^2$ $\mathrm{KL}(p_M \,\|\, p_O)^2$ and risk $\mathrm{Var}[\delta]$. Across three model families, we present four findings: (i) under scaling, the knowledge gap falls up to $7\times$ while knowledge degradation grows up to $39\times$; (ii) at a fabrication, felt uncertainty $H(p_M)$ relaxes quickly while oracle-referenced risk persists up to $23\times$ longer, leaving a confident-but-precarious risk regime that bridges consecutive fabrications; (iii) this regime is causal -- a fixed-$\mathrm{KL}$ variance contraction cuts web-verified hallucination $35$-$74\%$; and, (iv) it evades self-monitoring, with $p_M$-only detectors (e.g. semantic entropy) firing $\approx$$30\%$ less ($p\!&lt;\!10^{-16}$) on the risky branch despite it holding nearly $4\times$ more fabrications. Bigger models snowball mistakes faster, through a failure mode that is dominant, self-perpetuating, causal and invisible to the model itself.</p></div>
+  <div class="article-body"><p>arXiv:2607.18292v3 Announce Type: replace-cross 
+Abstract: Bigger language models are less reliable. Across three families, three benchmarks and six rungs, including in-the-wild chat logs, scaling closes the start-of-response knowledge gap up to $7\times$ while within-response knowledge degradation grows up to $39\times$. We trace that residual to one variable, the per-position disagreement $\delta = \log p_M - \log p_O$ against a stronger oracle, whose second moment splits exactly into bias$^2$ $\mathrm{KL}(p_M \,\|\, p_O)^2$ and decoding risk $\mathrm{Var}[\delta]$. That split is an interpretability statement before it is a statistical one: the model&#x27;s self-readable uncertainty $H(p_M)$ enters only the bias term, so the risk term has no model-readable component. Risk also takes a growing share of the squared error with scale, $31\%$ to $49\%$ from $1.7$B to $14$B. At a fabrication $H(p_M)$ relaxes within one token while risk persists up to $23\times$ longer, leaving a confident-but-precarious regime that bridges consecutive fabrications ($+69\%$ at $14$B). Contracting that risk at fixed $\mathrm{KL}$ removes $35$-$74\%$ of web-verified hallucinations across six rungs and three families. Semantic entropy fires $\approx$$30\%$ less on that branch ($p\!&lt;\!10^{-16}$) though it carries nearly $4\times$ the fabrications. Bigger models snowball mistakes faster, through a failure mode that is dominant, self-perpetuating, causal and invisible to the model itself.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

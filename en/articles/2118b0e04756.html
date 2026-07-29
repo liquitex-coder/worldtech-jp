@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CG-MuTra: Continuously-Gated Multi-Terrain Adaptive Recovery for Unified Humanoid Fall Recovery and Locomotion — NewsMatome (EN)</title>
-<meta name="description" content="CG-MuTra: Continuously-Gated Multi-Terrain Adaptive Recovery for Unified Humanoid Fall Recovery and Locomotion — original-language edition. Japanese translation available.">
+<title>UniReLo: Learning a Unified Humanoid Policy from Fall Recovery to Locomotion across Diverse Terrains — NewsMatome (EN)</title>
+<meta name="description" content="UniReLo: Learning a Unified Humanoid Policy from Fall Recovery to Locomotion across Diverse Terrains — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/2118b0e04756.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/2118b0e04756.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/2118b0e04756.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/2118b0e04756.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CG-MuTra: Continuously-Gated Multi-Terrain Adaptive Recovery for Unified Humanoid Fall Recovery and Locomotion">
+<meta property="og:title" content="UniReLo: Learning a Unified Humanoid Policy from Fall Recovery to Locomotion across Diverse Terrains">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"CG-MuTra: Continuously-Gated Multi-Terrain Adaptive Recovery for Unified Humanoid Fall Recovery and Locomotion",
- "inLanguage":"en","datePublished":"2026-07-08T07:00:00+09:00","dateModified":"2026-07-08T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"UniReLo: Learning a Unified Humanoid Policy from Fall Recovery to Locomotion across Diverse Terrains",
+ "inLanguage":"en","datePublished":"2026-07-30T07:00:00+09:00","dateModified":"2026-07-30T07:00:00+09:00",
  "author":{"@type":"Organization","name":"ロボット技術担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.08922","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/2118b0e04756.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#ef4444"></span>ロボット技術</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>CG-MuTra: Continuously-Gated Multi-Terrain Adaptive Recovery for Unified Humanoid Fall Recovery and Locomotion</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b></span></span><span>2026/07/08</span></div>
+    <h1>UniReLo: Learning a Unified Humanoid Policy from Fall Recovery to Locomotion across Diverse Terrains</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b></span></span><span>2026/07/30</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/2118b0e04756.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.08922" rel="nofollow noopener">https://arxiv.org/abs/2606.08922</a></span></div>
-  <div class="article-body"><p>arXiv:2606.08922v2 Announce Type: replace 
-Abstract: Falling is an inherent risk for humanoid robots operating in unstructured environments. Existing reinforcement learning methods that leverage expert motion priors are predominantly trained on flat-ground fall-recovery tasks and typically rely on hard switching between separate recovery and locomotion controllers. As a result, such policies struggle to achieve smooth and robust recovery behaviors when deployed on complex terrains such as slopes and gravel. This paper presents \textbf{CG-MuTra}, a unified continuously-gated multi-scale discriminator framework for multi-terrain adaptive fall recovery. CG-MuTra introduces a proprioceptively-derived continuous gate $\alpha = f(z_{\mathrm{root}}, s)$ that softly blends three discriminators operating at different temporal horizons: frame-level stability ($\Phi_{\mathrm{frame}}$, $H=1$), temporal smoothness ($\Phi_{\mathrm{seq}}$, $H=5$), and gait periodicity ($\Phi_{\mathrm{gait}}$, $H=10$). This design enables seamless recovery-to-locomotion transitions without explicit mode switching. Furthermore, we propose a Terrain-Pose Risk Coupling Sampler (TPRCS) that explicitly couples dangerous edge initial poses with terrain dynamics during training, forming a closed-loop synergy with the terrain-privileged shaping term $\Xi_\kappa$. We validate CG-MuTra on a Unitree G1 humanoid across grass, slopes ($10^\circ$--$15^\circ$), and gravel in both simulation and hardware. Experimental results demonstrate that CG-MuTra achieves smooth, highly robust fall recovery and locomotion transitions across multiple terrains while maintaining a single deployable policy.</p></div>
+  <div class="article-body"><p>arXiv:2606.08922v3 Announce Type: replace 
+Abstract: Reliable fall recovery, which commonly aims at attaining a nominal upright posture, is essential for the autonomous operation of humanoid robots in unstructured field environments. Although existing posture-centered methods can synthesize coordinated whole-body recovery motions from diverse fallen configurations, they may result in a dynamically fragile support state, leading to secondary loss of balance or unstable resumption of commanded locomotion, particularly under terrain-dependent contact conditions. We propose to learn a unified humanoid policy from fall recovery to locomotion (UniReLo) across heterogeneous field terrains. UniReLo leverages continuously gated multi-scale motion priors to modulate frame-, sequence-, and gait-level adversarial supervision according to recovery progress, preserving the distinct temporal structures of recovery and locomotion without requiring fixed-threshold switching. In addition, it takes advantage of terrain-conditioned recovery guidance to evaluate the evolving support state using a terrain-relative support representation and complementary support-feasibility factors. Simulation and outdoor real-world experiments demonstrate that UniReLo can deliver stable and continuous recovery-to-locomotion behaviors for humanoids across diverse field terrains.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

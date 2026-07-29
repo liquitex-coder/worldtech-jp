@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data Quality Profiling at Scale with Progressive Sampling: A Benchmark for Data-Centric AI Pipelines — NewsMatome (EN)</title>
+<meta name="description" content="Data Quality Profiling at Scale with Progressive Sampling: A Benchmark for Data-Centric AI Pipelines — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/c3124a476c70.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/c3124a476c70.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/c3124a476c70.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/c3124a476c70.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Data Quality Profiling at Scale with Progressive Sampling: A Benchmark for Data-Centric AI Pipelines">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Data Quality Profiling at Scale with Progressive Sampling: A Benchmark for Data-Centric AI Pipelines",
+ "inLanguage":"en","datePublished":"2026-07-30T07:00:00+09:00","dateModified":"2026-07-30T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2607.25356","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/c3124a476c70.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/c3124a476c70.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Data Quality Profiling at Scale with Progressive Sampling: A Benchmark for Data-Centric AI Pipelines</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/30</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/c3124a476c70.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.25356" rel="nofollow noopener">https://arxiv.org/abs/2607.25356</a></span></div>
+  <div class="article-body"><p>arXiv:2607.25356v1 Announce Type: cross 
+Abstract: Data quality profiling -- computing missing-value rates, duplicate fractions, outlier densities, and functional-dependency violations -- is foundational for data-centric AI pipelines, yet exhaustive scans over millions of rows are prohibitively slow for near-real-time monitoring. Progressive sampling is the standard alternative; the open question is which strategy best preserves profile fidelity at scale. We benchmark nine sampling strategies -- blind (random uniform, geometric, Yamane, cluster) and proxy-guided (Metropolis-Hastings, DAG, stratified by column type or quality score, importance-weighted) -- on three real-world datasets (NYC 311, NYPD arrests, UCI Adult; up to 500K rows), an IoT sensor stream (2.3M rows), two ultra-large real datasets including Ultra-Marathon Running (up to 7.4M rows), and synthetic data scaled to 5x10^6 rows. Contrary to the assumption sharpens estimates, blind representative samplers dominate uniformly. At a 5% budget, random uniform achieves 0.49% mean relative error on NYC 311; DAG-guided MCMC yields 19.5% (approx. 40x worse), and across all real datasets DAG is 11-49x worse (Wilcoxon W=0, p=0.002, n=9 pairs). Cluster sampling matches random uniform (MRE 0.110 vs. 0.111); proxy-guided methods share DAG&#x27;s failure mode (MRE 0.20-0.35). At scale, random uniform is near-linear (O(N^{0.964})) while DAG is super-linear (O(N^{1.272})), running 28--47x slower on ultra-large data with 6x worse accuracy. The root cause is an IQR proxy mismatch: proxy-guided samplers over-pursue numeric outliers, while quality defects concentrate in categorical columns invisible to the proxy. The actionable finding: representativeness, not domain knowledge, determines sampler quality -- schema-free random uniform or cluster sampling suffices for production-grade quality profiling at scale.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
