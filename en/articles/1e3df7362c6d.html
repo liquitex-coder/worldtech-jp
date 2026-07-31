@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flat Score, Amplified Failures: How the Error Budget Masks Damage in Quantized LLM Agents — NewsMatome (EN)</title>
+<meta name="description" content="Flat Score, Amplified Failures: How the Error Budget Masks Damage in Quantized LLM Agents — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/1e3df7362c6d.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/1e3df7362c6d.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/1e3df7362c6d.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/1e3df7362c6d.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flat Score, Amplified Failures: How the Error Budget Masks Damage in Quantized LLM Agents">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Flat Score, Amplified Failures: How the Error Budget Masks Damage in Quantized LLM Agents",
+ "inLanguage":"en","datePublished":"2026-08-01T07:00:00+09:00","dateModified":"2026-08-01T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2607.27275","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/1e3df7362c6d.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/1e3df7362c6d.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Flat Score, Amplified Failures: How the Error Budget Masks Damage in Quantized LLM Agents</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/01</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/1e3df7362c6d.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.27275" rel="nofollow noopener">https://arxiv.org/abs/2607.27275</a></span></div>
+  <div class="article-body"><p>arXiv:2607.27275v1 Announce Type: new 
+Abstract: Post-training quantization to 4-bit weights is widely reported to be nearly lossless. We test this claim for multi-turn, tool-calling agents, where it now matters most. On $\tau^2$-bench, across two open-weight model families in dense and MoE variants and two domains (eight cells, 456 episodes each, at 16-, 8-, and 4-bit weights), quantization indeed looks free on the standard metric. No cell shows a score change that survives multiple-comparison correction, and in the cell that carries the largest process damage, equivalence testing bounds the change within $\pm$7.5 points. The process tells a different story. Quantization amplifies the failure the model already exhibits at full precision (tool-name hallucination in telecom, with the same directional trend in retail entity errors) by up to 2.5$\times$ in volume (+17.6 points per task), while creating essentially no new failures. The failure set is the same at every precision (rank correlation $\geq$ 0.94, 0.18% novel events). The score stays flat because the benchmark&#x27;s ten-error budget absorbs the extra failures. Shrinking the budget to two errors re-exposes a score gap of 17 points, and it does so only in the one cell where quantization added error volume, exactly as the masking account predicts. A targeted error-repair prompt, run for five telecom models at every precision, removes the damage exactly and only where it lives. Both diagnostics, the per-channel error rate and success under a shrinking budget, come from logs benchmarks already collect; we suggest reporting them alongside task reward.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

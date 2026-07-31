@@ -17,7 +17,7 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"Intent-Governed Tool Authorization for AI Agents",
- "inLanguage":"en","datePublished":"2026-07-29T07:00:00+09:00","dateModified":"2026-07-29T07:00:00+09:00",
+ "inLanguage":"en","datePublished":"2026-08-01T07:00:00+09:00","dateModified":"2026-08-01T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.22916","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/ad7ae55b7184.html"}
@@ -35,11 +35,11 @@
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
     <h1>Intent-Governed Tool Authorization for AI Agents</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/29</span></div>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/08/01</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/ad7ae55b7184.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.22916" rel="nofollow noopener">https://arxiv.org/abs/2606.22916</a></span></div>
-  <div class="article-body"><p>arXiv:2606.22916v2 Announce Type: replace 
-Abstract: AI agents increasingly act through external tools: they read private data, construct structured payloads, submit write requests, export records, and coordinate workflows across application boundaries. Existing authorization mechanisms usually ask whether an integration credential, app, or token can call a tool. That question is necessary but incomplete. A tool call can be authorized by static credentials and still be unjustified by the user&#x27;s current request. For example, a credential that can read and export records should not expose export authority when the user only asked for a bounded summary, and a model-generated delete call should not execute merely because the integration has a delete scope. This paper proposes Intent-Governed Access Control (IGAC), a server-side authorization layer that treats the user&#x27;s expressed intent as a monotone, auditable policy attribute for AI-agent tool use. IGAC introduces intent certificates, session-scoped policy narrowing, intent-aware manifest filtering, and intent-tool-payload consistency checks. The central invariant is that user intent may only reduce the authority granted by static integration policy; it never expands scopes, data policy, tenant boundaries, or review requirements. We map IGAC onto OpenPort, an existing governance substrate that already implements authorization-dependent discovery, scope and ABAC-style policy checks, draft-first writes, preflight impact binding, state-witness checks, idempotency, stable reason codes, and audit.</p></div>
+  <div class="article-body"><p>arXiv:2606.22916v3 Announce Type: replace 
+Abstract: Tool-using AI agents commonly operate under integration credentials whose static permissions exceed a user&#x27;s current request. We present Intent-Governed Access Control (IGAC), a server-side authorization layer that converts a trusted request into a short-lived intent certificate, narrows the statically authorized tool manifest, and checks proposed tool and payload effects before execution. IGAC cannot grant authority outside static policy; confinement to the request additionally depends on certificate fidelity and sound effect bounds. We evaluate a reusable IGAC path over an OpenPort governance substrate using endpoint tests, 176 runtime-backed synthetic tasks, real-model classifier and planner pilots, 306 end-to-end model-task runtime trials, and a 36-trial benchmark-shaped external subset. In the deterministic runtime comparison, reference-certificate IGAC reduces the archived composite exposure-or-path indicator from 1.0000 to 0. In the end-to-end model runs, the combined IGAC-OpenPort path records no completed unsafe executions, although unsafe accepted authority remains 0.0909-0.2727 and every residual case is a non-executed draft. A trace-backed normalizer counterfactual removes this residual authority at substantial utility cost. The results support static-policy non-expansion and identify certificate precision as the principal remaining bottleneck.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

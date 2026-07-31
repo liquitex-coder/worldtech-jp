@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ACPO: Adaptive Credit Policy Optimization via Fine-Grained Surrogate Entropy — NewsMatome</title>
-<meta name="description" content="ACPO: Adaptive Credit Policy Optimization via Fine-Grained Surrogate Entropy（EN→JA 翻訳・出典付き）">
+<title>ACPO: Asymmetric Credit Policy Optimization via Mode-Local Entropy Surrogate — NewsMatome</title>
+<meta name="description" content="ACPO: Asymmetric Credit Policy Optimization via Mode-Local Entropy Surrogate（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/549e7f324f51.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/549e7f324f51.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/549e7f324f51.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="ACPO: Adaptive Credit Policy Optimization via Fine-Grained Surrogate Entropy">
-<meta property="og:description" content="ACPO: Adaptive Credit Policy Optimization via Fine-Grained Surrogate Entropy（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="ACPO: Asymmetric Credit Policy Optimization via Mode-Local Entropy Surrogate">
+<meta property="og:description" content="ACPO: Asymmetric Credit Policy Optimization via Mode-Local Entropy Surrogate（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"ACPO: Adaptive Credit Policy Optimization via Fine-Grained Surrogate Entropy",
- "inLanguage":"ja","datePublished":"2026-07-09T07:00:00+09:00","dateModified":"2026-07-09T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"ACPO: Asymmetric Credit Policy Optimization via Mode-Local Entropy Surrogate",
+ "inLanguage":"ja","datePublished":"2026-08-01T07:00:00+09:00","dateModified":"2026-08-01T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.03126","url":"https://liquitex-coder.github.io/worldtech-jp/articles/549e7f324f51.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>ACPO: Adaptive Credit Policy Optimization via Fine-Grained Surrogate Entropy</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>ACPO: Asymmetric Credit Policy Optimization via Mode-Local Entropy Surrogate</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>ACPO: Adaptive Credit Policy Optimization via Fine-Grained Surrogate Entropy</h1>
+      <h1>ACPO: Asymmetric Credit Policy Optimization via Mode-Local Entropy Surrogate</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/07/09 07:00</span><span>· 更新 2026/07/09</span>
+        <span>公開 2026/08/01 07:00</span><span>· 更新 2026/08/01</span>
       </div>
     </div>
     
@@ -74,24 +74,24 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2607.03126" rel="nofollow noopener">ACPO: Adaptive Credit Policy Optimization via Fine-Grained Surrogate Entropy</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2607.03126" rel="nofollow noopener">ACPO: Asymmetric Credit Policy Optimization via Mode-Local Entropy Surrogate</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2607.03126v2 Announce Type: replace 
-Abstract: Reinforcement Learning (RL) has substantially improved the reasoning ability of large language models (LLMs), but sparse outcome rewards still make token-level credit assignment difficult. Existing scalable RL methods typically assign trajectory-level rewards uniformly across tokens, while recent entropy-aware approaches either rely on coarse detached heuristics or directly optimize true entropy, which can introduce non-local gradient components misaligned with sampled-token policy updates. We propose Adaptive Credit Policy Optimization (ACPO), a token-level credit assignment framework based on a mode-local surrogate entropy. ACPO asymmetrically modulates policy updates by emphasizing uncertain decisions in successful rollouts and overconfident tokens in failed rollouts. We show that the surrogate admits deterministic entropy bounds and, under modal alignment and proximal updates, preserves the policy-gradient direction to leading order. Experiments on mathematical reasoning and coding benchmarks, including AIME 2025 and HumanEvalPro, show that ACPO consistently improves over strong RL baselines such as DAPO, GTPO, and SAPO.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2607.03126v2 Announce Type: replace 
-Abstract: Reinforcement Learning (RL) has substantially improved the reasoning ability of large language models (LLMs), but sparse outcome rewards still make token-level credit assignment difficult. Existing scalable RL methods typically assign trajectory-level rewards uniformly across tokens, while recent entropy-aware approaches either rely on coarse detached heuristics or directly optimize true entropy, which can introduce non-local gradient components misaligned with sampled-token policy updates. We propose Adaptive Credit Policy Optimization (ACPO), a token-level credit assignment framework based on a mode-local surrogate entropy. ACPO asymmetrically modulates policy updates by emphasizing uncertain decisions in successful rollouts and overconfident tokens in failed rollouts. We show that the surrogate admits deterministic entropy bounds and, under modal alignment and proximal updates, preserves the policy-gradient direction to leading order. Experiments on mathematical reasoning and coding benchmarks, including AIME 2025 and HumanEvalPro, show that ACPO consistently improves over strong RL baselines such as DAPO, GTPO, and SAPO.</div>
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2607.03126v3 Announce Type: replace 
+Abstract: Outcome-supervised reinforcement learning scales to verifiable reasoning tasks, but trajectory-level rewards assign the same outcome signal to all sampled tokens, overlooking their unequal contributions to the reasoning process. Entropy provides a natural indicator of the model&#x27;s decision state, yet using it for token-level credit assignment presents two key challenges: long-tail probabilities in large vocabularies corrupt both entropy values and gradients, and uncertainty carries distinct semantics across positive- and non-positive-advantage trajectories. We propose Asymmetric Credit Policy Optimization (ACPO), which replaces global entropy with the complement of the top-token probability as a mode-local proxy. Guided by gradient analysis, ACPO incorporates mismatch routing and saturation correction to shape policy updates into the desired asymmetric form, emphasizing uncertain decisions on positive trajectories while penalizing confident regions on failed ones. Theoretically, ACPO locally preserves the advantage direction while bounding surrogate error. Experiments on mathematical and coding reasoning benchmarks, including AIME 2025 and HumanEval Pro, show that ACPO consistently outperforms both entropy-aware methods (e.g., 80/20, GTPO) and strong outcome-supervised RL baselines (e.g., DAPO, SAPO).</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2607.03126v3 Announce Type: replace 
+Abstract: Outcome-supervised reinforcement learning scales to verifiable reasoning tasks, but trajectory-level rewards assign the same outcome signal to all sampled tokens, overlooking their unequal contributions to the reasoning process. Entropy provides a natural indicator of the model&#x27;s decision state, yet using it for token-level credit assignment presents two key challenges: long-tail probabilities in large vocabularies corrupt both entropy values and gradients, and uncertainty carries distinct semantics across positive- and non-positive-advantage trajectories. We propose Asymmetric Credit Policy Optimization (ACPO), which replaces global entropy with the complement of the top-token probability as a mode-local proxy. Guided by gradient analysis, ACPO incorporates mismatch routing and saturation correction to shape policy updates into the desired asymmetric form, emphasizing uncertain decisions on positive trajectories while penalizing confident regions on failed ones. Theoretically, ACPO locally preserves the advantage direction while bounding surrogate error. Experiments on mathematical and coding reasoning benchmarks, including AIME 2025 and HumanEval Pro, show that ACPO consistently outperforms both entropy-aware methods (e.g., 80/20, GTPO) and strong outcome-supervised RL baselines (e.g., DAPO, SAPO).</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2607.03126v2 Announce Type: replace 
-Abstract: Reinforcement Learning (RL) has substantially improved the reasoning ability of large language models (LLMs), but sparse outcome rewards still make token-level credit assignment difficult. Existing scalable RL methods typically assign trajectory-level rewards uniformly across tokens, while recent entropy-aware approaches either rely on coarse detached heuristics or directly optimize true entropy, which can introduce non-local gradient components misaligned with sampled-token policy updates. We propose Adaptive Credit Policy Optimization (ACPO), a token-level credit assignment framework based on a mode-local surrogate entropy. ACPO asymmetrically modulates policy updates by emphasizing uncertain decisions in successful rollouts and overconfident tokens in failed rollouts. We show that the surrogate admits deterministic entropy bounds and, under modal alignment and proximal updates, preserves the policy-gradient direction to leading order. Experiments on mathematical reasoning and coding benchmarks, including AIME 2025 and HumanEvalPro, show that ACPO consistently improves over strong RL baselines such as DAPO, GTPO, and SAPO.</p><a href="https://arxiv.org/abs/2607.03126" rel="nofollow noopener">原論文を読む →</a></div>
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2607.03126v3 Announce Type: replace 
+Abstract: Outcome-supervised reinforcement learning scales to verifiable reasoning tasks, but trajectory-level rewards assign the same outcome signal to all sampled tokens, overlooking their unequal contributions to the reasoning process. Entropy provides a natural indicator of the model&#x27;s decision state, yet using it for token-level credit assignment presents two key challenges: long-tail probabilities in large vocabularies corrupt both entropy values and gradients, and uncertainty carries distinct semantics across positive- and non-positive-advantage trajectories. We propose Asymmetric Credit Policy Optimization (ACPO), which replaces global entropy with the complement of the top-token probability as a mode-local proxy. Guided by gradient analysis, ACPO incorporates mismatch routing and saturation correction to shape policy updates into the desired asymmetric form, emphasizing uncertain decisions on positive trajectories while penalizing confident regions on failed ones. Theoretically, ACPO locally preserves the advantage direction while bounding surrogate error. Experiments on mathematical and coding reasoning benchmarks, including AIME 2025 and HumanEval Pro, show that ACPO consistently outperforms both entropy-aware methods (e.g., 80/20, GTPO) and strong outcome-supervised RL baselines (e.g., DAPO, SAPO).</p><a href="https://arxiv.org/abs/2607.03126" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2607.03126" rel="nofollow noopener">https://arxiv.org/abs/2607.03126</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
     <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="13e85d8b87e9.html"><div class="sim">関連</div><div class="info"><b>Prompt-to-Paper: Agentic AI System for Bioinformatics</b><div class="m">AI</div></div></a><a class="r" href="5a6352017520.html"><div class="sim">関連</div><div class="info"><b>From Graphs to Gradients: Physics-Inspired Structural Attribution for Cyber-Physical IoT Systems and Beyond</b><div class="m">AI</div></div></a><a class="r" href="01af1d0f85ed.html"><div class="sim">関連</div><div class="info"><b>CSTutorBench: Benchmarking Small Language Models as Tutors for Block-Based Programming</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="c588ecbbc384.html"><div class="sim">関連</div><div class="info"><b>Probing the Origins of Reasoning Performance: Representational Quality for Mathematical Problem-Solving in RL vs. SFT Fine-Tuned Models</b><div class="m">AI</div></div></a><a class="r" href="68c2ce270aa5.html"><div class="sim">関連</div><div class="info"><b>Even More Deception: Objective Misalignment in Mixed-Motive LLM Multi-Agent Systems</b><div class="m">AI</div></div></a><a class="r" href="d1ece3681748.html"><div class="sim">関連</div><div class="info"><b>ClinLens: Towards Long-Horizon Coding Agents for Longitudinal Multimodal Clinical Data Science</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

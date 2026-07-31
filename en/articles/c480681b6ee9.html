@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FedIA: Importance-Aware Aggregation for Domain-Robust Federated Graph Learning — NewsMatome (EN)</title>
-<meta name="description" content="FedIA: Importance-Aware Aggregation for Domain-Robust Federated Graph Learning — original-language edition. Japanese translation available.">
+<title>Dissecting Federated-Graph Aggregation under Domain Shift: Importance-Aware Aggregation via Empirical Analysis — NewsMatome (EN)</title>
+<meta name="description" content="Dissecting Federated-Graph Aggregation under Domain Shift: Importance-Aware Aggregation via Empirical Analysis — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/c480681b6ee9.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/c480681b6ee9.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/c480681b6ee9.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/c480681b6ee9.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="FedIA: Importance-Aware Aggregation for Domain-Robust Federated Graph Learning">
+<meta property="og:title" content="Dissecting Federated-Graph Aggregation under Domain Shift: Importance-Aware Aggregation via Empirical Analysis">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"FedIA: Importance-Aware Aggregation for Domain-Robust Federated Graph Learning",
- "inLanguage":"en","datePublished":"2026-07-03T07:00:00+09:00","dateModified":"2026-07-03T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Dissecting Federated-Graph Aggregation under Domain Shift: Importance-Aware Aggregation via Empirical Analysis",
+ "inLanguage":"en","datePublished":"2026-08-01T07:00:00+09:00","dateModified":"2026-08-01T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2509.18171","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/c480681b6ee9.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>FedIA: Importance-Aware Aggregation for Domain-Robust Federated Graph Learning</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/03</span></div>
+    <h1>Dissecting Federated-Graph Aggregation under Domain Shift: Importance-Aware Aggregation via Empirical Analysis</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/01</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/c480681b6ee9.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2509.18171" rel="nofollow noopener">https://arxiv.org/abs/2509.18171</a></span></div>
-  <div class="article-body"><p>arXiv:2509.18171v4 Announce Type: replace 
-Abstract: Federated graph learning (FGL) is a natural paradigm for social-media user graphs, where language communities, regional markets, and service boundaries can prevent raw graph pooling. We use the Twitch Gamers networks as the primary live-streaming social-media benchmark, and study a question that is often hidden by representation-level evaluation: after local message passing, what update signals are actually exposed to server aggregation? Through update-space measurements, we identify an aggregation-level failure in which graph-domain clients gradually place salient update signals on less shared parameter coordinates, while message-passing backbones show weaker cross-domain directional compatibility than an MLP control. This update-support fragmentation means that standard averaging can dilute locally important coordinates even when no raw graph data are exchanged. Across five backbones, homophily remains relevant but is not the dominant correlate of support retention; feature, label, and degree discrepancies show stronger associations. These findings indicate that graph-domain shifts damage not only local representations, but also the coordinate support on which aggregation operates. Motivated by this diagnosis, we propose FedIA, a plug-and-play server-side importance-aware aggregation method. Importance Masking selects a shared high-magnitude coordinate support, and Contribution-Aware Momentum Weighting smooths client contributions within that support. FedIA requires no raw graph sharing, no graph-statistics upload, and no auxiliary communication payload, while adding only $O(D+N)$ persistent server state for $D$ model coordinates and $N$ clients.</p></div>
+  <div class="article-body"><p>arXiv:2509.18171v5 Announce Type: replace 
+Abstract: Federated graph learning (FGL) trains a shared graph model across clients whose local graphs differ in node features, labels, and connectivity while keeping raw graph data decentralized. Although graph-domain shifts across clients can severely degrade the global model, existing FGL approaches for graph-domain shift mainly adapt local representations, propagation, or graph-derived collaboration, while the server typically applies the same aggregation rule to every parameter coordinate. In this work, we analyze how graph-domain shifts affect server-side aggregation. We find that, as clients optimize under distinct graph-domain conditions, they gradually concentrate their strongest updates on different parameter coordinates, making important update coordinates less shared across clients. Consequently, standard averaging can weaken these domain-specific signals even when client updates are not directly opposed. These findings reveal an aggregationinduced signal dilution effect: parameter coordinates strongly expressed by only a subset of domains are attenuated by nearzero contributions from the remaining domains. Motivated by these findings, we propose FedIA, a lightweight serverside aggregation method that calibrates parameter selection and client weighting. FedIA identifies important coordinates =within each layer and adjusts client aggregation weights according to their contributions on the selected subspace, without modifying local graph training or the standard clientupdate payload. Experiments on Twitch Gamers and WikiNet using two graph-learning backbones and nine FL/FGL baselines show improvements of up to 11.58 percentage points, with particularly strong gains under domain skew.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

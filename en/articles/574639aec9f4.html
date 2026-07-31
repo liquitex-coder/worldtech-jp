@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Adversarial Pragmatics for AI Safety Evaluation: A Benchmark for Instruction Conflict, Embedded Commands, and Policy Ambiguity — NewsMatome (EN)</title>
-<meta name="description" content="Adversarial Pragmatics for AI Safety Evaluation: A Benchmark for Instruction Conflict, Embedded Commands, and Policy Ambiguity — original-language edition. Japanese translation available.">
+<title>Adversarial Pragmatics for AI Safety Evaluation: A Diagnostic Framework and Seed Benchmark for Language-Mediated Control — NewsMatome (EN)</title>
+<meta name="description" content="Adversarial Pragmatics for AI Safety Evaluation: A Diagnostic Framework and Seed Benchmark for Language-Mediated Control — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/574639aec9f4.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/574639aec9f4.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/574639aec9f4.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/574639aec9f4.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Adversarial Pragmatics for AI Safety Evaluation: A Benchmark for Instruction Conflict, Embedded Commands, and Policy Ambiguity">
+<meta property="og:title" content="Adversarial Pragmatics for AI Safety Evaluation: A Diagnostic Framework and Seed Benchmark for Language-Mediated Control">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Adversarial Pragmatics for AI Safety Evaluation: A Benchmark for Instruction Conflict, Embedded Commands, and Policy Ambiguity",
- "inLanguage":"en","datePublished":"2026-07-19T07:00:00+09:00","dateModified":"2026-07-19T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Adversarial Pragmatics for AI Safety Evaluation: A Diagnostic Framework and Seed Benchmark for Language-Mediated Control",
+ "inLanguage":"en","datePublished":"2026-08-01T07:00:00+09:00","dateModified":"2026-08-01T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.01153","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/574639aec9f4.html"}
@@ -34,14 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Adversarial Pragmatics for AI Safety Evaluation: A Benchmark for Instruction Conflict, Embedded Commands, and Policy Ambiguity</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/19</span></div>
+    <h1>Adversarial Pragmatics for AI Safety Evaluation: A Diagnostic Framework and Seed Benchmark for Language-Mediated Control</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/08/01</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/574639aec9f4.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.01153" rel="nofollow noopener">https://arxiv.org/abs/2607.01153</a></span></div>
-  <div class="article-body"><p>arXiv:2607.01153v2 Announce Type: replace-cross 
-Abstract: Safety evaluations for language models increasingly depend on judgments about ambiguous natural-language behaviour: whether a model has followed an instruction, refused appropriately, complied with a policy, resisted an embedded command, or misreported progress in an agentic task. Existing benchmarks often compress these distinctions into pass/fail labels, obscuring whether failures arise from capability limits, policy ambiguity, instruction conflict, scaffold failure, or unstable evaluator judgments.
-  This paper introduces adversarial pragmatics as a benchmark and annotation protocol for evaluating model behaviour under instruction conflict, embedded commands, quotation, scope ambiguity, deixis, indirect speech acts, and multi-turn agent transcripts.
-  The contribution is empirical and methodological: a linguistically controlled taxonomy, an 18-item seed benchmark with validator-enforced metadata, a 54-row local seed pilot, an expert-evaluation protocol distinguishing task success, policy compliance, safety risk, refusal outcome, and evaluator confidence, and metrics for judge validity, diagnostic ambiguity, and taxonomy drift. The benchmark treats labels as inference licenses: it tests whether safety-relevant categories project across paraphrase, wrapper, model, and judge condition. In the pilot, a rubric-aided LLM judge graded its own outputs with expected-behaviour fields visible and still missed the safety-relevant minority classes.</p></div>
+  <div class="article-body"><p>arXiv:2607.01153v3 Announce Type: replace-cross 
+Abstract: Safety evaluations for language models increasingly depend on judgments about ambiguous natural-language behaviour: whether a model followed an instruction, refused appropriately, complied with a policy, or misreported progress in an agentic task. Existing benchmarks compress these into pass/fail labels, obscuring whether failures reflect capability limits, policy ambiguity, instruction conflict, scaffold failure, or unstable evaluator judgments. Adversarial pragmatics is safety-relevant model behaviour under instruction conflict, embedded commands, quotation, scope ambiguity, deixis, and indirect speech acts. It&#x27;s designed to extend to multi-turn agent transcripts, but the seed set represents that family with a single-turn tool-result contrast. This paper introduces a diagnostic framework, an 18-item seed benchmark, a 54-row pilot, and a six-cell LLM-judge assessment, with a protocol keeping task success, policy compliance, risk, refusal, attribution, and confidence analytically separate. The benchmark separates four inference targets a single label can conceal: the regime-relative reference, configured-system behaviour, evaluator-output interpretation, and taxonomic assignment. Its intended use is diagnosis, not deployment certification, vendor ranking, or a general safety score. A first LLM judge that graded its own outputs with the expected answer visible missed the safety-relevant minority classes. Item-clustered intervals leave four of six chance-corrected agreement statistics unable to rule out a constant labeller, and hierarchical pooling shrinks the one eye-catching rubric effect toward the group mean and widens its interval through zero. Rejudging the objects across three judge models and two information conditions leaves the pattern intact: no cell recovers more than two of eleven partial successes, and the strongest cell&#x27;s edge comes partly from never using that label.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

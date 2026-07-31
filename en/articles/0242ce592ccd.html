@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Does It Take to Detect an AI Agent? Minimal Feature Sets for Behavioral Detection under Browser Automation — NewsMatome (EN)</title>
+<meta name="description" content="What Does It Take to Detect an AI Agent? Minimal Feature Sets for Behavioral Detection under Browser Automation — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/0242ce592ccd.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/0242ce592ccd.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/0242ce592ccd.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/0242ce592ccd.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What Does It Take to Detect an AI Agent? Minimal Feature Sets for Behavioral Detection under Browser Automation">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"What Does It Take to Detect an AI Agent? Minimal Feature Sets for Behavioral Detection under Browser Automation",
+ "inLanguage":"en","datePublished":"2026-08-01T07:00:00+09:00","dateModified":"2026-08-01T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2607.26935","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/0242ce592ccd.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/0242ce592ccd.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>What Does It Take to Detect an AI Agent? Minimal Feature Sets for Behavioral Detection under Browser Automation</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/08/01</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/0242ce592ccd.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.26935" rel="nofollow noopener">https://arxiv.org/abs/2607.26935</a></span></div>
+  <div class="article-body"><p>arXiv:2607.26935v1 Announce Type: new 
+Abstract: Bot detectors deployed at scale treat traffic as binary: human or bot. This assumption breaks when AI agents browse the web through browser automation, a traffic class that is neither and that binary classifiers structurally cannot represent. We present a three-class detection framework distinguishing humans, bots, and AI agents, and show that the binary-vs-agent confusion is architectural: a binary human-vs-bot detector misroutes agent sessions because its label space lacks an agent class. On our controlled benchmark, an MLP binary classifier misclassifies 39.1% of real AI agents as human and a SAINT binary transformer misclassifies 34.5%; adding an explicit agent class yields per-class agent F1 = 1.000 in all 30 runs (3 model families $\times$ 10 seeds). To measure evasion resistance, we construct a five-level evasion ladder spanning passive observation, GAN-generated trajectories, and replay of real human cursor data ($n = 2299$ evasion sessions). Across 10 seeds and 3 model families we observe zero agent misses in 22990 per-seed predictions. The discriminative signal is a browser-automation artifact, not evidence of agent reasoning: Playwright does not emit the raw pointer-move and wheel-delta streams a physical input device produces, and this absence signature survives trajectory manipulation. Exhaustive search over all feature subsets of size 1-5 (9401 GBMs) shows that two behavioral features (mouse_event_rate, teleport_click_ratio) give 100% observed agent recall at every evasion level with agent precision 0.994; five features lift macro-F1 to 0.991. The signal is redundantly encoded: removing teleport_click_ratio leaves agent detection at 100%. The single-feature regime is degenerate, flagging every agent only by collapsing the classifier to always predict &quot;agent&quot;. Two features robustly isolate agents; five separate all three traffic classes at macro-F1 $\geq 0.99$.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

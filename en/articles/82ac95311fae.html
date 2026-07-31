@@ -17,8 +17,8 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"SpecPrefetch: Parameter-Efficient Expert Prefetching for Sparse MoE Foundation Models",
- "inLanguage":"en","datePublished":"2026-07-31T07:00:00+09:00","dateModified":"2026-07-31T07:00:00+09:00",
- "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "inLanguage":"en","datePublished":"2026-08-01T07:00:00+09:00","dateModified":"2026-08-01T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.24787","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/82ac95311fae.html"}
 </script>
@@ -32,13 +32,13 @@
 </div></header>
 <div class="wrap"><article class="article">
   <div class="article-head">
-    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
     <h1>SpecPrefetch: Parameter-Efficient Expert Prefetching for Sparse MoE Foundation Models</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/31</span></div>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/01</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/82ac95311fae.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.24787" rel="nofollow noopener">https://arxiv.org/abs/2607.24787</a></span></div>
-  <div class="article-body"><p>arXiv:2607.24787v1 Announce Type: new 
+  <div class="article-body"><p>arXiv:2607.24787v2 Announce Type: replace-cross 
 Abstract: Sparse Mixture-of-Experts (MoE) models expand foundation model capacity through conditional expert activation, but their full expert pools remain difficult to deploy under limited accelerator memory. Although expert offloading alleviates memory pressure by moving inactive experts to host memory or storage, it introduces a routing-dependent transfer bottleneck: required experts are known only after native top-\(K\) routing, which serializes routing, expert loading, and expert execution during inference. To address this bottleneck, we propose SpecPrefetch, a parameter-efficient prefetching framework for offloaded MoE inference. SpecPrefetch uses a shared lightweight adapter to predict next-layer expert candidates only for asynchronous transfer, while the frozen native router still determines the final executed experts. By separating transfer prediction from execution routing, SpecPrefetch reduces exposed expert-loading latency without changing pretrained routing semantics, so prediction errors affect transfer efficiency rather than model outputs. In addition, a window-aware scheduler prioritizes feasible transfers under cache and bandwidth constraints. Across Qwen3-VL-30B-A3B and DeepSeek-VL2-Tiny, SpecPrefetch achieves the best average expert recall in 9 out of 10 model-benchmark settings with substantially fewer trainable parameters than learned predictor baselines. On a Snapdragon 8 Elite device, SpecPrefetch further improves decoding throughput by up to \(20\%\) over a compute-optimized offloading runtime, demonstrating practical benefits for storage-constrained MoE deployment. The code and model weights are available at https://github.com/wei390/SpecPrefetch.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
