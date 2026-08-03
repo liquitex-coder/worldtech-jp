@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>A Multi-Agent System for IPMSM Design Optimization via an FEA-AI Hybrid Approach — NewsMatome (EN)</title>
-<meta name="description" content="A Multi-Agent System for IPMSM Design Optimization via an FEA-AI Hybrid Approach — original-language edition. Japanese translation available.">
+<title>A Multi-Agent System for Motor Design Optimization via an FEA-AI Hybrid Approach — NewsMatome (EN)</title>
+<meta name="description" content="A Multi-Agent System for Motor Design Optimization via an FEA-AI Hybrid Approach — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/3e18751c7041.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/3e18751c7041.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/3e18751c7041.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/3e18751c7041.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="A Multi-Agent System for IPMSM Design Optimization via an FEA-AI Hybrid Approach">
+<meta property="og:title" content="A Multi-Agent System for Motor Design Optimization via an FEA-AI Hybrid Approach">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"A Multi-Agent System for IPMSM Design Optimization via an FEA-AI Hybrid Approach",
- "inLanguage":"en","datePublished":"2026-06-10T07:00:00+09:00","dateModified":"2026-06-10T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"A Multi-Agent System for Motor Design Optimization via an FEA-AI Hybrid Approach",
+ "inLanguage":"en","datePublished":"2026-08-04T07:00:00+09:00","dateModified":"2026-08-04T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.09037","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/3e18751c7041.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>A Multi-Agent System for IPMSM Design Optimization via an FEA-AI Hybrid Approach</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/06/10</span></div>
+    <h1>A Multi-Agent System for Motor Design Optimization via an FEA-AI Hybrid Approach</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/08/04</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/3e18751c7041.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.09037" rel="nofollow noopener">https://arxiv.org/abs/2606.09037</a></span></div>
-  <div class="article-body"><p>arXiv:2606.09037v1 Announce Type: new 
-Abstract: Interior permanent magnet synchronous motor (IPMSM) design requires balancing conflicting objectives and multi-physics constraints, while modern optimization workflows face three bottlenecks: manual problem setup, high finite element analysis (FEA) cost, and unreliable surrogate-based search in sparse or out-of-distribution regions. To address these limitations, we propose an end-to-end automated IPMSM design optimization framework that integrates retrieval-augmented generation (RAG) for structured problem definition with an uncertainty-aware FEA-AI hybrid optimization pipeline. A Design agent, connected to a motor textbook through RAG, provides domain-knowledge-based options and engineering tips, and compiles an optimization card and a design-of-experiments plan for AI-model training. A Training agent automates electromagnetic FEA, records geometry-validation and solver-failure logs, analyzes failed geometries using ANOVA-based data analysis and LLM reasoning, and invokes a Design Sampling agent to redefine the design space and generate additional samples. An Optimization agent performs GA-based search with uncertainty-driven switching: low-uncertainty candidates are evaluated by AI-surrogate inference, whereas high-uncertainty and reliability-critical Pareto-front or top-K candidates are corrected by high-fidelity FEA and reused for iterative retraining. The framework converts manual, experience-dependent configuration into a reproducible workflow that balances computational cost and prediction reliability. Experimental results under a matched high-fidelity FEA budget show that the proposed hybrid approach achieves better objective performance while maintaining low and further reducible predictive uncertainty, outperforming FEA-only search, which is limited by early budget exhaustion, and AI-only search, which converges to a low-confidence optimum.</p></div>
+  <div class="article-body"><p>arXiv:2606.09037v2 Announce Type: replace 
+Abstract: This study presents a large language model (LLM)-based multi-agent framework for interior permanent magnet synchronous motor (IPMSM) design optimization that mitigates limitations of conventional workflows: expertise-dependent problem setup and data preparation, the prohibitive computational cost of finite element analysis (FEA), and the unreliability of AI surrogates in unexplored regions. To this end, we first introduce a Design agent that formulates the optimization problem in natural language, leveraging retrieval-augmented generation to improve answer accuracy on motor design problems from below 50% to 67-80%. Furthermore, a Training agent autonomously repairs improperly defined design spaces by reasoning over solver failure history, raising the success ratio of the geometry sampling from 28% to 84% for AI training. Additionally, to resolve cost and reliability simultaneously, an Optimization agent employs an uncertainty-aware FEA-AI hybrid model: the AI surrogate is the primary evaluator, and FEA is selectively invoked where predictive uncertainty is high. Under the same FEA budget, this hybrid model achieves up to 44% lower iron loss in single-objective and 22.5% higher hypervolume in multi-objective optimization than conventional FEA-only search. Under the same evaluation budget, it reduces computation time by 52-55% while retaining 90-92% of FEA-only hypervolume. Conversely, AI-only search converges to false optima, leaving half its Pareto designs infeasible. Notably, a controller agent adaptively updates the uncertainty threshold that triggers FEA each round, eliminating manual tuning and achieving 5.8% lower single objective iron loss than with a fixed threshold. These results establish domain specialized LLM agents with uncertainty-aware hybrid evaluation as a reliable, scalable paradigm for simulation-driven design automation.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

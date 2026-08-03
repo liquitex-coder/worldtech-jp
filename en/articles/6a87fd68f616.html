@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GPU-Accelerated ANNS: Quantized for Speed, Built for Change — NewsMatome (EN)</title>
+<meta name="description" content="GPU-Accelerated ANNS: Quantized for Speed, Built for Change — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/6a87fd68f616.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/6a87fd68f616.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/6a87fd68f616.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/6a87fd68f616.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GPU-Accelerated ANNS: Quantized for Speed, Built for Change">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"GPU-Accelerated ANNS: Quantized for Speed, Built for Change",
+ "inLanguage":"en","datePublished":"2026-08-04T07:00:00+09:00","dateModified":"2026-08-04T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2601.07048","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/6a87fd68f616.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/6a87fd68f616.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>GPU-Accelerated ANNS: Quantized for Speed, Built for Change</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/08/04</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/6a87fd68f616.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2601.07048" rel="nofollow noopener">https://arxiv.org/abs/2601.07048</a></span></div>
+  <div class="article-body"><p>arXiv:2601.07048v5 Announce Type: replace-cross 
+Abstract: Approximate nearest neighbor search (ANNS) is a core problem in machine learning and information retrieval applications. GPUs offer a promising path to high-performance ANNS: they provide massive parallelism for distance computations, are readily available, and can co-locate with downstream applications.
+  Despite these advantages, current GPU-accelerated ANNS systems face three key limitations. First, real-world applications operate on evolving datasets that require fast batch updates, yet most GPU indices must be rebuilt from scratch when new data arrives. Second, high-dimensional vectors strain memory bandwidth, but current GPU systems lack efficient quantization techniques that reduce data movement without introducing costly random memory accesses. Third, the data-dependent memory accesses inherent to greedy search make overlapping compute and memory difficult, leading to reduced performance.
+  We present Jasper, a GPU-native ANNS system with both high query throughput and updatability. Jasper builds on the Vamana graph index and overcomes existing bottlenecks via three contributions: (1) a CUDA batch-parallel construction algorithm that enables lock-free streaming insertions, (2) a GPU-efficient implementation of RaBitQ quantization that reduces memory footprint up to 8x without the random access penalties, and (3) an optimized greedy search kernel that increases compute utilization, resulting in better latency hiding and higher throughput.
+  Our evaluation across five datasets shows that Jasper achieves up to 1.84x higher query throughput than CAGRA and achieves up to 80% peak utilization as measured by the roofline model. Jasper&#x27;s construction scales efficiently and constructs indices an average of 7x faster than CAGRA while providing updatability that CAGRA lacks. Compared to BANG, the previous fastest GPU Vamana implementation, Jasper delivers 10-74x faster queries.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
