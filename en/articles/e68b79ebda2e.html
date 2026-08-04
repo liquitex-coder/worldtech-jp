@@ -17,7 +17,7 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"Priors Persist Through Suppression: A Stroop Paradigm for Lexical Override",
- "inLanguage":"en","datePublished":"2026-06-25T07:00:00+09:00","dateModified":"2026-06-25T07:00:00+09:00",
+ "inLanguage":"en","datePublished":"2026-08-05T07:00:00+09:00","dateModified":"2026-08-05T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.07555","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/e68b79ebda2e.html"}
@@ -35,11 +35,11 @@
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
     <h1>Priors Persist Through Suppression: A Stroop Paradigm for Lexical Override</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/06/25</span></div>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/05</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/e68b79ebda2e.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.07555" rel="nofollow noopener">https://arxiv.org/abs/2606.07555</a></span></div>
-  <div class="article-body"><p>arXiv:2606.07555v3 Announce Type: replace-cross 
-Abstract: Glossaries, technical specifications, and system prompts routinely ask language models to use familiar words in unfamiliar ways. When this works, the local rule does not overwrite the old meaning; the pretrained prior keeps operating underneath, and its strength still shows through. We test this with a Stroop-style paradigm: a remapping rule (doctor means forest) pitted against the query word&#x27;s lexical-prior distractor (hospital), with matched neutral controls. Across 11 open-weight models spanning four families and 1B-9B parameters, lexical-prior strength predicts interference even after item-level controls for answer prior, frequency, tokenization, and prompt wording. Activation patching on five models then locates where the override is repaired internally. Restoring three source positions that carry the redefinition (the definition subject, its new target, and the query word) almost fully recovers the effect (aggregate $R \in [0.92, 1.06]$). The repair works by protecting the contextual target rather than by silencing the prior; the distractor&#x27;s probability falls whenever these positions are perturbed, but the target survives only when the redefinition is restored intact. Behavior and mechanism converge on the same channel: the prior&#x27;s strength both predicts which overrides fail and marks where the causal repair lands.</p></div>
+  <div class="article-body"><p>arXiv:2606.07555v4 Announce Type: replace-cross 
+Abstract: Glossaries, technical specifications, and system prompts routinely ask language models to use familiar words in unfamiliar ways. The instruction competes with what the word already means, and even when it wins, the pretrained prior keeps operating underneath. We test this with a Stroop-style paradigm: a prompt redefines a word (doctor now means forest), asks for a related word, and we score the new meaning against the word&#x27;s pretrained associate (hospital) under matched neutral controls. Across 11 open-weight models from 1B to 9B parameters, the old meaning interferes in every model, remapping type, and prompt framing we test. After item-level controls, a model&#x27;s ordinary preference for the old associate predicts the size of the interference, in the three document-relevant remapping types though not in antonyms. On antonym remapping, activation patching in five models locates the repair: restoring three prompt positions (where the word is redefined, where its new meaning appears, and where the question repeats it) recovers almost all of the effect (normalized recovery R in [0.92, 1.06]). The repair is asymmetric. The old meaning&#x27;s logit falls under any perturbation of those positions, so pushing it down is not what separates a working override from a failing one; the new meaning survives only while the position carrying it is intact. What a local definition achieves is a protected new meaning, not a suppressed old one.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

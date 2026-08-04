@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Stress-Testing EEG Foundation Models for Clinical Decoding: Dataset Identity and Targeted Negative Controls — NewsMatome (EN)</title>
-<meta name="description" content="Stress-Testing EEG Foundation Models for Clinical Decoding: Dataset Identity and Targeted Negative Controls — original-language edition. Japanese translation available.">
+<title>What EEG Foundation Models Encode: Dataset Identity and a Negative-Control Suite for Clinical Benchmarks — NewsMatome (EN)</title>
+<meta name="description" content="What EEG Foundation Models Encode: Dataset Identity and a Negative-Control Suite for Clinical Benchmarks — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/3c2e51c51329.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/3c2e51c51329.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/3c2e51c51329.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/3c2e51c51329.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Stress-Testing EEG Foundation Models for Clinical Decoding: Dataset Identity and Targeted Negative Controls">
+<meta property="og:title" content="What EEG Foundation Models Encode: Dataset Identity and a Negative-Control Suite for Clinical Benchmarks">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Stress-Testing EEG Foundation Models for Clinical Decoding: Dataset Identity and Targeted Negative Controls",
- "inLanguage":"en","datePublished":"2026-07-30T07:00:00+09:00","dateModified":"2026-07-30T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"What EEG Foundation Models Encode: Dataset Identity and a Negative-Control Suite for Clinical Benchmarks",
+ "inLanguage":"en","datePublished":"2026-08-05T07:00:00+09:00","dateModified":"2026-08-05T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.24519","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/3c2e51c51329.html"}
@@ -34,12 +34,14 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Stress-Testing EEG Foundation Models for Clinical Decoding: Dataset Identity and Targeted Negative Controls</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/30</span></div>
+    <h1>What EEG Foundation Models Encode: Dataset Identity and a Negative-Control Suite for Clinical Benchmarks</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/05</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/3c2e51c51329.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.24519" rel="nofollow noopener">https://arxiv.org/abs/2607.24519</a></span></div>
-  <div class="article-body"><p>arXiv:2607.24519v1 Announce Type: new 
-Abstract: Pretrained EEG foundation models are increasingly proposed for clinical decoding, but their transfer across populations and robustness to negative controls remain unclear. We benchmark six models (LaBraM, EEGMamba, CBraMod, REVE, BENDR, and BIOT) on five clinical tasks across four datasets using frozen linear probes with leave-one-subject-out, subject-grouped, or explicitly identified recording-level splits. Selected REVE findings are tested against random initialisation, random features, label permutation, scrambled-label fine-tuning, and projection sensitivity. On Korean dementia (CAUEEG, three-way), frozen REVE reaches 0.568 AUROC versus 0.769 for classical features; the ordering persists on a patient-disjoint held-out split (0.565 versus 0.768). Dataset identity is readily decoded from frozen embeddings (AUROC 1.000 at PCA-50; 0.9998 after band restriction and per-epoch z-scoring), whereas the same PCA-50 pipeline decodes Korean diagnosis at 0.528. A randomly initialised encoder also outperforms pretrained REVE on this task (0.659 versus 0.570). On Alzheimer&#x27;s disease, Gaussian random projection and PCA of the same pretrained embeddings perform similarly, and classical features nominally exceed REVE at the subject level. The clearest controlled positive is cross-subject ictal detection on CHB-MIT (n=23), where REVE achieves 0.793 AUROC, 9.2 percentage points above a randomly initialised encoder. These results show that EEG foundation-model conclusions depend strongly on evaluation unit, dataset shift, comparator strength, and targeted controls.</p></div>
+  <div class="article-body"><p>arXiv:2607.24519v2 Announce Type: replace 
+Abstract: Pretrained EEG foundation models are proposed for clinical decoding, but whether reported gains transfer across populations or survive negative controls is unclear. We benchmark LaBraM, EEGMamba, CBraMod, REVE, LEAD, BENDR, and BIOT on five clinical tasks across four datasets. Primary analyses use frozen linear probes with subject-disjoint LOSO or grouped five-fold validation. Because CAUEEG releases no patient identifiers, it is evaluated at recording level with a patient-disjoint sensitivity. We challenge apparent gains using stronger classical comparators, label permutation, scrambled-label fine-tuning, and random-initialisation controls.
+  In a matched 19-channel CAUEEG evaluation (Normal/MCI/Dementia; N = 1,187 recordings), classical features achieve 0.734 macro-AUROC versus 0.699 for BIOT, 0.669 for CBraMod, and 0.568 for REVE. A patient-disjoint sensitivity retains the classical-over-REVE ordering (0.717 versus 0.565). Dataset identity is decoded from frozen REVE embeddings at or near ceiling across Western-Korean and Western-Western pairs, including after PCA-50 and removal of line-frequency and amplitude-scale information. This establishes dataset membership, not a causal site or population effect. A matched random-initialised encoder exceeds pretrained REVE on CAUEEG (0.659 versus 0.570). On CHB-MIT cross-subject ictal detection (n = 23), REVE reaches 0.793, versus 0.739 for the best enhanced nonlinear comparator, 0.701 for random initialisation, and 0.505 for raw-signal random features. Because preprocessing removes absolute amplitude, this does not establish superiority over every plausible handcrafted baseline.
+  Conclusions change materially after montage matching, patient-overlap checks, stronger comparators, and representation controls. We distill these checks into a reporting protocol for clinical EEG foundation-model studies.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

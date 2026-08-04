@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Spatiotemporal Seismic Hazard Assessment Using VQ-VAE and Seismic Statistical Features — NewsMatome (EN)</title>
-<meta name="description" content="Spatiotemporal Seismic Hazard Assessment Using VQ-VAE and Seismic Statistical Features — original-language edition. Japanese translation available.">
+<title>Using Seismic Statistical Features and VQ-VAE to Improve Spatiotemporal Seismicity Predictability — NewsMatome (EN)</title>
+<meta name="description" content="Using Seismic Statistical Features and VQ-VAE to Improve Spatiotemporal Seismicity Predictability — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/f8578bbb33ce.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/f8578bbb33ce.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/f8578bbb33ce.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/f8578bbb33ce.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spatiotemporal Seismic Hazard Assessment Using VQ-VAE and Seismic Statistical Features">
+<meta property="og:title" content="Using Seismic Statistical Features and VQ-VAE to Improve Spatiotemporal Seismicity Predictability">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Spatiotemporal Seismic Hazard Assessment Using VQ-VAE and Seismic Statistical Features",
- "inLanguage":"en","datePublished":"2026-06-11T07:00:00+09:00","dateModified":"2026-06-11T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Using Seismic Statistical Features and VQ-VAE to Improve Spatiotemporal Seismicity Predictability",
+ "inLanguage":"en","datePublished":"2026-08-05T07:00:00+09:00","dateModified":"2026-08-05T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.10069","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/f8578bbb33ce.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Spatiotemporal Seismic Hazard Assessment Using VQ-VAE and Seismic Statistical Features</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/06/11</span></div>
+    <h1>Using Seismic Statistical Features and VQ-VAE to Improve Spatiotemporal Seismicity Predictability</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/05</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/f8578bbb33ce.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.10069" rel="nofollow noopener">https://arxiv.org/abs/2606.10069</a></span></div>
-  <div class="article-body"><p>arXiv:2606.10069v1 Announce Type: new 
-Abstract: In this paper we build upon a previous study in which we demonstrated, using XGBoost and earthquake catalogue data from Japan and Chile, that a set of 60 seismic statistical features (SSFs) had much greater predictive value than a set of 428 generic time series features from the tsfresh package. We here extend this previous work in two key ways, focusing on data from Japan as a large dataset is necessary in order to allow for the training of a deep learning (autoencoder) model. First, we move from whole-region prediction (considering, for each candidate event, the likelihood of an event M $\geq$ 5.0 anywhere in the region in the next 15 days) to localised predictions in which both the region of feature computation and the region of prediction are restricted to a circle of radius 24 km around the candidate event, and we show that performance remains excellent, similar to our previous whole-region study for the same area. Second, we here couple this proven set of SSFs, based on one-dimensional (catalogue) data, with a novel feature based on two-dimensional seismic maps, obtained by training a VQ-VAE model to reproduce such maps as output and identifying a measure of its error in doing so with a localised build-up of crustal stress. We show that while localised prediction based on SSFs can be effective alone, with test AUC values as high as those obtained in the case of Japan in our previous whole-region study, the inclusion of the new natively-spatial VQ-VAE-derived feature, top-ranked by SHAP analysis, can enhance performance and additionally appears to near-wholly replace the traditionally-computed $b$-value in terms of feature usage.</p></div>
+  <div class="article-body"><p>arXiv:2606.10069v3 Announce Type: replace 
+Abstract: In this paper we build upon a previous study in which we demonstrated, using XGBoost and earthquake catalogue data from Japan and Chile, that a set of 60 seismic statistical features (SSFs) had much greater predictive value than a set of 428 generic time series features from the tsfresh package. We here extend this previous work in two key ways, focusing on data from Japan as a large dataset is necessary in order to allow for the training of a deep learning (autoencoder) model. First, we move from whole-region prediction (considering, for each candidate event, the likelihood of an event M $\geq$ 5.0 anywhere in the region in the next 15 days) to localised predictions in which both the region of feature computation and the region of prediction are restricted to a circle of radius 24 km around the candidate event, and we show that performance remains excellent, similar to our previous whole-region study for the same area. Second, we here couple this proven set of SSFs, based on one-dimensional (catalogue) data, with a novel feature based on two-dimensional seismic maps, obtained by training a VQ-VAE model to reproduce such maps as output and identifying a measure of its error in doing so with a localised build-up of crustal stress. We show that while localised prediction based only on a set of SSFs can be effective, with test AUC values as high as those obtained in the case of Japan in our previous whole-region study, the inclusion of the new natively-spatial VQ-VAE-derived feature, top-ranked by SHAP analysis, provides valuable additional insights.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

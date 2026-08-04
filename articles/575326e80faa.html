@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sampling Decisions: Exact Path-Space Correction, Prior Cancellation and Local-Boltzmann Guidance — NewsMatome</title>
-<meta name="description" content="Sampling Decisions: Exact Path-Space Correction, Prior Cancellation and Local-Boltzmann Guidance（EN→JA 翻訳・出典付き）">
+<title>Sampling Decisions: Exact Path-Space Control for Physics-Informed Generative Sampling — NewsMatome</title>
+<meta name="description" content="Sampling Decisions: Exact Path-Space Control for Physics-Informed Generative Sampling（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/575326e80faa.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/575326e80faa.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/575326e80faa.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="Sampling Decisions: Exact Path-Space Correction, Prior Cancellation and Local-Boltzmann Guidance">
-<meta property="og:description" content="Sampling Decisions: Exact Path-Space Correction, Prior Cancellation and Local-Boltzmann Guidance（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="Sampling Decisions: Exact Path-Space Control for Physics-Informed Generative Sampling">
+<meta property="og:description" content="Sampling Decisions: Exact Path-Space Control for Physics-Informed Generative Sampling（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Sampling Decisions: Exact Path-Space Correction, Prior Cancellation and Local-Boltzmann Guidance",
- "inLanguage":"ja","datePublished":"2026-07-30T07:00:00+09:00","dateModified":"2026-07-30T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Sampling Decisions: Exact Path-Space Control for Physics-Informed Generative Sampling",
+ "inLanguage":"ja","datePublished":"2026-08-05T07:00:00+09:00","dateModified":"2026-08-05T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2503.14549","url":"https://liquitex-coder.github.io/worldtech-jp/articles/575326e80faa.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>Sampling Decisions: Exact Path-Space Correction, Prior Cancellation and Local-Boltzmann Guidance</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>Sampling Decisions: Exact Path-Space Control for Physics-Informed Generative Sampling</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>Sampling Decisions: Exact Path-Space Correction, Prior Cancellation and Local-Boltzmann Guidance</h1>
+      <h1>Sampling Decisions: Exact Path-Space Control for Physics-Informed Generative Sampling</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/07/30 07:00</span><span>· 更新 2026/07/30</span>
+        <span>公開 2026/08/05 07:00</span><span>· 更新 2026/08/05</span>
       </div>
     </div>
     
@@ -74,30 +74,27 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2503.14549" rel="nofollow noopener">Sampling Decisions: Exact Path-Space Correction, Prior Cancellation and Local-Boltzmann Guidance</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2503.14549" rel="nofollow noopener">Sampling Decisions: Exact Path-Space Control for Physics-Informed Generative Sampling</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2503.14549v3 Announce Type: replace 
-Abstract: How can a cheap but biased sequential, finite-horizon sampler over a discrete space be corrected so that its terminal output follows a prescribed Gibbs distribution? We formulate Sampling Decisions as a path-space relative-entropy projection on a growing autoregressive state graph. The unique prior-relative minimizer is a Doob transform governed by a linear backward recursion. A route-resolved formulation then yields a finite-particle algorithm based on conditional self-normalized importance sampling, and we prove convergence of its transition kernels and terminal law as the path budget grows.
-  For binary graphical models, we prove an exact cancellation theorem: all fixed singleton-product priors disappear from the population correction; only the ordering policy survives. Thus, more accurate one-point marginals may not produce a better finite-budget sampler. We therefore introduce a prefix-dependent autoregressive Local-Boltzmann prior that conditions each new spin on its revealed neighbors, while the path-space correction supplies the missing look-ahead field generated by the unrevealed subgraph.
-  Experiments on 3*3, 4*4, and 5*5 Ising grids show that singleton-product priors suffer severe importance-weight degeneracy, whereas Local-Boltzmann guidance maintains substantially larger effective sample size and reaches the exact-target reference band at the tested budgets. The results identify correlated, prefix-dependent guidance as the decisive ingredient in sequential sampling.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2503.14549v3 Announce Type: replace 
-Abstract: How can a cheap but biased sequential, finite-horizon sampler over a discrete space be corrected so that its terminal output follows a prescribed Gibbs distribution? We formulate Sampling Decisions as a path-space relative-entropy projection on a growing autoregressive state graph. The unique prior-relative minimizer is a Doob transform governed by a linear backward recursion. A route-resolved formulation then yields a finite-particle algorithm based on conditional self-normalized importance sampling, and we prove convergence of its transition kernels and terminal law as the path budget grows.
-  For binary graphical models, we prove an exact cancellation theorem: all fixed singleton-product priors disappear from the population correction; only the ordering policy survives. Thus, more accurate one-point marginals may not produce a better finite-budget sampler. We therefore introduce a prefix-dependent autoregressive Local-Boltzmann prior that conditions each new spin on its revealed neighbors, while the path-space correction supplies the missing look-ahead field generated by the unrevealed subgraph.
-  Experiments on 3*3, 4*4, and 5*5 Ising grids show that singleton-product priors suffer severe importance-weight degeneracy, whereas Local-Boltzmann guidance maintains substantially larger effective sample size and reaches the exact-target reference band at the tested budgets. The results identify correlated, prefix-dependent guidance as the decisive ingredient in sequential sampling.</div>
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2503.14549v4 Announce Type: replace 
+Abstract: Scientific generative models must turn tractable local decisions into globally correlated samples that respect physical constraints. We introduce Sampling Decisions, a finite-horizon framework in which a structured object is assembled on a growing state graph and corrected globally by an exact path-space control law. For a prescribed Gibbs target, the corrected law is the unique relative-entropy projection of a sequential prior and is realized by a Doob h-transform with a linear backward desirability recursion. The same object admits equivalent interpretations as a KL-optimal controller, a one-sided Schrodinger transport, and an ideal value or flow function for autoregressive and GFlowNet-type generation. A route-resolved formulation yields a finite-particle algorithm, whose transition kernels and terminal law converge as the path budget grows.
+  For binary graphical models, we prove a structural cancellation theorem: every fixed singleton-product prior disappears from the population correction, so improved one-point marginals do not alter the exact generative dynamics. The relevant information is conditional and prefix dependent. Statistical physics supplies this structure through a Local-Boltzmann prior that absorbs interactions as spins are revealed, while optimal path-space control supplies the missing look-ahead field from the unrevealed subgraph. On exactly enumerable Ising grids, this physics-informed proposal increases effective sample size by factors of about ten to nearly one thousand relative to product proposals and reaches the exact-target reference band at the tested budgets. On a larger 10*10 grid, beyond exact enumeration, the same hierarchy persists: Local-Boltzmann guidance avoids the severe weight collapse of product proposals and approaches a long-run MCMC baseline on the reported diagnostics.</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2503.14549v4 Announce Type: replace 
+Abstract: Scientific generative models must turn tractable local decisions into globally correlated samples that respect physical constraints. We introduce Sampling Decisions, a finite-horizon framework in which a structured object is assembled on a growing state graph and corrected globally by an exact path-space control law. For a prescribed Gibbs target, the corrected law is the unique relative-entropy projection of a sequential prior and is realized by a Doob h-transform with a linear backward desirability recursion. The same object admits equivalent interpretations as a KL-optimal controller, a one-sided Schrodinger transport, and an ideal value or flow function for autoregressive and GFlowNet-type generation. A route-resolved formulation yields a finite-particle algorithm, whose transition kernels and terminal law converge as the path budget grows.
+  For binary graphical models, we prove a structural cancellation theorem: every fixed singleton-product prior disappears from the population correction, so improved one-point marginals do not alter the exact generative dynamics. The relevant information is conditional and prefix dependent. Statistical physics supplies this structure through a Local-Boltzmann prior that absorbs interactions as spins are revealed, while optimal path-space control supplies the missing look-ahead field from the unrevealed subgraph. On exactly enumerable Ising grids, this physics-informed proposal increases effective sample size by factors of about ten to nearly one thousand relative to product proposals and reaches the exact-target reference band at the tested budgets. On a larger 10*10 grid, beyond exact enumeration, the same hierarchy persists: Local-Boltzmann guidance avoids the severe weight collapse of product proposals and approaches a long-run MCMC baseline on the reported diagnostics.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2503.14549v3 Announce Type: replace 
-Abstract: How can a cheap but biased sequential, finite-horizon sampler over a discrete space be corrected so that its terminal output follows a prescribed Gibbs distribution? We formulate Sampling Decisions as a path-space relative-entropy projection on a growing autoregressive state graph. The unique prior-relative minimizer is a Doob transform governed by a linear backward recursion. A route-resolved formulation then yields a finite-particle algorithm based on conditional self-normalized importance sampling, and we prove convergence of its transition kernels and terminal law as the path budget grows.
-  For binary graphical models, we prove an exact cancellation theorem: all fixed singleton-product priors disappear from the population correction; only the ordering policy survives. Thus, more accurate one-point marginals may not produce a better finite-budget sampler. We therefore introduce a prefix-dependent autoregressive Local-Boltzmann prior that conditions each new spin on its revealed neighbors, while the path-space correction supplies the missing look-ahead field generated by the unrevealed subgraph.
-  Experiments on 3*3, 4*4, and 5*5 Ising grids show that singleton-product priors suffer severe importance-weight degeneracy, whereas Local-Boltzmann guidance maintains substantially larger effective sample size and reaches the exact-target reference band at the tested budgets. The results identify correlated, prefix-dependent guidance as the decisive ingredient in sequential sampling.</p><a href="https://arxiv.org/abs/2503.14549" rel="nofollow noopener">原論文を読む →</a></div>
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2503.14549v4 Announce Type: replace 
+Abstract: Scientific generative models must turn tractable local decisions into globally correlated samples that respect physical constraints. We introduce Sampling Decisions, a finite-horizon framework in which a structured object is assembled on a growing state graph and corrected globally by an exact path-space control law. For a prescribed Gibbs target, the corrected law is the unique relative-entropy projection of a sequential prior and is realized by a Doob h-transform with a linear backward desirability recursion. The same object admits equivalent interpretations as a KL-optimal controller, a one-sided Schrodinger transport, and an ideal value or flow function for autoregressive and GFlowNet-type generation. A route-resolved formulation yields a finite-particle algorithm, whose transition kernels and terminal law converge as the path budget grows.
+  For binary graphical models, we prove a structural cancellation theorem: every fixed singleton-product prior disappears from the population correction, so improved one-point marginals do not alter the exact generative dynamics. The relevant information is conditional and prefix dependent. Statistical physics supplies this structure through a Local-Boltzmann prior that absorbs interactions as spins are revealed, while optimal path-space control supplies the missing look-ahead field from the unrevealed subgraph. On exactly enumerable Ising grids, this physics-informed proposal increases effective sample size by factors of about ten to nearly one thousand relative to product proposals and reaches the exact-target reference band at the tested budgets. On a larger 10*10 grid, beyond exact enumeration, the same hierarchy persists: Local-Boltzmann guidance avoids the severe weight collapse of product proposals and approaches a long-run MCMC baseline on the reported diagnostics.</p><a href="https://arxiv.org/abs/2503.14549" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2503.14549" rel="nofollow noopener">https://arxiv.org/abs/2503.14549</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
     <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="5f8449b50a00.html"><div class="sim">関連</div><div class="info"><b>Do Models Fake Alignment Without Clear Consequences?</b><div class="m">AI</div></div></a><a class="r" href="3a089eb3b0fb.html"><div class="sim">関連</div><div class="info"><b>Beyond Memory: A Templated Substrate for Heterogeneous Collaborative Knowledge Work with LLM Agents</b><div class="m">AI</div></div></a><a class="r" href="f914ce76f855.html"><div class="sim">関連</div><div class="info"><b>Kernel Forge: An Agent Harness for LLM-based Generation and Optimization of CUDA Kernels</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="77f4e4cd0920.html"><div class="sim">関連</div><div class="info"><b>OpenClaw and Ollama in Agentic AI: Toward Fully Autonomous and Scalable AI Agent Systems</b><div class="m">AI</div></div></a><a class="r" href="c874a75499fc.html"><div class="sim">関連</div><div class="info"><b>Can AI Evaluate AI Scientists? A Benchmarking Study of Autonomous Research Generation Systems Using Automated Multi-Model Review</b><div class="m">AI</div></div></a><a class="r" href="b6d9813ef3dd.html"><div class="sim">関連</div><div class="info"><b>LLM Framework for Discovering Major Mathematical Conjectures: AI&#x27;s Quest for the Next Riemann Hypothesis</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rake-Compress Riccati Recursions for Parallel Scenario-Tree Model Predictive Control — NewsMatome (EN)</title>
+<meta name="description" content="Rake-Compress Riccati Recursions for Parallel Scenario-Tree Model Predictive Control — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/a54524e57296.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/a54524e57296.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/a54524e57296.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/a54524e57296.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Rake-Compress Riccati Recursions for Parallel Scenario-Tree Model Predictive Control">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Rake-Compress Riccati Recursions for Parallel Scenario-Tree Model Predictive Control",
+ "inLanguage":"en","datePublished":"2026-08-05T07:00:00+09:00","dateModified":"2026-08-05T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"ロボット技術担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2608.01332","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/a54524e57296.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/a54524e57296.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#ef4444"></span>ロボット技術</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Rake-Compress Riccati Recursions for Parallel Scenario-Tree Model Predictive Control</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b></span></span><span>2026/08/05</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/a54524e57296.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.01332" rel="nofollow noopener">https://arxiv.org/abs/2608.01332</a></span></div>
+  <div class="article-body"><p>arXiv:2608.01332v1 Announce Type: cross 
+Abstract: Scenario-tree model predictive control (MPC) represents future information by a rooted tree and optimizes a nonanticipative policy over that tree. Numerical methods for solving the resulting nonlinear program typically compute their search directions through a sequence of branched linear-quadratic regulator (LQR) subproblems. The standard tree Riccati recursion requires linear work but has a dependency chain proportional to tree height.
+  We present an algebraically exact parallel solver based on rake-compress tree contraction. After independent local control condensation, its two operations act on node and edge data that represent conditional quadratic functions. A rake eliminates a leaf and its parent edge, adding their reduced contribution to the parent-node data. A compress eliminates a unary node and replaces its two adjacent edges by one edge, using the same conditional-value composition as parallel Riccati methods on a chain. Together they contract an arbitrary rooted tree to its root; reversing the contraction recovers every Riccati coefficient, state, control, and multiplier. Given a reusable topology plan, a solve with $N$ nodes and fixed state and control dimensions has $O(N)$ arithmetic work and storage and $O(\log N)$ span, independently of tree height, balance, and maximum out-degree.
+  The formulation allows positive-semidefinite dual regularization, including the unregularized case, and an exact linear-size lifting covers the standard scenario-MPC convention of one control per information node. We prove the contraction identities and equivalence to the Karush-Kuhn-Tucker (KKT) system. Three MIT-licensed JAX packages implement the bidirectional contraction, the dual-regularized LQR solver, and a user-facing primal-dual interior-point solver for tree-structured optimal control.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
