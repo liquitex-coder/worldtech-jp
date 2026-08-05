@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LoCA: Forward-Only LLM Tuning after One-Shot Calibration with Local Credit Assignment — NewsMatome (EN)</title>
+<meta name="description" content="LoCA: Forward-Only LLM Tuning after One-Shot Calibration with Local Credit Assignment — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/542093ef08d0.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/542093ef08d0.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/542093ef08d0.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/542093ef08d0.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LoCA: Forward-Only LLM Tuning after One-Shot Calibration with Local Credit Assignment">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"LoCA: Forward-Only LLM Tuning after One-Shot Calibration with Local Credit Assignment",
+ "inLanguage":"en","datePublished":"2026-08-06T07:00:00+09:00","dateModified":"2026-08-06T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2608.03020","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/542093ef08d0.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/542093ef08d0.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>LoCA: Forward-Only LLM Tuning after One-Shot Calibration with Local Credit Assignment</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/08/06</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/542093ef08d0.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.03020" rel="nofollow noopener">https://arxiv.org/abs/2608.03020</a></span></div>
+  <div class="article-body"><p>arXiv:2608.03020v1 Announce Type: new 
+Abstract: Parameter-efficient post-training reduces the number of trainable parameters, but still requires repeated end-to-end backpropagation through the frozen backbone. Every adaptation step therefore needs backward-capable hardware and must store or recompute activations. We ask whether this repeated backward chain can be replaced by a one-time calibration. We introduce Local Credit Assignment (LoCA), a two-stage method for small-shift adaptation. One probe backward pass fits a low-rank map at each transformer block from the final prediction error to a local hidden-state correction. LoCA then reuses these maps to form blockwise regression targets from forward activations and fits low-rank adapters with closed-form ridge solves. No further backbone backward pass is required. We evaluate LoCA on five discriminative benchmarks with Qwen2.5 models from 0.5B to 14B. In 16 of 25 reported task--scale comparisons, LoCA yields lower evaluation cross-entropy than the corresponding LoRA run. Its measured full-run GPU peak, including calibration, is 26--29\% lower than LoRA&#x27;s. After calibration, its CPU steady-state memory is 36--52\% lower and its per-pass time is 43--48\% lower. A shared scale-normalized candidate set is reused across all tested Qwen2.5 sizes and on SmolLM2-1.7B. LoCA thus amortizes global credit assignment into one calibration and enables later forward-only tuning when repeated backpropagation is impractical. The code associated with this paper is available \href{https://github.com/Xia12121/LoCA}{here}.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

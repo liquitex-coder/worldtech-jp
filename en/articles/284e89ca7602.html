@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MalariAI: A Label-Resilient Decoupled Framework for Universal Cell Segmentation and Explainable Stage Classification in Dense Malaria Blood Smears — NewsMatome (EN)</title>
-<meta name="description" content="MalariAI: A Label-Resilient Decoupled Framework for Universal Cell Segmentation and Explainable Stage Classification in Dense Malaria Blood Smears — original-language edition. Japanese translation available.">
+<title>MalariAI: A Label-Resilient Decoupled Framework for Annotation-Agnostic Cell Segmentation and Explainable Stage Classification in Dense Malaria Blood Smears — NewsMatome (EN)</title>
+<meta name="description" content="MalariAI: A Label-Resilient Decoupled Framework for Annotation-Agnostic Cell Segmentation and Explainable Stage Classification in Dense Malaria Blood Smears — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/284e89ca7602.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/284e89ca7602.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/284e89ca7602.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/284e89ca7602.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MalariAI: A Label-Resilient Decoupled Framework for Universal Cell Segmentation and Explainable Stage Classification in Dense Malaria Blood Smears">
+<meta property="og:title" content="MalariAI: A Label-Resilient Decoupled Framework for Annotation-Agnostic Cell Segmentation and Explainable Stage Classification in Dense Malaria Blood Smears">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"MalariAI: A Label-Resilient Decoupled Framework for Universal Cell Segmentation and Explainable Stage Classification in Dense Malaria Blood Smears",
- "inLanguage":"en","datePublished":"2026-07-03T07:00:00+09:00","dateModified":"2026-07-03T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"MalariAI: A Label-Resilient Decoupled Framework for Annotation-Agnostic Cell Segmentation and Explainable Stage Classification in Dense Malaria Blood Smears",
+ "inLanguage":"en","datePublished":"2026-08-06T07:00:00+09:00","dateModified":"2026-08-06T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.00385","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/284e89ca7602.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>MalariAI: A Label-Resilient Decoupled Framework for Universal Cell Segmentation and Explainable Stage Classification in Dense Malaria Blood Smears</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/03</span></div>
+    <h1>MalariAI: A Label-Resilient Decoupled Framework for Annotation-Agnostic Cell Segmentation and Explainable Stage Classification in Dense Malaria Blood Smears</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/08/06</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/284e89ca7602.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.00385" rel="nofollow noopener">https://arxiv.org/abs/2607.00385</a></span></div>
-  <div class="article-body"><p>arXiv:2607.00385v1 Announce Type: cross 
-Abstract: Automated malaria diagnosis from blood smear microscopy is a critical challenge in global health AI; in resource-limited settings, the scarcity of expert microscopists remains the primary bottleneck to timely and accurate diagnosis. Three compounding failure modes prevent reliable clinical deployment of existing deep learning systems. First, end-to-end detectors treat unannotated cells as background during training, producing recall figures that are strongly influenced by annotation completeness rather than reflecting true cell recovery. Second, Non-Maximum Suppression tends to suppress valid detections in dense smear regions where infection counts matter most. Third, existing whole-slide detection pipelines lack per-cell spatial evidence for clinical audit, despite image-level explainability methods such as Grad-CAM having been applied to malaria image classification tasks. We present MalariAI, a two-stage decoupled framework that addresses all three failure modes in a unified pipeline. Stage 1 applies an annotation-agnostic distance-transform guided watershed algorithm to isolate every cell in a full 1600x1200 blood smear image, recovering 75.95% of ground-truth cells by centroid localisation across the 120-image NIH BBBC041 test set without any ground-truth input. Stage 2 fine-tunes EfficientNet-B0 with Focal Loss (gamma = 2.0, per-class inverse-frequency weights) on 64x64 crops, achieving 98.36% overall classification accuracy with 87.5% and 75.0% per-class accuracy on the rare schizont and gametocyte stages, compared to only 24.57% and 25.95% AP for a Faster R-CNN baseline on the same classes. Grad-CAM++ heatmaps generated per detected cell provide instance-level spatial evidence for clinical audit, enabling microscopists to verify model predictions at the individual parasite level without sacrificing classification performance.</p></div>
+  <div class="article-body"><p>arXiv:2607.00385v2 Announce Type: replace-cross 
+Abstract: Automated malaria diagnosis from blood smear microscopy is a critical global health AI challenge; expert scarcity remains the primary diagnostic bottleneck. Existing deep learning systems face three compounding failures: end-to-end detectors treat unannotated cells as background, skewing recall by annotation completeness rather than true cell recovery; Non-Maximum Suppression suppresses valid detections in dense smears; and pipelines lack per-cell spatial evidence for clinical audit. We present MalariAI, a two-stage decoupled framework addressing all three. Stage 1 applies an annotation-agnostic watershed algorithm to isolate every cell in a full 1600x1200 image, recovering 75.95% of ground-truth cells without any ground-truth input. End-to-end, the pipeline reaches a binary parasitized AP@0.5 of 29.10% - the clinically relevant metric for flagging any infected cell - while the stricter multi-class mAP@0.5 of 8.67% mainly reflects watershed&#x27;s organic region boundaries being penalized against axis-aligned ground-truth boxes, not a localisation failure. Stage 2 fine-tunes EfficientNet-B0 with Focal Loss on ground-truth crops, achieving 98.36% classification accuracy - an oracle upper bound once a cell is correctly localised - with 87.5% and 75.0% accuracy on the rare schizont and gametocyte stages, versus 38.45% and 57.27% AP for a modern YOLOv8s detector evaluated end-to-end on the same classes. Grad-CAM++ heatmaps generated per detected cell provide instance-level spatial evidence for clinical audit; a quantitative energy-in-box analysis confirms this activation is concentrated on the annotated cell body significantly above a geometric chance baseline (+0.0485, paired p = 1.4 x 10^-33), letting microscopists verify predictions at the individual parasite level without sacrificing classification performance.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

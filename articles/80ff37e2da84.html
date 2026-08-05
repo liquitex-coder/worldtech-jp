@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Symplectic Neural Networks for learning Generalized Hamiltonians — NewsMatome</title>
-<meta name="description" content="Symplectic Neural Networks for learning Generalized Hamiltonians（EN→JA 翻訳・出典付き）">
+<title>Symplectic Neural Networks for Learning Non-Separable Hamiltonians — NewsMatome</title>
+<meta name="description" content="Symplectic Neural Networks for Learning Non-Separable Hamiltonians（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/80ff37e2da84.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/80ff37e2da84.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/80ff37e2da84.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="Symplectic Neural Networks for learning Generalized Hamiltonians">
-<meta property="og:description" content="Symplectic Neural Networks for learning Generalized Hamiltonians（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="Symplectic Neural Networks for Learning Non-Separable Hamiltonians">
+<meta property="og:description" content="Symplectic Neural Networks for Learning Non-Separable Hamiltonians（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Symplectic Neural Networks for learning Generalized Hamiltonians",
- "inLanguage":"ja","datePublished":"2026-06-27T07:00:00+09:00","dateModified":"2026-06-27T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Symplectic Neural Networks for Learning Non-Separable Hamiltonians",
+ "inLanguage":"ja","datePublished":"2026-08-06T07:00:00+09:00","dateModified":"2026-08-06T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.27029","url":"https://liquitex-coder.github.io/worldtech-jp/articles/80ff37e2da84.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>Symplectic Neural Networks for learning Generalized Hamiltonians</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>Symplectic Neural Networks for Learning Non-Separable Hamiltonians</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>Symplectic Neural Networks for learning Generalized Hamiltonians</h1>
+      <h1>Symplectic Neural Networks for Learning Non-Separable Hamiltonians</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/06/27 07:00</span><span>· 更新 2026/06/27</span>
+        <span>公開 2026/08/06 07:00</span><span>· 更新 2026/08/06</span>
       </div>
     </div>
     
@@ -74,16 +74,16 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2606.27029" rel="nofollow noopener">Symplectic Neural Networks for learning Generalized Hamiltonians</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2606.27029" rel="nofollow noopener">Symplectic Neural Networks for Learning Non-Separable Hamiltonians</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2606.27029v1 Announce Type: new 
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2606.27029v2 Announce Type: replace 
 Abstract: Hamiltonian Neural Networks (HNNs) integrate physical priors into neural models by learning a system&#x27;s Hamiltonian, improving generalization and sample efficiency. Identifying the system Hamiltonian from noisy observations of state variables is a challenging task. For simulations to faithfully reflect the long-term behavior of Hamiltonian systems, especially energy conservation, it is essential to use symplectic integrators, which preserve the system&#x27;s geometric structure. This fidelity comes at a cost: implicit symplectic integrators are more computationally intensive and make backpropagation through the ODE solver non-trivial. However, by leveraging the fact that symplectic discretizations of the adjoint system yield the same sensitivities associated by backpropagation, we obtain an efficient method of training the Neural Network parameters. In our work, we explore this alternate method of HNN training under noisy observation of trajectories with our HNN model based on an implicit symplectic integrator. Computationally, a predictor-corrector based ODE solver and fixed point iteration help to mitigate the computational cost of the implicit timestepping, resulting in more efficient generation of gradient updates. We showcase the numerical advantage, in experiments, in system identification and energy preservation on a range of non-separable, chaotic systems and the efficient computation and memory complexity of our method. We also observe that the post-processing of the learned Hamiltonian using backward error analysis yields a modified Hamiltonian that is a more accurate approximation of the true Hamiltonian without the need to use more accurate discretizations of the flow map.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2606.27029v1 Announce Type: new 
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2606.27029v2 Announce Type: replace 
 Abstract: Hamiltonian Neural Networks (HNNs) integrate physical priors into neural models by learning a system&#x27;s Hamiltonian, improving generalization and sample efficiency. Identifying the system Hamiltonian from noisy observations of state variables is a challenging task. For simulations to faithfully reflect the long-term behavior of Hamiltonian systems, especially energy conservation, it is essential to use symplectic integrators, which preserve the system&#x27;s geometric structure. This fidelity comes at a cost: implicit symplectic integrators are more computationally intensive and make backpropagation through the ODE solver non-trivial. However, by leveraging the fact that symplectic discretizations of the adjoint system yield the same sensitivities associated by backpropagation, we obtain an efficient method of training the Neural Network parameters. In our work, we explore this alternate method of HNN training under noisy observation of trajectories with our HNN model based on an implicit symplectic integrator. Computationally, a predictor-corrector based ODE solver and fixed point iteration help to mitigate the computational cost of the implicit timestepping, resulting in more efficient generation of gradient updates. We showcase the numerical advantage, in experiments, in system identification and energy preservation on a range of non-separable, chaotic systems and the efficient computation and memory complexity of our method. We also observe that the post-processing of the learned Hamiltonian using backward error analysis yields a modified Hamiltonian that is a more accurate approximation of the true Hamiltonian without the need to use more accurate discretizations of the flow map.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2606.27029v1 Announce Type: new 
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2606.27029v2 Announce Type: replace 
 Abstract: Hamiltonian Neural Networks (HNNs) integrate physical priors into neural models by learning a system&#x27;s Hamiltonian, improving generalization and sample efficiency. Identifying the system Hamiltonian from noisy observations of state variables is a challenging task. For simulations to faithfully reflect the long-term behavior of Hamiltonian systems, especially energy conservation, it is essential to use symplectic integrators, which preserve the system&#x27;s geometric structure. This fidelity comes at a cost: implicit symplectic integrators are more computationally intensive and make backpropagation through the ODE solver non-trivial. However, by leveraging the fact that symplectic discretizations of the adjoint system yield the same sensitivities associated by backpropagation, we obtain an efficient method of training the Neural Network parameters. In our work, we explore this alternate method of HNN training under noisy observation of trajectories with our HNN model based on an implicit symplectic integrator. Computationally, a predictor-corrector based ODE solver and fixed point iteration help to mitigate the computational cost of the implicit timestepping, resulting in more efficient generation of gradient updates. We showcase the numerical advantage, in experiments, in system identification and energy preservation on a range of non-separable, chaotic systems and the efficient computation and memory complexity of our method. We also observe that the post-processing of the learned Hamiltonian using backward error analysis yields a modified Hamiltonian that is a more accurate approximation of the true Hamiltonian without the need to use more accurate discretizations of the flow map.</p><a href="https://arxiv.org/abs/2606.27029" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2606.27029" rel="nofollow noopener">https://arxiv.org/abs/2606.27029</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
@@ -91,7 +91,7 @@ Abstract: Hamiltonian Neural Networks (HNNs) integrate physical priors into neur
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="d68073359dea.html"><div class="sim">関連</div><div class="info"><b>Detecting and Controlling Sycophancy with Cascading Linear Features</b><div class="m">AI</div></div></a><a class="r" href="58656fa3e321.html"><div class="sim">関連</div><div class="info"><b>Life After Benchmark Saturation: A Case Study of CORE-Bench</b><div class="m">AI</div></div></a><a class="r" href="4c5afea8db4c.html"><div class="sim">関連</div><div class="info"><b>Refusal Lives Downstream of Persona in Chat Models</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="76b260f0042f.html"><div class="sim">関連</div><div class="info"><b>ISEE: Interactive Semantic Enrichment for Database Fields</b><div class="m">AI</div></div></a><a class="r" href="a3a77ab394e1.html"><div class="sim">関連</div><div class="info"><b>Self-Organising Digital Circuits</b><div class="m">AI</div></div></a><a class="r" href="fd1f30fd0c00.html"><div class="sim">関連</div><div class="info"><b>Beyond the Hivemind: Escaping LLM Homogeneity via Meta-Persona Anchoring and Sequential Temperature Scaling</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

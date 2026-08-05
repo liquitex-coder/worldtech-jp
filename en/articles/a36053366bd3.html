@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Dark Room in the Reward Channel: Dense Prediction Rewards Collapse GRPO-Trained LLM Agents -- and What Actually Works — NewsMatome (EN)</title>
-<meta name="description" content="The Dark Room in the Reward Channel: Dense Prediction Rewards Collapse GRPO-Trained LLM Agents -- and What Actually Works — original-language edition. Japanese translation available.">
+<title>The Dark Room in the Reward Channel: Dense Prediction Rewards Collapse GRPO-Trained LLM Agents -- and The Channel, Not the Content, Decides What Works — NewsMatome (EN)</title>
+<meta name="description" content="The Dark Room in the Reward Channel: Dense Prediction Rewards Collapse GRPO-Trained LLM Agents -- and The Channel, Not the Content, Decides What Works — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/a36053366bd3.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/a36053366bd3.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/a36053366bd3.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/a36053366bd3.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="The Dark Room in the Reward Channel: Dense Prediction Rewards Collapse GRPO-Trained LLM Agents -- and What Actually Works">
+<meta property="og:title" content="The Dark Room in the Reward Channel: Dense Prediction Rewards Collapse GRPO-Trained LLM Agents -- and The Channel, Not the Content, Decides What Works">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"The Dark Room in the Reward Channel: Dense Prediction Rewards Collapse GRPO-Trained LLM Agents -- and What Actually Works",
- "inLanguage":"en","datePublished":"2026-07-25T07:00:00+09:00","dateModified":"2026-07-25T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"The Dark Room in the Reward Channel: Dense Prediction Rewards Collapse GRPO-Trained LLM Agents -- and The Channel, Not the Content, Decides What Works",
+ "inLanguage":"en","datePublished":"2026-08-06T07:00:00+09:00","dateModified":"2026-08-06T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.21273","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/a36053366bd3.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>The Dark Room in the Reward Channel: Dense Prediction Rewards Collapse GRPO-Trained LLM Agents -- and What Actually Works</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/25</span></div>
+    <h1>The Dark Room in the Reward Channel: Dense Prediction Rewards Collapse GRPO-Trained LLM Agents -- and The Channel, Not the Content, Decides What Works</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/06</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/a36053366bd3.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.21273" rel="nofollow noopener">https://arxiv.org/abs/2607.21273</a></span></div>
-  <div class="article-body"><p>arXiv:2607.21273v1 Announce Type: new 
-Abstract: Dense per-step supervision is an appealing remedy for sparse-reward, long-horizon LLM agents: reward the agent for predicting its next observation, and memory should follow. We show that under group-normalized RL (GRPO), this recipe does not merely fail -- it destroys the policy. Across Qwen3-1.7B/4B/8B on ALFWorld, a potential-based prediction reward drives every run into a degenerate absorbing state (prediction accuracy -&gt; 1.0, task success -&gt; 0,episode length pinned at the horizon): the &quot;dark room&quot; pathology, built automatically by the optimizer. A single-factor ablation localizes the cause -- removing only GRPO&#x27;s std normalization turns the same reward from catastrophic (0%) into baseline parity -- and a two-line proposition explains why: in all-fail groups the z-scored advantage is invariant to the shaping coefficient, so bounded rewards become unbounded pressure and annealing cannot help. Our central insight generalizes this: what z-scoring amplifies is a dense signal&#x27;s within-group variance while all-fail groups dominate, so signals whose variance decays by mastery are structurally amplifier-safe.This variance-profile criterion retrodicts our collapses, carries preregistered predictions for arms that had not yet run, and is consistent with published reward-channel successes (a compatibility check, not an independent test). Finally, a controlled signal-delivery matrix (identical signal, varying only the consumption mechanism) shows the reward channel is at best neutral while the auxiliary-loss channel gains ~20 points -- and a shuffled-gold placebo matches the true-gold arm, so the gap survives without correct labels. Endpoints are single-seed; seed replication and group-size controls are preregistered and in progress.</p></div>
+  <div class="article-body"><p>arXiv:2607.21273v2 Announce Type: replace 
+Abstract: Dense per-step supervision is the standard remedy for sparse-reward long-horizon LLM agents: reward the policy for predicting its next observation, which looks provably safe under potential-based shaping. Published prediction-reward and auxiliary-loss variants report both successes and instabilities; we supply the controlled account: 74 preregistered arms dissect one fixed prediction signal under GRPO across ALFWorld, WebShop, a synthetic POMDP, and Qwen3-1.7B/4B/8B, varying only the delivery mechanism. (1) Every run sustaining this difference-form reward under untouched std normalization (no filtering, dynamic-sampling, or decoupling mitigations) collapses: eleven runs across scales, coefficients, group sizes, and groupings (the floor-bound synthetic environment stalls instead); ALFWorld runs end in an absorbing state (prediction accuracy -&gt; 1.0, success -&gt; 0): the optimizer builds the &quot;dark room&quot;. The algebra is one line: in all-fail groups z-scoring cancels the shaping coefficient; removing only std normalization restores baseline parity. (2) A signal&#x27;s danger is set by its within-group variance trajectory, plus hackability as a second axis; it retrodicts every reward-channel collapse and survives preregistered prospective tests. (3) The same signal as a teacher-forced auxiliary loss is harmless on ALFWorld at 4B, but the gain is not the signal&#x27;s: content-free placebos as a class match or beat gold at both matched seeds (s0: 78.8 vs 68.6; s42: 67.9 vs 57.9); the auxiliary update is the regularizer. (4) At 8B the recipe turns bistable: gold full-weight locks two of three seeds; every content-free or reduced-weight arm stays healthy. No ALFWorld or WebShop reward-channel variant measurably beats its matched-normalization baseline and no gold signal measurably outperforms its content-free placebo: the delivery channel, not the content, decides; which channel is safe is regime-dependent.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

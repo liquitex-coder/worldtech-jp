@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Making Single-Cell Data Distillation Auditable: Traceable Real-Cell Coresets via Discrete Min-Max Selection — NewsMatome (EN)</title>
-<meta name="description" content="Making Single-Cell Data Distillation Auditable: Traceable Real-Cell Coresets via Discrete Min-Max Selection — original-language edition. Japanese translation available.">
+<title>Making Single-Cell Data Distillation Auditable: Traceable Real-Cell Coresets via Discrete Min--Max Selection — NewsMatome (EN)</title>
+<meta name="description" content="Making Single-Cell Data Distillation Auditable: Traceable Real-Cell Coresets via Discrete Min--Max Selection — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/1da92b2e7055.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/1da92b2e7055.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/1da92b2e7055.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/1da92b2e7055.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Making Single-Cell Data Distillation Auditable: Traceable Real-Cell Coresets via Discrete Min-Max Selection">
+<meta property="og:title" content="Making Single-Cell Data Distillation Auditable: Traceable Real-Cell Coresets via Discrete Min--Max Selection">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Making Single-Cell Data Distillation Auditable: Traceable Real-Cell Coresets via Discrete Min-Max Selection",
- "inLanguage":"en","datePublished":"2026-07-24T07:00:00+09:00","dateModified":"2026-07-24T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Making Single-Cell Data Distillation Auditable: Traceable Real-Cell Coresets via Discrete Min--Max Selection",
+ "inLanguage":"en","datePublished":"2026-08-06T07:00:00+09:00","dateModified":"2026-08-06T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.19426","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/1da92b2e7055.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Making Single-Cell Data Distillation Auditable: Traceable Real-Cell Coresets via Discrete Min-Max Selection</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/24</span></div>
+    <h1>Making Single-Cell Data Distillation Auditable: Traceable Real-Cell Coresets via Discrete Min--Max Selection</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/06</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/1da92b2e7055.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.19426" rel="nofollow noopener">https://arxiv.org/abs/2607.19426</a></span></div>
-  <div class="article-body"><p>arXiv:2607.19426v1 Announce Type: cross 
-Abstract: Single-cell datasets are increasingly costly to store, audit, and reuse for model training. Dimensionality reduction and dataset distillation can reduce this burden, but conventional distillation methods often produce synthetic expression profiles that cannot be traced to an assayed cell. We formulate traceable single-cell data distillation as retaining original cell identifiers and gene symbols under fixed cell and gene budgets. The resulting training subset remains connected to measured counts, labels, and assay metadata, so unexpected predictions can be checked against their source data. We propose two real-cell selectors. Fixed-CF uses static characteristic-function matching. Minmax-CF solves an entropy-regularized discrete min--max problem that upweights poorly preserved directions and adds only observed cells. Across donor-, technology-, and perturbation-level shifts on three datasets, Minmax-CF retains 96.52% of Full balanced accuracy on MS, approximately matches Full on average on hPancreas with a median $2.55\times$ GPU speedup in the all-gene setting, and obtains the lowest pathway error among compressed methods on Norman. Performance remains weaker for rare states, some technology shifts, unseen perturbation components, and settings where fidelity is weakly associated with downstream utility. Because the selected IDs refer to measured cells, these cases can be investigated by inspecting the corresponding training support, labels, and assay metadata. Minmax-CF consistently reduces worst-direction discrepancy, while downstream utility and cost vary across datasets and tasks.</p></div>
+  <div class="article-body"><p>arXiv:2607.19426v2 Announce Type: replace-cross 
+Abstract: Large single-cell datasets are expensive to store, curate, and repeatedly reuse for model training. Data distillation can reduce this burden by building smaller training sets. However, many existing methods rely on synthetic cells. These synthetic cells do not retain direct correspondence with assayed cells and genes. This limits source-level inspection and biological traceability. Moreover, real-cell expression matrices are often sparse and noisy. In light of these challenges, we propose Minmax-CF, a label-aware characteristic-function selector for traceable single-cell data distillation. Minmax-CF formulates compression as a discrete min--max selection problem over characteristic-function directions. It uses entropy-regularized maximization to emphasize the least preserved directions. Greedy minimization ranks cells and genes by how much they reduce the resulting weighted error. The method alternates cell and gene selection under explicit axis-specific budgets. Across five coarse-lineage benchmarks and five compression budgets, Minmax-CF retains 95.3% of the Full-reference macro-F1 on average, with gaps that exceed one per-seed standard deviation. It also retains exact source-cell indices and original gene symbols. Compared with size-matched synthetic PCA-Centroid and Distribution Matching (DM) baselines, Minmax-CF achieves higher coarse-lineage macro-F1 in 24 of 25 comparisons against each baseline. It exceeds their average performance by 10.4% and 17.4%, respectively. Retained cells can also be projected onto independently computed embeddings for direct biological interpretation.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>
