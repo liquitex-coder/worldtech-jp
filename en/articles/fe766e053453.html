@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MESH: Memory-Efficient Sinkhorn Optimization for Mixture-of-Experts Training — NewsMatome (EN)</title>
+<meta name="description" content="MESH: Memory-Efficient Sinkhorn Optimization for Mixture-of-Experts Training — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/fe766e053453.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/fe766e053453.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/fe766e053453.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/fe766e053453.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MESH: Memory-Efficient Sinkhorn Optimization for Mixture-of-Experts Training">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"MESH: Memory-Efficient Sinkhorn Optimization for Mixture-of-Experts Training",
+ "inLanguage":"en","datePublished":"2026-08-07T07:00:00+09:00","dateModified":"2026-08-07T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2608.04407","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/fe766e053453.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/fe766e053453.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>MESH: Memory-Efficient Sinkhorn Optimization for Mixture-of-Experts Training</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/07</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/fe766e053453.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.04407" rel="nofollow noopener">https://arxiv.org/abs/2608.04407</a></span></div>
+  <div class="article-body"><p>arXiv:2608.04407v1 Announce Type: new 
+Abstract: Memory-efficient matrix optimizers such as Sinkhorn gradient descent remove most AdamW optimizer state for dense Transformer matrices, but direct application to Mixture-of-Experts (MoE) training is unreliable. We study this failure in a controlled 110M-parameter nanowhale DeepSeek-style MoE pretraining setting. A SAGE/Sinkhorn hybrid reduces optimizer state from 0.883GB to 0.331GB but degrades evaluation loss to 3.8265, far above the AdamW baselines observed in the same setup (3.58--3.64 across the seeds we study). We show that routed MoE expert matrices are the dominant failure point: their gradients are conditional, temporally varying, and poorly served by stateless Sinkhorn normalization. We propose MESH, a hidden-momentum Sinkhorn update for MoE experts. MESH restores a temporal first-moment signal through the gradient-buffer lifecycle, without storing the expert first moment as optimizer state. MESH is an optional block-preconditioned variant that adds a coarse neuron/block inverse-RMS multiplier. Across ablations, temporal smoothing before matrix normalization is the primary causal ingredient; block/neuron preconditioning can improve the memory-quality frontier, but is not established as universally necessary. In two additional seeds, MESH and MESH-B reduce optimizer-state memory by 62.5\% and peak PyTorch CUDA allocation by about 12.6\% relative to AdamW, with a modest evaluation-loss gap. Full-state diagnostic variants recover AdamW-like performance in ablations, supporting the conclusion that MoE experts need temporal smoothing, but not necessarily full coordinate-wise AdamW state.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

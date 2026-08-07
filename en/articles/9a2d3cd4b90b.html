@@ -17,8 +17,8 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"Measuring the Dependency Gap: Diagnosing Inter-Column Fidelity in Tabular Generative Models",
- "inLanguage":"en","datePublished":"2026-08-01T07:00:00+09:00","dateModified":"2026-08-01T07:00:00+09:00",
- "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "inLanguage":"en","datePublished":"2026-08-07T07:00:00+09:00","dateModified":"2026-08-07T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.21636","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/9a2d3cd4b90b.html"}
 </script>
@@ -32,14 +32,14 @@
 </div></header>
 <div class="wrap"><article class="article">
   <div class="article-head">
-    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
     <h1>Measuring the Dependency Gap: Diagnosing Inter-Column Fidelity in Tabular Generative Models</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/08/01</span></div>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/07</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/9a2d3cd4b90b.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.21636" rel="nofollow noopener">https://arxiv.org/abs/2607.21636</a></span></div>
-  <div class="article-body"><p>arXiv:2607.21636v2 Announce Type: replace-cross 
-Abstract: Synthetic tabular data is prized for preserving not just each column&#x27;s marginal distribution but the dependencies between columns - structure that carries much of the discriminative signal for minority classes in imbalanced domains such as fraud detection and clinical risk. Yet the metrics most commonly used to certify such data are largely blind to this structure: a fully-factorized baseline that destroys all inter-column dependency is judged nearly indistinguishable from real data by the logistic-regression C2ST, while the pairwise Trend score is only partially sensitive. We introduce a dependency-aware fidelity diagnostic that decomposes a strong gradient-boosted classifier two-sample test (XGB-C2ST) into marginal, dependency, and numerical-categorical cross components, anchored between a fully-factorized lower bound and a real-data oracle upper bound. Applying it to state-of-the-art flow-matching (TabbyFlow/EF-VFM) and diffusion (TabDiff) generators, we expose a real dependency gap that standard metrics miss and that tracks minority-class utility. The gap is not a structural limitation of mean-field objectives - consistent with recent recovery results, these are asymptotically exact - yet it is stubborn: neither a 16x capacity increase nor post-hoc copula correction closes it, pointing to the absence of direct dependency supervision rather than a capacity or structural limit.</p></div>
+  <div class="article-body"><p>arXiv:2607.21636v3 Announce Type: replace 
+Abstract: Synthetic tabular data are valued for preserving not just column-wise marginals but inter-column dependency, which carries much of the minority-class signal in domains such as fraud detection and clinical risk. Yet standard certification is largely blind to it: a fully-factorized baseline that destroys all inter-column dependency still appears nearly real under the commonly reported linear classifier two-sample test (C2ST), and is only mildly penalized by pairwise Trend scores. This is a known weakness of linear detection scores, which we confirm on four benchmarks. We therefore decompose a stronger, gradient-boosted C2ST score into marginal, dependency, and numerical-categorical cross terms, each read against a zero-dependency reference and a real-data oracle. Applied to representative flow-matching (TabbyFlow/EF-VFM) and diffusion (TabDiff) generators, it finds a persistent dependency gap of comparable magnitude in both, tracking what their objectives share rather than anything specific to one. Dependency is necessary for minority-class utility, since a zero-dependency reference collapses it, yet the generators&#x27; residual gaps coincide with much smaller shortfalls that do not track the measured gap. The gap is neither a structural limitation of mean-field objectives nor closed by a 16x capacity increase where training is clean, which motivates supervising dependency directly in the objective as the next intervention to test.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

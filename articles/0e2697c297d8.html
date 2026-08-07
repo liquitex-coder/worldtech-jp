@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Instruction-Conditioned Exploration with Asymmetric Reinforcement Learning and Self-Distillation — NewsMatome</title>
-<meta name="description" content="Instruction-Conditioned Exploration with Asymmetric Reinforcement Learning and Self-Distillation（EN→JA 翻訳・出典付き）">
+<title>Instruction-Conditioned Exploration for Reinforcement Learning with Self-Distillation to an Unconditioned Policy — NewsMatome</title>
+<meta name="description" content="Instruction-Conditioned Exploration for Reinforcement Learning with Self-Distillation to an Unconditioned Policy（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/0e2697c297d8.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/0e2697c297d8.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/0e2697c297d8.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="Instruction-Conditioned Exploration with Asymmetric Reinforcement Learning and Self-Distillation">
-<meta property="og:description" content="Instruction-Conditioned Exploration with Asymmetric Reinforcement Learning and Self-Distillation（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="Instruction-Conditioned Exploration for Reinforcement Learning with Self-Distillation to an Unconditioned Policy">
+<meta property="og:description" content="Instruction-Conditioned Exploration for Reinforcement Learning with Self-Distillation to an Unconditioned Policy（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Instruction-Conditioned Exploration with Asymmetric Reinforcement Learning and Self-Distillation",
- "inLanguage":"ja","datePublished":"2026-08-05T07:00:00+09:00","dateModified":"2026-08-05T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Instruction-Conditioned Exploration for Reinforcement Learning with Self-Distillation to an Unconditioned Policy",
+ "inLanguage":"ja","datePublished":"2026-08-07T07:00:00+09:00","dateModified":"2026-08-07T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2608.02087","url":"https://liquitex-coder.github.io/worldtech-jp/articles/0e2697c297d8.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>Instruction-Conditioned Exploration with Asymmetric Reinforcement Learning and Self-Distillation</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>Instruction-Conditioned Exploration for Reinforcement Learning with Self-Distillation to an Unconditioned Policy</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>Instruction-Conditioned Exploration with Asymmetric Reinforcement Learning and Self-Distillation</h1>
+      <h1>Instruction-Conditioned Exploration for Reinforcement Learning with Self-Distillation to an Unconditioned Policy</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/08/05 07:00</span><span>· 更新 2026/08/05</span>
+        <span>公開 2026/08/07 07:00</span><span>· 更新 2026/08/07</span>
       </div>
     </div>
     
@@ -74,24 +74,24 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2608.02087" rel="nofollow noopener">Instruction-Conditioned Exploration with Asymmetric Reinforcement Learning and Self-Distillation</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2608.02087" rel="nofollow noopener">Instruction-Conditioned Exploration for Reinforcement Learning with Self-Distillation to an Unconditioned Policy</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2608.02087v1 Announce Type: cross 
-Abstract: Post-training Large Language Models (LLMs) with Reinforcement Learning (RL) has become an important tool for improving model capabilities, but the LLM action-space structure introduces challenges distinct from classical RL, with implications for inducing exploration. New methods are required that leverage the broad knowledge and flexibility of pre-trained LLMs to deliberately generate diverse experience at training time. We propose Instruction-Conditioned Exploration (ICE), which supplements task prompts during training with one of several distinct instructions, increasing the coverage of behaviours attempted. To facilitate ICE, we propose Asymmetric-RL/SD, a combined Reinforcement Learning and Self-Distillation training objective, to transfer explored behaviours to the unconditioned test-time policy. ICE with the Asymmetric-RL/SD objective improves Qwen3-1.7B held-out pass@1 performance at $4$K response length on mathematical reasoning tasks by $5.0\%$ relative to training with DAPO, with improvement persisting at a longer 8K context.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2608.02087v1 Announce Type: cross 
-Abstract: Post-training Large Language Models (LLMs) with Reinforcement Learning (RL) has become an important tool for improving model capabilities, but the LLM action-space structure introduces challenges distinct from classical RL, with implications for inducing exploration. New methods are required that leverage the broad knowledge and flexibility of pre-trained LLMs to deliberately generate diverse experience at training time. We propose Instruction-Conditioned Exploration (ICE), which supplements task prompts during training with one of several distinct instructions, increasing the coverage of behaviours attempted. To facilitate ICE, we propose Asymmetric-RL/SD, a combined Reinforcement Learning and Self-Distillation training objective, to transfer explored behaviours to the unconditioned test-time policy. ICE with the Asymmetric-RL/SD objective improves Qwen3-1.7B held-out pass@1 performance at $4$K response length on mathematical reasoning tasks by $5.0\%$ relative to training with DAPO, with improvement persisting at a longer 8K context.</div>
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2608.02087v2 Announce Type: replace-cross 
+Abstract: Post-training Large Language Models (LLMs) with Reinforcement Learning (RL) has become an important tool for improving model capabilities, but the LLM action-space structure introduces challenges distinct from classical RL, with implications for inducing exploration. New methods are required that leverage the broad knowledge and flexibility of pre-trained LLMs to deliberately generate diverse experience at training time. We propose Instruction-Conditioned Exploration (ICE), which appends one of a small fixed set of instructions to task prompts during training, using the same set for every problem, increasing the coverage of behaviours attempted. To facilitate ICE, we combine RL on the instruction-conditioned policy with self-distillation of its correct rollouts into the unconditioned test-time policy. ICE with this objective improves Qwen3-1.7B held-out pass@1 performance at 4K response length on mathematical reasoning tasks by $5.0\%$ relative to training with DAPO, with improvement persisting at a longer 8K context. The improvement does not appear for Qwen3-4B at 4K, where the instructions do not expand base-model coverage.</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2608.02087v2 Announce Type: replace-cross 
+Abstract: Post-training Large Language Models (LLMs) with Reinforcement Learning (RL) has become an important tool for improving model capabilities, but the LLM action-space structure introduces challenges distinct from classical RL, with implications for inducing exploration. New methods are required that leverage the broad knowledge and flexibility of pre-trained LLMs to deliberately generate diverse experience at training time. We propose Instruction-Conditioned Exploration (ICE), which appends one of a small fixed set of instructions to task prompts during training, using the same set for every problem, increasing the coverage of behaviours attempted. To facilitate ICE, we combine RL on the instruction-conditioned policy with self-distillation of its correct rollouts into the unconditioned test-time policy. ICE with this objective improves Qwen3-1.7B held-out pass@1 performance at 4K response length on mathematical reasoning tasks by $5.0\%$ relative to training with DAPO, with improvement persisting at a longer 8K context. The improvement does not appear for Qwen3-4B at 4K, where the instructions do not expand base-model coverage.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2608.02087v1 Announce Type: cross 
-Abstract: Post-training Large Language Models (LLMs) with Reinforcement Learning (RL) has become an important tool for improving model capabilities, but the LLM action-space structure introduces challenges distinct from classical RL, with implications for inducing exploration. New methods are required that leverage the broad knowledge and flexibility of pre-trained LLMs to deliberately generate diverse experience at training time. We propose Instruction-Conditioned Exploration (ICE), which supplements task prompts during training with one of several distinct instructions, increasing the coverage of behaviours attempted. To facilitate ICE, we propose Asymmetric-RL/SD, a combined Reinforcement Learning and Self-Distillation training objective, to transfer explored behaviours to the unconditioned test-time policy. ICE with the Asymmetric-RL/SD objective improves Qwen3-1.7B held-out pass@1 performance at $4$K response length on mathematical reasoning tasks by $5.0\%$ relative to training with DAPO, with improvement persisting at a longer 8K context.</p><a href="https://arxiv.org/abs/2608.02087" rel="nofollow noopener">原論文を読む →</a></div>
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2608.02087v2 Announce Type: replace-cross 
+Abstract: Post-training Large Language Models (LLMs) with Reinforcement Learning (RL) has become an important tool for improving model capabilities, but the LLM action-space structure introduces challenges distinct from classical RL, with implications for inducing exploration. New methods are required that leverage the broad knowledge and flexibility of pre-trained LLMs to deliberately generate diverse experience at training time. We propose Instruction-Conditioned Exploration (ICE), which appends one of a small fixed set of instructions to task prompts during training, using the same set for every problem, increasing the coverage of behaviours attempted. To facilitate ICE, we combine RL on the instruction-conditioned policy with self-distillation of its correct rollouts into the unconditioned test-time policy. ICE with this objective improves Qwen3-1.7B held-out pass@1 performance at 4K response length on mathematical reasoning tasks by $5.0\%$ relative to training with DAPO, with improvement persisting at a longer 8K context. The improvement does not appear for Qwen3-4B at 4K, where the instructions do not expand base-model coverage.</p><a href="https://arxiv.org/abs/2608.02087" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2608.02087" rel="nofollow noopener">https://arxiv.org/abs/2608.02087</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
     <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="77f4e4cd0920.html"><div class="sim">関連</div><div class="info"><b>OpenClaw and Ollama in Agentic AI: Toward Fully Autonomous and Scalable AI Agent Systems</b><div class="m">AI</div></div></a><a class="r" href="c874a75499fc.html"><div class="sim">関連</div><div class="info"><b>Can AI Evaluate AI Scientists? A Benchmarking Study of Autonomous Research Generation Systems Using Automated Multi-Model Review</b><div class="m">AI</div></div></a><a class="r" href="b6d9813ef3dd.html"><div class="sim">関連</div><div class="info"><b>LLM Framework for Discovering Major Mathematical Conjectures: AI&#x27;s Quest for the Next Riemann Hypothesis</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="ddf59b7a3c16.html"><div class="sim">関連</div><div class="info"><b>A Long-Run Persistence Theory for AI Systems under the Redundancy-Adjusted Artificial Age Score (AAS)</b><div class="m">AI</div></div></a><a class="r" href="5c219df244ce.html"><div class="sim">関連</div><div class="info"><b>The LLM Proposes, the Executive Disposes: A Self-Verifying Agent Instrument that Dissociates Commitment Drift from Binding Drift in Long-Horizon Agents</b><div class="m">AI</div></div></a><a class="r" href="6e16c733e5c6.html"><div class="sim">関連</div><div class="info"><b>Monte Carlo Tree Search for Table-to-Multimodal Report Generation</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

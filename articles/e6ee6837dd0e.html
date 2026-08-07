@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ablation-Reversible Heads Don&#x27;t Transfer: A Stress Test for Mechanistic Role Claims in Transformers — NewsMatome</title>
-<meta name="description" content="Ablation-Reversible Heads Don&#x27;t Transfer: A Stress Test for Mechanistic Role Claims in Transformers（EN→JA 翻訳・出典付き）">
+<title>Necessary, Decodable and Reversible, Yet Not Transferable: A Stress Test for Attention-Head Role Claims — NewsMatome</title>
+<meta name="description" content="Necessary, Decodable and Reversible, Yet Not Transferable: A Stress Test for Attention-Head Role Claims（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/e6ee6837dd0e.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/e6ee6837dd0e.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/e6ee6837dd0e.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="Ablation-Reversible Heads Don&#x27;t Transfer: A Stress Test for Mechanistic Role Claims in Transformers">
-<meta property="og:description" content="Ablation-Reversible Heads Don&#x27;t Transfer: A Stress Test for Mechanistic Role Claims in Transformers（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="Necessary, Decodable and Reversible, Yet Not Transferable: A Stress Test for Attention-Head Role Claims">
+<meta property="og:description" content="Necessary, Decodable and Reversible, Yet Not Transferable: A Stress Test for Attention-Head Role Claims（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Ablation-Reversible Heads Don&#x27;t Transfer: A Stress Test for Mechanistic Role Claims in Transformers",
- "inLanguage":"ja","datePublished":"2026-06-10T07:00:00+09:00","dateModified":"2026-06-10T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Necessary, Decodable and Reversible, Yet Not Transferable: A Stress Test for Attention-Head Role Claims",
+ "inLanguage":"ja","datePublished":"2026-08-07T07:00:00+09:00","dateModified":"2026-08-07T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.08292","url":"https://liquitex-coder.github.io/worldtech-jp/articles/e6ee6837dd0e.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">AI</a><span class="sep">›</span><span>Ablation-Reversible Heads Don&#x27;t Transfer: A Stress Test for Mechanistic Role Claims in Transformers</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">AI</a><span class="sep">›</span><span>Necessary, Decodable and Reversible, Yet Not Transferable: A Stress Test for Attention-Head Role Claims</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>Ablation-Reversible Heads Don&#x27;t Transfer: A Stress Test for Mechanistic Role Claims in Transformers</h1>
+      <h1>Necessary, Decodable and Reversible, Yet Not Transferable: A Stress Test for Attention-Head Role Claims</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/06/10 07:00</span><span>· 更新 2026/06/10</span>
+        <span>公開 2026/08/07 07:00</span><span>· 更新 2026/08/07</span>
       </div>
     </div>
     
@@ -74,24 +74,24 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2606.08292" rel="nofollow noopener">Ablation-Reversible Heads Don&#x27;t Transfer: A Stress Test for Mechanistic Role Claims in Transformers</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2606.08292" rel="nofollow noopener">Necessary, Decodable and Reversible, Yet Not Transferable: A Stress Test for Attention-Head Role Claims</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2606.08292v1 Announce Type: new 
-Abstract: In mechanistic interpretability, attention heads are commonly elevated to role claims (e.g., &quot;this head represents addition&quot;) when they are necessary for a behavior, encode it linearly, and recover that behavior when restored after ablation. We show this evidence is insufficient: across three 7-8B instruction-tuned models and five computation families, heads passing all three checks routinely fail to transfer the computation when their activations are patched into a different prompt under matched controls. We introduce KID (Knowing / Intent / Doing), a role-assignment lens for attention heads, and pair it with a three-stage pipeline: capability-selective screening (CSS), singular value decomposition (SVD), and activation transduction under matched controls. Our results document a preliminary role taxonomy (including prompt-trajectory stabilizers, answer-side logit-bias heads, and soft computation-pattern carriers) and show that the same-answer control (a transduction target sharing the answer string but not the requested computation) is an underused check that exposes broad state transfer masquerading as semantic specificity.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2606.08292v1 Announce Type: new 
-Abstract: In mechanistic interpretability, attention heads are commonly elevated to role claims (e.g., &quot;this head represents addition&quot;) when they are necessary for a behavior, encode it linearly, and recover that behavior when restored after ablation. We show this evidence is insufficient: across three 7-8B instruction-tuned models and five computation families, heads passing all three checks routinely fail to transfer the computation when their activations are patched into a different prompt under matched controls. We introduce KID (Knowing / Intent / Doing), a role-assignment lens for attention heads, and pair it with a three-stage pipeline: capability-selective screening (CSS), singular value decomposition (SVD), and activation transduction under matched controls. Our results document a preliminary role taxonomy (including prompt-trajectory stabilizers, answer-side logit-bias heads, and soft computation-pattern carriers) and show that the same-answer control (a transduction target sharing the answer string but not the requested computation) is an underused check that exposes broad state transfer masquerading as semantic specificity.</div>
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2606.08292v2 Announce Type: replace 
+Abstract: Mechanistic studies often assign a component a role when removing it damages a behavior, its activation linearly encodes task information, and restoring that activation repairs the damage. We test the stronger implication: can the same activation carry the requested computation into another prompt? In the roughly 8 of 15 model-family cells receiving our full matched-control transfer assay, covering three 7-8B instruction-tuned models and 5 single-step computation families, tested attention-head states did not produce clean computation transfer. Same-answer and matched-context controls instead exposed inert or broad effects. Positive controls bound this result rather than eliminating its caveats: the instrument recovers known function vectors when writing into an underspecified prompt, and recovers a compact override-capable residual state in one of three controlled-model seeds. Neither control proves sensitivity to the object carried by real-model attention during prompt override. On two composed forms in Qwen, a strongly decodable operation direction also failed to steer the generated answer under passing gates; the corresponding cross-model test was invalid. These results show that necessity, decodability, same-prompt repair, and cross-prompt transfer are separable evidence. They do not establish that a portable selection state is absent from untested components or settings.</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2606.08292v2 Announce Type: replace 
+Abstract: Mechanistic studies often assign a component a role when removing it damages a behavior, its activation linearly encodes task information, and restoring that activation repairs the damage. We test the stronger implication: can the same activation carry the requested computation into another prompt? In the roughly 8 of 15 model-family cells receiving our full matched-control transfer assay, covering three 7-8B instruction-tuned models and 5 single-step computation families, tested attention-head states did not produce clean computation transfer. Same-answer and matched-context controls instead exposed inert or broad effects. Positive controls bound this result rather than eliminating its caveats: the instrument recovers known function vectors when writing into an underspecified prompt, and recovers a compact override-capable residual state in one of three controlled-model seeds. Neither control proves sensitivity to the object carried by real-model attention during prompt override. On two composed forms in Qwen, a strongly decodable operation direction also failed to steer the generated answer under passing gates; the corresponding cross-model test was invalid. These results show that necessity, decodability, same-prompt repair, and cross-prompt transfer are separable evidence. They do not establish that a portable selection state is absent from untested components or settings.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2606.08292v1 Announce Type: new 
-Abstract: In mechanistic interpretability, attention heads are commonly elevated to role claims (e.g., &quot;this head represents addition&quot;) when they are necessary for a behavior, encode it linearly, and recover that behavior when restored after ablation. We show this evidence is insufficient: across three 7-8B instruction-tuned models and five computation families, heads passing all three checks routinely fail to transfer the computation when their activations are patched into a different prompt under matched controls. We introduce KID (Knowing / Intent / Doing), a role-assignment lens for attention heads, and pair it with a three-stage pipeline: capability-selective screening (CSS), singular value decomposition (SVD), and activation transduction under matched controls. Our results document a preliminary role taxonomy (including prompt-trajectory stabilizers, answer-side logit-bias heads, and soft computation-pattern carriers) and show that the same-answer control (a transduction target sharing the answer string but not the requested computation) is an underused check that exposes broad state transfer masquerading as semantic specificity.</p><a href="https://arxiv.org/abs/2606.08292" rel="nofollow noopener">原論文を読む →</a></div>
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2606.08292v2 Announce Type: replace 
+Abstract: Mechanistic studies often assign a component a role when removing it damages a behavior, its activation linearly encodes task information, and restoring that activation repairs the damage. We test the stronger implication: can the same activation carry the requested computation into another prompt? In the roughly 8 of 15 model-family cells receiving our full matched-control transfer assay, covering three 7-8B instruction-tuned models and 5 single-step computation families, tested attention-head states did not produce clean computation transfer. Same-answer and matched-context controls instead exposed inert or broad effects. Positive controls bound this result rather than eliminating its caveats: the instrument recovers known function vectors when writing into an underspecified prompt, and recovers a compact override-capable residual state in one of three controlled-model seeds. Neither control proves sensitivity to the object carried by real-model attention during prompt override. On two composed forms in Qwen, a strongly decodable operation direction also failed to steer the generated answer under passing gates; the corresponding cross-model test was invalid. These results show that necessity, decodability, same-prompt repair, and cross-prompt transfer are separable evidence. They do not establish that a portable selection state is absent from untested components or settings.</p><a href="https://arxiv.org/abs/2606.08292" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2606.08292" rel="nofollow noopener">https://arxiv.org/abs/2606.08292</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
     <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="18fcbfef5bac.html"><div class="sim">関連</div><div class="info"><b>PathoSage: Towards Multi-Source Evidence Adjudication in Pathology via Experience-Aware Agentic Workflow</b><div class="m">AI</div></div></a><a class="r" href="e30333db820f.html"><div class="sim">関連</div><div class="info"><b>OmniMem: Perturbation-aware Memory Compression for Streaming Audio-Visual LLMs</b><div class="m">AI</div></div></a><a class="r" href="edd14ebd644f.html"><div class="sim">関連</div><div class="info"><b>Syll: Open-Source Personal Automation with Cross-Surface Execution</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="ddf59b7a3c16.html"><div class="sim">関連</div><div class="info"><b>A Long-Run Persistence Theory for AI Systems under the Redundancy-Adjusted Artificial Age Score (AAS)</b><div class="m">AI</div></div></a><a class="r" href="5c219df244ce.html"><div class="sim">関連</div><div class="info"><b>The LLM Proposes, the Executive Disposes: A Self-Verifying Agent Instrument that Dissociates Commitment Drift from Binding Drift in Long-Horizon Agents</b><div class="m">AI</div></div></a><a class="r" href="6e16c733e5c6.html"><div class="sim">関連</div><div class="info"><b>Monte Carlo Tree Search for Table-to-Multimodal Report Generation</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>
