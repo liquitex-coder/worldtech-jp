@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adaptive-WAM: Quality-Guided Early-Exit Planning from Intermediate Video-Diffusion Features — NewsMatome (EN)</title>
+<meta name="description" content="Adaptive-WAM: Quality-Guided Early-Exit Planning from Intermediate Video-Diffusion Features — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/91f01faba3ff.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/91f01faba3ff.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/91f01faba3ff.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/91f01faba3ff.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Adaptive-WAM: Quality-Guided Early-Exit Planning from Intermediate Video-Diffusion Features">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Adaptive-WAM: Quality-Guided Early-Exit Planning from Intermediate Video-Diffusion Features",
+ "inLanguage":"en","datePublished":"2026-08-08T07:00:00+09:00","dateModified":"2026-08-08T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"ロボット技術担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2608.06008","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/91f01faba3ff.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/91f01faba3ff.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#ef4444"></span>ロボット技術</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Adaptive-WAM: Quality-Guided Early-Exit Planning from Intermediate Video-Diffusion Features</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b></span></span><span>2026/08/08</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/91f01faba3ff.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.06008" rel="nofollow noopener">https://arxiv.org/abs/2608.06008</a></span></div>
+  <div class="article-body"><p>arXiv:2608.06008v1 Announce Type: new 
+Abstract: Large video diffusion models provide rich spatiotemporal priors for autonomous driving, but existing world-action models often inherit the cost of iterative future-video generation even though deployment only requires an ego trajectory. We ask a more basic question: how much of a video diffusion model must be executed to make a reliable driving decision? Through a controlled study of video denoising timesteps and Diffusion Transformer (DiT) depth, we find that planning performance is largely insensitive to the tested video-noise levels, whereas strong trajectories can already be decoded from intermediate layers. Based on this observation, we introduce Adaptive-WAM, a quality-aware multi-exit planner built on a Wan2.2-5B backbone. Trajectory diffusion heads are attached to selected DiT blocks, and a lightweight trajectory-quality scorer terminates inference once the best trajectory decoded so far satisfies a quality threshold; otherwise, computation continues from the cached hidden state to a deeper exit. The deployed planner therefore avoids the iterative classifier-free denoising loop and VAE decoding required for future-video synthesis, while dynamically allocating backbone depth according to trajectory quality. On NAVSIM, the adaptive single-trajectory planner achieves 90.8 PDMS; a separate fixed-exit variant reaches 92.6 PDMS with 64 proposals. It further obtains 89.9 EPDMS on NAVSIM v2, yielding the best reported results among the compared front-view video world-model planners. Without target-domain fine-tuning, Adaptive-WAM transfers to nuScenes with 0.88 m average L2 error and a 0.08\% collision rate. On an A100, adaptive routing improves PDMS from 90.62 to 90.79 while averaging 170 ms end-to-end planning latency, approximately 10\% below the 190 ms fixed block-15 planner and 47\% below the 320 ms fixed full-depth planner. Code will be released.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

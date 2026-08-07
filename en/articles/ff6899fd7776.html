@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parallel-in-Time Nonlinear Optimal Control via GPU-native Sequential Convex Programming — NewsMatome (EN)</title>
+<meta name="description" content="Parallel-in-Time Nonlinear Optimal Control via GPU-native Sequential Convex Programming — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/ff6899fd7776.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/ff6899fd7776.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/ff6899fd7776.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/ff6899fd7776.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Parallel-in-Time Nonlinear Optimal Control via GPU-native Sequential Convex Programming">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Parallel-in-Time Nonlinear Optimal Control via GPU-native Sequential Convex Programming",
+ "inLanguage":"en","datePublished":"2026-08-08T07:00:00+09:00","dateModified":"2026-08-08T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"ロボット技術担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2603.10711","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/ff6899fd7776.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/ff6899fd7776.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#ef4444"></span>ロボット技術</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Parallel-in-Time Nonlinear Optimal Control via GPU-native Sequential Convex Programming</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b></span></span><span>2026/08/08</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/ff6899fd7776.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2603.10711" rel="nofollow noopener">https://arxiv.org/abs/2603.10711</a></span></div>
+  <div class="article-body"><p>arXiv:2603.10711v3 Announce Type: replace 
+Abstract: Real-time solution of nonlinear optimal control problems remains challenging on embedded robotic hardware, where conventional solvers often rely on global sparse linear algebra or sequential recursions that are difficult to map efficiently to massively parallel processors. This paper presents ucenter, a GPU-native Sequential Convex Programming (SCP) framework for nonlinear optimal control. At each SCP iteration, nonlinear dynamics are linearized around a nominal trajectory, and the resulting convexified subproblem is solved by a consensus Alternating Direction Method of Multipliers (ADMM) scheme. The temporal splitting replaces global sparse Karush-Kuhn-Tucker factorizations with independent per-node dense solves, closed-form dynamic consistency updates, and analytical projections onto convex constraint sets. Both the outer SCP loop and the inner ADMM subproblem are executed entirely on the GPU, enabling efficient optimization.
+  The proposed solver is evaluated on quadrotor obstacle avoidance and Mars powered descent problems using an NVIDIA Jetson AGX Orin edge platform. Benchmarking against a CPU-parallel iLQR baseline in randomized environments reveals that the GPU implementation achieves over 100 Hz batched planning throughput, a 4.1x speedup, and a 51% reduction in energy consumption, while consistently maintaining low nonlinear dynamics defects. The framework exposes reusable GPU-parallel optimization primitives that can be specialized to a wide variety of complex nonlinear optimal control settings, as demonstrated by the scenario-based robust MPC and batched Monte Carlo generation tasks.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

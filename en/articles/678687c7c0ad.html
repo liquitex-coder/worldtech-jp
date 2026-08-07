@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beyond Full-Model Rollback: AuroSFT for Adapter-State Multi-Task Fine-Tuning — NewsMatome (EN)</title>
+<meta name="description" content="Beyond Full-Model Rollback: AuroSFT for Adapter-State Multi-Task Fine-Tuning — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/678687c7c0ad.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/678687c7c0ad.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/678687c7c0ad.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/678687c7c0ad.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Beyond Full-Model Rollback: AuroSFT for Adapter-State Multi-Task Fine-Tuning">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Beyond Full-Model Rollback: AuroSFT for Adapter-State Multi-Task Fine-Tuning",
+ "inLanguage":"en","datePublished":"2026-08-08T07:00:00+09:00","dateModified":"2026-08-08T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2608.05250","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/678687c7c0ad.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/678687c7c0ad.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Beyond Full-Model Rollback: AuroSFT for Adapter-State Multi-Task Fine-Tuning</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/08</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/678687c7c0ad.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.05250" rel="nofollow noopener">https://arxiv.org/abs/2608.05250</a></span></div>
+  <div class="article-body"><p>arXiv:2608.05250v1 Announce Type: new 
+Abstract: Multi-task supervised fine-tuning (SFT) often casts a heterogeneous data mixture as a single optimization problem, even though different tasks may reach their best generalization at different times. msft exposes this mismatch through task-wise roll-out, exclusion, and rollback, but its original formulation materializes the scheduler state as full-model checkpoints, making stage transitions costly to store, restore, and deploy. This paper introduces AuroSFT, a parameter-efficient framework that recasts the carried state of overfitting-aware multi-task SFT as a compact, mergeable adapter state. AuroSFT freezes the pretrained backbone, trains only injected adapters, rolls back adapter checkpoints at task-wise peaks, and continues on the remaining active mixture. At the layer level, each adapter applies an AuroRA-inspired adaptive nonlinear layer to a low-rank weight factor rather than to the sample representation. The resulting update remains linear in the input, rank-bounded, and exactly mergeable into the frozen projection. Under the retained-backbone comparison protocol, AuroSFT achieves 61.36% average accuracy, compared with 59.85% for the corresponding msft reference row, and obtains higher accuracy on all five backbones. Our code is available at the anonymous repository: https://anonymous.4open.science/r/AuroSFT-80D1.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
