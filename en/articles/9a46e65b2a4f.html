@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>When Does Reward Teach State? A Hidden-Automaton Instrument and the Group-Language Boundary — NewsMatome (EN)</title>
-<meta name="description" content="When Does Reward Teach State? A Hidden-Automaton Instrument and the Group-Language Boundary — original-language edition. Japanese translation available.">
+<title>When Does Reward Teach State? A Hidden-Automaton Instrument and a Group-Language Warning Signal — NewsMatome (EN)</title>
+<meta name="description" content="When Does Reward Teach State? A Hidden-Automaton Instrument and a Group-Language Warning Signal — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/9a46e65b2a4f.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/9a46e65b2a4f.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/9a46e65b2a4f.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/9a46e65b2a4f.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="When Does Reward Teach State? A Hidden-Automaton Instrument and the Group-Language Boundary">
+<meta property="og:title" content="When Does Reward Teach State? A Hidden-Automaton Instrument and a Group-Language Warning Signal">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"When Does Reward Teach State? A Hidden-Automaton Instrument and the Group-Language Boundary",
- "inLanguage":"en","datePublished":"2026-07-17T07:00:00+09:00","dateModified":"2026-07-17T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"When Does Reward Teach State? A Hidden-Automaton Instrument and a Group-Language Warning Signal",
+ "inLanguage":"en","datePublished":"2026-08-11T07:00:00+09:00","dateModified":"2026-08-11T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.11953","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/9a46e65b2a4f.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>When Does Reward Teach State? A Hidden-Automaton Instrument and the Group-Language Boundary</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/17</span></div>
+    <h1>When Does Reward Teach State? A Hidden-Automaton Instrument and a Group-Language Warning Signal</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/11</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/9a46e65b2a4f.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.11953" rel="nofollow noopener">https://arxiv.org/abs/2607.11953</a></span></div>
-  <div class="article-body"><p>arXiv:2607.11953v2 Announce Type: replace 
-Abstract: Does a reinforcement-learning agent that earns high reward represent its task&#x27;s latent state, or only a reward-correlated shortcut? Usually this is unanswerable: the &quot;true state&quot; is undefined. We make it exactly answerable with a white-box instrument: express the task as a hidden deterministic finite automaton (DFA), let the agent observe a symbol stream and intermittently choose the next symbol under partial control, with a sparse terminal reward for acceptance. Knowing the automaton gives two things for free: the optimal return (so reward becomes an interpretable normalized score) and the exact latent state at every step (so we can probe the agent&#x27;s representation without ever showing it). Reward success and latent-state learning become separately measured quantities whose coupling is governed by three axes. Optimizer strength: under weak on-policy RL the agent can lock onto a reward-shortcut, earning reward with the state probe at chance; whether it escapes is set by optimizer strength, budget, and task structure -- a pre-registered control isolates the optimizer (PPO+GAE), which escapes fastest but only partially and with high seed variance. Task structure: permutation (group-language) structure is a warning sign computable from the transition function before any training, and held out on 153 capacity-controlled fresh automata it flags perception gaps at precision 0.86 (89 of 103), in one direction only. Observation informativeness: a label-free auxiliary is vacuous when observations carry no state and recovers it sharply once they carry any (a threshold, saturating near beta=0.1). The payoff is a distinction reward-only evaluation cannot make: a perception gap (state not linearly recoverable, though representable) versus a planning gap (state recoverable but not exploited). Reward alone cannot localize which; high reward alone is not evidence the state was learned.</p></div>
+  <div class="article-body"><p>arXiv:2607.11953v3 Announce Type: replace 
+Abstract: Does a reinforcement-learning agent that earns high reward actually learn its task&#x27;s hidden state, or only a shortcut that correlates with reward? We build an instrument that makes this question directly measurable: the task is a hidden finite automaton that the agent partially controls. Because the automaton is known, the best achievable return is computable, and raw reward becomes a normalized score. The true state is also known at every step, so a linear probe can test whether the agent tracks a state it never observes. Measured separately, reward and state learning come apart: weak on-policy RL earns reward while the state probe stays at chance. Whether the agent escapes this shortcut depends on the optimizer, the training budget, and the task&#x27;s structure. Structure gives an early warning: when the automaton is a permutation (group-language) automaton, a property readable from its transition table before any training, the agent will likely fail to learn the state. On a stratified set of 153 held-out automata the warning is right in 89 of the 103 cases where it fires; its absence, though, is no guarantee of safety. The instrument also tells apart two failures that reward alone cannot: a perception gap, where the linear probe finds no trace of a state the network could have represented, and a planning gap, where the state is decodable yet reward stays low. High reward alone is not evidence that the task&#x27;s state was learned.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

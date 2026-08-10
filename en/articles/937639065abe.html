@@ -17,7 +17,7 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"DualKV: Shared-Prompt Flash Attention for Efficient RL Training with Large Rollouts and Long Contexts",
- "inLanguage":"en","datePublished":"2026-07-21T07:00:00+09:00","dateModified":"2026-07-21T07:00:00+09:00",
+ "inLanguage":"en","datePublished":"2026-08-11T07:00:00+09:00","dateModified":"2026-08-11T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2605.15422","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/937639065abe.html"}
@@ -35,10 +35,10 @@
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
     <h1>DualKV: Shared-Prompt Flash Attention for Efficient RL Training with Large Rollouts and Long Contexts</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/21</span></div>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/11</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/937639065abe.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2605.15422" rel="nofollow noopener">https://arxiv.org/abs/2605.15422</a></span></div>
-  <div class="article-body"><p>arXiv:2605.15422v3 Announce Type: replace 
+  <div class="article-body"><p>arXiv:2605.15422v4 Announce Type: replace 
 Abstract: Modern RL post-training methods such as GRPO and DAPO train on N response sequences of R tokens sampled from a shared prompt of P tokens, but standard FlashAttention replicates all P prompt tokens N times across both forward and backward passes -- duplicating compute and memory on identical hidden states. In large-rollout, long-context RL training (N&gt;=16, P&gt;=8K), this redundancy dominates the policy update cost. We observe that in decoder-only models, causal masking makes prompt representations invariant across sequences at every layer, so all per-token operations (norms, projections, MLP) and attention can process the prompt once -- a property not yet exploited at the kernel level for training. We propose DualKV, the first FlashAttention kernel variant that eliminates shared-prompt replication during RL training, via (1) fused CUDA forward and backward kernels that iterate over two disjoint KV regions -- shared context and per-sequence response -- in a single kernel launch, and (2) a data-pipeline redesign in veRL that repacks N(P+R) tokens into P+NR tokens per micro-batch, extending the token reduction from attention to the entire model by a factor rho = N(P+R)/(P+NR). DualKV is mathematically equivalent to standard attention and introduces no approximation. On Qwen3-8B GRPO training with 8xH100 GPUs (N=32, 8K-context), DualKV achieves 1.63--2.09x policy-update speedup, enables 2x larger micro-batches, and raises MFU from 36% to 76%. Similar gains hold for DAPO (2.47x speedup, 77% MFU). At 30B MoE scale on 16xH100, DualKV achieves 3.82x policy-update and 3.38x end-to-end step speedup over FlashAttention (which requires 4-way Ulysses sequence parallelism to avoid OOM). DualKV also extends to hybrid sliding/global attention with head dimension 512 (which FA2 does not support) and integrates with Ulysses sequence parallelism, demonstrated on Gemma-4-31B GRPO at 64K context.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>

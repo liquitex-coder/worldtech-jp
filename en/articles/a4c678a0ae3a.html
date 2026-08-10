@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ARIADNE: Agnostic Routing for Inference-time Adapter DyNamic sElection — NewsMatome (EN)</title>
-<meta name="description" content="ARIADNE: Agnostic Routing for Inference-time Adapter DyNamic sElection — original-language edition. Japanese translation available.">
+<title>Semantic Adapter Routing with Fine-Tuning Task Embeddings — NewsMatome (EN)</title>
+<meta name="description" content="Semantic Adapter Routing with Fine-Tuning Task Embeddings — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/a4c678a0ae3a.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/a4c678a0ae3a.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/a4c678a0ae3a.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/a4c678a0ae3a.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ARIADNE: Agnostic Routing for Inference-time Adapter DyNamic sElection">
+<meta property="og:title" content="Semantic Adapter Routing with Fine-Tuning Task Embeddings">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"ARIADNE: Agnostic Routing for Inference-time Adapter DyNamic sElection",
- "inLanguage":"en","datePublished":"2026-06-19T07:00:00+09:00","dateModified":"2026-06-19T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Semantic Adapter Routing with Fine-Tuning Task Embeddings",
+ "inLanguage":"en","datePublished":"2026-08-11T07:00:00+09:00","dateModified":"2026-08-11T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.19079","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/a4c678a0ae3a.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>ARIADNE: Agnostic Routing for Inference-time Adapter DyNamic sElection</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/06/19</span></div>
+    <h1>Semantic Adapter Routing with Fine-Tuning Task Embeddings</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/08/11</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/a4c678a0ae3a.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.19079" rel="nofollow noopener">https://arxiv.org/abs/2606.19079</a></span></div>
-  <div class="article-body"><p>arXiv:2606.19079v1 Announce Type: new 
-Abstract: The increasing deployment of parameter-efficient fine-tuning (PEFT) has led to model ecosystems in which a single backbone is paired with many task-specialized adapters. In this setting, inference-time queries often arrive without task labels, requiring the system to automatically select the most appropriate adapter from a growing and heterogeneous adapter pool. Existing routing methods either depend on access to adapter internals, such as weight decompositions or gradient-based statistics, or require additional router training, which limits scalability and portability as new adapters are added. We introduce ARIADNE, a training-free, adapter-agnostic routing framework for dynamic adapter selection at inference time. ARIADNE represents each adapter through a set of centroids computed from embeddings of its training set, capturing the data distribution associated with that adapter. Given an unlabeled input, it selects an adapter by measuring proximity to these centroids in latent space. Because routing is performed entirely in the input embedding space, ARIADNE is compatible with arbitrary PEFT methods and requires no modification to the adapters or training procedures. Primarily evaluated with Llama 3.2 1B Instruct on 23 diverse NLP tasks, ARIADNE recovers 97.44% of the upper bound performance. Scaling to 44 tasks, it achieves 89.7% average selection accuracy, without additional training or access to adapter internals.</p></div>
+  <div class="article-body"><p>arXiv:2606.19079v2 Announce Type: replace 
+Abstract: Parameter-efficient fine-tuning (PEFT) has led to model ecosystems in which a single backbone is paired with many task-specialized adapters. Given such a library, routing aims to select the most appropriate adapter for a user query. While existing adapter routers typically require access to adapter weights or supervised training, we develop training-free semantic adapter routing methods using task embeddings. In ARIADNE, we reframe adapter selection as a classification problem, where PEFT adapters are represented by task embeddings and an unlabeled query is routed to the nearest adapter in the encoder&#x27;s latent space. Evaluated on 23 tasks, ARIADNE recovers 97.4% of Oracle task performance and scales to 44 adapters at 89.7% selection accuracy, without touching a single adapter parameter. However, training data needed for ARIADNE may not be available when adapters come from public hubs or third-party providers. To overcome this limitation, we introduce GRACE, which recovers an adapter&#x27;s fine-tuning data from its output logits alone via a modified contrastive decoding diffing (CDD) procedure. Synthetic data generated from CDD-UM is then used to construct task embeddings. Across three backbones (Llama-3.2-1B, Qwen2.5-3B, Qwen2.5-32B), GRACE recovers 72--100\% of Oracle task accuracy and matches or exceeds ARROW on 48 of 69 task/backbone combinations, while requiring neither training data nor model weights. Overall, we demonstrate that fine-tuning task embeddings provide an accurate and efficient path to semantic adapter routing.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>
