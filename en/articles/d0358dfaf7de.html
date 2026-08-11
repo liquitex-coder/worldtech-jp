@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>From Fake to Real: Pretraining on Balanced Synthetic Images to Prevent Spurious Correlations in Image Recognition — NewsMatome (EN)</title>
+<meta name="description" content="From Fake to Real: Pretraining on Balanced Synthetic Images to Prevent Spurious Correlations in Image Recognition — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/d0358dfaf7de.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/d0358dfaf7de.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/d0358dfaf7de.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/d0358dfaf7de.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="From Fake to Real: Pretraining on Balanced Synthetic Images to Prevent Spurious Correlations in Image Recognition">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"From Fake to Real: Pretraining on Balanced Synthetic Images to Prevent Spurious Correlations in Image Recognition",
+ "inLanguage":"en","datePublished":"2026-08-12T07:00:00+09:00","dateModified":"2026-08-12T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2308.04553","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/d0358dfaf7de.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/d0358dfaf7de.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>From Fake to Real: Pretraining on Balanced Synthetic Images to Prevent Spurious Correlations in Image Recognition</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/12</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/d0358dfaf7de.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2308.04553" rel="nofollow noopener">https://arxiv.org/abs/2308.04553</a></span></div>
+  <div class="article-body"><p>arXiv:2308.04553v4 Announce Type: replace-cross 
+Abstract: Visual recognition models are prone to learning spurious correlations induced by a biased training set where certain conditions $B$ (\eg, Indoors) are over-represented in certain classes $Y$ (\eg, Big Dogs). Synthetic data from off-the-shelf large-scale generative models offers a promising direction to mitigate this issue by augmenting underrepresented subgroups in the real dataset. However, by using a mixed distribution of real and synthetic data, we introduce another source of bias due to distributional differences between synthetic and real data (\eg synthetic artifacts). As we will show, prior work&#x27;s approach for using synthetic data to resolve the model&#x27;s bias toward $B$ do not correct the model&#x27;s bias toward the pair $(B, G)$, where $G$ denotes whether the sample is real or synthetic. Thus, the model could simply learn signals based on the pair $(B, G)$ (\eg, Synthetic Indoors) to make predictions about $Y$ (\eg, Big Dogs). To address this issue, we propose a simple, easy-to-implement, two-step training pipeline that we call From Fake to Real (FFR). The first step of FFR pre-trains a model on balanced synthetic data to learn robust representations across subgroups. In the second step, FFR fine-tunes the model on real data using ERM or common loss-based bias mitigation methods. By training on real and synthetic data separately, FFR does not expose the model to the statistical differences between real and synthetic data and thus avoids the issue of bias toward the pair $(B, G)$. Our experiments show that FFR improves worst group accuracy over the state-of-the-art by up to 20\% over three datasets. Code available: https://github.com/mqraitem/From-Fake-to-Real</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

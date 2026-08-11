@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RotaryQuant: Fitting 120B MoE Models on Consumer Hardware via Fused Compressed-Space Attention — NewsMatome (EN)</title>
+<meta name="description" content="RotaryQuant: Fitting 120B MoE Models on Consumer Hardware via Fused Compressed-Space Attention — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/55246f621f1d.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/55246f621f1d.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/55246f621f1d.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/55246f621f1d.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RotaryQuant: Fitting 120B MoE Models on Consumer Hardware via Fused Compressed-Space Attention">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"RotaryQuant: Fitting 120B MoE Models on Consumer Hardware via Fused Compressed-Space Attention",
+ "inLanguage":"en","datePublished":"2026-08-12T07:00:00+09:00","dateModified":"2026-08-12T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2608.08081","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/55246f621f1d.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/55246f621f1d.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>RotaryQuant: Fitting 120B MoE Models on Consumer Hardware via Fused Compressed-Space Attention</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/12</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/55246f621f1d.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.08081" rel="nofollow noopener">https://arxiv.org/abs/2608.08081</a></span></div>
+  <div class="article-body"><p>arXiv:2608.08081v1 Announce Type: cross 
+Abstract: Large mixture-of-experts (MoE) language models with 26--120 billion parameters exceed the memory capacity of consumer devices through three simultaneous pressures: resident weight matrices, key-value (KV) cache state that grows linearly with context, and dozens of expert sublayers that must be paged on demand. We present RotaryQuant, a three-axis compression system that addresses all three. Mixed-precision weight quantization assigns bit-widths by architectural role: 4-bit for dense layers, 2-bit for routed experts, and 8-bit for the shared expert whose high activation kurtosis resists aggressive compression. LRU expert offloading pages non-resident experts to disk under genuine memory pressure. The novel axis is IsoQuant, a KV cache compression method that applies a Walsh--Hadamard transform followed by block-diagonal SO(4) rotations to isotropize activation distributions before 3-bit scalar quantization, requiring $O(d \log d)$ operations and 256 stored parameters per head versus $O(d^2)$ and 16{,}384 for dense rotation methods. A fused four-kernel Metal GPU pipeline performs attention directly on packed 3-bit tensors without materializing full-precision KV state---a different execution model, not just a quantization scheme. The combined system fits Gemma 4-26B-A4B and Qwen3-30B-A3B within a 16\,GB budget and Nemotron-H 120B within 32\,GB, running interactively at 9--19 tok/s with near-zero perplexity degradation ($\Delta$PPL $\leq +0.0012$) and 100\% retrieval accuracy at 32K context.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

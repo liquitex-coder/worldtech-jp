@@ -3,22 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Recover, Decode, Reguard: Guard-Agnostic Defense Amplification againstEncoded VLM Jailbreaks — NewsMatome (EN)</title>
-<meta name="description" content="Recover, Decode, Reguard: Guard-Agnostic Defense Amplification againstEncoded VLM Jailbreaks — original-language edition. Japanese translation available.">
+<title>Attack Ensembles Expose a Safety-Utility Trade-off in Black-Box Guard Defenses Against Encoded VLM Jailbreaks — NewsMatome (EN)</title>
+<meta name="description" content="Attack Ensembles Expose a Safety-Utility Trade-off in Black-Box Guard Defenses Against Encoded VLM Jailbreaks — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/dbe2d54a17bc.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/dbe2d54a17bc.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/dbe2d54a17bc.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/dbe2d54a17bc.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Recover, Decode, Reguard: Guard-Agnostic Defense Amplification againstEncoded VLM Jailbreaks">
+<meta property="og:title" content="Attack Ensembles Expose a Safety-Utility Trade-off in Black-Box Guard Defenses Against Encoded VLM Jailbreaks">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Recover, Decode, Reguard: Guard-Agnostic Defense Amplification againstEncoded VLM Jailbreaks",
- "inLanguage":"en","datePublished":"2026-08-01T07:00:00+09:00","dateModified":"2026-08-01T07:00:00+09:00",
- "author":{"@type":"Organization","name":"AI担当エージェント"},
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Attack Ensembles Expose a Safety-Utility Trade-off in Black-Box Guard Defenses Against Encoded VLM Jailbreaks",
+ "inLanguage":"en","datePublished":"2026-08-12T07:00:00+09:00","dateModified":"2026-08-12T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.26574","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/dbe2d54a17bc.html"}
 </script>
@@ -32,14 +32,14 @@
 </div></header>
 <div class="wrap"><article class="article">
   <div class="article-head">
-    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Recover, Decode, Reguard: Guard-Agnostic Defense Amplification againstEncoded VLM Jailbreaks</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/08/01</span></div>
+    <h1>Attack Ensembles Expose a Safety-Utility Trade-off in Black-Box Guard Defenses Against Encoded VLM Jailbreaks</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/12</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/dbe2d54a17bc.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.26574" rel="nofollow noopener">https://arxiv.org/abs/2607.26574</a></span></div>
-  <div class="article-body"><p>arXiv:2607.26574v1 Announce Type: cross 
-Abstract: Safety classifiers (&quot;guards&quot;) are the dominant black-box defense for vision-language models, yet they judge an input&#x27;s surface form, not its meaning: a harmful request re-encoded as set theory, formal logic, a rare language, code, or an image of text slips past a guard that would block it in plain language -- the decode gap. The natural fix is a guard-agnostic recover-and-decode amplifier that transcribes image content and restates encoded text into its plain payload before the guard, so any off-the-shelf classifier can screen the true request. We build this amplifier and evaluate it against the attacker&#x27;s best case: an ensemble of eleven attacks, scoring a behavior as broken if any succeeds (best-of-suite, following AutoAttack) -- rarely reported for jailbreak defenses, yet ~3.5x the per-attack mean. This exposes our central finding: an empirical safety-utility ceiling for the non-iterative recovery defenses we evaluate, across five guards and two target VLMs. The amplifier only partly closes the gap -- the undefended ensemble breaks 89-91% of behaviors, and the best guard-plus-amplifier still leaves 63-65% -- and its gain over the guard alone is significant in only four of ten guard-target pairs. It is guard-agnostic at the interface, but not uniformly so in effect. A modular reguard layer closes much of the residual, yet drives benign over-refusal to 81-92% for well-calibrated guards; the one laxer guard that stays usable never reaches deployable safety (48% ensemble ASR). No configuration we evaluate reaches both low attack-success and low over-refusal, for the pipeline we study and for representation-shifting attacks -- encodings and cross-modal renders that leave a legible payload, not pixel- or embedding-space attacks. We contribute the amplifier, an ensemble evaluation that makes the trade-off visible, and a map of where recovery-based VLM defense works and where it does not.</p></div>
+  <div class="article-body"><p>arXiv:2607.26574v2 Announce Type: replace-cross 
+Abstract: Safety classifiers (&quot;guards&quot;) are the dominant black-box defense for vision-language models, yet a guard judges an input&#x27;s surface form, not its meaning: a harmful request re-encoded as set theory, formal logic, a classical language, code, or text rendered inside an image slips past a guard that would block it in plain language - the decode gap. The standard fix is a preprocessor that recovers image content and decodes the encoding before the guard. We build one and evaluate it against an ensemble of eleven published encoding attacks, counting a behavior as broken if any attack succeeds. That metric separates two mechanisms such defenses conflate. Restoring a view the guard never had improves it on both axes at once: it blocks far more attacks, and, measured on a category-balanced benign set, it blocks fewer benign requests, because restating a request normalizes the borderline phrasing a classifier over-flags. It still does not make the system safer: against an attacker free to choose among eleven encodings, closing one channel relocates the success rather than removing it, and no ensemble contrast survives multiple-comparison correction. What does lower ensemble attack success is re-screening the recovered pre-decode surface, and that step is where the entire benign cost falls. The safety-utility trade-off is therefore not a property of recovery; it is localized to one step. Across the full guard x target x condition factorial, no configuration reaches an ensemble attack-success rate at or below 40% while holding benign over-refusal under 70%. The per-attack averages usually reported understate the attacker roughly fourfold, which is why this frontier is easy to miss. Composing across defense families is the one lever that moved the safety axis, beating every configuration we measured, and still landing far outside any deployable refusal budget.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

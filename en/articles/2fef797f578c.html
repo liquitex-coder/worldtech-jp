@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beyond Routing: Decoupling Expert Dispatch and Aggregation in Sparse Mixture-of-Experts — NewsMatome (EN)</title>
+<meta name="description" content="Beyond Routing: Decoupling Expert Dispatch and Aggregation in Sparse Mixture-of-Experts — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/2fef797f578c.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/2fef797f578c.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/2fef797f578c.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/2fef797f578c.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Beyond Routing: Decoupling Expert Dispatch and Aggregation in Sparse Mixture-of-Experts">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Beyond Routing: Decoupling Expert Dispatch and Aggregation in Sparse Mixture-of-Experts",
+ "inLanguage":"en","datePublished":"2026-08-12T07:00:00+09:00","dateModified":"2026-08-12T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2608.08853","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/2fef797f578c.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/2fef797f578c.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Beyond Routing: Decoupling Expert Dispatch and Aggregation in Sparse Mixture-of-Experts</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/12</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/2fef797f578c.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.08853" rel="nofollow noopener">https://arxiv.org/abs/2608.08853</a></span></div>
+  <div class="article-body"><p>arXiv:2608.08853v1 Announce Type: new 
+Abstract: Sparse Mixture-of-Experts (MoE) routers commonly use the same scores both to select experts and to weight their already-computed outputs. We study whether these two roles, dispatch and aggregation, should be coupled. On pretrained OLMoE-1B-7B, we keep selected Top-8 expert IDs, expert computation, and total selected router mass fixed and change only within-set aggregation. A structured oracle improves full-horizon cross-entropy by 0.0160 +/- 0.0039 across three seeds; the router&#x27;s top-scored expert is the counterfactual-best vertex only 17.2% of the time, with router-utility Spearman 0.030. We therefore train Fixed-Dispatch Adaptive Aggregation (FDAA), a 301K-parameter post-compute head optimized directly with the language-modeling objective while freezing the backbone, router, and experts. On OLMoE, FDAA improves fresh WikiText-103 test by Delta CE = -0.1523 +/- 0.0031 across three seeds, and mixed-domain training gives robust gains on WikiText-103, C4, and held-out Penn Treebank under frozen confirmatory evaluation. We also replicate the fixed-dispatch audit on DeepSeek-V2-Lite, which uses Top-6 routed experts plus shared experts. Best-vertex headroom remains significant on WikiText and C4, while router Top1 identifies the best selected expert in only 12.5% and 16.7% of audited examples. In a one-seed mixed-domain replication, FDAA improves locked WikiText and PTB, while C4 is statistically neutral. These results support a cross-architecture distinction between expert selection and expert commitment.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

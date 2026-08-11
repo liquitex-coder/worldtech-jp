@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Attn-QAT: 4-Bit Attention With Quantization-Aware Training — NewsMatome (EN)</title>
+<meta name="description" content="Attn-QAT: 4-Bit Attention With Quantization-Aware Training — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/5aa10f9a9df8.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/5aa10f9a9df8.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/5aa10f9a9df8.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/5aa10f9a9df8.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Attn-QAT: 4-Bit Attention With Quantization-Aware Training">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Attn-QAT: 4-Bit Attention With Quantization-Aware Training",
+ "inLanguage":"en","datePublished":"2026-08-12T07:00:00+09:00","dateModified":"2026-08-12T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2603.00040","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/5aa10f9a9df8.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/5aa10f9a9df8.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Attn-QAT: 4-Bit Attention With Quantization-Aware Training</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/12</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/5aa10f9a9df8.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2603.00040" rel="nofollow noopener">https://arxiv.org/abs/2603.00040</a></span></div>
+  <div class="article-body"><p>arXiv:2603.00040v3 Announce Type: replace 
+Abstract: Achieving reliable 4-bit attention is a prerequisite for end-to-end FP4 computation on emerging FP4-capable GPUs, yet attention remains the main obstacle due to FP4&#x27;s tiny dynamic range and attention&#x27;s heavy-tailed activations. This paper presents the first systematic study of 4-bit quantization-aware training (QAT) for attention. We find ``drop-in&#x27;&#x27; QAT -- naively combining an FP4 forward pass with high-precision Flash Attention (FA)-style backward pass -- leads to training instability. We identify two key principles for stable FP4 attention: (1) matching low-precision recomputation of attention scores in the backward pass and (2) resolving implicit precision assumptions in FA&#x27;s gradient calculation. Based on these insights, we propose Attn-QAT and implement fused Triton kernels for training and FP4 inference kernels. Across diffusion and language models, Attn-QAT recovers the quality drop from FP4 attention without explicit outlier-mitigation heuristics used in prior FP4 attention, and delivers up to a 1.5x speedup on an RTX 5090 over SageAttention3 and up to a 1.74x speedup over FA4 on a GB300. Video demos can be found at https://drive.google.com/drive/folders/190F6xbBDUF2kGQYIcXBt3ehSYij5jlim?usp=sharing. Code can be found at https://haoailab.com/FastVideo/training/attn_qat/.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

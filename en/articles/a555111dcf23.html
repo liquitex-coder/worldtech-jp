@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Proxy Exploration and Reusable Guidance: A Modular LLM Post-Training Paradigm via Proxy-Guided Update Signals — NewsMatome (EN)</title>
-<meta name="description" content="Proxy Exploration and Reusable Guidance: A Modular LLM Post-Training Paradigm via Proxy-Guided Update Signals — original-language edition. Japanese translation available.">
+<title>Proxy OPD: On-Policy Distillation with Transferable Relative Proxy Update — NewsMatome (EN)</title>
+<meta name="description" content="Proxy OPD: On-Policy Distillation with Transferable Relative Proxy Update — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/a555111dcf23.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/a555111dcf23.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/a555111dcf23.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/a555111dcf23.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Proxy Exploration and Reusable Guidance: A Modular LLM Post-Training Paradigm via Proxy-Guided Update Signals">
+<meta property="og:title" content="Proxy OPD: On-Policy Distillation with Transferable Relative Proxy Update">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Proxy Exploration and Reusable Guidance: A Modular LLM Post-Training Paradigm via Proxy-Guided Update Signals",
- "inLanguage":"en","datePublished":"2026-07-15T07:00:00+09:00","dateModified":"2026-07-15T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Proxy OPD: On-Policy Distillation with Transferable Relative Proxy Update",
+ "inLanguage":"en","datePublished":"2026-08-12T07:00:00+09:00","dateModified":"2026-08-12T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.11505","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/a555111dcf23.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Proxy Exploration and Reusable Guidance: A Modular LLM Post-Training Paradigm via Proxy-Guided Update Signals</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/15</span></div>
+    <h1>Proxy OPD: On-Policy Distillation with Transferable Relative Proxy Update</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/12</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/a555111dcf23.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.11505" rel="nofollow noopener">https://arxiv.org/abs/2607.11505</a></span></div>
-  <div class="article-body"><p>arXiv:2607.11505v1 Announce Type: new 
-Abstract: Post-training is essential for refining the domain-specific capabilities of large language models (LLMs), yet existing reward optimization and distribution matching methods tightly couple policy exploration with distribution alignment. This coupling forces expensive exploration directly on the policy model and severely hinders the asynchronous generation, reuse, and cross-model transfer of optimization signals. In this paper, we propose Proxy-guided Update Signal Transfer (PUST), a novel post-training framework that fundamentally decouples update-signal exploration from distribution alignment. Instead of utilizing the primary model for costly exploration, PUST employs a lightweight proxy model as an efficient testbed to discover high-reward behaviors. We extract the relative improvement signal between the proxy&#x27;s initial and optimized states, transferring this directional update to the primary model to guide its policy alignment. This decoupled pipeline, comprising proxy exploration, update-signal extraction, and signal transfer, significantly reduces computational overhead and enables optimization signals to be asynchronously generated, cached, and reused. Crucially, by transferring relative improvements rather than absolute policy distributions, PUST naturally supports weak-to-strong improvement and seamless cross-model transfer. Systematic evaluations on Qwen3-family models across math and code domains demonstrate that update signals extracted from substantially weaker proxies can robustly and adjustably enhance stronger primary models. Ultimately, PUST transforms post-training from a monolithic online optimization process into a highly modular, reusable, and cost-efficient paradigm.</p></div>
+  <div class="article-body"><p>arXiv:2607.11505v2 Announce Type: replace 
+Abstract: Post-training for large language models typically couples policy exploration with model optimization, hindering the reuse of high-reward behaviors from policy exploration. While on-policy distillation alleviates this by consolidating independently optimized experts, its reliance on matching absolute expert distributions can yield suboptimal supervision, especially when the target model possesses a different prior or already surpasses the expert&#x27;s capabilities. To alleviate this, we introduce Proxy OPD (P-OPD), an asynchronous post-training framework that transfers reward-induced policy improvements rather than absolute policy distributions. P-OPD first optimizes a proxy policy via reward feedback. It then extracts the relative distributional changes between the proxy&#x27;s initial and optimized states, transferring these directional updates through the target model&#x27;s own on-policy trajectories while retaining the target policy as the reference. This decoupled formulation requires the proxy to provide merely a useful direction of improvement rather than superior absolute capability, enabling update signals from older or weaker proxies to remain highly effective. Systematic experiments on Qwen3-family models across mathematical reasoning and code generation demonstrate that P-OPD consistently enhances already strong target models. Furthermore, transfer intensity can be dynamically modulated through signal scaling, making the extracted update signals seamlessly reusable across diverse model variants and training configurations. These results establish relative policy updates as highly reusable, adjustable assets for scalable, reward-based post-training.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

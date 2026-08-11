@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mesh-Attention: A New Communication-Efficient Distributed Attention with Improved Data Locality — NewsMatome (EN)</title>
+<meta name="description" content="Mesh-Attention: A New Communication-Efficient Distributed Attention with Improved Data Locality — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/d215638af412.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/d215638af412.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/d215638af412.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/d215638af412.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mesh-Attention: A New Communication-Efficient Distributed Attention with Improved Data Locality">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Mesh-Attention: A New Communication-Efficient Distributed Attention with Improved Data Locality",
+ "inLanguage":"en","datePublished":"2026-08-12T07:00:00+09:00","dateModified":"2026-08-12T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2512.20968","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/d215638af412.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/d215638af412.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Mesh-Attention: A New Communication-Efficient Distributed Attention with Improved Data Locality</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/08/12</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/d215638af412.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2512.20968" rel="nofollow noopener">https://arxiv.org/abs/2512.20968</a></span></div>
+  <div class="article-body"><p>arXiv:2512.20968v2 Announce Type: replace-cross 
+Abstract: Distributed attention is essential for scaling large language models (LLMs) to long contexts, yet existing methods either have limited parallelism or incur high communication costs. Ulysses uses efficient all-to-all communication but cannot scale beyond the number of attention heads, whereas Ring-Attention removes this limit at the cost of high per-GPU communication. In our analytical Q-KV interaction matrix model, Ring-Attention assigns each GPU an entire row, preserving Q locality while sacrificing KV locality. Each GPU therefore receives nearly all KV partitions, and its communication grows linearly with sequence length. We present Mesh-Attention, which instead assigns each GPU a 2D tile to balance Q and KV locality, so that it collects only subsets of Q and KV partitions. This gives Mesh-Attention asymptotically lower communication complexity than Ring-Attention without limiting parallelism. Mesh-Attention further uses KV Partition Rotation (KVR), greedy scheduling, and topology-aware GPU mapping to balance traffic, overlap communication with computation, and reduce traffic over low-bandwidth links. Across experiments on up to 256 GPUs and 1M-token sequences, Mesh-Attention achieves average speedups of 17.00x, 2.62x and 2.94x (up to 32.27x, 4.36x and 4.59x) over Ring-Attention, USP (Ulysses degree 8) and StarTrail, respectively. It maintains this performance advantage as GPU count and sequence length increase while substantially reducing communication overhead at scale.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

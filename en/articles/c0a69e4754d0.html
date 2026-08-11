@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Geometry Beats Estimated Depth: RGB-Only Multi-Camera 3D Tracking under Sim2Real — NewsMatome (EN)</title>
+<meta name="description" content="Geometry Beats Estimated Depth: RGB-Only Multi-Camera 3D Tracking under Sim2Real — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/c0a69e4754d0.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/c0a69e4754d0.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/c0a69e4754d0.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/c0a69e4754d0.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Geometry Beats Estimated Depth: RGB-Only Multi-Camera 3D Tracking under Sim2Real">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Geometry Beats Estimated Depth: RGB-Only Multi-Camera 3D Tracking under Sim2Real",
+ "inLanguage":"en","datePublished":"2026-08-12T07:00:00+09:00","dateModified":"2026-08-12T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2608.07579","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/c0a69e4754d0.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/c0a69e4754d0.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Geometry Beats Estimated Depth: RGB-Only Multi-Camera 3D Tracking under Sim2Real</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/08/12</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/c0a69e4754d0.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.07579" rel="nofollow noopener">https://arxiv.org/abs/2608.07579</a></span></div>
+  <div class="article-body"><p>arXiv:2608.07579v1 Announce Type: cross 
+Abstract: The AI City Challenge 2026 Track 1 evaluates multi-camera 3D perception in large indoor warehouses under a synthetic-to-real (Sim2Real) setting; depth is available only for training and validation, so inference is RGB-only. We use two RGB-only routes as a controlled test of one hypothesis: that cross-view geometric consistency, not monocular depth accuracy, governs performance under Sim2Real. The first is a geometry-first pipeline: YOLO11x detection, homography lifting to the world frame, class-level 3D size priors, multi-camera fusion, world-coordinate tracking, and offline tracklet stitching. The second is estimated-depth pseudo-LiDAR: monocular depth (D4RT, Metric3D~v2) back-projected into a fused point cloud and passed to a 3D detector (V-DETR), mirroring prior point-cloud winners that used depth. The gap is decisive: geometry-first reaches 13.0 3D HOTA (51.6 LocA), whereas pseudo-LiDAR collapses to 0.12 (9.2 LocA). We trace the collapse to cross-view inconsistency of monocular depth---scale correction is necessary but not sufficient---which domain-adaptation fine-tuning does not repair within budget. Within the geometry pipeline, offline stitching is the only intervention that helps; SAHI detection, appearance Re-ID, learned lifting, RT-DETR ensembling, test-time augmentation, and domain randomization all fail to beat the baseline detector. The bottlenecks are complementary: detection quality bounds the geometry route (DetA), localization consistency bounds pseudo-LiDAR (LocA). We release a complete, reproducible RGB-only pipeline and ablation.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ATMA: Length-Invariant Language Modeling via Polar Attention and Gated-Delta Compression Memory — NewsMatome (EN)</title>
-<meta name="description" content="ATMA: Length-Invariant Language Modeling via Polar Attention and Gated-Delta Compression Memory — original-language edition. Japanese translation available.">
+<title>ATMA: Long-Context Language Modeling via Polar Attention and Gated-Delta Compression Memory — NewsMatome (EN)</title>
+<meta name="description" content="ATMA: Long-Context Language Modeling via Polar Attention and Gated-Delta Compression Memory — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/8b9015bd6bf1.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/8b9015bd6bf1.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/8b9015bd6bf1.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/8b9015bd6bf1.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ATMA: Length-Invariant Language Modeling via Polar Attention and Gated-Delta Compression Memory">
+<meta property="og:title" content="ATMA: Long-Context Language Modeling via Polar Attention and Gated-Delta Compression Memory">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"ATMA: Length-Invariant Language Modeling via Polar Attention and Gated-Delta Compression Memory",
- "inLanguage":"en","datePublished":"2026-07-01T07:00:00+09:00","dateModified":"2026-07-01T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"ATMA: Long-Context Language Modeling via Polar Attention and Gated-Delta Compression Memory",
+ "inLanguage":"en","datePublished":"2026-08-12T07:00:00+09:00","dateModified":"2026-08-12T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.25156","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/8b9015bd6bf1.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>ATMA: Length-Invariant Language Modeling via Polar Attention and Gated-Delta Compression Memory</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/01</span></div>
+    <h1>ATMA: Long-Context Language Modeling via Polar Attention and Gated-Delta Compression Memory</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/12</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/8b9015bd6bf1.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.25156" rel="nofollow noopener">https://arxiv.org/abs/2606.25156</a></span></div>
-  <div class="article-body"><p>arXiv:2606.25156v2 Announce Type: replace 
-Abstract: Modern large language models based on softmax scaled-dot-product attention are constrained by their training sequence length: as the key-value sequence grows, softmax probability mass can dilute across a wider distribution, inducing activation shift and long-context performance collapse. Moreover, long-context language modeling faces a structural tension: a sliding-window attention core maintains a bounded local representation and low perplexity but is blind to long-range dependencies, while full-context attention preserves global recall but suffers from out-of-distribution perplexity explosion. To resolve these limitations, we introduce ATMA, a hybrid convolutional-attention architecture that integrates a novel three-channel attention mechanism. ATMA factorizes the attention mixing step into: (1) a count-blind, unit-vector direction channel, (2) a bounded magnitude channel driven by the participation ratio of effective matches over an extreme-value-corrected null sink, and (3) a long-term recurrent compression memory optimized via a gated-delta fast-weights rule. Neither the Polar Attention core nor the recurrent memory is sufficient alone; their combination enables monotonic perplexity reduction and high-fidelity long-range retrieval simultaneously. We evaluate ATMA using a 120-run factorial ablation sweep, demonstrating that the combined Polar + memory model maintains induction needle-in-a-haystack retrieval accuracy above 90% out to 64K tokens (32 times the training length of 2K) while its document perplexity improves monotonically, outperforming softmax-based memory baselines which collapse at extreme context lengths. Code: https://github.com/kreasof-ai/atma</p></div>
+  <div class="article-body"><p>arXiv:2606.25156v3 Announce Type: replace 
+Abstract: Native length extrapolation remain a weakly solvable problem in language modeling due to trade-off balancing between exact retrieval fidelity, long-document likelihood, and inference efficiency. We present ATMA as a disciplined diagnostic for this specific problem. ATMA is a hybrid architecture recipe with modified Polar Attention that separates two stream of normalized direction channel and bounded participation-ratio magnitude channel, augmented with third recurrence channel which derived from gated-deltanet. We frame long-context modeling as Pareto problem than claiming general architectural dominance. We run 120-cell industrial ablation sweep for the first 1B-token training run to select promoted recipe, then continue with 10B-token training run for the second phase for more complete evaluation. We test 378M-parameter model from three attention variant (NoPE, RoPE, Polar) and Raven as external baselines from SSM-derived family for up to 256K length evaluation. Polar attention extends real-text retrieval to 64K length at 16.3% while both NoPE and RoPE variant collapse to 0.0%. Polar attention variant also limits 256K bits-per-byte likelihood degradation to 1.26x, with a 1.5-point mean penalty on downstream task evaluation. Raven instead leads at 256K length BABILong test and provide constant latency during decoding regardless of sequence length. Lastly, our independent environment audit finds a striking evidence that NoPE variant checkpoints with identical validation curve, significantly degrade 256K nats by 6.70 points across GPU device classes. This exposes unresolved interactions among execution environment, optimization, and extrapolation. Motivating multi-objective and multi-environment audits for long-context architectural claims.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

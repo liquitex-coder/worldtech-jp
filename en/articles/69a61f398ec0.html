@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Two Confounds in Cross-Model Value Comparison: Response Determinism and the Access Harness — NewsMatome (EN)</title>
-<meta name="description" content="Two Confounds in Cross-Model Value Comparison: Response Determinism and the Access Harness — original-language edition. Japanese translation available.">
+<title>When Counterbalancing Hides the Bias: Access-Conditioned Position Lock in Forced-Choice LLM Evaluation — NewsMatome (EN)</title>
+<meta name="description" content="When Counterbalancing Hides the Bias: Access-Conditioned Position Lock in Forced-Choice LLM Evaluation — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/69a61f398ec0.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/69a61f398ec0.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/69a61f398ec0.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/69a61f398ec0.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Two Confounds in Cross-Model Value Comparison: Response Determinism and the Access Harness">
+<meta property="og:title" content="When Counterbalancing Hides the Bias: Access-Conditioned Position Lock in Forced-Choice LLM Evaluation">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Two Confounds in Cross-Model Value Comparison: Response Determinism and the Access Harness",
- "inLanguage":"en","datePublished":"2026-07-15T07:00:00+09:00","dateModified":"2026-07-15T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"When Counterbalancing Hides the Bias: Access-Conditioned Position Lock in Forced-Choice LLM Evaluation",
+ "inLanguage":"en","datePublished":"2026-08-12T07:00:00+09:00","dateModified":"2026-08-12T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.10202","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/69a61f398ec0.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Two Confounds in Cross-Model Value Comparison: Response Determinism and the Access Harness</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/15</span></div>
+    <h1>When Counterbalancing Hides the Bias: Access-Conditioned Position Lock in Forced-Choice LLM Evaluation</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/12</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/69a61f398ec0.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.10202" rel="nofollow noopener">https://arxiv.org/abs/2607.10202</a></span></div>
-  <div class="article-body"><p>arXiv:2607.10202v1 Announce Type: new 
-Abstract: Cross-model comparisons read divergence in value dispositions as evidence that language models hold individuated values. Under single-draw measurement this conflates two quantities: a difference in central tendency (a genuine value difference) and a difference in response determinism (how sharply a model commits to a forced choice). We introduce a separation protocol -- no-rule value dilemmas with counterbalanced, repeated forced-choice measurement and a determinism index -- and a determinism-corrected decomposition that splits an apparent cross-model distance into a direction-flip component (genuine disagreement) and a same-side-more-extreme component we label determinism. Across nine models, determinism varies substantially (0.66-0.95 among engaging models); whether it is a per-model trait or tracks provider and scale is a question our method makes measurable but our sample leaves open. Correcting for determinism shrinks apparent individuation, while a few cross-family disagreements survive a strict test. We then isolate a second confound: the access harness serving each model. Re-collecting the same models through raw provider APIs, we find the deployment client shifts a model&#x27;s value profile substantially and client-specifically: one subscription CLI moves a profile by 0.31, flips four of eighteen items, and inflates the flagship&#x27;s apparent softness (0.34 via CLI vs 0.66 via raw API), whereas another provider&#x27;s client is clean, confounding provider family with access client. The harness is a value-shaping layer: a base model that refuses one-in-ten forced choices is made compliant by an agent system prompt, established causally in a white-box control. An audit ranking models by single-draw value distance thus ranks a determinism-inflated quantity, confounded further by the client used. We contribute the decomposition and identify the deployment harness as a distinct value confound.</p></div>
+  <div class="article-body"><p>arXiv:2607.10202v2 Announce Type: replace 
+Abstract: Forced-choice probes with counterbalanced orientations are a standard tool for measuring language-model &quot;value dispositions,&quot; and a concentration/extremity index over repeated draws is read as how sharply a model commits. We show this estimator is not identifiable at its low end: counterbalancing, meant to remove position bias, instead maps a position-lock (a model returning the same answer letter regardless of content) onto the same near-0.5 signature as genuine neutrality, so &quot;softness&quot; and &quot;non-engagement&quot; cannot be distinguished from a content-independent letter-bias. Across nine models the fraction of position-locked items tracks the index almost perfectly (r=-0.986) - a structural consequence, not a finding: the informative quantity is the residual from that bound, the commitment a model shows on the items it does engage. The three models the index reads as soft are the most position-locked, and the lock resolves under access configurations that permit reasoning (as-deployed CLI -&gt; raw API -&gt; reasoning-enabled), moving the index 0.06-&gt;0.63 and 0.34-&gt;0.66-&gt;0.64 while lock collapses (Opus: 0.61-&gt;0.39-&gt;0.22); this establishes the low readings as an identifiability failure, not a disposition. The reasoning-enabled reading is not a &quot;true&quot; value either; the point is that the index alone cannot identify commitment at its low end. Access configuration (deployment client, reasoning on/off) is one generator of this failure, shown on two access paths (an Anthropic subscription CLI and a DeepSeek client), and in a frozen benchmark it is confounded with provider. We contribute a position-lock diagnostic that must accompany any concentration reading, and show that a concentration-blind audit risks reporting neutrality where a reasoning-permitting condition yields concentrated choices. The direction-flip component, largely robust to the artifact, still identifies genuine cross-model disagreement.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

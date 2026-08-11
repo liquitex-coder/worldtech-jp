@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PostDeg: Placement Beats Parameterization in LayerNorm GNNs — NewsMatome (EN)</title>
-<meta name="description" content="PostDeg: Placement Beats Parameterization in LayerNorm GNNs — original-language edition. Japanese translation available.">
+<title>Placing Degree Scales After LayerNorm — NewsMatome (EN)</title>
+<meta name="description" content="Placing Degree Scales After LayerNorm — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/ff14e0282667.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/ff14e0282667.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/ff14e0282667.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/ff14e0282667.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PostDeg: Placement Beats Parameterization in LayerNorm GNNs">
+<meta property="og:title" content="Placing Degree Scales After LayerNorm">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"PostDeg: Placement Beats Parameterization in LayerNorm GNNs",
- "inLanguage":"en","datePublished":"2026-07-28T07:00:00+09:00","dateModified":"2026-07-28T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Placing Degree Scales After LayerNorm",
+ "inLanguage":"en","datePublished":"2026-08-12T07:00:00+09:00","dateModified":"2026-08-12T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.14022","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/ff14e0282667.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>PostDeg: Placement Beats Parameterization in LayerNorm GNNs</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/28</span></div>
+    <h1>Placing Degree Scales After LayerNorm</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/12</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/ff14e0282667.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.14022" rel="nofollow noopener">https://arxiv.org/abs/2606.14022</a></span></div>
-  <div class="article-body"><p>arXiv:2606.14022v2 Announce Type: replace 
-Abstract: LayerNorm-based GNNs routinely erase the topology signals (degree, centrality, $k$-core) that node-selection policies should depend on, but the literature has not located where in the residual block the erasure happens. We answer that question: a positive per-node scalar inserted before LayerNorm is divided out up to a stabilizer term, while the same scalar inserted after LayerNorm reaches the score head as representation magnitude. The surviving slot is the post-LayerNorm position. We instantiate it with PostDeg, a parameter-free post-LayerNorm inverse-degree scale, and pre-register four falsifiers (graphwise scalars, extra LayerNorm, expressive same-slot capacity, backbone-agnostic source) that would reject the rule. PostDeg gains $+3.5\%/+2.5\%/+5.6\%$ over the LN backbone on influence maximization, network dismantling, and maximum independent set, with $10/10$ paired-seed wins per task; none of the four falsifiers fires. The takeaway is that placement, not parameterization, carries the gain -- a small invariance check that generalizes to any positive topology scalar in any normalized residual stack.</p></div>
+  <div class="article-body"><p>arXiv:2606.14022v3 Announce Type: replace 
+Abstract: Graph neural networks (GNNs) are widely used to learn node-selection policies on graphs, and most stack graph attention (GAT) blocks with LayerNorm. On degree-sensitive tasks, LayerNorm tends to remove the degree signal these models need to rank nodes. Much recent work addresses this by redesigning normalizers or aggregators, which changes what these components compute but does not ask where, relative to LayerNorm, a degree scale should be applied. In this paper, we show that the answer follows from a single algebraic fact about LayerNorm. When a positive per-node scale is applied before LayerNorm, LayerNorm divides it out, and it never reaches the model&#x27;s output. Applied after LayerNorm, the same scale comes through and reaches the score head as magnitude. From this placement rule we derive PostDeg, a parameter-free inverse-degree scale that we add as the single change to a fixed GAT backbone. PostDeg multiplies each node&#x27;s normalized representation by an inverse function of its degree, and we compare it against controls in the same position. At every evaluation size, PostDeg improves over the LayerNorm backbone on influence maximization, network dismantling, and maximum independent set, and these controls show where the improvement comes from. The same scale before LayerNorm stays at the backbone, as the absorption identity predicts, and a constant scale after LayerNorm stays there too on all but the most heavy-tailed graphs, so the effect needs both the position after LayerNorm and a degree-dependent scale. The exact form of the scale matters much less, so we recommend PostDeg, which needs no tuning.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>
