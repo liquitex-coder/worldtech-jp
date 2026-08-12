@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Leak It: A Probabilistic Approach to Training-Data Extraction from Black-Box Language Models — NewsMatome (EN)</title>
-<meta name="description" content="Leak It: A Probabilistic Approach to Training-Data Extraction from Black-Box Language Models — original-language edition. Japanese translation available.">
+<title>Leak It: Per-Document Extraction Beyond Aggregate Membership Inference — NewsMatome (EN)</title>
+<meta name="description" content="Leak It: Per-Document Extraction Beyond Aggregate Membership Inference — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/6956456c5676.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/6956456c5676.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/6956456c5676.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/6956456c5676.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leak It: A Probabilistic Approach to Training-Data Extraction from Black-Box Language Models">
+<meta property="og:title" content="Leak It: Per-Document Extraction Beyond Aggregate Membership Inference">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Leak It: A Probabilistic Approach to Training-Data Extraction from Black-Box Language Models",
- "inLanguage":"en","datePublished":"2026-08-05T07:00:00+09:00","dateModified":"2026-08-05T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Leak It: Per-Document Extraction Beyond Aggregate Membership Inference",
+ "inLanguage":"en","datePublished":"2026-08-13T07:00:00+09:00","dateModified":"2026-08-13T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2608.00144","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/6956456c5676.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Leak It: A Probabilistic Approach to Training-Data Extraction from Black-Box Language Models</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/05</span></div>
+    <h1>Leak It: Per-Document Extraction Beyond Aggregate Membership Inference</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/13</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/6956456c5676.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.00144" rel="nofollow noopener">https://arxiv.org/abs/2608.00144</a></span></div>
-  <div class="article-body"><p>arXiv:2608.00144v1 Announce Type: new 
-Abstract: Membership inference (MIA) on language models is usually summarised by an aggregate ROC-AUC, but such evaluations are confounded: model-free blind baselines separate members from non-members from surface text alone. We study black-box, sampling-based training-data leakage through a probabilistic lens, treating N samples from p(.|x) as an estimate of the output distribution and casting leakage signals as functionals of it. We extend the blind-baseline critique into the sampling regime: on WikiMIA a blind bag-of-words classifier reaches AUC 0.97 (TPR 0.90 at 5% FPR) and sampling adds nothing, while on an IID Pile split (MIMIR) neither self-concentration nor gold-continuation recovery significantly beats a blind baseline (incremental AUC 95% CI includes zero). Aggregate metrics hide the real harm. The same sampling verbatim-extracts training data for a tail of documents no blind attack can reach. On Pythia-6.9B, 83 of 500 Pile documents bearing a real identifier (16.6%; 21.3% of those bearing an email address) have that exact identifier reproduced AND not reproduced under a mismatched-prefix control, so each leak is attributable to that document, not to a globally common string. This per-document disclosure is invisible to aggregate AUC and grows with capacity (5.6% to 16.6% from 410M to 6.9B). The risk is uneven: identifier leakage is ~3x stronger in code than prose, though prose stays clearly positive and also grows with capacity (4.0% to 12.1%), while recovery of arbitrary held-out continuations is confined to code (+0.44 member gap on GitHub vs at most +0.014 on prose). Temperature and nucleus sampling matter little, a 16-token prefix suffices, and we detect no reduction from corpus deduplication. Privacy audits should report per-document extraction, decomposed by domain, not a single AUC. We release leakit, a black-box extraction-audit tool.</p></div>
+  <div class="article-body"><p>arXiv:2608.00144v2 Announce Type: replace 
+Abstract: Membership inference (MIA) on language models is usually summarised by aggregate ROC-AUC, but such evaluations are confounded: model-free blind baselines can separate members from non-members using surface text alone. Building on probabilistic discoverable extraction, we study black-box training-data leakage using N samples from p_theta(. | x), placing mean overlap, extreme-value overlap, and self-concentration on a common functional-estimation footing. On WikiMIA, a blind bag-of-words classifier reaches AUC 0.97 (TPR 0.90 at 5% FPR) while sampling adds nothing. On an IID Pile split (MIMIR), neither self-concentration nor gold-continuation recovery significantly exceeds a blind baseline in aggregate. Aggregate metrics hide the real harm: sampling verbatim-extracts training data for a tail of documents no blind attack can reach. On Pythia-6.9B, 16.6% of 500 Pile documents bearing a real identifier (83 documents; 21.3% of those bearing an email address) have that identifier reproduced and not reproduced under a mismatched-prefix control. Each leak is attributable to that document rather than a globally common string. This per-document disclosure is invisible to aggregate AUC. Risk is uneven: identifier leakage is about 3x stronger in code than prose, though prose remains positive and grows with capacity (4.0% to 12.1% from 410M to 6.9B); recovery of arbitrary held-out continuations is essentially confined to code (+0.44 member gap on GitHub vs at most +0.014 on prose). Temperature and nucleus sampling have minor effect, a 16-token prefix suffices, and the sample-budget relationship corroborates prior probabilistic-extraction results. We detect no reduction from deduplication. Privacy audits should report per-document extraction, not only aggregate membership, and motivate differential privacy as the mitigation. We release leakit, a black-box tool implementing this probe and its control.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

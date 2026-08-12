@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>POISE: Position-Aware Undetectable Skill Injection on LLM Agents — NewsMatome (EN)</title>
-<meta name="description" content="POISE: Position-Aware Undetectable Skill Injection on LLM Agents — original-language edition. Japanese translation available.">
+<title>Poise: Position-Aware One-Instruction Skill Injection for Silent Execution on LLM Agents — NewsMatome (EN)</title>
+<meta name="description" content="Poise: Position-Aware One-Instruction Skill Injection for Silent Execution on LLM Agents — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/d7393e9421c0.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/d7393e9421c0.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/d7393e9421c0.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/d7393e9421c0.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="POISE: Position-Aware Undetectable Skill Injection on LLM Agents">
+<meta property="og:title" content="Poise: Position-Aware One-Instruction Skill Injection for Silent Execution on LLM Agents">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"POISE: Position-Aware Undetectable Skill Injection on LLM Agents",
- "inLanguage":"en","datePublished":"2026-06-10T07:00:00+09:00","dateModified":"2026-06-10T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Poise: Position-Aware One-Instruction Skill Injection for Silent Execution on LLM Agents",
+ "inLanguage":"en","datePublished":"2026-08-13T07:00:00+09:00","dateModified":"2026-08-13T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.07943","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/d7393e9421c0.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>POISE: Position-Aware Undetectable Skill Injection on LLM Agents</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/06/10</span></div>
+    <h1>Poise: Position-Aware One-Instruction Skill Injection for Silent Execution on LLM Agents</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/08/13</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/d7393e9421c0.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.07943" rel="nofollow noopener">https://arxiv.org/abs/2606.07943</a></span></div>
-  <div class="article-body"><p>arXiv:2606.07943v1 Announce Type: cross 
-Abstract: Agent skills provide a lightweight mechanism for extending general-purpose agents, but their open format exposes them to skill-poisoning attacks. A practically dangerous injection must stay invisible: if executing the payload derails the user&#x27;s legitimate task, the resulting failure signal invites inspection of the skill. We therefore evaluate attacks by Attack Success Rate, which requires the injected payload to execute and the user&#x27;s task to still pass its verifier in the same trial. Prior skill-poisoning attacks face a reliability-stealth trade-off under this lens: YAML-header injections are reliably loaded but easily inspected, whereas stealthier body injections that place explicit malicious commands in the skill prose are less reliable because out-of-context commands invite the agent&#x27;s own suspicion. We introduce POISE, a position-aware attack that compresses the trigger into a single, benign-looking body instruction, placing it at a feasible position and using a context-aware generator to blend it with nearby setup or prerequisite steps. On Skill-Inject with codex+gpt-5.2, POISE achieves an 89.3% ASR, 28.0 points above a random-placement body baseline and 2.6 points above a YAML-only baseline, while retaining the stealth advantage of body placement. That stealth is the decisive margin: because legitimate skill bodies naturally require privileged tool operations, LLM scanners are hyper-sensitive, falsely flagging 74.6% of clean skills on average across four judges and both benchmarks. Blending into these false alarms, POISE causes only 5.6% of poisoned variants to gain a new high-risk alert over their clean baselines, rendering current static defenses ineffective.</p></div>
+  <div class="article-body"><p>arXiv:2606.07943v2 Announce Type: replace-cross 
+Abstract: Agent skills extend general-purpose agents, but their open format enables skill poisoning: a tampered skill can make an agent run an attacker&#x27;s command while completing the user&#x27;s legitimate task. Invocation alone is insufficient; the attack-specific action must complete while that task still passes its verifier. We therefore define Attack Success Rate (ASR) to require a postcondition-validated sandbox action and a passing task verifier in the same trial. Skill files expose a reliability-visibility trade-off between a preloaded but conspicuous YAML frontmatter block and a longer body, where arbitrary placement may be skipped or locally incongruent. We introduce Poise, a position-aware attack that uses context-aware generation to place exactly one benign-looking, command-bearing instruction at a structurally feasible body position. On the eligible Skill-Inject pool with codex+gpt-5.2, Poise achieves 89.3\% ASR, 28.0 points above a context-free random-placement body baseline and comparable to the 86.7\% ASR of a high-exposure YAML-only baseline. Under the SkillTester audit, four LLM judges falsely flag 74.6\% of clean skills on average across both benchmarks, while only 5.6\% of Poise variants gain a new high-risk alert over their clean counterparts. One locally plausible, command-bearing body instruction therefore matches YAML-level reliability, while the resulting poisoned skill seldom adds a new high-risk finding over its clean counterpart.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

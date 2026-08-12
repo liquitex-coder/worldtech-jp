@@ -17,8 +17,8 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"Wiring Beats Blending: What Transfers Between Transformer Sizes -- and What Doesn&#x27;t",
- "inLanguage":"en","datePublished":"2026-08-07T07:00:00+09:00","dateModified":"2026-08-07T07:00:00+09:00",
- "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "inLanguage":"en","datePublished":"2026-08-13T07:00:00+09:00","dateModified":"2026-08-13T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2608.02829","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/127e361bae83.html"}
 </script>
@@ -32,14 +32,14 @@
 </div></header>
 <div class="wrap"><article class="article">
   <div class="article-head">
-    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
     <h1>Wiring Beats Blending: What Transfers Between Transformer Sizes -- and What Doesn&#x27;t</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/08/07</span></div>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/13</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/127e361bae83.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.02829" rel="nofollow noopener">https://arxiv.org/abs/2608.02829</a></span></div>
-  <div class="article-body"><p>arXiv:2608.02829v1 Announce Type: cross 
-Abstract: Model families train every size from scratch. Can a pretrained large model be converted into a smaller sibling? We characterize the 1.4B-&gt;410M conversion in the Pythia family end-to-end: (i) representations align strongly across sizes (ridge R^2=0.84) while parameters align weakly; (ii) dense weight projection is functionally destructive -- provably not an assembly artifact -- because basis mixing breaks rotary, per-head, GELU, and LayerNorm structure; (iii) after the best-fit linear operator, weight residuals are statistically indistinguishable from noise under shuffle controls; (iv) conversion value therefore lives in initialization. In matched-budget continued pre-training we decompose conversion into two independent levers -- least-squares compensation (function: best zero-shot) and variance-preserving rescale (dynamics: best endpoints). Compensation is a token-efficient, low-budget win rather than a universal one: at 30M tokens it beats the strongest subcloning variant on both a width-reduced pair (84.0 +/- 1.8 vs. 89.7 +/- 3.7, 3/3 seeds) and a held-out depth-reduced pair (109.3 vs. 117.9, 3/3 seeds), reaching a given quality with fewer tokens; at a 33x larger budget the two converge to parity (40.0 vs. 40.0), both far ahead of from-scratch, which transfer initialization always beats -- by up to 18x at low budget, the margin narrowing at convergence and at the largest scale. We further map the method&#x27;s boundary: at ~5x the donor scale (6.9B-&gt;1.4B) stacking both levers over-corrects, which we trace to ill-conditioning of the compensation solve at large width, pointing to dimension-aware regularization as the fix. Code, checkpoints, and the frozen evaluation corpus are released.</p></div>
+  <div class="article-body"><p>arXiv:2608.02829v2 Announce Type: replace 
+Abstract: Model families are typically trained size by size, each from scratch. Can apretrained large model instead be converted into a smaller sibling? Wecharacterize the 1.4B-&gt;410M conversion in the Pythia family end to end.Representations align strongly across sizes (ridge R^2=0.84) while parametersalign weakly. Dense weight projection is functionally destructive, and abit-exact reconstruction control shows this is not an assembly artifact: basismixing breaks rotary, per-head, GELU, and LayerNorm structure. After the best-fitlinear operator, weight residuals are statistically indistinguishable from noiseunder shuffle controls. Conversion value therefore lives in initialization. Inmatched-budget continued pre-training we decompose conversion into twoindependent levers: least-squares compensation (a function lever, best zero-shot)and variance-preserving rescale (a dynamics lever, best endpoints). Compensationis a token-efficient, low-budget win rather than a universal one. At 30M tokens itbeats the strongest subcloning variant on both a width-reduced pair (84.0 +/- 1.8vs. 89.7 +/- 3.7, 3/3 seeds) and a held-out depth-reduced pair (109.3 vs. 117.9,3/3 seeds), reaching a given quality with fewer tokens. At a 33x larger budget thetwo converge to parity (40.0 vs. 40.0), both far ahead of from-scratch, whichtransfer initialization always beats: by up to 18x at low budget, with the marginnarrowing at convergence and at the largest scale. We also map the method&#x27;sboundary. At about 5x the donor scale (6.9B-&gt;1.4B) stacking both leversover-corrects, consistent with ill-conditioning of the compensation solve at largewidth, which points to dimension-aware regularization as a fix. At matched budgetour initialization also beats structured pruning with distillation, the standardpipeline for this task, and improves further when combined with it. Code,checkpoints, and the frozen evaluation corpus are released.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>
