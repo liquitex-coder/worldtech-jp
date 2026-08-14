@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Do Time-Series Forecasters Use the Right History: Recoverability, Recovery, and Functional Use of Temporal Delays — NewsMatome</title>
-<meta name="description" content="Do Time-Series Forecasters Use the Right History: Recoverability, Recovery, and Functional Use of Temporal Delays（EN→JA 翻訳・出典付き）">
+<title>From Recoverability to Functional Use: Certifying Temporal Reports in Time-Series Forecasting — NewsMatome</title>
+<meta name="description" content="From Recoverability to Functional Use: Certifying Temporal Reports in Time-Series Forecasting（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/972efe5201bf.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/972efe5201bf.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/972efe5201bf.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="Do Time-Series Forecasters Use the Right History: Recoverability, Recovery, and Functional Use of Temporal Delays">
-<meta property="og:description" content="Do Time-Series Forecasters Use the Right History: Recoverability, Recovery, and Functional Use of Temporal Delays（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="From Recoverability to Functional Use: Certifying Temporal Reports in Time-Series Forecasting">
+<meta property="og:description" content="From Recoverability to Functional Use: Certifying Temporal Reports in Time-Series Forecasting（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Do Time-Series Forecasters Use the Right History: Recoverability, Recovery, and Functional Use of Temporal Delays",
- "inLanguage":"ja","datePublished":"2026-08-13T07:00:00+09:00","dateModified":"2026-08-13T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"From Recoverability to Functional Use: Certifying Temporal Reports in Time-Series Forecasting",
+ "inLanguage":"ja","datePublished":"2026-08-15T07:00:00+09:00","dateModified":"2026-08-15T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2608.10433","url":"https://liquitex-coder.github.io/worldtech-jp/articles/972efe5201bf.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>Do Time-Series Forecasters Use the Right History: Recoverability, Recovery, and Functional Use of Temporal Delays</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>From Recoverability to Functional Use: Certifying Temporal Reports in Time-Series Forecasting</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>Do Time-Series Forecasters Use the Right History: Recoverability, Recovery, and Functional Use of Temporal Delays</h1>
+      <h1>From Recoverability to Functional Use: Certifying Temporal Reports in Time-Series Forecasting</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/08/13 07:00</span><span>· 更新 2026/08/13</span>
+        <span>公開 2026/08/15 07:00</span><span>· 更新 2026/08/15</span>
       </div>
     </div>
     
@@ -74,24 +74,24 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2608.10433" rel="nofollow noopener">Do Time-Series Forecasters Use the Right History: Recoverability, Recovery, and Functional Use of Temporal Delays</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2608.10433" rel="nofollow noopener">From Recoverability to Functional Use: Certifying Temporal Reports in Time-Series Forecasting</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2608.10433v1 Announce Type: new 
-Abstract: Forecast accuracy does not tell us which past inputs produced a prediction. We separate three questions for time-series models with known delay structure: can the true delay be recovered from the observed data, does the model report it, and does the forecast actually use the same history? We first derive input-conditioned recoverability measures that separate intrinsic ambiguity from model error. We then prove that a delay report can become arbitrarily reliable while forecast risk approaches the oracle even though the predictor still uses the wrong lag. This failure also appears in finite samples on the point-delay task: among forecasts with a correct delay report and normalized excess risk within 10\% of the oracle, the reported history is functionally unused under our matched masking test in 55.4\% of N-HiTS cases and 92.7\% of TCN cases. Finally, we show that routing the prediction through the reported history removes off-report bypass paths; a hard one-hot control achieves exact fixed-report alignment. The main conclusion is simple: a good forecast, even with a correct delay report, does not show that the model used the right history.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2608.10433v1 Announce Type: new 
-Abstract: Forecast accuracy does not tell us which past inputs produced a prediction. We separate three questions for time-series models with known delay structure: can the true delay be recovered from the observed data, does the model report it, and does the forecast actually use the same history? We first derive input-conditioned recoverability measures that separate intrinsic ambiguity from model error. We then prove that a delay report can become arbitrarily reliable while forecast risk approaches the oracle even though the predictor still uses the wrong lag. This failure also appears in finite samples on the point-delay task: among forecasts with a correct delay report and normalized excess risk within 10\% of the oracle, the reported history is functionally unused under our matched masking test in 55.4\% of N-HiTS cases and 92.7\% of TCN cases. Finally, we show that routing the prediction through the reported history removes off-report bypass paths; a hard one-hot control achieves exact fixed-report alignment. The main conclusion is simple: a good forecast, even with a correct delay report, does not show that the model used the right history.</div>
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2608.10433v2 Announce Type: replace 
+Abstract: Temporal reports are increasingly emitted alongside numerical forecasts and are often interpreted as statements about the computation producing those forecasts. We formalize the resulting certification problem as three distinct stages: \emph{recoverability}, \emph{report correctness}, and \emph{functional use}. For point delays, an exact finite-sample recovery--substitutability identity ties structural discrimination and proxy prediction to the same realized shift geometry while placing them on different scales: structural evidence grows with $n\eta_n$, whereas the normalized predictive penalty is governed by $\eta_n$. A delay can therefore be statistically decisive while an alternative lag remains near-oracle. Guided by this regime, we evaluate TCN- and N-HiTS-based systems on the strict intersection of recoverable trajectories, correct reports, and near-oracle one-step predictions. Their dominant forecast dependence remains far from the reported delay under masking, finite perturbations, local Jacobians, and in-distribution conditional replacement, and the separation persists across a 100-fold forecast-loss sweep. A no-bypass factorization then provides an explicit access certificate for the final stage, while architecture-matched multi-seed, post-hoc, and gate-destruction controls identify report-coordinate access as the mechanism governing alignment. The resulting framework separates statistical evidence for \emph{what can be identified} from computational evidence for \emph{what the forecast uses}.</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2608.10433v2 Announce Type: replace 
+Abstract: Temporal reports are increasingly emitted alongside numerical forecasts and are often interpreted as statements about the computation producing those forecasts. We formalize the resulting certification problem as three distinct stages: \emph{recoverability}, \emph{report correctness}, and \emph{functional use}. For point delays, an exact finite-sample recovery--substitutability identity ties structural discrimination and proxy prediction to the same realized shift geometry while placing them on different scales: structural evidence grows with $n\eta_n$, whereas the normalized predictive penalty is governed by $\eta_n$. A delay can therefore be statistically decisive while an alternative lag remains near-oracle. Guided by this regime, we evaluate TCN- and N-HiTS-based systems on the strict intersection of recoverable trajectories, correct reports, and near-oracle one-step predictions. Their dominant forecast dependence remains far from the reported delay under masking, finite perturbations, local Jacobians, and in-distribution conditional replacement, and the separation persists across a 100-fold forecast-loss sweep. A no-bypass factorization then provides an explicit access certificate for the final stage, while architecture-matched multi-seed, post-hoc, and gate-destruction controls identify report-coordinate access as the mechanism governing alignment. The resulting framework separates statistical evidence for \emph{what can be identified} from computational evidence for \emph{what the forecast uses}.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2608.10433v1 Announce Type: new 
-Abstract: Forecast accuracy does not tell us which past inputs produced a prediction. We separate three questions for time-series models with known delay structure: can the true delay be recovered from the observed data, does the model report it, and does the forecast actually use the same history? We first derive input-conditioned recoverability measures that separate intrinsic ambiguity from model error. We then prove that a delay report can become arbitrarily reliable while forecast risk approaches the oracle even though the predictor still uses the wrong lag. This failure also appears in finite samples on the point-delay task: among forecasts with a correct delay report and normalized excess risk within 10\% of the oracle, the reported history is functionally unused under our matched masking test in 55.4\% of N-HiTS cases and 92.7\% of TCN cases. Finally, we show that routing the prediction through the reported history removes off-report bypass paths; a hard one-hot control achieves exact fixed-report alignment. The main conclusion is simple: a good forecast, even with a correct delay report, does not show that the model used the right history.</p><a href="https://arxiv.org/abs/2608.10433" rel="nofollow noopener">原論文を読む →</a></div>
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2608.10433v2 Announce Type: replace 
+Abstract: Temporal reports are increasingly emitted alongside numerical forecasts and are often interpreted as statements about the computation producing those forecasts. We formalize the resulting certification problem as three distinct stages: \emph{recoverability}, \emph{report correctness}, and \emph{functional use}. For point delays, an exact finite-sample recovery--substitutability identity ties structural discrimination and proxy prediction to the same realized shift geometry while placing them on different scales: structural evidence grows with $n\eta_n$, whereas the normalized predictive penalty is governed by $\eta_n$. A delay can therefore be statistically decisive while an alternative lag remains near-oracle. Guided by this regime, we evaluate TCN- and N-HiTS-based systems on the strict intersection of recoverable trajectories, correct reports, and near-oracle one-step predictions. Their dominant forecast dependence remains far from the reported delay under masking, finite perturbations, local Jacobians, and in-distribution conditional replacement, and the separation persists across a 100-fold forecast-loss sweep. A no-bypass factorization then provides an explicit access certificate for the final stage, while architecture-matched multi-seed, post-hoc, and gate-destruction controls identify report-coordinate access as the mechanism governing alignment. The resulting framework separates statistical evidence for \emph{what can be identified} from computational evidence for \emph{what the forecast uses}.</p><a href="https://arxiv.org/abs/2608.10433" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2608.10433" rel="nofollow noopener">https://arxiv.org/abs/2608.10433</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
     <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="caa00c3a541c.html"><div class="sim">関連</div><div class="info"><b>Closed-Loop LLM Co-Pilots for Digital Agriculture</b><div class="m">AI</div></div></a><a class="r" href="e062f962099c.html"><div class="sim">関連</div><div class="info"><b>SPOTting the Future: Lookahead Explanations for Deep Reinforcement Learning</b><div class="m">AI</div></div></a><a class="r" href="94d54e916591.html"><div class="sim">関連</div><div class="info"><b>MIDAS: Mutual Information Disentanglement with Uncertainty-Aware Fusion for Incomplete Multimodal Sentiment Analysis</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="aecb2f988f3c.html"><div class="sim">関連</div><div class="info"><b>Position: Reasoning is a Learnable Rule-Based Process</b><div class="m">AI</div></div></a><a class="r" href="16782ecf2bd1.html"><div class="sim">関連</div><div class="info"><b>Diagnostic Foundation for Evaluating LLMs&#x27; Research Integrity as Co-Scientists</b><div class="m">AI</div></div></a><a class="r" href="1aade843ea3d.html"><div class="sim">関連</div><div class="info"><b>Position: The Alignment Community is Unintentionally Building a Censor&#x27;s Toolkit</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

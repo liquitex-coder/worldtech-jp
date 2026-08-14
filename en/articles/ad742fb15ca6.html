@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>When Local Variance Optimality Is Not Enough: RoPE-Aligned Q/K Rotations for Dynamic 4-Bit Quantisation — NewsMatome (EN)</title>
+<meta name="description" content="When Local Variance Optimality Is Not Enough: RoPE-Aligned Q/K Rotations for Dynamic 4-Bit Quantisation — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/ad742fb15ca6.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/ad742fb15ca6.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/ad742fb15ca6.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/ad742fb15ca6.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="When Local Variance Optimality Is Not Enough: RoPE-Aligned Q/K Rotations for Dynamic 4-Bit Quantisation">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"When Local Variance Optimality Is Not Enough: RoPE-Aligned Q/K Rotations for Dynamic 4-Bit Quantisation",
+ "inLanguage":"en","datePublished":"2026-08-15T07:00:00+09:00","dateModified":"2026-08-15T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2608.13365","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/ad742fb15ca6.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/ad742fb15ca6.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>When Local Variance Optimality Is Not Enough: RoPE-Aligned Q/K Rotations for Dynamic 4-Bit Quantisation</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/15</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/ad742fb15ca6.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.13365" rel="nofollow noopener">https://arxiv.org/abs/2608.13365</a></span></div>
+  <div class="article-body"><p>arXiv:2608.13365v1 Announce Type: new 
+Abstract: Rotation-based post-training quantisation commonly applies an orthogonal transform across an entire attention head to reduce outlier-induced error. RoPE instead partitions each head into two-dimensional frequency pairs, raising the question of whether a transform respecting this decomposition can improve on full-head mixing. Prior work has established the per-pair rotations that commute with RoPE. We state the converse result that, for distinct frequencies, no other single-head orthogonal map commutes with RoPE. For the head-shared parameterisation used in our experiments, we then derive the rotation angle that minimises the larger channel variance under a pooled-covariance, position-averaged surrogate and verify that the implementation attains its analytic minimum. The evaluated head-shared pairwise configuration does not improve accuracy in the tested dynamic W4A4KV4 setting. Across four checkpoints, replacing the full-head Hadamard with this configuration increases perplexity at both short and long context lengths. Composing the pairwise rotation with the Hadamard satisfies the selected $\pm0.05$-PPL interval criterion under the default estimator. Estimating the shared angle from K alone improves pairwise-only on every checkpoint but does not close its gap to full-head mixing. The analytic objective controls a position-averaged second moment of a pooled calibration covariance, whereas the dynamic quantiser sets its step from a tokenwise group range. The pairwise transform also has only two-channel mixing support. Along a controlled interpolation from two-channel to full-head mixing, K range, relative quantisation error, and perplexity degradation decrease as support increases. These results show that optimality for a structured surrogate need not reduce quantisation error when the surrogate and mixing support are misaligned with the quantiser&#x27;s scale-setting statistic.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dimension-Calibrated Unexplained Mass: An Interpretable GMM Drift Statistic that Matches Kernel Two-Sample Tests — NewsMatome (EN)</title>
-<meta name="description" content="Dimension-Calibrated Unexplained Mass: An Interpretable GMM Drift Statistic that Matches Kernel Two-Sample Tests — original-language edition. Japanese translation available.">
+<title>Dimension-Calibrated Unexplained Mass: An Interpretable Drift Statistic for Contamination Monitoring in Data Streams — NewsMatome (EN)</title>
+<meta name="description" content="Dimension-Calibrated Unexplained Mass: An Interpretable Drift Statistic for Contamination Monitoring in Data Streams — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/8f4c8c20382e.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/8f4c8c20382e.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/8f4c8c20382e.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/8f4c8c20382e.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Dimension-Calibrated Unexplained Mass: An Interpretable GMM Drift Statistic that Matches Kernel Two-Sample Tests">
+<meta property="og:title" content="Dimension-Calibrated Unexplained Mass: An Interpretable Drift Statistic for Contamination Monitoring in Data Streams">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Dimension-Calibrated Unexplained Mass: An Interpretable GMM Drift Statistic that Matches Kernel Two-Sample Tests",
- "inLanguage":"en","datePublished":"2026-08-05T07:00:00+09:00","dateModified":"2026-08-05T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Dimension-Calibrated Unexplained Mass: An Interpretable Drift Statistic for Contamination Monitoring in Data Streams",
+ "inLanguage":"en","datePublished":"2026-08-15T07:00:00+09:00","dateModified":"2026-08-15T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.16811","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/8f4c8c20382e.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Dimension-Calibrated Unexplained Mass: An Interpretable GMM Drift Statistic that Matches Kernel Two-Sample Tests</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/05</span></div>
+    <h1>Dimension-Calibrated Unexplained Mass: An Interpretable Drift Statistic for Contamination Monitoring in Data Streams</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/15</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/8f4c8c20382e.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.16811" rel="nofollow noopener">https://arxiv.org/abs/2607.16811</a></span></div>
-  <div class="article-body"><p>arXiv:2607.16811v3 Announce Type: replace 
-Abstract: Drift detectors that work tend not to explain themselves, and drift detectors that explain themselves tend to fail in high dimension. We close that gap for Gaussian mixture models (GMMs). Fitting a GMM to normal data makes each component a named &quot;regime,&quot; and the fraction of a stream window matching no regime -- its unexplained mass -- is a drift signal that is simultaneously its own explanation. This statistic degrades as dimension grows; we identify the mechanism and remove it. Under a correct component, a normal point in d dimensions sits at about sqrt(d) sigma from the mean, so the customary fixed 3-sigma radius admits every point once d exceeds about 9, and window-level ROC-AUC collapses to exactly 0.50 on Satellite (d=36) and Optdigits (d=64). Replacing the fixed radius with the dimension-calibrated chi-squared quantile removes the saturation entirely: AUC rises to 1.00 and 0.89 respectively, leaving low-dimensional cases unchanged. The resulting interpretable detector matches a model-free kernel two-sample test (MMD) at every dimension from 3 to 64, across seven public benchmarks and five random splits, while reporting which regime the data left and how far outside it the window lies. We delimit its scope: unexplained mass detects and explains novel-regime drift, but is blind by construction to in-support re-weighting of existing regimes, where MMD is required and supplies no explanation. Two GMM-to-GMM divergences serve as ablations, and the same density model is a competent point-anomaly detector on par with six baselines under EVT-calibrated thresholds. All code and experiments are released.</p></div>
+  <div class="article-body"><p>arXiv:2607.16811v4 Announce Type: replace 
+Abstract: Drift detectors that work tend not to explain themselves, and drift detectors that explain themselves tend to fail in high dimension. We close that gap for Gaussian mixture models (GMMs): each fitted component is a named &quot;regime,&quot; and the fraction of a stream window matching no regime -- its unexplained mass -- is a drift signal that is simultaneously its own explanation. We identify why this statistic collapses in high dimension and repair it. Under a correct component a normal point in d dimensions lies about sqrt(d) sigma from the mean, so once d exceeds 9 essentially every point exceeds a fixed 3-sigma radius: window-level ROC-AUC is exactly 0.50 on Satellite (d=36) and Optdigits (d=64). Calibrating the radius to sqrt(chi-squared_d(0.99)) removes the collapse -- AUC 1.00 and 0.89 -- while leaving low dimensions unchanged. Across seven public benchmarks, five seeds, and eight model-free detectors spanning the kernel, classifier, projection, density-difference, transport, likelihood and partition families, the repaired statistic is best or tied-best on five of seven datasets at 10% window contamination (its two losses are Pendigits, where the whole field beats it, and Optdigits), and as contamination becomes sparse the sample-level detectors fade toward chance while it degrades most gracefully: at 2% its mean AUC across the benchmarks is 0.86 against at most 0.73 for any model-free detector (1.00 vs. MMD&#x27;s 0.72 on KDD-http) -- while alone among them reporting which regime the data left and how far outside it the window lies. We delimit its scope honestly: unexplained mass detects and explains novel-regime drift but is blind by construction to in-support re-weighting of known regimes, where distribution-level tests are required and explain nothing; and the underlying density model&#x27;s EVT-calibrated false-alarm rates degrade above d of about 36. All code and experiments are released.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>
