@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analytical Provisioning for Attention-FFN Disaggregated LLM Serving under Stochastic Workloads — NewsMatome (EN)</title>
+<meta name="description" content="Analytical Provisioning for Attention-FFN Disaggregated LLM Serving under Stochastic Workloads — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/bef4a88b0b6e.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/bef4a88b0b6e.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/bef4a88b0b6e.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/bef4a88b0b6e.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Analytical Provisioning for Attention-FFN Disaggregated LLM Serving under Stochastic Workloads">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Analytical Provisioning for Attention-FFN Disaggregated LLM Serving under Stochastic Workloads",
+ "inLanguage":"en","datePublished":"2026-08-19T07:00:00+09:00","dateModified":"2026-08-19T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2601.21351","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/bef4a88b0b6e.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/bef4a88b0b6e.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Analytical Provisioning for Attention-FFN Disaggregated LLM Serving under Stochastic Workloads</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/19</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/bef4a88b0b6e.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2601.21351" rel="nofollow noopener">https://arxiv.org/abs/2601.21351</a></span></div>
+  <div class="article-body"><p>arXiv:2601.21351v4 Announce Type: replace 
+Abstract: Attentio-FFN disaggregation (AFD) is an emerging architecture for LLM decoding that separates state-heavy, KV-cache-dominated Attention computation from stateless, compute-intensive FFN computation, connected by per-step communication. While AFD enables independent scaling of memory and compute resources, its performance is highly sensitive to the Attention/FFN provisioning ratio: mis-sizing induces step-level blocking and costly device idle time. We develop an analytical provisioning framework for AFD bundles in an $r$A--$1$F topology under stochastic workloads. Two sources of randomness shape the problem: per-slot Attention workload evolves as KV caches grow and completed requests are replenished with random prompt and decode lengths, and synchronized execution across Attention workers introduces a barrier governed by the slowest worker. We address both via a renewal-reward characterization of the per-slot stationary token load, identifying a single workload statistic $\theta$ that governs provisioning under arbitrary prefill-decode distributions and admits a nonparametric estimator from request traces. The analysis yields a closed-form mean-field rule for the optimal A/F ratio decomposing into Attention-, communication-, and FFN-bottleneck regimes, together with a Gaussian barrier-aware refinement that quantifies cross-worker synchronization overhead. A trace-calibrated AFD simulator supports the framework across workloads: the predicted optimal ratio matches the simulation-optimal within 10%. Together, these results provide a compact, calibratable account of how stochastic workload structure determines provisioning in disaggregated LLM serving.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

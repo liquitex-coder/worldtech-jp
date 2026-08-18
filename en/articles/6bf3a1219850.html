@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LORA-CRAFT: Cross-layer Rank Adaptation via Frozen Tucker Decomposition of Pre-trained Attention Weights — NewsMatome (EN)</title>
+<meta name="description" content="LORA-CRAFT: Cross-layer Rank Adaptation via Frozen Tucker Decomposition of Pre-trained Attention Weights — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/6bf3a1219850.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/6bf3a1219850.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/6bf3a1219850.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/6bf3a1219850.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LORA-CRAFT: Cross-layer Rank Adaptation via Frozen Tucker Decomposition of Pre-trained Attention Weights">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"LORA-CRAFT: Cross-layer Rank Adaptation via Frozen Tucker Decomposition of Pre-trained Attention Weights",
+ "inLanguage":"en","datePublished":"2026-08-19T07:00:00+09:00","dateModified":"2026-08-19T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2602.17510","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/6bf3a1219850.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/6bf3a1219850.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>LORA-CRAFT: Cross-layer Rank Adaptation via Frozen Tucker Decomposition of Pre-trained Attention Weights</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/19</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/6bf3a1219850.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2602.17510" rel="nofollow noopener">https://arxiv.org/abs/2602.17510</a></span></div>
+  <div class="article-body"><p>arXiv:2602.17510v2 Announce Type: replace 
+Abstract: We introduce LoRA-CRAFT (\textbf{C}ross-layer \textbf{R}ank \textbf{A}daptation via \textbf{F}rozen \textbf{T}ucker), abbreviated CRAFT throughout, an extremely parameter-efficient fine-tuning (PEFT) method that applies Tucker tensor decomposition to pre-trained attention weight matrices stacked across transformer layers and trains only small square adaptation matrices on the resulting frozen Tucker factors. Existing tensor-based PEFT methods decompose \textit{gradient updates}: LoTR applies Tucker decomposition with shared factor matrices, while SuperLoRA groups and reshapes $\Delta W$ across layers before applying Tucker decomposition. Separately, methods such as PiSSA apply SVD to \textit{pre-trained weights} but operate independently per layer. CRAFT bridges these two lines of work: it performs full Tucker decomposition via Higher-Order SVD (HOSVD) directly on \textit{pre-trained weights} organized as cross-layer 3D tensors, freezes all resulting factors, and adapts the model through lightweight trainable transformations applied to each factor matrix. Experiments on the GLUE benchmark using RoBERTa-base and RoBERTa-large, as well as commonsense reasoning benchmarks using LLaMA2-7B and LLaMA3-8B, demonstrate that CRAFT achieves competitive performance with existing methods while requiring only \rev{\textbf{extremely low Tucker adaptation parameters}}. \fixw{On LLaMA3-8B, CRAFT} \rev{exceeds the average accuracy of LoRA} \textbf{using hundreds of times fewer parameters}\fixw{; on LLaMA2-7B the same holds at a $0.252$M budget}. Our results suggest that CRAFT&#x27;s efficiency advantage grows with model scale, as the frozen Tucker factors better capture the richer cross-layer structure of larger pre-trained models.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

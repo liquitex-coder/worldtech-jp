@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Every Expert Counts: ExactMoE for Memory-Efficient W4A16 Inference — NewsMatome (EN)</title>
+<meta name="description" content="Every Expert Counts: ExactMoE for Memory-Efficient W4A16 Inference — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/a7cd346ecf51.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/a7cd346ecf51.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/a7cd346ecf51.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/a7cd346ecf51.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Every Expert Counts: ExactMoE for Memory-Efficient W4A16 Inference">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Every Expert Counts: ExactMoE for Memory-Efficient W4A16 Inference",
+ "inLanguage":"en","datePublished":"2026-08-19T07:00:00+09:00","dateModified":"2026-08-19T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2608.15383","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/a7cd346ecf51.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/a7cd346ecf51.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Every Expert Counts: ExactMoE for Memory-Efficient W4A16 Inference</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/19</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/a7cd346ecf51.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.15383" rel="nofollow noopener">https://arxiv.org/abs/2608.15383</a></span></div>
+  <div class="article-body"><p>arXiv:2608.15383v1 Announce Type: new 
+Abstract: Sparse mixture-of-experts (MoE) language models reduce arithmetic by activating only a small subset of experts per token, yet deployment still requires storing and moving the full expert bank. We present ExactMoE, an inference design that applies symmetric group-128 four-bit weight quantization only to routed experts, stores those experts in kernel-native MARLIN form in pinned host memory, and executes all selected experts through a configurable GPU-resident slot cache and fused grouped MoE kernels. The router, attention, embeddings, normalization layers, and language-model head remain in BF16. &quot;Exact&quot; refers to complete expert availability and an unchanged top-k routing procedure: no expert is pruned, substituted, or forced to execute on the CPU. It does not imply numerical identity with the BF16 model. On OLMoE-1B-7B-0924-Instruct, evaluated on a single NVIDIA L4, a 16-slot configuration reduces peak reserved GPU memory from 14.168 to 1.836 GiB (87.04%) while retaining 81.85% of BF16 decode throughput. A fully resident 64-slot configuration reaches 31.923 tokens/s versus 21.662 tokens/s for BF16 while reserving 4.061 GiB. Across 12,450 zero-shot multiple-choice questions, ExactMoE obtains 70.3534% normalized accuracy versus 70.8996% for BF16, retaining 99.23% of the baseline accuracy. In a matched 16-token ablation, fused grouped execution is 1.97x as fast as a sequential W4 reference. These results identify a practical memory-transfer-throughput frontier for complete-expert MoE inference.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

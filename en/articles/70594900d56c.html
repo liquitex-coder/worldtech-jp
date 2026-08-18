@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NPU Offloading of a Frozen Visual Encoder for Robot Policy Training — NewsMatome (EN)</title>
+<meta name="description" content="NPU Offloading of a Frozen Visual Encoder for Robot Policy Training — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/70594900d56c.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/70594900d56c.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/70594900d56c.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/70594900d56c.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NPU Offloading of a Frozen Visual Encoder for Robot Policy Training">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"NPU Offloading of a Frozen Visual Encoder for Robot Policy Training",
+ "inLanguage":"en","datePublished":"2026-08-19T07:00:00+09:00","dateModified":"2026-08-19T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2608.15002","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/70594900d56c.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/70594900d56c.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>NPU Offloading of a Frozen Visual Encoder for Robot Policy Training</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/19</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/70594900d56c.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.15002" rel="nofollow noopener">https://arxiv.org/abs/2608.15002</a></span></div>
+  <div class="article-body"><p>arXiv:2608.15002v1 Announce Type: cross 
+Abstract: When a robot policy is trained for a new task or dataset, its visual encoder can be frozen and only its action generation module trained, reducing training cost. Freezing removes the encoder&#x27;s backward pass, but its forward pass must still run at every training step because the input images change, so it keeps consuming GPU compute. We therefore ask whether moving this computation to a low power AI accelerator such as an NPU can reduce total energy despite the added data transfer and longer training time, and how it affects policy performance. We built an asynchronous training pipeline that uses both a GPU and an NPU for the AR-Actor specialist. The frozen visual encoder runs in A8W8 INT8 on a Mobilint Aries2 NPU, while the FP32 action expert is trained on an NVIDIA GeForce RTX 5060 Ti GPU. We compared a GPU-only baseline with four conditions, L1 to L4, which gradually extend NPU offloading from one to four Transformer encoder layers. Each condition was trained for 30,000 steps with three random seeds. We measured GPU board power for the GPU-only condition and combined GPU and NPU board power for the NPU conditions. Energy per sample decreased by 17.1% in L1, which offloaded ResNet18 and the first encoder layer, and by 27.9% in L4, which offloaded ResNet18 and all four encoder layers. In contrast, training time per sample increased by 15.2% in L1 and 37.7% in L4, and peak allocated GPU memory decreased by 19.8 to 20.7%. The 15 resulting policies were each evaluated with the same 300 environment seeds, for a total of 4,500 simulator rollouts. The combined success rate was 93.33% for GPU-only and 91.44 to 92.89% for the NPU conditions. These results show that NPU offloading of a frozen visual encoder can reduce training energy, but it increases training time and lowers policy success rate by 0.44 to 1.89 percentage points compared with GPU-only training.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

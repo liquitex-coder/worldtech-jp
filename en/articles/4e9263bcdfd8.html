@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Efficient Block-Layer Parallel Inference for Vision-Language-Action on Hybrid Architectures — NewsMatome (EN)</title>
+<meta name="description" content="Efficient Block-Layer Parallel Inference for Vision-Language-Action on Hybrid Architectures — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/4e9263bcdfd8.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/4e9263bcdfd8.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/4e9263bcdfd8.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/4e9263bcdfd8.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Efficient Block-Layer Parallel Inference for Vision-Language-Action on Hybrid Architectures">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Efficient Block-Layer Parallel Inference for Vision-Language-Action on Hybrid Architectures",
+ "inLanguage":"en","datePublished":"2026-08-19T07:00:00+09:00","dateModified":"2026-08-19T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2608.14586","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/4e9263bcdfd8.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/4e9263bcdfd8.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Efficient Block-Layer Parallel Inference for Vision-Language-Action on Hybrid Architectures</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/08/19</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/4e9263bcdfd8.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.14586" rel="nofollow noopener">https://arxiv.org/abs/2608.14586</a></span></div>
+  <div class="article-body"><p>arXiv:2608.14586v1 Announce Type: cross 
+Abstract: Vision-Language-Action (VLA) models are becoming a promising paradigm for autonomous driving, but their deployment on existing vehicle platforms remains difficult because they introduce both high inference latency and strong GPU-side resource pressure. In a full autonomous driving stack, this problem is even more pronounced: legacy vehicle platforms were provisioned for modular pipelines, yet after several planning-related functions are absorbed into a unified VLA model, part of the original CPU budget becomes underutilized, while the visual encoder and the main reasoning path still concentrate most computation and memory demand on the GPU. As a result, directly deploying VLA together with the rest of the onboard system can be hard under realistic GPU memory constraints. To address this issue, we present a hybrid CPU--GPU inference framework with flexible resource scheduling for autonomous driving. Our design partitions the VLA backbone at the block-layer granularity, executes the visual encoder and LLM prefix on the GPU, and offloads the LLM suffix to the CPU through a cross-frame asynchronous pipeline, thereby exposing a schedulable boundary for redistributing compute and memory pressure across heterogeneous processors. We evaluate the proposed framework on two representative driving VLA models, Orion and MindDrive. On Bench2Drive, our method reduces average latency from 521ms to 408.0ms for Orion and from 443ms to 306.2ms for MindDrive, corresponding to 21.7% and 30.9% reduction, respectively. For Orion, the estimated peak GPU memory is further reduced from 45GB to 29GB. In real-vehicle deployment under coexistence with Autoware.Universe, native Orion cannot run because the onboard GPU memory budget is insufficient, whereas the hybrid version runs successfully together with the full vehicle stack.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

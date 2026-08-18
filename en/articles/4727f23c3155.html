@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>When to Communicate: Belief Distributions and KL Divergence for Principled Gating in Multi-Agent RL — NewsMatome (EN)</title>
+<meta name="description" content="When to Communicate: Belief Distributions and KL Divergence for Principled Gating in Multi-Agent RL — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/4727f23c3155.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/4727f23c3155.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/4727f23c3155.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/4727f23c3155.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="When to Communicate: Belief Distributions and KL Divergence for Principled Gating in Multi-Agent RL">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"When to Communicate: Belief Distributions and KL Divergence for Principled Gating in Multi-Agent RL",
+ "inLanguage":"en","datePublished":"2026-08-19T07:00:00+09:00","dateModified":"2026-08-19T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2608.14559","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/4727f23c3155.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/4727f23c3155.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>When to Communicate: Belief Distributions and KL Divergence for Principled Gating in Multi-Agent RL</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/19</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/4727f23c3155.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.14559" rel="nofollow noopener">https://arxiv.org/abs/2608.14559</a></span></div>
+  <div class="article-body"><p>arXiv:2608.14559v1 Announce Type: cross 
+Abstract: Effective communication in multi-agent reinforcement learning requires agents to decide not only \textit{what} to communicate, but when? Existing approaches either communicate at every timestep or learn a binary gate through REINFORCE policy gradients \cite{singh2019}, a high-variance signal that produces unstable and uninterpretable gating behavior. I propose a principled alternative: agents communicate only when the KL divergence between their learned belief distributions exceeds a fixed threshold. Each agent maintains a belief distribution over a latent world state computed as a softmax over its LSTM hidden state, and communicates only when belief disagreement is large enough to justify information exchange. I evaluate this approach on the Predator-Prey benchmark from IC3Net \cite{singh2019} across two environment sizes with 5 seeds each, and on MPE simple\_spread \cite{lowe2017}, comparing against IC3Net, CommNet, and an independent controller. On PP 10$\times$10, IC3Net outperforms KL-belief at all thresholds. On the harder PP 20$\times$20, a threshold ablation over $\varepsilon \in \{0.1, 0.3, 0.5, 1.0\}$ reveals an inverted U-shape: $\varepsilon=0.5$ achieves 73.84 average steps and 42\% success rate versus IC3Net&#x27;s 75.31 steps and 31\%, a gap of 1.47 steps and 11 percentage points with tighter seed variance. On MPE, the belief head improves mean reward by 12 points and reduces variance by 26$\times$ even when gating is inactive, suggesting two orthogonal contributions: principled gating when beliefs can converge, and improved latent representations that benefit coordination regardless.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

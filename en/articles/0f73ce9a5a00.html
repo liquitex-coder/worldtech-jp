@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cheap Probes Predict Expensive Training in 3D-CT Vision--Language Models — NewsMatome (EN)</title>
-<meta name="description" content="Cheap Probes Predict Expensive Training in 3D-CT Vision--Language Models — original-language edition. Japanese translation available.">
+<title>When Do Cheap Probes Predict Expensive Training? Probing 3D-CT Encoders for Text Generation — NewsMatome (EN)</title>
+<meta name="description" content="When Do Cheap Probes Predict Expensive Training? Probing 3D-CT Encoders for Text Generation — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/0f73ce9a5a00.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/0f73ce9a5a00.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/0f73ce9a5a00.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/0f73ce9a5a00.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Cheap Probes Predict Expensive Training in 3D-CT Vision--Language Models">
+<meta property="og:title" content="When Do Cheap Probes Predict Expensive Training? Probing 3D-CT Encoders for Text Generation">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Cheap Probes Predict Expensive Training in 3D-CT Vision--Language Models",
- "inLanguage":"en","datePublished":"2026-07-29T07:00:00+09:00","dateModified":"2026-07-29T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"When Do Cheap Probes Predict Expensive Training? Probing 3D-CT Encoders for Text Generation",
+ "inLanguage":"en","datePublished":"2026-08-19T07:00:00+09:00","dateModified":"2026-08-19T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.22771","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/0f73ce9a5a00.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Cheap Probes Predict Expensive Training in 3D-CT Vision--Language Models</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/29</span></div>
+    <h1>When Do Cheap Probes Predict Expensive Training? Probing 3D-CT Encoders for Text Generation</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/08/19</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/0f73ce9a5a00.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.22771" rel="nofollow noopener">https://arxiv.org/abs/2607.22771</a></span></div>
-  <div class="article-body"><p>arXiv:2607.22771v1 Announce Type: cross 
-Abstract: Picking the frozen image encoder for a 3D~CT vision--language model (VLM), together with the token-compression scheme on top of it, is a search over many candidates. There are several encoders, several ways to compress their tokens, and several token budgets, and the combinations grow fast. Comparing them the usual way means fine-tuning a large language model (LLM) on each combination, and running the whole sweep this way needs far more compute than most groups can spend. We ask whether a cheap probe on the encoder&#x27;s cached embeddings can stand in for that comparison. We build an image-grounded probing benchmark over (encoder $\times$ compression) cells, with clinical attribute families and two validation gates, scale-sanity and probe-separability, that keep each attribute well-scaled and decodable. These gates are the main methodological contribution. On this benchmark we compare a range of read-out heads, and in a preliminary study we pair each probe with its matched downstream task. The early signal is encouraging: the cheap probe orders the candidates in close agreement with expensive fine-tuning, at about $r\approx0.95$ on the cells measured so far. We read this as an ordinal claim, a ranking predictor rather than an exact estimate, and we are explicit about where it stays preliminary. If it holds up, encoder and compression choices can be screened in minutes with frozen-token probes, with full training spent only on the finalists.</p></div>
+  <div class="article-body"><p>arXiv:2607.22771v2 Announce Type: replace-cross 
+Abstract: Building a 3D CT vision language model begins with a choice of which image encoder to build on. Today that choice is made by fine-tuning every candidate through the full language model and comparing downstream scores, an enormously expensive search. A cheap probe on the encoder&#x27;s representation promises a way out, but whether it forecasts the expensive outcome has never been tested. We test this with CheapCT on report generation and on MeasureVQA, a new VQA dataset we build. MeasureVQA scores the outcome one capability at a time, its answers measured from segmentation masks and Hounsfield units. Report generation scores the whole report at once and reflects mostly disease. The probe forecasts expensive training across every capability. The rank agreement between probe and fine-tuning stays high throughout, from $\rho=0.90$ to $1.00$. Used to choose an encoder, CheapCT picks one nearly as good as the best while fine-tuning a single candidate, at orders of magnitude less compute. We release the code and MeasureVQA at https://github.com/renjie-liang/CheapCT</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>
