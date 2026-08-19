@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jetson-ORB-SLAM3: Accuracy-Preserving GPU Implementation for Edge Computing Devices — NewsMatome</title>
+<meta name="description" content="Jetson-ORB-SLAM3: Accuracy-Preserving GPU Implementation for Edge Computing Devices（EN→JA 翻訳・出典付き）">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/59fc57ac14d0.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/59fc57ac14d0.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/59fc57ac14d0.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/59fc57ac14d0.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="NewsMatome">
+<meta property="og:title" content="Jetson-ORB-SLAM3: Accuracy-Preserving GPU Implementation for Edge Computing Devices">
+<meta property="og:description" content="Jetson-ORB-SLAM3: Accuracy-Preserving GPU Implementation for Edge Computing Devices（EN→JA 翻訳・出典付き）">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://picsum.photos" crossorigin>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Jetson-ORB-SLAM3: Accuracy-Preserving GPU Implementation for Edge Computing Devices",
+ "inLanguage":"ja","datePublished":"2026-08-20T07:00:00+09:00","dateModified":"2026-08-20T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"ロボット技術担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2608.17874","url":"https://liquitex-coder.github.io/worldtech-jp/articles/59fc57ac14d0.html"}
+</script>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH, IN JAPANESE</small></span></a>
+    <span class="update-badge">⟳ 毎朝7時更新</span>
+    <span class="topbar-spacer"></span>
+    <label class="search semantic"><span class="lead">✦</span><input type="text" placeholder="意味で探す"></label>
+    <div class="lang-select"><a class="on" href="#">日本語</a><a href="../en/articles/59fc57ac14d0.html" title="English edition（/en/）" hreflang="en">EN</a></div>
+    <a class="btn-cta" href="../about.html#contact">お仕事のご依頼</a>
+  </div>
+  <nav class="catnav"><div class="catnav-inner">
+      <a href="../index.html" style="--cc:#5b78ff">すべて</a>
+      <div class="catgroup"><a href="#" class="cat-trigger" style="--cc:#0ea5e9"><span class="cdot"></span>サイエンス<span class="caret">▾</span></a><div class="dropdown"><a href="#" style="--cc:#0ea5e9"><span class="cdot"></span>サイエンス</a><a href="#" style="--cc:#6366f1"><span class="cdot"></span>テクノロジー</a></div></div>
+      <div class="catgroup"><a href="#" class="cat-trigger active" style="--cc:#3b5bff"><span class="cdot"></span>AI<span class="caret">▾</span></a><div class="dropdown"><a href="#" style="--cc:#3b5bff"><span class="cdot"></span>AI</a><a href="#" style="--cc:#f97316"><span class="cdot"></span>フィジカルAI</a><a href="#" class="active" style="--cc:#ef4444"><span class="cdot"></span>ロボット技術</a><a href="#" style="--cc:#e60033"><span class="cdot"></span>日本のAI</a></div></div>
+      <div class="catgroup"><a href="#" class="cat-trigger" style="--cc:#cbd5e1"><span class="cdot"></span>コード<span class="caret">▾</span></a><div class="dropdown"><a href="#" style="--cc:#cbd5e1"><span class="cdot"></span>コード</a><a href="#" style="--cc:#8b5cf6"><span class="cdot"></span>アルゴリズム</a></div></div>
+      <a href="#" style="--cc:#ec4899"><span class="cdot"></span>アート</a>
+      <a href="#" style="--cc:#14b8a6"><span class="cdot"></span>デザイン</a>
+      <a href="#" style="--cc:#e11d48"><span class="cdot"></span>動画</a>
+      <a href="#" style="--cc:#84cc16"><span class="cdot"></span>動物</a>
+      <a href="#" style="--cc:#16a34a"><span class="cdot"></span>自然</a>
+      <a href="#" style="--cc:#ca8a04"><span class="cdot"></span>農業</a>
+      <div class="catgroup"><a href="#" class="cat-trigger" style="--cc:#a855f7"><span class="cdot"></span>面白<span class="caret">▾</span></a><div class="dropdown"><a href="#" style="--cc:#fb7185"><span class="cdot"></span>アニメ</a><a href="#" style="--cc:#64748b"><span class="cdot"></span>ガジェット</a><a href="#" style="--cc:#f59e0b"><span class="cdot"></span>漫画</a></div></div>
+  </div></nav>
+</header>
+
+<div class="wrap">
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">ロボット技術</a><span class="sep">›</span><span>Jetson-ORB-SLAM3: Accuracy-Preserving GPU Implementation for Edge Computing Devices</span></div>
+  <article class="article">
+    <div class="article-head">
+      <div class="toprow">
+        <span class="chip"><span class="cdot" style="background:#ef4444"></span>ロボット技術</span>
+        <span class="kind-tag kind-paper">Paper</span>
+        <span class="badge-translate">🌐 EN→JA 翻訳</span>
+      </div>
+      <h1>Jetson-ORB-SLAM3: Accuracy-Preserving GPU Implementation for Edge Computing Devices</h1>
+      <div class="article-byline">
+        <span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b>収集・日本語化・監修</span></span>
+        <span>公開 2026/08/20 07:00</span><span>· 更新 2026/08/20</span>
+      </div>
+    </div>
+    
+    <div class="depth">
+      <span class="lbl"><span class="ai-mark">読む深さ</span></span>
+      <div class="seg" id="depthSeg"><button data-d="easy">やさしく</button><button data-d="normal" class="on">標準</button><button data-d="expert">専門</button></div>
+      <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
+    </div>
+    <div class="source-bar"><span class="lang">EN → JA</span>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2608.17874" rel="nofollow noopener">Jetson-ORB-SLAM3: Accuracy-Preserving GPU Implementation for Edge Computing Devices</a>。引用は範囲に留め、原文を併記します。</span></div>
+    <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
+    <div class="parallel" id="parallelView" style="display:none;">
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2608.17874v1 Announce Type: new 
+Abstract: Visual-inertial SLAM on low-power edge platforms is constrained by the cost of dense feature extraction and loop closure. Prior GPU ports of ORB-SLAM trade accuracy for speed by approximating the ORB detector, altering the feature set and therefore the estimated trajectory. We present an accuracy-preserving GPU implementation of ORB-SLAM3 for the NVIDIA Jetson Orin Nano, whose GPU ORB front end reproduces the reference CPU detector algorithmically to 94.7% exact keypoint agreement and 99.9% descriptor bit agreement. This work also makes CNN-based loop closure edge-viable through native TensorRT. The visual front end (feature extraction) is offloaded to the GPU while the mapping and optimization back end is kept on the CPU, matching each computation to the hardware it suits. The accuracy is verified by comparing four configurations: the GPU pipeline and the unmodified CPU reference, each run on both the Jetson Orin Nano and a desktop. On EuRoC dataset, all four agree to within 0.10cm in mean absolute trajectory error (SE(3)), so neither the GPU port nor the change of hardware shifts the estimated trajectory. The GPU-versus-CPU comparison is reproducible on TUM-VI and KITTI datasets, so the acceleration is accuracy-preserving rather than approximate. The proposed implementation is competitive with published ORB-SLAM3 on EuRoC, attains sub-centimeter accuracy on five of the six TUM-VI room sequences, and reaches sub-1% relative translation error on nine of eleven KITTI sequences. For loop closure, the generic ONNX-Runtime CUDA/TensorRT execution providers are unusable with our CosPlace ResNet-50 on the embedded platform, whereas a native libnvinfer FP16 engine reduces per-query inference to 2.2ms, a 180x speedup. Learned place recognition therefore runs concurrently with tracking on a 7W device. In monocular-inertial mode the system sustains 32FPS mean over the eleven EuRoC sequences.</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2608.17874v1 Announce Type: new 
+Abstract: Visual-inertial SLAM on low-power edge platforms is constrained by the cost of dense feature extraction and loop closure. Prior GPU ports of ORB-SLAM trade accuracy for speed by approximating the ORB detector, altering the feature set and therefore the estimated trajectory. We present an accuracy-preserving GPU implementation of ORB-SLAM3 for the NVIDIA Jetson Orin Nano, whose GPU ORB front end reproduces the reference CPU detector algorithmically to 94.7% exact keypoint agreement and 99.9% descriptor bit agreement. This work also makes CNN-based loop closure edge-viable through native TensorRT. The visual front end (feature extraction) is offloaded to the GPU while the mapping and optimization back end is kept on the CPU, matching each computation to the hardware it suits. The accuracy is verified by comparing four configurations: the GPU pipeline and the unmodified CPU reference, each run on both the Jetson Orin Nano and a desktop. On EuRoC dataset, all four agree to within 0.10cm in mean absolute trajectory error (SE(3)), so neither the GPU port nor the change of hardware shifts the estimated trajectory. The GPU-versus-CPU comparison is reproducible on TUM-VI and KITTI datasets, so the acceleration is accuracy-preserving rather than approximate. The proposed implementation is competitive with published ORB-SLAM3 on EuRoC, attains sub-centimeter accuracy on five of the six TUM-VI room sequences, and reaches sub-1% relative translation error on nine of eleven KITTI sequences. For loop closure, the generic ONNX-Runtime CUDA/TensorRT execution providers are unusable with our CosPlace ResNet-50 on the embedded platform, whereas a native libnvinfer FP16 engine reduces per-query inference to 2.2ms, a 180x speedup. Learned place recognition therefore runs concurrently with tracking on a 7W device. In monocular-inertial mode the system sustains 32FPS mean over the eleven EuRoC sequences.</div>
+    </div>
+    <div class="article-body">
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2608.17874v1 Announce Type: new 
+Abstract: Visual-inertial SLAM on low-power edge platforms is constrained by the cost of dense feature extraction and loop closure. Prior GPU ports of ORB-SLAM trade accuracy for speed by approximating the ORB detector, altering the feature set and therefore the estimated trajectory. We present an accuracy-preserving GPU implementation of ORB-SLAM3 for the NVIDIA Jetson Orin Nano, whose GPU ORB front end reproduces the reference CPU detector algorithmically to 94.7% exact keypoint agreement and 99.9% descriptor bit agreement. This work also makes CNN-based loop closure edge-viable through native TensorRT. The visual front end (feature extraction) is offloaded to the GPU while the mapping and optimization back end is kept on the CPU, matching each computation to the hardware it suits. The accuracy is verified by comparing four configurations: the GPU pipeline and the unmodified CPU reference, each run on both the Jetson Orin Nano and a desktop. On EuRoC dataset, all four agree to within 0.10cm in mean absolute trajectory error (SE(3)), so neither the GPU port nor the change of hardware shifts the estimated trajectory. The GPU-versus-CPU comparison is reproducible on TUM-VI and KITTI datasets, so the acceleration is accuracy-preserving rather than approximate. The proposed implementation is competitive with published ORB-SLAM3 on EuRoC, attains sub-centimeter accuracy on five of the six TUM-VI room sequences, and reaches sub-1% relative translation error on nine of eleven KITTI sequences. For loop closure, the generic ONNX-Runtime CUDA/TensorRT execution providers are unusable with our CosPlace ResNet-50 on the embedded platform, whereas a native libnvinfer FP16 engine reduces per-query inference to 2.2ms, a 180x speedup. Learned place recognition therefore runs concurrently with tracking on a 7W device. In monocular-inertial mode the system sustains 32FPS mean over the eleven EuRoC sequences.</p><a href="https://arxiv.org/abs/2608.17874" rel="nofollow noopener">原論文を読む →</a></div>
+    </div>
+    <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2608.17874" rel="nofollow noopener">https://arxiv.org/abs/2608.17874</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
+    <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
+    <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
+      <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
+        <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="fa70457f7325.html"><div class="sim">関連</div><div class="info"><b>GxP-Agent: Process-DAG Topology for Reliable Clinical Trial Programming with LLM Agents</b><div class="m">AI</div></div></a><a class="r" href="8ec424e1286c.html"><div class="sim">関連</div><div class="info"><b>Runtime Governance for Agentic AI: Action-Boundary Control with Trusted Provenance and Fail-Closed Execution</b><div class="m">AI</div></div></a><a class="r" href="905078c4a40c.html"><div class="sim">関連</div><div class="info"><b>The Price of Thinking: Reasoning Effort as a Model-Specific API Contract</b><div class="m">AI</div></div></a></div>
+    <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
+      <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
+      <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>
+  </article>
+</div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. 海外記事は引用の範囲で紹介し、必ず原文出典へリンク。翻訳・要約は各分野の専門エージェントが担当し原文を併記。<div class="legal">本ページは収集→日本語化パイプラインの自動生成（サンプル）です。</div></div></footer>
+<script>
+(function(){var seg=document.getElementById('depthSeg'),note=document.getElementById('depthNote'),body=document.querySelector('.article-body');
+var msg={easy:'— やさしい言葉で表示中',normal:'— 標準の文章で表示中',expert:'— 専門レベルで表示中'};
+seg.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;[].forEach.call(seg.children,function(x){x.classList.remove('on');});b.classList.add('on');note.textContent=msg[b.dataset.d];});})();
+(function(){var sw=document.getElementById('parallelSwitch'),pv=document.getElementById('parallelView');sw.addEventListener('click',function(){var on=sw.classList.toggle('on');sw.setAttribute('aria-checked',on);pv.style.display=on?'grid':'none';});})();
+(function(){var ans=document.getElementById('askAns');document.getElementById('askSend').addEventListener('click',function(){ans.style.display='block';});})();
+document.querySelectorAll('.cat-trigger').forEach(function(t){t.addEventListener('click',function(e){e.preventDefault();var g=t.closest('.catgroup'),was=g.classList.contains('open');document.querySelectorAll('.catgroup.open').forEach(function(x){x.classList.remove('open');});if(!was)g.classList.add('open');});});
+document.addEventListener('click',function(e){if(!e.target.closest('.catgroup'))document.querySelectorAll('.catgroup.open').forEach(function(x){x.classList.remove('open');});});
+</script>
+</body>
+</html>

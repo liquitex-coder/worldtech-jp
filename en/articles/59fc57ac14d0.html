@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jetson-ORB-SLAM3: Accuracy-Preserving GPU Implementation for Edge Computing Devices — NewsMatome (EN)</title>
+<meta name="description" content="Jetson-ORB-SLAM3: Accuracy-Preserving GPU Implementation for Edge Computing Devices — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/59fc57ac14d0.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/59fc57ac14d0.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/59fc57ac14d0.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/59fc57ac14d0.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jetson-ORB-SLAM3: Accuracy-Preserving GPU Implementation for Edge Computing Devices">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Jetson-ORB-SLAM3: Accuracy-Preserving GPU Implementation for Edge Computing Devices",
+ "inLanguage":"en","datePublished":"2026-08-20T07:00:00+09:00","dateModified":"2026-08-20T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"ロボット技術担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2608.17874","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/59fc57ac14d0.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/59fc57ac14d0.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#ef4444"></span>ロボット技術</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Jetson-ORB-SLAM3: Accuracy-Preserving GPU Implementation for Edge Computing Devices</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b></span></span><span>2026/08/20</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/59fc57ac14d0.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.17874" rel="nofollow noopener">https://arxiv.org/abs/2608.17874</a></span></div>
+  <div class="article-body"><p>arXiv:2608.17874v1 Announce Type: new 
+Abstract: Visual-inertial SLAM on low-power edge platforms is constrained by the cost of dense feature extraction and loop closure. Prior GPU ports of ORB-SLAM trade accuracy for speed by approximating the ORB detector, altering the feature set and therefore the estimated trajectory. We present an accuracy-preserving GPU implementation of ORB-SLAM3 for the NVIDIA Jetson Orin Nano, whose GPU ORB front end reproduces the reference CPU detector algorithmically to 94.7% exact keypoint agreement and 99.9% descriptor bit agreement. This work also makes CNN-based loop closure edge-viable through native TensorRT. The visual front end (feature extraction) is offloaded to the GPU while the mapping and optimization back end is kept on the CPU, matching each computation to the hardware it suits. The accuracy is verified by comparing four configurations: the GPU pipeline and the unmodified CPU reference, each run on both the Jetson Orin Nano and a desktop. On EuRoC dataset, all four agree to within 0.10cm in mean absolute trajectory error (SE(3)), so neither the GPU port nor the change of hardware shifts the estimated trajectory. The GPU-versus-CPU comparison is reproducible on TUM-VI and KITTI datasets, so the acceleration is accuracy-preserving rather than approximate. The proposed implementation is competitive with published ORB-SLAM3 on EuRoC, attains sub-centimeter accuracy on five of the six TUM-VI room sequences, and reaches sub-1% relative translation error on nine of eleven KITTI sequences. For loop closure, the generic ONNX-Runtime CUDA/TensorRT execution providers are unusable with our CosPlace ResNet-50 on the embedded platform, whereas a native libnvinfer FP16 engine reduces per-query inference to 2.2ms, a 180x speedup. Learned place recognition therefore runs concurrently with tracking on a 7W device. In monocular-inertial mode the system sustains 32FPS mean over the eleven EuRoC sequences.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

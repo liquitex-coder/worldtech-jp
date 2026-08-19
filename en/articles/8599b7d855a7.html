@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DEPT: Document Embedding Preservation Tuning for Unified Query Expansion and Retrieval — NewsMatome (EN)</title>
+<meta name="description" content="DEPT: Document Embedding Preservation Tuning for Unified Query Expansion and Retrieval — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/8599b7d855a7.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/8599b7d855a7.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/8599b7d855a7.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/8599b7d855a7.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DEPT: Document Embedding Preservation Tuning for Unified Query Expansion and Retrieval">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"DEPT: Document Embedding Preservation Tuning for Unified Query Expansion and Retrieval",
+ "inLanguage":"en","datePublished":"2026-08-20T07:00:00+09:00","dateModified":"2026-08-20T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2608.17632","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/8599b7d855a7.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/8599b7d855a7.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>DEPT: Document Embedding Preservation Tuning for Unified Query Expansion and Retrieval</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/08/20</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/8599b7d855a7.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.17632" rel="nofollow noopener">https://arxiv.org/abs/2608.17632</a></span></div>
+  <div class="article-body"><p>arXiv:2608.17632v1 Announce Type: cross 
+Abstract: Large language models (LLMs) can both expand underspecified queries and encode text as dense representations, suggesting a unified model for query expansion and retrieval. Existing systems usually rely on prompted expansions, independently trained modules, or staged optimization, leaving generated expansions only indirectly aligned with the retrieval loss that judges them. We train a single decoder-only LLM end to end, where the same model generates the expansion and encodes both the expanded query and candidate documents. This unified setting creates a moving-target problem: retrieval supervision should improve query-side expansion, but the same update also shifts the document embeddings that serve as retrieval targets. We introduce Document Embedding Preservation Tuning (DEPT), which keeps tuned document embeddings close to cached initial embeddings while allowing retrieval gradients to pass through straight-through decoding into the generator. DEPT converts joint query--document movement into query-side adaptation against approximately stable, whitened document embeddings that support index reuse and online hard-negative mining. Experiments with Qwen3-4B-Instruct-2507 and LLaMA-3.2-3B-Instruct on five datasets in BEIR benchmark show that DEPT improves average retrieval quality over training-free, independently trained, and staged unified baselines, while ablations isolate the effects of preservation, whitening, end-to-end expansion training, and online negatives. Code is available at https://github.com/ILSparkle/DEPT.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

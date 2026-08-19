@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VLCP: Vision Language Control Policy Closed-Loop Code Replanning for Robot Manipulation — NewsMatome (EN)</title>
+<meta name="description" content="VLCP: Vision Language Control Policy Closed-Loop Code Replanning for Robot Manipulation — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/e10064e979f5.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/e10064e979f5.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/e10064e979f5.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/e10064e979f5.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VLCP: Vision Language Control Policy Closed-Loop Code Replanning for Robot Manipulation">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"VLCP: Vision Language Control Policy Closed-Loop Code Replanning for Robot Manipulation",
+ "inLanguage":"en","datePublished":"2026-08-20T07:00:00+09:00","dateModified":"2026-08-20T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2608.16978","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/e10064e979f5.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/e10064e979f5.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>VLCP: Vision Language Control Policy Closed-Loop Code Replanning for Robot Manipulation</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/20</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/e10064e979f5.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.16978" rel="nofollow noopener">https://arxiv.org/abs/2608.16978</a></span></div>
+  <div class="article-body"><p>arXiv:2608.16978v1 Announce Type: cross 
+Abstract: Turning a frontier vision-language model into a robot policy usually means fine-tuning it to emit an action representation it never saw in pretraining, which throws away much of the reasoning that made the model worth reaching for. We go the other way and keep the VLM frozen. It writes the policy as a short Python control function, with no demonstrations and no fine-tuning. Writing that code once is open-loop, though. Existing closed-loop methods react at the wrong level: they retry a fixed policy or pick a different subtask, but never rewrite the code that failed. VLCP closes the loop where the failure actually lives, on the control code, within a single episode. Every $K$ steps the VLM re-observes the scene from multi-view RGB, proprioceptive state, and a state delta, then rewrites the control function from what it just saw, so a failure is caught before it compounds.
+  We evaluate on a 57-task MuJoCo/RoboVerse sweep. This training-free policy reaches $35.1\%$ pooled success, against $3.5\%$ for the identical system queried once per episode. That tenfold gap holds with non-overlapping confidence intervals in every scene family. The gain traces to a $27.3\%$ within-episode recovery rate on failed grasps: a miss an open-loop controller would carry to the end of the episode gets re-observed and fixed at the next replan. And the loop stays cheap. A median $84\%$ of input tokens hit cache, an episode needs only about $10$ compact queries, and control blocks written during any replan persist to a cross-episode skill library reused in later prompts.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

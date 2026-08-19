@@ -17,7 +17,7 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"JUMP: Single-Pass Membership Inference on Fine-Tuned Diffusion Language Models",
- "inLanguage":"en","datePublished":"2026-07-22T07:00:00+09:00","dateModified":"2026-07-22T07:00:00+09:00",
+ "inLanguage":"en","datePublished":"2026-08-20T07:00:00+09:00","dateModified":"2026-08-20T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.16207","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/0816df351c4f.html"}
@@ -35,11 +35,11 @@
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
     <h1>JUMP: Single-Pass Membership Inference on Fine-Tuned Diffusion Language Models</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/22</span></div>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/08/20</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/0816df351c4f.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.16207" rel="nofollow noopener">https://arxiv.org/abs/2607.16207</a></span></div>
-  <div class="article-body"><p>arXiv:2607.16207v1 Announce Type: new 
-Abstract: Membership inference attacks (MIAs) test whether a candidate example appeared in a model&#x27;s training data. We study MIAs for fine-tuned discrete diffusion language models (dLLMs), where membership means inclusion in the target model&#x27;s fine-tuning set. Unlike autoregressive language models, dLLMs allow an attacker to choose arbitrary mask sets and obtain token distributions for all masked positions in parallel. The prior dLLM attack, SAMA, follows a natural loss-mimicking strategy by averaging reconstruction signals over many randomly sampled masks, but it uses the any-order interface only as randomization and requires many target/reference queries. We propose JUMP (Joint Uncertainty-Guided Mask Probing), a single-pass scoring attack that exploits both distinctive properties of dLLMs: any-order decodability is used to select low-reference-confidence positions, and parallel decodability is used to score all selected positions through one joint masked query per model. JUMP masks the selected positions jointly and computes a clipped target/reference reconstruction-gap statistic. On fine-tuned LLaDA-8B-Base across six MIMIR domains, JUMP improves mean ROC-AUC from 0.82 to 0.90 over SAMA and substantially improves low-FPR detection, while requiring only one selector pass and one scoring pass through each of the target and reference models.</p></div>
+  <div class="article-body"><p>arXiv:2607.16207v2 Announce Type: replace 
+Abstract: Public open-weight language models are often fine-tuned on private or domain-specific data before deployment, creating a need to audit whether individual records were used during adaptation. We study this problem for discrete diffusion language models (dLLMs), using the pre-fine-tuning checkpoint as a reference. Unlike autoregressive models, dLLMs allow arbitrary mask sets and return predictions for all masked positions in parallel. SAMA averages reconstruction signals over many random masks, which can dilute informative positions and requires repeated model evaluations. We propose JUMP (Joint Uncertainty-Guided Mask Probing), which selects low-reference-confidence positions, masks them jointly, and aggregates clipped target-reference reconstruction gaps from one scoring query per model. Across six MIMIR domains, JUMP raises mean ROC-AUC from 0.819 to 0.902 on LLaDA-8B-Base and from 0.851 to 0.942 on Dream-v0-Base-7B, while using three model forwards per sample versus 32 for SAMA.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

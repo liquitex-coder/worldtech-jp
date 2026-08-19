@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spectrally Safe Neural Operator Warm-Starts for Large-Scale Newton Solvers — NewsMatome (EN)</title>
+<meta name="description" content="Spectrally Safe Neural Operator Warm-Starts for Large-Scale Newton Solvers — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/1ebe04e6cd63.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/1ebe04e6cd63.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/1ebe04e6cd63.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/1ebe04e6cd63.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spectrally Safe Neural Operator Warm-Starts for Large-Scale Newton Solvers">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Spectrally Safe Neural Operator Warm-Starts for Large-Scale Newton Solvers",
+ "inLanguage":"en","datePublished":"2026-08-20T07:00:00+09:00","dateModified":"2026-08-20T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2606.21828","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/1ebe04e6cd63.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/1ebe04e6cd63.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Spectrally Safe Neural Operator Warm-Starts for Large-Scale Newton Solvers</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/20</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/1ebe04e6cd63.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.21828" rel="nofollow noopener">https://arxiv.org/abs/2606.21828</a></span></div>
+  <div class="article-body"><p>arXiv:2606.21828v2 Announce Type: replace-cross 
+Abstract: Neural operators are increasingly used to warm-start Newton solvers for nonlinear PDEs, on the premise that a low test error places the initial guess inside the basin of attraction. We show that this premise is unreliable. An operator trained to the relative \(L^2\) error \(O(10^{-3})\) can still produce an initial state in which the discrete Jacobian is indefinite, because the mean-squared training controls error on average while leaving localized pointwise violations of the underlying physics. For a nearly incompressible hyperelasticity problem, we trace this to the predicted volume change: the operator disperses \(\mathrm{det} F\) well away from one, and the resulting Jacobian acquires negative eigenvalues even when the predicted field is visually indistinguishable from the reference. At a small scale, this is a nuisance; at a multi-million degree-of-freedom scale, it is disqualifying, since the conjugate gradient and other Krylov solvers needed for memory-feasible Newton steps assume a definite spectrum. We then show that a short, label-free fine-tuning phase -- penalizing the operator against the discrete energy, with no additional solution data -- shifts the Jacobian spectrum back to positive definite. Combined with an inexact outer loop, this gives a warm-started Newton method that converges across the full loading range where the unregularized operator fails, reaching up to 5.4\(\times\) wall-clock speedup over incremental continuation on a 3D problem with 6.4 million degrees of freedom.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
