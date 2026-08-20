@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cacheable by Design? Training Mixture-of-Experts Routers for Locality Against the Edge Memory-Bandwidth Wall: A Pre-Registered Negative Result with a Systems Measurement Study — NewsMatome (EN)</title>
+<meta name="description" content="Cacheable by Design? Training Mixture-of-Experts Routers for Locality Against the Edge Memory-Bandwidth Wall: A Pre-Registered Negative Result with a Systems Measurement Study — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/b608db5c390c.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/b608db5c390c.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/b608db5c390c.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/b608db5c390c.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cacheable by Design? Training Mixture-of-Experts Routers for Locality Against the Edge Memory-Bandwidth Wall: A Pre-Registered Negative Result with a Systems Measurement Study">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Cacheable by Design? Training Mixture-of-Experts Routers for Locality Against the Edge Memory-Bandwidth Wall: A Pre-Registered Negative Result with a Systems Measurement Study",
+ "inLanguage":"en","datePublished":"2026-08-21T07:00:00+09:00","dateModified":"2026-08-21T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2608.18261","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/b608db5c390c.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/b608db5c390c.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Cacheable by Design? Training Mixture-of-Experts Routers for Locality Against the Edge Memory-Bandwidth Wall: A Pre-Registered Negative Result with a Systems Measurement Study</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/21</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/b608db5c390c.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.18261" rel="nofollow noopener">https://arxiv.org/abs/2608.18261</a></span></div>
+  <div class="article-body"><p>arXiv:2608.18261v1 Announce Type: cross 
+Abstract: Serving a 235B-parameter Mixture-of-Experts (MoE) model on a single 8 GB GPU is bottlenecked not by compute but by memory bandwidth: decode must stream each token&#x27;s active experts from whichever tier holds them, and on consumer hardware most experts sit on an SSD far slower than RAM. We quantify this bandwidth wall on Qwen3-235B (Q4_K_M, 134 GB): measured decode is 0.44 tok/s warm, matching a bytes-per-token / bandwidth model, while a batching scheme that should amortize one disk sweep instead collapses at batch 32 from paging thrash. We build llama-moe-trace, a zero-surgery router-telemetry tool, and measure routing on Qwen3-30B: adjacent-token expert reuse is 2.0x chance, 95% of traffic uses 52.5% of experts, and an LRU cache of 13.4% of experts serves 66% of requests. We then ask whether cacheability is trainable: we pre-register training of 137M MoE language models with auxiliary locality and domain router losses, under joint criteria on cache-miss reduction and perplexity. The mechanism works (misses down up to 60%; a 99% static-pin hit rate) but every configuration fails the pre-registered &lt;=1% perplexity gate -- miss reduction and quality are tightly coupled. Concurrent StickyMoE reports the same loss as near-free on single-domain sub-25M models; on multi-domain 137M we find the tax real. Our contribution is this pre-registered, stricter-criterion, multi-domain evaluation plus edge-serving measurements. A 340M rung shows the tax does not shrink with scale (it rises slightly). We further show training-free cache-aware rerouting stacks with trained locality -- together ~80% miss reduction at &lt;=3.4% perplexity at both sizes, far cheaper than either alone -- while domain-primed prefetching does not help. All code, traces, and the pre-registration are released.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
