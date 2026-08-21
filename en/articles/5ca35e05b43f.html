@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Biological Amnesia in ICU Time-Series Prediction: A Drift-Adaptive Two-Stream Architecture with Temporal Retrieval — NewsMatome (EN)</title>
-<meta name="description" content="Biological Amnesia in ICU Time-Series Prediction: A Drift-Adaptive Two-Stream Architecture with Temporal Retrieval — original-language edition. Japanese translation available.">
+<title>Drift-Adaptive ICU Intervention Prediction: Freezing the Physiological Encoder for Auditable Model Updating — NewsMatome (EN)</title>
+<meta name="description" content="Drift-Adaptive ICU Intervention Prediction: Freezing the Physiological Encoder for Auditable Model Updating — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/5ca35e05b43f.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/5ca35e05b43f.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/5ca35e05b43f.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/5ca35e05b43f.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Biological Amnesia in ICU Time-Series Prediction: A Drift-Adaptive Two-Stream Architecture with Temporal Retrieval">
+<meta property="og:title" content="Drift-Adaptive ICU Intervention Prediction: Freezing the Physiological Encoder for Auditable Model Updating">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Biological Amnesia in ICU Time-Series Prediction: A Drift-Adaptive Two-Stream Architecture with Temporal Retrieval",
- "inLanguage":"en","datePublished":"2026-07-23T07:00:00+09:00","dateModified":"2026-07-23T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Drift-Adaptive ICU Intervention Prediction: Freezing the Physiological Encoder for Auditable Model Updating",
+ "inLanguage":"en","datePublished":"2026-08-22T07:00:00+09:00","dateModified":"2026-08-22T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.19020","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/5ca35e05b43f.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Biological Amnesia in ICU Time-Series Prediction: A Drift-Adaptive Two-Stream Architecture with Temporal Retrieval</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/23</span></div>
+    <h1>Drift-Adaptive ICU Intervention Prediction: Freezing the Physiological Encoder for Auditable Model Updating</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/22</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/5ca35e05b43f.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.19020" rel="nofollow noopener">https://arxiv.org/abs/2607.19020</a></span></div>
-  <div class="article-body"><p>arXiv:2607.19020v1 Announce Type: new 
-Abstract: Background: Clinical decision support systems degrade silently as treatment protocols evolve, yet standard adaptation methods treat models as monolithic blocks, unable to distinguish stable patient physiology from shifting institutional practice. Methods: We propose an adaptive clinical intelligence architecture for ICU intervention prediction that structurally decouples physiological from treatment representations, confining parameter updates to the treatment stream upon a dual distributional and accuracy trigger. Automated audit logs record which treatment features drove each adaptation event and how their importance shifted. At inference, an attribution-driven Temporal RAG module grounds each prediction in patient-specific, era-matched PubMed evidence anchored to the patient&#x27;s dominant physiological features. Experiments used 84,792 MIMIC-IV stays (2008-2022) under strict chronological split. Results: Drift localised entirely to the treatment stream, validating the structural prior. Selective adaptation improved vasopressor and septic shock discrimination and calibration over the static source model. A fully retrained baseline yielded marginally higher aggregate discrimination but missed 26 septic shock cases the framework correctly identified, with none in the reverse direction; retrieval consistency with the pre-adaptation source model was preserved by the framework but degraded substantially in the retrained baseline. Conclusions: Structurally constraining adaptation to drifting components while preserving stable physiological representations enables clinical AI to evolve with practice without distorting learned patient biology. This architecture offers a template for governable, interpretable deployment of adaptive models in high-stakes clinical environments.</p></div>
+  <div class="article-body"><p>arXiv:2607.19020v2 Announce Type: replace 
+Abstract: Clinical decision support degrades as treatment protocols evolve, but the obstacle to updating a deployed model is governance as much as accuracy: once retraining touches every parameter, no one can say afterwards where the update acted. We propose a two-stream architecture separating physiological (LSTM) from treatment (MLP) representations. On a dual distributional/accuracy trigger, updates are confined to the treatment stream and fusion head, leaving the physiological encoder bitwise identical to the source model. Audit logs record which treatment features the update relied on, and evidence retrieval couples per-instance PubMed queries to the frozen encoder. We evaluate on 84,792 MIMIC-IV stays split by three-year era. The constraint proved close to free: selective adaptation cost nothing in aggregate discrimination against unconstrained full adaptation (mean AUROC 0.9316 vs. 0.9249; ahead on vasopressor, marginally behind on intubation) while being six-fold more stable across adaptation seeds. Run sequentially over four era transitions, the detector located the 2020 boundary rather than assuming it, firing once and on the distributional leg alone. Confining updates to named architectural blocks therefore costs little discrimination and bounds each update&#x27;s scope by construction rather than by inference after the fact. Attribution-conditioned retrieval, by contrast, tracked the source model&#x27;s without reproducing it: a guarantee over weights is not a guarantee over attributions, and this design makes the former structural while leaving the latter observable.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

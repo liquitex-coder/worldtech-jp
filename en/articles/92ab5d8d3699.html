@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RequestRouter: Request-Boundary Routing for Efficient Single-GPU LLM Inference — NewsMatome (EN)</title>
+<meta name="description" content="RequestRouter: Request-Boundary Routing for Efficient Single-GPU LLM Inference — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/92ab5d8d3699.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/92ab5d8d3699.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/92ab5d8d3699.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/92ab5d8d3699.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RequestRouter: Request-Boundary Routing for Efficient Single-GPU LLM Inference">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"RequestRouter: Request-Boundary Routing for Efficient Single-GPU LLM Inference",
+ "inLanguage":"en","datePublished":"2026-08-22T07:00:00+09:00","dateModified":"2026-08-22T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2605.23057","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/92ab5d8d3699.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/92ab5d8d3699.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>RequestRouter: Request-Boundary Routing for Efficient Single-GPU LLM Inference</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/22</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/92ab5d8d3699.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2605.23057" rel="nofollow noopener">https://arxiv.org/abs/2605.23057</a></span></div>
+  <div class="article-body"><p>arXiv:2605.23057v2 Announce Type: replace 
+Abstract: RequestRouter is a lightweight request-boundary controller for reducing the latency and energy cost of single-GPU large language model inference. Rather than serving all requests with one static configuration, the system uses cheap request-level features to select one fixed inference mode per request, including FP16, quantized inference, speculative decoding, prefix caching, continuous batching, and hybrid modes such as GPTQ plus prefix caching and INT8 plus continuous batching. We evaluate RequestRouter using an 8B instruction-tuned language model served through vLLM on NVIDIA A100 GPUs. Across the full-scale A100 evaluation--26,500 fixed-mode evaluations followed by 3,500 online-controller evaluations, for 30,000 measured inference executions in total--the controller achieves a 2.10x mean latency speedup over FP16 and a 0.48x energy ratio on deployment-style workloads. A smaller matched evaluation with repeated measurements provides a controlled statistical check of this result: RequestRouter retains a 1.93x latency speedup (95% CI: 1.88--1.98x) and a 0.523 energy ratio (95% CI: 0.506--0.540), showing that the gains persist under a more tightly controlled protocol. On a separate expanded automatic benchmark evaluation, the routed policy retains 99.6% of FP16 macro accuracy. A 100,000-call CPU microbenchmark measures only 0.00475 ms mean routing overhead (0.00532 ms p99). Thus, simple request-aware routing can recover substantial serving efficiency without retraining or modifying the underlying LLM.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

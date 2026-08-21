@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SkillResolve-Bench: Measuring and Resolving Same-Capability Ambiguity in Agent Skill Retrieval — NewsMatome (EN)</title>
-<meta name="description" content="SkillResolve-Bench: Measuring and Resolving Same-Capability Ambiguity in Agent Skill Retrieval — original-language edition. Japanese translation available.">
+<title>Right Family, Wrong Skill: Benchmarking Risk Exposure in Agent Skill Retrieval — NewsMatome (EN)</title>
+<meta name="description" content="Right Family, Wrong Skill: Benchmarking Risk Exposure in Agent Skill Retrieval — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/0a48d26d6317.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/0a48d26d6317.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/0a48d26d6317.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/0a48d26d6317.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SkillResolve-Bench: Measuring and Resolving Same-Capability Ambiguity in Agent Skill Retrieval">
+<meta property="og:title" content="Right Family, Wrong Skill: Benchmarking Risk Exposure in Agent Skill Retrieval">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"SkillResolve-Bench: Measuring and Resolving Same-Capability Ambiguity in Agent Skill Retrieval",
- "inLanguage":"en","datePublished":"2026-06-11T07:00:00+09:00","dateModified":"2026-06-11T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Right Family, Wrong Skill: Benchmarking Risk Exposure in Agent Skill Retrieval",
+ "inLanguage":"en","datePublished":"2026-08-22T07:00:00+09:00","dateModified":"2026-08-22T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.10388","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/0a48d26d6317.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>SkillResolve-Bench: Measuring and Resolving Same-Capability Ambiguity in Agent Skill Retrieval</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/06/11</span></div>
+    <h1>Right Family, Wrong Skill: Benchmarking Risk Exposure in Agent Skill Retrieval</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/08/22</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/0a48d26d6317.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.10388" rel="nofollow noopener">https://arxiv.org/abs/2606.10388</a></span></div>
-  <div class="article-body"><p>arXiv:2606.10388v1 Announce Type: cross 
-Abstract: Agent skill libraries are becoming routable software assets: a retrieved skill can contribute instructions, scripts, resource bindings, and execution assumptions to an agent. This makes skill retrieval more than broad relevance matching. A retriever can find the right capability family yet expose the wrong same-capability representative. We study this failure as same-capability execution-risk retrieval. Each query pairs a helpful skill with a query-specific risky sibling that shares the capability family but can lead execution toward a stale resource, missing precondition, or wrong procedure. We introduce SkillResolve-Bench 1.0, an auditable benchmark for this setting with 661 helpful/risky pairs, source-role and admission evidence, cue/leakage checks, query-disjoint splits, and a 7,982-candidate pool that includes 6,660 public SkillRet candidates. The benchmark reports helpful ranking together with harmful sibling rate (HSR@K), the top-K exposure of the risky sibling. We also provide SkillResolve, a reference method that resolves active candidate families, scores query-conditioned utility from confusable library negatives and contract-profile cues, and selects one representative from each family before the final top-K list. Under the released family relation, SkillResolve reaches Recall@3 0.766 and NDCG@3 0.699 while keeping HSR@3=0. It improves over SkillRouter by 0.112 Recall@3 and 0.165 NDCG@3 while reducing HSR@3 from 0.693 to 0. Without representative selection, HSR@3 rises to 0.236 under the same scorer, identifying within-family representative choice as the mechanism that turns capability retrieval into safer procedural exposure.</p></div>
+  <div class="article-body"><p>arXiv:2606.10388v2 Announce Type: replace-cross 
+Abstract: Agent skill libraries are becoming routable software assets: a retrieved skill can contribute instructions, scripts, resource bindings, and execution assumptions to an agent. This makes retrieval failures more specific than broad irrelevance. A system can find the right capability family yet expose the wrong same-capability representative. We study this failure as same-capability risk-exposure retrieval. Each benchmark unit pairs a helpful skill with a query-specific risky sibling that shares the capability family but differs on an execution-controlling contract, such as the required resource, precondition, procedure, or artifact. We introduce SameCapRisk-Bench, an auditable benchmark with 1,190 skill-risk units and 1,686 evaluation query cases: 694 marked-sibling units under public library pressure and 496 hard role-flip units where the same two skills swap helpful/risky roles across paired queries. The release records admission evidence, cue/leakage checks, source hashes, family relations, and fixed candidate pools. The benchmark reports helpful ranking together with harmful sibling rate (HSR@K), the top-K exposure of the marked risky sibling. On this benchmark, public SkillRouter, SkillRet, and R3-Skill retrieve helpful skills at high Recall@3 (0.848--0.888) but also expose marked risky siblings frequently (HSR@3 0.346--0.372). A fully public score-and-cluster pipeline lowers HSR@3 to 0.128--0.182, with Recall@3 of 0.713--0.776. Under a benchmark-trained reference scorer, public text-cluster and controlled resolvers reach HSR@3 0.012 and 0.007; the latter attains Recall@3 0.833. Skill retrieval should therefore report both capability matching and same-family risk exposure, with HSR serving as a targeted exposure certificate for fixed skill libraries.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

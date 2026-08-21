@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DeltaMomentum: A Key-Value based Anisotropic Momentum Update via Delta Rule — NewsMatome (EN)</title>
+<meta name="description" content="DeltaMomentum: A Key-Value based Anisotropic Momentum Update via Delta Rule — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/0ff53d610a8b.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/0ff53d610a8b.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/0ff53d610a8b.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/0ff53d610a8b.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DeltaMomentum: A Key-Value based Anisotropic Momentum Update via Delta Rule">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"DeltaMomentum: A Key-Value based Anisotropic Momentum Update via Delta Rule",
+ "inLanguage":"en","datePublished":"2026-08-22T07:00:00+09:00","dateModified":"2026-08-22T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2608.19491","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/0ff53d610a8b.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/0ff53d610a8b.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>DeltaMomentum: A Key-Value based Anisotropic Momentum Update via Delta Rule</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/22</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/0ff53d610a8b.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.19491" rel="nofollow noopener">https://arxiv.org/abs/2608.19491</a></span></div>
+  <div class="article-body"><p>arXiv:2608.19491v1 Announce Type: new 
+Abstract: Most modern optimizers form their momentum as an exponential moving average (EMA) of past gradients, forgetting every direction at one fixed rate. However, the inputs a deep network sees during training can be highly anisotropic, with a few directions queried frequently while most are seen rarely. Recent methods address this anisotropy by wrapping extra processing around this buffer, leaving the momentum update itself unchanged. We propose DeltaMomentum, which builds direction-awareness into the momentum update rule. The main observation is that the gradient of a linear layer splits into an input that acts as a key and an output-side error that acts as a value. Exploiting the key-value structure, DeltaMomentum updates the momentum buffer by the canonical delta rule, so each direction is forgotten at a rate set by how often it appears. We prove that it is a valid momentum, that it applies the input-side curvature correction without matrix inversion, and that it clears stale directions faster than EMA under both a fixed and a drifting optimum. It is a drop-in replacement for the momentum buffer of any optimizer, its coefficient transfers across widths under $\mu$P, and its extra compute stays between $22.2\%$ and $25.0\%$ of a gated-MLP block&#x27;s linear cost with no persistent memory. In FineWeb-Edu pretraining, AdamW with DeltaMomentum (DeltaAdamW) reaches AdamW&#x27;s validation loss in up to $46.39 \pm 4.32\%$ fewer steps at 67M and $22.12 \pm 0.80\%$ at 370M over three seeds, and the gain persists at 1B on a Chinchilla-optimal budget. A Muon baseline tuned under the same protocol sits above DeltaAdamW at both language-model scales, and the gain holds for SGD, ResNet-18, and ViT-Tiny on CIFAR-10. Training-time diagnostics confirm the predicted mechanism, better gradient tracking and healthier input directions.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
