@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Continuous-Time Quantum Walks based Graph Neural Network — NewsMatome (EN)</title>
+<meta name="description" content="Continuous-Time Quantum Walks based Graph Neural Network — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/69eca2527dc7.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/69eca2527dc7.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/69eca2527dc7.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/69eca2527dc7.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Continuous-Time Quantum Walks based Graph Neural Network">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Continuous-Time Quantum Walks based Graph Neural Network",
+ "inLanguage":"en","datePublished":"2026-08-25T07:00:00+09:00","dateModified":"2026-08-25T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2608.20738","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/69eca2527dc7.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/69eca2527dc7.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Continuous-Time Quantum Walks based Graph Neural Network</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/08/25</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/69eca2527dc7.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.20738" rel="nofollow noopener">https://arxiv.org/abs/2608.20738</a></span></div>
+  <div class="article-body"><p>arXiv:2608.20738v1 Announce Type: new 
+Abstract: Graph Neural Networks (GNNs) are widely used on graph-structured data, but most suffer from two key weaknesses. First, message passing behaves as a low-pass filter under the homophily assumption, leading to poor performance on heterophilic graphs. Second, stacking layers drives node features toward constants, causing over-smoothing. Existing methods usually address these issues separately, while the few joint solutions rely largely on empirical heuristics, and many over-smoothing remedies sacrifice model expressiveness.
+  We propose \textbf{CTQW-GNN}, a GNN based on Continuous-Time Quantum Walks (CTQW), to address both issues with theoretical justification. Its design exploits two properties of the CTQW propagator $e^{-\mathrm{i}Ht}$. First, it is unitary and has eigenvalues on the unit circle, so no frequency component is damped, counteracting the low-pass bias. Second, unitarity preserves feature norms and prevents the Dirichlet energy from decaying exponentially with depth, thereby mitigating over-smoothing.
+  CTQW-GNN combines three complementary aggregation modules. \textit{CTQW-based Aggregation} evolves node features through the unitary propagator, preserving mid- and high-frequency signals for heterophilic graphs while preventing Dirichlet-energy collapse. \textit{CTQW-Attention Aggregation} constructs a multi-hop neighbor graph from CTQW amplitudes and applies attention over it, enabling access to distant homophilic nodes missed by single-hop aggregation. \textit{LF Aggregation} uses a standard low-pass GAT branch to retain strong performance on homophilic graphs, where pure CTQW aggregation can be suboptimal. We further provide a spectral-gap analysis explaining energy preservation and a Lieb--Robinson-type bound that gives a principled rule for selecting the walk time $t$.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
