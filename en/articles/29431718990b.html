@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Semantic Compression Trees: Multi-Resolution Knowledge Retrieval via Hierarchical Semantic Residuals — NewsMatome (EN)</title>
+<meta name="description" content="Semantic Compression Trees: Multi-Resolution Knowledge Retrieval via Hierarchical Semantic Residuals — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/29431718990b.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/29431718990b.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/29431718990b.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/29431718990b.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Semantic Compression Trees: Multi-Resolution Knowledge Retrieval via Hierarchical Semantic Residuals">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Semantic Compression Trees: Multi-Resolution Knowledge Retrieval via Hierarchical Semantic Residuals",
+ "inLanguage":"en","datePublished":"2026-08-26T07:00:00+09:00","dateModified":"2026-08-26T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2608.21610","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/29431718990b.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/29431718990b.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Semantic Compression Trees: Multi-Resolution Knowledge Retrieval via Hierarchical Semantic Residuals</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/08/26</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/29431718990b.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.21610" rel="nofollow noopener">https://arxiv.org/abs/2608.21610</a></span></div>
+  <div class="article-body"><p>arXiv:2608.21610v1 Announce Type: new 
+Abstract: Retrieval-augmented generation relies mostly on flat, fixed-granularity indexes: documents are cut into uniform chunks and retrieved by similarity, discarding the hierarchical structure of the source. We introduce Semantic Compression Trees (SCT), a hierarchical index in which each node stores only its semantic residual -- the information it adds beyond its parent -- and retrieval proceeds by progressive descent from the root, so that per-query cost is governed by tree depth rather than collection size.
+  We evaluate on QASPER (50 papers, 173 questions) under two protocols differing only in whether the benchmark supplies the relevant document, with bootstrap confidence intervals and paired significance tests throughout. The results are mixed and we report them as such. When the document is given, SCT with a zero-LLM extractive compressor matches dense retrieval on answer quality (0.274 vs. 0.277 F1, $p = 0.37$) using 30% fewer context tokens and no LLM calls to build the index, and residual storage beats storing full summaries at each node (0.274 vs. 0.205, $p &lt; 0.001$). Increasing the collection fifty-fold multiplies flat retrieval&#x27;s per-query scoring work by 48.9x and SCT&#x27;s by 6.4x.
+  Progressive descent itself is not supported. Retrieving the same residuals without the tree performs identically when the document is given ($p = 0.27$), and descent is substantially worse when the system must select the document (0.122 vs. 0.165, $p &lt; 0.001$). Routing accuracy localises the cause: descent selects the correct paper 20.2% of the time against 39.3% for flat retrieval, because that choice is made from the root residual, the most compressed node in the tree. We conclude that the residual representation is worth keeping and top-down routing is not.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

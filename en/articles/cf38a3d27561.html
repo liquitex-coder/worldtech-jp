@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Answer First, Reason Later: Commitment Order in Diffusion LLMs — NewsMatome (EN)</title>
-<meta name="description" content="Answer First, Reason Later: Commitment Order in Diffusion LLMs — original-language edition. Japanese translation available.">
+<title>Answer First, Reason Later: When Commitment Order Costs Accuracy in Diffusion Language Models — NewsMatome (EN)</title>
+<meta name="description" content="Answer First, Reason Later: When Commitment Order Costs Accuracy in Diffusion Language Models — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/cf38a3d27561.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/cf38a3d27561.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/cf38a3d27561.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/cf38a3d27561.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Answer First, Reason Later: Commitment Order in Diffusion LLMs">
+<meta property="og:title" content="Answer First, Reason Later: When Commitment Order Costs Accuracy in Diffusion Language Models">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Answer First, Reason Later: Commitment Order in Diffusion LLMs",
- "inLanguage":"en","datePublished":"2026-08-08T07:00:00+09:00","dateModified":"2026-08-08T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Answer First, Reason Later: When Commitment Order Costs Accuracy in Diffusion Language Models",
+ "inLanguage":"en","datePublished":"2026-08-26T07:00:00+09:00","dateModified":"2026-08-26T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2608.05687","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/cf38a3d27561.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Answer First, Reason Later: Commitment Order in Diffusion LLMs</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/08/08</span></div>
+    <h1>Answer First, Reason Later: When Commitment Order Costs Accuracy in Diffusion Language Models</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/08/26</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/cf38a3d27561.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.05687" rel="nofollow noopener">https://arxiv.org/abs/2608.05687</a></span></div>
-  <div class="article-body"><p>arXiv:2608.05687v1 Announce Type: cross 
-Abstract: Masked diffusion language models (dLLMs) can commit tokens in any order -- a freedom marketed as their core advantage over autoregressive decoding. We show that on reasoning tasks this freedom is instead the axis of failure. Logging every commitment during decoding of LLaDA-8B on GSM8K, we find that unconstrained (pure) decoding commits the final answer at 15-24% of the trajectory while half the reasoning region is still masked, and collapses to answer-only outputs on up to 90% of problems as the canvas grows. The cause is not the model&#x27;s termination beliefs -- EOS &quot;pressure&quot; is nearly identical across decoders -- but reachability: whether the sampler may act on those beliefs at distant positions. A 2x2 prompt-decoder design shows that chain-of-thought helps only under ordered commitment (interaction +34.8 percentage points, 95% CI [26.8, 42.8]; without reasoning text the decoders are indistinguishable), an interaction we decompose into a collapse channel and an order channel and replicate on Dream-7B and MATH-500. A single-knob intervention -- frontier-gated commitment -- causally recovers the full gap (0.528 to 0.852) while preserving up to 4x parallel decoding, along a measured frontier whose optimal window flips from w=1 at full refinement to unconstrained at 8 tokens/step. Our results reframe existing window-style samplers, previously motivated by efficiency, as the minimal fix for a reasoning pathology they were never designed to address.</p></div>
+  <div class="article-body"><p>arXiv:2608.05687v2 Announce Type: replace-cross 
+Abstract: Masked diffusion language models revise many masked output positions in parallel. We call a token committed once it becomes visible and is never masked again, and call a response answer-first when the final answer commits before the reasoning printed ahead of it. On 1,069 GSM8K test questions, an explicit step-by-step instruction increases the accuracy difference between unrestricted decoding and a decoder that permits commitment only near the left-most unresolved position; unrestricted decoding also produces more answer-first trajectories. On MATH-500, the two LLaDA models spend most of a short output canvas on reasoning that commits after the answer, and the benefit of frontier gating decreases as that postanswer writing disappears. Dream-7B has little post-answer writing and follows a different accuracy pattern. A controlled four-option task reserves a one-token answer position before generation. Delaying that position outperforms an equally timed reasoning-token delay on LLaDA-8B, LLaDA-1.5, and Dream-7B. The raw difference is largest on Dream, whose free accuracy on the controlled task is lower. Answers commit much earlier under the reserved-position interface than in ordinary free-form generation, which limits how far the intervention result can be generalized. Commitment order affects the context used to complete a response and the allocation of a finite output canvas.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KVBoost: Chunk-Level Key-Value Cache Reuse with Deviation-Guided Recomputation for Efficient Large Language Model Inference — NewsMatome (EN)</title>
+<meta name="description" content="KVBoost: Chunk-Level Key-Value Cache Reuse with Deviation-Guided Recomputation for Efficient Large Language Model Inference — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/a43539facd3f.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/a43539facd3f.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/a43539facd3f.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/a43539facd3f.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="KVBoost: Chunk-Level Key-Value Cache Reuse with Deviation-Guided Recomputation for Efficient Large Language Model Inference">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"KVBoost: Chunk-Level Key-Value Cache Reuse with Deviation-Guided Recomputation for Efficient Large Language Model Inference",
+ "inLanguage":"en","datePublished":"2026-08-26T07:00:00+09:00","dateModified":"2026-08-26T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2608.21362","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/a43539facd3f.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/a43539facd3f.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>KVBoost: Chunk-Level Key-Value Cache Reuse with Deviation-Guided Recomputation for Efficient Large Language Model Inference</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/08/26</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/a43539facd3f.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.21362" rel="nofollow noopener">https://arxiv.org/abs/2608.21362</a></span></div>
+  <div class="article-body"><p>arXiv:2608.21362v1 Announce Type: new 
+Abstract: Transformer-based large language models (LLMs) incur high prefill latency because key-value (KV) tensors must be recomputed for each request. Existing prefix-caching systems reduce this cost but require prompts to share a leading contiguous prefix, limiting effectiveness when shared content appears at arbitrary positions. We present KVBoost, a chunk-level KV cache reuse system for HuggingFace-compatible decoder models that enables reuse regardless of content position. KVBoost introduces a dual-hash keying scheme that separates positional identity (prefix hash) from content identity (content hash), supporting both exact and approximate cache matches. To address attention boundary errors from independently cached chunks, KVBoost employs two repair strategies: SelectiveRecompute, which re-encodes boundary regions, and CacheBlendRecompute, which identifies and recomputes high-deviation tokens after a probe pass. The system further incorporates asymmetric KV quantization (int8/int4), adaptive chunk boundary splitting, and importance-weighted eviction under a fixed memory budget. Evaluated on Qwen/Qwen2.5-3B over 1,000 bug-localization samples, KVBoost achieves a 4.49x reduction in time-to-first-token (142.4 ms vs.\ 639.1 ms) and outperforms prefix caching by 16%, with no loss in accuracy (99.2% vs.\ 99.1%). KVBoost provides a practical, memory-bounded inference acceleration layer compatible with RoPE-based models without architectural modification.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

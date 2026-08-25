@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Harness In-Context Operator Learning with Chain of Operators — NewsMatome</title>
-<meta name="description" content="Harness In-Context Operator Learning with Chain of Operators（EN→JA 翻訳・出典付き）">
+<title>Chain of Operators: An Inference-Time Harness for In-Context Operator Learning — NewsMatome</title>
+<meta name="description" content="Chain of Operators: An Inference-Time Harness for In-Context Operator Learning（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/1b8a2702996c.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/1b8a2702996c.html">
@@ -12,16 +12,16 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/1b8a2702996c.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="Harness In-Context Operator Learning with Chain of Operators">
-<meta property="og:description" content="Harness In-Context Operator Learning with Chain of Operators（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="Chain of Operators: An Inference-Time Harness for In-Context Operator Learning">
+<meta property="og:description" content="Chain of Operators: An Inference-Time Harness for In-Context Operator Learning（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Harness In-Context Operator Learning with Chain of Operators",
- "inLanguage":"ja","datePublished":"2026-06-13T07:00:00+09:00","dateModified":"2026-06-13T07:00:00+09:00",
- "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Chain of Operators: An Inference-Time Harness for In-Context Operator Learning",
+ "inLanguage":"ja","datePublished":"2026-08-26T07:00:00+09:00","dateModified":"2026-08-26T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.12318","url":"https://liquitex-coder.github.io/worldtech-jp/articles/1b8a2702996c.html"}
 </script>
@@ -40,8 +40,8 @@
   <nav class="catnav"><div class="catnav-inner">
       <a href="../index.html" style="--cc:#5b78ff">すべて</a>
       <div class="catgroup"><a href="#" class="cat-trigger" style="--cc:#0ea5e9"><span class="cdot"></span>サイエンス<span class="caret">▾</span></a><div class="dropdown"><a href="#" style="--cc:#0ea5e9"><span class="cdot"></span>サイエンス</a><a href="#" style="--cc:#6366f1"><span class="cdot"></span>テクノロジー</a></div></div>
-      <div class="catgroup"><a href="#" class="cat-trigger" style="--cc:#3b5bff"><span class="cdot"></span>AI<span class="caret">▾</span></a><div class="dropdown"><a href="#" style="--cc:#3b5bff"><span class="cdot"></span>AI</a><a href="#" style="--cc:#f97316"><span class="cdot"></span>フィジカルAI</a><a href="#" style="--cc:#ef4444"><span class="cdot"></span>ロボット技術</a><a href="#" style="--cc:#e60033"><span class="cdot"></span>日本のAI</a></div></div>
-      <div class="catgroup"><a href="#" class="cat-trigger active" style="--cc:#cbd5e1"><span class="cdot"></span>コード<span class="caret">▾</span></a><div class="dropdown"><a href="#" style="--cc:#cbd5e1"><span class="cdot"></span>コード</a><a href="#" class="active" style="--cc:#8b5cf6"><span class="cdot"></span>アルゴリズム</a></div></div>
+      <div class="catgroup"><a href="#" class="cat-trigger active" style="--cc:#3b5bff"><span class="cdot"></span>AI<span class="caret">▾</span></a><div class="dropdown"><a href="#" class="active" style="--cc:#3b5bff"><span class="cdot"></span>AI</a><a href="#" style="--cc:#f97316"><span class="cdot"></span>フィジカルAI</a><a href="#" style="--cc:#ef4444"><span class="cdot"></span>ロボット技術</a><a href="#" style="--cc:#e60033"><span class="cdot"></span>日本のAI</a></div></div>
+      <div class="catgroup"><a href="#" class="cat-trigger" style="--cc:#cbd5e1"><span class="cdot"></span>コード<span class="caret">▾</span></a><div class="dropdown"><a href="#" style="--cc:#cbd5e1"><span class="cdot"></span>コード</a><a href="#" style="--cc:#8b5cf6"><span class="cdot"></span>アルゴリズム</a></div></div>
       <a href="#" style="--cc:#ec4899"><span class="cdot"></span>アート</a>
       <a href="#" style="--cc:#14b8a6"><span class="cdot"></span>デザイン</a>
       <a href="#" style="--cc:#e11d48"><span class="cdot"></span>動画</a>
@@ -53,18 +53,18 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>Harness In-Context Operator Learning with Chain of Operators</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">AI</a><span class="sep">›</span><span>Chain of Operators: An Inference-Time Harness for In-Context Operator Learning</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
-        <span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+        <span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>Harness In-Context Operator Learning with Chain of Operators</h1>
+      <h1>Chain of Operators: An Inference-Time Harness for In-Context Operator Learning</h1>
       <div class="article-byline">
-        <span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/06/13 07:00</span><span>· 更新 2026/06/13</span>
+        <span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b>収集・日本語化・監修</span></span>
+        <span>公開 2026/08/26 07:00</span><span>· 更新 2026/08/26</span>
       </div>
     </div>
     
@@ -74,24 +74,24 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2606.12318" rel="nofollow noopener">Harness In-Context Operator Learning with Chain of Operators</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2606.12318" rel="nofollow noopener">Chain of Operators: An Inference-Time Harness for In-Context Operator Learning</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2606.12318v1 Announce Type: new 
-Abstract: Neural operators approximate mappings between function spaces, but often generalize poorly to other operators and usually require fine-tuning or retraining. In-Context Operator Networks (ICON) addresses this issue by prompting the model with numerical context so that the model learns specific operators from prompts and adapt to different operators without fine-tuning. However, ICON may still fail to generalize to out-of-distribution (OOD) operator tasks. Inpired by the success of harness engineering of Large Language models (LLMs), we introduce Chain of Operators (CHOP), a framework that harness a frozen ICON to OOD operator tasks without updating its parameters. Specifically, CHOP constructs a chain of operators consisting of explicit elementary transformations and the frozen ICON. Experiments on a scalar conservation law and a mean-field control problem show that CHOP reduces relative inference error over direct ICON evaluation, while each operator in the chain remains interpretable and in closed form. A chain constructed on one PDE family further generalizes to a different family, indicating shared mechanisms across harness systems.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2606.12318v1 Announce Type: new 
-Abstract: Neural operators approximate mappings between function spaces, but often generalize poorly to other operators and usually require fine-tuning or retraining. In-Context Operator Networks (ICON) addresses this issue by prompting the model with numerical context so that the model learns specific operators from prompts and adapt to different operators without fine-tuning. However, ICON may still fail to generalize to out-of-distribution (OOD) operator tasks. Inpired by the success of harness engineering of Large Language models (LLMs), we introduce Chain of Operators (CHOP), a framework that harness a frozen ICON to OOD operator tasks without updating its parameters. Specifically, CHOP constructs a chain of operators consisting of explicit elementary transformations and the frozen ICON. Experiments on a scalar conservation law and a mean-field control problem show that CHOP reduces relative inference error over direct ICON evaluation, while each operator in the chain remains interpretable and in closed form. A chain constructed on one PDE family further generalizes to a different family, indicating shared mechanisms across harness systems.</div>
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2606.12318v2 Announce Type: replace-cross 
+Abstract: While scientific foundation models show immense promise in accelerating physical simulations and numerical forecasting, they remain notoriously brittle when encountering out-of-distribution (OOD) scenarios. Adapting these generalist models to complex OOD tasks typically requires expensive parameter fine-tuning. In linguistic AI, this bottleneck is bypassed using &quot;harnesses&quot;, which serve as external scaffolding such as reasoning chains and tool use to adapt frozen weights to complex tasks, yet designing an equivalent harness for physical domains remains an open frontier. To bridge this gap, we introduce Chain of Operators (CHOP), a framework that guides a frozen foundation model through complex OOD tasks without updating a single weight. By exploiting the in-context learning capability of In-Context Operator Networks (ICON), CHOP systematically decomposes unfamiliar problems into a sequence of explicit, closed-form mathematical operations and multiple model calls, translating OOD queries back into the model&#x27;s learned operating regime. Across diverse benchmarks, including canonical PDE problems and real-world air-quality forecasting, CHOP consistently and substantially reduces inference errors compared to direct model evaluation. Crucially, these modular operator chains remain fully interpretable and can generalize across entirely distinct families of physical equations. Ultimately, this work demonstrates how frozen scientific models can adapt through programmable inference, establishing a modular, potential paradigm for agentic scientific computing.</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2606.12318v2 Announce Type: replace-cross 
+Abstract: While scientific foundation models show immense promise in accelerating physical simulations and numerical forecasting, they remain notoriously brittle when encountering out-of-distribution (OOD) scenarios. Adapting these generalist models to complex OOD tasks typically requires expensive parameter fine-tuning. In linguistic AI, this bottleneck is bypassed using &quot;harnesses&quot;, which serve as external scaffolding such as reasoning chains and tool use to adapt frozen weights to complex tasks, yet designing an equivalent harness for physical domains remains an open frontier. To bridge this gap, we introduce Chain of Operators (CHOP), a framework that guides a frozen foundation model through complex OOD tasks without updating a single weight. By exploiting the in-context learning capability of In-Context Operator Networks (ICON), CHOP systematically decomposes unfamiliar problems into a sequence of explicit, closed-form mathematical operations and multiple model calls, translating OOD queries back into the model&#x27;s learned operating regime. Across diverse benchmarks, including canonical PDE problems and real-world air-quality forecasting, CHOP consistently and substantially reduces inference errors compared to direct model evaluation. Crucially, these modular operator chains remain fully interpretable and can generalize across entirely distinct families of physical equations. Ultimately, this work demonstrates how frozen scientific models can adapt through programmable inference, establishing a modular, potential paradigm for agentic scientific computing.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2606.12318v1 Announce Type: new 
-Abstract: Neural operators approximate mappings between function spaces, but often generalize poorly to other operators and usually require fine-tuning or retraining. In-Context Operator Networks (ICON) addresses this issue by prompting the model with numerical context so that the model learns specific operators from prompts and adapt to different operators without fine-tuning. However, ICON may still fail to generalize to out-of-distribution (OOD) operator tasks. Inpired by the success of harness engineering of Large Language models (LLMs), we introduce Chain of Operators (CHOP), a framework that harness a frozen ICON to OOD operator tasks without updating its parameters. Specifically, CHOP constructs a chain of operators consisting of explicit elementary transformations and the frozen ICON. Experiments on a scalar conservation law and a mean-field control problem show that CHOP reduces relative inference error over direct ICON evaluation, while each operator in the chain remains interpretable and in closed form. A chain constructed on one PDE family further generalizes to a different family, indicating shared mechanisms across harness systems.</p><a href="https://arxiv.org/abs/2606.12318" rel="nofollow noopener">原論文を読む →</a></div>
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2606.12318v2 Announce Type: replace-cross 
+Abstract: While scientific foundation models show immense promise in accelerating physical simulations and numerical forecasting, they remain notoriously brittle when encountering out-of-distribution (OOD) scenarios. Adapting these generalist models to complex OOD tasks typically requires expensive parameter fine-tuning. In linguistic AI, this bottleneck is bypassed using &quot;harnesses&quot;, which serve as external scaffolding such as reasoning chains and tool use to adapt frozen weights to complex tasks, yet designing an equivalent harness for physical domains remains an open frontier. To bridge this gap, we introduce Chain of Operators (CHOP), a framework that guides a frozen foundation model through complex OOD tasks without updating a single weight. By exploiting the in-context learning capability of In-Context Operator Networks (ICON), CHOP systematically decomposes unfamiliar problems into a sequence of explicit, closed-form mathematical operations and multiple model calls, translating OOD queries back into the model&#x27;s learned operating regime. Across diverse benchmarks, including canonical PDE problems and real-world air-quality forecasting, CHOP consistently and substantially reduces inference errors compared to direct model evaluation. Crucially, these modular operator chains remain fully interpretable and can generalize across entirely distinct families of physical equations. Ultimately, this work demonstrates how frozen scientific models can adapt through programmable inference, establishing a modular, potential paradigm for agentic scientific computing.</p><a href="https://arxiv.org/abs/2606.12318" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2606.12318" rel="nofollow noopener">https://arxiv.org/abs/2606.12318</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
     <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="eb83c7a671a4.html"><div class="sim">関連</div><div class="info"><b>ToolSense: A Diagnostic Framework for Auditing Parametric Tool Knowledge in LLMs</b><div class="m">AI</div></div></a><a class="r" href="9cd2892acc41.html"><div class="sim">関連</div><div class="info"><b>Arbor: Tree Search as a Cognition Layer for Autonomous Agents</b><div class="m">AI</div></div></a><a class="r" href="5d140f9775a9.html"><div class="sim">関連</div><div class="info"><b>Strategic Decision Support for AI Agents</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="a43539facd3f.html"><div class="sim">関連</div><div class="info"><b>KVBoost: Chunk-Level Key-Value Cache Reuse with Deviation-Guided Recomputation for Efficient Large Language Model Inference</b><div class="m">AI</div></div></a><a class="r" href="02a7a8504d7c.html"><div class="sim">関連</div><div class="info"><b>AIREP: A Protocol for Per-Decision Evidence in AI Runtime Governance</b><div class="m">AI</div></div></a><a class="r" href="373a5f3d56eb.html"><div class="sim">関連</div><div class="info"><b>Reviewing Model Collapse and Countermeasures</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

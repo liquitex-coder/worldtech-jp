@@ -3,22 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Measuring in-context algorithmic reasoning in language models against an exact Bayes-optimal standard — NewsMatome (EN)</title>
-<meta name="description" content="Measuring in-context algorithmic reasoning in language models against an exact Bayes-optimal standard — original-language edition. Japanese translation available.">
+<title>Measuring in-context algorithmic reasoning in language models against an exact Bayes-optimal reference — NewsMatome (EN)</title>
+<meta name="description" content="Measuring in-context algorithmic reasoning in language models against an exact Bayes-optimal reference — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/f3512757dabf.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/f3512757dabf.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/f3512757dabf.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/f3512757dabf.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Measuring in-context algorithmic reasoning in language models against an exact Bayes-optimal standard">
+<meta property="og:title" content="Measuring in-context algorithmic reasoning in language models against an exact Bayes-optimal reference">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Measuring in-context algorithmic reasoning in language models against an exact Bayes-optimal standard",
- "inLanguage":"en","datePublished":"2026-08-05T07:00:00+09:00","dateModified":"2026-08-05T07:00:00+09:00",
- "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Measuring in-context algorithmic reasoning in language models against an exact Bayes-optimal reference",
+ "inLanguage":"en","datePublished":"2026-08-26T07:00:00+09:00","dateModified":"2026-08-26T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2608.01575","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/f3512757dabf.html"}
 </script>
@@ -32,14 +32,14 @@
 </div></header>
 <div class="wrap"><article class="article">
   <div class="article-head">
-    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Measuring in-context algorithmic reasoning in language models against an exact Bayes-optimal standard</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/05</span></div>
+    <h1>Measuring in-context algorithmic reasoning in language models against an exact Bayes-optimal reference</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/08/26</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/f3512757dabf.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.01575" rel="nofollow noopener">https://arxiv.org/abs/2608.01575</a></span></div>
-  <div class="article-body"><p>arXiv:2608.01575v1 Announce Type: new 
-Abstract: Whether large language models perform genuine algorithmic reasoning or mere pattern completion is hard to test, because most benchmarks lack a ground truth for correct inductive inference. We introduce F-ICL, an in-context-learning benchmark that supplies one exactly. Using the Turing-complete machine F, complement-symmetrised into sF to remove output-polarity bias, we exhaustively enumerate all 1.5 billion programs of length $L\le13$ and compute the Bayes-optimal posterior in closed form under a bounded universal (Levin--Solomonoff) prior; models are scored by how closely their served distributions approach it at matched evidence. Each task is paired with its bitwise complement, on which the optimum scores identically, so an original-twin gap isolates the model&#x27;s inductive bias. Across 105 serving configurations spanning 37 open models (0.8B--675B) and frontier systems from four laboratories, models answer up to 92\% of queries correctly, yet 45 of 46 models yield distributions farther from the optimum than a keystroke reference, and their behaviour is bracketed by low-order prefix statistics fitted only on visible evidence. That reference is itself an algorithmic mixture, induced by a print-only machine with no loops, so the panel&#x27;s implied measure sits closer to a loop-free mixture than to the loop-bearing optimum, independently of the reference machine. Updating is also non-monotone, which no prior explains: a Bayes-rational solved set can only grow in this realisable, noiseless setting, yet added examples produce $6{,}545$ solved-to-unsolved transitions against $13{,}702$ gains. The gap is not predicted by accuracy (Spearman $\rho=-0.19$, $p=0.21$), does not close with scale or across frontier generations in the serving modes that expose distributions, and is widened by instruction and reasoning post-training. F-ICL is released as an open, reproducible benchmark and toolkit.</p></div>
+  <div class="article-body"><p>arXiv:2608.01575v2 Announce Type: replace-cross 
+Abstract: Whether large language models perform algorithmic inference or pattern completion is hard to test, because most benchmarks supply answers but no distributional reference for what the shown evidence licenses. F-ICL supplies one exactly: we exhaustively enumerate the 86 million valid programs of length at most 13 on a Turing-complete machine F, complement-symmetrised to remove output-polarity bias, and compute the exact posterior under a declared bounded Levin--Solomonoff prior. It is Bayes-optimal for that stated prior rather than universal, and models are never told it exists, so the score reads the inductive prior their served distribution already encodes. Across 105 serving configurations spanning open models from 0.8B to 675B and frontier systems, models answer up to 92% of queries correctly, yet 45 of the 46 exposing distributions sit farther from the F reference than a keystroke reference. This is not an artefact of task selection: on the bit coordinate, the half the length quota cannot distort, 69 of 80 runs stay below the anchor. Fidelity is inert to scale, which accuracy tracks; continuation improves late without converging; and models un-solve a solved task once per two gains, where the F reference does so once per nine and always repairs it. Because absolute distances are reference-dependent, we prove sequential bounds holding for rival priors: any predictor whose prior gives the reference positive weight has bounded cumulative excess loss, and, in a loss never invoking the reference, any Bayesian mixture giving the realised truth positive mass has a bounded truth-loss budget. On 23,998 trajectories, 86.7% already spend over 10 bits of it. Sequences ending by position nine cannot exclude an arbitrarily large finite constant, so these are lower bounds on what a rival prior must already pay. F-ICL is an open benchmark and toolkit.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

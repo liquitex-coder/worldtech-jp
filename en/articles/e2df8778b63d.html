@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nothing Changed but the Model: CellFill -- Bounded In-Cell Learning for Bit-Identical, Revocable Updates to Quantized LLMs — NewsMatome (EN)</title>
-<meta name="description" content="Nothing Changed but the Model: CellFill -- Bounded In-Cell Learning for Bit-Identical, Revocable Updates to Quantized LLMs — original-language edition. Japanese translation available.">
+<title>In-Cell Learning: Deployed Language Models Can Learn New Knowledge Without Changing a Single Stored Bit — NewsMatome (EN)</title>
+<meta name="description" content="In-Cell Learning: Deployed Language Models Can Learn New Knowledge Without Changing a Single Stored Bit — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/e2df8778b63d.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/e2df8778b63d.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/e2df8778b63d.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/e2df8778b63d.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Nothing Changed but the Model: CellFill -- Bounded In-Cell Learning for Bit-Identical, Revocable Updates to Quantized LLMs">
+<meta property="og:title" content="In-Cell Learning: Deployed Language Models Can Learn New Knowledge Without Changing a Single Stored Bit">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Nothing Changed but the Model: CellFill -- Bounded In-Cell Learning for Bit-Identical, Revocable Updates to Quantized LLMs",
- "inLanguage":"en","datePublished":"2026-08-25T07:00:00+09:00","dateModified":"2026-08-25T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"In-Cell Learning: Deployed Language Models Can Learn New Knowledge Without Changing a Single Stored Bit",
+ "inLanguage":"en","datePublished":"2026-08-26T07:00:00+09:00","dateModified":"2026-08-26T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2608.20873","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/e2df8778b63d.html"}
@@ -34,13 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Nothing Changed but the Model: CellFill -- Bounded In-Cell Learning for Bit-Identical, Revocable Updates to Quantized LLMs</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/25</span></div>
+    <h1>In-Cell Learning: Deployed Language Models Can Learn New Knowledge Without Changing a Single Stored Bit</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/26</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/e2df8778b63d.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.20873" rel="nofollow noopener">https://arxiv.org/abs/2608.20873</a></span></div>
-  <div class="article-body"><p>arXiv:2608.20873v1 Announce Type: new 
-Abstract: Every way of teaching a deployed language model something new -- full fine-tuning, adapter merging, model editing -- replaces the released checkpoint, and with it every evaluation and cache that referred to those exact bits. We instead learn inside the dequantization gap: with the integer codes and scales of a 4-bit release frozen, new knowledge is written only into the per-weight residual that lives strictly inside each quantization decision cell. Re-quantization then returns the released artifact bit-for-bit, a machine-checkable guarantee; updates are exactly revocable by dropping the residual; and drift is bounded. We give six propositions and three training paths, including CellFill, a bounded reparameterization that makes invariance structural rather than enforced.
-  Exact invariance turns out to be nearly free: across three paired seeds the constrained dense path matches an unconstrained reference whose weights provably escape the artifact (58.9 vs 59.3 percent fact recall; paired difference -0.5 points, 95% CI [-5.0,+4.0]), and is better on held-out cross-domain perplexity. Against the natural null hypothesis -- serving the same update as an unmerged adapter -- projecting into the cells reduces cross-domain forgetting in every run that converged, and a diverged control shows the boundary: projection is a trust region, not a repair. What no method escapes is the cost of knowledge itself, and the apparent free lunch of in-domain perplexity improving past the anchor is an artifact of rehearsal sharing a corpus with the metric. Methods differ threefold at matched rehearsal in knowledge bought per point of cross-domain perplexity, a ranking that is not the recall ranking. The method transfers to a 27B hybrid linear-attention model (2.4e10 constrained weights, verified bit-identical), where matched recall costs about half as much cross-domain perplexity as at 1.7B.</p></div>
+  <div class="article-body"><p>arXiv:2608.20873v2 Announce Type: new 
+Abstract: A deployed language model is a file that many things depend on - a benchmark report, a certification, a fleet of devices - and every way of teaching it something new produces a different file. We show that this is not necessary. A 4-bit release stores each weight as an integer code and a shared scale, and leaves between the stored values an interval the quantizer discards; we call in-cell learning the paradigm in which new knowledge is written only into that interval, so that re-quantizing the served weights reproduces the released codes and scales exactly. The guarantee is checked in the integer domain on every weight, the update is a separate file (a fill) that can be withdrawn by subtraction, and drift is bounded by radii the grid fixes before training. CellFill realizes the paradigm by construction: a low-rank position inside the cell, trained on the vendor&#x27;s own 4-bit release. On those releases - NF4, QAT and GPTQ-style grids, Qwen3 and Gemma, 1.7B to 31B - CellFill writes 83 to 97 percent of a corpus of real facts the models verifiably did not know, with zero violations over up to 2.4 x 10^10 constrained weights. We demonstrate the knowledge is usable: injected drugs compose with injected ingredients at the model&#x27;s own two-hop ceiling, and a post-cutoff software library is used in code at 2.6 times chance. Against retrieval on PopQA&#x27;s long tail, the fill answers 82 to 90 percent of questions the released model could not, at 75 tokens per question against 90 to 1008. Several writers can share one release, sequential updates consume a constant fraction of the remaining room, and the archived result files behind every table are at https://github.com/sumsliu/cellfill.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>
