@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Blending Ratio Is Not Where the Performance Is: Diagnosing Prototype Blending for Few-Shot Adaptation of Vision-Language Models — NewsMatome (EN)</title>
+<meta name="description" content="The Blending Ratio Is Not Where the Performance Is: Diagnosing Prototype Blending for Few-Shot Adaptation of Vision-Language Models — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/126354e5f45a.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/126354e5f45a.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/126354e5f45a.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/126354e5f45a.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Blending Ratio Is Not Where the Performance Is: Diagnosing Prototype Blending for Few-Shot Adaptation of Vision-Language Models">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"The Blending Ratio Is Not Where the Performance Is: Diagnosing Prototype Blending for Few-Shot Adaptation of Vision-Language Models",
+ "inLanguage":"en","datePublished":"2026-08-27T07:00:00+09:00","dateModified":"2026-08-27T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2608.23634","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/126354e5f45a.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/126354e5f45a.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>The Blending Ratio Is Not Where the Performance Is: Diagnosing Prototype Blending for Few-Shot Adaptation of Vision-Language Models</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/27</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/126354e5f45a.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.23634" rel="nofollow noopener">https://arxiv.org/abs/2608.23634</a></span></div>
+  <div class="article-body"><p>arXiv:2608.23634v1 Announce Type: cross 
+Abstract: Many few-shot adaptation methods for vision-language models classify with a convex combination of the zero-shot text prototype and the mean of the K labelled image features, with a single blending ratio routinely tuned on held-out labels, often on the test set itself. We ask what the family&#x27;s own bias-variance justification invites: what is the right ratio, can it be estimated without validation data, and is finding it where the performance is? First, the ratio minimising prototype mean-squared error has a closed form whose support-set plug-in is exactly a positive-part James-Stein coefficient shrinking towards the text prototype. Across 4,800 cells (ten datasets, five backbones including SigLIP, five shot counts, five seeds, four prompt tiers) this theoretically optimal ratio is a reliable estimate of the wrong quantity: on the 950 primary-tier cells where it is defined it trails a test-set-oracle ratio by 8.5 points. It saturates near 1, discarding the text prior for a nearest-class-mean classifier, because 78% of the text-image prototype distance it treats as bias is a class-independent offset that the arg max largely cancels. We prove the mechanism and bound its share of the damage at 26% by a counterfactual. Second, leave-one-out on the support set alone sets a ratio landing within 0.9 points of the oracle blend, so it is estimable without validation data. Third, validation-free linear probes beat even the oracle-tuned blend: CLAP by +1.9 points and LP++ by +1.5 on average, and at K &gt;= 4 all four validation-free baselines sit above the oracle, the linear probes by margins excluding zero. These results locate the ceiling in the model class, not the hyperparameter: the ratio can be set near-optimally for free, and it is still not where the performance is. Code, cached features, per-cell records: https://huggingface.co/datasets/Liangzhi-Li/clipbench-blending</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
