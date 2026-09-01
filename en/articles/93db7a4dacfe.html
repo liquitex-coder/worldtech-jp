@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Characterization of Request and Token Energy Costs for LLM Inference Workloads on GPU Platforms — NewsMatome (EN)</title>
+<meta name="description" content="Characterization of Request and Token Energy Costs for LLM Inference Workloads on GPU Platforms — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/93db7a4dacfe.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/93db7a4dacfe.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/93db7a4dacfe.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/93db7a4dacfe.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Characterization of Request and Token Energy Costs for LLM Inference Workloads on GPU Platforms">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Characterization of Request and Token Energy Costs for LLM Inference Workloads on GPU Platforms",
+ "inLanguage":"en","datePublished":"2026-09-01T07:00:00+09:00","dateModified":"2026-09-01T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2608.28044","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/93db7a4dacfe.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/93db7a4dacfe.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Characterization of Request and Token Energy Costs for LLM Inference Workloads on GPU Platforms</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/01</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/93db7a4dacfe.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.28044" rel="nofollow noopener">https://arxiv.org/abs/2608.28044</a></span></div>
+  <div class="article-body"><p>arXiv:2608.28044v1 Announce Type: cross 
+Abstract: Large language model (LLM) inference serving is priced by tokens, but GPU energy is consumed over inference windows. This accounting mismatch makes token-normalized metrics incomplete, since average output-token energy can decrease even when total request energy increases. We characterize this behavior with a decomposed energy model: a fixed one-time prefill with a fixed generation setup cost, while each output-token generation step adds marginal step energy. We evaluate this LLM inference energy model on NVIDIA H100 and H200 GPUs across dense and mixture-of-experts (MoE) models, reporting both request energy and token energy as functions of model type (M), phase (P), batch size (B), context length (C), and output length (N). For Llama-3.2-1B on H200 at batch-16 and context-4K, increasing output length from 10 to 512 tokens reduces token energy from 7.46 to 0.72 J/token while total batched inference-window energy increases from 1.19 to 5.93 kJ. Batching also reduces token energy, but the gain is context-bounded: at 10 output tokens, the batch-16 to batch-1 gain falls from 6.31x at context-512 to 1.17x at context-4K. MoE models amplify this effect: sparse routing and fragmented expert execution increase fixed energy at low concurrency, while batching spreads that energy across more generated tokens and substantially narrows the dense-vs.-MoE token-energy gap. These results show that energy-aware serving should jointly optimize both request energy and token energy, rather than only reducing per-token energy cost.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

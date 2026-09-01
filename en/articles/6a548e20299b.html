@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Response Magnitude as a Dominant Signal for Held-Out CRISPRi Perturbation Effect Prediction — NewsMatome (EN)</title>
-<meta name="description" content="Response Magnitude as a Dominant Signal for Held-Out CRISPRi Perturbation Effect Prediction — original-language edition. Japanese translation available.">
+<title>Locked Evaluation Surfaces: Transfer Failure and Sampling-Depth Entanglement in CRISPRi Perturbation-Effect Prediction — NewsMatome (EN)</title>
+<meta name="description" content="Locked Evaluation Surfaces: Transfer Failure and Sampling-Depth Entanglement in CRISPRi Perturbation-Effect Prediction — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/6a548e20299b.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/6a548e20299b.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/6a548e20299b.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/6a548e20299b.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Response Magnitude as a Dominant Signal for Held-Out CRISPRi Perturbation Effect Prediction">
+<meta property="og:title" content="Locked Evaluation Surfaces: Transfer Failure and Sampling-Depth Entanglement in CRISPRi Perturbation-Effect Prediction">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Response Magnitude as a Dominant Signal for Held-Out CRISPRi Perturbation Effect Prediction",
- "inLanguage":"en","datePublished":"2026-08-05T07:00:00+09:00","dateModified":"2026-08-05T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Locked Evaluation Surfaces: Transfer Failure and Sampling-Depth Entanglement in CRISPRi Perturbation-Effect Prediction",
+ "inLanguage":"en","datePublished":"2026-09-01T07:00:00+09:00","dateModified":"2026-09-01T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2608.00152","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/6a548e20299b.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Response Magnitude as a Dominant Signal for Held-Out CRISPRi Perturbation Effect Prediction</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/05</span></div>
+    <h1>Locked Evaluation Surfaces: Transfer Failure and Sampling-Depth Entanglement in CRISPRi Perturbation-Effect Prediction</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/01</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/6a548e20299b.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.00152" rel="nofollow noopener">https://arxiv.org/abs/2608.00152</a></span></div>
-  <div class="article-body"><p>arXiv:2608.00152v1 Announce Type: new 
-Abstract: Predicting the magnitude of a CRISPRi perturbation&#x27;s transcriptomic effect on held-out target genes is an important open problem in single-cell biology. Recent work has documented that simple baselines often match or exceed deep perturbation predictors on related protocols. We study this phenomenon on the Virtual Cell Challenge (VCC) benchmark under a strict held-out target-gene split, identify the specific low-dimensional signal that drives the gap, and characterize how it transfers across cell types. The target is the log Anderson-Darling distance from non-targeting controls, which is strongly predictable from four deterministic scalar functions of the 2,000-dimensional input. A deep MLP encoder with direct access to the full input collapses toward the marginal training mean, and standard remedies do not close the gap. A linear regression on the four magnitude scalars alone exceeds the strongest x-only classical model, while a Random Forest on the input plus the four scalars substantially outperforms our deep proof-of-concept encoder. Two pre-specified controls attribute the magnitude gain to per-row alignment rather than added dimensionality. Under zero-shot transfer to two external CRISPRi screens evaluated against a target-gene endpoint rebuilt from single-cell data, magnitude-only predictors transfer positively whereas expression-only predictors are negative or unresolved. Exposing magnitude to the deep encoder improves transfer over its expression-only counterpart, yet the encoder does not outperform a four-scalar linear regression on the same features. We also find that the Anderson-Darling column distributed with these screens measures transcriptome-wide response breadth rather than target-gene effect strength, so evaluating transfer against it scores a different outcome.</p></div>
+  <div class="article-body"><p>arXiv:2608.00152v2 Announce Type: replace 
+Abstract: Predicting how held-out target genes respond to CRISPRi perturbation, and whether such predictions transfer across biological screens, is hard to evaluate: a representation can be informative within one screen yet fail across screens, while endpoint definitions and design factors such as sampling depth differ between datasets. We evaluate a frozen Geneformer representation under a locked, pre-registered protocol, with heads and model selection frozen before test evaluation, external outcome labels withheld until final unblinding, and analysis-governing decisions fixed before the evaluations they govern. In-distribution on the Virtual Cell Challenge (VCC), the frozen representation carries measurable predictive information beyond a dimension-matched random-feature control (Delta R^2 = +0.1645, 95% CI [+0.1375, +0.1920]), satisfying the pre-registered informativeness gate required before interpreting transfer. It then fails zero-shot transfer on both external screens (Spearman rho = -0.139 and -0.267), lying below that control on each. Adding a predefined magnitude block improves the representation externally (Delta rho = +0.032 and +0.143) but does not rescue transfer: both remain negative. A pre-registered, count-adjusted max-response secondary is positively associated with the outcome on both screens; we report it as correlational and secondary, not as a recovered magnitude signal. Finally, the VCC endpoint is strongly sample-size associated: a count-only linear model reaches R^2 = +0.4325, versus +0.2589 for the four magnitude scalars; adding those scalars to cell count improves R^2 by only +0.0017, so much of the aggregate-magnitude signal overlaps with cell count. A locked evaluation thus surfaces a transfer failure and a sampling-depth entanglement that a less controlled evaluation could obscure.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>
