@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>A Constant-Competitive Algorithm for Dynamic Mixture-of-Experts Serving — NewsMatome (EN)</title>
-<meta name="description" content="A Constant-Competitive Algorithm for Dynamic Mixture-of-Experts Serving — original-language edition. Japanese translation available.">
+<title>A Deterministic Constant-Competitive Algorithm for Dynamic Mixture-of-Experts Serving — NewsMatome (EN)</title>
+<meta name="description" content="A Deterministic Constant-Competitive Algorithm for Dynamic Mixture-of-Experts Serving — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/23fc7b754a93.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/23fc7b754a93.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/23fc7b754a93.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/23fc7b754a93.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="A Constant-Competitive Algorithm for Dynamic Mixture-of-Experts Serving">
+<meta property="og:title" content="A Deterministic Constant-Competitive Algorithm for Dynamic Mixture-of-Experts Serving">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"A Constant-Competitive Algorithm for Dynamic Mixture-of-Experts Serving",
- "inLanguage":"en","datePublished":"2026-08-20T07:00:00+09:00","dateModified":"2026-08-20T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"A Deterministic Constant-Competitive Algorithm for Dynamic Mixture-of-Experts Serving",
+ "inLanguage":"en","datePublished":"2026-09-02T07:00:00+09:00","dateModified":"2026-09-02T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2608.16947","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/23fc7b754a93.html"}
@@ -34,14 +34,15 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>A Constant-Competitive Algorithm for Dynamic Mixture-of-Experts Serving</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/20</span></div>
+    <h1>A Deterministic Constant-Competitive Algorithm for Dynamic Mixture-of-Experts Serving</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/02</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/23fc7b754a93.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.16947" rel="nofollow noopener">https://arxiv.org/abs/2608.16947</a></span></div>
-  <div class="article-body"><p>arXiv:2608.16947v1 Announce Type: cross 
-Abstract: Huang, Lou, and Xiao introduced Dynamic Mixture-of-Experts Serving and gave an O(sqrt(log k))-competitive randomized algorithm for its integral primal problem, where k is the number of replica GPUs beyond the mandatory copy of each expert. Their matching lower barrier applies to an auxiliary dual and leaves the primal order open. We prove that the randomized primal competitive ratio is in fact Theta(1) for arbitrary numbers of experts. The upper bound reduces reciprocal-max service costs to chasing positive bodies with covering row sparsity two. A finite tangent envelope approximates each reciprocal epigraph within a constant factor, summable positive resets convert accumulated service into movement, and a nonexpansive balanced projection removes the positive-body algorithm&#x27;s resource augmentation. Combining the resulting fractional path with Lazy Threshold Rounding gives
-  E[ALG] &lt;= 10 C_PB OPT + (5 C_PB + 2) k + 16,
-  where C_PB is the absolute constant from Chasing Positive Bodies at resource augmentation one and covering sparsity two. The full reduction, rounding composition, and quantified main theorem are machine-checked in Lean 4 relative to exact formal interfaces for the two cited source theorems. Deterministic rational controls and a fresh independent replay accompany the formal proof.</p></div>
+  <div class="article-body"><p>arXiv:2608.16947v2 Announce Type: replace-cross 
+Abstract: Dynamic Mixture-of-Experts Serving allocates k replica GPUs among m experts as workloads change. At each round, the online algorithm sees the current workload, chooses integral replica counts, and pays bottleneck service cost plus replica movement. It does not know future workloads. Huang, Lou, and Xiao gave an O(sqrt(log k))-competitive randomized algorithm for this problem. We prove a deterministic O(1)-competitive algorithm. For every number of experts and every k&gt;=1, the algorithm satisfies
+  ALG_det &lt;= 10 C_PB OPT + (5 C_PB + 8) k + 16,
+  where C_PB is the absolute constant from Chasing Positive Bodies at resource augmentation one and covering sparsity two. Consequently, CR_det(k)&lt;=10 C_PB for every k&gt;=1, so CR_det(k)=Theta(1). The multiplicative factor does not depend on the number of experts, replica budget, horizon, or workload values. Thus randomization is not needed for the asymptotic guarantee.
+  The proof has two layers. A finite tangent envelope, summable positive resets, and a nonexpansive balanced projection reduce reciprocal-max service costs to a deterministic exact-budget fractional path. A new deterministic rounding theorem converts every such path to integral allocations with service distortion three and movement bounded by the fractional movement plus 6k. The complete reduction, rounding theorem, causal composition, and quantified main theorem are machine-checked in Lean 4 relative to the positive-body result as the sole scientific source premise. The theorem concerns the allocation model above. It does not include network topology, shared-edge congestion, or routing decisions.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

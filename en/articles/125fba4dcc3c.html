@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Convergence rates for the RMSprop optimizer with full control of the hyperparameters — NewsMatome (EN)</title>
+<meta name="description" content="Convergence rates for the RMSprop optimizer with full control of the hyperparameters — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/125fba4dcc3c.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/125fba4dcc3c.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/125fba4dcc3c.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/125fba4dcc3c.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Convergence rates for the RMSprop optimizer with full control of the hyperparameters">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Convergence rates for the RMSprop optimizer with full control of the hyperparameters",
+ "inLanguage":"en","datePublished":"2026-09-02T07:00:00+09:00","dateModified":"2026-09-02T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2608.30382","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/125fba4dcc3c.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/125fba4dcc3c.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Convergence rates for the RMSprop optimizer with full control of the hyperparameters</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/02</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/125fba4dcc3c.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.30382" rel="nofollow noopener">https://arxiv.org/abs/2608.30382</a></span></div>
+  <div class="article-body"><p>arXiv:2608.30382v1 Announce Type: new 
+Abstract: Popular adaptive stochastic gradient descent (SGD) methods to train artificial intelligence (AI) systems include the RMSprop, the Adam, and the AdamW optimizers, where the adaptivity parts in Adam and AdamW basically just coincide with RMSprop. Such adaptive methods involve several hyperparameters including the regularization parameter $\epsilon$ (which ensures that one does not divide by 0 and is often chosen to be very close to zero such as $10^{-8}$ in PyTorch by default) and the second moment decay parameter $\beta$ (which is often chosen to be very close to $1$ such as 0.99 (RMSprop) and 0.999 (Adam and AdamW) in PyTorch by default). Despite the high relevance of such methods, it remains an open research problem to provide error estimates for such methods with the error constants being not exploding but uniformly bounded with the respect to the hyperparameters, even in the situation of convex stochastic optimization problems.
+  It is the key contribution of this work to essentially solve this problem for RMSprop. Specifically, we bound the expectation of the stopped evaluation of the objective function at the RMSprop process from above by the sum of an initialization term that decays exponentially in the training time, a stochastic approximation remainder of order $\gamma_n$, and a memory error of order $( 1 - \beta)^2$ with the error constants being uniformly controlled over all admissible choices of the step sizes, the second moment decay parameter $\beta$ and the regularization parameter $\epsilon\in[0,1]$ (also covering $\epsilon=0$). Our non-asymptotic error estimates hold not just for all sufficiently large n but hold for every gradient step $n=1,2,3,...$ with all error constants being explicitly specified. The key innovative new feature in the proof of our analysis are suitable inverse moment bounds for the second moment process in RMSprop.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

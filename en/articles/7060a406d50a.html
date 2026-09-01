@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>post-graph-rag: A PostgreSQL-Native Bi-Temporal Graph RAG Engine with Temporal Grounding at Synthesis — NewsMatome (EN)</title>
+<meta name="description" content="post-graph-rag: A PostgreSQL-Native Bi-Temporal Graph RAG Engine with Temporal Grounding at Synthesis — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/7060a406d50a.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/7060a406d50a.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/7060a406d50a.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/7060a406d50a.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="post-graph-rag: A PostgreSQL-Native Bi-Temporal Graph RAG Engine with Temporal Grounding at Synthesis">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"post-graph-rag: A PostgreSQL-Native Bi-Temporal Graph RAG Engine with Temporal Grounding at Synthesis",
+ "inLanguage":"en","datePublished":"2026-09-02T07:00:00+09:00","dateModified":"2026-09-02T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2608.24921","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/7060a406d50a.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/7060a406d50a.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>post-graph-rag: A PostgreSQL-Native Bi-Temporal Graph RAG Engine with Temporal Grounding at Synthesis</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/02</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/7060a406d50a.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.24921" rel="nofollow noopener">https://arxiv.org/abs/2608.24921</a></span></div>
+  <div class="article-body"><p>arXiv:2608.24921v2 Announce Type: replace 
+Abstract: Graph RAG connects facts no single passage states, but implementations pay three times: in infrastructure, keeping vector store, graph database and document store in sync; in quality, because a pipeline that never refuses extractor output stores edges that assert nothing; and over time, because a graph that only accumulates treats superseded and current facts alike.
+  post-graph-rag is an open-source engine addressing all three. Chunks with embeddings, a canonical entity graph and community summaries live in one PostgreSQL database, with pgvector for search and edge tables for traversal. Extraction output is validated before writing: vague predicates, pronominal names and bare quantities are rejected, predicates normalise onto an optional vocabulary, entities resolve to one vertex per canonical name, and denials keep the positive predicate under a negation flag. A bi-temporal layer records when a relation held and when the system believed it, superseding incompatible earlier assertions from document order.
+  Against LightRAG on three corpora with extraction and embedding models fixed, it builds a denser graph everywhere, up to $2.4\times$ the relations per entity, and a more queryable one: 0.46-0.58 distinct edge labels per relation against 0.77-1.33. It supersedes 13 and 8 relationships where the baseline, having no temporal model, supersedes none.
+  On LongMemEval, 500 questions of long-horizon chat memory, it scores 85.8 percent with gemini-3.6-flash against 71.2 for Zep&#x27;s gpt-4o and 60.2 for a full-context baseline, leading on all six question types. The largest single contribution is temporal grounding in the prompt: carrying each relation&#x27;s validity period through to synthesis moves temporal reasoning from 0.496 to 0.881, ablated paired on one graph per instance.
+  Code: post-graph-rag https://github.com/crajah/post-graph-rag; post-graph https://github.com/crajah/post-graph</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

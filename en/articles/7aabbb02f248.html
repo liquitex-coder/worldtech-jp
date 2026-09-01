@@ -17,7 +17,7 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"Instruction-Tuned Language Models Cannot Sample from Distributions They Can Describe",
- "inLanguage":"en","datePublished":"2026-07-31T07:00:00+09:00","dateModified":"2026-07-31T07:00:00+09:00",
+ "inLanguage":"en","datePublished":"2026-09-02T07:00:00+09:00","dateModified":"2026-09-02T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.25292","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/7aabbb02f248.html"}
@@ -35,11 +35,11 @@
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
     <h1>Instruction-Tuned Language Models Cannot Sample from Distributions They Can Describe</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/31</span></div>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/02</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/7aabbb02f248.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.25292" rel="nofollow noopener">https://arxiv.org/abs/2607.25292</a></span></div>
-  <div class="article-body"><p>arXiv:2607.25292v1 Announce Type: new 
-Abstract: Silicon sampling uses language models as proxies for human survey respondents, treating each model call as an independent draw from the persona&#x27;s response distribution. We show this draw does not exist: instruction-tuned models do not sample from distributions, they collapse to a single output. The same persona on the same question returns the same answer on more than half of items in a public-opinion benchmark. The collapse is sharp: the model&#x27;s internal probabilities concentrate on a single option, and the failure is substantially amplified by instruction tuning: across three model families with materially different post-training pipelines, every instruction-tuned model fails on every task we test, while base models fail far less often. Strikingly, the same model that cannot sample from a distribution can describe it accurately in a single call. We call this gap the KNOWS/DOES split, and trace it to a degenerate sampling primitive visible in the logits and induced by alignment training. Exploiting this split, asking the model to describe the response distribution in one call more than halves the error against human survey data compared to persona aggregation. For applications that require per-persona outputs, we propose Prompt-Perturbed Argyle (PPA), which reduces the same error by 21% at no added cost.</p></div>
+  <div class="article-body"><p>arXiv:2607.25292v2 Announce Type: replace 
+Abstract: Silicon sampling uses language models as proxies for human survey respondents, treating each model call as an independent draw from the persona&#x27;s response distribution. We show this draw does not exist: instruction-tuned models do not sample from distributions, they collapse to a single output. The same persona on the same question returns the same answer on more than half of items in a public-opinion benchmark, and the model&#x27;s internal probabilities concentrate on a single option. The failure is associated with, and amplified by, instruction-targeted post-training: instruction-tuned models are worse than their own bases in every family we can compare, the gap widens at each successive post-training stage and with the size of the tuning update, and continued pretraining on non-instruction tokens leaves it unchanged. Yet the knowledge survives: the same model that cannot sample from a distribution can describe it accurately in a single call. We call this gap the KNOWS/DOES split. Exploiting the split, a single call that asks the model to describe the response distribution more than halves the error against human survey data compared to persona aggregation. When per-persona outputs are required, we propose Prompt-Perturbed Argyle (PPA), which reduces the same error by 21\%, spreading each persona&#x27;s answers to mirror real population differences at no added cost.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

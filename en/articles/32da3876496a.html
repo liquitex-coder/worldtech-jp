@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PUFFER: Incremental Fuzzy Deduplication for Continuously Evolving Corpora — NewsMatome (EN)</title>
+<meta name="description" content="PUFFER: Incremental Fuzzy Deduplication for Continuously Evolving Corpora — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/32da3876496a.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/32da3876496a.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/32da3876496a.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/32da3876496a.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PUFFER: Incremental Fuzzy Deduplication for Continuously Evolving Corpora">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"PUFFER: Incremental Fuzzy Deduplication for Continuously Evolving Corpora",
+ "inLanguage":"en","datePublished":"2026-09-02T07:00:00+09:00","dateModified":"2026-09-02T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2608.28622","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/32da3876496a.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/32da3876496a.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>PUFFER: Incremental Fuzzy Deduplication for Continuously Evolving Corpora</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/02</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/32da3876496a.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.28622" rel="nofollow noopener">https://arxiv.org/abs/2608.28622</a></span></div>
+  <div class="article-body"><p>arXiv:2608.28622v1 Announce Type: cross 
+Abstract: Large language model training corpora grow through successive, often redundant releases, so each release must be deduplicated against both itself and the accumulated history. At trillion-token scale, this requires incremental ingestion, bounded resident memory, deterministic retry, and dataset-scoped lifecycle control without repeated corpus-wide rebuilding. We introduce PUFFER (Provenance-aware Updatable Fuzzy Filtering for Evolving Repositories), a MinHash-LSH fuzzy-deduplication pipeline built around two design choices. First, PUFFER stores each LSH band as immutable, dataset-tagged, memory-mapped sorted segments, enabling exact historical band-key membership checks without RAM proportional to corpus size. Second, T-fanout tiered compaction periodically merges segments to control screening fanout, trading lower query cost against additional index-maintenance writes while preserving membership decisions. Across N ingested keys and K equal-sized releases, PUFFER&#x27;s cumulative maintenance cost is O(N log N log_T K), compared with Theta(KN) for repeated snapshot rebuilding. Dataset-tagged segments also support dataset-scoped withdrawal: removal is constant-time for uncompacted or protected datasets, while post-compaction withdrawal reconstructs only the affected merged segment, even if the original dataset is unavailable. In our implementation, PUFFER completed cumulative index-stage ingestion for one billion documents in about 1.75 hours in a single process, using 128 bytes per document for a 16-band index. A classical resident MinHash-LSH table required about 6.5 KB per document and exceeded a 900 GiB RAM cap. In a ten-hour comparison capped at one billion documents, PUFFER was 11x faster than LSHBloom and 35x faster than Milvus-LSH. PUFFER is deployed on more than 30 billion documents, and we release it as open-source software at https://github.com/Zyphra/puffer.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

@@ -17,7 +17,7 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"Are Single-Token Sparse Autoencoder Features Causally Necessary? Layer-Depth and SAE-Family Effects",
- "inLanguage":"en","datePublished":"2026-07-25T07:00:00+09:00","dateModified":"2026-07-25T07:00:00+09:00",
+ "inLanguage":"en","datePublished":"2026-09-02T07:00:00+09:00","dateModified":"2026-09-02T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.20596","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/20f34b9439d6.html"}
@@ -35,11 +35,11 @@
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
     <h1>Are Single-Token Sparse Autoencoder Features Causally Necessary? Layer-Depth and SAE-Family Effects</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/25</span></div>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/02</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/20f34b9439d6.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.20596" rel="nofollow noopener">https://arxiv.org/abs/2607.20596</a></span></div>
-  <div class="article-body"><p>arXiv:2607.20596v1 Announce Type: new 
-Abstract: Sparse autoencoder (SAE) features are used to interpret and steer large language models, yet whether a feature&#x27;s causal role is stable across SAE families remains untested. Single-token features that activate on one vocabulary item provide the diagnostic case where ground truth permits direct comparison. We analyze 3.9M features across six models and three SAE families using zero-ablation at full layer depth. Single-token features cluster 4.7x tighter in decoder space and concentrate in early layers (Layer 0 in GPT2-Small; L0-L4 in Gemma). Ablating them yields Benjamini-Hochberg-significant logit reductions in 178 of 208 full-layer conditions, with depth controlling whether damage cascades downstream or shapes the output directly. Cross-family causal differences exceed within-family scale effects: on the same base model, GemmaScope and BatchTopK features remain causally anchored, while LlamaScope features are locally redundant. The target token&#x27;s rank recovers to within 2x baseline 96-98% of the time after the same ablation, and a controlled activation-function comparison reverses sign within the same model, leaving training recipe as the residual candidate. Cross-family interpretability claims are therefore sensitive to training methodology, not just activation function or scale.</p></div>
+  <div class="article-body"><p>arXiv:2607.20596v2 Announce Type: replace 
+Abstract: Sparse autoencoder (SAE) features are used to interpret and steer large language models, yet nobody has tested whether a feature&#x27;s causal role is stable across SAE families. Single-token features fire on one vocabulary item, so ground truth permits direct comparison. We analyze 3.9M features across six models and three SAE families and zero-ablate at full layer depth: they sit 4.7x tighter in decoder space and concentrate in early layers. Deleting one lowers the model&#x27;s logit for that token in 178 of 208 layer conditions, significant after multiple-comparison correction. And depth decides how the damage lands: early-layer deletions disrupt the layers that follow, late-layer deletions change the output directly. Cross-family causal differences exceed within-family scale effects: on the same base model, GemmaScope and BatchTopK features are causally anchored, LlamaScope features locally redundant. Under LlamaScope the token returns to within 2x its pre-ablation rank 96-98% of the time. Changing only the activation function reverses the sign of that difference, so the training recipe is the remaining candidate: cross-family claims are sensitive to training methodology, not just activation function or scale.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

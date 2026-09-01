@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bregman Linearized Augmented Lagrangian Method for Nonconvex Constrained Stochastic Zeroth-order Optimization — NewsMatome (EN)</title>
-<meta name="description" content="Bregman Linearized Augmented Lagrangian Method for Nonconvex Constrained Stochastic Zeroth-order Optimization — original-language edition. Japanese translation available.">
+<title>Mirror Descent Linearized Augmented Lagrangian Methods for Nonconvex Constrained Stochastic Zeroth-Order Optimization — NewsMatome (EN)</title>
+<meta name="description" content="Mirror Descent Linearized Augmented Lagrangian Methods for Nonconvex Constrained Stochastic Zeroth-Order Optimization — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/2c90b2c82c55.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/2c90b2c82c55.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/2c90b2c82c55.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/2c90b2c82c55.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Bregman Linearized Augmented Lagrangian Method for Nonconvex Constrained Stochastic Zeroth-order Optimization">
+<meta property="og:title" content="Mirror Descent Linearized Augmented Lagrangian Methods for Nonconvex Constrained Stochastic Zeroth-Order Optimization">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Bregman Linearized Augmented Lagrangian Method for Nonconvex Constrained Stochastic Zeroth-order Optimization",
- "inLanguage":"en","datePublished":"2026-08-29T07:00:00+09:00","dateModified":"2026-08-29T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Mirror Descent Linearized Augmented Lagrangian Methods for Nonconvex Constrained Stochastic Zeroth-Order Optimization",
+ "inLanguage":"en","datePublished":"2026-09-02T07:00:00+09:00","dateModified":"2026-09-02T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2504.09409","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/2c90b2c82c55.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Bregman Linearized Augmented Lagrangian Method for Nonconvex Constrained Stochastic Zeroth-order Optimization</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/29</span></div>
+    <h1>Mirror Descent Linearized Augmented Lagrangian Methods for Nonconvex Constrained Stochastic Zeroth-Order Optimization</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/02</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/2c90b2c82c55.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2504.09409" rel="nofollow noopener">https://arxiv.org/abs/2504.09409</a></span></div>
-  <div class="article-body"><p>arXiv:2504.09409v2 Announce Type: replace-cross 
-Abstract: In this paper, we study nonconvex constrained stochastic zeroth-order optimization problems, for which we have access to exact information of constraints and noisy function values of the objective. We propose a Bregman linearized augmented Lagrangian method that utilizes stochastic zeroth-order gradient estimators combined with a variance reduction technique. We analyze its oracle complexity, in terms of the total number of stochastic function value evaluations required to achieve an \(\epsilon\)-KKT point in \(\ell_p\)-norm metrics with \(p \ge 2\), where \(p\) is a parameter associated with the selected Bregman distance. In particular, starting from a near-feasible initial point and using Rademacher smoothing, the oracle complexity is in order \(O(p d^{2/p} \epsilon^{-3})\) for \(p \in [2, 2 \ln d]\), and \(O(\ln d \cdot \epsilon^{-3})\) for \(p &gt; 2 \ln d\), where \(d\) denotes the problem dimension. Those results show that the complexity of the proposed method can achieve a dimensional dependency lower than \(O(d)\) without requiring additional assumptions, provided that a Bregman distance is chosen properly. This offers a significant improvement in the high-dimensional setting over existing work, and matches the lowest complexity order with respect to the tolerance \(\epsilon\) reported in the literature. Numerical experiments on constrained Lasso and black-box adversarial attack problems highlight the promising performances of the proposed method.</p></div>
+  <div class="article-body"><p>arXiv:2504.09409v3 Announce Type: replace-cross 
+Abstract: In this paper, we study nonconvex constrained stochastic zeroth-order optimization problems with exact constraints and stochastic objective evaluations. To solve this class of problems, we propose a framework of mirror descent linearized augmented Lagrangian methods that employs two-point stochastic zeroth-order gradient estimators and exploits non-Euclidean mirror descent geometry. Under mild assumptions, we establish oracle complexity guarantees for finding an $\epsilon$-KKT point parameterized by $p \geq 2$. Under Rademacher smoothing, our analysis reveals a trade-off between the variance of the zeroth-order gradient estimators and the smoothness of the mirror map. In the high-accuracy regime, the resulting effective oracle complexity is $\mathcal{O}(p d^{2/p}\epsilon^{-3})$ for $p \in [2,2\ln d]$ and $\mathcal{O}(\ln d\,\epsilon^{-3})$ for $p &gt; 2\ln d$. These bounds reduce the dimension dependence in the leading term. When $p=2$, our method recovers the Euclidean setting with an oracle complexity of $\mathcal{O}(d\epsilon^{-3})$, improving the $\epsilon$-dependence over existing methods. Furthermore, to eliminate initial near-feasibility requirements, we introduce a multi-stage scheme that finds an $\epsilon$-KKT point within $\mathcal{O}(1+\log\log(e/\epsilon))$ stages while maintaining the leading-order complexity. Numerical tests on QCQPs, black-box adversarial attacks, and fairness-constrained classification demonstrate the effectiveness of our proposed method.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>
