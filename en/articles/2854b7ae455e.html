@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Replicating TRACE: A Practitioner&#x27;s Guide to Its Threshold and Particle Budget — NewsMatome (EN)</title>
+<meta name="description" content="Replicating TRACE: A Practitioner&#x27;s Guide to Its Threshold and Particle Budget — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/2854b7ae455e.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/2854b7ae455e.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/2854b7ae455e.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/2854b7ae455e.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Replicating TRACE: A Practitioner&#x27;s Guide to Its Threshold and Particle Budget">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Replicating TRACE: A Practitioner&#x27;s Guide to Its Threshold and Particle Budget",
+ "inLanguage":"en","datePublished":"2026-09-03T07:00:00+09:00","dateModified":"2026-09-03T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.01108","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/2854b7ae455e.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/2854b7ae455e.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Replicating TRACE: A Practitioner&#x27;s Guide to Its Threshold and Particle Budget</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/03</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/2854b7ae455e.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.01108" rel="nofollow noopener">https://arxiv.org/abs/2609.01108</a></span></div>
+  <div class="article-body"><p>arXiv:2609.01108v1 Announce Type: new 
+Abstract: TRACE (Math &amp; Lienhart, arXiv:2602.01135) reads causal graphs over event types out of a pretrained autoregressive sequence model by thresholding a per-position conditional-mutual-information estimate at a fixed tau. We independently replicate its headline synthetic result: with tau selected on a validation split, mean per-sequence F1 against exact interventional truth reaches 0.90-0.91 at vocabulary size 1000 (paper: 0.91) and 0.86-0.91 from 100 to 2000. First, the optimal threshold is pinned to the truth margin, not to any constant: at every size the errors at tau* straddle the delta = 0.05 margin defining ground truth (missed true edges lie just above it, accepted false ones just below), and the blind optimum lands near delta/2 times the estimator&#x27;s calibration, confirmed out of sample at 5000. Second, at a single global threshold TRACE mostly recovers a direct, adjacent-influence graph: lag-1 true edges are recalled at 0.97-0.99, while true edges at lag 2 or more read orders of magnitude lower---the reading-scale price of randomizing mediating positions, which an exact test of direct causal effect requires when the truth is unknown. A per-lag threshold family recovers a third to a half of lag-2 truth; on lag-uniform data one validated threshold recalls every lag at 0.40-0.87, 8-26 pp below an atomic-intervention control at lags 3-6. Third, the default lag decay of the paper&#x27;s synthetic benchmark concentrates about 85% of interventional truth at lag 1 and pushes the rest below the estimator&#x27;s noise floor, so headline F1 there certifies lag-1 recovery only and conflates the benchmark&#x27;s skew with the algorithm&#x27;s own limit; a flatter decay separates the two. Fourth, F1 saturates from N = 2 particles at the selected threshold---a property of the threshold&#x27;s margin over the noise floor, not of the estimator, which converges as N^(-1/2). We distill five practitioner rules.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

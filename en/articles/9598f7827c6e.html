@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beyond Dense Adam States: Adaptive Log-Space Quantization for Memory-Efficient Optimizers — NewsMatome (EN)</title>
+<meta name="description" content="Beyond Dense Adam States: Adaptive Log-Space Quantization for Memory-Efficient Optimizers — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/9598f7827c6e.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/9598f7827c6e.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/9598f7827c6e.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/9598f7827c6e.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Beyond Dense Adam States: Adaptive Log-Space Quantization for Memory-Efficient Optimizers">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Beyond Dense Adam States: Adaptive Log-Space Quantization for Memory-Efficient Optimizers",
+ "inLanguage":"en","datePublished":"2026-09-03T07:00:00+09:00","dateModified":"2026-09-03T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2608.22322","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/9598f7827c6e.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/9598f7827c6e.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Beyond Dense Adam States: Adaptive Log-Space Quantization for Memory-Efficient Optimizers</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/03</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/9598f7827c6e.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.22322" rel="nofollow noopener">https://arxiv.org/abs/2608.22322</a></span></div>
+  <div class="article-body"><p>arXiv:2608.22322v3 Announce Type: replace 
+Abstract: Optimizer-state quantization is commonly designed for Adam&#x27;s dense, parameter-aligned first- and second-moment arrays. This abstraction breaks for memory-efficient optimizers, whose states may be factored, confidence-modulated, or maintained in a projected space, so similar reconstruction error can produce different update error. We formulate optimizer-state quantization as a joint problem over representation, topology, and update semantics. We then introduce Adaptive Log-Space (AL) quantization for non-negative states. AL fits each block&#x27;s observed nonzero logarithmic interval and reserves a separate code for exact zero, enforcing $q = 0 \Leftrightarrow x = 0$; signed momentum and state precision remain independently selectable. Controlled probes show that adaptive ranges reduce update error and temporal drift, exact-zero reservation preserves dormant states, and state topology constrains useful block granularity. End-to-end language-model training evaluates the resulting policy across dense, factored, confidence, and projected optimizer states. On TinyLlama-1.1B, AL8 with uniform 8-bit momentum reaches 72.90 perplexity versus 73.54 for bitsandbytes 8-bit AdamW, with comparable optimizer-state storage and higher throughput. CAME matches reference-level final perplexity across three seeds when its non-negative states use AL16, while a semantic grouping-and-protection policy closes most of quantized Adafactor&#x27;s 100K-step late-loss gap. These results make state topology and update semantics first-class design constraints for optimizer quantization.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

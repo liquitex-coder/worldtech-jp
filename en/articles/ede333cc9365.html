@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iterative GRPO: Batch-Online Policy Iteration for Multi-Turn RL via Single-Turn RLHF — NewsMatome (EN)</title>
+<meta name="description" content="Iterative GRPO: Batch-Online Policy Iteration for Multi-Turn RL via Single-Turn RLHF — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/ede333cc9365.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/ede333cc9365.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/ede333cc9365.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/ede333cc9365.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Iterative GRPO: Batch-Online Policy Iteration for Multi-Turn RL via Single-Turn RLHF">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Iterative GRPO: Batch-Online Policy Iteration for Multi-Turn RL via Single-Turn RLHF",
+ "inLanguage":"en","datePublished":"2026-09-03T07:00:00+09:00","dateModified":"2026-09-03T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2511.21638","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/ede333cc9365.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/ede333cc9365.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Iterative GRPO: Batch-Online Policy Iteration for Multi-Turn RL via Single-Turn RLHF</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/03</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/ede333cc9365.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2511.21638" rel="nofollow noopener">https://arxiv.org/abs/2511.21638</a></span></div>
+  <div class="article-body"><p>arXiv:2511.21638v2 Announce Type: replace 
+Abstract: Practical LLM agents often operate over multi-turn conversations where success is determined only after the full interaction ends. Most multi-turn RL methods train via on-policy rollouts, but unlike in single-turn RLHF, the policy cannot produce a trajectory alone, since an external environment must respond after each agent turn. For conversational agents, this environment is a user, but real users are generally unavailable inside the training loop and simulated users are difficult to build faithfully. Separately, real-world deployment is rarely fully online or fully offline. The common production pattern is called &quot;batch online,&quot; where the current policy is deployed to collect a batch of interaction data, then retrained on that batch and redeployed. We show that this batch-online setting creates an opportunity for applying the classical approximate policy iteration algorithm. Our central observation is that running standard token-level, single-turn GRPO with a learned turn-level $Q$-function as the reward model is a policy improvement step for the multi-turn problem. Building on this, we present Iterative GRPO, which alternates between fitting $Q^\pi$ from logged Monte Carlo returns via standard reward modeling (policy evaluation) and running single-turn GRPO against $Q^\pi$ (policy improvement). During policy improvement, the learned $Q^\pi$ scores candidate responses by their expected downstream return, avoiding the need for simulator rollouts of the remaining conversation. Overall, this allows us to do principled multi-turn RL using only single-turn RLHF methods without an interactive environment or user simulator inside the training loop. We demonstrate the effectiveness of Iterative GRPO on six multi-turn negotiation environments.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
