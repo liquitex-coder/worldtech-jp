@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inference-Native Zeroth-Order Optimization — NewsMatome (EN)</title>
+<meta name="description" content="Inference-Native Zeroth-Order Optimization — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/bea4eb7c55d7.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/bea4eb7c55d7.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/bea4eb7c55d7.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/bea4eb7c55d7.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Inference-Native Zeroth-Order Optimization">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Inference-Native Zeroth-Order Optimization",
+ "inLanguage":"en","datePublished":"2026-09-04T07:00:00+09:00","dateModified":"2026-09-04T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2605.28760","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/bea4eb7c55d7.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/bea4eb7c55d7.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Inference-Native Zeroth-Order Optimization</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/04</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/bea4eb7c55d7.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2605.28760" rel="nofollow noopener">https://arxiv.org/abs/2605.28760</a></span></div>
+  <div class="article-body"><p>arXiv:2605.28760v2 Announce Type: replace 
+Abstract: Zeroth-order (ZO) optimization removes backpropagation, but conventional implementations still create candidate states by mutating model weights and materialize updates through the full parameter state. We introduce Inference-Native ZO, which exposes ZO&#x27;s query semantics and lowers candidate-state evaluation and mutable learning state to abstractions an inference runtime can execute directly.
+  We formulate ZO as programmable gradient acquisition through candidate-state queries. Direction construction, candidate selection, observation, estimation, and update semantics form a query process whose model-facing primitive is candidate evaluation. We formalize the logical queries required by that process as a ProbePlan, leaving physical state realization and scheduling to the backend. Factorized side states, persistent-subspace reuse, lazy updates, and optional LoRA banks reduce state-management cost. The same formulation covers token-scoring/prefill queries and autoregressive generation while inheriting adapter dispatch, quantization, batching, parallelism, and scheduling from the runtime. A multivariate central-limit argument connects factorized perturbations to dense Gaussian ZO as rank grows.
+  On OPT-13B, required inference queries account for 98.2% of an inference-native step at batch 64; in repeated batch-16 measurements, the complete step is 1.019x a matched-query control. State-transition DRAM traffic falls from 146.7 GB under dense mutation to 26 MB with persistent banked state. Packed PyTorch matches vLLM within 2.1% across the tested regimes, attributing the ragged-batch gain to padding elimination and variable-length packing. Foreground inference and ZO probes also execute in the same physical Qwen3-8B batches with zero observed output or objective deviation.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FORGE: Forward-Only Test-Time Adaptation for Integer-Only Vision Models on Microcontrollers — NewsMatome (EN)</title>
+<meta name="description" content="FORGE: Forward-Only Test-Time Adaptation for Integer-Only Vision Models on Microcontrollers — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/400dce4a2e8e.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/400dce4a2e8e.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/400dce4a2e8e.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/400dce4a2e8e.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FORGE: Forward-Only Test-Time Adaptation for Integer-Only Vision Models on Microcontrollers">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"FORGE: Forward-Only Test-Time Adaptation for Integer-Only Vision Models on Microcontrollers",
+ "inLanguage":"en","datePublished":"2026-09-04T07:00:00+09:00","dateModified":"2026-09-04T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.01683","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/400dce4a2e8e.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/400dce4a2e8e.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>FORGE: Forward-Only Test-Time Adaptation for Integer-Only Vision Models on Microcontrollers</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/04</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/400dce4a2e8e.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.01683" rel="nofollow noopener">https://arxiv.org/abs/2609.01683</a></span></div>
+  <div class="article-body"><p>arXiv:2609.01683v1 Announce Type: cross 
+Abstract: Vision models deployed on microcontrollers (MCUs) are quantized to integer-only arithmetic and run in inference-only runtimes that do not carry the machinery backpropagation needs: the standard tool for adapting a model to the distribution shift (sensor noise, blur, lighting) it meets in the field. Existing forward-only test-time adaptation (TTA) methods either run only on server- or edge-GPU-class models (not true microcontroller integer execution), or require the batch-normalization (BN) layers that integer deployment fuses away. We present a forward-only TTA method that operates on deployed, BN-folded, integer-only convolutional networks. The key observation is that fusing BN into the preceding convolution, a mandatory step for integer inference, destroys the statistics that normalization-based adaptation relies on. We restore adaptation by re-normalizing each folded convolution&#x27;s per-channel output to its clean training statistics, using only forward-pass estimates. The method (i) recovers most of gradient-based TENT&#x27;s accuracy gain (+20.9 vs. +24.9 points) and matches forward-only BN adaptation, while being the only method that runs on a folded integer-only model; (ii) needs to adapt only 3 of 21 layers (selected without seeing the test corruptions) to recover 93% of the benefit; (iii) survives single-sample streaming with a batch-size-scaled momentum; and (iv) generalizes across three datasets (up to 200 classes) and two architectures. We validate bit-exact int8 convolution execution and deploy on an ESP32-S3, where, measured with a Nordic PPK2 power profiler, the forward-only adaptation (a lightweight fp32 recalibration around the int8 convolutions) costs only 8.3 mJ (6.8% of inference energy) and 21.9 ms on the deployed SIMD-optimized model: forward-only adaptation is cheap on a real microcontroller.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

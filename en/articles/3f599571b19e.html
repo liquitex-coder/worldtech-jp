@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stream-CQSA: Exact Out-of-Memory Recovery for Attention — NewsMatome (EN)</title>
+<meta name="description" content="Stream-CQSA: Exact Out-of-Memory Recovery for Attention — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/3f599571b19e.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/3f599571b19e.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/3f599571b19e.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/3f599571b19e.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Stream-CQSA: Exact Out-of-Memory Recovery for Attention">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Stream-CQSA: Exact Out-of-Memory Recovery for Attention",
+ "inLanguage":"en","datePublished":"2026-09-04T07:00:00+09:00","dateModified":"2026-09-04T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2604.20819","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/3f599571b19e.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/3f599571b19e.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Stream-CQSA: Exact Out-of-Memory Recovery for Attention</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/04</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/3f599571b19e.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2604.20819" rel="nofollow noopener">https://arxiv.org/abs/2604.20819</a></span></div>
+  <div class="article-body"><p>arXiv:2604.20819v2 Announce Type: replace 
+Abstract: Long-context large language models are limited not only by attention cost but also by out-of-memory (OOM) failures. A selected attention call may not fit in available device memory even when the kernel is optimized. Exact and approximate attention methods reduce memory use, but every fixed implementation still has a device-specific capacity boundary. We introduce Stream-CQSA, an attention-level OOM recovery framework based on CQS decomposition, derived from the theory of cyclic quorum sets (CQS). Stream-CQSA recursively partitions an infeasible attention call into independent subsequence tasks, executes each with a compatible inner kernel, and recomposes the local statistics to recover the full attention output. This recovery is exact relative to the wrapped attention kernel, whether that kernel is exact or approximate. Compared with FlashAttention-2, the major baseline, our native Stream-CQSA kernel improves 16-bit forward-output error relative to a dense float64 reference and matches 16-bit backward-gradient error where FlashAttention-2 fits in the GPU memory. At the longest feasible baseline length, it costs $1.5$--$1.9\times$ the forward runtime and $2.1$--$2.4\times$ the forward--backward runtime. Beyond that sequence length boundary, our method continues to return an output while FlashAttention-2 OOMs. Stream-CQSA is therefore not a faster attention method. Instead, it converts memory-capacity failure into a recoverable execution path by trading extra compute, host-device transfer, and recomposition for completion.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

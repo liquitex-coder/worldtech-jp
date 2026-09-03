@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Signal or Noise? Auditing Rotation-Induced Saliency Drift in Medical and Aerial Imaging — NewsMatome (EN)</title>
+<meta name="description" content="Signal or Noise? Auditing Rotation-Induced Saliency Drift in Medical and Aerial Imaging — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/134c1fa582dd.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/134c1fa582dd.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/134c1fa582dd.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/134c1fa582dd.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Signal or Noise? Auditing Rotation-Induced Saliency Drift in Medical and Aerial Imaging">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Signal or Noise? Auditing Rotation-Induced Saliency Drift in Medical and Aerial Imaging",
+ "inLanguage":"en","datePublished":"2026-09-04T07:00:00+09:00","dateModified":"2026-09-04T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.02224","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/134c1fa582dd.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/134c1fa582dd.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Signal or Noise? Auditing Rotation-Induced Saliency Drift in Medical and Aerial Imaging</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/04</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/134c1fa582dd.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.02224" rel="nofollow noopener">https://arxiv.org/abs/2609.02224</a></span></div>
+  <div class="article-body"><p>arXiv:2609.02224v1 Announce Type: cross 
+Abstract: Post-hoc saliency maps such as Grad-CAM are increasingly used to audit why a deployed vision model made a decision, yet the heatmap drifts when the input is rotated, even when the prediction is unchanged. In domains with no canonical orientation, such as histopathology and aerial imagery, this undermines using saliency as evidence. We ask whether that drift is faithful signal or noise introduced by the CAM operator, and answer it by measuring equivariance at every stage of the operator rather than inferring it from the network&#x27;s output. The instability is not where one would guess: the channel weights are the most rotation-stable stage, and on ResNet-50 exactly stable, because a GAP+linear head makes the class gradient field spatially constant. What moves is the spatial activation tensor, and the classifier&#x27;s own pooling discards that movement. A causal test confirms the consequence: occluding the pixels whose saliency drifts costs the model less than occluding random pixels, at either orientation. The drift is carried by degrees of freedom the classifier throws away, which is what makes removing it faithful rather than destructive. EquiGrad-CAM is a training-free wrapper that takes T rotated views, inverse-rotates each view&#x27;s saliency into a common canonical frame, and averages. On the full ImageNet-1K validation set it raises equivariance over single-view Grad-CAM by +36.0% (ResNet-50), +87.5% (VGG-16) and +247% (ViT-B/16); a scale-matched ablation isolates alignment before averaging, not the locus of aggregation, as the driver. It beats rotation-augmented training without retraining, lifts zero-shot CLIP by +145%, and yields rotation-consistent explanations on PatchCamelyon and RESISC45. Its by-product PEUM ranks explanations by how reproducible they are, at no cost beyond the views already taken. Code: https://github.com/Khawaja-Murad/EquiGrad-CAM</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
