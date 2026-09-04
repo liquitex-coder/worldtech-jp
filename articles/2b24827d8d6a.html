@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Finite-Time Convergence of Distributionally Robust Q-Learning with Linear Function Approximation — NewsMatome</title>
-<meta name="description" content="Finite-Time Convergence of Distributionally Robust Q-Learning with Linear Function Approximation（EN→JA 翻訳・出典付き）">
+<title>Finite-Time Convergence of Single-Trajectory Chi-Square Robust Q-Learning With Linear Function Approximation — NewsMatome</title>
+<meta name="description" content="Finite-Time Convergence of Single-Trajectory Chi-Square Robust Q-Learning With Linear Function Approximation（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/2b24827d8d6a.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/2b24827d8d6a.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/2b24827d8d6a.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="Finite-Time Convergence of Distributionally Robust Q-Learning with Linear Function Approximation">
-<meta property="og:description" content="Finite-Time Convergence of Distributionally Robust Q-Learning with Linear Function Approximation（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="Finite-Time Convergence of Single-Trajectory Chi-Square Robust Q-Learning With Linear Function Approximation">
+<meta property="og:description" content="Finite-Time Convergence of Single-Trajectory Chi-Square Robust Q-Learning With Linear Function Approximation（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Finite-Time Convergence of Distributionally Robust Q-Learning with Linear Function Approximation",
- "inLanguage":"ja","datePublished":"2026-06-17T07:00:00+09:00","dateModified":"2026-06-17T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Finite-Time Convergence of Single-Trajectory Chi-Square Robust Q-Learning With Linear Function Approximation",
+ "inLanguage":"ja","datePublished":"2026-09-05T07:00:00+09:00","dateModified":"2026-09-05T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2510.01721","url":"https://liquitex-coder.github.io/worldtech-jp/articles/2b24827d8d6a.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>Finite-Time Convergence of Distributionally Robust Q-Learning with Linear Function Approximation</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>Finite-Time Convergence of Single-Trajectory Chi-Square Robust Q-Learning With Linear Function Approximation</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>Finite-Time Convergence of Distributionally Robust Q-Learning with Linear Function Approximation</h1>
+      <h1>Finite-Time Convergence of Single-Trajectory Chi-Square Robust Q-Learning With Linear Function Approximation</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/06/17 07:00</span><span>· 更新 2026/06/17</span>
+        <span>公開 2026/09/05 07:00</span><span>· 更新 2026/09/05</span>
       </div>
     </div>
     
@@ -74,24 +74,24 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2510.01721" rel="nofollow noopener">Finite-Time Convergence of Distributionally Robust Q-Learning with Linear Function Approximation</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2510.01721" rel="nofollow noopener">Finite-Time Convergence of Single-Trajectory Chi-Square Robust Q-Learning With Linear Function Approximation</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2510.01721v3 Announce Type: replace 
-Abstract: Distributionally robust reinforcement learning (DRRL) seeks policies that perform well when the deployment transition model differs from the nominal model generating the data. Most finite-sample guarantees for DRRL are tabular, model-based, rely on generative access, or obtain function-approximation guarantees only under additional structure, such as linear-transition models or restrictive discount-factor conditions. We study discounted model-free robust Q-learning under an $(s,a)$-rectangular chi-square uncertainty set, with linear approximation of the robust Q-function, using only a single Markovian trajectory from an unknown nominal model. Our algorithm combines a target-network outer loop with a dual function-approximation scheme for the chi-square robust Bellman update. The dual procedure uses moment-tracking critics, suffix averaging, a fresh-evaluation stage for the variance-like moment, and a tunable smoothing parameter to have a Lipschitz-continuous chi-square dual gradient. We prove a finite-time convergence bound to the optimal robust Q-function up to approximation error, without imposing a small-discount-factor assumption. Our results help close a gap between the empirical use of robust RL algorithms and the non-asymptotic guarantees available for their non-robust counterparts.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2510.01721v3 Announce Type: replace 
-Abstract: Distributionally robust reinforcement learning (DRRL) seeks policies that perform well when the deployment transition model differs from the nominal model generating the data. Most finite-sample guarantees for DRRL are tabular, model-based, rely on generative access, or obtain function-approximation guarantees only under additional structure, such as linear-transition models or restrictive discount-factor conditions. We study discounted model-free robust Q-learning under an $(s,a)$-rectangular chi-square uncertainty set, with linear approximation of the robust Q-function, using only a single Markovian trajectory from an unknown nominal model. Our algorithm combines a target-network outer loop with a dual function-approximation scheme for the chi-square robust Bellman update. The dual procedure uses moment-tracking critics, suffix averaging, a fresh-evaluation stage for the variance-like moment, and a tunable smoothing parameter to have a Lipschitz-continuous chi-square dual gradient. We prove a finite-time convergence bound to the optimal robust Q-function up to approximation error, without imposing a small-discount-factor assumption. Our results help close a gap between the empirical use of robust RL algorithms and the non-asymptotic guarantees available for their non-robust counterparts.</div>
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2510.01721v4 Announce Type: replace 
+Abstract: Distributionally robust reinforcement learning seeks policies that remain effective when the deployment environment differs from the one that generated the training data. We study model-free robust Q-learning with $\chi^2$ uncertainty sets and linear function approximation, using data from a single trajectory of an unknown nominal MDP. Evaluating the $\chi^2$ robust Bellman target introduces the square root of a conditional second moment, which cannot be estimated unbiasedly from one transition, while the projected robust Bellman operator need not be contractive. We address these obstacles through a variational reformulation of the robust Bellman target and a blockwise frozen-target scheme, and establish a finite-time error bound relative to the optimal robust Q-function for every $\gamma\in(0,1)$. A neural-network experiment illustrates how the variational target can be used in a continuous-state nonlinear-control task.</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2510.01721v4 Announce Type: replace 
+Abstract: Distributionally robust reinforcement learning seeks policies that remain effective when the deployment environment differs from the one that generated the training data. We study model-free robust Q-learning with $\chi^2$ uncertainty sets and linear function approximation, using data from a single trajectory of an unknown nominal MDP. Evaluating the $\chi^2$ robust Bellman target introduces the square root of a conditional second moment, which cannot be estimated unbiasedly from one transition, while the projected robust Bellman operator need not be contractive. We address these obstacles through a variational reformulation of the robust Bellman target and a blockwise frozen-target scheme, and establish a finite-time error bound relative to the optimal robust Q-function for every $\gamma\in(0,1)$. A neural-network experiment illustrates how the variational target can be used in a continuous-state nonlinear-control task.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2510.01721v3 Announce Type: replace 
-Abstract: Distributionally robust reinforcement learning (DRRL) seeks policies that perform well when the deployment transition model differs from the nominal model generating the data. Most finite-sample guarantees for DRRL are tabular, model-based, rely on generative access, or obtain function-approximation guarantees only under additional structure, such as linear-transition models or restrictive discount-factor conditions. We study discounted model-free robust Q-learning under an $(s,a)$-rectangular chi-square uncertainty set, with linear approximation of the robust Q-function, using only a single Markovian trajectory from an unknown nominal model. Our algorithm combines a target-network outer loop with a dual function-approximation scheme for the chi-square robust Bellman update. The dual procedure uses moment-tracking critics, suffix averaging, a fresh-evaluation stage for the variance-like moment, and a tunable smoothing parameter to have a Lipschitz-continuous chi-square dual gradient. We prove a finite-time convergence bound to the optimal robust Q-function up to approximation error, without imposing a small-discount-factor assumption. Our results help close a gap between the empirical use of robust RL algorithms and the non-asymptotic guarantees available for their non-robust counterparts.</p><a href="https://arxiv.org/abs/2510.01721" rel="nofollow noopener">原論文を読む →</a></div>
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2510.01721v4 Announce Type: replace 
+Abstract: Distributionally robust reinforcement learning seeks policies that remain effective when the deployment environment differs from the one that generated the training data. We study model-free robust Q-learning with $\chi^2$ uncertainty sets and linear function approximation, using data from a single trajectory of an unknown nominal MDP. Evaluating the $\chi^2$ robust Bellman target introduces the square root of a conditional second moment, which cannot be estimated unbiasedly from one transition, while the projected robust Bellman operator need not be contractive. We address these obstacles through a variational reformulation of the robust Bellman target and a blockwise frozen-target scheme, and establish a finite-time error bound relative to the optimal robust Q-function for every $\gamma\in(0,1)$. A neural-network experiment illustrates how the variational target can be used in a continuous-state nonlinear-control task.</p><a href="https://arxiv.org/abs/2510.01721" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2510.01721" rel="nofollow noopener">https://arxiv.org/abs/2510.01721</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
     <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="382fddd10128.html"><div class="sim">関連</div><div class="info"><b>A Definition of Good Explanations and the Challenges Explaining LLM Outputs</b><div class="m">AI</div></div></a><a class="r" href="5313cfc573a5.html"><div class="sim">関連</div><div class="info"><b>Dr-DCI: Scaling Direct Corpus Interaction via Dynamic Workspace Expansion</b><div class="m">AI</div></div></a><a class="r" href="abd21f614eae.html"><div class="sim">関連</div><div class="info"><b>Relational Structural Causal Models</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="700e3c0de241.html"><div class="sim">関連</div><div class="info"><b>Structure and Implementation of New Practical English Textbooks Driven by Artificial Intelligence</b><div class="m">AI</div></div></a><a class="r" href="f736e609f8e5.html"><div class="sim">関連</div><div class="info"><b>MasterControl Seventeen Every Time</b><div class="m">AI</div></div></a><a class="r" href="16782e343d11.html"><div class="sim">関連</div><div class="info"><b>Speculative Macro Commit for Faster Tool-Using Agents</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

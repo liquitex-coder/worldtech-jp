@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ForgettingOT: Certified Speculative Batching from Sinkhorn&#x27;s Projective Forgetting — NewsMatome (EN)</title>
-<meta name="description" content="ForgettingOT: Certified Speculative Batching from Sinkhorn&#x27;s Projective Forgetting — original-language edition. Japanese translation available.">
+<title>DrainSinkhorn: Safe Elimination for Batched Entropic Optimal Transport — NewsMatome (EN)</title>
+<meta name="description" content="DrainSinkhorn: Safe Elimination for Batched Entropic Optimal Transport — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/00291c76c7af.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/00291c76c7af.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/00291c76c7af.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/00291c76c7af.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ForgettingOT: Certified Speculative Batching from Sinkhorn&#x27;s Projective Forgetting">
+<meta property="og:title" content="DrainSinkhorn: Safe Elimination for Batched Entropic Optimal Transport">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"ForgettingOT: Certified Speculative Batching from Sinkhorn&#x27;s Projective Forgetting",
- "inLanguage":"en","datePublished":"2026-08-06T07:00:00+09:00","dateModified":"2026-08-06T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"DrainSinkhorn: Safe Elimination for Batched Entropic Optimal Transport",
+ "inLanguage":"en","datePublished":"2026-09-05T07:00:00+09:00","dateModified":"2026-09-05T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.24741","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/00291c76c7af.html"}
@@ -34,14 +34,14 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>ForgettingOT: Certified Speculative Batching from Sinkhorn&#x27;s Projective Forgetting</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/06</span></div>
+    <h1>DrainSinkhorn: Safe Elimination for Batched Entropic Optimal Transport</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/05</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/00291c76c7af.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.24741" rel="nofollow noopener">https://arxiv.org/abs/2607.24741</a></span></div>
-  <div class="article-body"><p>arXiv:2607.24741v2 Announce Type: replace-cross 
-Abstract: Positive two-marginal entropic optimal transport is solved by a nonlinear, positive, order-preserving, homogeneous Sinkhorn map. After quotienting the dual scaling gauge, we show that the active eigenmode of the fixed-point Jacobian $J_t^\star=QP=P^\star P$, generically $\lambda_2(QP)$, controls the strict correction tail. The projective-residual ratio converges to this mode, and the additional certified cycles required for tolerance $\theta_\tau$ scale as $\log(\rho/\theta_\tau)/[-\log\lambda_2]+O(1)$.
-  ForgettingOT turns this nonlinear Perron--Frobenius fact into a certified executor for streams of related Sinkhorn problems. A computable projective variation $\Omega_t$ in the marginals and kernel bounds the carry residual, while a verified contraction $q_t$ gives candidate repair depth. A window theorem converts these depths and the audit grid into bounds on packed work, collective rounds, overshoot, and fallback. Empirical tail estimates allocate work but never authorize release; current-instance certificates or measured marginal residuals do so, with ordinary Sinkhorn as fallback.
-  On 15 FP64 A100/OTT-JAX cells, the observed quotient slow-mode ratio agrees with $\lambda_2(QP)$ to $9.84\times10^{-6}$. On controlled four-A100 streams, the complete executor is $1.42\times$--$3.55\times$ faster than sequential soft $c$-transform warm starts, with 30/30 paired wins and no violations of the $10^{-3}$ marginal tolerance. Eight-A100 support-4096 streams give $2.584\times$--$2.945\times$ wall-time speedup and $4.285\times$--$4.615\times$ fewer vector-collective rounds. The outer executor composes with target-preserving Sinkhorn accelerators; a changed map or approximate target needs a contraction or error bridge before inheriting the repair-depth bound.</p></div>
+  <div class="article-body"><p>arXiv:2607.24741v3 Announce Type: replace-cross 
+Abstract: Fast entropic optimal transport backends reduce the cost of each Sinkhorn update, but static batches still run at full width until the slowest problem finishes. We introduce DrainSinkhorn, a verifier-gated active-packing layer for batches of independent Sinkhorn problems. It combines candidate-axis packing, a Sinkhorn-specific one-sided screen, verifier-gated retirement under the backend&#x27;s configured two-sided residual check, and physical compaction of all candidate-indexed state. The EOT objective, per-instance Sinkhorn map, and stopping rule are unchanged; later kernels run only on unfinished problems.
+  We characterize the removable work exactly. If completion depths differ within a packed window, active execution removes the padding between the static batch rectangle and the observed survival curve. A quotient nonlinear Perron-Frobenius analysis gives a local explanation for these finite-tolerance depth differences: convergence depends on the full modal spectrum and proposal alignment, not only on the slowest mode.
+  DrainSinkhorn achieves state-of-the-art execution performance on the tested heterogeneous batched-EOT workloads within matched backend families. The complete Flash-backed OT path is 4.110x faster on MetroPT-3, 3.798x faster on ImageNet-32 feature couplings, and 1.250-1.270x faster across a five-tolerance Packer19 sweep. Independent implementations reach 2.600x on ImageNet-32 with OTT-JAX, 3.174x on A2D2 LiDAR with PyKeOps, and 1.415x on large ImageNet-32 PyKeOps couplings. End-to-end speedups remain 4.074x on MetroPT-3 and 2.786x on ImageNet-32 feature-space OT flow matching, with all reported residual, consumer-output, and training-quality checks passing.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

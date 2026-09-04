@@ -17,7 +17,7 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"Ex-Omni-2D: Expressive Omni-Modal Dialogue Models with Native Visual Presence",
- "inLanguage":"en","datePublished":"2026-08-13T07:00:00+09:00","dateModified":"2026-08-13T07:00:00+09:00",
+ "inLanguage":"en","datePublished":"2026-09-05T07:00:00+09:00","dateModified":"2026-09-05T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2608.10720","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/422f908cd412.html"}
@@ -35,11 +35,11 @@
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
     <h1>Ex-Omni-2D: Expressive Omni-Modal Dialogue Models with Native Visual Presence</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/08/13</span></div>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/05</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/422f908cd412.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.10720" rel="nofollow noopener">https://arxiv.org/abs/2608.10720</a></span></div>
-  <div class="article-body"><p>arXiv:2608.10720v1 Announce Type: new 
-Abstract: Omni-modal dialogue models can understand multimodal inputs and synthesize spoken replies, yet their responses remain visually disembodied. We introduce \textbf{Ex-Omni-2D}, an omni-modal dialogue framework that generates a coordinated response comprising text, personalized speech, and reference-conditioned video. Given a multimodal query, reference image, and reference audio, the model predicts a structured \textit{Visual Thought Plan} (VTP) describing scene, emotion, and motion, followed by response text and native multi-codebook speech units. These units form a shared acoustic-temporal interface: they are decoded into speech and aligned online with video frames. This interface enables the response and avatar pathways to be learned from heterogeneous speech, dialogue, and avatar-video data, avoiding the need for large-scale query--text--speech--video supervision. A full-sequence Video Generator serves as the primary Teacher. For efficient incremental generation, we further distill it into a few-step block-causal \emph{Streaming Student} whose Prefix Streaming mechanism carries a clean latent across consecutive chunks to reduce cumulative late-chunk degradation. With four-step inference, the complete four-GPU pipeline achieves an end-to-end RTF of 1.293 at $400\times720$/$720\times400$, providing a practical quality--efficiency operating point.</p></div>
+  <div class="article-body"><p>arXiv:2608.10720v2 Announce Type: replace 
+Abstract: Omni-modal dialogue models can understand multimodal inputs and synthesize spoken replies, but a spoken answer still leaves the agent visually absent. We introduce \textbf{Ex-Omni-2D}, a framework that answers a multimodal query with coordinated text, personalized speech, and reference-conditioned video. The dialogue model first writes a structured \textit{Visual Thought Plan} (VTP) for scene, emotion, and motion, then generates the response text and multi-codebook speech units. These speech units are decoded into audio and aligned with video frames, giving the speech and avatar modules a common timing signal while allowing them to learn from different data sources. The video module is trained as a full-sequence Teacher conditioned on reference appearance, VTP semantics, and frame-aligned speech units. We further explore to distill it into a few-step block-causal \emph{Streaming Student}; its Prefix Streaming mechanism carries the previous clean latent into the next chunk and is analyzed as a partial mitigation for late-chunk subject drift. At $400\times720$/$720\times400$, the four-step four-GPU Student provides incremental output with lower startup latency than the full-sequence Teacher.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>
