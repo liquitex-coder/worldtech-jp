@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compact-Memory LLM Agents via Online Max-Member Clustering and Atom-Aware Packing — NewsMatome (EN)</title>
+<meta name="description" content="Compact-Memory LLM Agents via Online Max-Member Clustering and Atom-Aware Packing — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/f88189a9f755.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/f88189a9f755.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/f88189a9f755.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/f88189a9f755.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Compact-Memory LLM Agents via Online Max-Member Clustering and Atom-Aware Packing">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Compact-Memory LLM Agents via Online Max-Member Clustering and Atom-Aware Packing",
+ "inLanguage":"en","datePublished":"2026-09-08T07:00:00+09:00","dateModified":"2026-09-08T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.04915","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/f88189a9f755.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/f88189a9f755.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Compact-Memory LLM Agents via Online Max-Member Clustering and Atom-Aware Packing</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/08</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/f88189a9f755.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.04915" rel="nofollow noopener">https://arxiv.org/abs/2609.04915</a></span></div>
+  <div class="article-body"><p>arXiv:2609.04915v1 Announce Type: new 
+Abstract: Many long-horizon LLM deployments face tight prompt budgets: latency, cost, and context limits make full-context prompting impractical as interaction length grows. The key question is then not raw recall alone, but which memory design gives the best quality--token trade-off in the compact-memory regime. We present \textbf{RSM-full}, an online clustered-memory pipeline designed for a strong quality--token Pareto point.
+  RSM-full combines two design choices: a cosine-gated \emph{max-member merge} write rule and an atom-aware grouped context packer. On AMA-Bench, our primary compact-memory benchmark, it reaches $83%$ of Full-Context quality at $32%$ of the token cost at a $4$k budget; under four-seed averaging it beats the closest streaming-clustered baseline (Online K-Means) by $+3.5$--$6.0$,pp ($p{&lt;}.001$) across the whole ${\sim}2.6$k--${\sim}5$k regime. Three-seed ablations show most of this gain comes from the merge rule ($+5.7$,pp over Online K-Means and matched-$\tau$ DP-means) and the grouped packer ($+5.0$,pp over flat concatenation).
+  The pattern reproduces on RealMem, an independent long-horizon persona-memory benchmark: RSM-full improves on Budget-RAG ($+0.69$,pp, $p{=}.006$), is on par with BM25-RAG (paired $\Delta{=}{+}0.27$,pp, $p{=}.47$; we do \emph{not} claim BM25 equivalence in the equivalence-test sense), and significantly outperforms Streaming-Proto ($+2.97$,pp) and the closest reproduced 2025 agentic-memory baseline A-MEM ($+1.65$,pp, $p{&lt;}.001$). Across benchmarks the message is consistent: under tight budgets, compact-memory performance is driven mainly by how streaming memories are merged and how retrieved content is assembled.
+  Overall, RSM-full is most useful when answeroughly $2k$--$5k$ prompt tokens, where itdefines a strong compact-memory Pareto point; higher-token baselines remain stronger outside this regime.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

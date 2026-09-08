@@ -17,7 +17,7 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"From Sampled Outcomes to Capability Distributions: Rethinking Supervision for LLM Routing",
- "inLanguage":"en","datePublished":"2026-06-09T07:00:00+09:00","dateModified":"2026-06-09T07:00:00+09:00",
+ "inLanguage":"en","datePublished":"2026-09-08T07:00:00+09:00","dateModified":"2026-09-08T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.06924","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/0e79e1ce3604.html"}
@@ -35,11 +35,11 @@
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
     <h1>From Sampled Outcomes to Capability Distributions: Rethinking Supervision for LLM Routing</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/06/09</span></div>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/08</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/0e79e1ce3604.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.06924" rel="nofollow noopener">https://arxiv.org/abs/2606.06924</a></span></div>
-  <div class="article-body"><p>arXiv:2606.06924v1 Announce Type: new 
-Abstract: Existing LLM routing methods typically treat a model&#x27;s single response to a query as its capability label for training routers. However, because LLM generation is inherently stochastic, such single-shot supervision provides only a noisy observation of a query-model pair&#x27;s behavior rather than a reliable capability estimate. We show that this assumption introduces systematic noise into routing supervision, making learned routing policies less reliable. To address this issue, we propose DARS (Distribution-Aware Routing Supervision), a framework that constructs routing supervision from a distributional view of model behavior. Instead of relying on a single generated response, DARS considers uncertainty from both the input side and the output side, capturing how semantically equivalent query formulations and stochastic generations affect model performance. Based on these distribution-aware observations, DARS builds more reliable supervision signals for routing. Experiments across diverse tasks show that single-shot labels can be misleading for model selection, while distribution-aware supervision provides more stable labels and improves learned routing behavior. Our results suggest that reliable LLM routing should move beyond single-response observations and be grounded in query-level model capability distributions.</p></div>
+  <div class="article-body"><p>arXiv:2606.06924v2 Announce Type: replace 
+Abstract: Existing LLM routing methods often construct supervision from a single sampled response for each query--model pair. Because LLM generation is stochastic, however, such an observation can be an unstable estimate of model capability: semantically equivalent query formulations and repeated decoding may yield different scores and even different model preferences. We show that this instability can further propagate from routing labels to learned routing policies. To address this issue, we propose DARS (Distribution-Aware Routing Supervision), which estimates query-level model capability from repeated observations spanning semantics-preserving query rewrites and stochastic decoding. DARS summarizes expected quality, expected cost, and performance variability to construct risk-aware supervision without changing the downstream router architecture. Experiments across diverse tasks and routing methods show that DARS generally improves routing utility and cost--quality trade-offs over single-shot supervision. Further analyses show that its benefits persist under moderate sampling budgets and different decoding temperatures. These results suggest that reliable LLM routing should move beyond individual sampled outcomes and instead model query-level capability distributions.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

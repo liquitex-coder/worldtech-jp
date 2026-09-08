@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>When Load-Balancing Goes Too Far: Expert Pruning in Over-Dispersed Mixture-of-Experts Models — NewsMatome (EN)</title>
+<meta name="description" content="When Load-Balancing Goes Too Far: Expert Pruning in Over-Dispersed Mixture-of-Experts Models — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/b92a2582d6dd.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/b92a2582d6dd.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/b92a2582d6dd.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/b92a2582d6dd.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="When Load-Balancing Goes Too Far: Expert Pruning in Over-Dispersed Mixture-of-Experts Models">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"When Load-Balancing Goes Too Far: Expert Pruning in Over-Dispersed Mixture-of-Experts Models",
+ "inLanguage":"en","datePublished":"2026-09-08T07:00:00+09:00","dateModified":"2026-09-08T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.04453","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/b92a2582d6dd.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/b92a2582d6dd.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>When Load-Balancing Goes Too Far: Expert Pruning in Over-Dispersed Mixture-of-Experts Models</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/08</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/b92a2582d6dd.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.04453" rel="nofollow noopener">https://arxiv.org/abs/2609.04453</a></span></div>
+  <div class="article-body"><p>arXiv:2609.04453v1 Announce Type: new 
+Abstract: Expert pruning reduces the memory and serving cost of Mixture-of-Experts (MoE) models by removing low-importance experts identified by the router, assuming router probabilities provide a reliable importance signal. We observe that this assumption breaks down under over-dispersed routing, a regime associated with aggressive load-balancing during training, in which tokens are distributed nearly uniformly across experts and importance signals collapse. In this regime, perplexity does not predict downstream task accuracy: on gpt-oss-20B, the lowest-perplexity pruning configuration yields the worst mathematical reasoning, while the highest-perplexity configuration preserves it. This does not occur under standard routing (e.g., Mixtral-8x7B-Instruct), where perplexity and accuracy degrade together. Pruning under over-dispersed routing also exposes a capability trade-off in which no single scoring metric dominates: activation-aware scoring preserves mathematical reasoning but severely degrades knowledge-intensive science (an 18-point gap on GPQA), whereas frequency-based scoring exhibits the reverse. We propose Minimax Expert Score Allocation (MESA), a domain-aware method that iteratively boosts importance scores for experts serving whichever domain is currently worst-affected, minimizing worst-case domain degradation rather than average accuracy. At 25% expert pruning MESA achieves the smallest worst-case degradation across domains, outperforming activation-aware baselines on 7 of 11 benchmarks at a correspondingly reduced memory footprint, and it generalizes to gpt-oss-120B, Gemma-4-26B-A4B, and OLMoE-1B-7B. Our results indicate that over-dispersed routing is a qualitatively distinct pruning regime in which standard assumptions fail, and that recognizing it is a prerequisite for principled expert pruning of load-balanced MoE models.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

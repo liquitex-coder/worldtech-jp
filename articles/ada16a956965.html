@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Concept-Guided Spatial Regularization for World Models in Atari Pong — NewsMatome</title>
-<meta name="description" content="Concept-Guided Spatial Regularization for World Models in Atari Pong（EN→JA 翻訳・出典付き）">
+<title>Improving Weak World Models Behind Strong Agents in Atari Pong — NewsMatome</title>
+<meta name="description" content="Improving Weak World Models Behind Strong Agents in Atari Pong（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/ada16a956965.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/ada16a956965.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/ada16a956965.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="Concept-Guided Spatial Regularization for World Models in Atari Pong">
-<meta property="og:description" content="Concept-Guided Spatial Regularization for World Models in Atari Pong（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="Improving Weak World Models Behind Strong Agents in Atari Pong">
+<meta property="og:description" content="Improving Weak World Models Behind Strong Agents in Atari Pong（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Concept-Guided Spatial Regularization for World Models in Atari Pong",
- "inLanguage":"ja","datePublished":"2026-08-12T07:00:00+09:00","dateModified":"2026-08-12T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Improving Weak World Models Behind Strong Agents in Atari Pong",
+ "inLanguage":"ja","datePublished":"2026-09-08T07:00:00+09:00","dateModified":"2026-09-08T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.15142","url":"https://liquitex-coder.github.io/worldtech-jp/articles/ada16a956965.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>Concept-Guided Spatial Regularization for World Models in Atari Pong</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>Improving Weak World Models Behind Strong Agents in Atari Pong</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>Concept-Guided Spatial Regularization for World Models in Atari Pong</h1>
+      <h1>Improving Weak World Models Behind Strong Agents in Atari Pong</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/08/12 07:00</span><span>· 更新 2026/08/12</span>
+        <span>公開 2026/09/08 07:00</span><span>· 更新 2026/09/08</span>
       </div>
     </div>
     
@@ -74,33 +74,24 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2607.15142" rel="nofollow noopener">Concept-Guided Spatial Regularization for World Models in Atari Pong</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2607.15142" rel="nofollow noopener">Improving Weak World Models Behind Strong Agents in Atari Pong</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2607.15142v2 Announce Type: replace-cross 
-Abstract: World models are usually evaluated as components of model-based reinforcement learning (MBRL) systems, leaving their standalone reliability understudied.
-  We reproduce five visual world-model agents in Atari Pong -- DreamerV3, DIAMOND, TWISTER, Simulus, and STORM -- and match their reported agent performance. We then freeze the learned world models and evaluate them in two ways. In a closed-loop rollout diagnostic, a policy trained separately from the corresponding MBRL agent interacts with each frozen model, and we inspect the generated visual trajectories for visual and dynamical errors. Across all five models, these rollouts contain clear failures, including ball disappearance, incorrect motion, and invalid ball-paddle interactions.
-  Beyond visual trajectories, we further evaluate the frozen models with pixel-space zero-shot MBRL, a challenging setting in which a new policy is trained entirely inside each frozen world model and then evaluated in the real environment. Across all five models, these policies substantially underperform those produced by the corresponding original MBRL pipelines. For DreamerV3, mean return drops from $-5.5$ to $-20.9$, near the minimum of $-21$.
-  We hypothesize that insufficient modeling of task-critical concepts, such as the ball in Pong, contributes to these failures and propose Concept-Guided Spatial Regularization (CGSReg), an auxiliary reconstruction loss on segmented concept regions. CGSReg improves both closed-loop rollouts and pixel-space zero-shot MBRL in DreamerV3, DIAMOND, and TWISTER, and improves zero-shot MBRL in Simulus; STORM shows no clear improvement.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2607.15142v2 Announce Type: replace-cross 
-Abstract: World models are usually evaluated as components of model-based reinforcement learning (MBRL) systems, leaving their standalone reliability understudied.
-  We reproduce five visual world-model agents in Atari Pong -- DreamerV3, DIAMOND, TWISTER, Simulus, and STORM -- and match their reported agent performance. We then freeze the learned world models and evaluate them in two ways. In a closed-loop rollout diagnostic, a policy trained separately from the corresponding MBRL agent interacts with each frozen model, and we inspect the generated visual trajectories for visual and dynamical errors. Across all five models, these rollouts contain clear failures, including ball disappearance, incorrect motion, and invalid ball-paddle interactions.
-  Beyond visual trajectories, we further evaluate the frozen models with pixel-space zero-shot MBRL, a challenging setting in which a new policy is trained entirely inside each frozen world model and then evaluated in the real environment. Across all five models, these policies substantially underperform those produced by the corresponding original MBRL pipelines. For DreamerV3, mean return drops from $-5.5$ to $-20.9$, near the minimum of $-21$.
-  We hypothesize that insufficient modeling of task-critical concepts, such as the ball in Pong, contributes to these failures and propose Concept-Guided Spatial Regularization (CGSReg), an auxiliary reconstruction loss on segmented concept regions. CGSReg improves both closed-loop rollouts and pixel-space zero-shot MBRL in DreamerV3, DIAMOND, and TWISTER, and improves zero-shot MBRL in Simulus; STORM shows no clear improvement.</div>
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2607.15142v3 Announce Type: replace-cross 
+Abstract: Strong world-model agents frequently contain weak world models. We study this agent-world-model gap by reproducing five visual world-model agents in Atari Pong: DreamerV3, DIAMOND, TWISTER, Simulus, and STORM, with performance comparable to the reported results, and independently evaluating their frozen world models. First, closed-loop rollout diagnosis qualitatively inspects visual trajectories generated by each frozen model under an independently trained policy. All five models exhibit clear visual or dynamical failures, including ball disappearance, incorrect motion, and invalid ball-paddle interactions. Second, under native zero-shot model-based reinforcement learning (MBRL), a new policy is trained entirely within the frozen model from scratch using the agent&#x27;s native RL procedure, without real-environment training. When evaluated in the real environment, these policies substantially underperform the reproduced agents: DreamerV3 (-5.5 to -20.9), DIAMOND (19.7 to -9.6), TWISTER (17.7 to -13.3), Simulus (20.8 to -11.6), and STORM (18.7 to -21.0), where -21 is the minimum Pong return. This gap also extends broadly across Atari100K. Motivated by the ball-related rollout failures in Pong, we propose Concept-Guided Spatial Regularization (CGSReg), an auxiliary reconstruction loss on task-critical concept regions. We evaluate it under a more challenging pixel-space zero-shot MBRL setting, where policies learn directly from images generated by the frozen world model. Ball-region CGSReg improves pixel-space zero-shot MBRL in DreamerV3, DIAMOND, TWISTER, and Simulus, and also improves closed-loop rollouts in the first three; STORM shows no clear improvement.</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2607.15142v3 Announce Type: replace-cross 
+Abstract: Strong world-model agents frequently contain weak world models. We study this agent-world-model gap by reproducing five visual world-model agents in Atari Pong: DreamerV3, DIAMOND, TWISTER, Simulus, and STORM, with performance comparable to the reported results, and independently evaluating their frozen world models. First, closed-loop rollout diagnosis qualitatively inspects visual trajectories generated by each frozen model under an independently trained policy. All five models exhibit clear visual or dynamical failures, including ball disappearance, incorrect motion, and invalid ball-paddle interactions. Second, under native zero-shot model-based reinforcement learning (MBRL), a new policy is trained entirely within the frozen model from scratch using the agent&#x27;s native RL procedure, without real-environment training. When evaluated in the real environment, these policies substantially underperform the reproduced agents: DreamerV3 (-5.5 to -20.9), DIAMOND (19.7 to -9.6), TWISTER (17.7 to -13.3), Simulus (20.8 to -11.6), and STORM (18.7 to -21.0), where -21 is the minimum Pong return. This gap also extends broadly across Atari100K. Motivated by the ball-related rollout failures in Pong, we propose Concept-Guided Spatial Regularization (CGSReg), an auxiliary reconstruction loss on task-critical concept regions. We evaluate it under a more challenging pixel-space zero-shot MBRL setting, where policies learn directly from images generated by the frozen world model. Ball-region CGSReg improves pixel-space zero-shot MBRL in DreamerV3, DIAMOND, TWISTER, and Simulus, and also improves closed-loop rollouts in the first three; STORM shows no clear improvement.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2607.15142v2 Announce Type: replace-cross 
-Abstract: World models are usually evaluated as components of model-based reinforcement learning (MBRL) systems, leaving their standalone reliability understudied.
-  We reproduce five visual world-model agents in Atari Pong -- DreamerV3, DIAMOND, TWISTER, Simulus, and STORM -- and match their reported agent performance. We then freeze the learned world models and evaluate them in two ways. In a closed-loop rollout diagnostic, a policy trained separately from the corresponding MBRL agent interacts with each frozen model, and we inspect the generated visual trajectories for visual and dynamical errors. Across all five models, these rollouts contain clear failures, including ball disappearance, incorrect motion, and invalid ball-paddle interactions.
-  Beyond visual trajectories, we further evaluate the frozen models with pixel-space zero-shot MBRL, a challenging setting in which a new policy is trained entirely inside each frozen world model and then evaluated in the real environment. Across all five models, these policies substantially underperform those produced by the corresponding original MBRL pipelines. For DreamerV3, mean return drops from $-5.5$ to $-20.9$, near the minimum of $-21$.
-  We hypothesize that insufficient modeling of task-critical concepts, such as the ball in Pong, contributes to these failures and propose Concept-Guided Spatial Regularization (CGSReg), an auxiliary reconstruction loss on segmented concept regions. CGSReg improves both closed-loop rollouts and pixel-space zero-shot MBRL in DreamerV3, DIAMOND, and TWISTER, and improves zero-shot MBRL in Simulus; STORM shows no clear improvement.</p><a href="https://arxiv.org/abs/2607.15142" rel="nofollow noopener">原論文を読む →</a></div>
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2607.15142v3 Announce Type: replace-cross 
+Abstract: Strong world-model agents frequently contain weak world models. We study this agent-world-model gap by reproducing five visual world-model agents in Atari Pong: DreamerV3, DIAMOND, TWISTER, Simulus, and STORM, with performance comparable to the reported results, and independently evaluating their frozen world models. First, closed-loop rollout diagnosis qualitatively inspects visual trajectories generated by each frozen model under an independently trained policy. All five models exhibit clear visual or dynamical failures, including ball disappearance, incorrect motion, and invalid ball-paddle interactions. Second, under native zero-shot model-based reinforcement learning (MBRL), a new policy is trained entirely within the frozen model from scratch using the agent&#x27;s native RL procedure, without real-environment training. When evaluated in the real environment, these policies substantially underperform the reproduced agents: DreamerV3 (-5.5 to -20.9), DIAMOND (19.7 to -9.6), TWISTER (17.7 to -13.3), Simulus (20.8 to -11.6), and STORM (18.7 to -21.0), where -21 is the minimum Pong return. This gap also extends broadly across Atari100K. Motivated by the ball-related rollout failures in Pong, we propose Concept-Guided Spatial Regularization (CGSReg), an auxiliary reconstruction loss on task-critical concept regions. We evaluate it under a more challenging pixel-space zero-shot MBRL setting, where policies learn directly from images generated by the frozen world model. Ball-region CGSReg improves pixel-space zero-shot MBRL in DreamerV3, DIAMOND, TWISTER, and Simulus, and also improves closed-loop rollouts in the first three; STORM shows no clear improvement.</p><a href="https://arxiv.org/abs/2607.15142" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2607.15142" rel="nofollow noopener">https://arxiv.org/abs/2607.15142</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
     <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="ec657c99cc7a.html"><div class="sim">関連</div><div class="info"><b>Towards an Argumentative Foundation for Evaluative AI</b><div class="m">AI</div></div></a><a class="r" href="4bc435408c90.html"><div class="sim">関連</div><div class="info"><b>Flow-by-Flow:Content-Judgment Bypass for Governing AI Output in High-Loss Domains</b><div class="m">AI</div></div></a><a class="r" href="d21d88844b87.html"><div class="sim">関連</div><div class="info"><b>Determinization in Structure Theories: A Unified Framework via Closure, Comparability, and Joint Admissibility</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="f3156629097f.html"><div class="sim">関連</div><div class="info"><b>EXAONE Forecast for Finance</b><div class="m">AI</div></div></a><a class="r" href="a43ca39110c8.html"><div class="sim">関連</div><div class="info"><b>From Matching Models to Recruiting Agents: A Systematized Narrative Review of AI Recruitment Systems, Evaluation, and Governance</b><div class="m">AI</div></div></a><a class="r" href="01b847bc2d8c.html"><div class="sim">関連</div><div class="info"><b>Harbor Adapters and Harbor-Index: Infrastructure and a Curated Meta-Dataset for Large-Scale Agentic Evaluation</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

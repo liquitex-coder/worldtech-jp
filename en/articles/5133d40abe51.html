@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GEPARD - Generative, Prosody-aware, Autoregressive text-to-speech model for Realtime Dialogue — NewsMatome (EN)</title>
+<meta name="description" content="GEPARD - Generative, Prosody-aware, Autoregressive text-to-speech model for Realtime Dialogue — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/5133d40abe51.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/5133d40abe51.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/5133d40abe51.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/5133d40abe51.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GEPARD - Generative, Prosody-aware, Autoregressive text-to-speech model for Realtime Dialogue">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"GEPARD - Generative, Prosody-aware, Autoregressive text-to-speech model for Realtime Dialogue",
+ "inLanguage":"en","datePublished":"2026-09-08T07:00:00+09:00","dateModified":"2026-09-08T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.04222","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/5133d40abe51.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/5133d40abe51.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>GEPARD - Generative, Prosody-aware, Autoregressive text-to-speech model for Realtime Dialogue</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/08</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/5133d40abe51.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.04222" rel="nofollow noopener">https://arxiv.org/abs/2609.04222</a></span></div>
+  <div class="article-body"><p>arXiv:2609.04222v1 Announce Type: cross 
+Abstract: We present GEPARD (Generative, Prosody-aware, Autoregressive text-to-speech model for Realtime Dialogue), a streaming text-to-speech model for real-time spoken dialogue. GEPARD generates speech autoregressively with an LLM backbone - text and audio embeddings are trained together in a single decoder-only model - and decodes it to a waveform with an FSQ-based neural codec, streaming audio chunk-by-chunk as text arrives.
+  Our central goal is a TTS architecture served by a standard LLM engine (vLLM) without modifying its compute kernels. This defines the overarching design principle: the backbone is a standard full-attention transformer, while all non-trivial auxiliary mechanisms - zero-shot voice cloning, text augmentation, and classifier-free guidance - are moved out of the autoregressive decode loop into prefill, or distilled directly into the weights.
+  On streaming end-to-end inference, a single stream reaches a Real-Time Factor of about 0.067 (roughly 15x faster than real-time); under 256 concurrent streams the system reaches an aggregate speedup of about 204x on a single server-class GPU. We detail: (1) system-level solutions for vLLM-native serving; (2) the &quot;short register&quot; (1-2 word) failure mode of autoregressive speech decoders, with diagnostic probes and a mitigation; and (3) distillation of two-pass classifier-free guidance over text into single-pass weights via Direct Preference Optimization (DPO).</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

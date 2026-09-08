@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scale-QLoRA: Code-Invariant Adapter Merging for Native 4-bit Microscaling LLMs — NewsMatome (EN)</title>
+<meta name="description" content="Scale-QLoRA: Code-Invariant Adapter Merging for Native 4-bit Microscaling LLMs — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/acb588df9fdf.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/acb588df9fdf.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/acb588df9fdf.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/acb588df9fdf.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Scale-QLoRA: Code-Invariant Adapter Merging for Native 4-bit Microscaling LLMs">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Scale-QLoRA: Code-Invariant Adapter Merging for Native 4-bit Microscaling LLMs",
+ "inLanguage":"en","datePublished":"2026-09-08T07:00:00+09:00","dateModified":"2026-09-08T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.04526","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/acb588df9fdf.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/acb588df9fdf.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Scale-QLoRA: Code-Invariant Adapter Merging for Native 4-bit Microscaling LLMs</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/08</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/acb588df9fdf.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.04526" rel="nofollow noopener">https://arxiv.org/abs/2609.04526</a></span></div>
+  <div class="article-body"><p>arXiv:2609.04526v1 Announce Type: cross 
+Abstract: Merging a LoRA adapter into its base model is standard deployment practice: it removes the runtime adapter&#x27;s per-forward overhead and leaves a single standalone checkpoint any serving stack can load. On a native 4-bit microscaling checkpoint (NVFP4, MXFP4) that step stops being free. The merged weights must be written back through a quantizer, which re-derives the checkpoint&#x27;s discrete E2M1 code plane (roughly 90% of the artifact&#x27;s bytes), so the deployed artifact becomes coupled to one quantization convention, and every later code-touching event in its lifecycle can move it. Done naively the step is worse than fragile: it deletes the adaptation, by up to 39 pp, because against an already-on-grid base the reconstruction optimum is that base. Scale-QLoRA instead adapts only the native per-block scale field, trains those scales on the deployment grid, and freezes every E2M1 code. Within a fixed native format, scale grid, block layout and code plane, merging is then a bit-exact identity and the merged artifact is code-invariant. Across four models and four tasks, Scale-QLoRA and merge-aware QAT-LoRA are both accuracy-lossless, so we claim no accuracy ordering between them; they differ structurally, in that QAT-LoRA re-derives the code plane through a quantizer while Scale-QLoRA preserves it exactly. That difference is what the lifecycle prices: nearest-rounding implementations disagree by about a point on the measured task, and more extreme rule mismatches can drive the weight-space artifact to ~0%, which we report as a sensitivity bound rather than a deployment frequency. Preserving the code plane also drops the weight-space straight-through estimator from training (3.9x per step on the dense 8B model) and enables exact rollback, code-plane deduplication, and a ~125x faster scale-only task swap.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
