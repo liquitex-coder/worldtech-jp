@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Router Prior Bias: Preserving Base Routing Structure in MoE Post-Training — NewsMatome (EN)</title>
+<meta name="description" content="Router Prior Bias: Preserving Base Routing Structure in MoE Post-Training — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/f324d9f8e2f8.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/f324d9f8e2f8.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/f324d9f8e2f8.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/f324d9f8e2f8.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Router Prior Bias: Preserving Base Routing Structure in MoE Post-Training">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Router Prior Bias: Preserving Base Routing Structure in MoE Post-Training",
+ "inLanguage":"en","datePublished":"2026-09-11T07:00:00+09:00","dateModified":"2026-09-11T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.08115","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/f324d9f8e2f8.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/f324d9f8e2f8.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Router Prior Bias: Preserving Base Routing Structure in MoE Post-Training</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/11</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/f324d9f8e2f8.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.08115" rel="nofollow noopener">https://arxiv.org/abs/2609.08115</a></span></div>
+  <div class="article-body"><p>arXiv:2609.08115v1 Announce Type: new 
+Abstract: Mixture-of-Experts (MoE) pretraining relies on an auxiliary load-balancing loss (LBL) to drive per-expert utilization toward uniformity. Post-training inherits a different situation: the base router already encodes non-uniform expert co-activation structure, which a re-imposed uniformity objective flattens away. We show that downstream performance depends instead on holding this inherited routing softly, a principle we term soft router anchoring, and instantiate it as Router Prior Bias (RPB), a training-time bias that pulls the router logits toward a prior read off the frozen base router while leaving the router itself trainable. On math post-training of Moonlight-16B-A3B, RPB attains 45.77 in-domain accuracy against 31.91 under re-applied LBL and 29.44 under unanchored fine-tuning, and retains more out-of-domain capability than either. The ordering against LBL reproduces on a second model family (Qwen3-30B-A3B-Base), and the advantage over LBL is resolvable on an independently sourced corpus. Anchors defined on the router weights, on its logits, or on its output distribution perform comparably with no consistent ordering, which places the effect in the softness of the constraint rather than in the particular prior RPB supplies. Retained community structure in the expert co-activation graph tracks these gains wherever the base router is non-uniform enough for communities to form, yet enforcing the same prior as a hard assignment preserves that structure while performance falls sharply. Community structure is therefore a footprint of soft anchoring rather than its source, and the practical lesson is that inherited routing should be held softly during post-training, since both flattening it toward uniformity and enforcing it absolutely carry a downstream cost. Our code will be released at https://github.com/naver-ai/rpb.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

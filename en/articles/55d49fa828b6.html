@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unthrottling the Tanh Jacobian in SAC: A Negative Result on Bang-Bang Control and MetaDrive — NewsMatome (EN)</title>
+<meta name="description" content="Unthrottling the Tanh Jacobian in SAC: A Negative Result on Bang-Bang Control and MetaDrive — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/55d49fa828b6.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/55d49fa828b6.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/55d49fa828b6.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/55d49fa828b6.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unthrottling the Tanh Jacobian in SAC: A Negative Result on Bang-Bang Control and MetaDrive">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Unthrottling the Tanh Jacobian in SAC: A Negative Result on Bang-Bang Control and MetaDrive",
+ "inLanguage":"en","datePublished":"2026-09-11T07:00:00+09:00","dateModified":"2026-09-11T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"ロボット技術担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.09478","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/55d49fa828b6.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/55d49fa828b6.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#ef4444"></span>ロボット技術</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Unthrottling the Tanh Jacobian in SAC: A Negative Result on Bang-Bang Control and MetaDrive</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b></span></span><span>2026/09/11</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/55d49fa828b6.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.09478" rel="nofollow noopener">https://arxiv.org/abs/2609.09478</a></span></div>
+  <div class="article-body"><p>arXiv:2609.09478v1 Announce Type: cross 
+Abstract: Soft Actor-Critic (SAC) represents a continuous policy as an unbounded Gaussian that is squashed by tanh. The Jacobian of that map is $\partial a/\partial u = 1-a^2$, which vanishes as $|a|\to 1$. A natural concern is that this throttle starves the actor of critic signal exactly where extreme actions (full brake, full throttle) are optimal. We test a minimal intervention that restores the missing signal: one extra term in the actor loss whose gradient on the pre-tanh mean is the detached action-gradient of $Q$, with no gain parameter.
+  On a minimum-time double integrator whose optimum is bang-bang at the action bounds, vanilla SAC already reaches near-optimal return ($-31.6$ vs. a calibrated optimum of $-30.3$) across ten paired seeds. An ungated bypass does saturate the policy (99% of eval steps with $|a|\ge 0.9$) and collapses return to $-195.5$. A gated bypass that fires only on the flat shoulder $|a|\in[0.9,0.999]$ also fails, and does so without leaving a saturated policy. Warm-started MetaDrive fine-tuning shows the same pattern: the bypass does not improve return, and where collision rate falls it is typically traded for out-of-road departures. Auto-tuned entropy coefficient rises against the bypass, which is a push toward the tails.
+  The Jacobian effect is real. Treating it as a bug to be undone is not free, and on the tasks studied here it is not helpful. Saturating a bound is not the same as solving a problem whose optimum lives on that bound.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

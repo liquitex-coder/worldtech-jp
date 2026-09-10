@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Do Models Read What They Write? Causal Registers in Scratchpad Reasoning — NewsMatome (EN)</title>
-<meta name="description" content="Do Models Read What They Write? Causal Registers in Scratchpad Reasoning — original-language edition. Japanese translation available.">
+<title>When Does Activation Steering Change What a Model Computes From? — NewsMatome (EN)</title>
+<meta name="description" content="When Does Activation Steering Change What a Model Computes From? — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/d8b4e86fcb35.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/d8b4e86fcb35.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/d8b4e86fcb35.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/d8b4e86fcb35.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Do Models Read What They Write? Causal Registers in Scratchpad Reasoning">
+<meta property="og:title" content="When Does Activation Steering Change What a Model Computes From?">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Do Models Read What They Write? Causal Registers in Scratchpad Reasoning",
- "inLanguage":"en","datePublished":"2026-07-01T07:00:00+09:00","dateModified":"2026-07-01T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"When Does Activation Steering Change What a Model Computes From?",
+ "inLanguage":"en","datePublished":"2026-09-11T07:00:00+09:00","dateModified":"2026-09-11T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.29522","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/d8b4e86fcb35.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Do Models Read What They Write? Causal Registers in Scratchpad Reasoning</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/01</span></div>
+    <h1>When Does Activation Steering Change What a Model Computes From?</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/11</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/d8b4e86fcb35.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.29522" rel="nofollow noopener">https://arxiv.org/abs/2606.29522</a></span></div>
-  <div class="article-body"><p>arXiv:2606.29522v1 Announce Type: new 
-Abstract: A central hope behind process supervision is that models can expose intermediate variables that matter for their later behavior. For this to help with alignment, a scratchpad must be tied to the computation: when the model writes a state, later steps should compute from that state. To test this requirement, we use a controlled state-tracking task with a known update rule, comparing models trained to report only the final state with models trained to write intermediate states before giving the final answer. At evaluation, we edit the internal representation of one written state while leaving the visible scratchpad text fixed. Because the transition rule is known, the edit has a single correct downstream consequence. In Qwen2.5-Coder-7B, the state-writing model predicts the next phase bit implied by the edited state on 80% and 91% of held-out examples across the two task variants, while pretrained and final-answer-only controls remain near baseline. Additional controls rule out generic next-token steering and copying another continuation: the prediction depends on both the edited state and the current move. The same causal-use pattern replicates across model families. Together, these results suggest a sharper goal for scratchpad oversight: not just to make intermediate reasoning legible, but to train written states that the model uses as part of its computation.</p></div>
+  <div class="article-body"><p>arXiv:2606.29522v2 Announce Type: replace 
+Abstract: Activation steering can reliably change an agent&#x27;s output by modifying its internal activations. Yet arriving at the same answer need not involve the same computation: behavioral equivalence does not imply mechanistic equivalence. We test whether an activation edit changes the state used in subsequent computation or biases that computation toward the desired output. In a controlled state-tracking task, trace supervision creates an editable register: changing its internal value makes the model apply the next operation to the edited state. We next ask whether widely used mean activation steering admits a similar interpretation: does steering recreate the internal configuration the model naturally uses when performing a task? If so, transplanting that activation should be effective, and steering should remain effective at the scale of the natural source-to-target activation change. Neither prediction holds in the two selected model-task settings. Replacing the activation at one layer produces less than 2% of the target-answer margin gain from patching through all remaining layers, while natural-scale steering is similarly ineffective. The steering vectors have norms 77 and 26 times the median natural change in Qwen and Llama, producing 54% and 82% of the reference effect. Thus, a successful steering intervention need not reproduce the natural target activation at the intervention layer. More generally, an intervention should be interpreted as changing the computational state only when a later computation uses the edited value according to the semantics of that state.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

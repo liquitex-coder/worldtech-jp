@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Learning to Adaptively Allocate Gaussians for Arbitrary-Scale Image Super-Resolution — NewsMatome (EN)</title>
-<meta name="description" content="Learning to Adaptively Allocate Gaussians for Arbitrary-Scale Image Super-Resolution — original-language edition. Japanese translation available.">
+<title>Adaptive Densification for High-Fidelity and Efficient Sparse Gaussian Splatting in Arbitrary-Scale Super-Resolution — NewsMatome (EN)</title>
+<meta name="description" content="Adaptive Densification for High-Fidelity and Efficient Sparse Gaussian Splatting in Arbitrary-Scale Super-Resolution — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/e478f0a9aed2.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/e478f0a9aed2.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/e478f0a9aed2.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/e478f0a9aed2.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Learning to Adaptively Allocate Gaussians for Arbitrary-Scale Image Super-Resolution">
+<meta property="og:title" content="Adaptive Densification for High-Fidelity and Efficient Sparse Gaussian Splatting in Arbitrary-Scale Super-Resolution">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Learning to Adaptively Allocate Gaussians for Arbitrary-Scale Image Super-Resolution",
- "inLanguage":"en","datePublished":"2026-07-01T07:00:00+09:00","dateModified":"2026-07-01T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Adaptive Densification for High-Fidelity and Efficient Sparse Gaussian Splatting in Arbitrary-Scale Super-Resolution",
+ "inLanguage":"en","datePublished":"2026-09-11T07:00:00+09:00","dateModified":"2026-09-11T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.29400","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/e478f0a9aed2.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Learning to Adaptively Allocate Gaussians for Arbitrary-Scale Image Super-Resolution</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/01</span></div>
+    <h1>Adaptive Densification for High-Fidelity and Efficient Sparse Gaussian Splatting in Arbitrary-Scale Super-Resolution</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/11</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/e478f0a9aed2.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.29400" rel="nofollow noopener">https://arxiv.org/abs/2606.29400</a></span></div>
-  <div class="article-body"><p>arXiv:2606.29400v1 Announce Type: cross 
-Abstract: In computer graphics, visual content is continuously warped, zoomed and resampled. This occurs when engines upscale frames, users zoom into 3D scenes, or foveated VR applies varying scaling. Handling these transformations requires Arbitrary-Scale Super-Resolution (ASR). Traditional models, designed for fixed scales, typically predict at a lower integer scale (e.g., x4) and rely on sub-optimal interpolation for continuous resolutions, compromising quality. Furthermore, most methods process pixels uniformly. Since fine details are sparse, this creates overhead; efficiency dictates concentrating resources only where structural complexity demands it. While implicit models and Gaussian Splatting (GS) enable continuous representation, GS is advantageous due to adaptive densification. However, transitioning GS into a feed-forward model for ASR is non-trivial. Standard GS optimization needs high-resolution gradients to drive primitive growth, which are unavailable during inference. Thus, the network must autonomously predict GS densification from low-resolution inputs. To solve this, we propose QuADA-GS. After encoding inputs into a latent space, a Neural Routing Architecture evaluates local complexity to distribute a global budget, assigning specific upsampling factors to features to avoid redundant processing. Features are dynamically densified based on these factors, forming an irregular topology decoded into 2D Gaussian primitives. To coordinate features before decoding, we introduce Hierarchical Pointer Convolution. This non-grid operator achieves O(1) neighbor lookup complexity, facilitating efficient spatial communication and bypassing dense bottlenecks. Experiments show QuADA-GS achieves state-of-the-art ASR performance, maintaining low latency and a lean memory footprint.</p></div>
+  <div class="article-body"><p>arXiv:2606.29400v2 Announce Type: replace-cross 
+Abstract: Arbitrary-Scale Super-Resolution (ASR) aims to reconstruct high-resolution images at any continuous magnification. While 2D Gaussian Splatting (GS) has recently shown great promise for ASR, current methods struggle to balance visual quality and computational cost. Approaches targeting high fidelity rely on powerful backbones and uniform, highly dense Gaussian grids, leading to prohibitive memory and inference costs. Conversely, methods prioritizing efficiency aggressively simplify their architectures, severely compromising visual quality. To bridge this gap, we observe that a core capability of GS remains largely underexplored in ASR: the potential for dynamic densification, i.e., the spatially adaptive allocation of Gaussians based on image content. Unlike standard scene fitting, where densification is guided by a known ground truth, applying this to ASR is highly non-trivial because the high-resolution target is exactly what the model must predict. To address this challenge, we propose QuADA-GS, an approach that retains a powerful representational backbone but autonomously predicts where to allocate Gaussians relying strictly on the low-resolution input. By adopting a sparse approach, QuADA-GS refines features and increases Gaussian density strictly where structural complexity demands it. Because this adaptive allocation produces a non-uniform hierarchical topology, we introduce a novel, highly efficient communication mechanism to process these sparse features, bypassing standard dense bottlenecks. Extensive experiments indicate that our approach successfully balances visual quality and computational requirements, providing an improved and competitive trade-off for ASR.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

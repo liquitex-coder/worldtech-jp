@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PAC-Private Autoregressive Generation: Calibrating Noise to Ensemble Disagreement — NewsMatome (EN)</title>
+<meta name="description" content="PAC-Private Autoregressive Generation: Calibrating Noise to Ensemble Disagreement — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/5b77596675f2.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/5b77596675f2.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/5b77596675f2.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/5b77596675f2.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PAC-Private Autoregressive Generation: Calibrating Noise to Ensemble Disagreement">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"PAC-Private Autoregressive Generation: Calibrating Noise to Ensemble Disagreement",
+ "inLanguage":"en","datePublished":"2026-09-11T07:00:00+09:00","dateModified":"2026-09-11T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.05676","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/5b77596675f2.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/5b77596675f2.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>PAC-Private Autoregressive Generation: Calibrating Noise to Ensemble Disagreement</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/11</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/5b77596675f2.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.05676" rel="nofollow noopener">https://arxiv.org/abs/2609.05676</a></span></div>
+  <div class="article-body"><p>arXiv:2609.05676v1 Announce Type: new 
+Abstract: Language models adapted on private text are often served through APIs, so privacy leakage occurs through generated outputs rather than exposed weights. Private prediction protects these releases. Methods such as PMixED incur privacy cost at each release and increasingly rely on the public model over long horizons. PAC privacy instead calibrates noise to output variability across possible secrets, adding less noise when predictions are stable. To our knowledge, PAC-private prediction has not previously been extended from classification to autoregressive generation.
+  We construct $m=128$ overlapping worlds from the private corpus, with each record appearing in exactly $m/2$ worlds, and train one adapter per world over a frozen public model. The realized world is the secret. At each token, the public model defines a candidate set, the worlds vote, and their posterior-weighted disagreement determines the PAC noise; unanimity requires no calibration noise. We prove $I(S;Y_{1:T}) \leq I(S;H_T) \leq bT$. Our contributions are extending PAC privacy to autoregressive generation, handling adaptive self-generated contexts, and introducing coupled decoding that preserves privacy accounting while avoiding greedy degeneration.
+  On WikiText-103 with GPT-2-small, we retain 74% of the fine-tuning gain at a per-token budget of $2^{-32}$, while membership-inference success is bounded by 51.08% after $10^6$ tokens; posterior-entropy estimates of leakage are roughly 17% of the charged budget. Inference privacy is not content protection: even when membership advantage on a memorized canary is indistinguishable from zero, the canary is emitted at the same rate. Against PMixED under matched membership-inference bounds on the same data universe and test set, we retain 98% of non-private headroom from $10^2$ to $10^6$ tokens, versus at most 56%, with no crossover.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

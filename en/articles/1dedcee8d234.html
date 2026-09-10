@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NoLoCo: No-all-reduce Low Communication Training Method for Large Models — NewsMatome (EN)</title>
+<meta name="description" content="NoLoCo: No-all-reduce Low Communication Training Method for Large Models — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/1dedcee8d234.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/1dedcee8d234.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/1dedcee8d234.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/1dedcee8d234.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NoLoCo: No-all-reduce Low Communication Training Method for Large Models">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"NoLoCo: No-all-reduce Low Communication Training Method for Large Models",
+ "inLanguage":"en","datePublished":"2026-09-11T07:00:00+09:00","dateModified":"2026-09-11T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2506.10911","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/1dedcee8d234.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/1dedcee8d234.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>NoLoCo: No-all-reduce Low Communication Training Method for Large Models</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/11</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/1dedcee8d234.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2506.10911" rel="nofollow noopener">https://arxiv.org/abs/2506.10911</a></span></div>
+  <div class="article-body"><p>arXiv:2506.10911v2 Announce Type: replace 
+Abstract: Training large language models is generally done on clusters containing thousands of accelerators, communicating over a high-bandwidth interconnect. Scaling up these clusters is expensive and can become impractical, imposing limits on the size of models that can be trained. Several recent studies have proposed training methods that are less communication intensive, avoiding the need for compute clusters with extremely high interconnect speeds. These low communication training methods still employ a global synchronization step for model parameters, which can be too costly with a high number of participants, as the communication cost scales quadratically with group size. In this work, we propose a novel optimization method, NoLoCo, that does not explicitly synchronize all model parameters during training and does not require any collective communication. NoLoCo implicitly synchronizes model weights via a novel variant of the Nesterov momentum optimizer by partially averaging model weights within randomly selected subgroups. We provide both a theoretical convergence analysis of our optimizer and empirical results from language model training. Our method requires significantly less communication than fully sharded data parallel training and DiLoCo, a widely used low-communication baseline. Moreover, our method avoids global blocking communication, thereby reducing accelerator idle time. Our experiments show that NoLoCo is more communication-efficient than DiLoCo, improving final perplexity by up to $4\%$ and converging up to $4\times$ faster in wall-clock time across a range of worker counts, model sizes, and communication bandwidths.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

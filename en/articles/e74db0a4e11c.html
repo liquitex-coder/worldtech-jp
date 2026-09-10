@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AGENTSERVESIM: A Hardware-aware Simulator for Multi-Turn LLM Agent Serving — NewsMatome (EN)</title>
-<meta name="description" content="AGENTSERVESIM: A Hardware-aware Simulator for Multi-Turn LLM Agent Serving — original-language edition. Japanese translation available.">
+<title>AgentServeSim: Serving-System Simulation and Policy Search for LLM Agent Programs — NewsMatome (EN)</title>
+<meta name="description" content="AgentServeSim: Serving-System Simulation and Policy Search for LLM Agent Programs — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/e74db0a4e11c.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/e74db0a4e11c.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/e74db0a4e11c.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/e74db0a4e11c.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AGENTSERVESIM: A Hardware-aware Simulator for Multi-Turn LLM Agent Serving">
+<meta property="og:title" content="AgentServeSim: Serving-System Simulation and Policy Search for LLM Agent Programs">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"AGENTSERVESIM: A Hardware-aware Simulator for Multi-Turn LLM Agent Serving",
- "inLanguage":"en","datePublished":"2026-06-10T07:00:00+09:00","dateModified":"2026-06-10T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"AgentServeSim: Serving-System Simulation and Policy Search for LLM Agent Programs",
+ "inLanguage":"en","datePublished":"2026-09-11T07:00:00+09:00","dateModified":"2026-09-11T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.09613","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/e74db0a4e11c.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>AGENTSERVESIM: A Hardware-aware Simulator for Multi-Turn LLM Agent Serving</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/06/10</span></div>
+    <h1>AgentServeSim: Serving-System Simulation and Policy Search for LLM Agent Programs</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/11</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/e74db0a4e11c.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.09613" rel="nofollow noopener">https://arxiv.org/abs/2606.09613</a></span></div>
-  <div class="article-body"><p>arXiv:2606.09613v1 Announce Type: cross 
-Abstract: Multi-turn LLM agents interleave model calls with external tool invocations, shifting serving from stateless request processing to stateful program execution. Serving these workloads requires scheduling, KV-cache management, and routing policies that use program-level context, including turn dependencies, tool-induced gaps, and reusable KV state. Evaluating such policies directly on real systems is costly, since each design point may require dedicated accelerator time across arrival rates, model scales, serving-instance counts, and memory hierarchies. Simulation offers a scalable alternative, but existing LLM serving simulators target stateless request-level workloads and therefore omit the core dynamics of agent serving: multi-turn program execution, cross-turn cache locality, and KV-cache residency during tool gaps. We present AGENTSERVESIM, a hardware-aware simulator for multi-turn LLM agent serving. AGENTSERVESIM evaluates serving policies at program granularity through composable modules: a Program Orchestrator preserves program identity and turn order, a Tool Simulator materializes tool-induced gaps, a Session-Aware Router maintains program-to-instance affinity for cache-aware dispatch, and a KV Residency Model tracks policy-defined KV placement across HBM, host DRAM/CXL, and eviction. Across real serving deployments and hardware configurations, AGENTSERVESIM reproduces real-system behavior within 6% error across key performance metrics while running entirely on commodity CPUs. These results show that AGENTSERVESIM enables controlled, repeatable exploration of agent-serving policies without requiring exhaustive deployment on costly accelerators.</p></div>
+  <div class="article-body"><p>arXiv:2606.09613v3 Announce Type: replace-cross 
+Abstract: Large language model agents execute programs comprising multiple model turns interleaved with external tool calls. Their job completion time depends on how the serving system retains KV state across tool gaps, routes successor turns, and schedules competing programs. Most existing serving simulators operate on request streams in which arrivals are externally supplied and KV state follows request- or cache-scoped semantics. They therefore cannot jointly represent the cross-turn state and policy-dependent successor releases needed to evaluate counterfactual agent-serving trajectories. We present AgentServeSim, a simulator whose unit of execution is the agent program. A Program Control Block maintains cross-turn state, while a Program Orchestrator causally releases successor turns from simulated predecessor completions. A Retention Plane controls KV state across tool gaps, and a Dispatch Plane determines where and when each ready turn executes. We validate AgentServeSim against real vLLM deployments in 20 paired simulator-real cells spanning two GPU platforms, Llama-3.1-8B and Llama-3.1-70B, coding and function-calling agents, and five arrival rates. Mean JCT error remains within 5.5% on B200 and 5.2% in the saturated RTX PRO 6000 regime. Finally, we propose LLM-driven automated agent-serving policy search using AgentServeSim as a CPU-based fitness evaluator. The resulting policies improve mean JCT over hand-written seed policies by 0.5% for KV retention and 2.8% for scheduling.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

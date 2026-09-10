@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Do Models Read What They Write? Causal Registers in Scratchpad Reasoning — NewsMatome</title>
-<meta name="description" content="Do Models Read What They Write? Causal Registers in Scratchpad Reasoning（EN→JA 翻訳・出典付き）">
+<title>When Does Activation Steering Change What a Model Computes From? — NewsMatome</title>
+<meta name="description" content="When Does Activation Steering Change What a Model Computes From?（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/d8b4e86fcb35.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/d8b4e86fcb35.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/d8b4e86fcb35.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="Do Models Read What They Write? Causal Registers in Scratchpad Reasoning">
-<meta property="og:description" content="Do Models Read What They Write? Causal Registers in Scratchpad Reasoning（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="When Does Activation Steering Change What a Model Computes From?">
+<meta property="og:description" content="When Does Activation Steering Change What a Model Computes From?（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Do Models Read What They Write? Causal Registers in Scratchpad Reasoning",
- "inLanguage":"ja","datePublished":"2026-07-01T07:00:00+09:00","dateModified":"2026-07-01T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"When Does Activation Steering Change What a Model Computes From?",
+ "inLanguage":"ja","datePublished":"2026-09-11T07:00:00+09:00","dateModified":"2026-09-11T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.29522","url":"https://liquitex-coder.github.io/worldtech-jp/articles/d8b4e86fcb35.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>Do Models Read What They Write? Causal Registers in Scratchpad Reasoning</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>When Does Activation Steering Change What a Model Computes From?</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>Do Models Read What They Write? Causal Registers in Scratchpad Reasoning</h1>
+      <h1>When Does Activation Steering Change What a Model Computes From?</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/07/01 07:00</span><span>· 更新 2026/07/01</span>
+        <span>公開 2026/09/11 07:00</span><span>· 更新 2026/09/11</span>
       </div>
     </div>
     
@@ -74,24 +74,24 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2606.29522" rel="nofollow noopener">Do Models Read What They Write? Causal Registers in Scratchpad Reasoning</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2606.29522" rel="nofollow noopener">When Does Activation Steering Change What a Model Computes From?</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2606.29522v1 Announce Type: new 
-Abstract: A central hope behind process supervision is that models can expose intermediate variables that matter for their later behavior. For this to help with alignment, a scratchpad must be tied to the computation: when the model writes a state, later steps should compute from that state. To test this requirement, we use a controlled state-tracking task with a known update rule, comparing models trained to report only the final state with models trained to write intermediate states before giving the final answer. At evaluation, we edit the internal representation of one written state while leaving the visible scratchpad text fixed. Because the transition rule is known, the edit has a single correct downstream consequence. In Qwen2.5-Coder-7B, the state-writing model predicts the next phase bit implied by the edited state on 80% and 91% of held-out examples across the two task variants, while pretrained and final-answer-only controls remain near baseline. Additional controls rule out generic next-token steering and copying another continuation: the prediction depends on both the edited state and the current move. The same causal-use pattern replicates across model families. Together, these results suggest a sharper goal for scratchpad oversight: not just to make intermediate reasoning legible, but to train written states that the model uses as part of its computation.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2606.29522v1 Announce Type: new 
-Abstract: A central hope behind process supervision is that models can expose intermediate variables that matter for their later behavior. For this to help with alignment, a scratchpad must be tied to the computation: when the model writes a state, later steps should compute from that state. To test this requirement, we use a controlled state-tracking task with a known update rule, comparing models trained to report only the final state with models trained to write intermediate states before giving the final answer. At evaluation, we edit the internal representation of one written state while leaving the visible scratchpad text fixed. Because the transition rule is known, the edit has a single correct downstream consequence. In Qwen2.5-Coder-7B, the state-writing model predicts the next phase bit implied by the edited state on 80% and 91% of held-out examples across the two task variants, while pretrained and final-answer-only controls remain near baseline. Additional controls rule out generic next-token steering and copying another continuation: the prediction depends on both the edited state and the current move. The same causal-use pattern replicates across model families. Together, these results suggest a sharper goal for scratchpad oversight: not just to make intermediate reasoning legible, but to train written states that the model uses as part of its computation.</div>
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2606.29522v2 Announce Type: replace 
+Abstract: Activation steering can reliably change an agent&#x27;s output by modifying its internal activations. Yet arriving at the same answer need not involve the same computation: behavioral equivalence does not imply mechanistic equivalence. We test whether an activation edit changes the state used in subsequent computation or biases that computation toward the desired output. In a controlled state-tracking task, trace supervision creates an editable register: changing its internal value makes the model apply the next operation to the edited state. We next ask whether widely used mean activation steering admits a similar interpretation: does steering recreate the internal configuration the model naturally uses when performing a task? If so, transplanting that activation should be effective, and steering should remain effective at the scale of the natural source-to-target activation change. Neither prediction holds in the two selected model-task settings. Replacing the activation at one layer produces less than 2% of the target-answer margin gain from patching through all remaining layers, while natural-scale steering is similarly ineffective. The steering vectors have norms 77 and 26 times the median natural change in Qwen and Llama, producing 54% and 82% of the reference effect. Thus, a successful steering intervention need not reproduce the natural target activation at the intervention layer. More generally, an intervention should be interpreted as changing the computational state only when a later computation uses the edited value according to the semantics of that state.</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2606.29522v2 Announce Type: replace 
+Abstract: Activation steering can reliably change an agent&#x27;s output by modifying its internal activations. Yet arriving at the same answer need not involve the same computation: behavioral equivalence does not imply mechanistic equivalence. We test whether an activation edit changes the state used in subsequent computation or biases that computation toward the desired output. In a controlled state-tracking task, trace supervision creates an editable register: changing its internal value makes the model apply the next operation to the edited state. We next ask whether widely used mean activation steering admits a similar interpretation: does steering recreate the internal configuration the model naturally uses when performing a task? If so, transplanting that activation should be effective, and steering should remain effective at the scale of the natural source-to-target activation change. Neither prediction holds in the two selected model-task settings. Replacing the activation at one layer produces less than 2% of the target-answer margin gain from patching through all remaining layers, while natural-scale steering is similarly ineffective. The steering vectors have norms 77 and 26 times the median natural change in Qwen and Llama, producing 54% and 82% of the reference effect. Thus, a successful steering intervention need not reproduce the natural target activation at the intervention layer. More generally, an intervention should be interpreted as changing the computational state only when a later computation uses the edited value according to the semantics of that state.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2606.29522v1 Announce Type: new 
-Abstract: A central hope behind process supervision is that models can expose intermediate variables that matter for their later behavior. For this to help with alignment, a scratchpad must be tied to the computation: when the model writes a state, later steps should compute from that state. To test this requirement, we use a controlled state-tracking task with a known update rule, comparing models trained to report only the final state with models trained to write intermediate states before giving the final answer. At evaluation, we edit the internal representation of one written state while leaving the visible scratchpad text fixed. Because the transition rule is known, the edit has a single correct downstream consequence. In Qwen2.5-Coder-7B, the state-writing model predicts the next phase bit implied by the edited state on 80% and 91% of held-out examples across the two task variants, while pretrained and final-answer-only controls remain near baseline. Additional controls rule out generic next-token steering and copying another continuation: the prediction depends on both the edited state and the current move. The same causal-use pattern replicates across model families. Together, these results suggest a sharper goal for scratchpad oversight: not just to make intermediate reasoning legible, but to train written states that the model uses as part of its computation.</p><a href="https://arxiv.org/abs/2606.29522" rel="nofollow noopener">原論文を読む →</a></div>
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2606.29522v2 Announce Type: replace 
+Abstract: Activation steering can reliably change an agent&#x27;s output by modifying its internal activations. Yet arriving at the same answer need not involve the same computation: behavioral equivalence does not imply mechanistic equivalence. We test whether an activation edit changes the state used in subsequent computation or biases that computation toward the desired output. In a controlled state-tracking task, trace supervision creates an editable register: changing its internal value makes the model apply the next operation to the edited state. We next ask whether widely used mean activation steering admits a similar interpretation: does steering recreate the internal configuration the model naturally uses when performing a task? If so, transplanting that activation should be effective, and steering should remain effective at the scale of the natural source-to-target activation change. Neither prediction holds in the two selected model-task settings. Replacing the activation at one layer produces less than 2% of the target-answer margin gain from patching through all remaining layers, while natural-scale steering is similarly ineffective. The steering vectors have norms 77 and 26 times the median natural change in Qwen and Llama, producing 54% and 82% of the reference effect. Thus, a successful steering intervention need not reproduce the natural target activation at the intervention layer. More generally, an intervention should be interpreted as changing the computational state only when a later computation uses the edited value according to the semantics of that state.</p><a href="https://arxiv.org/abs/2606.29522" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2606.29522" rel="nofollow noopener">https://arxiv.org/abs/2606.29522</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
     <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="66fe3313b27e.html"><div class="sim">関連</div><div class="info"><b>Recursive Self-Evolving Agents via Held-Out Selection</b><div class="m">AI</div></div></a><a class="r" href="bdac049771ce.html"><div class="sim">関連</div><div class="info"><b>Data and Evaluation Closed-Loop for Model Capability Enhancement</b><div class="m">AI</div></div></a><a class="r" href="30c64684af91.html"><div class="sim">関連</div><div class="info"><b>GPTNT: Benchmarking Real-Time Collaboration Between Multimodal Agents on Keep Talking And Nobody Explodes</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="38987a8d0b0e.html"><div class="sim">関連</div><div class="info"><b>Beyond Right and Wrong: Evaluating Second-order Social Reasoning in Large Language Models</b><div class="m">AI</div></div></a><a class="r" href="4a5e61d042ae.html"><div class="sim">関連</div><div class="info"><b>CriticGen: Generation-Aware Evaluation as Actionable Feedback</b><div class="m">AI</div></div></a><a class="r" href="92ec29497442.html"><div class="sim">関連</div><div class="info"><b>When Does Memory Help? A Cost-Aware Evaluation of Long-Term Memory in Tool-Using LLM Agents</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

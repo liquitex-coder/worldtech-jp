@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RAPTOR: Role-Aware Private Training for Mixture-of-Experts — NewsMatome (EN)</title>
+<meta name="description" content="RAPTOR: Role-Aware Private Training for Mixture-of-Experts — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/ac766b01beeb.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/ac766b01beeb.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/ac766b01beeb.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/ac766b01beeb.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RAPTOR: Role-Aware Private Training for Mixture-of-Experts">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"RAPTOR: Role-Aware Private Training for Mixture-of-Experts",
+ "inLanguage":"en","datePublished":"2026-09-11T07:00:00+09:00","dateModified":"2026-09-11T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.05770","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/ac766b01beeb.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/ac766b01beeb.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>RAPTOR: Role-Aware Private Training for Mixture-of-Experts</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/11</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/ac766b01beeb.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.05770" rel="nofollow noopener">https://arxiv.org/abs/2609.05770</a></span></div>
+  <div class="article-body"><p>arXiv:2609.05770v1 Announce Type: new 
+Abstract: Differentially private (DP) fine-tuning methods treat sparse Mixture-of-Experts (MoE) models as a single dense block, ignoring that shared layers see all data while experts only see routed records. We identify and formally characterize three resulting failure modes: global clipping suppresses expert gradients, batch-level normalization dilutes sparse expert updates, and fixed privacy noise degrades signal-to-noise ratio on low-load experts. We introduce RAPTOR - a Role-Aware Private Training framework, which alternates shared and expert optimization and targets each failure directly, using expert-specific clipping and noise together with a public expected-owner denominator and a count-independent update schedule that avoids conditioning on private, realized expert counts. We prove the resulting mechanism satisfies $(\varepsilon,\delta)$-DP: because each record is assigned to exactly one owner expert, per-expert mechanisms within a layer compose in parallel, so updating all $E$ experts costs no more, in privacy terms, than updating one, with shared and expert streams composing sequentially across training. We further derive a bias-variance decomposition of the public-denominator estimator showing its bias grows predictably with routing imbalance, yielding a privacy-free rule for selecting which layer to protect from routing entropy measured on a small public corpus. Experiments on Switch Transformer and OLMoE fine-tuning across GLUE tasks, and on DeepSeek-VL2-Tiny, show consistent gains over standard DP baselines across several privacy levels ($\varepsilon$), with the largest margins typically at the tightest budgets. Code and models are publicly available: https://github.com/leduckhai/RAPTOR</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

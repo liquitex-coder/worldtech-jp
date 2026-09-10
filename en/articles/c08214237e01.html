@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Equivariance Breaks the Learning Rate — NewsMatome (EN)</title>
+<meta name="description" content="Equivariance Breaks the Learning Rate — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/c08214237e01.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/c08214237e01.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/c08214237e01.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/c08214237e01.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Equivariance Breaks the Learning Rate">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Equivariance Breaks the Learning Rate",
+ "inLanguage":"en","datePublished":"2026-09-11T07:00:00+09:00","dateModified":"2026-09-11T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.08381","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/c08214237e01.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/c08214237e01.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Equivariance Breaks the Learning Rate</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/11</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/c08214237e01.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.08381" rel="nofollow noopener">https://arxiv.org/abs/2609.08381</a></span></div>
+  <div class="article-body"><p>arXiv:2609.08381v1 Announce Type: new 
+Abstract: Equivariant networks are commonly trained with Adam, yet recent work reports that matrix-structured optimizers such as Muon can perform better on these architectures without explaining why. We identify one source of this difference inside equivariant linear layers. Each irrep block learns a channel-mixing matrix $W_l$ shared across its $2l+1$ components, giving the expanded map $W_l \otimes I_{2l+1}$. For a single application of the layer, the gradient of $W_l$ sums $2l+1$ outer product contributions and has rank at most $2l+1$. Adam rescales stored weights individually without using the irrep boundaries, so one learning rate can produce different spectral step sizes across blocks within a layer. We address this mismatch by normalizing each block update separately, without introducing a new hyperparameter. This changes only the scale of the update, leaving Adam&#x27;s moment estimates and its direction within each block unchanged. We evaluate the mechanism in a controlled $\mathrm{SO}(3)$-equivariant model with a matched dense control and in an e3nn interatomic potential model trained on rMD17 and MD22. The toy setup isolates a mismatch that grows with width while the dense control shows no corresponding growth. In the interatomic potential model, block normalization and tuning Adam&#x27;s momentum coefficients independently improve performance, but neither alone matches Muon. Combined, they make Adam competitive with Muon on all datasets, indicating that blockwise step control and momentum accumulation account for much of Muon&#x27;s advantage.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CAROL: Context-Aware Online Learning for Fuzzer Scheduling — NewsMatome (EN)</title>
+<meta name="description" content="CAROL: Context-Aware Online Learning for Fuzzer Scheduling — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/fcb355066f44.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/fcb355066f44.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/fcb355066f44.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/fcb355066f44.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CAROL: Context-Aware Online Learning for Fuzzer Scheduling">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"CAROL: Context-Aware Online Learning for Fuzzer Scheduling",
+ "inLanguage":"en","datePublished":"2026-09-11T07:00:00+09:00","dateModified":"2026-09-11T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.06772","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/fcb355066f44.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/fcb355066f44.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>CAROL: Context-Aware Online Learning for Fuzzer Scheduling</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/11</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/fcb355066f44.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.06772" rel="nofollow noopener">https://arxiv.org/abs/2609.06772</a></span></div>
+  <div class="article-body"><p>arXiv:2609.06772v1 Announce Type: cross 
+Abstract: Ensemble fuzzing runs multiple fuzzers on a target while a scheduler allocates CPU time among them. Existing schedulers base these decisions on compact summaries of past performance and rules fixed before a campaign. Our measurements reveal two limitations. First, past-reward summaries do not reliably capture performance evolution: after accounting for estimation noise, agreement between consecutive-window rankings is statistically indistinguishable from within-window self-agreement. Second, predictive signals vary across targets: on eight of nine targets, a weighting learned from the other eight predicts reward worse than one learned on the current target. We introduce CAROL, an online scheduler that uses each fuzzer&#x27;s current context. Already available to the dispatch loop, this context describes reward trends, waiting and plateau time, reached code, and estimation uncertainty. CAROL uses context in two ways: a domain-guided method detects whether a fuzzer is rising or rotting and applies a phase-specific learning rule, while a learned method predicts reward from 15 context signals and uses predictive uncertainty for online selection. Across nine Magma targets, CAROL triggers more unique bugs than each of three ensemble-scheduling baselines whenever their results differ, and fewer on none. Compared with the strongest baseline for each target, CAROL gains 11.8% and surpasses an oracle that retrospectively selects the best single fuzzer per target. Removing context eliminates the gain, and the additional bugs are concentrated among those the baselines trigger rarely or never. Run unchanged on five widely used C++ programs, CAROL finds 120 previously unknown crashing defects, deduplicated by site, fault, and entry point; all were reported to maintainers through the projects&#x27; stated disclosure channels.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

@@ -17,7 +17,7 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"Scaling Audio Models Efficiently: A Joint Study of Compute Constraints and Optimization Behavior",
- "inLanguage":"en","datePublished":"2026-08-12T07:00:00+09:00","dateModified":"2026-08-12T07:00:00+09:00",
+ "inLanguage":"en","datePublished":"2026-09-11T07:00:00+09:00","dateModified":"2026-09-11T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.22790","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/1ff44efa4af2.html"}
@@ -35,11 +35,11 @@
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
     <h1>Scaling Audio Models Efficiently: A Joint Study of Compute Constraints and Optimization Behavior</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/08/12</span></div>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/11</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/1ff44efa4af2.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.22790" rel="nofollow noopener">https://arxiv.org/abs/2606.22790</a></span></div>
-  <div class="article-body"><p>arXiv:2606.22790v2 Announce Type: replace-cross 
-Abstract: In this paper, we investigate the tradeoffs between compute allocation and model performance for two speech processing tasks: Automatic Speech Recognition (ASR) and Speech Emotion Recognition (SER). We propose a unified framework that analyzes three fundamental compute dimensions: model size ($x_N$), input length ($x_T$), and representation resolution ($x_V$). Motivated by recent advances in compute optimal scaling for multimodal models, we systematically vary these dimensions to examine their influence on task performance under fixed computational budgets. Our study provides insights into how compute resources can be optimally distributed across model capacity, temporal context, and representational granularity, offering practical guidelines for the design of efficient speech models. Through experiments on LibriSpeech and CREMA-D datasets, we demonstrate non-linear scaling behavior and identify optimal operating points. Our results show that (1) increasing model size yields diminishing returns: scaling Tiny (39M) to Small (244M) reduces WER by 8.22%, whereas Small to Medium (769M) reduces WER by only 2.35%; (2) an optimal audio duration of approximately 4 seconds exists for SER; and (3) reducing encoder token resolution provides an effective mechanism for lowering inference cost, Large-v3 (1540M) with 750 frames requires 2572 GFLOPS whereas with 1500 frames requires 5228 GFLOPS, with less than 3% relative increase in WER. Additionally, LoRA-based adaptation enables efficient finetuning with minimal performance degradation.</p></div>
+  <div class="article-body"><p>arXiv:2606.22790v3 Announce Type: replace-cross 
+Abstract: Large automatic speech recognition (ASR) models such as Whisper must be deployed across hardware with widely varying memory and inference-speed constraints. We present a compression framework that jointly parametrizes Whisper deployment along \emph{six} dimensions: model size $x_N$, temporal resolution $x_T$, encoder token stride $x_V$, low-rank adaptation capacity $x_R$, weight precision $x_Q$ and sparsity pattern $x_P$. All axes are jointly optimized against three deployment objectives (word error rate, inference FLOPs, and memory footprint) using a non-dominated sorting genetic evolutionary search (NSGA). Across 50 of the 1,680 candidate configurations evaluated, we measure the marginal effect of each axis on the three objectives and identify compression combinations that dominate naive single-axis scaling, and report a consistent negative result: 1:4 structured sparsity fails to recover acceptable accuracy under any tested recovery budget. We report real, measured memory and accuracy figures for genuinely quantized deployment artifacts, and provide a lookup table mapping deployment scenarios (cloud, server, edge, ultra-constrained) to specific axis configurations with their measured accuracy/memory/compute trade-offs</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>
