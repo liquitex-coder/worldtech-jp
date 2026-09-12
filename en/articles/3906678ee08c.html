@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RelayS2S: A Dual-Path Speculative Generation for Real-Time Dialogue — NewsMatome (EN)</title>
+<meta name="description" content="RelayS2S: A Dual-Path Speculative Generation for Real-Time Dialogue — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/3906678ee08c.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/3906678ee08c.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/3906678ee08c.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/3906678ee08c.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RelayS2S: A Dual-Path Speculative Generation for Real-Time Dialogue">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"RelayS2S: A Dual-Path Speculative Generation for Real-Time Dialogue",
+ "inLanguage":"en","datePublished":"2026-09-12T07:00:00+09:00","dateModified":"2026-09-12T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2603.23346","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/3906678ee08c.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/3906678ee08c.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>RelayS2S: A Dual-Path Speculative Generation for Real-Time Dialogue</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/12</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/3906678ee08c.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2603.23346" rel="nofollow noopener">https://arxiv.org/abs/2603.23346</a></span></div>
+  <div class="article-body"><p>arXiv:2603.23346v2 Announce Type: replace 
+Abstract: Real-time spoken dialogue systems face a fundamental tension between latency and response quality. End-to-end speech-to-speech (S2S) models respond immediately and naturally handle turn-taking, backchanneling, and interruption, but produce semantically weaker outputs. Cascaded pipelines (ASR -&gt; LLM) deliver stronger responses at the cost of latency that grows with model size. We present RelayS2S, a hybrid architecture that runs two paths in parallel upon turn detection. The fast path - a duplex S2S model - speculatively drafts a short response prefix that is streamed immediately to TTS for low-latency response onset, while continuing to monitor live audio events. The slow path - a cascaded ASR -&gt; LLM pipeline - generates a higher-quality continuation conditioned on the committed prefix, producing an uninterrupted utterance. A lightweight learned verifier gates the handoff, committing the prefix when appropriate or falling back gracefully to the cascaded pipeline. With GPT-4.1 as the back-end, RelayS2S substantially reduces response latency while preserving nearly all of the cascaded pipeline&#x27;s textual quality. On synthetic voice dialogues, it achieves a P90 first-chunk latency of 81 ms, excluding TTS and network latency, compared with 1,006 ms for the cascaded baseline. On real voice dialogues, RelayS2S reduces average first-chunk latency by 479 ms while retaining 99% of the cascaded pipeline&#x27;s textual quality. These benefits become larger as the slow-path model scales. Because the prefix handoff requires no architectural modification to either component, RelayS2S serves as a lightweight, drop-in addition to existing cascaded pipelines. Our code is publicly available at: https://github.com/mailong25/relays2s</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

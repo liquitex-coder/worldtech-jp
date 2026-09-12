@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FP8 is All You Need (Part 2): Efficient Ozaki-Bailey Style FFT Through Tensor-core Garner Reformulation and Kulisch Escape Route — NewsMatome (EN)</title>
-<meta name="description" content="FP8 is All You Need (Part 2): Efficient Ozaki-Bailey Style FFT Through Tensor-core Garner Reformulation and Kulisch Escape Route — original-language edition. Japanese translation available.">
+<title>FP8 is All You Need (Part 2): Full-FP64 3-D FFT on FP8-Generation Tensor CoresThe Integer-Epilogue Wall and the Minimal Hardware That Would Remove It — NewsMatome (EN)</title>
+<meta name="description" content="FP8 is All You Need (Part 2): Full-FP64 3-D FFT on FP8-Generation Tensor CoresThe Integer-Epilogue Wall and the Minimal Hardware That Would Remove It — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/5a3f1c5e4334.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/5a3f1c5e4334.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/5a3f1c5e4334.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/5a3f1c5e4334.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="FP8 is All You Need (Part 2): Efficient Ozaki-Bailey Style FFT Through Tensor-core Garner Reformulation and Kulisch Escape Route">
+<meta property="og:title" content="FP8 is All You Need (Part 2): Full-FP64 3-D FFT on FP8-Generation Tensor CoresThe Integer-Epilogue Wall and the Minimal Hardware That Would Remove It">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"FP8 is All You Need (Part 2): Efficient Ozaki-Bailey Style FFT Through Tensor-core Garner Reformulation and Kulisch Escape Route",
- "inLanguage":"en","datePublished":"2026-06-30T07:00:00+09:00","dateModified":"2026-06-30T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"FP8 is All You Need (Part 2): Full-FP64 3-D FFT on FP8-Generation Tensor CoresThe Integer-Epilogue Wall and the Minimal Hardware That Would Remove It",
+ "inLanguage":"en","datePublished":"2026-09-12T07:00:00+09:00","dateModified":"2026-09-12T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.23698","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/5a3f1c5e4334.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>FP8 is All You Need (Part 2): Efficient Ozaki-Bailey Style FFT Through Tensor-core Garner Reformulation and Kulisch Escape Route</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/06/30</span></div>
+    <h1>FP8 is All You Need (Part 2): Full-FP64 3-D FFT on FP8-Generation Tensor CoresThe Integer-Epilogue Wall and the Minimal Hardware That Would Remove It</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/12</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/5a3f1c5e4334.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.23698" rel="nofollow noopener">https://arxiv.org/abs/2606.23698</a></span></div>
-  <div class="article-body"><p>arXiv:2606.23698v2 Announce Type: replace-cross 
-Abstract: NVIDIA&#x27;s Blackwell Ultra (B300) cuts FP64 vector throughput to ~1.3 TFLOPS per GPU, roughly 30x below B200 and well below the level at which bandwidth-limited FP64 workloads stay memory-bound. The Ozaki Scheme II framework recovers FP64-equivalent throughput by routing dense matrix multiply through FP8 tensor cores with a mantissa-sliced Chinese-remainder reconstruction. A companion Part (1) paper covers dense GEMM, batched GEMV, stencils, and SpMV; this paper adds the fifth canonical primitive, the 3-D FFT. We present Ozaki-Bailey FFT, an emulated 3-D FFT via the Bailey six-step decomposition with both 1-D FFT GEMMs on FP8 tensor cores. Bailey&#x27;s small inner factor k ~ sqrt(N) (k=32 for N=1024) puts the kernel in the regime k &lt;&lt; r^2, where the third TME parameter gamma (reconstruction latency) binds rather than amortising. Garner reconstruction splits into Phase A (inner products on FP8/INT8 tensor cores, ~1 ms for 1024^3 on B300) and Phase B (per-output reduction). We identify Kulisch fixed-point complete arithmetic as a Phase B reformulation that keeps full FP64 accuracy while running entirely on the INT32 SIMT pipe. We derive closed-form bandwidth-parity floors. The native FP64 floor is 1.56*B_HBM (12.5 TF at 8 TB/s): B300&#x27;s 1.3 TF sits ~10x below, Rubin&#x27;s 33 TF within 4%. The Kulisch escape route needs an INT32 sub-floor 8.25*B_HBM and an FP8 floor 170*B_HBM; B300 meets both. The projection is ~18 ms for 1024^3 at full FP64, essentially the 12.9 ms memory roof. A GPU meets memory-roof FFT parity if it satisfies either the native floor or both Kulisch floors. If the projection holds in practice, B300 becomes viable for full-FP64 FFT through software alone, motivating a libKulisch library and benchmark campaign.</p></div>
+  <div class="article-body"><p>arXiv:2606.23698v3 Announce Type: replace-cross 
+Abstract: The NVIDIA Blackwell Ultra (B300) GPU cuts FP64 vector throughput $\sim 30\times$ while multiplying FP8 tensor throughput. After the recovery of FP64 GEMM via Ozaki Scheme II on FP8 tensor cores and the Tensor-Memory Equilibrium model of the companions (&quot;FP8 is All You Need, Part 1&quot; and &quot;Ozaki 2.5&quot;) we ask whether the fifth canonical HPC primitive, the full-FP64 $1024^3$ 3-D FFT, can be carried by the same substrate, and answer with a design and its limit. It is a Bailey six-step transform with no FP64 arithmetic: FP8-tensor DFT GEMMs with fused twiddles, residue-domain Karatsuba combines and exact CRT reconstruction whose bulk is a small GEMM on the FP16 tensor path and whose remainder is a Kulisch fixed-point accumulation with a two-sided modulo-$M$ lift, so the only rounding is the final conversion; constants are machine-generated and verified bit-exactly. The central finding: the binding resource is not floating point but a per-output integer epilogue with floor $(c_{\rm epi}/8),B_{\rm mem}$, $c_{\rm epi} \approx 203$-$281$ instructions per output: on B300 it holds the transform at 63-87 ms against a 12.9 ms roof ($4.9$-$6.7\times$ short); at most $1.3$-$1.9\times$ faster than the collapsed native path, possibly no faster at realised issue rates; no software route reaches the roof; on the NVIDIA Rubin GPU emulation loses $8$-$11\times$. An FP32 variant meets the same wall: the cause is per-scalar reconstruction, not FP64. Each floor term names its remedy: the NVIDIA B200 GPU&#x27;s INT8 tensor core restored with a position-weighted cross-column accumulation primitive, a load-path deconstruction datapath shared with the companions, two ISA idioms and modular reduction at the MMA output give 16.0-23.5 ms with minor hardware and 12.9-15.0 ms with one moderate ask. All figures are projected floors, not measurements, with sensitivities and the FP8 layout condition given.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

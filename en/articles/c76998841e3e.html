@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FluxMoE: Decoupling Expert Residency for High-Performance MoE Serving — NewsMatome (EN)</title>
+<meta name="description" content="FluxMoE: Decoupling Expert Residency for High-Performance MoE Serving — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/c76998841e3e.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/c76998841e3e.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/c76998841e3e.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/c76998841e3e.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FluxMoE: Decoupling Expert Residency for High-Performance MoE Serving">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"FluxMoE: Decoupling Expert Residency for High-Performance MoE Serving",
+ "inLanguage":"en","datePublished":"2026-09-12T07:00:00+09:00","dateModified":"2026-09-12T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2604.02715","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/c76998841e3e.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/c76998841e3e.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>FluxMoE: Decoupling Expert Residency for High-Performance MoE Serving</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/12</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/c76998841e3e.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2604.02715" rel="nofollow noopener">https://arxiv.org/abs/2604.02715</a></span></div>
+  <div class="article-body"><p>arXiv:2604.02715v3 Announce Type: replace 
+Abstract: Mixture-of-Experts (MoE) models have become mainstream for scaling language models to hundreds of billions of expert parameters. Despite sparse expert activation, existing inference engines keep all experts GPU-resident, crowding out the key-value cache in large-batch, long-output offline workloads. We present FluxMoE, which decouples experts from physical GPU residency and adapts their footprint to available memory through a new \emph{expert paging} abstraction. FluxMoE combines PagedTensor for transparent remapping, a bandwidth-balanced hierarchy spanning losslessly compressed GPU memory and host DRAM, and a budget-aware residency planner. Unlike CPU-GPU co-inference and whole-layer offloading, FluxMoE streams weights on demand while keeping expert computation on GPUs. We implement FluxMoE atop vLLM and evaluate it on three MoE models. For GLM-4.5 on 8$\times$H20 GPUs, FluxMoE delivers up to 7.2$\times$ vLLM&#x27;s throughput and 79.0\% lower average Time-Per-Output-Token (TPOT), without measurable model-quality loss using lossless compression. For Mixtral-8$\times$7B-Instruct on 2$\times$L40S GPUs, where weight-resident vLLM cannot fit, FluxMoE delivers 4.3$\times$ KTransformers&#x27;s throughput and 29.1\% lower average TPOT.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
