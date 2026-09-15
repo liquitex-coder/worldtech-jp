@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dynamic Expert Quantization for Scalable Mixture-of-Experts Inference — NewsMatome (EN)</title>
+<meta name="description" content="Dynamic Expert Quantization for Scalable Mixture-of-Experts Inference — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/a132ad80c22e.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/a132ad80c22e.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/a132ad80c22e.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/a132ad80c22e.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dynamic Expert Quantization for Scalable Mixture-of-Experts Inference">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Dynamic Expert Quantization for Scalable Mixture-of-Experts Inference",
+ "inLanguage":"en","datePublished":"2026-09-15T07:00:00+09:00","dateModified":"2026-09-15T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2511.15015","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/a132ad80c22e.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/a132ad80c22e.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Dynamic Expert Quantization for Scalable Mixture-of-Experts Inference</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/15</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/a132ad80c22e.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2511.15015" rel="nofollow noopener">https://arxiv.org/abs/2511.15015</a></span></div>
+  <div class="article-body"><p>arXiv:2511.15015v4 Announce Type: replace-cross 
+Abstract: Mixture-of-Experts (MoE) has become a practical architecture for scaling LLM capacity while keeping per-token compute modest, but deploying MoE models on a single, memory-limited GPU remains difficult because expert weights dominate the HBM footprint. Existing expert offloading and prefetching systems reduce the resident set, yet they often pay expert-loading costs on the critical path when activation becomes dense. Post-training quantization (PTQ) lowers the footprint without transfers, but prevailing pipelines fix expert bit-widths offline and assume routing remains stable, even though MoE expert utilization is heavy-tailed and the hot set can shift across workloads.
+  We present DynaExq, a runtime-aware mixed-precision serving system that treats single-GPU MoE inference under a hard HBM envelope as an online, budget-constrained precision allocation problem. The key insight is to keep the experts that dominate runtime traffic resident at higher precision, while maintaining a low-precision fallback for the remaining experts, so the system can reduce transfer volume and avoid the waiting latency that limits offloading and prefetching under dense activation. DynaExq estimates long-horizon expert hotness from router traces, selects a per-layer high-precision resident set via a budget-feasible top-$n$ rule, and applies promotions and demotions asynchronously through stable expert handles so the forward pass always executes on a fully materialized expert version. Across Qwen3-MoE-30B/80B and six benchmarks, DynaExq improves accuracy over static PTQ on Qwen3-80B (73.09% to 77.57%) under comparable device-memory budgets and achieves up to 2.73x higher throughput than offloading/prefetch baselines at batch size 32.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

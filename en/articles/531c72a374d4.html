@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dissecting GPU Utilization for LLM Inference on Nvidia Hopper — NewsMatome (EN)</title>
+<meta name="description" content="Dissecting GPU Utilization for LLM Inference on Nvidia Hopper — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/531c72a374d4.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/531c72a374d4.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/531c72a374d4.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/531c72a374d4.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dissecting GPU Utilization for LLM Inference on Nvidia Hopper">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Dissecting GPU Utilization for LLM Inference on Nvidia Hopper",
+ "inLanguage":"en","datePublished":"2026-09-15T07:00:00+09:00","dateModified":"2026-09-15T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.12923","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/531c72a374d4.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/531c72a374d4.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Dissecting GPU Utilization for LLM Inference on Nvidia Hopper</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/15</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/531c72a374d4.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.12923" rel="nofollow noopener">https://arxiv.org/abs/2609.12923</a></span></div>
+  <div class="article-body"><p>arXiv:2609.12923v1 Announce Type: cross 
+Abstract: A single SM utilization percentage can make an LLM inference workload look compute-saturated while hiding how much useful work is being done. The problem is not that the counter is wrong, but that it collapses several different mechanisms into one number. This is most severe during decode, where each request contributes only one new token and dense projection GEMMs become small-row matrix multiplications. On Hopper, the bfloat16 GMMA path executes these operations in fixed 64-row matrix fragments, so small-batch decode can fill only a small fraction of each fragment with real token rows.
+  In this paper, we profile vLLM with FlashAttention-3 and cuBLASLt on an H100 NVL across cold prefill, warm prefill, and decode, sweeping sequence length and batch size. We replace the usual single utilization number with eight counter-validated views derived from raw Nsight Compute reports, each pinned to an NCU counter or explicit formula. Together, these views map utilization gaps to concrete mechanisms - fragment fill, occupancy limits, stall signatures, wave quantization, and kernel selection - across four production models and six per-layer kernel roles.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

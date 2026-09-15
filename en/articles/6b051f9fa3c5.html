@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>A False Average: Chain-of-Thought Monitors Collapse Where They Are the Only Defense — NewsMatome (EN)</title>
-<meta name="description" content="A False Average: Chain-of-Thought Monitors Collapse Where They Are the Only Defense — original-language edition. Japanese translation available.">
+<title>A False Average: Pooled CoT-Monitor Accuracy Conceals a Reasoning-Dependent Fragility — NewsMatome (EN)</title>
+<meta name="description" content="A False Average: Pooled CoT-Monitor Accuracy Conceals a Reasoning-Dependent Fragility — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/6b051f9fa3c5.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/6b051f9fa3c5.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/6b051f9fa3c5.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/6b051f9fa3c5.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="A False Average: Chain-of-Thought Monitors Collapse Where They Are the Only Defense">
+<meta property="og:title" content="A False Average: Pooled CoT-Monitor Accuracy Conceals a Reasoning-Dependent Fragility">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"A False Average: Chain-of-Thought Monitors Collapse Where They Are the Only Defense",
- "inLanguage":"en","datePublished":"2026-09-11T07:00:00+09:00","dateModified":"2026-09-11T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"A False Average: Pooled CoT-Monitor Accuracy Conceals a Reasoning-Dependent Fragility",
+ "inLanguage":"en","datePublished":"2026-09-15T07:00:00+09:00","dateModified":"2026-09-15T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2608.00583","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/6b051f9fa3c5.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>A False Average: Chain-of-Thought Monitors Collapse Where They Are the Only Defense</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/11</span></div>
+    <h1>A False Average: Pooled CoT-Monitor Accuracy Conceals a Reasoning-Dependent Fragility</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/15</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/6b051f9fa3c5.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.00583" rel="nofollow noopener">https://arxiv.org/abs/2608.00583</a></span></div>
-  <div class="article-body"><p>arXiv:2608.00583v2 Announce Type: replace-cross 
-Abstract: Chain-of-thought (CoT) monitoring is meant to catch the reward hacks that look clean in the actions and betray themselves only in the reasoning. We show that this is exactly where an adversary who controls the reasoning can defeat it. Rewriting only an agent&#x27;s reasoning to read as good-faith engineering, while copying every command and output verbatim so the exploit is unchanged, drops a held-out monitor&#x27;s catch rate on that subset from about 95% to under 11% in one gradient-free shot. A monitor&#x27;s aggregate accuracy is a false average: dominated by hacks the actions give away, it hides the near-total collapse this rewrite produces on the subset where CoT monitoring is the only signal. The attack transfers across monitor families and agent models, reproduces with live agents, though against a calibrated monitor evasion concentrates in the strongest agent. Trace-only defenses recover it only partially, even one primed on the attack, because the rewrite stays truthful about what happened and lies only about intent; only information from outside the trace helps substantially. A probe on an open-weight surrogate monitor&#x27;s activations separates the hacks its verdict misses, but a causal control shows this is a detector, not evidence the monitor secretly knows.</p></div>
+  <div class="article-body"><p>arXiv:2608.00583v3 Announce Type: replace-cross 
+Abstract: Chain-of-thought (CoT) monitors are reported by their aggregate accuracy on a pool of reward hacks. We show that this number is a false average. On Terminal Wrench, about 77% of hacks are given away by the actions alone, and the monitor&#x27;s pooled accuracy is dominated by them; on the remaining 23%, where the reasoning is the only signal, the same monitor is fragile. We expose the fragility with a controlled attack: we rewrite only the agent&#x27;s reasoning to read as good-faith engineering, leaving every command and output byte-identical, so the exploit is unchanged. One gradient-free rewrite drops a held-out monitor&#x27;s catch rate on that subset from about 95% to between 4 and 11%, while the pooled rate falls only about 25 points, the subset&#x27;s share of the pool times its collapse. The rewrite stays truthful about what happened and lies only about intent, so a monitor that reads only the trace recovers little, even when warned about the attack, and only information from outside the trace helps much. The attack transfers across monitor and agent families, and the dataset&#x27;s own hack labels show the same gradient with no monitor in the definition. Live agents on 27 tasks produce hollow hacks unaided, but a monitor calibrated on each model&#x27;s own honest solves catches nearly all of them (AUC at least 0.996 under the narration instruction, 0.97 without it); a small residual has the blindspot&#x27;s shape, low scores on both actions and narration, though none falls below the calibrated threshold. A linear probe on a surrogate monitor&#x27;s activations out-reads its verdict on the obfuscated hacks (AUC up to 0.98), but a behavioral control shows this edge does not, by itself, mean the monitor knows more than it says. Monitor accuracy should be reported on the reasoning-dependent subset, where the defense is supportive.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>
