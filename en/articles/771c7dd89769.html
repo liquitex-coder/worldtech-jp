@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Self-Orchestrating Language Models: Leveraging Semantic Dependence for Efficient Inference — NewsMatome (EN)</title>
+<meta name="description" content="Self-Orchestrating Language Models: Leveraging Semantic Dependence for Efficient Inference — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/771c7dd89769.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/771c7dd89769.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/771c7dd89769.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/771c7dd89769.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Self-Orchestrating Language Models: Leveraging Semantic Dependence for Efficient Inference">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Self-Orchestrating Language Models: Leveraging Semantic Dependence for Efficient Inference",
+ "inLanguage":"en","datePublished":"2026-09-16T07:00:00+09:00","dateModified":"2026-09-16T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.14850","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/771c7dd89769.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/771c7dd89769.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Self-Orchestrating Language Models: Leveraging Semantic Dependence for Efficient Inference</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/16</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/771c7dd89769.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.14850" rel="nofollow noopener">https://arxiv.org/abs/2609.14850</a></span></div>
+  <div class="article-body"><p>arXiv:2609.14850v1 Announce Type: new 
+Abstract: Large language models (LLMs) demonstrate impressive capabilities, but their deployment presents significant efficiency challenges. Autoregressive decoding imposes substantial inference latency and under-utilizes hardware accelerators in low batch size regimes. Discrete diffusion models can generate in parallel but struggle to match autoregressive quality without many diffusion denoising steps. Long-context reasoning creates memory bottlenecks that strain even state-of-the-art accelerators.
+  My thesis is that language models can direct their own inference execution strategy by annotating semantic dependence -- which tokens depend on which others -- in their generation. I call such models self-orchestrating language models. For each system, I design a runtime that acts on these annotations to parallelize autoregressive decoding, evict intermediate context, or derive denoising orders, achieving Pareto-optimal quality-efficiency trade-offs.
+  I demonstrate this approach through three self-orchestrating systems. First, PASTA uses semantic dependence to parallelize autoregressive decoding, training the model to annotate which output chunks can generate independently. Second, TIP uses semantic dependence to evict intermediate reasoning steps from the KV cache, reducing memory consumption while preserving accuracy. Third, Planned Diffusion uses semantic dependence to derive a denoising order for discrete diffusion, autoregressively generating a plan that specifies which chunks to denoise in parallel.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

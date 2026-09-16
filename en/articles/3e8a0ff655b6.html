@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AgentKV: Phase-Aware KV Eviction for Agentic LLMs — NewsMatome (EN)</title>
+<meta name="description" content="AgentKV: Phase-Aware KV Eviction for Agentic LLMs — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/3e8a0ff655b6.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/3e8a0ff655b6.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/3e8a0ff655b6.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/3e8a0ff655b6.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AgentKV: Phase-Aware KV Eviction for Agentic LLMs">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"AgentKV: Phase-Aware KV Eviction for Agentic LLMs",
+ "inLanguage":"en","datePublished":"2026-09-16T07:00:00+09:00","dateModified":"2026-09-16T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.14872","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/3e8a0ff655b6.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/3e8a0ff655b6.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>AgentKV: Phase-Aware KV Eviction for Agentic LLMs</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/16</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/3e8a0ff655b6.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.14872" rel="nofollow noopener">https://arxiv.org/abs/2609.14872</a></span></div>
+  <div class="article-body"><p>arXiv:2609.14872v1 Announce Type: new 
+Abstract: Agentic serving can consume orders of magnitude more tokens than chatbot workloads, stressing both KV-cache capacity and decode-time bandwidth. Most KV-eviction methods score cached keys against representative queries drawn from the most recent tokens, assuming future attention resembles recent attention. We show that agentic generation violates this assumption: future queries form a mixture over think, act, tool, and others phases, and principal-angle analysis shows these components occupy measurably different query subspaces, so recency representatives systematically undervalue keys that upcoming phases will need. We propose AGENTKV, which maintains a small query buffer per phase and scores cached keys against their union. We further implement AGENTKV in a persistent multi-turn serving path that carries compressed KV state across turns and compacts retained KV pages online. Across two models, six task domains, and three KV budgets each, AGENTKV improves task score by 5.5 points on average over R-KV and 5.3 over Tri-attention. Relative to upstream full-KV SGLang, AGENTKV improves output-token throughput by up to 1.80x. Code: https://github.com/LiuTaowen-Tony/agentkv.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

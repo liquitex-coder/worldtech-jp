@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BOOST: Concurrent Access to Host Memory and HBM to Accelerate LLM Inference — NewsMatome (EN)</title>
+<meta name="description" content="BOOST: Concurrent Access to Host Memory and HBM to Accelerate LLM Inference — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/221d9799ca0a.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/221d9799ca0a.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/221d9799ca0a.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/221d9799ca0a.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BOOST: Concurrent Access to Host Memory and HBM to Accelerate LLM Inference">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"BOOST: Concurrent Access to Host Memory and HBM to Accelerate LLM Inference",
+ "inLanguage":"en","datePublished":"2026-09-16T07:00:00+09:00","dateModified":"2026-09-16T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.13592","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/221d9799ca0a.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/221d9799ca0a.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>BOOST: Concurrent Access to Host Memory and HBM to Accelerate LLM Inference</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/16</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/221d9799ca0a.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.13592" rel="nofollow noopener">https://arxiv.org/abs/2609.13592</a></span></div>
+  <div class="article-body"><p>arXiv:2609.13592v1 Announce Type: cross 
+Abstract: GPU memory bandwidth and capacity limit throughput in large language model (LLM) inference. The GPU memory system consists of a primary tier of high-bandwidth memory (HBM) and a secondary tier of host memory connected via CPU-to-GPU interconnect. Current serving systems treat the tiers hierarchically: they serve exclusively from HBM when data fits, and otherwise prefetch data from host memory to HBM before use. In both cases, the host memory bandwidth is never well utilized. Prefetching expands capacity by utilizing host memory, but consumes HBM bandwidth for writes, reducing the bandwidth available for demand loads. We observe that fully utilizing both host and HBM bandwidth requires each wave of GPU threadblocks to access both tiers concurrently and in proportion to their bandwidth ratio. Existing bandwidth-proportional placement strategies fail to provide concurrency because they are not aware of GPU waves, and the large 2MB GPU page size.
+  This paper presents BOOST, the first runtime system that provides concurrent and proportional access to both GPU memory tiers, extracting the combined bandwidth of host memory and HBM for LLM inference without kernel changes. The key insight in BOOST is to use kernel access patterns to make page allocation and runtime data management wave-aware. For static model weights, BOOST applies modulo-based page placement that eliminates access-ratio variance; for dynamically provisioned attention key-value (KV) pairs, it makes the free KV page pool wave-aware. We integrate BOOST into vLLM and evaluate on a Grace Hopper system. At iso-batch size, BOOST improves Time-per-Output-Token (TPOT) by 4.3% over HBM-only serving, whereas prefetching degrades TPOT by 6%. In high-throughput serving, BOOST improves throughput by 31% on average, outperforming prefetching by 15%.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

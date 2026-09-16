@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Odds-Shift Slippage in One-vs-Rest Rankers: Diagnosing and Repairing Reweighting-Induced Top-K Errors — NewsMatome (EN)</title>
+<meta name="description" content="Odds-Shift Slippage in One-vs-Rest Rankers: Diagnosing and Repairing Reweighting-Induced Top-K Errors — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/47a3aa3a2627.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/47a3aa3a2627.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/47a3aa3a2627.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/47a3aa3a2627.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Odds-Shift Slippage in One-vs-Rest Rankers: Diagnosing and Repairing Reweighting-Induced Top-K Errors">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Odds-Shift Slippage in One-vs-Rest Rankers: Diagnosing and Repairing Reweighting-Induced Top-K Errors",
+ "inLanguage":"en","datePublished":"2026-09-16T07:00:00+09:00","dateModified":"2026-09-16T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.13810","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/47a3aa3a2627.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/47a3aa3a2627.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Odds-Shift Slippage in One-vs-Rest Rankers: Diagnosing and Repairing Reweighting-Induced Top-K Errors</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/16</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/47a3aa3a2627.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.13810" rel="nofollow noopener">https://arxiv.org/abs/2609.13810</a></span></div>
+  <div class="article-body"><p>arXiv:2609.13810v1 Announce Type: cross 
+Abstract: One-vs-rest rankers that show each user the top-$K$ of many rare labels usually counter imbalance with a per-label positive-class weight, scale_pos_weight $= n_-/n_+$. Elkan&#x27;s identity says such a weight shifts label $j$&#x27;s log-odds by $\ln w_j$, so the model ranks by weighted odds rather than by the marginal that is Bayes-optimal for precision@$K$, and suggests inverting the shift afterwards; what a finite learner does with a weight in the thousands, and which repair then works, has not been measured. We call the gap between the promised and the realized shift odds-shift slippage and measure it on matched pairs of LightGBM and MLP models that differ only in the weights. On Santander the weight takes MAP@7 from 0.808 to 0.117; for the boosted pairs the ideal odds shift accounts for 23% of that loss (32% on Instacart; 98% for an MLP pair on the same rows) and slippage for the rest. We prove that a booster whose leaf steps are capped at $c$ realizes at most $T\eta c$ nat of shift in $T$ rounds at rate $\eta$, which a cap sweep confirms, and show that without a cap saturated cells tie at exactly 1.0, beyond the reach of any separable map. The analytic inversion therefore pays only where the shift was realized and nothing saturated, whereas per-label isotonic regression returns the Santander model to 0.784 (0.780 with the calibrator fitted on the validation period), but only if labels without calibration positives are mapped to their prior rather than passed through. On 11 public MULAN benchmarks and 5 learners the weighted model loses more than half of its MAP@$K$ in 8 of 55 cells, and on delicious and Corel5k the same repair returns it to the unweighted level; per-label calibration hurts where positives are scarce, a harm that a cross-validated rule removes. The recipe is released as oddslip.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T-LoopFormer: Token-Level Elastic-Depth Looped Transformers for Latent Reasoning With Dynamic Routing — NewsMatome (EN)</title>
+<meta name="description" content="T-LoopFormer: Token-Level Elastic-Depth Looped Transformers for Latent Reasoning With Dynamic Routing — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/9256b7e47376.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/9256b7e47376.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/9256b7e47376.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/9256b7e47376.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="T-LoopFormer: Token-Level Elastic-Depth Looped Transformers for Latent Reasoning With Dynamic Routing">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"T-LoopFormer: Token-Level Elastic-Depth Looped Transformers for Latent Reasoning With Dynamic Routing",
+ "inLanguage":"en","datePublished":"2026-09-16T07:00:00+09:00","dateModified":"2026-09-16T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.15160","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/9256b7e47376.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/9256b7e47376.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>T-LoopFormer: Token-Level Elastic-Depth Looped Transformers for Latent Reasoning With Dynamic Routing</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/16</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/9256b7e47376.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.15160" rel="nofollow noopener">https://arxiv.org/abs/2609.15160</a></span></div>
+  <div class="article-body"><p>arXiv:2609.15160v1 Announce Type: new 
+Abstract: Looped Transformers have recently demonstrated strong performance in both reasoning and language tasks by reusing a shared set of parameters across multiple iterations, achieving parameter efficiency without sacrificing representational power. Besides, looped Transformers perform inference directly in the latent space (latent reasoning) to reduce the number of tokens consumed during inference, thereby achieving improved sample efficiency. However, these models typically apply a fixed recursion depth uniformly to every token, leading to suboptimal compute allocation and leaving significant efficiency gains on the table. In this work, we propose \textbf{dynamic token-choice routing} for looped transformers, enabling each token to adaptively determine its own number of loop iterations based on its hidden state. We use a dynamic router to decide whether a token should continue recursing or exit early, allowing simple tokens to bypass unnecessary computation while hard tokens receive deeper processing. To ensure that this adaptive mechanism does not compromise decoding efficiency, we further introduce recursion-wise KV caching, which maintains an independent key-value cache for each recursion loop. This design ensures that tokens at different depths only attend to their corresponding cached states, effectively eliminating redundant computations for exited tokens and enabling fast autoregressive decoding. Extensive experiments show that T-LoopFormer reaches the sota performance under the same parameters on PPL and 10 zero-shot reasoning tasks, even surpassing the base model at 24x FLOPs and our model could reach the lowest inference latency, which validate the effectiveness of token-choice router and recursion-wise KV cache. Code: https://github.com/YuMingQian1234/T-LoopFormer.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

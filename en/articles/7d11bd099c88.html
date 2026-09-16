@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TyPatch: Transforming Patches into Typestate Rules for Kernel Bug Detection — NewsMatome (EN)</title>
+<meta name="description" content="TyPatch: Transforming Patches into Typestate Rules for Kernel Bug Detection — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/7d11bd099c88.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/7d11bd099c88.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/7d11bd099c88.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/7d11bd099c88.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TyPatch: Transforming Patches into Typestate Rules for Kernel Bug Detection">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"TyPatch: Transforming Patches into Typestate Rules for Kernel Bug Detection",
+ "inLanguage":"en","datePublished":"2026-09-16T07:00:00+09:00","dateModified":"2026-09-16T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.13728","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/7d11bd099c88.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/7d11bd099c88.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>TyPatch: Transforming Patches into Typestate Rules for Kernel Bug Detection</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/16</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/7d11bd099c88.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.13728" rel="nofollow noopener">https://arxiv.org/abs/2609.13728</a></span></div>
+  <div class="article-body"><p>arXiv:2609.13728v1 Announce Type: cross 
+Abstract: Historical Linux kernel patches capture defect knowledge that applies beyond their original repair sites. Recent work has shown that large language models (LLMs) can generate static-analysis checkers from historical patches and use them to uncover new kernel bugs. However, complete-checker generation requires the model both to recover the defect semantics expressed by a patch and to implement sophisticated program-analysis machinery, including object tracking, alias analysis, path-state maintenance, and interprocedural propagation. Coupling these responsibilities in a single end-to-end code-generation task can turn a simple defect rule into an unstable and expensive analyzer-implementation problem.
+  To address this problem, we present TyPatch, which decouples patch-specific defect semantics from analyzer implementation. An LLM translates each patch into a typestate rule specifying its tracked object, actions, guards, transitions, and violations. A shared backend then executes these rules, binding their actions to program events, tracking object identity across aliases, propagating typestate along program paths, and producing reports for all rules. On Linux v6.16, TyPatch finds 559 distinct bugs, 121 of which have been confirmed by kernel developers. In a matched 38-patch comparison with the state-of-the-art complete-checker construction workflow, TyPatch uses 88.3-90.1% fewer generation tokens, while its initial report pools achieve 3.42-14.95$\times$ the precision of those produced by that workflow.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

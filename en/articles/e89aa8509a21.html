@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shared KV Caching for Replicated 27B Inference: Correctness Failures and Performance Boundaries — NewsMatome (EN)</title>
+<meta name="description" content="Shared KV Caching for Replicated 27B Inference: Correctness Failures and Performance Boundaries — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/e89aa8509a21.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/e89aa8509a21.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/e89aa8509a21.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/e89aa8509a21.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Shared KV Caching for Replicated 27B Inference: Correctness Failures and Performance Boundaries">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Shared KV Caching for Replicated 27B Inference: Correctness Failures and Performance Boundaries",
+ "inLanguage":"en","datePublished":"2026-09-16T07:00:00+09:00","dateModified":"2026-09-16T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.15021","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/e89aa8509a21.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/e89aa8509a21.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Shared KV Caching for Replicated 27B Inference: Correctness Failures and Performance Boundaries</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/16</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/e89aa8509a21.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.15021" rel="nofollow noopener">https://arxiv.org/abs/2609.15021</a></span></div>
+  <div class="article-body"><p>arXiv:2609.15021v1 Announce Type: cross 
+Abstract: Shared host-memory caching can avoid repeated prefill when a request moves between inference replicas. Its usefulness depends on both correct state transfer and lost prefix locality. We study two single-GPU 27B vLLM replicas sharing a 256 GiB LMCache pool. After adopting an existing packed-page patch, we isolate a raw-pointer fallback that omits the dependency on the current CUDA stream. Controlled byte tests fail under an imposed delay and pass when the dependency is restored; the existing mixed allocator provides a working deployment path. Full-pool allocation checks and service regression complete the validation. A four-block OFF-ON-ON-OFF comparison contains 768 measured requests within two block pairs. Median cross-replica time to first content token falls from 31.715 to 0.605 seconds at 128k input and from 92.047 to 0.790 seconds at 256k. Six-turn synthetic sessions alternating replicas improve by approximately 35% and 45% at initial contexts of 32k and 128k, while fixed placement shows little benefit. This engineering case study identifies practical validation steps and the locality conditions in which shared caching pays off.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

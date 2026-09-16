@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Physically Partitioned KVCache Format for CPU--GPU Load Balancing in MoE Inference — NewsMatome (EN)</title>
+<meta name="description" content="Physically Partitioned KVCache Format for CPU--GPU Load Balancing in MoE Inference — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/cfe67268944f.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/cfe67268944f.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/cfe67268944f.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/cfe67268944f.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Physically Partitioned KVCache Format for CPU--GPU Load Balancing in MoE Inference">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Physically Partitioned KVCache Format for CPU--GPU Load Balancing in MoE Inference",
+ "inLanguage":"en","datePublished":"2026-09-16T07:00:00+09:00","dateModified":"2026-09-16T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.14507","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/cfe67268944f.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/cfe67268944f.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Physically Partitioned KVCache Format for CPU--GPU Load Balancing in MoE Inference</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/16</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/cfe67268944f.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.14507" rel="nofollow noopener">https://arxiv.org/abs/2609.14507</a></span></div>
+  <div class="article-body"><p>arXiv:2609.14507v1 Announce Type: cross 
+Abstract: Single-GPU long-context inference with Mixture-of-Experts (MoE) models requires spilling the key-value cache (KVCache) to CPU memory. The spilled KV serves two complementary purposes---transferring to the GPU for attention computation, or computing in-place on the CPU---which demand opposing physical states. The optimal split between them varies with workload, yet existing KVCache abstractions offer only storage semantics over a monolithic object of a single physical state, and cannot express dynamic load balancing. We propose InplaceKVCache, the first KVCache abstraction whose format fixes each byte&#x27;s physical residency at write time, so that the CPU--GPU load balance can be adjusted without moving data after placement. It realizes this as a four-region layout along two dimensions---device affinity and access pattern---turning load balancing into pure scheduling. Built on this abstraction, WriteScope splits CPU--GPU shares along the sequence dimension, and a portable roofline performance model determines the optimal CPU share as sequence length evolves, with online feedback tracking CPU cost drift. On three MoE models (DeepSeek-V2-Lite, Qwen3-30B-A3B, Mixtral-8$\times$7B) with a 32~GB VRAM budget, WriteScope supports end-to-end inference at the 1M-token aggregate scale. In the long-context regime ($\ge$8K), it achieves geometric-mean speedups of $1.5\times$--$2.5\times$ on A100 and $1.4\times$--$1.7\times$ on V100 over four reproduced baselines, while vLLM, SGLang, and KTransformers fail even with a doubled KV budget. A DeepSeek-V4-Flash case study validates composition with native sparse attention.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

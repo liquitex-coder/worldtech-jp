@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LayerRoute: Adaptive Layer-Skipping with LoRA-Preserved Quality for Efficient LLM Inference — NewsMatome (EN)</title>
+<meta name="description" content="LayerRoute: Adaptive Layer-Skipping with LoRA-Preserved Quality for Efficient LLM Inference — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/8d07e58cf840.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/8d07e58cf840.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/8d07e58cf840.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/8d07e58cf840.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LayerRoute: Adaptive Layer-Skipping with LoRA-Preserved Quality for Efficient LLM Inference">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"LayerRoute: Adaptive Layer-Skipping with LoRA-Preserved Quality for Efficient LLM Inference",
+ "inLanguage":"en","datePublished":"2026-09-16T07:00:00+09:00","dateModified":"2026-09-16T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.13682","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/8d07e58cf840.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/8d07e58cf840.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>LayerRoute: Adaptive Layer-Skipping with LoRA-Preserved Quality for Efficient LLM Inference</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/16</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/8d07e58cf840.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.13682" rel="nofollow noopener">https://arxiv.org/abs/2609.13682</a></span></div>
+  <div class="article-body"><p>arXiv:2609.13682v1 Announce Type: cross 
+Abstract: We introduce LayerRoute, a parameter-efficient method for adaptive transformer layer-skipping that combines per-layer hard-gated routing (trained via a straight-through estimator) with joint LoRA fine-tuning. LayerRoute augments each of the 24 transformer blocks in Qwen2.5-0.5B-Instruct with a lightweight per-layer router (~21.5K parameters) and LoRA adapters (rank 8, ~1.08M parameters), training both jointly under a gate-regularized language-modeling objective. Across 10 independently-seeded training runs, LayerRoute converges to an identical skip-pattern structure in every run - a consistent set of 9 middle layers (8-16) becomes skip-eligible in all 10 seeds - and delivers genuine, verified wallclock speedup in every run (1.02x-1.06x, mean 1.04x). Quality is preserved or improved in every configuration tested: joint LoRA adaptation yields a perplexity improvement over the unmodified backbone in all 10 seeds (mean delta = -1.16 and -1.11 across the two evaluation splits used). We further verify the router performs genuine, non-trivial per-input computation: gate decisions in skip-eligible layers change the actual skip/run outcome for 87-100% of held-out samples, confirming real input-dependent routing rather than a fixed pruning pattern. LayerRoute trains in under 7 minutes on a single A100 and adds negligible overhead beyond the routing decision itself. We report our full reproducibility methodology, including a systematic diagnostic investigation into what determines the router&#x27;s per-input decisions, as part of this work.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Input Resolution Is Required for Bird Species Identification, and What Is Its Latency Cost on an Edge Device? A Study of 14 Input Resolutions and Six Architectures with On-Device Measurements — NewsMatome (EN)</title>
+<meta name="description" content="What Input Resolution Is Required for Bird Species Identification, and What Is Its Latency Cost on an Edge Device? A Study of 14 Input Resolutions and Six Architectures with On-Device Measurements — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/dd92820606f0.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/dd92820606f0.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/dd92820606f0.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/dd92820606f0.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What Input Resolution Is Required for Bird Species Identification, and What Is Its Latency Cost on an Edge Device? A Study of 14 Input Resolutions and Six Architectures with On-Device Measurements">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"What Input Resolution Is Required for Bird Species Identification, and What Is Its Latency Cost on an Edge Device? A Study of 14 Input Resolutions and Six Architectures with On-Device Measurements",
+ "inLanguage":"en","datePublished":"2026-09-16T07:00:00+09:00","dateModified":"2026-09-16T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.14247","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/dd92820606f0.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/dd92820606f0.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>What Input Resolution Is Required for Bird Species Identification, and What Is Its Latency Cost on an Edge Device? A Study of 14 Input Resolutions and Six Architectures with On-Device Measurements</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/16</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/dd92820606f0.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.14247" rel="nofollow noopener">https://arxiv.org/abs/2609.14247</a></span></div>
+  <div class="article-body"><p>arXiv:2609.14247v1 Announce Type: cross 
+Abstract: Bird-strike mitigation at wind farms requires identifying distant birds that span only tens of pixels, so the classifier&#x27;s input resolution N is a design variable, not a fixed specification. We study it with a factorial design over 14 side lengths N (16 to 224), six architectures, two training and evaluation regimes and 30 random seeds -- 2,520 checkpoints and 5,040 evaluations -- plus latency measured on an NVIDIA Jetson Orin Nano. Four results. (1) The selected N depends on the target: 0.90 is met on validation by ResNet50 at N=112 in an estimated 1.85 ms (0.8980 on test) and 0.95 by DINOv2-L at N=144 in 12.70 ms; changing the model buys more accuracy than raising N (+5.93 versus +2.33 points at N=112). (2) The benefit of lowering N depends on the assumed preprocessing path: N=224 -&gt; 80 saves 13.5% when each individual is decoded from its own file but 46.2% when the detector decodes the 4K frame once; the Pareto set grows from 20 to 23 configurations. (3) Accuracy must be measured on the deployed engine: half precision costs ViT-S/16 alone 4 to 7 points at N&gt;=96 while the CNNs stay within 0.1 points, and with selection held at validation the choice differs at 26 of 176 targets. A broken FP16 engine can run faster than a correct one, undetectable from latency; admitting 14 ViT-S/16 FP32 configurations moves the recommendation over the 0.931-0.938 band and under the 10 ms budget. (4) ViT-L-scale models fit this device, but activations exceed the FP16 range; splitting the graph at transformer-block boundaries confines FP32 to the affected segments, making the deployed DINOv2-L chain 1.85x faster than the single-engine build. We also quantify how the regime-difference sign stabilises with seed count; a sensitivity split removing some forms of group sharing preserves all 14 non-trivial signs at the selection boundary.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

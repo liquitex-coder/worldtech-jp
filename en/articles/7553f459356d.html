@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AttnFuse: A Composable DSL for Compiling Attentions to Fused GPU Kernels — NewsMatome (EN)</title>
+<meta name="description" content="AttnFuse: A Composable DSL for Compiling Attentions to Fused GPU Kernels — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/7553f459356d.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/7553f459356d.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/7553f459356d.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/7553f459356d.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AttnFuse: A Composable DSL for Compiling Attentions to Fused GPU Kernels">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"AttnFuse: A Composable DSL for Compiling Attentions to Fused GPU Kernels",
+ "inLanguage":"en","datePublished":"2026-09-16T07:00:00+09:00","dateModified":"2026-09-16T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.13612","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/7553f459356d.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/7553f459356d.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>AttnFuse: A Composable DSL for Compiling Attentions to Fused GPU Kernels</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/16</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/7553f459356d.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.13612" rel="nofollow noopener">https://arxiv.org/abs/2609.13612</a></span></div>
+  <div class="article-body"><p>arXiv:2609.13612v1 Announce Type: new 
+Abstract: Modern AI systems are built on the Transformer architecture, whose core operation, attention, accounts for the majority of computation and memory cost. Researchers continually propose new attention variants to improve quality, efficiency, or context length, but each variant currently requires expert-written GPU code to run at usable speeds. PyTorch&#x27;s recent flex\_attention lets researchers describe custom attention patterns in Python and compile them to fused kernels, but its design is limited to modifications applied after the central matrix multiplication, excluding Rotary Position Embedding (RoPE), the positional encoding used by every major LLM.
+  We introduce AttnFuse, a small DSL for attention that makes pre-multiplication transformations like RoPE first-class operations. Researchers compose ten high-level building blocks to describe a variant, and AttnFuse&#x27;s compiler emits a single fused GPU kernel for the entire computation. On an RTX 3090, AttnFuse achieves a 2.10$\times$ speedup over flex\_attention on the RoPE+causal pattern. On an H100, it runs a full Llama-3-8B training step within 5\% of PyTorch&#x27;s hand-tuned backend. Our investigation reveals the Rotation Calculus: whether to fuse RoPE or apply it separately depends on the GPU&#x27;s compute-to-bandwidth ratio, with a derived crossover that matches measurement. AttnFuse demonstrates that a small, attention-specific compiler can close the gap between flexible research code and production kernels.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TriCalRAG: A Three-Strategy, Retrieval-Augmented Benchmark for On-Premise LLM-Based Root Cause Analysis in AIOps — NewsMatome (EN)</title>
+<meta name="description" content="TriCalRAG: A Three-Strategy, Retrieval-Augmented Benchmark for On-Premise LLM-Based Root Cause Analysis in AIOps — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/96f11b0cd889.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/96f11b0cd889.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/96f11b0cd889.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/96f11b0cd889.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TriCalRAG: A Three-Strategy, Retrieval-Augmented Benchmark for On-Premise LLM-Based Root Cause Analysis in AIOps">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"TriCalRAG: A Three-Strategy, Retrieval-Augmented Benchmark for On-Premise LLM-Based Root Cause Analysis in AIOps",
+ "inLanguage":"en","datePublished":"2026-09-16T07:00:00+09:00","dateModified":"2026-09-16T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.14762","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/96f11b0cd889.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/96f11b0cd889.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>TriCalRAG: A Three-Strategy, Retrieval-Augmented Benchmark for On-Premise LLM-Based Root Cause Analysis in AIOps</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/16</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/96f11b0cd889.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.14762" rel="nofollow noopener">https://arxiv.org/abs/2609.14762</a></span></div>
+  <div class="article-body"><p>arXiv:2609.14762v1 Announce Type: cross 
+Abstract: Cloud-hosted large language models (LLMs) are increasingly used for root cause analysis (RCA) in AIOps pipelines, but they introduce data privacy risk, network latency, and per-query cost that scale poorly with production log volumes. We present TriCalRAG, a benchmark evaluating open-weight LLMs served locally via vLLM on a single high-memory workstation GPU (NVIDIA RTX PRO 6000, 96GB) against a classical LSTM-based log anomaly detector (DeepLog), across four real, publicly available log datasets (BGL, HDFS, Thunderbird, OpenStack). We evaluate two open-weight models (Qwen2.5-14B, Mistral-Small) under three prompting strategies: zero-shot, few-shot, and retrieval-augmented generation (RAG) over a labeled incident history, reporting accuracy, precision/recall, and F1 with bootstrap 95% confidence intervals across 3 random seeds, alongside throughput and VRAM footprint. Our results show that RAG not only improves mean F1 by 0.10-0.27 over zero-shot prompting but, more importantly, substantially stabilizes model calibration: zero-shot prompting drives both models toward near-degenerate behavior (predicting &quot;anomaly&quot; on up to 100% of incidents on some datasets), while RAG keeps predicted-positive rates close to the true class balance in the majority of configurations. Mistral-Small achieves higher macro-averaged F1 than Qwen2.5-14B (0.644 vs. 0.560) but exhibits calibration failures in more configurations (7 vs. 5 of 12), while running at roughly half the throughput - indicating the better model choice depends on whether a deployment prioritizes peak accuracy or predictable behavior across prompting conditions. Ablations show batching scales throughput 41 times on a single card and that 4-bit quantization reduces latency 20% with no measurable accuracy loss. We release our benchmark harness, dataset splits, and evaluation code to support reproducible on-premise AIOps research.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One Size Does Not Fit All: Setting Inference Depth from the Questions a Deployment Actually Asks — NewsMatome (EN)</title>
+<meta name="description" content="One Size Does Not Fit All: Setting Inference Depth from the Questions a Deployment Actually Asks — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/7598a21f8bc8.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/7598a21f8bc8.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/7598a21f8bc8.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/7598a21f8bc8.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="One Size Does Not Fit All: Setting Inference Depth from the Questions a Deployment Actually Asks">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"One Size Does Not Fit All: Setting Inference Depth from the Questions a Deployment Actually Asks",
+ "inLanguage":"en","datePublished":"2026-09-16T07:00:00+09:00","dateModified":"2026-09-16T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.14144","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/7598a21f8bc8.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/7598a21f8bc8.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>One Size Does Not Fit All: Setting Inference Depth from the Questions a Deployment Actually Asks</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/16</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/7598a21f8bc8.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.14144" rel="nofollow noopener">https://arxiv.org/abs/2609.14144</a></span></div>
+  <div class="article-body"><p>arXiv:2609.14144v1 Announce Type: cross 
+Abstract: A transformer language model is trained to respond to any prompt, but each deployment asks only a narrow range of questions: a support assistant sees delivery complaints, a coding tool sees Python. Every deployment nonetheless pays the same computation per token. This paper measures how much of that cost is avoidable when the range of prompts is known in advance.
+  The mechanism examined is early exit: a small, trained component - called a readout - is attached to an intermediate layer and proposes a token, and a confidence test decides whether to emit it or to run the remaining layers. The models are frozen, and the only supervision used is the model&#x27;s own output on ordinary traffic.
+  Three findings are reported. First, achievable savings depend strongly on the kind of traffic: at half depth on a 1.5-billion-parameter model, 96 percent of tokens could be emitted early for arithmetic word problems and 8 percent for Chinese-language explanations, at matched token-level fidelity to the full model (a measure whose limits the third finding exposes). Second, of three ways a deployment might use knowledge of its traffic, only customizing the threshold for exiting early is worthwhile: calibrating it per deployment raised exit rates by up to 59 percentage points across three models, and by more than 10 points on most corpora tested. Third, token-level fidelity - the standard evaluation measure in the early-exit literature - fails in domains where tokens can be checked against ground truth: on arithmetic word problems, three models each answered sixty questions correctly when run in full, and between 10 and 28 correctly under early exit, in the configuration that scored highest on fidelity.
+  The intended setting is small models on personal devices, where generation is limited by memory bandwidth rather than computation.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

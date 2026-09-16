@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carryover Drafting: Recycling Rejected States for Speculative Decoding — NewsMatome (EN)</title>
+<meta name="description" content="Carryover Drafting: Recycling Rejected States for Speculative Decoding — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/ec3797df1109.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/ec3797df1109.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/ec3797df1109.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/ec3797df1109.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Carryover Drafting: Recycling Rejected States for Speculative Decoding">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Carryover Drafting: Recycling Rejected States for Speculative Decoding",
+ "inLanguage":"en","datePublished":"2026-09-16T07:00:00+09:00","dateModified":"2026-09-16T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.14717","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/ec3797df1109.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/ec3797df1109.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Carryover Drafting: Recycling Rejected States for Speculative Decoding</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/16</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/ec3797df1109.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.14717" rel="nofollow noopener">https://arxiv.org/abs/2609.14717</a></span></div>
+  <div class="article-body"><p>arXiv:2609.14717v1 Announce Type: new 
+Abstract: Speculative decoding accelerates LLM inference by verifying multiple drafted tokens in parallel, allowing a single target forward pass to accept several tokens. By construction, verification computes representations for both accepted and rejected tokens. Yet, conventional drafters retain only the representations of accepted tokens, leaving the substantial verifier computation spent on rejected tokens effectively wasted. We find that these discarded hidden states generated during target forward retain useful information about future tokens that can improve subsequent drafts. However, realizing this opportunity poses two distinct challenges. At inference, recycling overhead can increase drafting latency, diminishing the speedup gained from increased acceptance length. During training, standard parallel drafter training does not produce inference-aligned rejected states, while obtaining them through sequential rollouts would sacrifice parallelism across training positions. We introduce Carryover Drafting, which addresses both challenges. Carryover recycles rejected target hidden states as temporary KV context, allowing the drafter to selectively attend to them. It reuses the drafter&#x27;s existing interface and adds only a single learned embedding to distinguish rejected states from committed context. The additional KV context is replaced each drafting round, keeping its length bounded by one proposal block. We introduce parallel draft--verify--draft training that exposes the drafter to inference-aligned rejected states while preserving parallelism across training positions. Experiments with DFlash and a DSpark-derived semi-autoregressive drafter across two target models show that this simple Carryover mechanism improves average acceptance length by 6.5--14.7% and end-to-end vLLM speedup by 7.9--14.4% over the corresponding baselines, with speedup gains reaching 28.8% on translation.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

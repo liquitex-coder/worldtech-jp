@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ActGuard: Pre-execution Action Auditing against Indirect Prompt Injection in LLM Agents — NewsMatome (EN)</title>
+<meta name="description" content="ActGuard: Pre-execution Action Auditing against Indirect Prompt Injection in LLM Agents — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/af9a8bdc6871.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/af9a8bdc6871.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/af9a8bdc6871.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/af9a8bdc6871.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ActGuard: Pre-execution Action Auditing against Indirect Prompt Injection in LLM Agents">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"ActGuard: Pre-execution Action Auditing against Indirect Prompt Injection in LLM Agents",
+ "inLanguage":"en","datePublished":"2026-09-16T07:00:00+09:00","dateModified":"2026-09-16T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.14987","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/af9a8bdc6871.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/af9a8bdc6871.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>ActGuard: Pre-execution Action Auditing against Indirect Prompt Injection in LLM Agents</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/16</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/af9a8bdc6871.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.14987" rel="nofollow noopener">https://arxiv.org/abs/2609.14987</a></span></div>
+  <div class="article-body"><p>arXiv:2609.14987v1 Announce Type: cross 
+Abstract: Large language model (LLM) agents interact with external environments through tool invocation, but tool outputs can also expose them to indirect prompt injection (IPI) attacks. Existing defenses mainly rely on prompt hardening, content filtering, pre-generated plans, or permission constraints. These approaches often struggle with complex tasks or over-sanitize external content, making it difficult to balance security and utility. The key challenge is therefore to preserve execution flexibility while precisely identifying and removing the malicious content that actually induces unsafe actions. To address this challenge, we propose ActGuard, a pre-execution action auditing framework. Rather than judging whether external content is inherently suspicious, ActGuard assesses whether it causes the current action to deviate from a locally reasonable expectation. At each step, ActGuard predicts the tools likely to be used by the upcoming action and constructs a local tool prior without constraining the execution trajectory. Before execution, it compares the candidate action against this prior and performs tool-level contrastive analysis and parameter-level evidence localization to identify deviations in tool selection and action parameters. A verifier then examines the localized evidence, masks only spans confirmed as malicious, and regenerates the action from the sanitized context. This design preserves legitimate planning flexibility while minimizing information loss from indiscriminate filtering. We evaluate ActGuard on challenging benchmarks for tool-using agents. Results show that ActGuard reduces attack success rates to a level comparable to state-of-the-art defenses while maintaining task utility close to the no-attack setting, achieving a favorable security-utility trade-off. Our code is publicly available at: https://github.com/binzhwang/ActGuard.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
