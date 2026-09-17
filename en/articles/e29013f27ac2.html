@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2Fast-2Lamaa: Large-Scale Lidar-Inertial Localization and Mapping with Continuous Distance Fields — NewsMatome (EN)</title>
+<meta name="description" content="2Fast-2Lamaa: Large-Scale Lidar-Inertial Localization and Mapping with Continuous Distance Fields — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/e29013f27ac2.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/e29013f27ac2.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/e29013f27ac2.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/e29013f27ac2.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2Fast-2Lamaa: Large-Scale Lidar-Inertial Localization and Mapping with Continuous Distance Fields">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"2Fast-2Lamaa: Large-Scale Lidar-Inertial Localization and Mapping with Continuous Distance Fields",
+ "inLanguage":"en","datePublished":"2026-09-18T07:00:00+09:00","dateModified":"2026-09-18T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"ロボット技術担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2410.05433","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/e29013f27ac2.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/e29013f27ac2.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#ef4444"></span>ロボット技術</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>2Fast-2Lamaa: Large-Scale Lidar-Inertial Localization and Mapping with Continuous Distance Fields</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b></span></span><span>2026/09/18</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/e29013f27ac2.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2410.05433" rel="nofollow noopener">https://arxiv.org/abs/2410.05433</a></span></div>
+  <div class="article-body"><p>arXiv:2410.05433v3 Announce Type: replace 
+Abstract: This paper introduces 2Fast-2Lamaa, a lidar-inertial state estimation framework for odometry, mapping, and localization. Its first key component is the optimization-based undistortion of lidar scans, which uses continuous IMU preintegration to model the system&#x27;s pose at every lidar point timestamp. The continuous trajectory over 100-200ms is parameterized only by the initial scan conditions (linear velocity and gravity orientation) and IMU biases, yielding eleven state variables. These are estimated by minimizing point-to-line and point-to-plane distances between lidar-extracted features without relying on previous estimates, resulting in a prior-less motion-distortion correction strategy. Because the method performs local state estimation, it directly provides scan-to-scan odometry. To maintain geometric consistency over longer periods, undistorted scans are used for scan-to-map registration. The map representation employs Gaussian Processes to form a continuous distance field, enabling point-to-surface distance queries anywhere in space. Poses of the undistorted scans are refined by minimizing these distances through non-linear least-squares optimization. For odometry and mapping, the map is built incrementally in real time; for pure localization, existing maps are reused. The incremental map construction also includes mechanisms for removing dynamic objects. We benchmark 2Fast-2Lamaa on over 750km of public and self-collected datasets from both automotive and handheld systems. The framework achieves state-of-the-art performance across diverse and challenging scenarios, reaching odometry and localization errors as low as 0.22\% and 0.06 m, respectively. The real-time implementation is publicly available at https://github.com/clegenti/2fast2lamaa.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

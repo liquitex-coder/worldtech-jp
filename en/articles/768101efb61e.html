@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ranking Image Fusion the Way Humans Do: A Learned Pairwise Preference Measure for Infrared-Visible Fusion Assessment — NewsMatome (EN)</title>
-<meta name="description" content="Ranking Image Fusion the Way Humans Do: A Learned Pairwise Preference Measure for Infrared-Visible Fusion Assessment — original-language edition. Japanese translation available.">
+<title>Ranking Infrared-Visible Fusion the Way Humans Do: A Learned Pairwise Preference Measure — NewsMatome (EN)</title>
+<meta name="description" content="Ranking Infrared-Visible Fusion the Way Humans Do: A Learned Pairwise Preference Measure — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/768101efb61e.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/768101efb61e.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/768101efb61e.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/768101efb61e.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ranking Image Fusion the Way Humans Do: A Learned Pairwise Preference Measure for Infrared-Visible Fusion Assessment">
+<meta property="og:title" content="Ranking Infrared-Visible Fusion the Way Humans Do: A Learned Pairwise Preference Measure">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Ranking Image Fusion the Way Humans Do: A Learned Pairwise Preference Measure for Infrared-Visible Fusion Assessment",
- "inLanguage":"en","datePublished":"2026-08-11T07:00:00+09:00","dateModified":"2026-08-11T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Ranking Infrared-Visible Fusion the Way Humans Do: A Learned Pairwise Preference Measure",
+ "inLanguage":"en","datePublished":"2026-09-18T07:00:00+09:00","dateModified":"2026-09-18T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2608.01301","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/768101efb61e.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Ranking Image Fusion the Way Humans Do: A Learned Pairwise Preference Measure for Infrared-Visible Fusion Assessment</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/08/11</span></div>
+    <h1>Ranking Infrared-Visible Fusion the Way Humans Do: A Learned Pairwise Preference Measure</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/18</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/768101efb61e.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.01301" rel="nofollow noopener">https://arxiv.org/abs/2608.01301</a></span></div>
-  <div class="article-body"><p>arXiv:2608.01301v3 Announce Type: replace-cross 
-Abstract: Infrared-visible image fusion (IVIF) has no ideal fused reference, so algorithms are ranked by scalar objective metrics that formalize proxies for information transfer, structure, or source similarity. These proxies often disagree with the judgment that ultimately matters: given the same sources, which of two fused results does a human prefer? Direct pairwise comparison is an established protocol for relative subjective assessment, but its cost grows quadratically with the number of algorithms. We present the Learned Perceptual Image Fusion Measure (LPIFM), a source-conditioned model that operationalizes the human A/B/Tie comparison protocol as a repeatable, scalable surrogate. LPIFM jointly observes the two sources and two fused candidates and predicts whether A is better, B is better, or the two are perceptually equivalent. Supervision comes from a new dense preference corpus covering all 6,300 unordered comparisons among 25 fusion methods on the 21 scenes of the VIFB benchmark, labeled under a blinded, randomized, two-stage protocol with expert adjudication. Across scene- and method-generalization settings, LPIFM attains pairwise accuracy of 0.792-0.840 and Spearman correlation of 0.941-0.977 with human-derived tie-aware Bradley-Terry rankings; on full 25-method pools it exceeds the strongest conventional metric by 0.163-0.211 in accuracy. Its verdicts are also antisymmetric under candidate swap, free of preference cycles, and fully transitive, matching or exceeding the internal consistency of the human panel. We publicly release the dataset, model weights, and code. LPIFM offers a practical instrument for human-aligned comparison and ranking of IVIF methods at scale.</p></div>
+  <div class="article-body"><p>arXiv:2608.01301v4 Announce Type: replace-cross 
+Abstract: Human pairwise comparison provides a direct basis for perceptual infrared-visible image fusion assessment, but dense annotation becomes costly as method pools grow. We present the Learned Perceptual Image Fusion Measure (LPIFM), among the earliest learned fusion assessors trained directly on dense human A/B/Tie comparisons. LPIFM jointly examines both source images and both fused candidates, combining a shared hierarchical encoder, triadic interaction, and a tie-aware objective to predict comparative preference and perceptual indifference. We construct and publicly release all 6,300 unordered comparisons among 25 methods on 21 VIFB scenes, collected through blinded, randomized annotation and expert adjudication. Across four VIFB evaluation settings, LPIFM achieves 79.2-84.0% agreement with human pairwise judgments and Spearman correlations of 0.941-0.977 with human-derived method rankings. On full method pools, accuracy exceeds the strongest of 19 conventional metrics by 16.3-21.1 pp. Consistency diagnostics show 99.98-100% candidate-swap agreement and no observed decisive preference cycles. External experiments on EVAFusion further demonstrate rapid adaptation to a different fusion-evaluation preference protocol. After only three epochs of fine-tuning, LPIFM surpasses all 19 conventional metrics in accuracy, macro-F1, and ranking correlation. LPIFM provides a scalable instrument for human-aligned fusion assessment, with the preference corpus, model weights, and code publicly available.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

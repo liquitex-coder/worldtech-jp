@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TACO: TActile World Model as a Self-COrrector forScalable VLA Post-Training — NewsMatome (EN)</title>
-<meta name="description" content="TACO: TActile World Model as a Self-COrrector forScalable VLA Post-Training — original-language edition. Japanese translation available.">
+<title>TACO: TActile World Model as a Self-COrrector for Scalable Robot Policy Post-Training — NewsMatome (EN)</title>
+<meta name="description" content="TACO: TActile World Model as a Self-COrrector for Scalable Robot Policy Post-Training — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/541d51a47ae4.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/541d51a47ae4.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/541d51a47ae4.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/541d51a47ae4.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TACO: TActile World Model as a Self-COrrector forScalable VLA Post-Training">
+<meta property="og:title" content="TACO: TActile World Model as a Self-COrrector for Scalable Robot Policy Post-Training">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"TACO: TActile World Model as a Self-COrrector forScalable VLA Post-Training",
- "inLanguage":"en","datePublished":"2026-07-08T07:00:00+09:00","dateModified":"2026-07-08T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"TACO: TActile World Model as a Self-COrrector for Scalable Robot Policy Post-Training",
+ "inLanguage":"en","datePublished":"2026-09-18T07:00:00+09:00","dateModified":"2026-09-18T07:00:00+09:00",
  "author":{"@type":"Organization","name":"ロボット技術担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.02840","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/541d51a47ae4.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#ef4444"></span>ロボット技術</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>TACO: TActile World Model as a Self-COrrector forScalable VLA Post-Training</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b></span></span><span>2026/07/08</span></div>
+    <h1>TACO: TActile World Model as a Self-COrrector for Scalable Robot Policy Post-Training</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b></span></span><span>2026/09/18</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/541d51a47ae4.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.02840" rel="nofollow noopener">https://arxiv.org/abs/2607.02840</a></span></div>
-  <div class="article-body"><p>arXiv:2607.02840v1 Announce Type: new 
-Abstract: Vision-Language-Action (VLA) models have shown promising generalization in robotic manipulation, but they still struggle with contact-rich tasks, where minor contact perturbations can cause unrecoverable failures that are hard to detect from vision alone. Since these failures are localized rather than task-level semantic errors, tactile-aware corrective post-training offers an efficient way to improve recovery. However, scaling such supervision through human intervention is costly. Recent works have explored world models to synthesize imagined rollouts for policy improvement, but vision-only world models may produce visually plausible yet contact-inconsistent trajectories. We therefore introduce TACO, a tactile-aware world-model-driven framework for scalable VLA post-training in contact-rich manipulation. Given real robot rollouts, TACO follows a Recognize-Imagine-Label loop with a tactile-aware world model: a unified progress-action model recognizes failure-adjacent states using progress estimates, a visuo-tactile generation model imagines local correction segments, and the progress-action model labels them with executable corrective actions. To incorporate tactile corrective supervision into VLA post-training, TACO combines knowledge-insulated tactile adaptation with advantage-conditioned training, enabling the policy to learn from imagined corrections without degrading pretrained visual-language priors. These components enable TACO to convert real-world failures into imagined visuo-tactile corrections for iterative VLA post-training. Experiments on real-world contact-rich manipulation tasks show that TACO achieves 44% absolute success rate improvement over the base policy and 32% over the policy without knowledge-insulated tactile adaptation.</p></div>
+  <div class="article-body"><p>arXiv:2607.02840v2 Announce Type: replace 
+Abstract: Vision-Language-Action models and World Action Models have shown promising generalization in robotic manipulation but remain fragile in contact-rich tasks, where contact perturbations can cause failures that are difficult to detect from vision alone. Corrective post-training with tactile feedback can improve recovery, but scaling such supervision through human intervention is costly. World models can synthesize additional training data, yet vision-only generation may produce visually plausible but contact-inconsistent trajectories. We therefore introduce TACO, a scalable robot policy post-training framework built on a compositional tactile world model. Given real rollouts, TACO follows a Recognize--Imagine--Label loop: an inverse dynamics and value model identifies failure-adjacent states using progress estimates, a visuo-tactile generation model imagines local corrections by jointly generating video and tactile sequences, and the inverse dynamics and value model labels them with corrective actions and progress scores. Candidates are filtered for kinematic feasibility and tactile plausibility, then selected by predicted progress gain. TACO aggregates demonstrations, real rollouts, and selected corrections for iterative post-training. It combines knowledge-insulated tactile adaptation with CFG-RL using binary advantage labels while keeping the pretrained VLM backbone fixed. Experiments on real-world tasks show that TACO improves the average task score from 0.375 to 0.825 after two post-training iterations.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>
