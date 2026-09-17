@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Is INT8 Portable? A Cross-Platform Measurement Study of Quantized Inference on Embedded and Automotive Accelerators — NewsMatome (EN)</title>
+<meta name="description" content="Is INT8 Portable? A Cross-Platform Measurement Study of Quantized Inference on Embedded and Automotive Accelerators — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/1601c63faa7b.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/1601c63faa7b.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/1601c63faa7b.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/1601c63faa7b.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Is INT8 Portable? A Cross-Platform Measurement Study of Quantized Inference on Embedded and Automotive Accelerators">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Is INT8 Portable? A Cross-Platform Measurement Study of Quantized Inference on Embedded and Automotive Accelerators",
+ "inLanguage":"en","datePublished":"2026-09-17T07:00:00+09:00","dateModified":"2026-09-17T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.16085","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/1601c63faa7b.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/1601c63faa7b.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Is INT8 Portable? A Cross-Platform Measurement Study of Quantized Inference on Embedded and Automotive Accelerators</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/17</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/1601c63faa7b.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.16085" rel="nofollow noopener">https://arxiv.org/abs/2609.16085</a></span></div>
+  <div class="article-body"><p>arXiv:2609.16085v1 Announce Type: cross 
+Abstract: Eight-bit integer (INT8) post-training quantization is the default recipe for edge deployment, under a widely held assumption: INT8 makes inference faster at a small, predictable accuracy cost, and a model quantized once can be carried to any target. We test that assumption with a controlled measurement study across seven hardware classes -- ARM and x86 CPUs, a discrete GPU, an NVIDIA Jetson AGX Orin iGPU and its NVDLA cores, and two vendor NPUs (Qualcomm Hexagon HTP, DEEPX DX-M1) -- holding the ONNX artifact and the quantization scales fixed so the integer kernel or ISA is the only free variable. Portability fails on three axes. (1) The sign of the INT8 speedup is set by the CPU&#x27;s dot-product ISA (ARM dotprod/SDOT, x86 VNNI): cores that have it speed up by up to 2.1x, cores that lack it slow down by 1.7x, for the identical model and runtime. (2) INT8 outputs are not portable, and the rule is an invariance rather than a gradient: FP32 predictions are bit-identical for every pair (1000/1000), while INT8 predictions agree 1000/1000 exactly when two targets share an integer kernel and 958-965/1000 whenever they do not -- independent of whether the boundary is CPU&lt;-&gt;CPU or CPU&lt;-&gt;accelerator, and invisible to top-1 accuracy, which is preserved. (3) Vendor NPUs own quantization: a bring-your-own QDQ graph fails silently on one NPU (external scales ignored, accuracy 0.75 -&gt; 0.005 while it compiles, profiles and runs without error) and loudly on the other (the compiler refuses the graph), so only the vendor&#x27;s native path yields a correct engine. We further show that edge-NPU latency regimes are set by output/device-to-host transfer size rather than compute, and locate the transition with a fixed-compute sweep. We release the scripts and 32 reports. &quot;Quantize once, deploy anywhere&quot; is unsafe for embedded and automotive deployment, where per-input determinism and redundancy matter.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calibrate, Then Route: A Measured Study of Learned Request Routing for Disaggregated LLM Serving — NewsMatome (EN)</title>
+<meta name="description" content="Calibrate, Then Route: A Measured Study of Learned Request Routing for Disaggregated LLM Serving — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/a7dab887065f.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/a7dab887065f.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/a7dab887065f.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/a7dab887065f.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Calibrate, Then Route: A Measured Study of Learned Request Routing for Disaggregated LLM Serving">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Calibrate, Then Route: A Measured Study of Learned Request Routing for Disaggregated LLM Serving",
+ "inLanguage":"en","datePublished":"2026-09-17T07:00:00+09:00","dateModified":"2026-09-17T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.16206","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/a7dab887065f.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/a7dab887065f.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Calibrate, Then Route: A Measured Study of Learned Request Routing for Disaggregated LLM Serving</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/17</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/a7dab887065f.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.16206" rel="nofollow noopener">https://arxiv.org/abs/2609.16206</a></span></div>
+  <div class="article-body"><p>arXiv:2609.16206v1 Announce Type: new 
+Abstract: Disaggregated LLM serving places compute heavy prefill and memory heavy decode on separate GPU pools. Systems such as DistServe, Splitwise, and Mooncake make this separation fast, but routing still determines which instances handle each request. We study a router that estimates the additional completion time on each instance using exact prompt length, predicted output length, post admission KV cache pressure, and SLO class. We develop the policy in a discrete event simulator and validate it on eight NVIDIA A40 GPUs, each running a vLLM engine, with NIXL transferring KV caches between pools. All workloads run at measured saturation. Across three mixed, bursty arrival traces, the calibrated router achieves the highest mean goodput at 0.864, compared with 0.835 to 0.847 for round robin, least loaded, and a length heuristic. It also shows the lowest variance across traces. It beats round robin and the length heuristic on all three traces and least loaded on two. On the third, it trails by 0.003, within run to run noise. Hardware calibration matters: simulator derived constants cost 4.5 goodput points and roughly 40 percent of the tail latency advantage, reducing the scorer to little more than queue counting. Benefits grow with decode pool size and traffic heterogeneity but disappear in pools with three instances, where queue counts are often enough. Under extreme scarcity, greedy cost minimization concentrates requests on the cheapest scored instance, and blind spreading performs better. With calibrated costs, the learned router matches the goodput of round robin using six GPUs instead of seven.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

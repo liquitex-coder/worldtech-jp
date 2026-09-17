@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CoRL: Co-Evolutionary Reinforcement Learning for Adaptive Indirect Prompt-Injection Attacks and Defenses — NewsMatome (EN)</title>
-<meta name="description" content="CoRL: Co-Evolutionary Reinforcement Learning for Adaptive Indirect Prompt-Injection Attacks and Defenses — original-language edition. Japanese translation available.">
+<title>CoER: Defending against Adaptive Indirect Prompt Injection via Adversarial Co-Evolution and Refinement — NewsMatome (EN)</title>
+<meta name="description" content="CoER: Defending against Adaptive Indirect Prompt Injection via Adversarial Co-Evolution and Refinement — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/2bfc9e5ef83f.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/2bfc9e5ef83f.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/2bfc9e5ef83f.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/2bfc9e5ef83f.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CoRL: Co-Evolutionary Reinforcement Learning for Adaptive Indirect Prompt-Injection Attacks and Defenses">
+<meta property="og:title" content="CoER: Defending against Adaptive Indirect Prompt Injection via Adversarial Co-Evolution and Refinement">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"CoRL: Co-Evolutionary Reinforcement Learning for Adaptive Indirect Prompt-Injection Attacks and Defenses",
- "inLanguage":"en","datePublished":"2026-09-11T07:00:00+09:00","dateModified":"2026-09-11T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"CoER: Defending against Adaptive Indirect Prompt Injection via Adversarial Co-Evolution and Refinement",
+ "inLanguage":"en","datePublished":"2026-09-17T07:00:00+09:00","dateModified":"2026-09-17T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2609.07529","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/2bfc9e5ef83f.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>CoRL: Co-Evolutionary Reinforcement Learning for Adaptive Indirect Prompt-Injection Attacks and Defenses</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/11</span></div>
+    <h1>CoER: Defending against Adaptive Indirect Prompt Injection via Adversarial Co-Evolution and Refinement</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/17</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/2bfc9e5ef83f.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.07529" rel="nofollow noopener">https://arxiv.org/abs/2609.07529</a></span></div>
-  <div class="article-body"><p>arXiv:2609.07529v1 Announce Type: new 
-Abstract: Tool-augmented language agents are vulnerable to indirect prompt injection (IPI). Unlike direct prompt injection, IPI hides adversarial instructions in untrusted tool outputs and can covertly alter the execution of a legitimate task. Defenses trained on fixed attacks may fail as an attacker changes its strategy, injection site, and payload. To address this problem, we formulate adaptive IPI as an asymmetric, partially observable, general-sum Markov game: a multi-turn attacker adapts payloads at reached tool-return sites from the public trajectory, while a tool-using defender must block the injected objective and complete the user task. We propose CoRL, a verifier-grounded co-evolution and repair framework with three stages: Attacker SFT initializes multi-turn attacks from successful trajectories; bilateral Co-PPO jointly trains both agents with role-specific rewards and historical opponent populations; and Defender SFT consolidates verifier-accepted teacher repairs for population-discovered failures. Across 1,514 clean, fixed-template, and adaptive executions per defender, CoRL reduces overall ASR by 38.5 points to 0.0% and raises utility by 13.1 points to 76.3%. Stage-wise and controlled ablations show positive contributions from online Co-PPO and population-mined repair, while external-benchmark evaluation indicates transfer in attack resistance. The defender balances safety and task utility under the evaluated attacks, while the retained attackers provide candidates for adaptive red-team evaluation.</p></div>
+  <div class="article-body"><p>arXiv:2609.07529v2 Announce Type: replace 
+Abstract: Language-model agents are vulnerable to indirect prompt injection (IPI) during tool use: adversarial instructions hidden in untrusted tool outputs can covertly redirect legitimate task execution. Existing work often trains and evaluates defenses against fixed attacks that do not adapt to the defender&#x27;s behavior, so the resulting defenses may struggle against adaptive attacks. We combine adaptive attacker-defender co-training with subsequent refinement: continued interaction improves both roles, while learned attackers provide training challenges for further gains in defender safety and task utility. We therefore model adaptive IPI as a general-sum Markov game: the defender advances the task through successive tool calls, while the attacker can inject multiple times within the same task and adapt subsequent attacks to the defender&#x27;s responses. Building on this formulation, we propose CoER, a verifier-grounded co-evolution and refinement framework. After initializing the attacker from successful trajectories, Co-PPO retains historical policies from both roles as opponent populations and mixes current and historical opponents for bilateral reinforcement learning, extending training beyond the latest matchup. Attackers from these populations are then reused to challenge teacher agents, and only demonstrations verified for both safety and task completion are used to fine-tune the co-evolved defender. In our main seven-domain evaluation, CoER reduces observed overall attack success from 38.5% to 0.2% and raises task utility from 63.2% to 76.3%, with improved attack resistance on external benchmarks.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

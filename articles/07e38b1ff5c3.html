@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Learning Terrain-Adaptive Humanoid Locomotion on Granular Terrain — NewsMatome</title>
-<meta name="description" content="Learning Terrain-Adaptive Humanoid Locomotion on Granular Terrain（EN→JA 翻訳・出典付き）">
+<title>GM-Loco: Terrain-Adaptive Humanoid Locomotion on Granular Media — NewsMatome</title>
+<meta name="description" content="GM-Loco: Terrain-Adaptive Humanoid Locomotion on Granular Media（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/07e38b1ff5c3.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/07e38b1ff5c3.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/07e38b1ff5c3.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="Learning Terrain-Adaptive Humanoid Locomotion on Granular Terrain">
-<meta property="og:description" content="Learning Terrain-Adaptive Humanoid Locomotion on Granular Terrain（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="GM-Loco: Terrain-Adaptive Humanoid Locomotion on Granular Media">
+<meta property="og:description" content="GM-Loco: Terrain-Adaptive Humanoid Locomotion on Granular Media（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Learning Terrain-Adaptive Humanoid Locomotion on Granular Terrain",
- "inLanguage":"ja","datePublished":"2026-09-11T07:00:00+09:00","dateModified":"2026-09-11T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"GM-Loco: Terrain-Adaptive Humanoid Locomotion on Granular Media",
+ "inLanguage":"ja","datePublished":"2026-09-17T07:00:00+09:00","dateModified":"2026-09-17T07:00:00+09:00",
  "author":{"@type":"Organization","name":"ロボット技術担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2609.10286","url":"https://liquitex-coder.github.io/worldtech-jp/articles/07e38b1ff5c3.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">ロボット技術</a><span class="sep">›</span><span>Learning Terrain-Adaptive Humanoid Locomotion on Granular Terrain</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">ロボット技術</a><span class="sep">›</span><span>GM-Loco: Terrain-Adaptive Humanoid Locomotion on Granular Media</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>Learning Terrain-Adaptive Humanoid Locomotion on Granular Terrain</h1>
+      <h1>GM-Loco: Terrain-Adaptive Humanoid Locomotion on Granular Media</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/09/11 07:00</span><span>· 更新 2026/09/11</span>
+        <span>公開 2026/09/17 07:00</span><span>· 更新 2026/09/17</span>
       </div>
     </div>
     
@@ -74,16 +74,16 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2609.10286" rel="nofollow noopener">Learning Terrain-Adaptive Humanoid Locomotion on Granular Terrain</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2609.10286" rel="nofollow noopener">GM-Loco: Terrain-Adaptive Humanoid Locomotion on Granular Media</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2609.10286v1 Announce Type: new 
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2609.10286v2 Announce Type: replace 
 Abstract: Humanoid locomotion on granular terrain remains a significant challenge due to its complex foot-terrain interaction dynamics that are difficult to model. Existing approaches either ignore granular contact dynamics or incorporate simplified normal force models with heuristic tangential components. In this work, we present a physics-grounded granular contact model based on three-dimensional resistive force theory (3D RFT) and efficiently simulate granular terrain for reinforcement learning (RL) training. Unlike traditional rigid contact models and simplified granular contact models with ad-hoc heuristics, our contact solver produces physically accurate granular intrusion dynamics without resorting to heuristics. It captures realistic penetration and tangential drag during training, enabling the policy to learn behaviors that transfer reliably to real-world granular terrain where rigid contact models fail. To adapt to varying terrain conditions, we train a terrain-adaptive locomotion controller via teacher-student RL, using a variational autoencoder to encode terrain information into a compact latent representation. Simulation studies using material point method (MPM) with NVIDIA Newton demonstrate that our method generalizes to unseen granular terrains, achieves a significantly higher success rate than baselines, and demonstrates zero-shot terrain identification and adaptation. We further validate our approach through extensive hardware experiments across diverse real-world granular terrains including basalt, dry sand, and beach sand. To the best of our knowledge, this is the first demonstration of agile humanoid locomotion on real-world granular terrain. Project page: https://humanoid-gm-locomotion.github.io/HUMANOID-GM/</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2609.10286v1 Announce Type: new 
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2609.10286v2 Announce Type: replace 
 Abstract: Humanoid locomotion on granular terrain remains a significant challenge due to its complex foot-terrain interaction dynamics that are difficult to model. Existing approaches either ignore granular contact dynamics or incorporate simplified normal force models with heuristic tangential components. In this work, we present a physics-grounded granular contact model based on three-dimensional resistive force theory (3D RFT) and efficiently simulate granular terrain for reinforcement learning (RL) training. Unlike traditional rigid contact models and simplified granular contact models with ad-hoc heuristics, our contact solver produces physically accurate granular intrusion dynamics without resorting to heuristics. It captures realistic penetration and tangential drag during training, enabling the policy to learn behaviors that transfer reliably to real-world granular terrain where rigid contact models fail. To adapt to varying terrain conditions, we train a terrain-adaptive locomotion controller via teacher-student RL, using a variational autoencoder to encode terrain information into a compact latent representation. Simulation studies using material point method (MPM) with NVIDIA Newton demonstrate that our method generalizes to unseen granular terrains, achieves a significantly higher success rate than baselines, and demonstrates zero-shot terrain identification and adaptation. We further validate our approach through extensive hardware experiments across diverse real-world granular terrains including basalt, dry sand, and beach sand. To the best of our knowledge, this is the first demonstration of agile humanoid locomotion on real-world granular terrain. Project page: https://humanoid-gm-locomotion.github.io/HUMANOID-GM/</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2609.10286v1 Announce Type: new 
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2609.10286v2 Announce Type: replace 
 Abstract: Humanoid locomotion on granular terrain remains a significant challenge due to its complex foot-terrain interaction dynamics that are difficult to model. Existing approaches either ignore granular contact dynamics or incorporate simplified normal force models with heuristic tangential components. In this work, we present a physics-grounded granular contact model based on three-dimensional resistive force theory (3D RFT) and efficiently simulate granular terrain for reinforcement learning (RL) training. Unlike traditional rigid contact models and simplified granular contact models with ad-hoc heuristics, our contact solver produces physically accurate granular intrusion dynamics without resorting to heuristics. It captures realistic penetration and tangential drag during training, enabling the policy to learn behaviors that transfer reliably to real-world granular terrain where rigid contact models fail. To adapt to varying terrain conditions, we train a terrain-adaptive locomotion controller via teacher-student RL, using a variational autoencoder to encode terrain information into a compact latent representation. Simulation studies using material point method (MPM) with NVIDIA Newton demonstrate that our method generalizes to unseen granular terrains, achieves a significantly higher success rate than baselines, and demonstrates zero-shot terrain identification and adaptation. We further validate our approach through extensive hardware experiments across diverse real-world granular terrains including basalt, dry sand, and beach sand. To the best of our knowledge, this is the first demonstration of agile humanoid locomotion on real-world granular terrain. Project page: https://humanoid-gm-locomotion.github.io/HUMANOID-GM/</p><a href="https://arxiv.org/abs/2609.10286" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2609.10286" rel="nofollow noopener">https://arxiv.org/abs/2609.10286</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
@@ -91,7 +91,7 @@ Abstract: Humanoid locomotion on granular terrain remains a significant challeng
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="38987a8d0b0e.html"><div class="sim">関連</div><div class="info"><b>Beyond Right and Wrong: Evaluating Second-order Social Reasoning in Large Language Models</b><div class="m">AI</div></div></a><a class="r" href="4a5e61d042ae.html"><div class="sim">関連</div><div class="info"><b>CriticGen: Generation-Aware Evaluation as Actionable Feedback</b><div class="m">AI</div></div></a><a class="r" href="92ec29497442.html"><div class="sim">関連</div><div class="info"><b>When Does Memory Help? A Cost-Aware Evaluation of Long-Term Memory in Tool-Using LLM Agents</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="884b60085b79.html"><div class="sim">関連</div><div class="info"><b>Optimal Pruning for Neural Architectures using Fisher Information Distances</b><div class="m">AI</div></div></a><a class="r" href="4902b250d1b0.html"><div class="sim">関連</div><div class="info"><b>Safe Error Correction for Language Models: Frozen-Base Adjustment with Capability Preservation</b><div class="m">AI</div></div></a><a class="r" href="197b2e83e60f.html"><div class="sim">関連</div><div class="info"><b>GPEvac: GNN-Based PPO for Adaptive Evacuation Routing During Shooting Events</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

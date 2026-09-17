@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OPEN-1B: A Fully Auditable Training Run — NewsMatome (EN)</title>
+<meta name="description" content="OPEN-1B: A Fully Auditable Training Run — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/aa96f6e0d764.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/aa96f6e0d764.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/aa96f6e0d764.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/aa96f6e0d764.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OPEN-1B: A Fully Auditable Training Run">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"OPEN-1B: A Fully Auditable Training Run",
+ "inLanguage":"en","datePublished":"2026-09-17T07:00:00+09:00","dateModified":"2026-09-17T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.17380","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/aa96f6e0d764.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/aa96f6e0d764.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>OPEN-1B: A Fully Auditable Training Run</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/17</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/aa96f6e0d764.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.17380" rel="nofollow noopener">https://arxiv.org/abs/2609.17380</a></span></div>
+  <div class="article-body"><p>arXiv:2609.17380v1 Announce Type: new 
+Abstract: Open-source language models have a reproducibility problem. Despite releasing weights, training data, and recipes, none of them are provably reproducible due to the non-associativity of floating-point arithmetic. Deep learning frameworks often offer a deterministic execution mode, allowing reproducible operations on the same machines. Unfortunately, this determinism does not carry across hardware such that a user can verify that a released checkpoint was actually produced using the declared training recipe. This leaves room for undisclosed data, injected biases, or backdoors that existing techniques such as proof-of-learning or proof-of-training-data cannot rule out.
+  We introduce a new tier of model transparency, fully auditable, in which every operation on every data sample during training is independently reproducible on heterogeneous commodity hardware with bitwise certainty. By imposing a definite order on the sources of training nondeterminism, GPU kernel reductions, data batch ordering across a data-parallel cluster, and inter/intra-node collective communication, we make it possible to replay any individual step of a large, distributed training run on a single piece of commodity hardware and check it against the published trajectory.
+  Because replaying an entire run on one machine is infeasible, we support this with a collective verification scheme in which many independent auditors each certify individual steps, together covering the whole run. We release Open-1B, a model trained under this regime, together with its full pretraining dataset, every intermediate checkpoint, the training codebase, and the audit harness needed to reproduce and verify any step of its training.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

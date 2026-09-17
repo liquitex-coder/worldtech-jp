@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Safe Error Correction for Language Models: Frozen-Base Adjustment with Capability Preservation — NewsMatome (EN)</title>
+<meta name="description" content="Safe Error Correction for Language Models: Frozen-Base Adjustment with Capability Preservation — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/4902b250d1b0.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/4902b250d1b0.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/4902b250d1b0.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/4902b250d1b0.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Safe Error Correction for Language Models: Frozen-Base Adjustment with Capability Preservation">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Safe Error Correction for Language Models: Frozen-Base Adjustment with Capability Preservation",
+ "inLanguage":"en","datePublished":"2026-09-17T07:00:00+09:00","dateModified":"2026-09-17T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.16145","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/4902b250d1b0.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/4902b250d1b0.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Safe Error Correction for Language Models: Frozen-Base Adjustment with Capability Preservation</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/17</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/4902b250d1b0.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.16145" rel="nofollow noopener">https://arxiv.org/abs/2609.16145</a></span></div>
+  <div class="article-body"><p>arXiv:2609.16145v1 Announce Type: cross 
+Abstract: We study a practical question: can a small correction module fix errors in a frozen language model&#x27;s outputs without degrading its base capabilities? We propose CRN v2, a lightweight logit-level correction module (~34M trainable parameters, 0.73% of the 4.65B text module) that sits atop a fully frozen Gemma 4 E2B model. The base model is never updated; only the correction module learns, via supervised fine-tuning followed by reference-free DPO on 83,400 error-correction pairs. On a 60-question domain exam (CEHRI: Certified Human-Robot Intelligence, covering facts, arithmetic, and implicit-goal reasoning), CRN v2 corrects 53.3% of base-model errors (reworded variant: 43.3%) while showing no degradation on tested capability benchmarks (MMLU/BoolQ N=200; car-wash N=8). A LoRA baseline at the matched CRN v1 budget (6.6M params, rank 19) achieves 83.3% correction but suffers 30-75% capability loss on the same benchmarks -- the correction-capability tradeoff. An ablation shows that the KL preservation term (lambda=0.1) is critical: lowering it to 0.01 degrades correction to 35.0%. A hidden-state injection variant at earlier layers (1.6M params, SFT-only) reaches 50.0%/55.8% but does not exceed logit correction; shallower injection (layer 4) drops to 30.0%/28.3%; multi-depth logit correction (~35M) reaches only 40%; and longer training (5,000 SFT + 2,000 DPO) stays at 53.3% -- none of the alternative configurations we tested exceeded the rank-128 logit result, consistent with a best-achieved result of ~53% rather than a floor. This is a study of a design principle (frozen base + logit correction + KL anchoring), not a claim of architectural novelty. All code, main-result weights, and evaluation scripts are released (deep variant as code only -- no trained deep checkpoints).</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Choose What to Observe: Task-Aware Semantic-Geometric Representations for Visuomotor Policy — NewsMatome (EN)</title>
-<meta name="description" content="Choose What to Observe: Task-Aware Semantic-Geometric Representations for Visuomotor Policy — original-language edition. Japanese translation available.">
+<title>Foundation and Small Models Coordination for Visuomotor Policy Learning — NewsMatome (EN)</title>
+<meta name="description" content="Foundation and Small Models Coordination for Visuomotor Policy Learning — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/bea83ef3734e.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/bea83ef3734e.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/bea83ef3734e.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/bea83ef3734e.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Choose What to Observe: Task-Aware Semantic-Geometric Representations for Visuomotor Policy">
+<meta property="og:title" content="Foundation and Small Models Coordination for Visuomotor Policy Learning">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Choose What to Observe: Task-Aware Semantic-Geometric Representations for Visuomotor Policy",
- "inLanguage":"en","datePublished":"2026-07-09T07:00:00+09:00","dateModified":"2026-07-09T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Foundation and Small Models Coordination for Visuomotor Policy Learning",
+ "inLanguage":"en","datePublished":"2026-09-17T07:00:00+09:00","dateModified":"2026-09-17T07:00:00+09:00",
  "author":{"@type":"Organization","name":"ロボット技術担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2603.07875","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/bea83ef3734e.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#ef4444"></span>ロボット技術</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Choose What to Observe: Task-Aware Semantic-Geometric Representations for Visuomotor Policy</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b></span></span><span>2026/07/09</span></div>
+    <h1>Foundation and Small Models Coordination for Visuomotor Policy Learning</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b></span></span><span>2026/09/17</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/bea83ef3734e.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2603.07875" rel="nofollow noopener">https://arxiv.org/abs/2603.07875</a></span></div>
-  <div class="article-body"><p>arXiv:2603.07875v2 Announce Type: replace 
-Abstract: Visuomotor policies learned from demonstrations often overfit to nuisance visual factors in raw RGB observations, resulting in brittle behavior under appearance shifts such as background changes and object recoloring. We propose a task-aware observation interface that canonicalizes visual input into a shared representation, improving robustness to out-of-distribution (OOD) appearance changes without modifying or fine-tuning the policy. Given an RGB image and an open-vocabulary specification of task-relevant entities, we use SAM3 to segment the target object and robot/gripper. We construct an L0 observation by repainting segmented entities with predefined semantic colors on a constant background. For tasks requiring stronger geometric cues, we further inject monocular depth from Depth Anything 3 into the segmented regions via depth-guided overwrite, yielding a unified semantic--geometric observation (L1) that remains a standard 3-channel, image-like input. We evaluate on RoboMimic (Lift), ManiSkill YCB grasping under clutter, four RLBench tasks under controlled appearance shifts, and two real-world Franka tasks (ReachX and CloseCabinet). Across benchmarks and policy backbones (Flow Matching Policy and SmolVLA), our interface preserves in-distribution performance while substantially improving robustness under OOD visual shifts.</p></div>
+  <div class="article-body"><p>arXiv:2603.07875v3 Announce Type: replace 
+Abstract: Visuomotor policy learning enables robots to perform a wide range of tasks, but small policy models often remain sensitive to changes in object and background appearance. In this work, we investigate the coordination of pretrained vision foundation models with small policy models to improve appearance generalization. We propose a framework in which a small policy model operates on task-relevant visual observations constructed through semantic repainting. A segmentation foundation model identifies the robot and target object, which are rendered with fixed role colors on a constant background. An alternative representation replaces the target&#x27;s role color with normalized monocular depth predicted by a depth foundation model, providing additional geometric cues. The perception models are adapted using in-distribution data where needed and held fixed during policy training. This design combines the perceptual capabilities of foundation models with a small policy model trained on the resulting observations for action prediction. Evaluations with flow matching policies on simulation benchmarks, together with experiments on two real-world robotic tasks, demonstrate substantial improvements in task success under the evaluated appearance shifts.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

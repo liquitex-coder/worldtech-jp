@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shared-Prefix KV Reuse Across Standard LoRA Adapters: Quality and Serving Tradeoffs — NewsMatome (EN)</title>
+<meta name="description" content="Shared-Prefix KV Reuse Across Standard LoRA Adapters: Quality and Serving Tradeoffs — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/3137151bfc83.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/3137151bfc83.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/3137151bfc83.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/3137151bfc83.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Shared-Prefix KV Reuse Across Standard LoRA Adapters: Quality and Serving Tradeoffs">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Shared-Prefix KV Reuse Across Standard LoRA Adapters: Quality and Serving Tradeoffs",
+ "inLanguage":"en","datePublished":"2026-09-17T07:00:00+09:00","dateModified":"2026-09-17T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.17109","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/3137151bfc83.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/3137151bfc83.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Shared-Prefix KV Reuse Across Standard LoRA Adapters: Quality and Serving Tradeoffs</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/17</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/3137151bfc83.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.17109" rel="nofollow noopener">https://arxiv.org/abs/2609.17109</a></span></div>
+  <div class="article-body"><p>arXiv:2609.17109v1 Announce Type: new 
+Abstract: A common small-model deployment runs one shared backbone with several LoRA specialists that answer over the same context. Serving them naively re-prefills that shared context once per specialist. We study a narrow, practical question: for already-trained standard LoRA adapters -- not adapters retrained for cache compatibility -- how much task quality is preserved if the backbone&#x27;s prefill KV cache is computed once and reused across specialists, and what does that buy in serving cost? On a Qwen3-1.7B backbone with two adapters (extractive QA on HotpotQA, arithmetic reasoning on GSM8K), we sweep the boundary at which the specialist takes over from the reused base cache and measure paired quality differences and serving cost. Full-prefix reuse had the lowest prefill cost and a small quality difference on held-out GSM8K (Delta = -4.6 EM at a 160-token budget; -3.0 at 320 tokens; -0.8 under a second training seed -- all favoring native, only the first excluding zero, and the magnitude not consistent). Partial recomputation provided no demonstrated advantage. Neither quality equivalence nor a general boundary-selection rule is established. We also report a closed-form ridge KV translator that did not beat direct reuse, and specialist-dependence contrasts whose intervals all include zero. The measured serving benefit is warm-cache time-to-first-token, which grows with context (~16x at 8K); two-branch peak memory was only 12% lower and, on inspection, the prefix was never physically shared across branches -- this implementation reuses KV values but copies their storage, so shared-cache memory savings are not achieved.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

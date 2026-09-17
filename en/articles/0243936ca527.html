@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Immutable Past: Formalizing State Mutability and Conflict Resolution in Mutable RAG — NewsMatome (EN)</title>
+<meta name="description" content="The Immutable Past: Formalizing State Mutability and Conflict Resolution in Mutable RAG — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/0243936ca527.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/0243936ca527.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/0243936ca527.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/0243936ca527.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Immutable Past: Formalizing State Mutability and Conflict Resolution in Mutable RAG">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"The Immutable Past: Formalizing State Mutability and Conflict Resolution in Mutable RAG",
+ "inLanguage":"en","datePublished":"2026-09-17T07:00:00+09:00","dateModified":"2026-09-17T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.16073","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/0243936ca527.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/0243936ca527.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>The Immutable Past: Formalizing State Mutability and Conflict Resolution in Mutable RAG</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/17</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/0243936ca527.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.16073" rel="nofollow noopener">https://arxiv.org/abs/2609.16073</a></span></div>
+  <div class="article-body"><p>arXiv:2609.16073v1 Announce Type: cross 
+Abstract: Retrieval-Augmented Generation (RAG) serves as the primary memory architecture for long-horizon autonomous agents. However, treating shared memory as an append-only stream introduces \textit{Semantic Shadowing}, a critical failure mode where conflicting historical observations accumulate and statistically dominate valid recent updates. In dynamic environments, this results in severe state divergence as agents retrieve and act upon obsolete facts. This paper formalizes the mechanics of State Mutability to prove that standard dense retrieval suffers from Asymptotic Recall Decay. Furthermore, we formally demonstrate a Majority Vote Trap, revealing that increasing the retrieval context window paradoxically degrades generation accuracy by diluting the attention mechanism under conditions of semantic equivalence. To resolve this, we introduce GC-Mem (Garbage Collection for Memory), a strict inference-time consistency protocol. Unlike heuristic time-decay mechanisms---which indiscriminately destroy valid long-term memory---GC-Mem relies purely on a temporal dominance operator ($\Phi_{\mathcal{T}}$) paired with contradiction detection to surgically excise shadowed context. Evaluated across a rigorous, behaviorally inferred benchmark of 137,760 memory chunks and continuous accumulation sweeps, standard RAG and timestamp re-ranking baselines experience severe degradation. In contrast, GC-Mem empirically recovers $&gt;90\%$ conflict resolution accuracy. We establish strict precision and recall deployment thresholds, ensuring state convergence where standard mutable RAG fundamentally fails.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

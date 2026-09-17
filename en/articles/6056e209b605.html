@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Window-Diffusion: Accelerating Diffusion Language Model Inference with Windowed Token Pruning and Caching — NewsMatome (EN)</title>
+<meta name="description" content="Window-Diffusion: Accelerating Diffusion Language Model Inference with Windowed Token Pruning and Caching — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/6056e209b605.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/6056e209b605.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/6056e209b605.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/6056e209b605.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Window-Diffusion: Accelerating Diffusion Language Model Inference with Windowed Token Pruning and Caching">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Window-Diffusion: Accelerating Diffusion Language Model Inference with Windowed Token Pruning and Caching",
+ "inLanguage":"en","datePublished":"2026-09-17T07:00:00+09:00","dateModified":"2026-09-17T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2601.20332","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/6056e209b605.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/6056e209b605.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Window-Diffusion: Accelerating Diffusion Language Model Inference with Windowed Token Pruning and Caching</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/17</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/6056e209b605.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2601.20332" rel="nofollow noopener">https://arxiv.org/abs/2601.20332</a></span></div>
+  <div class="article-body"><p>arXiv:2601.20332v3 Announce Type: replace 
+Abstract: Diffusion language models (DLMs) generate text through iterative denoising, but inference requires full-sequence attention at every iteration, resulting in substantial redundant computation on masked tokens. Block-wise diffusion can reduce this cost, yet it typically relies on retraining and constrained update orders, limiting its direct applicability to pretrained DLMs. Our token-level analysis reveals pronounced structural locality in DLM inference. Decoding is driven by a small set of prefix-localized active tokens; the influence of distant undecoded context diminishes rapidly, and decoded tokens exhibit stage-wise temporal stability, enabling reuse of intermediate representations except for a brief post-decode transient. Motivated by these observations, we propose \textbf{\placeholder}\footnote{The source code is available at https://github.com/vhicrgit/Window-Diffusion.}, a window-based token pruning and caching method for inference. We maintain a local computation window that slides rightward as denoising progresses, and partition undecoded tokens into: (i) \textit{active tokens} that are computed online, (ii) \textit{buffer tokens} whose KV states are cached and periodically refreshed, and (iii) \textit{far-field tokens} that are pruned outside the window. Computation is restricted to active and buffer tokens within the window, while far-field tokens are omitted at each stage. Experiments on LLaDA and Dream show that, under matched compute budgets, our method achieves up to $99\times$ inference speedup while largely preserving generation performance.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
