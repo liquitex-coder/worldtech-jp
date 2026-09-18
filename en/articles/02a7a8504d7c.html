@@ -17,7 +17,7 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"AIREP: A Protocol for Per-Decision Evidence in AI Runtime Governance",
- "inLanguage":"en","datePublished":"2026-08-26T07:00:00+09:00","dateModified":"2026-08-26T07:00:00+09:00",
+ "inLanguage":"en","datePublished":"2026-09-19T07:00:00+09:00","dateModified":"2026-09-19T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2608.21363","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/02a7a8504d7c.html"}
@@ -35,11 +35,11 @@
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
     <h1>AIREP: A Protocol for Per-Decision Evidence in AI Runtime Governance</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/08/26</span></div>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/19</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/02a7a8504d7c.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.21363" rel="nofollow noopener">https://arxiv.org/abs/2608.21363</a></span></div>
-  <div class="article-body"><p>arXiv:2608.21363v1 Announce Type: new 
-Abstract: A protocol is presented for recording the governance decisions of automated AI runtimes. When a runtime releases, blocks, defers, redacts, or escalates an individual output, AIREP records that decision as a single signed object that any party can check offline, independent of the runtime that produced it. A record carries the decision as one of a closed set of verbs under a stated policy basis, references its input, output, and evidence by hash rather than by value, and declares both what its evidence covers and what it does not. Records form a SHA-256 hash chain that binds each record to its position, so that tampering and gaps are detectable by recomputation. Vendor-, model-, and domain-specific content is confined to a single optional namespace, and a mechanical neutrality test keeps the shared format free of it. A reference implementation and a two-language conformance kit are described. Some implementation issues are considered, and problems such as alignment of the canonical form across implementations, freshness witnesses, and multi-runtime chains are exposed. The format is offered for adoption by any AI runtime that records governance decisions.</p></div>
+  <div class="article-body"><p>arXiv:2608.21363v2 Announce Type: replace 
+Abstract: Runtime-governance evidence often collapses materially different events into one audit record: a decision may be made, an instruction dispatched or received, an action may or may not execute, and a resulting state may or may not be observed. This paper presents AIREP, a vendor- and model-independent protocol for per-decision AI runtime evidence. Its current wire model separates evidence into four artifact families: Decision, Control, Execution, and Effect. Artifacts use closed core schemas, explicit identities and digests, declared scope limits, RFC 8785 canonical JSON, domain-separated SHA-256 hashing, and pure Ed25519 signatures. A three-level assurance model distinguishes structural/hash consistency (AIREP-Core), verifier-accepted authorship (AIREP-Authenticated), and independently anchored chain-head freshness and non-truncation relative to an accepted witness (AIREP-Witnessed); these classes do not establish event truth. A structured reconciler preserves failure, missing evidence, unevaluated prerequisites, and indeterminate outcomes as distinct states. The released beta includes a four-family first-party producer, Python and Node reference-verification paths, adversarial/lifecycle corpora, and reproducible validation. Post-release first-party Hermes and LightEval integration exercises preserve explicit evidence boundaries without claiming adoption or interoperability. Independent implementation evidence exists separately for a v0.1.2 producer and a v0.2 consumer/verifier; because they target different frozen versions, they do not establish same-version producer-to-consumer interoperability. AIREP remains experimental.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Decoy-Calibrated Failure Audits for Language Models — NewsMatome (EN)</title>
-<meta name="description" content="Decoy-Calibrated Failure Audits for Language Models — original-language edition. Japanese translation available.">
+<title>Measurement Under Selection: Decoy-Calibrated Failure Audits for Language Models — NewsMatome (EN)</title>
+<meta name="description" content="Measurement Under Selection: Decoy-Calibrated Failure Audits for Language Models — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/d0cc849c65a3.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/d0cc849c65a3.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/d0cc849c65a3.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/d0cc849c65a3.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Decoy-Calibrated Failure Audits for Language Models">
+<meta property="og:title" content="Measurement Under Selection: Decoy-Calibrated Failure Audits for Language Models">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Decoy-Calibrated Failure Audits for Language Models",
- "inLanguage":"en","datePublished":"2026-06-10T07:00:00+09:00","dateModified":"2026-06-10T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Measurement Under Selection: Decoy-Calibrated Failure Audits for Language Models",
+ "inLanguage":"en","datePublished":"2026-09-19T07:00:00+09:00","dateModified":"2026-09-19T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.09046","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/d0cc849c65a3.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Decoy-Calibrated Failure Audits for Language Models</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/06/10</span></div>
+    <h1>Measurement Under Selection: Decoy-Calibrated Failure Audits for Language Models</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/19</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/d0cc849c65a3.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.09046" rel="nofollow noopener">https://arxiv.org/abs/2606.09046</a></span></div>
-  <div class="article-body"><p>arXiv:2606.09046v1 Announce Type: new 
-Abstract: Useful audits reveal not only how often a model fails, but also where its failures concentrate. An auditor may test many candidate explanations: long inputs, indirect questions, distracting evidence, or combinations of these factors. The risk is selection. The largest observed effect may reflect a real failure mode, or it may simply be the best result among many tried. We introduce Janus, a procedure for deciding when a proposed error explanation is credible enough to report. The goal is not to generate new explanations, but to decide which ones hold up. The auditor starts with a fixed model, a labeled evaluation set, and a frozen list of candidate explanations, which we call descriptors. Janus scores each descriptor by its error-rate lift, then compares real descriptors with fake ones that have the same frequencies but are randomly assigned to examples. A descriptor is confirmed only if it beats this decoy floor on the data used for discovery and then repeats on separate held-out data. In a controlled audit of multi-table lookup tasks, Janus identifies the planted failure, confirming long-chain descriptors and their interactions. The LLM often stops partway through the lookup chain instead of reaching the final answer. On two public benchmarks, MuSiQue and LongBench v2, the SliceLine baseline flags plausible high-error pockets, but Janus confirms none of them. Ablations show why both safeguards matter. On LongBench v2, an uncalibrated fixed threshold reports 20 descriptors, the decoy floor leaves one, and the holdout check rejects the last one after its lift shrinks from 0.36 to 0.05. The resulting principle separates proposing explanations from reporting them. Candidates may come from any source, but only those that beat decoys and replicate on fresh data become audit findings.</p></div>
+  <div class="article-body"><p>arXiv:2606.09046v2 Announce Type: replace 
+Abstract: Knowing how often a language model fails does not explain where its errors concentrate. When auditors examine many explanations, the strongest observed pattern may arise by chance. We introduce Janus, a procedure for checking proposed error patterns before reporting them. Janus starts with a fixed list of yes/no properties of the examples being evaluated, such as whether the input is long. For each property, it compares the model&#x27;s error rates on examples with that property and those without it. To see how large a difference can arise by chance, it repeats this calculation after shuffling the yes/no labels across examples without changing the group sizes. These shuffled properties are called decoys. A pattern is reported only if the size of its error difference meets a threshold set using decoys. On separate held-out examples, the same group must still have the higher error rate and the difference must meet a minimum, which was chosen in advance. In a controlled experiment, where the model must find a code in documents containing tables of staff, projects, and renewal codes, Janus confirms five related patterns of higher error rates on tasks requiring more lookups across tables. It also confirms a sixth pattern: lower error rates on examples with the needed information at the ends of the tables. In our samples from the MuSiQue and LongBench v2 public benchmarks, SliceLine finds groups with high error rates, while Janus reports no confirmed error patterns for the example properties we chose to test. For comparison, we use standard tests that shuffle errors and account for testing many candidates. With the same holdout check, they confirm two to six controlled patterns, depending on the test and threshold, and none on either benchmark. In simulations with no real error patterns, Janus reports false patterns more often than Benjamini-Hochberg, depending on the decoy count.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

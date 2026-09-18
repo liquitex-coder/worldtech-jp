@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Scaling Audio Models Efficiently: A Joint Study of Compute Constraints and Optimization Behavior — NewsMatome (EN)</title>
-<meta name="description" content="Scaling Audio Models Efficiently: A Joint Study of Compute Constraints and Optimization Behavior — original-language edition. Japanese translation available.">
+<title>Scaling Audio Models Efficiently: Joint Optimization of Scale, Resolution, Adaptation, Precision, and Sparsity — NewsMatome (EN)</title>
+<meta name="description" content="Scaling Audio Models Efficiently: Joint Optimization of Scale, Resolution, Adaptation, Precision, and Sparsity — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/1ff44efa4af2.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/1ff44efa4af2.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/1ff44efa4af2.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/1ff44efa4af2.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Scaling Audio Models Efficiently: A Joint Study of Compute Constraints and Optimization Behavior">
+<meta property="og:title" content="Scaling Audio Models Efficiently: Joint Optimization of Scale, Resolution, Adaptation, Precision, and Sparsity">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Scaling Audio Models Efficiently: A Joint Study of Compute Constraints and Optimization Behavior",
- "inLanguage":"en","datePublished":"2026-09-11T07:00:00+09:00","dateModified":"2026-09-11T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Scaling Audio Models Efficiently: Joint Optimization of Scale, Resolution, Adaptation, Precision, and Sparsity",
+ "inLanguage":"en","datePublished":"2026-09-19T07:00:00+09:00","dateModified":"2026-09-19T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.22790","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/1ff44efa4af2.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Scaling Audio Models Efficiently: A Joint Study of Compute Constraints and Optimization Behavior</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/11</span></div>
+    <h1>Scaling Audio Models Efficiently: Joint Optimization of Scale, Resolution, Adaptation, Precision, and Sparsity</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/19</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/1ff44efa4af2.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.22790" rel="nofollow noopener">https://arxiv.org/abs/2606.22790</a></span></div>
-  <div class="article-body"><p>arXiv:2606.22790v3 Announce Type: replace-cross 
-Abstract: Large automatic speech recognition (ASR) models such as Whisper must be deployed across hardware with widely varying memory and inference-speed constraints. We present a compression framework that jointly parametrizes Whisper deployment along \emph{six} dimensions: model size $x_N$, temporal resolution $x_T$, encoder token stride $x_V$, low-rank adaptation capacity $x_R$, weight precision $x_Q$ and sparsity pattern $x_P$. All axes are jointly optimized against three deployment objectives (word error rate, inference FLOPs, and memory footprint) using a non-dominated sorting genetic evolutionary search (NSGA). Across 50 of the 1,680 candidate configurations evaluated, we measure the marginal effect of each axis on the three objectives and identify compression combinations that dominate naive single-axis scaling, and report a consistent negative result: 1:4 structured sparsity fails to recover acceptable accuracy under any tested recovery budget. We report real, measured memory and accuracy figures for genuinely quantized deployment artifacts, and provide a lookup table mapping deployment scenarios (cloud, server, edge, ultra-constrained) to specific axis configurations with their measured accuracy/memory/compute trade-offs</p></div>
+  <div class="article-body"><p>arXiv:2606.22790v4 Announce Type: replace-cross 
+Abstract: Large automatic speech recognition (ASR) models such as Whisper must be deployed across hardware with widely varying memory and inference-speed constraints. We present a compression framework that jointly parametrizes Whisper deployment along \emph{six} dimensions: model size, temporal resolution, encoder token stride, low-rank adaptation capacity, weight precision and sparsity pattern. All axes are jointly optimized using NSGA-III with respect to three deployment objectives: word error rate (WER), inference FLOPs, and memory footprint. Across 50 of the 1,680 candidate configurations evaluated, we characterize the conditional effect of each axis and identify compression combinations that dominate naive single-axis scaling, while finding that 1:4 structured sparsity fails to recover acceptable accuracy under the tested recovery budgets. We report measured WER and resident memory, use analytical EffFLOPs as the search-time compute surrogate, and separately validate representative inference configurations using measured real-time factor (RTF).</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Faithful, Not Corrective: Message-Format Effects in Multi-Hop Agent Relays Are Tier-Dependent — NewsMatome (EN)</title>
-<meta name="description" content="Faithful, Not Corrective: Message-Format Effects in Multi-Hop Agent Relays Are Tier-Dependent — original-language edition. Japanese translation available.">
+<title>Faithful, Not Corrective: Model Capability Governs Message-Format Effects in Multi-Hop Agent Relays — NewsMatome (EN)</title>
+<meta name="description" content="Faithful, Not Corrective: Model Capability Governs Message-Format Effects in Multi-Hop Agent Relays — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/6a85e31e8e89.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/6a85e31e8e89.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/6a85e31e8e89.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/6a85e31e8e89.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Faithful, Not Corrective: Message-Format Effects in Multi-Hop Agent Relays Are Tier-Dependent">
+<meta property="og:title" content="Faithful, Not Corrective: Model Capability Governs Message-Format Effects in Multi-Hop Agent Relays">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Faithful, Not Corrective: Message-Format Effects in Multi-Hop Agent Relays Are Tier-Dependent",
- "inLanguage":"en","datePublished":"2026-07-15T07:00:00+09:00","dateModified":"2026-07-15T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Faithful, Not Corrective: Model Capability Governs Message-Format Effects in Multi-Hop Agent Relays",
+ "inLanguage":"en","datePublished":"2026-09-19T07:00:00+09:00","dateModified":"2026-09-19T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.09678","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/6a85e31e8e89.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Faithful, Not Corrective: Message-Format Effects in Multi-Hop Agent Relays Are Tier-Dependent</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/15</span></div>
+    <h1>Faithful, Not Corrective: Model Capability Governs Message-Format Effects in Multi-Hop Agent Relays</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/19</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/6a85e31e8e89.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.09678" rel="nofollow noopener">https://arxiv.org/abs/2607.09678</a></span></div>
-  <div class="article-body"><p>arXiv:2607.09678v1 Announce Type: cross 
-Abstract: When LLM agents hand off information to one another, does the message format matter? Two literatures disagree: format-optimization work reports that structured messages cut cost without hurting accuracy, while format-restriction work finds that imposing structure degrades generation -- and neither measures what happens when a message traverses multiple hops, where copy fidelity, not one-shot generation, dominates. We introduce a controlled relay testbed: briefs of twelve programmatically generated atomic facts are re-encoded hop-by-hop in five formats (free NL, precision-instructed NL, JSON, triples, key-value) over six hops, scored by a fixed strong grader against programmatic ground truth, across two relay-capability tiers, a cognitive-load condition, and a paired-fork error injection. We find that message-format effects are tier-dependent. (i) Under faithful-relay instructions a strong relay is nearly lossless -- the documented &quot;telephone-game&quot; collapse does not occur -- and adding per-hop cognitive load leaves format-level fidelity unchanged (within +/-1.8 points) while raising generation cost by 24-53%. (ii) Under a weak (1.5B) relay the across-format spread of six-hop recall grows by a factor of 8.7 (from 2.3 to 20.5 points), driven by two opposing mechanisms -- an encoding toll paid by the rigid formats and drift resistance specific to the fixed-key JSON schema -- that flip the format ranking in transit. (iii) In a paired-fork injection, an injected wrong value, once present, persists to the final hop in 83-100% of chains in every format, closely matching each format&#x27;s retention of the true value, with no detectable collateral damage to neighboring facts. Structure buys a faithful, error-localizing channel -- not an error-correcting code -- and format choice should follow the weakest relay in the pipeline.</p></div>
+  <div class="article-body"><p>arXiv:2607.09678v2 Announce Type: replace-cross 
+Abstract: When LLM agents hand information to one another, does the message format matter? Two literatures disagree: format-optimization work reports that structured messages cut cost without hurting accuracy, while format-restriction studies find that imposing structure degrades generation. Neither line has measured what happens when messages traverse multiple hops, where copy fidelity, rather than one-shot generation quality, dominates. We introduce a controlled relay testbed in which briefs of twelve programmatic atomic facts are re-encoded hop by hop in five formats (free natural language, precision-instructed NL, JSON, triples, key-value) over six hops, scored against programmatic ground truth by a fixed strong grader, across two relay-capability tiers, a cognitive-load condition, and a paired-fork error injection. We find that (i) a strong relay is nearly lossless for every format (hop-6 QA recall $\geq 0.973$), with residual loss concentrated at the first encoding step; (ii) per-hop cognitive load raises generation cost by 24-53% while fidelity changes stay within $\pm 1.8$ points; (iii) under a weak 1.5B relay, the across-format dispersion of hop-6 recall grows by a factor of $8.7$ (CI 5.3-15.5), driven by an encode-drift trade-off that flips the format ranking in transit; and (iv) once an injected error is present, every format propagates it faithfully (surface persistence 83-100%) and no format cascades collateral damage onto neighboring facts. Structure buys a faithful, error-localizing channel, not an error-correcting code.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>
