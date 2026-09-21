@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reading Less While Writing: A Closed-Form Bandwidth Dial for Streaming Multimodal Decoders — NewsMatome (EN)</title>
+<meta name="description" content="Reading Less While Writing: A Closed-Form Bandwidth Dial for Streaming Multimodal Decoders — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/7b1426c9faed.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/7b1426c9faed.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/7b1426c9faed.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/7b1426c9faed.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Reading Less While Writing: A Closed-Form Bandwidth Dial for Streaming Multimodal Decoders">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Reading Less While Writing: A Closed-Form Bandwidth Dial for Streaming Multimodal Decoders",
+ "inLanguage":"en","datePublished":"2026-09-22T07:00:00+09:00","dateModified":"2026-09-22T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.20845","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/7b1426c9faed.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/7b1426c9faed.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Reading Less While Writing: A Closed-Form Bandwidth Dial for Streaming Multimodal Decoders</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/22</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/7b1426c9faed.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.20845" rel="nofollow noopener">https://arxiv.org/abs/2609.20845</a></span></div>
+  <div class="article-body"><p>arXiv:2609.20845v1 Announce Type: cross 
+Abstract: A decoder that turns video or audio into text conventionally consumes the entire input before emitting a word. Offline this is merely more than the task requires; live it is impossible, since a caption cannot wait for a match to end. Streaming systems bolt on a fixed rule such as wait-$k$, which waits for the same number of input tokens before every word, regardless of the input&#x27;s length or pace.
+  We replace the fixed offset with ZENDAYA, a schedule governed by a single continuous parameter $\gamma$. It makes the visible source prefix a closed-form function of generation progress, scaled by the input&#x27;s own predicted length, so an ordinary offline decoder and a real-time streaming decoder become two endpoints of one family rather than separate models. The same scalar fixes, in closed form, the mean fraction of source consumed per emitted word, $\bar{E}(\gamma) \approx 1/(1+\gamma)$, making it at once a latency dial and an interpretable budget. We prove a structural dependency theorem: under any schedule fixed in advance and non-decreasing, no emitted token can depend on input that has not yet arrived. The guarantee holds for trained and untrained weights alike, and extends to unbounded streams under arbitrary asynchronous arrival.
+  The empirical result is counterintuitive: seeing less can produce better text, because a flood of source dilutes attention exactly when the model has the least of its own output to anchor on. Trained from scratch across two modalities and three public corpora (Charades-STA, ActivityNet Captions, LibriHeavy), a compact 29M-parameter decoder matches or beats the fixed schedule while reading less of the source, with the sharpest gains at the lowest latencies, where a fixed offset collapses. Streaming METEOR gains are statistically significant on all three corpora.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Balance of Benchmarks: Semantic Density Reweighting for Benchmark Multiplicity and Task-Conditioned Evaluation — NewsMatome (EN)</title>
-<meta name="description" content="Balance of Benchmarks: Semantic Density Reweighting for Benchmark Multiplicity and Task-Conditioned Evaluation — original-language edition. Japanese translation available.">
+<title>Balance of Benchmarks: Semantic Density Reweighting for Task-Conditioned Model Comparison — NewsMatome (EN)</title>
+<meta name="description" content="Balance of Benchmarks: Semantic Density Reweighting for Task-Conditioned Model Comparison — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/77be5daf2d46.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/77be5daf2d46.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/77be5daf2d46.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/77be5daf2d46.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Balance of Benchmarks: Semantic Density Reweighting for Benchmark Multiplicity and Task-Conditioned Evaluation">
+<meta property="og:title" content="Balance of Benchmarks: Semantic Density Reweighting for Task-Conditioned Model Comparison">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Balance of Benchmarks: Semantic Density Reweighting for Benchmark Multiplicity and Task-Conditioned Evaluation",
- "inLanguage":"en","datePublished":"2026-09-11T07:00:00+09:00","dateModified":"2026-09-11T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Balance of Benchmarks: Semantic Density Reweighting for Task-Conditioned Model Comparison",
+ "inLanguage":"en","datePublished":"2026-09-22T07:00:00+09:00","dateModified":"2026-09-22T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2608.30044","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/77be5daf2d46.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Balance of Benchmarks: Semantic Density Reweighting for Benchmark Multiplicity and Task-Conditioned Evaluation</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/11</span></div>
+    <h1>Balance of Benchmarks: Semantic Density Reweighting for Task-Conditioned Model Comparison</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/22</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/77be5daf2d46.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.30044" rel="nofollow noopener">https://arxiv.org/abs/2608.30044</a></span></div>
-  <div class="article-body"><p>arXiv:2608.30044v2 Announce Type: replace-cross 
-Abstract: Language models are commonly compared by averaging scores across a benchmark list with equal weight. Such lists grow through publication outside an explicit measurement design, so equal weighting turns the density of published benchmarks into an implicit capability weight: densely benchmarked regions count repeatedly. We introduce Balance of Benchmarks (BoB), which embeds benchmark descriptions and assigns each benchmark an inverse-density semantic weight. Nearby entries share aggregate influence at a disclosed density scale. After equating heterogeneous scores onto a common latent scale, a residual field uses the same geometry to condition model rankings on a task query. The two components serve distinct empirical roles. On a snapshot of 605 models and 14 benchmarks, BoB predicts which models are unusually strong on a held-out task beyond their general ability, reaching a profile correlation of 0.483 compared with 0.049 under equal weighting. Among controls that share its score equating, residuals, precision weights, and regularization, BoB attains the highest mean profile and significantly outperforms nearest-neighbour, tuned top-\(k\), radius, and cluster-based aggregation after multiple-comparison correction. It also limits the influence of densely repeated benchmarks on the aggregate. After adding four copies of each benchmark in turn, the resulting rankings retain Kendall \(\tau=0.995\), compared with 0.936 under equal weighting. The residual field therefore provides task-conditioned prediction, and inverse-density weighting provides robustness to benchmark multiplicity. Together, they turn benchmark-list composition from an incidental property of evaluation suites into an explicit, controllable part of measurement design, providing a principled foundation for task-aware and multiplicity-robust model evaluation.</p></div>
+  <div class="article-body"><p>arXiv:2608.30044v3 Announce Type: replace-cross 
+Abstract: Model comparison increasingly relies on large collections of publicly reported benchmark scores, yet common aggregation strategies trade off evidence coverage against control over capability weighting. Manually curated suites leave potentially informative evaluations unused, while uniform averaging retains them but gives greater influence to capabilities that happen to be benchmarked more densely. We introduce Balance of Benchmarks (BoB), a framework that retains eligible benchmark evidence while adapting its influence for task-conditioned model comparison using only public aggregate scores. BoB combines semantic density weighting, score equating across benchmarks of different difficulty, and task-relevant residual pooling. We evaluate it on 605 configurations across 14 Artificial Analysis benchmarks and on WildScores, a collection of 148 developer-reported benchmarks evaluated with held-out source-lineage families. On WildScores, BoB-Support raises family-mean Spearman correlation from 0.764 under uniform standardized averaging to 0.823, reduces MAE from 6.19 to 5.10 normalized score points, and increases three-model shortlist hit rate from 65.3% to 72.6%. BoB-Constant reaches a Spearman correlation of 0.831 and a hit rate of 74.6%. Separately, density weighting reduces average ranking changes when benchmarks are repeated, including as paraphrased copies. BoB-Support also reduces retrospective three-model shortlist regret from 2.08 to 1.67 normalized score points. BoB makes benchmark inclusion, redundancy, and task relevance explicit and testable measurement choices, allowing existing benchmark evidence to be used more fully while moderating the influence of benchmark proliferation.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

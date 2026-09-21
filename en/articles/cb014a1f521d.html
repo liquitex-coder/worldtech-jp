@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hybrid GPU-CPU Retrieval for Personalized Search at Ultra-Large Scale — NewsMatome (EN)</title>
+<meta name="description" content="Hybrid GPU-CPU Retrieval for Personalized Search at Ultra-Large Scale — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/cb014a1f521d.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/cb014a1f521d.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/cb014a1f521d.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/cb014a1f521d.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hybrid GPU-CPU Retrieval for Personalized Search at Ultra-Large Scale">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Hybrid GPU-CPU Retrieval for Personalized Search at Ultra-Large Scale",
+ "inLanguage":"en","datePublished":"2026-09-22T07:00:00+09:00","dateModified":"2026-09-22T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.21281","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/cb014a1f521d.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/cb014a1f521d.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Hybrid GPU-CPU Retrieval for Personalized Search at Ultra-Large Scale</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/22</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/cb014a1f521d.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.21281" rel="nofollow noopener">https://arxiv.org/abs/2609.21281</a></span></div>
+  <div class="article-body"><p>arXiv:2609.21281v1 Announce Type: cross 
+Abstract: Embedding-based retrieval on user-generated content at the trillion-document scale exposes a sharp conflict between two production demands: deep, expressive personalization for queries with rich user intent, and broad coverage of a massive inventory under fixed latency and resource budgets. We characterize this as the personalization-scale paradox: hosting the full serving inventory in GPU memory is too resource intensive, while CPU compute cannot execute the same interaction-heavy model on the latency-critical path.
+  We present a hybrid GPU-CPU co-serving system that resolves the paradox through orchestration rather than a new model class. A high-depth GPU pathway fuses retrieval and interaction pre-ranking over a curated online pool on the order of a billion documents, while a high-breadth CPU pathway searches an independently selected online inventory roughly twenty times larger with lightweight personalized scoring. Either or both pathways can run per request; candidates are deduplicated before shared downstream ranking.
+  The system is deployed in production. A full-system A/B test against the legacy CPU-only configuration improves model-scored relevance and substantive engagement, while separate pathway experiments show positive value at their own deployment scopes. Retrieval logs show that the pathways contribute structurally distinct candidates, production serving measurements characterize their latency, and a matched capacity plan quantifies the economic rationale for assigning modeling depth to GPUs and inventory breadth to CPUs. Together, these results validate a practical, independently evolvable depth-breadth architecture for ultra-large-scale personalized search.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
