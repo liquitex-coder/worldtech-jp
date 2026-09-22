@@ -15,7 +15,7 @@ def test_merged_groups_and_new_categories_in_nav():
     assert "日本のAI" in INDEX                           # 新カテゴリ
     # AI グループのドロップダウンにロボット技術が統合されている
     ai_group = INDEX.split("面白")[0]
-    assert "ロボット技術" in INDEX and "フィジカルAI" in INDEX
+    assert "ロボット技術" in ai_group and "フィジカルAI" in ai_group
 
 
 def test_fun_category_with_anime_gadget_manga():
