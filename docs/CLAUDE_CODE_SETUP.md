@@ -25,7 +25,7 @@ tooling a fresh remote container needs so that tests and lint run in every sessi
 - Hook executed with `CLAUDE_CODE_REMOTE=true`: OK (pytest 9.1.1, ruff 0.16.8 installed; env file written).
 - Hook executed without `CLAUDE_CODE_REMOTE`: exits 0 without installing (local no-op).
 - Lint: `python -m ruff check pipeline/core.py` runs; 4 pre-existing findings project-wide
-  (2× unused import, 1× unused variable, 1× multiple imports on one line). Not fixed here.
+  (2× unused import, 1× unused variable, 1× multiple imports on one line), fixed in this branch → 0 findings.
 - Tests: `python -m pytest tests/ -q` → 137 passed.
 
 ## Activation
@@ -63,7 +63,7 @@ python -m pytest tests/ -q
 - フック実行（`CLAUDE_CODE_REMOTE=true`）：OK（pytest 9.1.1 / ruff 0.16.8、env ファイル書き出し）。
 - `CLAUDE_CODE_REMOTE` 未設定：導入せず exit 0（ローカル no-op）。
 - Lint：`python -m ruff check pipeline/core.py` 動作確認。プロジェクト全体で既存の指摘4件
-  （未使用 import×2、未使用変数×1、1行複数 import×1）。本PRでは未修正。
+  （未使用 import×2、未使用変数×1、1行複数 import×1）を本ブランチで修正 → 指摘 0 件。
 - テスト：`python -m pytest tests/ -q` → 137 passed。
 
 ## 有効化
