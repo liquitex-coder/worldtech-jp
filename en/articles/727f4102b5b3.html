@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Class-Balanced Softmax: A Bayes Theory-Based Method for Long-Tailed Recognition — NewsMatome (EN)</title>
-<meta name="description" content="Class-Balanced Softmax: A Bayes Theory-Based Method for Long-Tailed Recognition — original-language edition. Japanese translation available.">
+<title>Generalised Balanced Softmax: A Finite-Data Perspective on Logit Adjustment for Long-Tailed Recognition — NewsMatome (EN)</title>
+<meta name="description" content="Generalised Balanced Softmax: A Finite-Data Perspective on Logit Adjustment for Long-Tailed Recognition — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/727f4102b5b3.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/727f4102b5b3.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/727f4102b5b3.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/727f4102b5b3.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Class-Balanced Softmax: A Bayes Theory-Based Method for Long-Tailed Recognition">
+<meta property="og:title" content="Generalised Balanced Softmax: A Finite-Data Perspective on Logit Adjustment for Long-Tailed Recognition">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Class-Balanced Softmax: A Bayes Theory-Based Method for Long-Tailed Recognition",
- "inLanguage":"en","datePublished":"2026-07-28T07:00:00+09:00","dateModified":"2026-07-28T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Generalised Balanced Softmax: A Finite-Data Perspective on Logit Adjustment for Long-Tailed Recognition",
+ "inLanguage":"en","datePublished":"2026-09-23T07:00:00+09:00","dateModified":"2026-09-23T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.22258","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/727f4102b5b3.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Class-Balanced Softmax: A Bayes Theory-Based Method for Long-Tailed Recognition</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/28</span></div>
+    <h1>Generalised Balanced Softmax: A Finite-Data Perspective on Logit Adjustment for Long-Tailed Recognition</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/23</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/727f4102b5b3.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.22258" rel="nofollow noopener">https://arxiv.org/abs/2607.22258</a></span></div>
-  <div class="article-body"><p>arXiv:2607.22258v1 Announce Type: new 
-Abstract: Deep learning models using traditional softmax classifiers have achieved remarkable success in various classification tasks. However, their performance degrades significantly on imbalanced datasets. Although Balanced Softmax is widely adopted as a state-of-the-art rebalancing method, it possesses inherent limitations, such as yielding disproportionately lower testing accuracy for tail classes. To mitigate these shortcomings, we propose the Class-Balanced Softmax (CBS). Rooted in a theoretical Bayesian framework and a heuristic power-law assumption, the CBS is a simple logit adjustment that is computationally inexpensive and easily integrated into existing pipelines. Furthermore, we characterise a fundamental phenomenon in models trained on imbalanced data, termed the preference issue, wherein models exhibit higher training error and a larger generalisation gap for classes with limited data. To quantify this issue, we introduce a novel metric and demonstrate that CBS effectively mitigates the preference issue. Extensive experiments on large-scale benchmarks show that CBS is highly scalable and outperforms existing methods, including Balanced Softmax.</p></div>
+  <div class="article-body"><p>arXiv:2607.22258v2 Announce Type: replace 
+Abstract: Models trained on long-tailed data using standard softmax tend to exhibit higher training error and a larger generalisation gap for classes with fewer training samples. We characterise this class-wise disparity as the preference issue and quantify it using a new metric, the model imbalance level $I$. To understand this issue, we analyse how imbalanced training data adversely affects class-wise gradients under standard softmax training. This paper then develops a finite-data Generalised Balanced Softmax (GBS) framework for analysing and mitigating the preference issue. The framework uses the training-time logit adjustment $z_{nc}+\beta\log|N_c|$, which is algebraically identical to the training-time logit-adjusted loss of Menon et al. (2021) when $\tau=\beta$. The case $\beta=1$ also coincides with Balanced Softmax and with the unit adjustment supported by the Fisher-consistency argument under the true data distribution, corresponding to an idealised infinite-data setting. Building on this existing loss family, this paper uses a heuristic power-law assumption to motivate the adjustable coefficient and studies how $\beta$ affects trained models. Across the evaluated long-tailed benchmarks, $\beta=1$ does not attain the highest average testing recall on most datasets, showing that a different coefficient can be preferable when training on finite data. The selected values of $\beta$ reduce $I$ and improve average testing recall relative to the $\beta=1$ reference, while retaining negligible computational overhead and compatibility with existing representation-learning frameworks.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>VoxReason: Listener-Free Evaluation of Source-Grounded Speech Planning Before Synthesis — NewsMatome</title>
-<meta name="description" content="VoxReason: Listener-Free Evaluation of Source-Grounded Speech Planning Before Synthesis（EN→JA 翻訳・出典付き）">
+<title>VoxReason: Auditing Source-Grounded Speech Plans Before Synthesis — NewsMatome</title>
+<meta name="description" content="VoxReason: Auditing Source-Grounded Speech Plans Before Synthesis（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/cda1c6577223.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/cda1c6577223.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/cda1c6577223.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="VoxReason: Listener-Free Evaluation of Source-Grounded Speech Planning Before Synthesis">
-<meta property="og:description" content="VoxReason: Listener-Free Evaluation of Source-Grounded Speech Planning Before Synthesis（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="VoxReason: Auditing Source-Grounded Speech Plans Before Synthesis">
+<meta property="og:description" content="VoxReason: Auditing Source-Grounded Speech Plans Before Synthesis（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"VoxReason: Listener-Free Evaluation of Source-Grounded Speech Planning Before Synthesis",
- "inLanguage":"ja","datePublished":"2026-09-11T07:00:00+09:00","dateModified":"2026-09-11T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"VoxReason: Auditing Source-Grounded Speech Plans Before Synthesis",
+ "inLanguage":"ja","datePublished":"2026-09-23T07:00:00+09:00","dateModified":"2026-09-23T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2609.03203","url":"https://liquitex-coder.github.io/worldtech-jp/articles/cda1c6577223.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>VoxReason: Listener-Free Evaluation of Source-Grounded Speech Planning Before Synthesis</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>VoxReason: Auditing Source-Grounded Speech Plans Before Synthesis</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>VoxReason: Listener-Free Evaluation of Source-Grounded Speech Planning Before Synthesis</h1>
+      <h1>VoxReason: Auditing Source-Grounded Speech Plans Before Synthesis</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/09/11 07:00</span><span>· 更新 2026/09/11</span>
+        <span>公開 2026/09/23 07:00</span><span>· 更新 2026/09/23</span>
       </div>
     </div>
     
@@ -74,24 +74,24 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2609.03203" rel="nofollow noopener">VoxReason: Listener-Free Evaluation of Source-Grounded Speech Planning Before Synthesis</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2609.03203" rel="nofollow noopener">VoxReason: Auditing Source-Grounded Speech Plans Before Synthesis</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2609.03203v2 Announce Type: replace-cross 
-Abstract: Expressive speech systems have to decide how an utterance is delivered before any waveform is rendered. In dialogue agents, narration, and role-conditioned TTS, that planning step sets affect, pitch, energy, rate, pause, emphasis, and stance, yet standard audio metrics rarely show whether those choices were actually licensed by the source record. This leaves a practical evaluation gap: a system may sound plausible while relying on a memorized script instead of the cue that governs delivery. VoxReason casts this pre-synthesis step as a listener-free task for source-grounded speech planning. Systems output a source-cited speaking plan, and a deterministic verifier checks citation legality, slot agreement, unsupported state, schema validity, and one-cue counterfactual locality. On 1,440 checked source-label cases, shortcut controls show why slot accuracy alone is unsafe: a key-lookup oracle reaches 1.000 plan-slot accuracy on seen keys, while an emotion prior still reaches 0.958 slot accuracy on source-key-disjoint cases without citing intensity or identity. In a separate 100-case learned source-key-disjoint comparison, a 7B locality SFT+CF repair improves plan-slot accuracy/locality from 0.684/0.141 to 0.919/1.000, and removing source records lowers citation-required grounded score by 0.488. The resulting benchmark isolates whether planned delivery is warranted by the record before waveform evaluation or listener studies are used.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2609.03203v2 Announce Type: replace-cross 
-Abstract: Expressive speech systems have to decide how an utterance is delivered before any waveform is rendered. In dialogue agents, narration, and role-conditioned TTS, that planning step sets affect, pitch, energy, rate, pause, emphasis, and stance, yet standard audio metrics rarely show whether those choices were actually licensed by the source record. This leaves a practical evaluation gap: a system may sound plausible while relying on a memorized script instead of the cue that governs delivery. VoxReason casts this pre-synthesis step as a listener-free task for source-grounded speech planning. Systems output a source-cited speaking plan, and a deterministic verifier checks citation legality, slot agreement, unsupported state, schema validity, and one-cue counterfactual locality. On 1,440 checked source-label cases, shortcut controls show why slot accuracy alone is unsafe: a key-lookup oracle reaches 1.000 plan-slot accuracy on seen keys, while an emotion prior still reaches 0.958 slot accuracy on source-key-disjoint cases without citing intensity or identity. In a separate 100-case learned source-key-disjoint comparison, a 7B locality SFT+CF repair improves plan-slot accuracy/locality from 0.684/0.141 to 0.919/1.000, and removing source records lowers citation-required grounded score by 0.488. The resulting benchmark isolates whether planned delivery is warranted by the record before waveform evaluation or listener studies are used.</div>
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2609.03203v3 Announce Type: replace-cross 
+Abstract: Speech systems increasingly infer how an utterance should be delivered from context, but a plausible delivery plan may not be supported by the input. VoxReason is a small public benchmark and verifier for testing this failure before waveform synthesis. Each of its 100 cases fixes the utterance, provides derived records that name the source emotion and intensity, and changes one licensed cue. A system must cite the record for its delivery decision and update only the plan fields associated with the edit. We use deterministic verifier references, not a model leaderboard. This holdout excludes every emotion and intensity combination observed in training. A prior-only predictor achieves 0.958 accuracy across plan fields but never changes its plan consistently after a cue edit. This contrast shows that plan agreement does not demonstrate source grounding. The released suite provides an auditable measurement layer for screening structured speech plans before synthesis. It is limited to derived records, not audio inputs.</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2609.03203v3 Announce Type: replace-cross 
+Abstract: Speech systems increasingly infer how an utterance should be delivered from context, but a plausible delivery plan may not be supported by the input. VoxReason is a small public benchmark and verifier for testing this failure before waveform synthesis. Each of its 100 cases fixes the utterance, provides derived records that name the source emotion and intensity, and changes one licensed cue. A system must cite the record for its delivery decision and update only the plan fields associated with the edit. We use deterministic verifier references, not a model leaderboard. This holdout excludes every emotion and intensity combination observed in training. A prior-only predictor achieves 0.958 accuracy across plan fields but never changes its plan consistently after a cue edit. This contrast shows that plan agreement does not demonstrate source grounding. The released suite provides an auditable measurement layer for screening structured speech plans before synthesis. It is limited to derived records, not audio inputs.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2609.03203v2 Announce Type: replace-cross 
-Abstract: Expressive speech systems have to decide how an utterance is delivered before any waveform is rendered. In dialogue agents, narration, and role-conditioned TTS, that planning step sets affect, pitch, energy, rate, pause, emphasis, and stance, yet standard audio metrics rarely show whether those choices were actually licensed by the source record. This leaves a practical evaluation gap: a system may sound plausible while relying on a memorized script instead of the cue that governs delivery. VoxReason casts this pre-synthesis step as a listener-free task for source-grounded speech planning. Systems output a source-cited speaking plan, and a deterministic verifier checks citation legality, slot agreement, unsupported state, schema validity, and one-cue counterfactual locality. On 1,440 checked source-label cases, shortcut controls show why slot accuracy alone is unsafe: a key-lookup oracle reaches 1.000 plan-slot accuracy on seen keys, while an emotion prior still reaches 0.958 slot accuracy on source-key-disjoint cases without citing intensity or identity. In a separate 100-case learned source-key-disjoint comparison, a 7B locality SFT+CF repair improves plan-slot accuracy/locality from 0.684/0.141 to 0.919/1.000, and removing source records lowers citation-required grounded score by 0.488. The resulting benchmark isolates whether planned delivery is warranted by the record before waveform evaluation or listener studies are used.</p><a href="https://arxiv.org/abs/2609.03203" rel="nofollow noopener">原論文を読む →</a></div>
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2609.03203v3 Announce Type: replace-cross 
+Abstract: Speech systems increasingly infer how an utterance should be delivered from context, but a plausible delivery plan may not be supported by the input. VoxReason is a small public benchmark and verifier for testing this failure before waveform synthesis. Each of its 100 cases fixes the utterance, provides derived records that name the source emotion and intensity, and changes one licensed cue. A system must cite the record for its delivery decision and update only the plan fields associated with the edit. We use deterministic verifier references, not a model leaderboard. This holdout excludes every emotion and intensity combination observed in training. A prior-only predictor achieves 0.958 accuracy across plan fields but never changes its plan consistently after a cue edit. This contrast shows that plan agreement does not demonstrate source grounding. The released suite provides an auditable measurement layer for screening structured speech plans before synthesis. It is limited to derived records, not audio inputs.</p><a href="https://arxiv.org/abs/2609.03203" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2609.03203" rel="nofollow noopener">https://arxiv.org/abs/2609.03203</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
     <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="38987a8d0b0e.html"><div class="sim">関連</div><div class="info"><b>Beyond Right and Wrong: Evaluating Second-order Social Reasoning in Large Language Models</b><div class="m">AI</div></div></a><a class="r" href="4a5e61d042ae.html"><div class="sim">関連</div><div class="info"><b>CriticGen: Generation-Aware Evaluation as Actionable Feedback</b><div class="m">AI</div></div></a><a class="r" href="92ec29497442.html"><div class="sim">関連</div><div class="info"><b>When Does Memory Help? A Cost-Aware Evaluation of Long-Term Memory in Tool-Using LLM Agents</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="34088336622f.html"><div class="sim">関連</div><div class="info"><b>RBS-Attention: Radius-Bounded Sparse Prefill for Long-Context Large Language Models</b><div class="m">AI</div></div></a><a class="r" href="37d9347772d8.html"><div class="sim">関連</div><div class="info"><b>Attention-Aware Routing: Coupling Routing and Attention in MoEs</b><div class="m">AI</div></div></a><a class="r" href="f790dcf3a000.html"><div class="sim">関連</div><div class="info"><b>CaLR: Causal Latent Revision for Robust Diffusion Reasoning</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

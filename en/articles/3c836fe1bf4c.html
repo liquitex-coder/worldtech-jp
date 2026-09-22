@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>When Does Learning Beat Heuristics? A Case Study in Kubernetes Scheduler Score Plugins — NewsMatome (EN)</title>
+<meta name="description" content="When Does Learning Beat Heuristics? A Case Study in Kubernetes Scheduler Score Plugins — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/3c836fe1bf4c.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/3c836fe1bf4c.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/3c836fe1bf4c.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/3c836fe1bf4c.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="When Does Learning Beat Heuristics? A Case Study in Kubernetes Scheduler Score Plugins">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"When Does Learning Beat Heuristics? A Case Study in Kubernetes Scheduler Score Plugins",
+ "inLanguage":"en","datePublished":"2026-09-23T07:00:00+09:00","dateModified":"2026-09-23T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.22142","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/3c836fe1bf4c.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/3c836fe1bf4c.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>When Does Learning Beat Heuristics? A Case Study in Kubernetes Scheduler Score Plugins</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/23</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/3c836fe1bf4c.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.22142" rel="nofollow noopener">https://arxiv.org/abs/2609.22142</a></span></div>
+  <div class="article-body"><p>arXiv:2609.22142v1 Announce Type: cross 
+Abstract: Kubernetes scheduler plugins that score candidate nodes are, in production, hand-tuned heuristics. We ask whether a learned scoring function - trained on real placement decisions from a production cluster trace - can match or exceed these heuristics, and if not, why. We implement an external, HTTP-backed scoring plugin for a widely used scheduler simulator and evaluate two learned models (a Random Forest over engineered features, and a graph neural network encoder over per-job task-dependency graphs) trained on a large-scale production cluster trace. Under standard regression fit (R^2), both models improve modestly but monotonically across four feature-engineering iterations, reaching R^2 of about 0.042. However, on the metric that actually matters for scheduling - Top-1 ranking accuracy, whether the model scores the machine the production scheduler actually chose highest - both learned models are outperformed by a trivial single-feature heuristic (rank by free CPU: 74-84% vs. 65-66% for either model). We show this gap is best explained by objective mismatch: both models were trained with pointwise regression (MSE) rather than a ranking-specific objective, echoing a long-standing distinction in the learning-to-rank literature. This parallels prior evidence that RL-trained schedulers can outperform heuristics when the training objective is aligned with the deployment task, suggesting objective misalignment, not architecture, is the primary obstacle here. We further report an ablation of the occupancy reconstruction required to make offline trace data usable (naive features yield R^2 near 0), a controlled comparison isolating feature richness and data volume between the two model families, and a sensitivity analysis of inference latency and serving-container memory constraints. Code, data pipelines, and experiment scripts are released for reproducibility.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>VoxReason: Listener-Free Evaluation of Source-Grounded Speech Planning Before Synthesis — NewsMatome (EN)</title>
-<meta name="description" content="VoxReason: Listener-Free Evaluation of Source-Grounded Speech Planning Before Synthesis — original-language edition. Japanese translation available.">
+<title>VoxReason: Auditing Source-Grounded Speech Plans Before Synthesis — NewsMatome (EN)</title>
+<meta name="description" content="VoxReason: Auditing Source-Grounded Speech Plans Before Synthesis — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/cda1c6577223.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/cda1c6577223.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/cda1c6577223.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/cda1c6577223.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VoxReason: Listener-Free Evaluation of Source-Grounded Speech Planning Before Synthesis">
+<meta property="og:title" content="VoxReason: Auditing Source-Grounded Speech Plans Before Synthesis">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"VoxReason: Listener-Free Evaluation of Source-Grounded Speech Planning Before Synthesis",
- "inLanguage":"en","datePublished":"2026-09-11T07:00:00+09:00","dateModified":"2026-09-11T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"VoxReason: Auditing Source-Grounded Speech Plans Before Synthesis",
+ "inLanguage":"en","datePublished":"2026-09-23T07:00:00+09:00","dateModified":"2026-09-23T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2609.03203","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/cda1c6577223.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>VoxReason: Listener-Free Evaluation of Source-Grounded Speech Planning Before Synthesis</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/11</span></div>
+    <h1>VoxReason: Auditing Source-Grounded Speech Plans Before Synthesis</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/23</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/cda1c6577223.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.03203" rel="nofollow noopener">https://arxiv.org/abs/2609.03203</a></span></div>
-  <div class="article-body"><p>arXiv:2609.03203v2 Announce Type: replace-cross 
-Abstract: Expressive speech systems have to decide how an utterance is delivered before any waveform is rendered. In dialogue agents, narration, and role-conditioned TTS, that planning step sets affect, pitch, energy, rate, pause, emphasis, and stance, yet standard audio metrics rarely show whether those choices were actually licensed by the source record. This leaves a practical evaluation gap: a system may sound plausible while relying on a memorized script instead of the cue that governs delivery. VoxReason casts this pre-synthesis step as a listener-free task for source-grounded speech planning. Systems output a source-cited speaking plan, and a deterministic verifier checks citation legality, slot agreement, unsupported state, schema validity, and one-cue counterfactual locality. On 1,440 checked source-label cases, shortcut controls show why slot accuracy alone is unsafe: a key-lookup oracle reaches 1.000 plan-slot accuracy on seen keys, while an emotion prior still reaches 0.958 slot accuracy on source-key-disjoint cases without citing intensity or identity. In a separate 100-case learned source-key-disjoint comparison, a 7B locality SFT+CF repair improves plan-slot accuracy/locality from 0.684/0.141 to 0.919/1.000, and removing source records lowers citation-required grounded score by 0.488. The resulting benchmark isolates whether planned delivery is warranted by the record before waveform evaluation or listener studies are used.</p></div>
+  <div class="article-body"><p>arXiv:2609.03203v3 Announce Type: replace-cross 
+Abstract: Speech systems increasingly infer how an utterance should be delivered from context, but a plausible delivery plan may not be supported by the input. VoxReason is a small public benchmark and verifier for testing this failure before waveform synthesis. Each of its 100 cases fixes the utterance, provides derived records that name the source emotion and intensity, and changes one licensed cue. A system must cite the record for its delivery decision and update only the plan fields associated with the edit. We use deterministic verifier references, not a model leaderboard. This holdout excludes every emotion and intensity combination observed in training. A prior-only predictor achieves 0.958 accuracy across plan fields but never changes its plan consistently after a cue edit. This contrast shows that plan agreement does not demonstrate source grounding. The released suite provides an auditable measurement layer for screening structured speech plans before synthesis. It is limited to derived records, not audio inputs.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>
