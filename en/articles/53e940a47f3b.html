@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conduit: An Experience Data Plane for Distributed Reinforcement Learning — NewsMatome (EN)</title>
+<meta name="description" content="Conduit: An Experience Data Plane for Distributed Reinforcement Learning — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/53e940a47f3b.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/53e940a47f3b.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/53e940a47f3b.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/53e940a47f3b.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Conduit: An Experience Data Plane for Distributed Reinforcement Learning">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Conduit: An Experience Data Plane for Distributed Reinforcement Learning",
+ "inLanguage":"en","datePublished":"2026-09-24T07:00:00+09:00","dateModified":"2026-09-24T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.24456","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/53e940a47f3b.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/53e940a47f3b.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Conduit: An Experience Data Plane for Distributed Reinforcement Learning</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/24</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/53e940a47f3b.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.24456" rel="nofollow noopener">https://arxiv.org/abs/2609.24456</a></span></div>
+  <div class="article-body"><p>arXiv:2609.24456v1 Announce Type: cross 
+Abstract: Distributed reinforcement learning (RL) scales training by parallelizing actors and learners around an Experience Buffer. As RL workloads grow, however, the buffer becomes more than a replay queue: it is the storage substrate of a large-capacity, latency-critical experience path that every iteration traverses to move, transform, sample, and batch experiences before learner updates can begin. Existing RL systems embed this path inside framework control flow or expose it as a request-driven buffer service, leaving experience placement fixed and experience-path work difficult to schedule independently as a runtime-level optimization target. We present Conduit, a framework-agnostic runtime that exposes RL experience management as an explicit systems optimization problem. At its core is the Experience Data Plane (EDP), a runtime abstraction that separates RL experience-handling semantics from framework-specific execution logic by exposing experience ingestion, experience placement, and experience delivery as explicit control points. Built on EDP, Conduit introduces capacity-constrained, bandwidth-aware placement, which distributes experience state across CPU/GPU memory tiers and nodes under heterogeneous interconnect and device-memory constraints, and latency-aware scheduling, which controls when experience-path handling runs to reduce exposed experience-path latency while preserving RL semantics. Integrated with RLlib without changing its framework execution logic, Conduit reduces exposed experience-path latency by up to 97% and end-to-end iteration latency by up to 38%, scales to 1,024 GPUs, and preserves convergence.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

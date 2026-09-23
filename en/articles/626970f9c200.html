@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zero-Trust Authorization and Discovery for Enterprise MCP — NewsMatome (EN)</title>
+<meta name="description" content="Zero-Trust Authorization and Discovery for Enterprise MCP — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/626970f9c200.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/626970f9c200.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/626970f9c200.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/626970f9c200.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Zero-Trust Authorization and Discovery for Enterprise MCP">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Zero-Trust Authorization and Discovery for Enterprise MCP",
+ "inLanguage":"en","datePublished":"2026-09-24T07:00:00+09:00","dateModified":"2026-09-24T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.22573","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/626970f9c200.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/626970f9c200.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Zero-Trust Authorization and Discovery for Enterprise MCP</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/24</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/626970f9c200.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.22573" rel="nofollow noopener">https://arxiv.org/abs/2609.22573</a></span></div>
+  <div class="article-body"><p>arXiv:2609.22573v1 Announce Type: cross 
+Abstract: LLM agents translate natural-language context, which may include attacker-controlled text, into privileged tool calls, so authorization must remain effective even when an agent is prompt-injected or adversarially steered. The Model Context Protocol (MCP) has become a widely adopted interface for this boundary, yet its official SDKs&#x27; authentication and authorization primitives fall short of enterprise zero-trust requirements, most acutely a dual-persona model in which one server must serve human users (corporate SSO) and automated agents (service-account credentials on a different header). We conduct a systematic gap analysis of six surveyed MCP SDKs (Python, TypeScript, Go, Rust, C#, Swift) and identify three structural shortcomings: credential extraction bound to a single Authorization header, complicating dual-persona deployment without custom middleware; the absence of pre-authentication tool discovery; and the lack of fine-grained per-tool authorization in the base SDKs. We close these gaps with composable extensions to FastMCP: cross-header credential normalization for enterprise deployments serving both human and service-account callers, cached token verification across heterogeneous IdPs, an unauthenticated metadata endpoint for credential-free registry discovery, and permission-filtered tool visibility kept consistent with per-tool invocation enforcement by a single declarative annotation, all without modifying the protocol or SDK internals. Across four frontier LLMs over 2160 attempts, an in-body-check-only server still exposes forbidden tools (152/720, 21.1%), whereas permission-aware visibility drives the rate to 0/720; visibility-only filtering remained bypassable by scripted clients, while models referenced the hidden tool by name in up to 94% of settings when inferable from the prompt, confirming that discovery controls cannot replace invocation-time enforcement.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

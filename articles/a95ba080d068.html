@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LongRCA Bench: Diagnosing Responsible Roles and Root Causes in Long-Horizon Agent Failures — NewsMatome</title>
-<meta name="description" content="LongRCA Bench: Diagnosing Responsible Roles and Root Causes in Long-Horizon Agent Failures（EN→JA 翻訳・出典付き）">
+<title>LongRCA Bench: Root-Cause Localization in Long-Horizon Agent Trajectories — NewsMatome</title>
+<meta name="description" content="LongRCA Bench: Root-Cause Localization in Long-Horizon Agent Trajectories（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/a95ba080d068.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/a95ba080d068.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/a95ba080d068.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="LongRCA Bench: Diagnosing Responsible Roles and Root Causes in Long-Horizon Agent Failures">
-<meta property="og:description" content="LongRCA Bench: Diagnosing Responsible Roles and Root Causes in Long-Horizon Agent Failures（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="LongRCA Bench: Root-Cause Localization in Long-Horizon Agent Trajectories">
+<meta property="og:description" content="LongRCA Bench: Root-Cause Localization in Long-Horizon Agent Trajectories（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"LongRCA Bench: Diagnosing Responsible Roles and Root Causes in Long-Horizon Agent Failures",
- "inLanguage":"ja","datePublished":"2026-08-25T07:00:00+09:00","dateModified":"2026-08-25T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"LongRCA Bench: Root-Cause Localization in Long-Horizon Agent Trajectories",
+ "inLanguage":"ja","datePublished":"2026-09-24T07:00:00+09:00","dateModified":"2026-09-24T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2608.15242","url":"https://liquitex-coder.github.io/worldtech-jp/articles/a95ba080d068.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">AI</a><span class="sep">›</span><span>LongRCA Bench: Diagnosing Responsible Roles and Root Causes in Long-Horizon Agent Failures</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">AI</a><span class="sep">›</span><span>LongRCA Bench: Root-Cause Localization in Long-Horizon Agent Trajectories</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>LongRCA Bench: Diagnosing Responsible Roles and Root Causes in Long-Horizon Agent Failures</h1>
+      <h1>LongRCA Bench: Root-Cause Localization in Long-Horizon Agent Trajectories</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/08/25 07:00</span><span>· 更新 2026/08/25</span>
+        <span>公開 2026/09/24 07:00</span><span>· 更新 2026/09/24</span>
       </div>
     </div>
     
@@ -74,24 +74,24 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2608.15242" rel="nofollow noopener">LongRCA Bench: Diagnosing Responsible Roles and Root Causes in Long-Horizon Agent Failures</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2608.15242" rel="nofollow noopener">LongRCA Bench: Root-Cause Localization in Long-Horizon Agent Trajectories</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2608.15242v3 Announce Type: replace 
-Abstract: When a long-horizon agent execution fails, outcome-level evaluation reveals the unsuccessful result but not where the decisive error entered the trajectory. Developers must then inspect the full execution to identify the responsible role and localize the earliest decisive root-cause step. Existing failure-attribution benchmarks largely focus on shorter traces, leaving diagnosis across hundreds of recorded steps underexplored. We introduce LongRCA Bench, comprising 1,140 failed trajectories across five domains without injected errors. It provides independently scored human labels for the responsible role and earliest decisive root-cause step. The median trajectory contains 145 steps, and the strongest baseline reaches only 13.2% exact root-step accuracy. We further present Root-Cause Trajectory Attribution (RCTA), a training-free method that retrieves candidate error steps from segment summaries and traces them to available earlier handoff instructions. Using the same backbone, benchmark instances, and scoring protocol, RCTA reaches 51.1% responsible-role accuracy and 24.1% exact root-step accuracy. These results highlight the need to evaluate responsible-role attribution and exact root-step localization as separate targets in long-trajectory failure diagnosis.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2608.15242v3 Announce Type: replace 
-Abstract: When a long-horizon agent execution fails, outcome-level evaluation reveals the unsuccessful result but not where the decisive error entered the trajectory. Developers must then inspect the full execution to identify the responsible role and localize the earliest decisive root-cause step. Existing failure-attribution benchmarks largely focus on shorter traces, leaving diagnosis across hundreds of recorded steps underexplored. We introduce LongRCA Bench, comprising 1,140 failed trajectories across five domains without injected errors. It provides independently scored human labels for the responsible role and earliest decisive root-cause step. The median trajectory contains 145 steps, and the strongest baseline reaches only 13.2% exact root-step accuracy. We further present Root-Cause Trajectory Attribution (RCTA), a training-free method that retrieves candidate error steps from segment summaries and traces them to available earlier handoff instructions. Using the same backbone, benchmark instances, and scoring protocol, RCTA reaches 51.1% responsible-role accuracy and 24.1% exact root-step accuracy. These results highlight the need to evaluate responsible-role attribution and exact root-step localization as separate targets in long-trajectory failure diagnosis.</div>
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2608.15242v4 Announce Type: replace 
+Abstract: In long agent executions, an early error can persist through later actions and checks, while evidence needed to trace its origin is dispersed across the history. Short histories offer limited tests of recovering error origins across substantial subsequent execution. We introduce LongRCA Bench: 1,140 complete failed trajectories from five sources, all human-annotated for responsible roles and earliest decisive root-cause steps. Reference roots precede completion by a median of 48 recorded steps; 28.4% of trajectories contain over 100 subsequent steps. With DeepSeek-V4-Flash on the full benchmark, the strongest of five evaluated baselines achieves 13.2% exact root-step accuracy. We propose Root-Cause Trajectory Attribution (RCTA), a training-free method that organizes original candidate records and explicit handoff instructions for attribution. Segment summaries and a trajectory outline guide candidate retrieval; available handoff records supply upstream instruction context for the final instruction-execution comparison. With the same backbone and scoring protocol, RCTA reaches 24.1% exact root-step accuracy and 51.1% responsible-role accuracy. LongRCA-Mini provides 200 fixed trajectories for lower-cost comparative screening. Even with RCTA, fewer than one quarter of reference roots are recovered exactly.</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2608.15242v4 Announce Type: replace 
+Abstract: In long agent executions, an early error can persist through later actions and checks, while evidence needed to trace its origin is dispersed across the history. Short histories offer limited tests of recovering error origins across substantial subsequent execution. We introduce LongRCA Bench: 1,140 complete failed trajectories from five sources, all human-annotated for responsible roles and earliest decisive root-cause steps. Reference roots precede completion by a median of 48 recorded steps; 28.4% of trajectories contain over 100 subsequent steps. With DeepSeek-V4-Flash on the full benchmark, the strongest of five evaluated baselines achieves 13.2% exact root-step accuracy. We propose Root-Cause Trajectory Attribution (RCTA), a training-free method that organizes original candidate records and explicit handoff instructions for attribution. Segment summaries and a trajectory outline guide candidate retrieval; available handoff records supply upstream instruction context for the final instruction-execution comparison. With the same backbone and scoring protocol, RCTA reaches 24.1% exact root-step accuracy and 51.1% responsible-role accuracy. LongRCA-Mini provides 200 fixed trajectories for lower-cost comparative screening. Even with RCTA, fewer than one quarter of reference roots are recovered exactly.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2608.15242v3 Announce Type: replace 
-Abstract: When a long-horizon agent execution fails, outcome-level evaluation reveals the unsuccessful result but not where the decisive error entered the trajectory. Developers must then inspect the full execution to identify the responsible role and localize the earliest decisive root-cause step. Existing failure-attribution benchmarks largely focus on shorter traces, leaving diagnosis across hundreds of recorded steps underexplored. We introduce LongRCA Bench, comprising 1,140 failed trajectories across five domains without injected errors. It provides independently scored human labels for the responsible role and earliest decisive root-cause step. The median trajectory contains 145 steps, and the strongest baseline reaches only 13.2% exact root-step accuracy. We further present Root-Cause Trajectory Attribution (RCTA), a training-free method that retrieves candidate error steps from segment summaries and traces them to available earlier handoff instructions. Using the same backbone, benchmark instances, and scoring protocol, RCTA reaches 51.1% responsible-role accuracy and 24.1% exact root-step accuracy. These results highlight the need to evaluate responsible-role attribution and exact root-step localization as separate targets in long-trajectory failure diagnosis.</p><a href="https://arxiv.org/abs/2608.15242" rel="nofollow noopener">原論文を読む →</a></div>
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2608.15242v4 Announce Type: replace 
+Abstract: In long agent executions, an early error can persist through later actions and checks, while evidence needed to trace its origin is dispersed across the history. Short histories offer limited tests of recovering error origins across substantial subsequent execution. We introduce LongRCA Bench: 1,140 complete failed trajectories from five sources, all human-annotated for responsible roles and earliest decisive root-cause steps. Reference roots precede completion by a median of 48 recorded steps; 28.4% of trajectories contain over 100 subsequent steps. With DeepSeek-V4-Flash on the full benchmark, the strongest of five evaluated baselines achieves 13.2% exact root-step accuracy. We propose Root-Cause Trajectory Attribution (RCTA), a training-free method that organizes original candidate records and explicit handoff instructions for attribution. Segment summaries and a trajectory outline guide candidate retrieval; available handoff records supply upstream instruction context for the final instruction-execution comparison. With the same backbone and scoring protocol, RCTA reaches 24.1% exact root-step accuracy and 51.1% responsible-role accuracy. LongRCA-Mini provides 200 fixed trajectories for lower-cost comparative screening. Even with RCTA, fewer than one quarter of reference roots are recovered exactly.</p><a href="https://arxiv.org/abs/2608.15242" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2608.15242" rel="nofollow noopener">https://arxiv.org/abs/2608.15242</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
     <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="d58515c75f01.html"><div class="sim">関連</div><div class="info"><b>SDAD: Spec-Driven Agentic Development for the AI-Native SDLC</b><div class="m">AI</div></div></a><a class="r" href="776f96e2a471.html"><div class="sim">関連</div><div class="info"><b>PrimeAgentOrchestrator: Memory-Primed Agent Spawning for Personal AI Infrastructure</b><div class="m">AI</div></div></a><a class="r" href="0503fe614a11.html"><div class="sim">関連</div><div class="info"><b>Truth Lies Deep: Countering Semantic Camouflage via Latent Intent Verification</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="3f7058a44206.html"><div class="sim">関連</div><div class="info"><b>Didactic knowledge or Clinical Cases? How Data Types Shape Medical Large Language Models</b><div class="m">AI</div></div></a><a class="r" href="9a15fab46a33.html"><div class="sim">関連</div><div class="info"><b>An Affordable AI-Integrated Smart Cane for Multimodal Mobility Assistance of Visually Impaired Users</b><div class="m">AI</div></div></a><a class="r" href="3a37bbdf5b49.html"><div class="sim">関連</div><div class="info"><b>PAANI : On Device Visual Evidence Fusion and Explainable Guidance for River Robot Simulation</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

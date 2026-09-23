@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Density-Ratio Rescoring for Imbalanced Classification — NewsMatome</title>
-<meta name="description" content="Density-Ratio Rescoring for Imbalanced Classification（EN→JA 翻訳・出典付き）">
+<title>Density-Ratio Rescoring for Imbalanced Classification Using Raking Duals and Classifier Scores — NewsMatome</title>
+<meta name="description" content="Density-Ratio Rescoring for Imbalanced Classification Using Raking Duals and Classifier Scores（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/0859a074a34d.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/0859a074a34d.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/0859a074a34d.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="Density-Ratio Rescoring for Imbalanced Classification">
-<meta property="og:description" content="Density-Ratio Rescoring for Imbalanced Classification（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="Density-Ratio Rescoring for Imbalanced Classification Using Raking Duals and Classifier Scores">
+<meta property="og:description" content="Density-Ratio Rescoring for Imbalanced Classification Using Raking Duals and Classifier Scores（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Density-Ratio Rescoring for Imbalanced Classification",
- "inLanguage":"ja","datePublished":"2026-09-23T07:00:00+09:00","dateModified":"2026-09-23T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Density-Ratio Rescoring for Imbalanced Classification Using Raking Duals and Classifier Scores",
+ "inLanguage":"ja","datePublished":"2026-09-24T07:00:00+09:00","dateModified":"2026-09-24T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2609.23926","url":"https://liquitex-coder.github.io/worldtech-jp/articles/0859a074a34d.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>Density-Ratio Rescoring for Imbalanced Classification</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>Density-Ratio Rescoring for Imbalanced Classification Using Raking Duals and Classifier Scores</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>Density-Ratio Rescoring for Imbalanced Classification</h1>
+      <h1>Density-Ratio Rescoring for Imbalanced Classification Using Raking Duals and Classifier Scores</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/09/23 07:00</span><span>· 更新 2026/09/23</span>
+        <span>公開 2026/09/24 07:00</span><span>· 更新 2026/09/24</span>
       </div>
     </div>
     
@@ -74,16 +74,16 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2609.23926" rel="nofollow noopener">Density-Ratio Rescoring for Imbalanced Classification</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2609.23926" rel="nofollow noopener">Density-Ratio Rescoring for Imbalanced Classification Using Raking Duals and Classifier Scores</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2609.23926v1 Announce Type: cross 
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2609.23926v2 Announce Type: replace-cross 
 Abstract: Density-Ratio Rescoring (DRR) augments a classifier trained at the original class prior with a survey-raking dual score. Raking reweights the majority sample to match minority feature moments within a tolerance. DRR marginally standardizes the dual and base scores and combines them with a fixed weight of one half, using the fitted dual directly for prediction without resampling or refitting the base classifier. Under exact population matching and a correctly specified log-linear tilt model, the dual equals the log density ratio up to an additive constant. A class-separation analysis characterizes the signal strength and correlation conditions under which fusion improves separation under common within-class covariance. On 24 tabular benchmarks, evaluated over 30 trials and five base learners, DRR at the D=128 random-feature setting improves average precision over the standardized base on every dataset, with a mean gain of 0.034. It exceeds the shared-dual raking-and-relabeling resampler on 22 of 24 datasets, with a mean gain of $0.092$, and on all eight one-versus-rest tasks of a shared gene-expression cohort. These results demonstrate the effectiveness of using raking duals as reusable scores for improving rare-class ranking while retaining classifiers trained at the original prior.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2609.23926v1 Announce Type: cross 
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2609.23926v2 Announce Type: replace-cross 
 Abstract: Density-Ratio Rescoring (DRR) augments a classifier trained at the original class prior with a survey-raking dual score. Raking reweights the majority sample to match minority feature moments within a tolerance. DRR marginally standardizes the dual and base scores and combines them with a fixed weight of one half, using the fitted dual directly for prediction without resampling or refitting the base classifier. Under exact population matching and a correctly specified log-linear tilt model, the dual equals the log density ratio up to an additive constant. A class-separation analysis characterizes the signal strength and correlation conditions under which fusion improves separation under common within-class covariance. On 24 tabular benchmarks, evaluated over 30 trials and five base learners, DRR at the D=128 random-feature setting improves average precision over the standardized base on every dataset, with a mean gain of 0.034. It exceeds the shared-dual raking-and-relabeling resampler on 22 of 24 datasets, with a mean gain of $0.092$, and on all eight one-versus-rest tasks of a shared gene-expression cohort. These results demonstrate the effectiveness of using raking duals as reusable scores for improving rare-class ranking while retaining classifiers trained at the original prior.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2609.23926v1 Announce Type: cross 
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2609.23926v2 Announce Type: replace-cross 
 Abstract: Density-Ratio Rescoring (DRR) augments a classifier trained at the original class prior with a survey-raking dual score. Raking reweights the majority sample to match minority feature moments within a tolerance. DRR marginally standardizes the dual and base scores and combines them with a fixed weight of one half, using the fitted dual directly for prediction without resampling or refitting the base classifier. Under exact population matching and a correctly specified log-linear tilt model, the dual equals the log density ratio up to an additive constant. A class-separation analysis characterizes the signal strength and correlation conditions under which fusion improves separation under common within-class covariance. On 24 tabular benchmarks, evaluated over 30 trials and five base learners, DRR at the D=128 random-feature setting improves average precision over the standardized base on every dataset, with a mean gain of 0.034. It exceeds the shared-dual raking-and-relabeling resampler on 22 of 24 datasets, with a mean gain of $0.092$, and on all eight one-versus-rest tasks of a shared gene-expression cohort. These results demonstrate the effectiveness of using raking duals as reusable scores for improving rare-class ranking while retaining classifiers trained at the original prior.</p><a href="https://arxiv.org/abs/2609.23926" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2609.23926" rel="nofollow noopener">https://arxiv.org/abs/2609.23926</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
@@ -91,7 +91,7 @@ Abstract: Density-Ratio Rescoring (DRR) augments a classifier trained at the ori
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="34088336622f.html"><div class="sim">関連</div><div class="info"><b>RBS-Attention: Radius-Bounded Sparse Prefill for Long-Context Large Language Models</b><div class="m">AI</div></div></a><a class="r" href="37d9347772d8.html"><div class="sim">関連</div><div class="info"><b>Attention-Aware Routing: Coupling Routing and Attention in MoEs</b><div class="m">AI</div></div></a><a class="r" href="f790dcf3a000.html"><div class="sim">関連</div><div class="info"><b>CaLR: Causal Latent Revision for Robust Diffusion Reasoning</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="3f7058a44206.html"><div class="sim">関連</div><div class="info"><b>Didactic knowledge or Clinical Cases? How Data Types Shape Medical Large Language Models</b><div class="m">AI</div></div></a><a class="r" href="9a15fab46a33.html"><div class="sim">関連</div><div class="info"><b>An Affordable AI-Integrated Smart Cane for Multimodal Mobility Assistance of Visually Impaired Users</b><div class="m">AI</div></div></a><a class="r" href="3a37bbdf5b49.html"><div class="sim">関連</div><div class="info"><b>PAANI : On Device Visual Evidence Fusion and Explainable Guidance for River Robot Simulation</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

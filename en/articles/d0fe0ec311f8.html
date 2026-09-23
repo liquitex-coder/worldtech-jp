@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parameterized Dense-Sparse Fusion for Hybrid Retrieval: Tuning a Rank-Score Mix on BEIR SciFact with Qdrant — NewsMatome (EN)</title>
+<meta name="description" content="Parameterized Dense-Sparse Fusion for Hybrid Retrieval: Tuning a Rank-Score Mix on BEIR SciFact with Qdrant — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/d0fe0ec311f8.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/d0fe0ec311f8.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/d0fe0ec311f8.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/d0fe0ec311f8.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Parameterized Dense-Sparse Fusion for Hybrid Retrieval: Tuning a Rank-Score Mix on BEIR SciFact with Qdrant">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Parameterized Dense-Sparse Fusion for Hybrid Retrieval: Tuning a Rank-Score Mix on BEIR SciFact with Qdrant",
+ "inLanguage":"en","datePublished":"2026-09-24T07:00:00+09:00","dateModified":"2026-09-24T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.22770","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/d0fe0ec311f8.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/d0fe0ec311f8.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Parameterized Dense-Sparse Fusion for Hybrid Retrieval: Tuning a Rank-Score Mix on BEIR SciFact with Qdrant</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/24</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/d0fe0ec311f8.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.22770" rel="nofollow noopener">https://arxiv.org/abs/2609.22770</a></span></div>
+  <div class="article-body"><p>arXiv:2609.22770v2 Announce Type: cross 
+Abstract: We study a parameterized hybrid ranker that fuses a dense embedding list and a sparse lexical list. The method has a small, explicit parameter vector: a dense prior $\alpha \in [0,1]$, a score-versus-rank mix $\lambda \in [0,1]$, an RRF smoothing parameter $\kappa &gt; 0$, optional list-geometry coefficients that move $\alpha$ per query, and a router margin $\tau$ that can turn sparse search off. We grid-search those ranges on SciFact train (809 queries) and freeze the chosen values on SciFact test (300). The tuned rank-score mix ($\alpha = 0.8$, $\lambda = 0.75$, $\kappa = 20$) reaches 0.753 nDCG@10 and 0.889 recall@10, outperforming dense BGE (0.742 / 0.871) and equal-weight RRF (0.707 nDCG@10) on that test split. A list-conditioned $\alpha$ adds +0.0006 nDCG; a sparse-off router is rejected by the same train split (any $\tau$ that skipped approximately 50% of queries lost nDCG). These coefficients are dataset-specific. Equal RRF with the same models does not beat dense on a nine-zip BEIR macro-average (0.479 vs. 0.519 nDCG@10). Repeating the same train-then-freeze sweep independently on all 20 indexed units beats equal RRF on 20/20 and dense on 16/20 (unit-mean nDCG@10 0.467 vs. 0.462 dense vs. 0.420 RRF). Other corpora should reuse the ranges, not a copy of the SciFact point.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

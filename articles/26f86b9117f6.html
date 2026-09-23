@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Approximation Rank of Softmax Attention: Sharp Geometric Laws and Robust Interaction Dimension — NewsMatome</title>
-<meta name="description" content="The Approximation Rank of Softmax Attention: Sharp Geometric Laws and Robust Interaction Dimension（EN→JA 翻訳・出典付き）">
+<title>Intrinsic Interaction Geometry Controls the Low-Rank Complexity of Softmax Attention — NewsMatome</title>
+<meta name="description" content="Intrinsic Interaction Geometry Controls the Low-Rank Complexity of Softmax Attention（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/26f86b9117f6.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/26f86b9117f6.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/26f86b9117f6.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="The Approximation Rank of Softmax Attention: Sharp Geometric Laws and Robust Interaction Dimension">
-<meta property="og:description" content="The Approximation Rank of Softmax Attention: Sharp Geometric Laws and Robust Interaction Dimension（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="Intrinsic Interaction Geometry Controls the Low-Rank Complexity of Softmax Attention">
+<meta property="og:description" content="Intrinsic Interaction Geometry Controls the Low-Rank Complexity of Softmax Attention（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"The Approximation Rank of Softmax Attention: Sharp Geometric Laws and Robust Interaction Dimension",
- "inLanguage":"ja","datePublished":"2026-09-01T07:00:00+09:00","dateModified":"2026-09-01T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Intrinsic Interaction Geometry Controls the Low-Rank Complexity of Softmax Attention",
+ "inLanguage":"ja","datePublished":"2026-09-24T07:00:00+09:00","dateModified":"2026-09-24T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2608.28150","url":"https://liquitex-coder.github.io/worldtech-jp/articles/26f86b9117f6.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>The Approximation Rank of Softmax Attention: Sharp Geometric Laws and Robust Interaction Dimension</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>Intrinsic Interaction Geometry Controls the Low-Rank Complexity of Softmax Attention</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>The Approximation Rank of Softmax Attention: Sharp Geometric Laws and Robust Interaction Dimension</h1>
+      <h1>Intrinsic Interaction Geometry Controls the Low-Rank Complexity of Softmax Attention</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/09/01 07:00</span><span>· 更新 2026/09/01</span>
+        <span>公開 2026/09/24 07:00</span><span>· 更新 2026/09/24</span>
       </div>
     </div>
     
@@ -74,24 +74,30 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2608.28150" rel="nofollow noopener">The Approximation Rank of Softmax Attention: Sharp Geometric Laws and Robust Interaction Dimension</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2608.28150" rel="nofollow noopener">Intrinsic Interaction Geometry Controls the Low-Rank Complexity of Softmax Attention</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2608.28150v1 Announce Type: new 
-Abstract: Which geometry controls the rank complexity of normalized softmax attention? We study maximum-row-$\ell_1$ approximation rank, exactly the least unrestricted rank preserving every bounded vector-valued output. Two sharp worst-case laws isolate support geometry: for fixed $d$ and error $\varepsilon$, spherical self-attention has rank $\Theta_{d,\varepsilon}(\min\{n,(1+\beta)^{(d-1)/2}\})$, while full-ball geometry adds one radial degree and, for $\beta\ge\beta_0(d,\varepsilon)$ and $n\ge C_d e^{\beta/8}$, gives $\Theta_{d,\varepsilon}(\beta^{d/2})$. For a fixed head, row-softmax quotients out row-scalar logit directions: the remaining visible query--key interaction dimension $r$ yields an $r/2$ per-instance upper law, and bounded constructions show this exponent is minimax sharp. Approximate interaction subspaces incur an explicit residual output error and yield a tolerance-indexed SVD dimension. On an 84-head BERT-base calibration set, we observe modest effective-dimension reductions across many head--temperature settings, together with positive associations with finite constructive rank upper certificates. Together, these results separate support geometry, which sets worst-case temperature scaling, from softmax-visible interaction geometry, which controls per-head approximation complexity.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2608.28150v1 Announce Type: new 
-Abstract: Which geometry controls the rank complexity of normalized softmax attention? We study maximum-row-$\ell_1$ approximation rank, exactly the least unrestricted rank preserving every bounded vector-valued output. Two sharp worst-case laws isolate support geometry: for fixed $d$ and error $\varepsilon$, spherical self-attention has rank $\Theta_{d,\varepsilon}(\min\{n,(1+\beta)^{(d-1)/2}\})$, while full-ball geometry adds one radial degree and, for $\beta\ge\beta_0(d,\varepsilon)$ and $n\ge C_d e^{\beta/8}$, gives $\Theta_{d,\varepsilon}(\beta^{d/2})$. For a fixed head, row-softmax quotients out row-scalar logit directions: the remaining visible query--key interaction dimension $r$ yields an $r/2$ per-instance upper law, and bounded constructions show this exponent is minimax sharp. Approximate interaction subspaces incur an explicit residual output error and yield a tolerance-indexed SVD dimension. On an 84-head BERT-base calibration set, we observe modest effective-dimension reductions across many head--temperature settings, together with positive associations with finite constructive rank upper certificates. Together, these results separate support geometry, which sets worst-case temperature scaling, from softmax-visible interaction geometry, which controls per-head approximation complexity.</div>
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2608.28150v2 Announce Type: replace 
+Abstract: How much matrix rank is required to preserve every bounded value output of normalized softmax attention? We study the unrestricted maximum-row-\(\ell_1\) approximation rank \(r_\varepsilon(A)\), exactly the least rank achieving uniform error over all bounded vector-valued values. Row softmax exposes the intrinsic interaction \(C=P_m(\log A)P_N\), whereas invertible \(Q/K\) gauges leave \(A\) fixed while changing the Euclidean geometry of a chosen query/key factorization. We replace that coordinate-dependent description by a projective residual \(q(C-T)\) and an attained factor-radius size \(\kappa(T)\). For every rank-\(r\) retained interaction with \(\tau(T)&lt;\varepsilon\), we prove
+  $$ r_\varepsilon(A)\le \min\left\{ N,\; C_r\left( 1+\frac{\kappa(T)} {(\varepsilon-\tau(T))^2} \right)^{r/2} \right\}, $$
+  with the same unknown dimension constant as the underlying weighted Gibbs-row cover. The profile is gauge invariant, termwise no worse than native retained-subspace bounds at the same declared dimension, and has a worst-case sharp \(r/2\) size exponent at fixed \(r\) and \(\varepsilon\). We then measure \(r_\varepsilon(A)\) directly on learned attention using 9,978 certified brackets across BERT, GPT-2, Qwen2.5, and two ViT checkpoints; where certificates do not close, the optimum remains interval-valued. A pre-specified 2,302-cell held-out study further shows that the historical native-coordinate geometry block contains coarse, mostly head-level information but no detectable incremental information beyond a strong calibrated baseline. The new intrinsic descriptor is not evaluated in that study. Together, the theory and measurements distinguish an operator-intrinsic complexity control from a stronger empirical explanation that the learned-head evidence does not support.</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2608.28150v2 Announce Type: replace 
+Abstract: How much matrix rank is required to preserve every bounded value output of normalized softmax attention? We study the unrestricted maximum-row-\(\ell_1\) approximation rank \(r_\varepsilon(A)\), exactly the least rank achieving uniform error over all bounded vector-valued values. Row softmax exposes the intrinsic interaction \(C=P_m(\log A)P_N\), whereas invertible \(Q/K\) gauges leave \(A\) fixed while changing the Euclidean geometry of a chosen query/key factorization. We replace that coordinate-dependent description by a projective residual \(q(C-T)\) and an attained factor-radius size \(\kappa(T)\). For every rank-\(r\) retained interaction with \(\tau(T)&lt;\varepsilon\), we prove
+  $$ r_\varepsilon(A)\le \min\left\{ N,\; C_r\left( 1+\frac{\kappa(T)} {(\varepsilon-\tau(T))^2} \right)^{r/2} \right\}, $$
+  with the same unknown dimension constant as the underlying weighted Gibbs-row cover. The profile is gauge invariant, termwise no worse than native retained-subspace bounds at the same declared dimension, and has a worst-case sharp \(r/2\) size exponent at fixed \(r\) and \(\varepsilon\). We then measure \(r_\varepsilon(A)\) directly on learned attention using 9,978 certified brackets across BERT, GPT-2, Qwen2.5, and two ViT checkpoints; where certificates do not close, the optimum remains interval-valued. A pre-specified 2,302-cell held-out study further shows that the historical native-coordinate geometry block contains coarse, mostly head-level information but no detectable incremental information beyond a strong calibrated baseline. The new intrinsic descriptor is not evaluated in that study. Together, the theory and measurements distinguish an operator-intrinsic complexity control from a stronger empirical explanation that the learned-head evidence does not support.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2608.28150v1 Announce Type: new 
-Abstract: Which geometry controls the rank complexity of normalized softmax attention? We study maximum-row-$\ell_1$ approximation rank, exactly the least unrestricted rank preserving every bounded vector-valued output. Two sharp worst-case laws isolate support geometry: for fixed $d$ and error $\varepsilon$, spherical self-attention has rank $\Theta_{d,\varepsilon}(\min\{n,(1+\beta)^{(d-1)/2}\})$, while full-ball geometry adds one radial degree and, for $\beta\ge\beta_0(d,\varepsilon)$ and $n\ge C_d e^{\beta/8}$, gives $\Theta_{d,\varepsilon}(\beta^{d/2})$. For a fixed head, row-softmax quotients out row-scalar logit directions: the remaining visible query--key interaction dimension $r$ yields an $r/2$ per-instance upper law, and bounded constructions show this exponent is minimax sharp. Approximate interaction subspaces incur an explicit residual output error and yield a tolerance-indexed SVD dimension. On an 84-head BERT-base calibration set, we observe modest effective-dimension reductions across many head--temperature settings, together with positive associations with finite constructive rank upper certificates. Together, these results separate support geometry, which sets worst-case temperature scaling, from softmax-visible interaction geometry, which controls per-head approximation complexity.</p><a href="https://arxiv.org/abs/2608.28150" rel="nofollow noopener">原論文を読む →</a></div>
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2608.28150v2 Announce Type: replace 
+Abstract: How much matrix rank is required to preserve every bounded value output of normalized softmax attention? We study the unrestricted maximum-row-\(\ell_1\) approximation rank \(r_\varepsilon(A)\), exactly the least rank achieving uniform error over all bounded vector-valued values. Row softmax exposes the intrinsic interaction \(C=P_m(\log A)P_N\), whereas invertible \(Q/K\) gauges leave \(A\) fixed while changing the Euclidean geometry of a chosen query/key factorization. We replace that coordinate-dependent description by a projective residual \(q(C-T)\) and an attained factor-radius size \(\kappa(T)\). For every rank-\(r\) retained interaction with \(\tau(T)&lt;\varepsilon\), we prove
+  $$ r_\varepsilon(A)\le \min\left\{ N,\; C_r\left( 1+\frac{\kappa(T)} {(\varepsilon-\tau(T))^2} \right)^{r/2} \right\}, $$
+  with the same unknown dimension constant as the underlying weighted Gibbs-row cover. The profile is gauge invariant, termwise no worse than native retained-subspace bounds at the same declared dimension, and has a worst-case sharp \(r/2\) size exponent at fixed \(r\) and \(\varepsilon\). We then measure \(r_\varepsilon(A)\) directly on learned attention using 9,978 certified brackets across BERT, GPT-2, Qwen2.5, and two ViT checkpoints; where certificates do not close, the optimum remains interval-valued. A pre-specified 2,302-cell held-out study further shows that the historical native-coordinate geometry block contains coarse, mostly head-level information but no detectable incremental information beyond a strong calibrated baseline. The new intrinsic descriptor is not evaluated in that study. Together, the theory and measurements distinguish an operator-intrinsic complexity control from a stronger empirical explanation that the learned-head evidence does not support.</p><a href="https://arxiv.org/abs/2608.28150" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2608.28150" rel="nofollow noopener">https://arxiv.org/abs/2608.28150</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
     <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="c967bc94476f.html"><div class="sim">関連</div><div class="info"><b>Beyond Relative Geometry: Metric-Aware Geometry Perception for Robotics</b><div class="m">ロボット技術</div></div></a><a class="r" href="39282dc7e7e9.html"><div class="sim">関連</div><div class="info"><b>Remote Human and Robot Interaction for Greenhouse Gardening Using Virtual Reality</b><div class="m">ロボット技術</div></div></a><a class="r" href="00659006d343.html"><div class="sim">関連</div><div class="info"><b>Beyond Data Scaling: Representation-Centric Continued Pre-training for Vision-Language-Action Models</b><div class="m">ロボット技術</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="3f7058a44206.html"><div class="sim">関連</div><div class="info"><b>Didactic knowledge or Clinical Cases? How Data Types Shape Medical Large Language Models</b><div class="m">AI</div></div></a><a class="r" href="9a15fab46a33.html"><div class="sim">関連</div><div class="info"><b>An Affordable AI-Integrated Smart Cane for Multimodal Mobility Assistance of Visually Impaired Users</b><div class="m">AI</div></div></a><a class="r" href="3a37bbdf5b49.html"><div class="sim">関連</div><div class="info"><b>PAANI : On Device Visual Evidence Fusion and Explainable Guidance for River Robot Simulation</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

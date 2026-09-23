@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Practical Recipe for Semi-Supervised Federated ASR: Online Pseudo-Labels with Server Update Stabilization — NewsMatome (EN)</title>
+<meta name="description" content="A Practical Recipe for Semi-Supervised Federated ASR: Online Pseudo-Labels with Server Update Stabilization — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/508837587c78.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/508837587c78.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/508837587c78.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/508837587c78.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A Practical Recipe for Semi-Supervised Federated ASR: Online Pseudo-Labels with Server Update Stabilization">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"A Practical Recipe for Semi-Supervised Federated ASR: Online Pseudo-Labels with Server Update Stabilization",
+ "inLanguage":"en","datePublished":"2026-09-24T07:00:00+09:00","dateModified":"2026-09-24T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.25471","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/508837587c78.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/508837587c78.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>A Practical Recipe for Semi-Supervised Federated ASR: Online Pseudo-Labels with Server Update Stabilization</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/24</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/508837587c78.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.25471" rel="nofollow noopener">https://arxiv.org/abs/2609.25471</a></span></div>
+  <div class="article-body"><p>arXiv:2609.25471v1 Announce Type: new 
+Abstract: Semi-supervised federated learning (SSFL) trains models on clients&#x27; unlabeled data using a teacher to generate pseudo-labels, with a small labeled seed dataset on the server. Automatic Speech Recognition (ASR) is particularly fragile here: pseudo-label errors compound across the output sequence and across training rounds into divergence, leaving a large gap to fully-supervised FL. We show that closing this gap turns on two coupled design axes -- the teacher (which model generates the pseudo-labels) and the anchor (the server-side updates on labeled data that stabilize training). On the teacher axis, a per-client online teacher (each client&#x27;s own evolving model) diverges on its own, but once stabilized it matches or beats the broadcast global teacher (one server model, fixed within a round) -- decisively in-domain and competitively under domain shift. As the seed grows stronger and the online teacher&#x27;s advantage narrows, a transitioning teacher (global $\rightarrow$ online at round $r$) matches or beats both. On the anchor axis, the server must keep training on labeled data between rounds -- otherwise the online teacher drifts -- and this interleaving, more than the seed model, governs convergence. The two axes are inseparable: aggressive teacher choices pay off only once the anchor stabilizes training, which is highly sensitive to data augmentation and batch size -- the settings that govern how much input and gradient noise the server injects. How much stabilization is needed is domain-dependent, governed by the dispersion of the seed data and its overlap with client data. These findings yield guidelines for SSFL in ASR training, improving over the strongest prior method on 9 of 11 pairs, by $20.8\%$ on average in-domain and $10.0\%$ cross-domain, narrowing the gap to fully-supervised FL.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

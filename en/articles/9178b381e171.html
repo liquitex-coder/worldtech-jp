@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>JustFit: 200K-Token LLM Serving on a 24 GiB Laptop with Just-in-Time State Management — NewsMatome (EN)</title>
-<meta name="description" content="JustFit: 200K-Token LLM Serving on a 24 GiB Laptop with Just-in-Time State Management — original-language edition. Japanese translation available.">
+<title>JustFit: Just-in-Time State Management for Local LLM Serving — NewsMatome (EN)</title>
+<meta name="description" content="JustFit: Just-in-Time State Management for Local LLM Serving — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/9178b381e171.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/9178b381e171.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/9178b381e171.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/9178b381e171.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JustFit: 200K-Token LLM Serving on a 24 GiB Laptop with Just-in-Time State Management">
+<meta property="og:title" content="JustFit: Just-in-Time State Management for Local LLM Serving">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"JustFit: 200K-Token LLM Serving on a 24 GiB Laptop with Just-in-Time State Management",
- "inLanguage":"en","datePublished":"2026-09-17T07:00:00+09:00","dateModified":"2026-09-17T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"JustFit: Just-in-Time State Management for Local LLM Serving",
+ "inLanguage":"en","datePublished":"2026-09-24T07:00:00+09:00","dateModified":"2026-09-24T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2609.17475","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/9178b381e171.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>JustFit: 200K-Token LLM Serving on a 24 GiB Laptop with Just-in-Time State Management</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/17</span></div>
+    <h1>JustFit: Just-in-Time State Management for Local LLM Serving</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/24</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/9178b381e171.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.17475" rel="nofollow noopener">https://arxiv.org/abs/2609.17475</a></span></div>
-  <div class="article-body"><p>arXiv:2609.17475v1 Announce Type: new 
-Abstract: Capable open-weight models make local coding and reasoning attractive, but their context and execution state strain laptop memory. We present JustFit, an MLX-based inference runtime that combines KVExec for compressed KV execution, PhaseSwap for component residency, and StateTrans for state-preserving serving transitions. These mechanisms fuse reconstruction and coordinate just-in-time materialization and release, independently of model-weight quantization. In full-execution capacity tests on a 24 GiB M4 Pro MacBook running Qwen3.8-27B MXFP4, three independent runs complete 196,608 input and 16,384 output tokens, increasing completed single-request context from the mlx-vlm baseline&#x27;s 30,720 positions to 212,992 (6.93x); a separate two-request run retains 229,376 positions in aggregate. In separate performance tests, a 32K-input, 64-output probe reaches 19.11 tokens/s, and a repeated 32K+6K workload has a median peak process footprint of 16,374 MiB. The integrated runtime answers 29 of 30 AIME 2026 problems correctly, showing how compact state and lifetime-aware execution expand local serving capacity while supporting extended generated reasoning.</p></div>
+  <div class="article-body"><p>arXiv:2609.17475v2 Announce Type: replace 
+Abstract: Local agents need memory for model execution and working history. We present JustFit, an MLX runtime that coordinates their overlapping allocations: KVExec executes and checkpoints four-bit KV with bounded workspace, PhaseSwap loads phase-dependent components, and StateTrans preserves history across execution modes. With Qwen3.8-27B MXFP4 on a 24 GiB M4 Pro MacBook, JustFit reaches 327,680 retained positions across two requests, 10.67 times the evaluated baseline&#x27;s 30,720-position single-request record. One request completes the full 262,144-position native window at median 5.986 tokens/s. Each shape completes 16,384 outputs per request in three fresh processes: B1 uses one cold build and two prefix extensions; B2 uses three ordered prefix extensions (Section 4). Image encoding can proceed while preserving a live 196,608-input text request. A controlled, repetitive 32K+6K workload reaches median 18.284 tokens/s at 15,626 MiB; a separate AIME 2026 evaluation scores 29/30. Coordinating execution and state lifetimes makes longer histories feasible on personal hardware.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>
