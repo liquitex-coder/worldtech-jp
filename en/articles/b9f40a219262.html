@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Silent Failures at the $2^{32}$ Boundary: A Technical Report on Large-Tensor Matrix Multiplication in PyTorch&#x27;s Apple MPS Backend — NewsMatome (EN)</title>
-<meta name="description" content="Silent Failures at the $2^{32}$ Boundary: A Technical Report on Large-Tensor Matrix Multiplication in PyTorch&#x27;s Apple MPS Backend — original-language edition. Japanese translation available.">
+<title>Silent Failures Beyond the 32-Bit Index Range: A Differential Characterization of Large-Tensor Matrix Multiplication in PyTorch&#x27;s MPS Backend — NewsMatome (EN)</title>
+<meta name="description" content="Silent Failures Beyond the 32-Bit Index Range: A Differential Characterization of Large-Tensor Matrix Multiplication in PyTorch&#x27;s MPS Backend — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/b9f40a219262.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/b9f40a219262.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/b9f40a219262.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/b9f40a219262.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Silent Failures at the $2^{32}$ Boundary: A Technical Report on Large-Tensor Matrix Multiplication in PyTorch&#x27;s Apple MPS Backend">
+<meta property="og:title" content="Silent Failures Beyond the 32-Bit Index Range: A Differential Characterization of Large-Tensor Matrix Multiplication in PyTorch&#x27;s MPS Backend">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Silent Failures at the $2^{32}$ Boundary: A Technical Report on Large-Tensor Matrix Multiplication in PyTorch&#x27;s Apple MPS Backend",
- "inLanguage":"en","datePublished":"2026-09-23T07:00:00+09:00","dateModified":"2026-09-23T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Silent Failures Beyond the 32-Bit Index Range: A Differential Characterization of Large-Tensor Matrix Multiplication in PyTorch&#x27;s MPS Backend",
+ "inLanguage":"en","datePublished":"2026-09-25T07:00:00+09:00","dateModified":"2026-09-25T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2609.22991","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/b9f40a219262.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Silent Failures at the $2^{32}$ Boundary: A Technical Report on Large-Tensor Matrix Multiplication in PyTorch&#x27;s Apple MPS Backend</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/23</span></div>
+    <h1>Silent Failures Beyond the 32-Bit Index Range: A Differential Characterization of Large-Tensor Matrix Multiplication in PyTorch&#x27;s MPS Backend</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/25</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/b9f40a219262.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.22991" rel="nofollow noopener">https://arxiv.org/abs/2609.22991</a></span></div>
-  <div class="article-body"><p>arXiv:2609.22991v1 Announce Type: cross 
-Abstract: Apple Silicon machines with 192GB or more of unified memory make it routine to place tensors with more than $2^{32}$ elements on a desktop GPU. We show that PyTorch&#x27;s Metal Performance Shaders (MPS) backend silently returns wrong results for batched matrix multiplication at this scale. On macOS 27.0, torch.bmm, and therefore torch.matmul and eager attention, returns relative errors above 1 without an exception or a warning, in every PyTorch release from 2.4.1 to 2.14.0 that we tested. On one machine, we sweep bmm over two dtypes, four memory layouts, six shapes and 42 batch sizes between 4096 and 65538 (1584 runs on PyTorch 2.14.0, and a reduced sweep on ten earlier releases), and judge every result against a float64 computation on the CPU. Three rules account for every outcome on 2.14.0. When the output exceeds $2^{32}$ elements and an operand is a transposed view, the entire output is wrong and equals a computation that ignores the strides of that operand. When a contiguous input exceeds $2^{32}$ elements, only the batches beyond that point are wrong, and they equal a computation whose index wraps around at $2^{32}$. Operands that are views with at least $2^{31}$ elements raise an exception instead, so a larger problem can turn an explicit error into a silent failure. A control on CUDA is correct for bmm, although torch.arange is silently wrong above $2^{32}$ elements there as well. In a public sentiment classifier, one oversized batch corrupts a third of the outputs and collapses them onto a single class. The study is black-box: we report what the backend returns, compared with reference results. We release the sweep harness, the raw results and a guard that stops any MPS operation touching $2^{32}$ or more elements at https://github.com/jniimi/mps-silent-failures.</p></div>
+  <div class="article-body"><p>arXiv:2609.22991v2 Announce Type: replace-cross 
+Abstract: Apple Silicon machines with large unified memory make it possible to hold large tensors on a desktop GPU. However, we found that PyTorch&#x27;s Metal Performance Shaders (MPS) backend silently returns wrong results for batched matrix multiplication with more than $2^{32}$ elements. torch bmm, including its wrappers matmul and eager attention, returns relative errors above 1 without an exception or a warning in every PyTorch release tested (2.4.1 to 2.14.0). We sweep bmm over dtypes, memory layouts, shapes and batch sizes around $2^{31}$ and $2^{32}$ elements, and judge every result against a float64 computation on the CPU. Three rules account for every outcome on 2.14.0. When the output exceeds $2^{32}$ elements and an operand is a transposed view, the entire output is wrong and equals a computation that ignores that operand&#x27;s strides. Otherwise, a view with at least $2^{31}$ elements raises an exception, and a contiguous input above $2^{32}$ elements makes exactly the batches beyond that point wrong, equal to a computation whose index wraps at $2^{32}$. A slightly larger problem can thus turn an explicit error into a silent failure. The rules extend to the backward pass, where a correct forward pass can return silently wrong gradients. A second machine with another chip, under two macOS versions, reproduces all 6156 results, including the wrong values, and the same sweeps on an NVIDIA A100 are correct in all 2530 runs. In a public sentiment classifier, one oversized batch corrupts a third of the outputs, which collapse onto one class. All findings come from observable behavior, without access to the backend&#x27;s closed-source kernels; we release the harness, raw results and a guard that stops any MPS operation touching $2^{32}$ or more elements at jniimi/mps-silent-failures (https://github.com/jniimi/mps-silent-failures).</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

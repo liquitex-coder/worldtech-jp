@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Task-Aware Hybrid QUBO Optimization for Structured Neural Network Pruning — NewsMatome (EN)</title>
-<meta name="description" content="Task-Aware Hybrid QUBO Optimization for Structured Neural Network Pruning — original-language edition. Japanese translation available.">
+<title>Task-Aware QUBO Allocation for Mixed-Precision Quantization — NewsMatome (EN)</title>
+<meta name="description" content="Task-Aware QUBO Allocation for Mixed-Precision Quantization — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/e2ada1fb010e.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/e2ada1fb010e.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/e2ada1fb010e.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/e2ada1fb010e.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Task-Aware Hybrid QUBO Optimization for Structured Neural Network Pruning">
+<meta property="og:title" content="Task-Aware QUBO Allocation for Mixed-Precision Quantization">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Task-Aware Hybrid QUBO Optimization for Structured Neural Network Pruning",
- "inLanguage":"en","datePublished":"2026-09-23T07:00:00+09:00","dateModified":"2026-09-23T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Task-Aware QUBO Allocation for Mixed-Precision Quantization",
+ "inLanguage":"en","datePublished":"2026-09-25T07:00:00+09:00","dateModified":"2026-09-25T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2609.22238","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/e2ada1fb010e.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Task-Aware Hybrid QUBO Optimization for Structured Neural Network Pruning</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/23</span></div>
+    <h1>Task-Aware QUBO Allocation for Mixed-Precision Quantization</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/25</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/e2ada1fb010e.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.22238" rel="nofollow noopener">https://arxiv.org/abs/2609.22238</a></span></div>
-  <div class="article-body"><p>arXiv:2609.22238v1 Announce Type: new 
-Abstract: Neural network pruning can be formulated as a combinatorial optimization problem, yet many existing approaches rely on independent filter-importance scores or simplified objective functions. In this work, we propose a Hybrid Quadratic Unconstrained Binary Optimization (QUBO) framework for structured filter pruning that combines task-aware sensitivity information with interactions between candidate filters. The formulation incorporates first-order Taylor sensitivity and Weight-Fisher sensitivity into the linear component of the objective and can additionally incorporate activation similarity into the quadratic interactions. To control the target pruning cardinality without introducing an explicit quadratic cardinality penalty, we use a binary search over the capacity incentive to identify a coefficient that empirically yields the target pruning cardinality. We further investigate a two-stage QUBO--Tensor-Train refinement strategy in which the QUBO solution initializes gradient-free probabilistic black-box optimization to search for improved pruning masks using the downstream metric. Experiments on the SIDD image denoising task and a Half-UNet model show that the Hybrid QUBO achieves higher PSNR and SSIM than the evaluated Taylor and L1-based QUBO baselines at the studied pruning target. Multi-seed experiments under a fixed dataset protocol are used to assess robustness, while controlled sub-problem experiments demonstrate that Tensor-Train refinement becomes increasingly valuable as the combinatorial problem size grows. The results support Hybrid QUBO as a task-aware structured pruning framework for the evaluated setting, while also highlighting the computational and deployment limitations of mask-based pruning.</p></div>
+  <div class="article-body"><p>arXiv:2609.22238v2 Announce Type: replace 
+Abstract: Mixed-precision quantization requires discrete allocation of weight and activation bit-widths, followed by recovery of the selected network. We develop a task-aware quadratic unconstrained binary optimization (QUBO) surrogate with separate weight and activation profiles, a bit-operation (BOP) cost, and selected structural priors. QUBO provides a network-wide allocation that can be refined through direct validation-based PROTES search. On a compact NAFBlock-based denoiser, the refined route achieves 37.192 dB after LSQ+ at 4.035\% routed-layer BOPs, versus 37.092 dB at 4.101\% for a HAWQ-style baseline. The repeated-search primary experiment shows that LSQ+ largely closes the quality gap between QUBO allocation and expensive direct refinement. An additional restoration architecture retains a larger recovered gain, indicating that refinement&#x27;s value depends on architecture and recovery. We evaluate quality, achieved cost, routing stability and optimization expense together. Deployment measurements characterize a fake-quantized floating-point implementation; BOP reductions describe analytical allocation savings.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

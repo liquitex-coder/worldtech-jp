@@ -17,7 +17,7 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"Leaky-integrator reconstruction: taming error accumulation in recursive differenced time-series forecasting",
- "inLanguage":"en","datePublished":"2026-09-24T07:00:00+09:00","dateModified":"2026-09-24T07:00:00+09:00",
+ "inLanguage":"en","datePublished":"2026-09-25T07:00:00+09:00","dateModified":"2026-09-25T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2609.23378","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/d02a0ee25d19.html"}
@@ -35,11 +35,11 @@
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
     <h1>Leaky-integrator reconstruction: taming error accumulation in recursive differenced time-series forecasting</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/24</span></div>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/25</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/d02a0ee25d19.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.23378" rel="nofollow noopener">https://arxiv.org/abs/2609.23378</a></span></div>
-  <div class="article-body"><p>arXiv:2609.23378v1 Announce Type: new 
-Abstract: We introduce leaky-integrator reconstruction, a training-free method that cures the error accumulation of recursive differenced forecasting. Our first contribution is diagnostic: predicting one-step changes and integrating them by cumulative summation, the standard remedy for non-stationarity, is a discrete integrator with a pole on the unit circle, and we show this makes recursive rollout of a nonlinear model diverge, its 336-step error reaching several times that of a well-behaved forecaster (normalised MAE 1.6-3.8 versus about 0.8) across every neural architecture tested. Our second, central contribution is the fix: move the pole inside the unit circle with a leaky integrator H(z) = 1/(1 - gamma z^-1), gamma &lt; 1, which provably bounds the accumulated error variance. Applied at reconstruction time with a single fixed gamma=0.9 (no retraining, a two-line change to any deployed one-step or foundation-model forecaster), it shrinks error at every horizon, the mean gain over seven diverging architectures and twenty datasets growing from ~3% at H=24 to 23% at H=96, 37% at H=192 and 51% (43-74% across those architectures) at H=336 (78% with an oracle pole). Crucially, it is provably inert where no pathology exists (stable or joint predictors already at the irreducible rate), making it a safe, general default.</p></div>
+  <div class="article-body"><p>arXiv:2609.23378v2 Announce Type: replace 
+Abstract: Recursive differenced forecasting, the standard remedy for non-stationarity, predicts one-step changes and integrates them by cumulative summation. We show that this reconstruction is a discrete integrator with a pole on the unit circle, so the biased increment errors of a learned nonlinear model are summed without bound and the rollout diverges: at 336 steps its normalised MAE reaches 1.6-3.8 for every neural architecture tested, against 0.80 for a stable linear recursion. We then introduce leaky-integrator reconstruction, a training-free fix that moves the pole inside the unit circle with H(z) = 1/(1 - gamma z^-1), gamma &lt; 1, bounding the accumulation of the model&#x27;s own increment errors. Applied post hoc with a single fixed gamma=0.9 (no retraining, a two-line change to any deployed one-step or foundation-model forecaster), it beats the traditional recursive integrator at every horizon, with the mean gain over seven diverging architectures and twenty datasets growing from ~3% at H=24 to 23% at H=96, 37% at H=192 and 51% at H=336 (43-75% across those architectures; 78% with an oracle pole), bringing all of them to 0.87-0.97. Based on these extensive empirical experiments, adding a leaky integrator thus improves recursive differenced time-series forecasting.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

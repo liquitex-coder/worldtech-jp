@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Task-Aware Hybrid QUBO Optimization for Structured Neural Network Pruning — NewsMatome</title>
-<meta name="description" content="Task-Aware Hybrid QUBO Optimization for Structured Neural Network Pruning（EN→JA 翻訳・出典付き）">
+<title>Task-Aware QUBO Allocation for Mixed-Precision Quantization — NewsMatome</title>
+<meta name="description" content="Task-Aware QUBO Allocation for Mixed-Precision Quantization（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/e2ada1fb010e.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/e2ada1fb010e.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/e2ada1fb010e.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="Task-Aware Hybrid QUBO Optimization for Structured Neural Network Pruning">
-<meta property="og:description" content="Task-Aware Hybrid QUBO Optimization for Structured Neural Network Pruning（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="Task-Aware QUBO Allocation for Mixed-Precision Quantization">
+<meta property="og:description" content="Task-Aware QUBO Allocation for Mixed-Precision Quantization（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Task-Aware Hybrid QUBO Optimization for Structured Neural Network Pruning",
- "inLanguage":"ja","datePublished":"2026-09-23T07:00:00+09:00","dateModified":"2026-09-23T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Task-Aware QUBO Allocation for Mixed-Precision Quantization",
+ "inLanguage":"ja","datePublished":"2026-09-25T07:00:00+09:00","dateModified":"2026-09-25T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2609.22238","url":"https://liquitex-coder.github.io/worldtech-jp/articles/e2ada1fb010e.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>Task-Aware Hybrid QUBO Optimization for Structured Neural Network Pruning</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>Task-Aware QUBO Allocation for Mixed-Precision Quantization</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>Task-Aware Hybrid QUBO Optimization for Structured Neural Network Pruning</h1>
+      <h1>Task-Aware QUBO Allocation for Mixed-Precision Quantization</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/09/23 07:00</span><span>· 更新 2026/09/23</span>
+        <span>公開 2026/09/25 07:00</span><span>· 更新 2026/09/25</span>
       </div>
     </div>
     
@@ -74,24 +74,24 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2609.22238" rel="nofollow noopener">Task-Aware Hybrid QUBO Optimization for Structured Neural Network Pruning</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2609.22238" rel="nofollow noopener">Task-Aware QUBO Allocation for Mixed-Precision Quantization</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2609.22238v1 Announce Type: new 
-Abstract: Neural network pruning can be formulated as a combinatorial optimization problem, yet many existing approaches rely on independent filter-importance scores or simplified objective functions. In this work, we propose a Hybrid Quadratic Unconstrained Binary Optimization (QUBO) framework for structured filter pruning that combines task-aware sensitivity information with interactions between candidate filters. The formulation incorporates first-order Taylor sensitivity and Weight-Fisher sensitivity into the linear component of the objective and can additionally incorporate activation similarity into the quadratic interactions. To control the target pruning cardinality without introducing an explicit quadratic cardinality penalty, we use a binary search over the capacity incentive to identify a coefficient that empirically yields the target pruning cardinality. We further investigate a two-stage QUBO--Tensor-Train refinement strategy in which the QUBO solution initializes gradient-free probabilistic black-box optimization to search for improved pruning masks using the downstream metric. Experiments on the SIDD image denoising task and a Half-UNet model show that the Hybrid QUBO achieves higher PSNR and SSIM than the evaluated Taylor and L1-based QUBO baselines at the studied pruning target. Multi-seed experiments under a fixed dataset protocol are used to assess robustness, while controlled sub-problem experiments demonstrate that Tensor-Train refinement becomes increasingly valuable as the combinatorial problem size grows. The results support Hybrid QUBO as a task-aware structured pruning framework for the evaluated setting, while also highlighting the computational and deployment limitations of mask-based pruning.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2609.22238v1 Announce Type: new 
-Abstract: Neural network pruning can be formulated as a combinatorial optimization problem, yet many existing approaches rely on independent filter-importance scores or simplified objective functions. In this work, we propose a Hybrid Quadratic Unconstrained Binary Optimization (QUBO) framework for structured filter pruning that combines task-aware sensitivity information with interactions between candidate filters. The formulation incorporates first-order Taylor sensitivity and Weight-Fisher sensitivity into the linear component of the objective and can additionally incorporate activation similarity into the quadratic interactions. To control the target pruning cardinality without introducing an explicit quadratic cardinality penalty, we use a binary search over the capacity incentive to identify a coefficient that empirically yields the target pruning cardinality. We further investigate a two-stage QUBO--Tensor-Train refinement strategy in which the QUBO solution initializes gradient-free probabilistic black-box optimization to search for improved pruning masks using the downstream metric. Experiments on the SIDD image denoising task and a Half-UNet model show that the Hybrid QUBO achieves higher PSNR and SSIM than the evaluated Taylor and L1-based QUBO baselines at the studied pruning target. Multi-seed experiments under a fixed dataset protocol are used to assess robustness, while controlled sub-problem experiments demonstrate that Tensor-Train refinement becomes increasingly valuable as the combinatorial problem size grows. The results support Hybrid QUBO as a task-aware structured pruning framework for the evaluated setting, while also highlighting the computational and deployment limitations of mask-based pruning.</div>
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2609.22238v2 Announce Type: replace 
+Abstract: Mixed-precision quantization requires discrete allocation of weight and activation bit-widths, followed by recovery of the selected network. We develop a task-aware quadratic unconstrained binary optimization (QUBO) surrogate with separate weight and activation profiles, a bit-operation (BOP) cost, and selected structural priors. QUBO provides a network-wide allocation that can be refined through direct validation-based PROTES search. On a compact NAFBlock-based denoiser, the refined route achieves 37.192 dB after LSQ+ at 4.035\% routed-layer BOPs, versus 37.092 dB at 4.101\% for a HAWQ-style baseline. The repeated-search primary experiment shows that LSQ+ largely closes the quality gap between QUBO allocation and expensive direct refinement. An additional restoration architecture retains a larger recovered gain, indicating that refinement&#x27;s value depends on architecture and recovery. We evaluate quality, achieved cost, routing stability and optimization expense together. Deployment measurements characterize a fake-quantized floating-point implementation; BOP reductions describe analytical allocation savings.</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2609.22238v2 Announce Type: replace 
+Abstract: Mixed-precision quantization requires discrete allocation of weight and activation bit-widths, followed by recovery of the selected network. We develop a task-aware quadratic unconstrained binary optimization (QUBO) surrogate with separate weight and activation profiles, a bit-operation (BOP) cost, and selected structural priors. QUBO provides a network-wide allocation that can be refined through direct validation-based PROTES search. On a compact NAFBlock-based denoiser, the refined route achieves 37.192 dB after LSQ+ at 4.035\% routed-layer BOPs, versus 37.092 dB at 4.101\% for a HAWQ-style baseline. The repeated-search primary experiment shows that LSQ+ largely closes the quality gap between QUBO allocation and expensive direct refinement. An additional restoration architecture retains a larger recovered gain, indicating that refinement&#x27;s value depends on architecture and recovery. We evaluate quality, achieved cost, routing stability and optimization expense together. Deployment measurements characterize a fake-quantized floating-point implementation; BOP reductions describe analytical allocation savings.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2609.22238v1 Announce Type: new 
-Abstract: Neural network pruning can be formulated as a combinatorial optimization problem, yet many existing approaches rely on independent filter-importance scores or simplified objective functions. In this work, we propose a Hybrid Quadratic Unconstrained Binary Optimization (QUBO) framework for structured filter pruning that combines task-aware sensitivity information with interactions between candidate filters. The formulation incorporates first-order Taylor sensitivity and Weight-Fisher sensitivity into the linear component of the objective and can additionally incorporate activation similarity into the quadratic interactions. To control the target pruning cardinality without introducing an explicit quadratic cardinality penalty, we use a binary search over the capacity incentive to identify a coefficient that empirically yields the target pruning cardinality. We further investigate a two-stage QUBO--Tensor-Train refinement strategy in which the QUBO solution initializes gradient-free probabilistic black-box optimization to search for improved pruning masks using the downstream metric. Experiments on the SIDD image denoising task and a Half-UNet model show that the Hybrid QUBO achieves higher PSNR and SSIM than the evaluated Taylor and L1-based QUBO baselines at the studied pruning target. Multi-seed experiments under a fixed dataset protocol are used to assess robustness, while controlled sub-problem experiments demonstrate that Tensor-Train refinement becomes increasingly valuable as the combinatorial problem size grows. The results support Hybrid QUBO as a task-aware structured pruning framework for the evaluated setting, while also highlighting the computational and deployment limitations of mask-based pruning.</p><a href="https://arxiv.org/abs/2609.22238" rel="nofollow noopener">原論文を読む →</a></div>
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2609.22238v2 Announce Type: replace 
+Abstract: Mixed-precision quantization requires discrete allocation of weight and activation bit-widths, followed by recovery of the selected network. We develop a task-aware quadratic unconstrained binary optimization (QUBO) surrogate with separate weight and activation profiles, a bit-operation (BOP) cost, and selected structural priors. QUBO provides a network-wide allocation that can be refined through direct validation-based PROTES search. On a compact NAFBlock-based denoiser, the refined route achieves 37.192 dB after LSQ+ at 4.035\% routed-layer BOPs, versus 37.092 dB at 4.101\% for a HAWQ-style baseline. The repeated-search primary experiment shows that LSQ+ largely closes the quality gap between QUBO allocation and expensive direct refinement. An additional restoration architecture retains a larger recovered gain, indicating that refinement&#x27;s value depends on architecture and recovery. We evaluate quality, achieved cost, routing stability and optimization expense together. Deployment measurements characterize a fake-quantized floating-point implementation; BOP reductions describe analytical allocation savings.</p><a href="https://arxiv.org/abs/2609.22238" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2609.22238" rel="nofollow noopener">https://arxiv.org/abs/2609.22238</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
     <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="34088336622f.html"><div class="sim">関連</div><div class="info"><b>RBS-Attention: Radius-Bounded Sparse Prefill for Long-Context Large Language Models</b><div class="m">AI</div></div></a><a class="r" href="37d9347772d8.html"><div class="sim">関連</div><div class="info"><b>Attention-Aware Routing: Coupling Routing and Attention in MoEs</b><div class="m">AI</div></div></a><a class="r" href="f790dcf3a000.html"><div class="sim">関連</div><div class="info"><b>CaLR: Causal Latent Revision for Robust Diffusion Reasoning</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="671531aca991.html"><div class="sim">関連</div><div class="info"><b>Silent Failures in Agent-Tool Interaction: An Audit of ToolUniverse</b><div class="m">AI</div></div></a><a class="r" href="44b4f151ffd3.html"><div class="sim">関連</div><div class="info"><b>Harness as a Language: A Minimalist Agent Framework With Maximal Expressivity</b><div class="m">AI</div></div></a><a class="r" href="b7e0b4ef98a9.html"><div class="sim">関連</div><div class="info"><b>TwinCheck: Evidence-Grounded Negative-Twin Verification for Stateful Tool Agents</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

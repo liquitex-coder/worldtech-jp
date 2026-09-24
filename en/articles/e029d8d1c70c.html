@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Does Step Law Transfer to Small-Scale Language Models? An Empirical Recalibration Below 59M Parameters — NewsMatome (EN)</title>
+<meta name="description" content="Does Step Law Transfer to Small-Scale Language Models? An Empirical Recalibration Below 59M Parameters — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/e029d8d1c70c.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/e029d8d1c70c.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/e029d8d1c70c.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/e029d8d1c70c.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Does Step Law Transfer to Small-Scale Language Models? An Empirical Recalibration Below 59M Parameters">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Does Step Law Transfer to Small-Scale Language Models? An Empirical Recalibration Below 59M Parameters",
+ "inLanguage":"en","datePublished":"2026-09-25T07:00:00+09:00","dateModified":"2026-09-25T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.27581","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/e029d8d1c70c.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/e029d8d1c70c.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Does Step Law Transfer to Small-Scale Language Models? An Empirical Recalibration Below 59M Parameters</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/25</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/e029d8d1c70c.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.27581" rel="nofollow noopener">https://arxiv.org/abs/2609.27581</a></span></div>
+  <div class="article-body"><p>arXiv:2609.27581v1 Announce Type: new 
+Abstract: Step Law gives power-law formulas for the optimal peak learning rate eta* and batch size B* when pre-training language models. It was calibrated on models between 59M and 1B parameters; the small-model regime N &lt; 59M was never tested empirically by its authors. This regime matters for single-GPU training, interpretability research, educational experiments, and settings where larger models are infeasible on memory or cost grounds.
+  We test whether Step Law transfers to small language models. We consider three outcomes: H1, the original coefficients work directly; H2, the power-law form holds but with different coefficients; and H3, a power law does not describe the optima in this regime. All experiments use a single nanoGPT/TinyStories pipeline with a 2048-token BPE vocabulary, AdamW, and a warmup-cosine schedule. The optimum for each (N, D) cell is extracted from the loss surface L(eta, B) via a local quadratic approximation in log-log coordinates over the smoothed training loss.
+  The final dataset contains 29 unique (N, D) cells and 935 analysis-ready runs. The main refit uses 25 cells (815 runs) in the working range 4 &lt;= D/N &lt;= 600. On the pooled data we accept H2: the functional form is preserved, but the coefficients differ from the original. We obtain eta*(N, D) = 0.0985 N^(-0.508) D^(0.238) (R^2 = 0.834) and B*(D) = 3.6 x 10^(-4) D^(0.931) (R^2 = 0.950).
+  Step Law&#x27;s structural claim that B* is independent of N is reproduced (p = 0.87), but the growth of B* with D is nearly twice as steep as in the original work. Direct transfer of Step Law systematically overestimates the optimal learning rate: the median ratio eta_SL / eta* is approximately 4.0x, with a range of 2.4x to 6.6x.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

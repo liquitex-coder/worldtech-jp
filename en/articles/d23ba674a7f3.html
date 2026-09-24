@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Modernizing HEBO: a robust Bayesian optimization baseline for practical heteroskedastic and non-stationary problems — NewsMatome (EN)</title>
-<meta name="description" content="Modernizing HEBO: a robust Bayesian optimization baseline for practical heteroskedastic and non-stationary problems — original-language edition. Japanese translation available.">
+<title>tidyHEBO: Robust General-Purpose Bayesian Optimization with Model-Consistent Warping and Pareto Search — NewsMatome (EN)</title>
+<meta name="description" content="tidyHEBO: Robust General-Purpose Bayesian Optimization with Model-Consistent Warping and Pareto Search — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/d23ba674a7f3.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/d23ba674a7f3.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/d23ba674a7f3.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/d23ba674a7f3.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Modernizing HEBO: a robust Bayesian optimization baseline for practical heteroskedastic and non-stationary problems">
+<meta property="og:title" content="tidyHEBO: Robust General-Purpose Bayesian Optimization with Model-Consistent Warping and Pareto Search">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Modernizing HEBO: a robust Bayesian optimization baseline for practical heteroskedastic and non-stationary problems",
- "inLanguage":"en","datePublished":"2026-07-15T07:00:00+09:00","dateModified":"2026-07-15T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"tidyHEBO: Robust General-Purpose Bayesian Optimization with Model-Consistent Warping and Pareto Search",
+ "inLanguage":"en","datePublished":"2026-09-25T07:00:00+09:00","dateModified":"2026-09-25T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.10669","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/d23ba674a7f3.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Modernizing HEBO: a robust Bayesian optimization baseline for practical heteroskedastic and non-stationary problems</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/15</span></div>
+    <h1>tidyHEBO: Robust General-Purpose Bayesian Optimization with Model-Consistent Warping and Pareto Search</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/25</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/d23ba674a7f3.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.10669" rel="nofollow noopener">https://arxiv.org/abs/2607.10669</a></span></div>
-  <div class="article-body"><p>arXiv:2607.10669v1 Announce Type: new 
-Abstract: Bayesian optimization is increasingly used to guide data-efficient experimentation in chemistry, materials science, and related laboratory settings, but its practical performance depends strongly on how well surrogate-model assumptions match the geometry and noise structure of the underlying objective. We introduce tidyHEBO, a robust Bayesian optimization model inspired by heteroskedastic evolutionary Bayesian optimization (HEBO) for single-objective, sequential optimization. tidyHEBO reconstructs the HEBO design philosophy in BoTorch and revises surrogate training, output-warping selection, acquisition function evaluation, and Pareto-front search. We benchmarked tidyHEBO on synthetic functions, Olympus emulators, fully experimental reaction-optimization datasets, needle-in-a-haystack (NIAH) materials problems, and Bayesmark hyperparameter optimization tasks. On these tasks tidyHEBO achieved competitive to superior performance and improvement in robustness across repeated optimization runs. We therefore propose tidyHEBO as a practical tool for sequential experimentations and a strong general-purpose benchmark for future Bayesian optimization research.</p></div>
+  <div class="article-body"><p>arXiv:2607.10669v2 Announce Type: replace 
+Abstract: Bayesian optimization (BO) is widely used for expensive black-box problems, yet practical performance depends not only on high-level algorithmic choices but also on how surrogate model training, input and output warping transformations, acquisition functions, and candidate search are implemented. We present tidyHEBO, a BoTorch-native single-objective optimizer designed for robust general-purpose optimization. tidyHEBO jointly fits Yeo-Johnson output warping with the Gaussian-process surrogate, evaluates acquisition functions on the original objective scale using deterministic quadrature or MC-samples, and performs constrained cumulative Pareto search over multiple acquisition criteria. Without any Olympus-specific hyperparameter tuning - using only default optimizer configurations - tidyHEBO ranked first among the evaluated methods on the Olympus benchmark. It achieved the best average ranks for typical performance (average rank 1.53), worst-tail performance (1.21), and run-to-run variability (2.00), measured by median nAUC, CVaR_nAUC, and IQR_nAUC, respectively. Using the same default configuration, tidyHEBO also performed strongly on synthetic and Needle-in-a-Haystack problems and closely matched HEBO on Bayesmark (92.64 versus 93.34) while exceeding GP with logarithmic expected improvement and random search. Adaptive batching reduced feedback rounds while revealing a controllable trade-off between parallelization and optimization quality as the batch cap increased. These results characterize tidyHEBO as a robust, reproducible general-purpose optimizer for a broad range of practical optimization problems, including scientific applications and hyperparameter tuning.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>
