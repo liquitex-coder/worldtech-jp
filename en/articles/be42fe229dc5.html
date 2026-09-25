@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How Many Humans Is a Judge Panel Worth? — NewsMatome (EN)</title>
-<meta name="description" content="How Many Humans Is a Judge Panel Worth? — original-language edition. Japanese translation available.">
+<title>How Many Humans Are 32 LLM Judges Worth? — NewsMatome (EN)</title>
+<meta name="description" content="How Many Humans Are 32 LLM Judges Worth? — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/be42fe229dc5.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/be42fe229dc5.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/be42fe229dc5.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/be42fe229dc5.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="How Many Humans Is a Judge Panel Worth?">
+<meta property="og:title" content="How Many Humans Are 32 LLM Judges Worth?">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"How Many Humans Is a Judge Panel Worth?",
- "inLanguage":"en","datePublished":"2026-09-22T07:00:00+09:00","dateModified":"2026-09-22T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"How Many Humans Are 32 LLM Judges Worth?",
+ "inLanguage":"en","datePublished":"2026-09-26T07:00:00+09:00","dateModified":"2026-09-26T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2609.21277","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/be42fe229dc5.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>How Many Humans Is a Judge Panel Worth?</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/22</span></div>
+    <h1>How Many Humans Are 32 LLM Judges Worth?</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/26</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/be42fe229dc5.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.21277" rel="nofollow noopener">https://arxiv.org/abs/2609.21277</a></span></div>
-  <div class="article-body"><p>arXiv:2609.21277v1 Announce Type: cross 
-Abstract: How many human judgments does a panel of language models represent? The answer depends on what is matched. We audit categorical judge panels against empirical human label distributions, retaining disagreement that binary errors relative to one gold label collapse. We measure spectral residual diversity by matching the participation ratio of a normalized residual Gram matrix to conditionally independent human-reference draws, giving nu_H. We separately match distributional squared error, giving nu_MSE. Across three ChaosNLI tasks, the same 32-judge panels have nu_H=4.24--6.50 but nu_MSE=2.30--3.75. A spectral identity separates the eigenvalues, member energies, and averaging-direction weights that determine error. Realizable hard-label panels show that greater spectral diversity can accompany worse distribution recovery even with equal member energies and nonnegative correlations. In the observed panels, within-size ranking agreement varies sharply by task; some member additions produce conflicting changes that persist across two item halves. The consensus-direction share of centered residual variance is gamma_co=43.8% on MNLI-m and 33.7% on SNLI, quantifying shared variation retained by averaging. We provide aligned votes and analysis protocols for auditing these distinctions. Effective size is therefore a target-specific measurement: spectral diversity and distribution recovery should not be treated as interchangeable measures of panel quality or as general human-replacement rates.</p></div>
+  <div class="article-body"><p>arXiv:2609.21277v2 Announce Type: replace-cross 
+Abstract: A panel&#x27;s human-equivalent size is target-specific. Matching a fixed 32-judge panel to empirical human label distributions on three ChaosNLI tasks yields two distinct effective sizes: distributional-error matching gives $\nu_{\mathrm{MSE}}=2.304$, $3.750$, and $3.445$, whereas spectral matching gives $\nu_H=4.242$, $6.459$, and $6.499$, a gap of $1.72$--$1.89\times$; a binary-error diagnostic credits the same panels with only $1.971$--$2.227$ effective votes. Extrapolating the distributional-error curve at fixed squared mean residual, mean member variance, and normalized mean covariance gives asymptotes of $2.392$, $3.990$, and $3.655$, with 32 judges already reaching $94.0$--$96.3\%$. An exact spectral identity explains the gap: error depends on member energy and on the orientation of residual variation relative to averaging, information that the participation ratio (PR) discards. A realizable hard-label construction confirms that higher spectral diversity can coexist with worse distribution recovery even under equal member energies and nonnegative correlations, and the consensus direction retains $\gamma_{\mathrm{co}}=43.8\%$, $33.7\%$, and $35.9\%$ of centered residual variance. An external check on CC-1000, a 1,000-item Civil Comments subset with a different panel, gives $\nu_H=2.84$. For panel choice, we establish an existence result and one feasible path: exhaustive enumeration at $k\in\{5,7\}$ shows that panels beating the accuracy-top-$k$ baseline on both accuracy and $\nu_H$ always exist, and greedily swapping at most two members reaches $24.8$--$56.0\%$ higher $\nu_H$ at $0.10$--$1.10$ percentage points higher accuracy. Our dataset and code are available at https://github.com/Chao1208/32judges-votes.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

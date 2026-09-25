@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stale Does Not Mean Unsafe: Guard Precision for Tool-Using LLM Agents under Infrastructure State Races — NewsMatome (EN)</title>
+<meta name="description" content="Stale Does Not Mean Unsafe: Guard Precision for Tool-Using LLM Agents under Infrastructure State Races — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/628d0486a3d5.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/628d0486a3d5.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/628d0486a3d5.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/628d0486a3d5.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Stale Does Not Mean Unsafe: Guard Precision for Tool-Using LLM Agents under Infrastructure State Races">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Stale Does Not Mean Unsafe: Guard Precision for Tool-Using LLM Agents under Infrastructure State Races",
+ "inLanguage":"en","datePublished":"2026-09-26T07:00:00+09:00","dateModified":"2026-09-26T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.29522","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/628d0486a3d5.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/628d0486a3d5.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Stale Does Not Mean Unsafe: Guard Precision for Tool-Using LLM Agents under Infrastructure State Races</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/26</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/628d0486a3d5.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.29522" rel="nofollow noopener">https://arxiv.org/abs/2609.29522</a></span></div>
+  <div class="article-body"><p>arXiv:2609.29522v1 Announce Type: new 
+Abstract: Tool-using language-model agents increasingly mutate schedulers, data pipelines, object stores, and access-control systems. Between an agent&#x27;s read and its commit, external state can change, but not every change makes the commit unsafe. We separate invalidating races, which break a declared safety predicate, from predicate-preserving and irrelevant races, and ask how precisely runtime guards distinguish them. Our deterministic simulator separates visible from authoritative state and injects five non-atomic failure mechanisms across 16 infrastructure tasks in four domains; frozen agent proposals are replayed counterfactually under every controller without an LLM judge. We evaluate three commit-time guard granularities (global epoch, read-set version, semantic commit predicate), multi-level verification, and model-side gates on three locally hosted quantized model families (Qwen3-4B, Phi-4-mini, Gemma4-8B; 3,456 trajectories on one GPU). All three guards eliminate unsafe commits, but their availability differs sharply: freshness-based guards needlessly block 92-95% of benign races, forfeiting up to 43% of safe task completions, while the complete predicate guard blocks none. That precision is contract-dependent: deleting a single declared clause converts exactly its fault family into unsafe commits (up to 7.9%). Model-side signals do not substitute: verbal confidence is miscalibrated (ECE approximately 0.37), action agreement matches a random gate, a cautionary prompt leaves the direct unsafe rate essentially unchanged, and after a freshness-guard block agents re-commit unsafely from refreshed but still-incomplete reads. Under degraded telemetry a hidden concurrent mutation remains observationally clean, bounding every selective policy. Precise runtime enforcement therefore requires semantic contracts, not freshness heuristics or model self-assessment.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

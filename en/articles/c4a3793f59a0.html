@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Neural Hierarchical-Matrix Preconditioner for Real-Time GPU Solves — NewsMatome (EN)</title>
+<meta name="description" content="A Neural Hierarchical-Matrix Preconditioner for Real-Time GPU Solves — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/c4a3793f59a0.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/c4a3793f59a0.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/c4a3793f59a0.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/c4a3793f59a0.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A Neural Hierarchical-Matrix Preconditioner for Real-Time GPU Solves">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"A Neural Hierarchical-Matrix Preconditioner for Real-Time GPU Solves",
+ "inLanguage":"en","datePublished":"2026-09-26T07:00:00+09:00","dateModified":"2026-09-26T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2605.13343","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/c4a3793f59a0.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/c4a3793f59a0.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>A Neural Hierarchical-Matrix Preconditioner for Real-Time GPU Solves</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/26</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/c4a3793f59a0.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2605.13343" rel="nofollow noopener">https://arxiv.org/abs/2605.13343</a></span></div>
+  <div class="article-body"><p>arXiv:2605.13343v3 Announce Type: replace-cross 
+Abstract: Interactive simulation solves Ax=b for a sparse SPD A that changes every frame, inside an 8-16 ms budget. At a few thousand unknowns, the setup of algebraic multigrid alone exceeds that budget, while Jacobi and other local preconditioners have no setup but cannot move error across the domain. We learn a preconditioner for this gap: a graph-and-attention network predicts an SPD approximate inverse in H^2-matrix format. On a spatially ordered 3D mesh, blocks of the true inverse lose rank as the clusters they couple move apart; the nested bases of the format follow that decay, so inference and apply are dominated by leaf-block work linear in N, where a dense inverse costs N^2. Our main finding concerns training. Probe losses reach M only through a product with A, so their gradient vanishes on the near-null modes that set the conjugate-gradient iteration count. A truncated Kaporin condition number has no such factor; changing only the objective cuts iterations on a held-out frame from 116 to 33. On a ladder of stiff tetrahedral diffusion problems ours alone fits an 8.3 ms (120 fps) frame from N=572 to 3,647.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

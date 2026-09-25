@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Albireo: Adaptive, Energy-Efficient Inference Framework for Video Object Detection on the Edge — NewsMatome (EN)</title>
+<meta name="description" content="Albireo: Adaptive, Energy-Efficient Inference Framework for Video Object Detection on the Edge — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/699b1a1b8c42.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/699b1a1b8c42.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/699b1a1b8c42.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/699b1a1b8c42.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Albireo: Adaptive, Energy-Efficient Inference Framework for Video Object Detection on the Edge">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Albireo: Adaptive, Energy-Efficient Inference Framework for Video Object Detection on the Edge",
+ "inLanguage":"en","datePublished":"2026-09-26T07:00:00+09:00","dateModified":"2026-09-26T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.29648","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/699b1a1b8c42.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/699b1a1b8c42.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Albireo: Adaptive, Energy-Efficient Inference Framework for Video Object Detection on the Edge</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/26</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/699b1a1b8c42.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.29648" rel="nofollow noopener">https://arxiv.org/abs/2609.29648</a></span></div>
+  <div class="article-body"><p>arXiv:2609.29648v1 Announce Type: cross 
+Abstract: Video object detection on edge devices runs computationally expensive detectors over long frame streams, causing high energy consumption and sustained GPU utilization. Although consecutive frames are highly redundant, naive frame skipping is content-blind: it skips during critical moments such as object entry, occlusion recovery, and abrupt motion, degrading detection quality. We present Albireo, a detector-agnostic, codec-free adaptive inference framework that wraps off-the-shelf detectors and decides when detector invocation can be safely skipped based on scene content and per-object temporal state, requiring no detector modification or retraining. Albireo maintains a 10-dimensional Kalman filter (KF) per active object and invokes the detector only when prediction uncertainty exceeds a threshold; on skipped frames, boxes are predicted from the KF state at near-zero GPU cost. A KF-based rescue mechanism preserves confirmed objects through brief detector misses to prevent output fragmentation, while a lightweight empty-scene screen avoids detector calls on objectless frames. We evaluate Albireo on the BDD100K MOT validation split with three architecturally distinct detectors (YOLO11x, YOLO26x, RF-DETR-Large) on two NVIDIA Jetson platforms (AGX Thor, AGX Orin). Across all configurations, Albireo keeps AP@50 within +/-1.2 pp of per-frame inference while reducing total energy by 12.1-17.6%. On YOLO26x, it improves AP@50 by +0.8 pp while reducing energy by 17.6% (Thor) and 14.4% (Orin) and per-frame energy-delay product by 24.9% and 26.1%, respectively. Thus, the default operating point improves accuracy, energy, and latency together. In contrast, FixedSkip-2, a fixed-interval baseline with a 50% skip rate, loses 8.6 pp AP@50. Source code, evaluation pipeline, and per-clip results are available at https://github.com/amirtaherin/albireo</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
