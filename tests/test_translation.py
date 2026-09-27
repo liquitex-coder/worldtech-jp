@@ -2,7 +2,6 @@
 from pipeline.core import Orchestrator
 from pipeline.translate import (
     SAMPLE_CORPUS,
-    CorpusTranslator,
     TranslationVerifier,
     sample_translator,
 )
