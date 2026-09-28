@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scepsy: Serving Agentic Workflows Using Aggregate LLM Pipelines — NewsMatome (EN)</title>
+<meta name="description" content="Scepsy: Serving Agentic Workflows Using Aggregate LLM Pipelines — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/4c170ab82016.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/4c170ab82016.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/4c170ab82016.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/4c170ab82016.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Scepsy: Serving Agentic Workflows Using Aggregate LLM Pipelines">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Scepsy: Serving Agentic Workflows Using Aggregate LLM Pipelines",
+ "inLanguage":"en","datePublished":"2026-09-29T07:00:00+09:00","dateModified":"2026-09-29T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2604.15186","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/4c170ab82016.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/4c170ab82016.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Scepsy: Serving Agentic Workflows Using Aggregate LLM Pipelines</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/29</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/4c170ab82016.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2604.15186" rel="nofollow noopener">https://arxiv.org/abs/2604.15186</a></span></div>
+  <div class="article-body"><p>arXiv:2604.15186v2 Announce Type: replace-cross 
+Abstract: Agentic workflows carry out complex tasks by orchestrating multiple large language models (LLMs) and tools. Serving them at a target throughput with low latency is hard because they are written in arbitrary agentic frameworks and their execution times are unpredictable: execution branches, fans out, or recurs in data-dependent ways. Since their LLMs often outnumber the available GPUs, they also oversubscribe GPUs.
+  We describe Scepsy, a serving system that schedules arbitrary multi-LLM agentic workflows onto a GPU cluster. Scepsy exploits the insight that, while the end-to-end latency of an agentic workflow is unpredictable, each LLM&#x27;s fraction of execution time is comparatively stable across requests. Scepsy profiles each LLM under different parallelism degrees and combines the profiles with these fractions into an Aggregate LLM Pipeline, a lightweight throughput and latency predictor for allocations. To minimize latency at a target throughput, Scepsy uses the Aggregate LLM Pipeline to search over fractional GPU shares, tensor parallelism degrees, and replica counts. A hierarchical heuristic then places the chosen allocation onto the cluster, minimizing fragmentation and respecting network topology. On realistic agentic workflows, Scepsy achieves up to 2.5x higher throughput before saturation and 1.0-3.3x lower latency than systems that optimize LLMs independently or rely on user-specified allocations.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
