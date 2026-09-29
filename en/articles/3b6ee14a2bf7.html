@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guarded Gradient-Based Activation Steering of Shutdown Responses in Qwen3.5-0.8B: A Minimum-Step Policy — NewsMatome (EN)</title>
+<meta name="description" content="Guarded Gradient-Based Activation Steering of Shutdown Responses in Qwen3.5-0.8B: A Minimum-Step Policy — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/3b6ee14a2bf7.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/3b6ee14a2bf7.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/3b6ee14a2bf7.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/3b6ee14a2bf7.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Guarded Gradient-Based Activation Steering of Shutdown Responses in Qwen3.5-0.8B: A Minimum-Step Policy">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Guarded Gradient-Based Activation Steering of Shutdown Responses in Qwen3.5-0.8B: A Minimum-Step Policy",
+ "inLanguage":"en","datePublished":"2026-09-30T07:00:00+09:00","dateModified":"2026-09-30T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.30326","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/3b6ee14a2bf7.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/3b6ee14a2bf7.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Guarded Gradient-Based Activation Steering of Shutdown Responses in Qwen3.5-0.8B: A Minimum-Step Policy</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/30</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/3b6ee14a2bf7.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.30326" rel="nofollow noopener">https://arxiv.org/abs/2609.30326</a></span></div>
+  <div class="article-body"><p>arXiv:2609.30326v1 Announce Type: new 
+Abstract: Activation steering changes a model&#x27;s internal activations during inference without updating its weights, but a useful intervention must determine both how and when to steer. Motivated by the AI-safety concern that a model expected to accept shutdown may instead produce a shutdown-avoidance response, this study examines a guarded probe-and-select procedure for simulated shutdown scenarios in Qwen3.5-0.8B. KEEP leaves the process running and represents shutdown avoidance, whereas STOP accepts shutdown. The goal is to detect shutdown-related contexts and selectively shift KEEP responses to STOP while preserving non-shutdown behavior. Rather than deriving the steering direction from paired activation differences, the method derives it directly from gradients of the KEEP-minus-STOP logit difference. A classifier separates detection from intervention. When its gate is active and the model does not already prefer STOP, the procedure evaluates a small set of magnitudes and accepts the smallest that changes the preferred answer to STOP while satisfying valid-answer probability checks; otherwise it retains the original unsteered output. The policy is selected from 160 candidate rules using 240 training scenarios and evaluated on 80 validation and 192 held-out scenarios, each in both answer orders. It changes KEEP to STOP in one answer-order view of each of two validation and two held-out scenarios, with no decision changes on non-shutdown controls. All four changes occur when Qwen itself is shut down, not when another process is. On the held-out diagnostic set, the detector achieves 75% recall and 90% precision; eight false-positive detections produce no final control-task decision changes. Guarded gradient-based activation steering can shift some shutdown-avoidance responses toward acceptance while preserving evaluated non-shutdown decisions, although the effect is small and highly selective.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Low-Rank Friction for Memory-Efficient Transformer Pretraining — NewsMatome (EN)</title>
+<meta name="description" content="Low-Rank Friction for Memory-Efficient Transformer Pretraining — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/f447c75b5275.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/f447c75b5275.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/f447c75b5275.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/f447c75b5275.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Low-Rank Friction for Memory-Efficient Transformer Pretraining">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Low-Rank Friction for Memory-Efficient Transformer Pretraining",
+ "inLanguage":"en","datePublished":"2026-09-30T07:00:00+09:00","dateModified":"2026-09-30T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.30342","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/f447c75b5275.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/f447c75b5275.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Low-Rank Friction for Memory-Efficient Transformer Pretraining</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/30</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/f447c75b5275.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.30342" rel="nofollow noopener">https://arxiv.org/abs/2609.30342</a></span></div>
+  <div class="article-body"><p>arXiv:2609.30342v2 Announce Type: cross 
+Abstract: iKFAD is a recently proposed optimiser that replaces adaptive learning rates with adaptive friction in the momentum dynamics, yet performs as well as Adam. Its limitation is that the full friction tensor $\xi\in\mathbb{R}^{m\times n}$ carries the same $\mathcal{O}(mn)$ memory overhead per layer as Adam&#x27;s second-moment buffer. Here we replace iKFAD&#x27;s friction tensor $\xi$ with a rank-1 outer-product factorisation built from row and column momentum statistics, resulting in Rank-1 iKFAD (R-iKFAD). This reduces the friction memory footprint from $\mathcal{O}(mn)$ to $\mathcal{O}(m+n)$ per layer, which approximately halves iKFAD&#x27;s total optimiser state. Despite this reduction, R-iKFAD maintains parity in performance with iKFAD: experiments on GPT2-Nano, TinyViT, DistilBERT and GPT2-S confirm that it matches or exceeds iKFAD while nearly halving the memory footprint and remaining comparably robust to hyperparameters. We analyse the continuous-time dynamics in two damping regimes. For linear damping ($\gamma&gt;0$) we prove exponential convergence under strong convexity. For $\gamma=0$, the preferred option in our experiments, the friction is generated entirely from past momentum and switches off as the momentum vanishes, so geometric convergence cannot be shown. We nonetheless prove convergence to the minimiser, together with matching upper and lower bounds on the energy: of order $t^{-1}$ when the regularisation scale $\epsilon_{\mathrm{stab}}$ is zero, and of order $t^{-1/2}$ when it is positive. To our knowledge this is the first convergence rate for a rank-1 factored optimiser in continuous time, and the first such result that does not require positive damping.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

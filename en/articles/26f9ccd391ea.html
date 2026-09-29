@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beyond Mean Attention: Diversity-Aware, Layer-Wise Scoring for KV Cache Eviction — NewsMatome (EN)</title>
+<meta name="description" content="Beyond Mean Attention: Diversity-Aware, Layer-Wise Scoring for KV Cache Eviction — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/26f9ccd391ea.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/26f9ccd391ea.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/26f9ccd391ea.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/26f9ccd391ea.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Beyond Mean Attention: Diversity-Aware, Layer-Wise Scoring for KV Cache Eviction">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Beyond Mean Attention: Diversity-Aware, Layer-Wise Scoring for KV Cache Eviction",
+ "inLanguage":"en","datePublished":"2026-09-30T07:00:00+09:00","dateModified":"2026-09-30T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.30738","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/26f9ccd391ea.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/26f9ccd391ea.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Beyond Mean Attention: Diversity-Aware, Layer-Wise Scoring for KV Cache Eviction</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/30</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/26f9ccd391ea.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.30738" rel="nofollow noopener">https://arxiv.org/abs/2609.30738</a></span></div>
+  <div class="article-body"><p>arXiv:2609.30738v1 Announce Type: cross 
+Abstract: KV cache eviction methods such as SnapKV and PyramidKV rank tokens solely by mean attention over a small observation window. We study a unified score, $\mu_i+\lambda_1\sigma_i+\lambda_2\mathrm{corr}(i,S)$, adding attention dispersion across window queries and redundancy relative to selected tokens. For $\lambda_2&lt;0$, the score penalizes similarity to selected tokens as in maximal marginal relevance (MMR), without extra forward passes. To test whether this relevance-diversity balance should vary with depth, we compare fixed global coefficients with three-segment and quadratic profiles. Only these depth profiles are searched on a development split under a $\sinh$ reparameterization. On all 16 English LongBench datasets with Mistral-7B at a budget of 64 entries per layer, a single global diversification constant improves 13 of 16 datasets (macro +1.1); the gain holds at budget 32 and narrows at 128. Per-dataset search finds no detectable layer structure on most datasets; on passage retrieval it finds a large one: a mid-layer sign flip that rewards similarity and is worth +9.6 over the baseline at budget 64 and, without re-tuning, +13.2 over the global constant at budget 128. Ablations attribute the gain to the redundancy term; replaying every accepted search state on the held-out test set separates genuine structure from tuning noise.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

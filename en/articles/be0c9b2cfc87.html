@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cosine Similarity Is Not Evidence: Measuring the Noise Floor of Interpretability Transfer Under Quantization — NewsMatome (EN)</title>
+<meta name="description" content="Cosine Similarity Is Not Evidence: Measuring the Noise Floor of Interpretability Transfer Under Quantization — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/be0c9b2cfc87.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/be0c9b2cfc87.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/be0c9b2cfc87.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/be0c9b2cfc87.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cosine Similarity Is Not Evidence: Measuring the Noise Floor of Interpretability Transfer Under Quantization">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Cosine Similarity Is Not Evidence: Measuring the Noise Floor of Interpretability Transfer Under Quantization",
+ "inLanguage":"en","datePublished":"2026-09-30T07:00:00+09:00","dateModified":"2026-09-30T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.30275","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/be0c9b2cfc87.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/be0c9b2cfc87.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Cosine Similarity Is Not Evidence: Measuring the Noise Floor of Interpretability Transfer Under Quantization</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/30</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/be0c9b2cfc87.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.30275" rel="nofollow noopener">https://arxiv.org/abs/2609.30275</a></span></div>
+  <div class="article-body"><p>arXiv:2609.30275v1 Announce Type: new 
+Abstract: A statistic reported without the quantity needed to interpret it is not evidence. We develop that thesis for a concrete practice in AI safety. Interpretability artifacts are calibrated on full-precision weights, deployed on quantized ones, and certified as surviving the change by scale-invariant statistics (cosine similarity, correlation, AUROC) that are reported without their noise floor. For the difference-in-means direction estimator, the split-half floor is governed by one dimensionless number, $\kappa = n\rho^2/d$. The closed form $\mathbb{E}[\cos] \approx (1+4/\kappa)^{-1}$ is classical; the missing input is the class separation $\rho$, which we measure on real activations; no compression-transfer study we know of reports it. On Qwen2.5-1.5B-Instruct, $\rho = 33$--$61$ across depth, so two independent runs of the estimator agree to $0.978$--$0.994$ by sampling alone. A published cosine of $0.996$ between full-precision and quantized refusal directions therefore cannot be read as preservation without the $n$ it was computed at, which is not reported. Where $n$ is known, we judge each low-bit cosine against the split-half null measured within that quantized model, because a full-precision null assumes the low-bit estimator has the same variance. That assumption is exactly what a null exists to test. The result is plain: at INT4 the direction rotated, and the deficit exceeds the estimator&#x27;s own noise. At INT8 we detect no movement, which is not an equivalence claim. We also show that a scale-invariant statistic cannot distinguish translation from attenuation of a transferred decision variable, although the two call for opposite remedies. We close with reporting recommendations that cost one forward pass. Code, data, and a one-cell reproduction are released at https://github.com/pvarshh/quantinterp</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

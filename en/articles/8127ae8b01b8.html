@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>WEECFP-SuRGE: Wide Embedded Extended Connectivity Fingerprint with Substructure Rotary Graph-distance Encoding — NewsMatome (EN)</title>
-<meta name="description" content="WEECFP-SuRGE: Wide Embedded Extended Connectivity Fingerprint with Substructure Rotary Graph-distance Encoding — original-language edition. Japanese translation available.">
+<title>WEECFP-SuRGE: A Position-Aware Substructure Encoding Method for Molecular Property Prediction — NewsMatome (EN)</title>
+<meta name="description" content="WEECFP-SuRGE: A Position-Aware Substructure Encoding Method for Molecular Property Prediction — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/8127ae8b01b8.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/8127ae8b01b8.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/8127ae8b01b8.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/8127ae8b01b8.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="WEECFP-SuRGE: Wide Embedded Extended Connectivity Fingerprint with Substructure Rotary Graph-distance Encoding">
+<meta property="og:title" content="WEECFP-SuRGE: A Position-Aware Substructure Encoding Method for Molecular Property Prediction">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"WEECFP-SuRGE: Wide Embedded Extended Connectivity Fingerprint with Substructure Rotary Graph-distance Encoding",
- "inLanguage":"en","datePublished":"2026-09-08T07:00:00+09:00","dateModified":"2026-09-08T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"WEECFP-SuRGE: A Position-Aware Substructure Encoding Method for Molecular Property Prediction",
+ "inLanguage":"en","datePublished":"2026-09-30T07:00:00+09:00","dateModified":"2026-09-30T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2609.04672","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/8127ae8b01b8.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>WEECFP-SuRGE: Wide Embedded Extended Connectivity Fingerprint with Substructure Rotary Graph-distance Encoding</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/08</span></div>
+    <h1>WEECFP-SuRGE: A Position-Aware Substructure Encoding Method for Molecular Property Prediction</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/30</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/8127ae8b01b8.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.04672" rel="nofollow noopener">https://arxiv.org/abs/2609.04672</a></span></div>
-  <div class="article-body"><p>arXiv:2609.04672v1 Announce Type: new 
-Abstract: We introduce WEECFP, a parameter-free 1024-dimensional continuous molecular fingerprint that scatters each Morgan substructure across roughly thirty-two signed positions of a single vector, and WEECFP-SuRGE, a transformer architecture whose self-attention applies SuRGE (Substructure Rotary Graph-distance Encoding) -- a RoPE-like rotation parameterized by molecular shortest-path graph distance -- to WEECFP substructure tokens. A 7-model blend of this architecture (the WEECFP-SuRGE Blend) achieves the lowest average regression rank on the TDC ADMET leaderboard; is #2 overall on the TDC ADMET leaderboard (behind only pretrained MapLight+GNN), and is #1 overall among methods that use no external pretraining; takes leaderboard #1 finishes on Pgp, Lipophilicity, CYP2D6 Substrate, Clearance Microsome, and LD50 (with the WEECFP-NoSuRGE Blend separately reaching #1 on HIA) across the full 22-benchmark suite -- without any external pretraining. On MoleculeNet, WEECFP-SuRGE beats every classical-fingerprint baseline on 3 of 4 regression tasks (ESOL, Lipophilicity, QM9). We further show that WEECFP tokenization is near-lossless: a greedy overlap reconstruction recovers the exact canonical SMILES of 99.9% of in-distribution molecules across 9 MoleculeNet datasets and 98.93% of molecules in a cross-dataset holdout (HIV-&gt;Lipophilicity), and that a three-reference farthest-first encoding of graph distance correlates at Pearson r = 0.901 with the true pairwise distance, enabling O(S) positional memory at matching accuracy.</p></div>
+  <div class="article-body"><p>arXiv:2609.04672v2 Announce Type: replace 
+Abstract: Computational molecular property prediction requires representations that capture local chemistry, long-range interactions, and molecular topology. Conventional fingerprints provide efficient local substructure features, whereas learned graph and sequence models can represent broader context but often rely on pretraining or three-dimensional conformers. We introduce Wide Encoded Extended Connectivity Fingerprints (WEECFP) with Substructure Rotary Graph-distance Encoding (SuRGE), a tokenized hierarchical Morgan representation in which graph-distance-dependent rotations are applied at the input and within transformer self-attention. Across MoleculeNet and the Therapeutic Data Commons ADMET benchmarks, WEECFP-SuRGE is competitive with recent pretrained and geometry-aware methods without external pretraining or conformer generation. We also show that the rotated token representation remains structurally informative. A guided confirmed-handshake overlap procedure reconstructs the correct constitutional isomer for 92.6% of a 4,200-molecule self-library evaluation. Together, the predictive and reconstruction results indicate that WEECFP-SuRGE preserves local substructure identity while making relative topology available to the model.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

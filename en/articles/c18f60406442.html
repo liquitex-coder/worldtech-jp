@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KuaFu: Compressing Long User Behavior into Understanding at Billion Scale — NewsMatome (EN)</title>
+<meta name="description" content="KuaFu: Compressing Long User Behavior into Understanding at Billion Scale — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/c18f60406442.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/c18f60406442.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/c18f60406442.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/c18f60406442.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="KuaFu: Compressing Long User Behavior into Understanding at Billion Scale">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"KuaFu: Compressing Long User Behavior into Understanding at Billion Scale",
+ "inLanguage":"en","datePublished":"2026-09-30T07:00:00+09:00","dateModified":"2026-09-30T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.31045","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/c18f60406442.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/c18f60406442.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>KuaFu: Compressing Long User Behavior into Understanding at Billion Scale</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/30</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/c18f60406442.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.31045" rel="nofollow noopener">https://arxiv.org/abs/2609.31045</a></span></div>
+  <div class="article-body"><p>arXiv:2609.31045v1 Announce Type: cross 
+Abstract: Conversational agents, generative recommenders, and personalized advertising all rest on one capability: understanding each user from raw behavior. Prevailing industrial practice is task-specific: for each task, a relevant subsequence is extracted from the full history and a dedicated model trained on it. In production it hits two bottlenecks. First, even after filtering, a single-task sequence stays extremely long: content-interest summarization reads several hundred items per user, tens of thousands of tokens once serialized as prompt text. Second, profiles are refreshed routinely: a billion users weekly, roughly 100K QPM in aggregate, which under a fixed GPU budget sets a hard throughput floor. Compression is therefore mandatory, yet truncation or coarse compression can silently distort the profile, introducing four hallucination types (fabrication, omission, date misattribution, broken logic) that, with no way to evaluate the compressed representation itself, surface only as diffuse degradation in downstream metrics. We present KuaFu, a unified behavior-compression layer whose minimal unit is one behavior item. A two-axis projector compresses each item into 2-4 tokens of width 128-256 (about 10x along the token axis, 20x along width; per-item cache 10 KB to 0.5 KB), with fidelity-oriented four-stage training and layered intermediate evaluation. Across four production profiling tasks it matches or exceeds uncompressed single-task production models on all five headline metrics, raises per-GPU throughput by 37%-350%, and saves 190 GPUs. On public benchmarks it nearly always beats prior compressors at the same compression ratio (up to +17.7 EM on out-of-domain MRQA); on RecBench, a 4B model surpasses its 8B counterpart by 1.90 points. KuaFu has run on the Tencent advertising and recommendation platform for ten months, lifting overall GMV by 1.37%.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
