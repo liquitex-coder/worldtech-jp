@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Introducing the CZAR Loss: A Tailored Objective Function for Financial Log-Return Predictions — NewsMatome (EN)</title>
+<meta name="description" content="Introducing the CZAR Loss: A Tailored Objective Function for Financial Log-Return Predictions — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/24a1bbef6045.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/24a1bbef6045.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/24a1bbef6045.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/24a1bbef6045.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Introducing the CZAR Loss: A Tailored Objective Function for Financial Log-Return Predictions">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Introducing the CZAR Loss: A Tailored Objective Function for Financial Log-Return Predictions",
+ "inLanguage":"en","datePublished":"2026-10-01T07:00:00+09:00","dateModified":"2026-10-01T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.36061","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/24a1bbef6045.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/24a1bbef6045.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Introducing the CZAR Loss: A Tailored Objective Function for Financial Log-Return Predictions</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/01</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/24a1bbef6045.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.36061" rel="nofollow noopener">https://arxiv.org/abs/2609.36061</a></span></div>
+  <div class="article-body"><p>arXiv:2609.36061v1 Announce Type: new 
+Abstract: In quantitative finance, standard regression losses are misaligned with the economics of return prediction. As the conditional mean of financial log-returns is close to zero, symmetric losses such as the mean squared and mean absolute errors make the constant zero forecast a near-optimal solution, penalizing models with genuine but noisy directional skill. This applies both during training, where predictions shrink toward zero, and during evaluation, where trivial forecasters can lead loss-based rankings. Under a Gaussian linear prediction model, we show that all symmetric monotonic losses share a universal breakeven directional accuracy against the zero predictor, which rises sharply and becomes unobtainable as the prediction noise approaches the standard deviation of the returns. We introduce the CZAR (Composite Zero-Agnostic Return) loss function, a piecewise quadratic loss built around five key requirements: convexity in the prediction, asymmetry with true return direction that vanishes at zero, near-linear penalization of undershoots and wrong-direction predictions, divergence for large errors, and an adaptive loss floor for evaluation. CZAR is provably convex in the prediction at fixed true value, has closed-form gradient and Hessian suitable for custom objectives in gradient-boosted libraries, and its four hyperparameters reduce to a single choice through correlated defaults. In idealized tests, the minimum directional accuracy required for a CZAR-evaluated forecaster to outperform the zero predictor under mean log loss remains near the 50% chance level, whereas the corresponding threshold for symmetric losses rises sharply with prediction noise. This advantage persists under heavy-tailed return distributions. In a LightGBM experiment on intraday BTC log-returns, CZAR-trained models reduce the `zero-returns bias&#x27; and improve directional accuracy on large-magnitude returns.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

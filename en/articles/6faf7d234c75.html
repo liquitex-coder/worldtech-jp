@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Epiphany-Aware KV Cache Eviction Without the Attention Matrix — NewsMatome (EN)</title>
-<meta name="description" content="Epiphany-Aware KV Cache Eviction Without the Attention Matrix — original-language edition. Japanese translation available.">
+<title>EpiKV: Epiphany-Aware KV Cache Eviction Without the Attention Matrix — NewsMatome (EN)</title>
+<meta name="description" content="EpiKV: Epiphany-Aware KV Cache Eviction Without the Attention Matrix — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/6faf7d234c75.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/6faf7d234c75.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/6faf7d234c75.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/6faf7d234c75.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Epiphany-Aware KV Cache Eviction Without the Attention Matrix">
+<meta property="og:title" content="EpiKV: Epiphany-Aware KV Cache Eviction Without the Attention Matrix">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Epiphany-Aware KV Cache Eviction Without the Attention Matrix",
- "inLanguage":"en","datePublished":"2026-07-01T07:00:00+09:00","dateModified":"2026-07-01T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"EpiKV: Epiphany-Aware KV Cache Eviction Without the Attention Matrix",
+ "inLanguage":"en","datePublished":"2026-10-01T07:00:00+09:00","dateModified":"2026-10-01T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.26472","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/6faf7d234c75.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Epiphany-Aware KV Cache Eviction Without the Attention Matrix</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/01</span></div>
+    <h1>EpiKV: Epiphany-Aware KV Cache Eviction Without the Attention Matrix</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/01</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/6faf7d234c75.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.26472" rel="nofollow noopener">https://arxiv.org/abs/2606.26472</a></span></div>
-  <div class="article-body"><p>arXiv:2606.26472v2 Announce Type: replace 
-Abstract: As reasoning models emit chains of thought tens of thousands of tokens long, KV cache increasingly becomes a deployment bottleneck. Existing cache eviction methods rank tokens by attention weight, which is a noisy importance proxy in long reasoning traces, and prohibits the use of fused kernels in production inference by forcing the model to materialize the attention matrix. In this work, we instead score tokens with a metric we term the epiphany score: the change in the model&#x27;s internal representation, read directly from the forward pass with no attention matrix and negligible extra state. Our resulting cache eviction method, EpiKV, requires no training, classifier, or custom kernel, and can be used directly in FlashAttention inference stacks unchanged -- scaling to a 16x longer feasible context than attention-based scoring. upper-mid layers negatively) and remove a positional trend with a causal rolling z-score. At a 4096-token cache EpiKV reaches 72% on MATH-500, matching the strongest attention-based baseline (ThinKV 71%, H2O 67%); a lag-normalized KV variant reaches 37% on AIME-2024 at 8192 tokens against the best of them (33%), at up to 2.8x the speed.</p></div>
+  <div class="article-body"><p>arXiv:2606.26472v4 Announce Type: replace 
+Abstract: Reasoning models can generate chains of thought tens of thousands of tokens long, making the key--value (KV) cache that holds them a major bottleneck for inference throughput. Existing eviction policies for long reasoning traces typically rank cached tokens using attention weights, requiring access to the attention matrix and making them incompatible with fast inference kernels. In this work we study the limits of such policies under tight cache budgets. Surprisingly, we find that under the strongest of them the generations that finish are wrong about as often as without eviction; most of the accuracy loss comes from generations that enter loops and run until the length limit, and retaining more tokens according to a fixed importance score exacerbates this behavior. What stops the looping is keeping the tokens the model&#x27;s recent queries point to, and the forward pass the model already runs reveals them without the attention matrix. Motivated by this observation, we introduce epiphany-aware KV cache eviction EpiKV, which combines hidden-state shifts with the model&#x27;s recent query--key relevance to rank cached tokens without materializing the attention matrix. On multiple benchmarks, EpiKV matches or outperforms the strongest attention-based eviction baselines while running directly in vLLM with unmodified attention kernels.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>
