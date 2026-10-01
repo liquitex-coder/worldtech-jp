@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Harnessing Generative Image Models for Training-Free Primitive Shape Abstraction — NewsMatome (EN)</title>
-<meta name="description" content="Harnessing Generative Image Models for Training-Free Primitive Shape Abstraction — original-language edition. Japanese translation available.">
+<title>Prompting Image Generators for Training-free Primitive Shape Abstraction — NewsMatome (EN)</title>
+<meta name="description" content="Prompting Image Generators for Training-free Primitive Shape Abstraction — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/1fdc44369a5f.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/1fdc44369a5f.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/1fdc44369a5f.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/1fdc44369a5f.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Harnessing Generative Image Models for Training-Free Primitive Shape Abstraction">
+<meta property="og:title" content="Prompting Image Generators for Training-free Primitive Shape Abstraction">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Harnessing Generative Image Models for Training-Free Primitive Shape Abstraction",
- "inLanguage":"en","datePublished":"2026-07-09T07:00:00+09:00","dateModified":"2026-07-09T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Prompting Image Generators for Training-free Primitive Shape Abstraction",
+ "inLanguage":"en","datePublished":"2026-10-02T07:00:00+09:00","dateModified":"2026-10-02T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.05568","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/1fdc44369a5f.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Harnessing Generative Image Models for Training-Free Primitive Shape Abstraction</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/09</span></div>
+    <h1>Prompting Image Generators for Training-free Primitive Shape Abstraction</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/10/02</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/1fdc44369a5f.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.05568" rel="nofollow noopener">https://arxiv.org/abs/2607.05568</a></span></div>
-  <div class="article-body"><p>arXiv:2607.05568v1 Announce Type: cross 
-Abstract: Representing 3D shapes as compact sets of geometric primitives is fundamental to robotics, simulation, and scene understanding. Generative image models trained at scale have recently emerged as generalist visual learners that can identify and segment object parts directly in the image domain, across arbitrary categories and without task-specific training. Adapting such models to downstream tasks typically requires fine-tuning; we ask whether their pretrained capability can instead be harnessed directly, without any training, and answer affirmatively with a training-free harness. Our pipeline renders multi-view images of a 3D object, uses a vision-language model to analyze its semantic parts, prompts a generative image model to paint a color-coded part segmentation mask, reprojects it onto the geometry, and fits a superquadric primitive to each part via parameter optimization. The approach contains no learned parameters: it is category-agnostic and orientation-invariant, properties that previous learning-based models struggled with. Its accuracy ceiling rises with future generative-model improvements, which we confirm with a ground-truth segmentation study showing that part segmentation, not primitive fitting, is the current accuracy bottleneck. On HumanPrim and Toys4K, our method achieves the lowest Chamfer distance among all evaluated methods, using 5--9 primitives per object on average.</p></div>
+  <div class="article-body"><p>arXiv:2607.05568v2 Announce Type: replace-cross 
+Abstract: Compact primitive abstractions represent 3D shapes with a few geometric primitives while preserving recognizable components. Learned methods depend on their training classes, and optimization-based methods split shapes geometrically rather than into parts. We instead reuse the visual part knowledge of pretrained models without task-specific training or fine-tuning. A vision-language model names parts in multi-view renders, and an unmodified image generator paints color-coded part masks. Reprojection and spatial clustering recover 3D instances, and a classical optimizer fits one tapered and bent superquadric per part. With five to eight primitives per object, the abstractions match the Chamfer distance of the strongest learned baseline on HumanPrim, improve on it by 10% on Toys4K, and have the lowest overlap among compact methods, while chair legs, backrest bars and wheels remain separate primitives. Our accuracy also transfers better than theirs to objects outside the learned methods&#x27; ShapeNet training classes. Replacing the generated masks with part labels from the 3D segmentation methods P3-SAM or PartField lowers IoU by 7 to 17 points under the same fitter. Further studies relate the remaining volumetric error to part granularity and to parts that the rendered views observe from one side only.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

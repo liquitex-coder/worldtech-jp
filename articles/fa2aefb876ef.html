@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cross-Model Memory Transfer via Target-Side Reader Adaptation — NewsMatome</title>
-<meta name="description" content="Cross-Model Memory Transfer via Target-Side Reader Adaptation（EN→JA 翻訳・出典付き）">
+<title>Frozen Memory Is Not Enough: Rethinking External Memory as Extraction — NewsMatome</title>
+<meta name="description" content="Frozen Memory Is Not Enough: Rethinking External Memory as Extraction（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/fa2aefb876ef.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/fa2aefb876ef.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/fa2aefb876ef.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="Cross-Model Memory Transfer via Target-Side Reader Adaptation">
-<meta property="og:description" content="Cross-Model Memory Transfer via Target-Side Reader Adaptation（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="Frozen Memory Is Not Enough: Rethinking External Memory as Extraction">
+<meta property="og:description" content="Frozen Memory Is Not Enough: Rethinking External Memory as Extraction（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Cross-Model Memory Transfer via Target-Side Reader Adaptation",
- "inLanguage":"ja","datePublished":"2026-08-21T07:00:00+09:00","dateModified":"2026-08-21T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Frozen Memory Is Not Enough: Rethinking External Memory as Extraction",
+ "inLanguage":"ja","datePublished":"2026-10-02T07:00:00+09:00","dateModified":"2026-10-02T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2608.17050","url":"https://liquitex-coder.github.io/worldtech-jp/articles/fa2aefb876ef.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">AI</a><span class="sep">›</span><span>Cross-Model Memory Transfer via Target-Side Reader Adaptation</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">AI</a><span class="sep">›</span><span>Frozen Memory Is Not Enough: Rethinking External Memory as Extraction</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>Cross-Model Memory Transfer via Target-Side Reader Adaptation</h1>
+      <h1>Frozen Memory Is Not Enough: Rethinking External Memory as Extraction</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/08/21 07:00</span><span>· 更新 2026/08/21</span>
+        <span>公開 2026/10/02 07:00</span><span>· 更新 2026/10/02</span>
       </div>
     </div>
     
@@ -74,16 +74,16 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2608.17050" rel="nofollow noopener">Cross-Model Memory Transfer via Target-Side Reader Adaptation</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2608.17050" rel="nofollow noopener">Frozen Memory Is Not Enough: Rethinking External Memory as Extraction</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2608.17050v2 Announce Type: replace-cross 
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2608.17050v3 Announce Type: replace-cross 
 Abstract: Methods for improving knowledge use in large language models typically fall into two regimes. Non-parametric retrieval offers flexible access to external knowledge, but adds retrieval latency, context overhead, and only shallow integration with the backbone. Parametric adaptation is efficient at inference time, but entangles knowledge with model weights and can be hard to update, audit, or transfer. Engram-style hashed memory occupies a middle regime: it stores learned information in an external, addressable table, yet consumes that table through a small learned reader. This raises a basic question: when such a memory is moved across backbones, what matters more, the frozen memory itself or the target-side reader? We study this question through cross-model frozen-memory extraction, in which a memory trained on a source model is frozen and attached to a different target model, with only a lightweight reader trained. Ablations show that learned memory content and correct addressing both matter, but the transferred table becomes useful only through a reader aligned to the target model. In downstream question answering tasks, a dual-layer, four-branch reader nearly closes the gap between same-model and cross-model reuse, achieving an average score of 38.8 under our controlled evaluation protocol. Moreover, when the provider reader is directly compatible with the target interface, the frozen artifact can provide substantial utility without target-side training, while optional reader adaptation yields further improvement. These results suggest that Engram can serve as a reusable external knowledge artifact, provided that the target has access to a compatible reader interface; target-side adaptation can further improve alignment when direct reader reuse is insufficient.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2608.17050v2 Announce Type: replace-cross 
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2608.17050v3 Announce Type: replace-cross 
 Abstract: Methods for improving knowledge use in large language models typically fall into two regimes. Non-parametric retrieval offers flexible access to external knowledge, but adds retrieval latency, context overhead, and only shallow integration with the backbone. Parametric adaptation is efficient at inference time, but entangles knowledge with model weights and can be hard to update, audit, or transfer. Engram-style hashed memory occupies a middle regime: it stores learned information in an external, addressable table, yet consumes that table through a small learned reader. This raises a basic question: when such a memory is moved across backbones, what matters more, the frozen memory itself or the target-side reader? We study this question through cross-model frozen-memory extraction, in which a memory trained on a source model is frozen and attached to a different target model, with only a lightweight reader trained. Ablations show that learned memory content and correct addressing both matter, but the transferred table becomes useful only through a reader aligned to the target model. In downstream question answering tasks, a dual-layer, four-branch reader nearly closes the gap between same-model and cross-model reuse, achieving an average score of 38.8 under our controlled evaluation protocol. Moreover, when the provider reader is directly compatible with the target interface, the frozen artifact can provide substantial utility without target-side training, while optional reader adaptation yields further improvement. These results suggest that Engram can serve as a reusable external knowledge artifact, provided that the target has access to a compatible reader interface; target-side adaptation can further improve alignment when direct reader reuse is insufficient.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2608.17050v2 Announce Type: replace-cross 
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2608.17050v3 Announce Type: replace-cross 
 Abstract: Methods for improving knowledge use in large language models typically fall into two regimes. Non-parametric retrieval offers flexible access to external knowledge, but adds retrieval latency, context overhead, and only shallow integration with the backbone. Parametric adaptation is efficient at inference time, but entangles knowledge with model weights and can be hard to update, audit, or transfer. Engram-style hashed memory occupies a middle regime: it stores learned information in an external, addressable table, yet consumes that table through a small learned reader. This raises a basic question: when such a memory is moved across backbones, what matters more, the frozen memory itself or the target-side reader? We study this question through cross-model frozen-memory extraction, in which a memory trained on a source model is frozen and attached to a different target model, with only a lightweight reader trained. Ablations show that learned memory content and correct addressing both matter, but the transferred table becomes useful only through a reader aligned to the target model. In downstream question answering tasks, a dual-layer, four-branch reader nearly closes the gap between same-model and cross-model reuse, achieving an average score of 38.8 under our controlled evaluation protocol. Moreover, when the provider reader is directly compatible with the target interface, the frozen artifact can provide substantial utility without target-side training, while optional reader adaptation yields further improvement. These results suggest that Engram can serve as a reusable external knowledge artifact, provided that the target has access to a compatible reader interface; target-side adaptation can further improve alignment when direct reader reuse is insufficient.</p><a href="https://arxiv.org/abs/2608.17050" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2608.17050" rel="nofollow noopener">https://arxiv.org/abs/2608.17050</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
@@ -91,7 +91,7 @@ Abstract: Methods for improving knowledge use in large language models typically
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="e089793486ec.html"><div class="sim">関連</div><div class="info"><b>Position: Collusion Risks Among AI Reasoning Agents Justify Certification Requirements for Making Market Decisions</b><div class="m">AI</div></div></a><a class="r" href="882336789f13.html"><div class="sim">関連</div><div class="info"><b>Position: Profiling Game Worlds by Transition Complexity</b><div class="m">AI</div></div></a><a class="r" href="497d1ba976bd.html"><div class="sim">関連</div><div class="info"><b>Large Language Models in Mental Health: A Systematic Review of Applications, Innovations, and Ethical Challenges</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="8008f7ae2f61.html"><div class="sim">関連</div><div class="info"><b>Improving OCR Faithfulness via Gated and Attenuated On-Policy Distillation</b><div class="m">AI</div></div></a><a class="r" href="9ec943da0996.html"><div class="sim">関連</div><div class="info"><b>AREX-2: Advancing Self-Improving Agents through Long-Horizon Reflective Tasks</b><div class="m">AI</div></div></a><a class="r" href="29122f347cc1.html"><div class="sim">関連</div><div class="info"><b>MoFlow: Multi-Objective Agentic Workflow Generation</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

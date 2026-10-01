@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bridge-WA: Predicting Where and How the World Changes for Robotic Action — NewsMatome (EN)</title>
-<meta name="description" content="Bridge-WA: Predicting Where and How the World Changes for Robotic Action — original-language edition. Japanese translation available.">
+<title>Bridge-WA: Learning Action-Relevant World Dynamics for Robotic Manipulation — NewsMatome (EN)</title>
+<meta name="description" content="Bridge-WA: Learning Action-Relevant World Dynamics for Robotic Manipulation — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/9c105fcdb9e2.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/9c105fcdb9e2.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/9c105fcdb9e2.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/9c105fcdb9e2.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Bridge-WA: Predicting Where and How the World Changes for Robotic Action">
+<meta property="og:title" content="Bridge-WA: Learning Action-Relevant World Dynamics for Robotic Manipulation">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Bridge-WA: Predicting Where and How the World Changes for Robotic Action",
- "inLanguage":"en","datePublished":"2026-07-04T07:00:00+09:00","dateModified":"2026-07-04T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Bridge-WA: Learning Action-Relevant World Dynamics for Robotic Manipulation",
+ "inLanguage":"en","datePublished":"2026-10-02T07:00:00+09:00","dateModified":"2026-10-02T07:00:00+09:00",
  "author":{"@type":"Organization","name":"ロボット技術担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.02195","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/9c105fcdb9e2.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#ef4444"></span>ロボット技術</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Bridge-WA: Predicting Where and How the World Changes for Robotic Action</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b></span></span><span>2026/07/04</span></div>
+    <h1>Bridge-WA: Learning Action-Relevant World Dynamics for Robotic Manipulation</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b></span></span><span>2026/10/02</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/9c105fcdb9e2.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.02195" rel="nofollow noopener">https://arxiv.org/abs/2607.02195</a></span></div>
-  <div class="article-body"><p>arXiv:2607.02195v1 Announce Type: new 
-Abstract: General-purpose vision-language-action models benefit from large vision-language priors, but effective manipulation also requires anticipating action-relevant scene changes. Existing world-action models often rely on large generative world models or dense future rollouts, which are expensive and spend capacity on visual details weakly coupled to control. We present Bridge-WA, a lightweight world-action framework that distills a frozen future-change teacher into three compact priors: future tokens for intended outcomes, change maps for intervention support, and motion-flow maps for local transition direction. A WorldBridge conditions the action transformer on these priors through multi-source attention memories and spatial-temporal biases, while the teacher model is removed at inference. Across VLABench, RoboTwin2.0, LIBERO-Plus and real-robot evaluations, Bridge-WA improves task success, progress, and robustness, with particularly clear gains under out-of-distribution visual shifts. By focusing action generation on where and how the scene will change, Bridge-WA suppresses nuisance appearance factors such as background, lighting, and distractors, leading to better generalization without deployment-time dense future-image generation. Code and visualizations are available at: https://hcplab-sysu.github.io/BRIDGE-WA .</p></div>
+  <div class="article-body"><p>arXiv:2607.02195v2 Announce Type: replace 
+Abstract: General-purpose VLA models leverage large-scale vision-language priors to understand scenes and instructions, but primarily generate actions directly from the current observation. WAMs further model future scene states, offering a broader view of how the environment may evolve. However, for robotic manipulation, predicting the entire future scene can introduce information beyond what is necessary for action generation; more importantly, effective actions require knowing not only what the scene may become, but also where and how relevant changes unfold. To bridge action generation with these action-relevant aspects of the world, we present Bridge-WA, a general world-action framework that learns complementary representations of future states, spatial changes, and local motion. Specifically, Bridge-WA consists of a Latent World Dynamics Module (LWDM) and WorldBridge. LWDM predicts future states, spatial changes, and local motion from VLM outputs, supervised by corresponding world targets. The WorldBridge are embedded into the action transformer and inject layer-specific combinations of these world priors through multi-source attention, spatiotemporal biases, and reliability-gated feature modulation. This design grounds action generation in action-relevant future dynamics while adaptively regulating world guidance, enabling robust generalization to visual disturbances and viewpoint shifts. We evaluate Bridge-WA on four simulation benchmarks and the real robots, where it achieves maximum success-rate improvements of 11.1%, 42.0%, 3.7%, 23.4%, and 11.1%, respectively, and achieves state-of-the-art average success rates on LIBERO-Dynamic, RoboTwin 2.0 and real-world. In particular, Bridge-WA demonstrates strong generalization to visual variations and viewpoint shifts in both simulation and real-world settings. Code and visualizations are available at: https://hcplab-sysu.github.io/BRIDGE-WA.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>
