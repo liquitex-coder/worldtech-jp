@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FlashNav: Ultra-Fast Policy Training for Robot Navigation within 20 Seconds — NewsMatome</title>
-<meta name="description" content="FlashNav: Ultra-Fast Policy Training for Robot Navigation within 20 Seconds（EN→JA 翻訳・出典付き）">
+<title>FlashNav: Training Deployable Robot Navigation Policies in Seconds — NewsMatome</title>
+<meta name="description" content="FlashNav: Training Deployable Robot Navigation Policies in Seconds（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/fa022642016f.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/fa022642016f.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/fa022642016f.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="FlashNav: Ultra-Fast Policy Training for Robot Navigation within 20 Seconds">
-<meta property="og:description" content="FlashNav: Ultra-Fast Policy Training for Robot Navigation within 20 Seconds（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="FlashNav: Training Deployable Robot Navigation Policies in Seconds">
+<meta property="og:description" content="FlashNav: Training Deployable Robot Navigation Policies in Seconds（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"FlashNav: Ultra-Fast Policy Training for Robot Navigation within 20 Seconds",
- "inLanguage":"ja","datePublished":"2026-06-17T07:00:00+09:00","dateModified":"2026-06-17T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"FlashNav: Training Deployable Robot Navigation Policies in Seconds",
+ "inLanguage":"ja","datePublished":"2026-10-03T07:00:00+09:00","dateModified":"2026-10-03T07:00:00+09:00",
  "author":{"@type":"Organization","name":"ロボット技術担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.15846","url":"https://liquitex-coder.github.io/worldtech-jp/articles/fa022642016f.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">ロボット技術</a><span class="sep">›</span><span>FlashNav: Ultra-Fast Policy Training for Robot Navigation within 20 Seconds</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">ロボット技術</a><span class="sep">›</span><span>FlashNav: Training Deployable Robot Navigation Policies in Seconds</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>FlashNav: Ultra-Fast Policy Training for Robot Navigation within 20 Seconds</h1>
+      <h1>FlashNav: Training Deployable Robot Navigation Policies in Seconds</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/06/17 07:00</span><span>· 更新 2026/06/17</span>
+        <span>公開 2026/10/03 07:00</span><span>· 更新 2026/10/03</span>
       </div>
     </div>
     
@@ -74,24 +74,24 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2606.15846" rel="nofollow noopener">FlashNav: Ultra-Fast Policy Training for Robot Navigation within 20 Seconds</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2606.15846" rel="nofollow noopener">FlashNav: Training Deployable Robot Navigation Policies in Seconds</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2606.15846v1 Announce Type: new 
-Abstract: Deep reinforcement learning has shown strong potential for robot navigation, but its practical deployment is still limited by the long wall-clock cost of policy training. This paper presents FlashNav, a GPU-first framework for ultra-fast range-based robot navigation training. To the best of our knowledge, FlashNav is the first DRL-based robot navigation framework that reaches seconds-level policy training, with the fastest deployable policy trained in less than 20 seconds. The key idea is to align simulation with the navigation MDP: FlashNav preserves the essential components for velocity-level navigation, including occupancy geometry, range sensing, goal-conditioned control, robot motion dynamics, collision handling, termination, and reset, while removing unnecessary rendering and high-fidelity physical details from the training loop. Built on a batched bitmap simulator and a fully GPU-resident training pipeline with our FastDSAC learner, FlashNav generates massive parallel navigation transitions entirely on GPU. Experiments on TurtleBot2 and Unitree Go2 show that FlashNav achieves a 100\% success-rate below 20 seconds on an RTX 5090 and remains within tens of seconds across desktop GPUs. The learned policies further transfer to physical wheeled and legged robots in static and dynamic indoor scenes, demonstrating that DRL-based navigation can be trained at seconds-level speed while preserving deployable obstacle-avoidance behavior.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2606.15846v1 Announce Type: new 
-Abstract: Deep reinforcement learning has shown strong potential for robot navigation, but its practical deployment is still limited by the long wall-clock cost of policy training. This paper presents FlashNav, a GPU-first framework for ultra-fast range-based robot navigation training. To the best of our knowledge, FlashNav is the first DRL-based robot navigation framework that reaches seconds-level policy training, with the fastest deployable policy trained in less than 20 seconds. The key idea is to align simulation with the navigation MDP: FlashNav preserves the essential components for velocity-level navigation, including occupancy geometry, range sensing, goal-conditioned control, robot motion dynamics, collision handling, termination, and reset, while removing unnecessary rendering and high-fidelity physical details from the training loop. Built on a batched bitmap simulator and a fully GPU-resident training pipeline with our FastDSAC learner, FlashNav generates massive parallel navigation transitions entirely on GPU. Experiments on TurtleBot2 and Unitree Go2 show that FlashNav achieves a 100\% success-rate below 20 seconds on an RTX 5090 and remains within tens of seconds across desktop GPUs. The learned policies further transfer to physical wheeled and legged robots in static and dynamic indoor scenes, demonstrating that DRL-based navigation can be trained at seconds-level speed while preserving deployable obstacle-avoidance behavior.</div>
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2606.15846v2 Announce Type: replace 
+Abstract: Training Deep Reinforcement Learning (DRL) navigation policies for different robot configurations remains time-consuming. We present FlashNav, a GPU-based framework that trains robot-specific navigation policies within tens of seconds. A unified robot specification configures a lightweight simulator for batched motion updates, range sensing, and footprint collision checking over a shared occupancy map. The framework supports nonconvex footprints, different sensor configurations and drive types. Blockwise ray queries and selective observation recomputation after resets reduce simulation overhead, while GPU-resident replay and overlapping experience collection and learner updates support efficient off-policy training. Experiments covered five robot configurations and three computing platforms. With FastDSAC on a single RTX 5090 GPU, FlashNav can train a deployable navigation policy in under 30 seconds. FlashNav achieved the highest success rate and score in the benchmark comparison. The selected policies were deployed on wheeled, quadrupedal, humanoid, and irregularly shaped robots without additional policy training.</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2606.15846v2 Announce Type: replace 
+Abstract: Training Deep Reinforcement Learning (DRL) navigation policies for different robot configurations remains time-consuming. We present FlashNav, a GPU-based framework that trains robot-specific navigation policies within tens of seconds. A unified robot specification configures a lightweight simulator for batched motion updates, range sensing, and footprint collision checking over a shared occupancy map. The framework supports nonconvex footprints, different sensor configurations and drive types. Blockwise ray queries and selective observation recomputation after resets reduce simulation overhead, while GPU-resident replay and overlapping experience collection and learner updates support efficient off-policy training. Experiments covered five robot configurations and three computing platforms. With FastDSAC on a single RTX 5090 GPU, FlashNav can train a deployable navigation policy in under 30 seconds. FlashNav achieved the highest success rate and score in the benchmark comparison. The selected policies were deployed on wheeled, quadrupedal, humanoid, and irregularly shaped robots without additional policy training.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2606.15846v1 Announce Type: new 
-Abstract: Deep reinforcement learning has shown strong potential for robot navigation, but its practical deployment is still limited by the long wall-clock cost of policy training. This paper presents FlashNav, a GPU-first framework for ultra-fast range-based robot navigation training. To the best of our knowledge, FlashNav is the first DRL-based robot navigation framework that reaches seconds-level policy training, with the fastest deployable policy trained in less than 20 seconds. The key idea is to align simulation with the navigation MDP: FlashNav preserves the essential components for velocity-level navigation, including occupancy geometry, range sensing, goal-conditioned control, robot motion dynamics, collision handling, termination, and reset, while removing unnecessary rendering and high-fidelity physical details from the training loop. Built on a batched bitmap simulator and a fully GPU-resident training pipeline with our FastDSAC learner, FlashNav generates massive parallel navigation transitions entirely on GPU. Experiments on TurtleBot2 and Unitree Go2 show that FlashNav achieves a 100\% success-rate below 20 seconds on an RTX 5090 and remains within tens of seconds across desktop GPUs. The learned policies further transfer to physical wheeled and legged robots in static and dynamic indoor scenes, demonstrating that DRL-based navigation can be trained at seconds-level speed while preserving deployable obstacle-avoidance behavior.</p><a href="https://arxiv.org/abs/2606.15846" rel="nofollow noopener">原論文を読む →</a></div>
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2606.15846v2 Announce Type: replace 
+Abstract: Training Deep Reinforcement Learning (DRL) navigation policies for different robot configurations remains time-consuming. We present FlashNav, a GPU-based framework that trains robot-specific navigation policies within tens of seconds. A unified robot specification configures a lightweight simulator for batched motion updates, range sensing, and footprint collision checking over a shared occupancy map. The framework supports nonconvex footprints, different sensor configurations and drive types. Blockwise ray queries and selective observation recomputation after resets reduce simulation overhead, while GPU-resident replay and overlapping experience collection and learner updates support efficient off-policy training. Experiments covered five robot configurations and three computing platforms. With FastDSAC on a single RTX 5090 GPU, FlashNav can train a deployable navigation policy in under 30 seconds. FlashNav achieved the highest success rate and score in the benchmark comparison. The selected policies were deployed on wheeled, quadrupedal, humanoid, and irregularly shaped robots without additional policy training.</p><a href="https://arxiv.org/abs/2606.15846" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2606.15846" rel="nofollow noopener">https://arxiv.org/abs/2606.15846</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
     <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="382fddd10128.html"><div class="sim">関連</div><div class="info"><b>A Definition of Good Explanations and the Challenges Explaining LLM Outputs</b><div class="m">AI</div></div></a><a class="r" href="5313cfc573a5.html"><div class="sim">関連</div><div class="info"><b>Dr-DCI: Scaling Direct Corpus Interaction via Dynamic Workspace Expansion</b><div class="m">AI</div></div></a><a class="r" href="abd21f614eae.html"><div class="sim">関連</div><div class="info"><b>Relational Structural Causal Models</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="1d9ebfbb76c9.html"><div class="sim">関連</div><div class="info"><b>Heavy-Tailed Memory Traces in Long-Horizon Language Agents</b><div class="m">AI</div></div></a><a class="r" href="3e14a998894f.html"><div class="sim">関連</div><div class="info"><b>When Do Causal World Models Help Modular LLM Agents</b><div class="m">AI</div></div></a><a class="r" href="b044d2469ff2.html"><div class="sim">関連</div><div class="info"><b>From Proposal to Verified Effect: Praxa, an Evidence-Bound Harness for Governed AI Agent Execution</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

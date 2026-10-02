@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beyond Layers: Position-Resolved Gradient Conflict and Position-Aware Modulation for Unified Multimodal Models — NewsMatome (EN)</title>
+<meta name="description" content="Beyond Layers: Position-Resolved Gradient Conflict and Position-Aware Modulation for Unified Multimodal Models — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/2607cab18739.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/2607cab18739.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/2607cab18739.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/2607cab18739.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Beyond Layers: Position-Resolved Gradient Conflict and Position-Aware Modulation for Unified Multimodal Models">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Beyond Layers: Position-Resolved Gradient Conflict and Position-Aware Modulation for Unified Multimodal Models",
+ "inLanguage":"en","datePublished":"2026-10-03T07:00:00+09:00","dateModified":"2026-10-03T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.38485","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/2607cab18739.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/2607cab18739.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Beyond Layers: Position-Resolved Gradient Conflict and Position-Aware Modulation for Unified Multimodal Models</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/03</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/2607cab18739.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.38485" rel="nofollow noopener">https://arxiv.org/abs/2609.38485</a></span></div>
+  <div class="article-body"><p>arXiv:2609.38485v1 Announce Type: cross 
+Abstract: Unified multimodal models (UMMs) train image understanding and autoregressive image generation on shared parameters, and the two objectives are known to interfere. Existing diagnoses and remedies operate at the resolution of layers or experts, measuring conflict per layer and resolving it by separating parameters. We argue that this resolution hides an orthogonal axis. Generation in a UMM is next-token prediction over a raster sequence of visual tokens whose roles vary systematically with position, so how strongly a generation gradient interferes with understanding should depend on where in the sequence it originates. We introduce a position-resolved interference map that attributes understanding-generation gradient conflict to visual-token positions within every layer, computed from a single backward pass at $1.2\times$ the cost of a standard backward pass. On Show-o and Janus-Pro, position explains a large share of conflict variance after controlling for depth (partial $\eta^2=0.31$ vs. $0.35$ for layer on Show-o; $0.15$ vs. $0.30$ on Janus-Pro): the first quarter of the sequence has a mean gradient cosine of $-0.18$ against understanding, the last quarter $-0.02$. The dependence survives per-position gradient-norm normalization, retaining $80%$ of its effect size, and conflict strength tracks semantic content (Spearman $\rho=0.64$). Building on the map, we propose position-aware modulation (PAM), which removes the anti-aligned component of generation gradients only at high-conflict positions without changing the architecture. Under a matched trainable-parameter budget, PAM improves over layer-wise separation by $+21$ MME and $+2.4$ GenEval points on Show-o while matching it on POPE and overall FID; a random-position control recovers about $31%$ of the gain. Position-based and layer-based separation are complementary degrees of freedom and can be combined.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

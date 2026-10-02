@@ -17,7 +17,7 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"Distill What You Trust: Reliability-Aware Multi-Teacher On-Policy Distillation",
- "inLanguage":"en","datePublished":"2026-09-23T07:00:00+09:00","dateModified":"2026-09-23T07:00:00+09:00",
+ "inLanguage":"en","datePublished":"2026-10-03T07:00:00+09:00","dateModified":"2026-10-03T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2609.23697","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/0bbaa782e125.html"}
@@ -35,11 +35,11 @@
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
     <h1>Distill What You Trust: Reliability-Aware Multi-Teacher On-Policy Distillation</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/23</span></div>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/03</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/0bbaa782e125.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.23697" rel="nofollow noopener">https://arxiv.org/abs/2609.23697</a></span></div>
-  <div class="article-body"><p>arXiv:2609.23697v1 Announce Type: cross 
-Abstract: Multi-teacher on-policy distillation allows a student to learn from complementary specialists on its own trajectories. Domain-routed approaches, however, select one teacher per example and keep it fixed throughout the response. This design both depends on labels that mixed training corpora often lack and cannot adapt teacher selection when the expertise required changes within a trajectory. We propose \textbf{TrustMOPD}, which replaces example-level teacher selection with label-free, token-level supervision allocation. At each student-generated prefix, TrustMOPD uses each specialist&#x27;s RL-induced displacement from a shared pre-RL reference as a proxy for local reliability, calibrates these scores across teachers, and constructs a weighted distillation target. Across mathematics, code, and instruction following, TrustMOPD outperforms the strongest label-free baseline, increasing the recovery ratio from $54.4\%$ to $91.5\%$ on \textsc{SingleCap} and from $54.5\%$ to $98.0\%$ on \textsc{MultiCap}, while approaching label-based MOPD on \textsc{SingleCap}. Randomizing token-level weights independently of the student-generated prefix performs no better than uniform weighting, supporting the importance of conditioning supervision on the evolving generation context.</p></div>
+  <div class="article-body"><p>arXiv:2609.23697v2 Announce Type: replace-cross 
+Abstract: Multi-teacher on-policy distillation allows a student to learn from complementary specialists on its own trajectories. Domain-routed approaches, however, select one teacher per example and keep it fixed throughout the response. This design both depends on domain labels that mixed training corpora often lack and cannot adapt teacher selection when the expertise required changes within a trajectory. We observe that each specialist deviates more from a shared reference on in-domain prompts than on out-of-domain prompts, on average. Based on this observation, we propose \textbf{TrustMOPD}, which replaces example-level teacher selection with label-free, token-level supervision allocation. At each student-generated prefix, TrustMOPD measures this displacement in next-token preferences, calibrates its magnitude across teachers, and uses the resulting scores as proxies for local reliability to weight teacher-specific distillation losses. Evaluated across mathematics, code, and instruction following, TrustMOPD closes 91.5\% and 98.0\% of the overall-score gap between the initial student and oracle-routed teachers when trained on \textsc{SingleCap} and \textsc{MultiCap}, respectively, compared with 54.4\% and 54.5\% for the strongest label-free baseline in each setting. On \textsc{SingleCap}, it approaches label-based MOPD without using domain labels.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

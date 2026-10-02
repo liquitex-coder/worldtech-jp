@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TwinMark: A Unified Watermark for Provable Survival Under Feature and Logit Distillation — NewsMatome (EN)</title>
-<meta name="description" content="TwinMark: A Unified Watermark for Provable Survival Under Feature and Logit Distillation — original-language edition. Japanese translation available.">
+<title>Steal the Knowledge, Inherit the Mark: TwinMark for Distillation Watermarking via Second Moments and Class Multiplexing — NewsMatome (EN)</title>
+<meta name="description" content="Steal the Knowledge, Inherit the Mark: TwinMark for Distillation Watermarking via Second Moments and Class Multiplexing — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/400dc1cd2cd6.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/400dc1cd2cd6.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/400dc1cd2cd6.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/400dc1cd2cd6.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TwinMark: A Unified Watermark for Provable Survival Under Feature and Logit Distillation">
+<meta property="og:title" content="Steal the Knowledge, Inherit the Mark: TwinMark for Distillation Watermarking via Second Moments and Class Multiplexing">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"TwinMark: A Unified Watermark for Provable Survival Under Feature and Logit Distillation",
- "inLanguage":"en","datePublished":"2026-09-18T07:00:00+09:00","dateModified":"2026-09-18T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Steal the Knowledge, Inherit the Mark: TwinMark for Distillation Watermarking via Second Moments and Class Multiplexing",
+ "inLanguage":"en","datePublished":"2026-10-03T07:00:00+09:00","dateModified":"2026-10-03T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2609.19011","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/400dc1cd2cd6.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>TwinMark: A Unified Watermark for Provable Survival Under Feature and Logit Distillation</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/18</span></div>
+    <h1>Steal the Knowledge, Inherit the Mark: TwinMark for Distillation Watermarking via Second Moments and Class Multiplexing</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/03</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/400dc1cd2cd6.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.19011" rel="nofollow noopener">https://arxiv.org/abs/2609.19011</a></span></div>
-  <div class="article-body"><p>arXiv:2609.19011v1 Announce Type: new 
-Abstract: We propose TwinMark, a watermarking scheme that reads a single SHAKE128 secret through two complementary linear functionals of model-output summaries: a covariance projector against the carrier-set covariance (cov-Feat) and a class-conditional Fisher-aligned linear carrier decoded from class-mean logits (cc-FALC). The two readouts share one bit vector and cover the two extraction surfaces of a deployed vision model: a classifier API attacked by KL knowledge distillation (KD) (Std. KL-KD), and a representation-only host attacked by feature-matching KD (FM-KD). Each readout admits a teacher-measurable a posteriori certificate that lower-bounds post-distillation detection power, and the two channels combine under a regime-restricted OR rule whose test statistic (calibrated null or bit vote) is selected by the exposed surface. cov-Feat admits a rank-blind operator-norm certificate, cc-FALC admits a centered-logit-gap certificate that decouples bit capacity from class count: at K=1024 in m=100 classes (a 10.24x over-encoding), the bit-vote attains z=23.0 sigma at a teacher-accuracy cost of +0.9+-0.2%p. Across 13 attacks on CIFAR-10, CIFAR-100, and Mini-ImageNet, TwinMark verifies on every cell whose post-attack model retains task utility, survives cross-architecture distillation onto ResNet-18/50, VGG-16, and MobileNet-V3, and ports to GNSS few-shot, VOC detection, ISIC segmentation, and STL-10 SimCLR.</p></div>
+  <div class="article-body"><p>arXiv:2609.19011v2 Announce Type: replace 
+Abstract: Knowledge distillation can copy a deployed model by training a student on its logits or features. The student inherits a watermark only through the output it imitates. Both outputs therefore need a mark, yet most distillation watermarks cover only one. TwinMark instead writes one secret payload into what each distillation objective preserves, the second moment of normalized features and the class-mean logits. Both marks use linear readouts that give sufficient conditions for bit recovery on fixed audit inputs, while detection is tested separately under a declared null. In a ten-seed CIFAR-100 study, each mark is detected in every student that imitates its output and stays at chance otherwise. Marking costs the teacher 1.3 accuracy points and the audited embedding of feature-distilled students 4.4 nearest-neighbor points. Second-moment bounds certify 50 to 60 of 64 bits in every feature-distilled student, whereas pointwise bounds and the evaluated logit bounds certify none. Class multiplexing, which signs the payload per class, raises the logit decoder&#x27;s rank ceiling and lowers bit errors at equal energy, and even at 10x over-encoding, 1,024 bits on 100 classes stay detectable in every student. Detection extends to 39 of 40 students of four other architectures and to segmentation, object detection and satellite-navigation jammer detection and classification. These results establish output-matched inheritance under the evaluated protocols, not resistance to all utility-preserving transformations.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

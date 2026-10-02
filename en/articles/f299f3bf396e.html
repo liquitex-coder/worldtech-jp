@@ -17,7 +17,7 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"What Survives When You Compress a Recursive Reasoner for the Edge?",
- "inLanguage":"en","datePublished":"2026-06-27T07:00:00+09:00","dateModified":"2026-06-27T07:00:00+09:00",
+ "inLanguage":"en","datePublished":"2026-10-03T07:00:00+09:00","dateModified":"2026-10-03T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.26488","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/f299f3bf396e.html"}
@@ -35,11 +35,11 @@
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
     <h1>What Survives When You Compress a Recursive Reasoner for the Edge?</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/06/27</span></div>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/03</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/f299f3bf396e.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.26488" rel="nofollow noopener">https://arxiv.org/abs/2606.26488</a></span></div>
-  <div class="article-body"><p>arXiv:2606.26488v1 Announce Type: new 
-Abstract: Recursive reasoning models can solve complex structured tasks with only a few million parameters by repeatedly updating a latent state. Deploying these models on edge hardware requires significant compression, but unlike conventional sequence models, quantization errors compound across recursive reasoning cycles rather than across output tokens. As a result, standard intuitions about compression fail to apply. In this work, we ask what survives when recursive reasoners are compressed. Across a full precision sweep, three tasks, and two recursive architectures, we find that aggressive compression preserves local prediction but destroys global reasoning: cell accuracy holds while puzzle-exact accuracy collapses to zero under naive INT4 pruning, distillation, and linear attention alike. Token-level objectives, including quantization-aware training, cannot repair it. The collapse is architectural -- it strikes MLP-mixing recursion but not attention on the same task -- and we reverse it with per-channel calibrated INT4 without retraining. We also introduce carry-trajectory fidelity, the cosine similarity to the full-precision reasoning path, as a label-free signal that predicts this damage and its recovery before a task evaluation. The combined result is a deployment recipe: flash-streamed embeddings remove a 99.4MB bottleneck, INT8 at one cycle matches full-depth accuracy at 6x fewer FLOPs (8MB SoC), and calibrated INT4 fits a 4MB microcontroller.</p></div>
+  <div class="article-body"><p>arXiv:2606.26488v2 Announce Type: replace 
+Abstract: Recursive reasoning models solve hard structured tasks with a few million parameters by iterating a latent state, but deploying them on edge hardware means compressing them -- and quantization noise compounds across recursive cycles rather than accumulating over output tokens, so single-pass intuitions fail. Here, we ask what survives. Across a full precision sweep and three tasks, aggressive compression preserves local prediction but destroys global reasoning: pruning, distillation, and linear attention drive puzzle-exact accuracy to zero while cell accuracy holds. Naive INT4 is different: its damage is architectural, striking MLP-mixing recursion but not attention on the same task, and per-channel calibration reverses it without retraining, where quantization-aware training does not. We also introduce carry-trajectory fidelity, the cosine similarity to the full-precision reasoning path, as a label-free signal that predicts both the damage and the recovery before any task evaluation, with a threshold that transfers across tasks. The result is a deployment recipe: flash-streamed embeddings remove a 99.4 MB bottleneck, one recursive cycle matches full-depth accuracy at 6x fewer FLOPs, and calibrated INT4 brings the backbone to 3.3 MB, inside a 4 MB budget.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sharp Stability Threshold and Certification for Designing Stable Residual Architectures — NewsMatome (EN)</title>
-<meta name="description" content="Sharp Stability Threshold and Certification for Designing Stable Residual Architectures — original-language edition. Japanese translation available.">
+<title>Certifying Residual Architectures from Their Primitives: A Sharp Stability Threshold — NewsMatome (EN)</title>
+<meta name="description" content="Certifying Residual Architectures from Their Primitives: A Sharp Stability Threshold — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/e5800a23a091.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/e5800a23a091.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/e5800a23a091.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/e5800a23a091.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Sharp Stability Threshold and Certification for Designing Stable Residual Architectures">
+<meta property="og:title" content="Certifying Residual Architectures from Their Primitives: A Sharp Stability Threshold">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Sharp Stability Threshold and Certification for Designing Stable Residual Architectures",
- "inLanguage":"en","datePublished":"2026-07-19T07:00:00+09:00","dateModified":"2026-07-19T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Certifying Residual Architectures from Their Primitives: A Sharp Stability Threshold",
+ "inLanguage":"en","datePublished":"2026-10-03T07:00:00+09:00","dateModified":"2026-10-03T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.14576","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/e5800a23a091.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Sharp Stability Threshold and Certification for Designing Stable Residual Architectures</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/19</span></div>
+    <h1>Certifying Residual Architectures from Their Primitives: A Sharp Stability Threshold</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/03</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/e5800a23a091.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.14576" rel="nofollow noopener">https://arxiv.org/abs/2607.14576</a></span></div>
-  <div class="article-body"><p>arXiv:2607.14576v1 Announce Type: new 
-Abstract: We propose \emph{the sublinear-growth principle} for deep residual architectures -- a sharp stability threshold on the input-magnitude exponent of every residual block&#x27;s velocity field: $$\|v(x, t)\| \leq c\,\|x\|^q + b, \qquad q \in [0, 1].$$ The threshold $q = 1$ is established via two independent arguments. Classical ODE theory gives a global forward flow on $[0, T]$ at $q \le 1$ and exhibits divergent velocity fields at any $q &gt; 1$. The optimal-control analysis, via the Hamilton-Jacobi-Bellman equation, sharpens this to a selection statement: the training optimum is bang-bang on the boundary of the admissible class, so the optimum at $q &gt; 1$ blows up while the optimum at $q \le 1$ is safe by construction. The exponent criterion $q \le 1$ is thereby a necessary and sufficient condition for stable training. It clarifies architectural placements that ensure the stability of training and inference, explaining, for instance, the stabilizing role of layer normalization. The sublinear-growth velocity fields form \emph{the right function space} on which forward dynamics, adjoint sensitivity, and architectural composition are all well-controlled. An arithmetic of input-magnitude exponents under the five operations that build residual blocks enables efficient certification of $q_k \le 1$ at the level of architectural primitives, in place of ad hoc trial and error in the search for stable neural architectural designs. A parameter-free modification reduces the supercritical Mamba block from $q = 5$ to $q = 1$ without layer normalization, demonstrating this point. Experiments on Mamba and PatchTST confirm that the $q \le 1$ variants train stably: the criterion is the input-magnitude exponent, not the presence of a normalization layer.</p></div>
+  <div class="article-body"><p>arXiv:2607.14576v2 Announce Type: replace 
+Abstract: Whether a deep residual architecture trains stably is usually determined by training it, which is expensive and answers the question only for the architecture, depth, and floating-point format tested. In practice, stability is secured by heuristics for where to place normalization and which type to use, supported by experiments but lacking a common principle. We show that stability can instead be certified before training, directly from the architectural primitives of a residual block, as an explicit function of depth and floating-point format. The certificate has two elements: (a) a power-law growth bound, $|v(x)|\le c|x|^q+b$, whose exponent $q$ is computed from the block&#x27;s primitives by an arithmetic of exponents (forward); and (b) gradient bounds from a Lipschitz condition on the block over reachable states (backward). The certificate determines when the state can reach the largest finite floating-point value $M$: for $q\le1$, overflow requires at least order $\log M$ layers, whereas for $q&gt;1$ it can occur within order $\log_q\log M$ layers; the threshold $q=1$ is sharp. Every normalization and bounded activation sets $q=0$, and the arithmetic identifies minimal modifications that bring a block from $q&gt;1$ to $q=1$ without normalization. Empirically, in forecasting, only $q&gt;1$ blocks blow up, as predicted by the forward certificate. In GPT-2 on OpenWebText, $q=1$ blocks without normalization also diverge: the forward certificate holds, while the backward one fails in the attention block with the largest query-key coefficient. Relaxing normalization from $q=0$ to $q=1$ improves out-of-distribution generalization in operator learning and accuracy in time-series forecasting. As deep models become more complex and costly to train, our results provide a way to assess the trade-off between stability and representational flexibility directly from block primitives, before training.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

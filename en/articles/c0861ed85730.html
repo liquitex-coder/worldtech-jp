@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Triangular Resampling for Long-Horizon Motion Generation — NewsMatome (EN)</title>
+<meta name="description" content="Triangular Resampling for Long-Horizon Motion Generation — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/c0861ed85730.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/c0861ed85730.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/c0861ed85730.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/c0861ed85730.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Triangular Resampling for Long-Horizon Motion Generation">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Triangular Resampling for Long-Horizon Motion Generation",
+ "inLanguage":"en","datePublished":"2026-10-03T07:00:00+09:00","dateModified":"2026-10-03T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.34697","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/c0861ed85730.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/c0861ed85730.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Triangular Resampling for Long-Horizon Motion Generation</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/10/03</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/c0861ed85730.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.34697" rel="nofollow noopener">https://arxiv.org/abs/2609.34697</a></span></div>
+  <div class="article-body"><p>arXiv:2609.34697v2 Announce Type: replace-cross 
+Abstract: We introduce Triangular Resampling (TR), a post-training method for mitigating long-horizon error accumulation in motion diffusion models. Built on FloodDiffusion&#x27;s triangular denoising schedule, TR addresses the mismatch between ground-truth-derived training windows and model-generated inference states. Replacing only completed motion history leaves this mismatch unresolved in partially denoised states within the active window. TR therefore extends rollout-based training to these states, using ground-truth clamping to limit excessive drift. For each replayed sample, TR draws one denoising threshold, shared across latent positions and replay updates, and replays multi-step triangular denoising without gradient tracking. After each update, states below the threshold are replaced with noise-matched ground truth, while those at or above it retain model predictions. The resulting latent window enters the standard training update. This rollout construction supports both supervised training (TR) and distribution matching (TR-DMD). On 120-second motion generation from HumanML3D test prompts, TR and TR-DMD achieve state-of-the-art FID AUC within their respective non-DMD and DMD comparison groups. Supervised TR reduces FID AUC by 40.9% and FID degradation slope by 55.3% relative to matched post-training without replay.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

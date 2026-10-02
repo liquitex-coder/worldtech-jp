@@ -17,8 +17,8 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"Equivariance Breaks the Learning Rate",
- "inLanguage":"en","datePublished":"2026-10-02T07:00:00+09:00","dateModified":"2026-10-02T07:00:00+09:00",
- "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "inLanguage":"en","datePublished":"2026-10-03T07:00:00+09:00","dateModified":"2026-10-03T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2609.08381","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/c08214237e01.html"}
 </script>
@@ -32,13 +32,13 @@
 </div></header>
 <div class="wrap"><article class="article">
   <div class="article-head">
-    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
     <h1>Equivariance Breaks the Learning Rate</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/10/02</span></div>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/03</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/c08214237e01.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.08381" rel="nofollow noopener">https://arxiv.org/abs/2609.08381</a></span></div>
-  <div class="article-body"><p>arXiv:2609.08381v2 Announce Type: replace-cross 
+  <div class="article-body"><p>arXiv:2609.08381v2 Announce Type: replace 
 Abstract: Equivariant networks are commonly trained with Adam, yet recent work reports that matrix structured optimizers such as Muon can perform better, with the reasons for these gains only partly understood. We identify one source of this difference inside equivariant layers. An equivariant layer learns one channel mixing matrix $W_l$ per degree $l$, which we call an irrep block, and shares it across the $2l+1$ components, giving the expanded map $W_l \otimes I_{2l+1}$. This sharing sums gradient contributions across components and can produce different update scales under SGD. Adam&#x27;s entrywise normalization reduces sensitivity to gradient scale, but neither optimizer directly controls the effective step size of each block. A single learning rate can therefore produce different effective step sizes across blocks. Muon instead controls the effective step size by approximately equalizing the singular values of each momentum matrix. We normalize each irrep block update by a single scalar, preserving its singular value ratios while letting the learning rate control its size. We implement this with spectral normalization or a simpler root-mean-square normalization. We evaluate spectral normalization in a controlled $\mathrm{SO}(3)$-equivariant model with a matched non-equivariant model. In this setting, the step size mismatch grows with width in the equivariant model but not in the non-equivariant model. We evaluate both variants across molecular force prediction on the rMD17 and MD22 datasets, QM9 molecular property prediction, and charged particle dynamics. Across these applications, block normalization generally improves Adam and closes part of its gap to Muon. These results highlight an overlooked interaction between equivariant architectures and their optimizers. Studying and designing the two together may help explain and address training difficulties often attributed to equivariance itself.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
