@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AEGIS: Anchor-Enforced Gradient Isolation for Knowledge-Preserving Vision-Language-Action Fine-Tuning — NewsMatome (EN)</title>
+<meta name="description" content="AEGIS: Anchor-Enforced Gradient Isolation for Knowledge-Preserving Vision-Language-Action Fine-Tuning — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/705e479b8b6c.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/705e479b8b6c.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/705e479b8b6c.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/705e479b8b6c.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AEGIS: Anchor-Enforced Gradient Isolation for Knowledge-Preserving Vision-Language-Action Fine-Tuning">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"AEGIS: Anchor-Enforced Gradient Isolation for Knowledge-Preserving Vision-Language-Action Fine-Tuning",
+ "inLanguage":"en","datePublished":"2026-10-04T07:00:00+09:00","dateModified":"2026-10-04T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2604.16067","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/705e479b8b6c.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/705e479b8b6c.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>AEGIS: Anchor-Enforced Gradient Isolation for Knowledge-Preserving Vision-Language-Action Fine-Tuning</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/04</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/705e479b8b6c.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2604.16067" rel="nofollow noopener">https://arxiv.org/abs/2604.16067</a></span></div>
+  <div class="article-body"><p>arXiv:2604.16067v2 Announce Type: replace 
+Abstract: Fine-tuning pre-trained Vision-Language Models (VLMs) for robotic manipulation introduces a fundamental stability-plasticity dilemma: continuous flow-matching action experts backpropagate concentrated, low-rank regression gradients into transformer backbones trained on high-dimensional cross-entropy objectives. This cross-modal gradient asymmetry rapidly degrades pre-trained visual reasoning. Existing solutions either disconnect continuous gradient flow via stop-gradients or constrain updates via LoRA, which restricts update rank but remains directionally blind to semantic corruption; both typically rely on mixed-batch VQA co-training, doubling training compute. We introduce AEGIS (Anchor-Enforced Gradient Isolation System), a buffer-free, layer-wise orthogonal gradient projection framework enabling continuous flow-matching fine-tuning while isolating pre-trained representations from destructive parameter updates. Prior to training, AEGIS estimates per-layer Gaussian activation statistics from pre-training data as a static reference anchor. During fine-tuning, a closed-form Wasserstein-2 transport penalty generates an anchor-restoration gradient through the active computation graph. A sequential dual-backward pass applies layer-wise Gram-Schmidt orthogonalization, projecting task gradients onto the orthogonal complement of the restoration vector during directional conflict. We establish an exact energy preservation bound for layer-wise orthogonal projection, showing that AEGIS sheds only 0.62% of gradient energy empirically while halting cumulative feature drift. On PaliGemma2-3B fine-tuned on the LIBERO manipulation benchmark, AEGIS fully preserves pre-trained Visual Question Answering performance and baseline holdout loss while matching continuous action convergence, without replay buffers, teacher models, or co-training data.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

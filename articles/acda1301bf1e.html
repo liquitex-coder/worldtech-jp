@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GDN Tree-Scan: Served Tree Verification for Recurrent-Hybrid Language Models — NewsMatome</title>
-<meta name="description" content="GDN Tree-Scan: Served Tree Verification for Recurrent-Hybrid Language Models（EN→JA 翻訳・出典付き）">
+<title>LumoTree: Path-Parallel Speculative Verification for Hybrid Language Models — NewsMatome</title>
+<meta name="description" content="LumoTree: Path-Parallel Speculative Verification for Hybrid Language Models（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/acda1301bf1e.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/acda1301bf1e.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/acda1301bf1e.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="GDN Tree-Scan: Served Tree Verification for Recurrent-Hybrid Language Models">
-<meta property="og:description" content="GDN Tree-Scan: Served Tree Verification for Recurrent-Hybrid Language Models（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="LumoTree: Path-Parallel Speculative Verification for Hybrid Language Models">
+<meta property="og:description" content="LumoTree: Path-Parallel Speculative Verification for Hybrid Language Models（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"GDN Tree-Scan: Served Tree Verification for Recurrent-Hybrid Language Models",
- "inLanguage":"ja","datePublished":"2026-09-23T07:00:00+09:00","dateModified":"2026-09-23T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"LumoTree: Path-Parallel Speculative Verification for Hybrid Language Models",
+ "inLanguage":"ja","datePublished":"2026-10-04T07:00:00+09:00","dateModified":"2026-10-04T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2609.23900","url":"https://liquitex-coder.github.io/worldtech-jp/articles/acda1301bf1e.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>GDN Tree-Scan: Served Tree Verification for Recurrent-Hybrid Language Models</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>LumoTree: Path-Parallel Speculative Verification for Hybrid Language Models</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>GDN Tree-Scan: Served Tree Verification for Recurrent-Hybrid Language Models</h1>
+      <h1>LumoTree: Path-Parallel Speculative Verification for Hybrid Language Models</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/09/23 07:00</span><span>· 更新 2026/09/23</span>
+        <span>公開 2026/10/04 07:00</span><span>· 更新 2026/10/04</span>
       </div>
     </div>
     
@@ -74,27 +74,24 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2609.23900" rel="nofollow noopener">GDN Tree-Scan: Served Tree Verification for Recurrent-Hybrid Language Models</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2609.23900" rel="nofollow noopener">LumoTree: Path-Parallel Speculative Verification for Hybrid Language Models</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2609.23900v1 Announce Type: new 
-Abstract: Tree speculative decoding verifies multiple candidate continuations in one target forward pass. For attention-only transformers, the verifier mainly needs an ancestry mask. Recurrent-hybrid language models break this assumption: a candidate row must also carry the recurrent state that native sequential decode would have produced along its root-to-node path. Otherwise, a verifier can use a correct attention mask while still conditioning on an impossible recurrent history.
-  We present GDN Tree-Scan, a served verifier for Gated-DeltaNet hybrid language models integrated into vLLM. The system combines FlashAttention-2 tree-bias attention, branch-local GDN scan/replay, device-side multidraft commitment, and accepted-chain-only state publication. On the public Qwen3.6-27B-FP8 checkpoint, in a clean batch-one (B=1) SWE/Codex decode gate at temperature 0.6, a six-node root-branch tree increases committed tokens/event by 17.2% at near-native verify-forward time and reaches 23.88 token-weighted decode tokens/s versus 18.80 for native five-step MTP (E5), a 27.0% token-weighted decode-throughput gain. The per-request-equal latency view is +4.0%, and end-to-end task wall time remains prefill-heavy. Empirical equivalence evidence is scoped to recurrent-oracle probability-rescore (p-rescore) closure within the observed native flip floor, not a full distribution-distance proof.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2609.23900v1 Announce Type: new 
-Abstract: Tree speculative decoding verifies multiple candidate continuations in one target forward pass. For attention-only transformers, the verifier mainly needs an ancestry mask. Recurrent-hybrid language models break this assumption: a candidate row must also carry the recurrent state that native sequential decode would have produced along its root-to-node path. Otherwise, a verifier can use a correct attention mask while still conditioning on an impossible recurrent history.
-  We present GDN Tree-Scan, a served verifier for Gated-DeltaNet hybrid language models integrated into vLLM. The system combines FlashAttention-2 tree-bias attention, branch-local GDN scan/replay, device-side multidraft commitment, and accepted-chain-only state publication. On the public Qwen3.6-27B-FP8 checkpoint, in a clean batch-one (B=1) SWE/Codex decode gate at temperature 0.6, a six-node root-branch tree increases committed tokens/event by 17.2% at near-native verify-forward time and reaches 23.88 token-weighted decode tokens/s versus 18.80 for native five-step MTP (E5), a 27.0% token-weighted decode-throughput gain. The per-request-equal latency view is +4.0%, and end-to-end task wall time remains prefill-heavy. Empirical equivalence evidence is scoped to recurrent-oracle probability-rescore (p-rescore) closure within the observed native flip floor, not a full distribution-distance proof.</div>
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2609.23900v2 Announce Type: replace 
+Abstract: Tree speculative decoding for hybrid language models must preserve one coherent continuation across recurrent, convolution, and attention state. We present LumoTree, a verifier that executes recurrent paths in parallel, reuses state tiles within each path, and coordinates native recurrent replay, convolution-history gathering, and attention-cache remapping through a shared logical tree. Fused candidate selection, GPU-resident acceptance, and grouped split-K attention support the verification cycle. Component experiments show exact candidate-selection parity and recurrent agreement within paired error bounds. An exploratory Qwen3.8-27B NVFP4 deployment on a single NVIDIA DGX Spark (GB10) records 25.63 pooled tokens/s on ten SWE-bench Verified Astropy tasks. The results characterize component-level numerical agreement and coding-agent deployment; complete-model continuation and controlled application speedups remain open.</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2609.23900v2 Announce Type: replace 
+Abstract: Tree speculative decoding for hybrid language models must preserve one coherent continuation across recurrent, convolution, and attention state. We present LumoTree, a verifier that executes recurrent paths in parallel, reuses state tiles within each path, and coordinates native recurrent replay, convolution-history gathering, and attention-cache remapping through a shared logical tree. Fused candidate selection, GPU-resident acceptance, and grouped split-K attention support the verification cycle. Component experiments show exact candidate-selection parity and recurrent agreement within paired error bounds. An exploratory Qwen3.8-27B NVFP4 deployment on a single NVIDIA DGX Spark (GB10) records 25.63 pooled tokens/s on ten SWE-bench Verified Astropy tasks. The results characterize component-level numerical agreement and coding-agent deployment; complete-model continuation and controlled application speedups remain open.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2609.23900v1 Announce Type: new 
-Abstract: Tree speculative decoding verifies multiple candidate continuations in one target forward pass. For attention-only transformers, the verifier mainly needs an ancestry mask. Recurrent-hybrid language models break this assumption: a candidate row must also carry the recurrent state that native sequential decode would have produced along its root-to-node path. Otherwise, a verifier can use a correct attention mask while still conditioning on an impossible recurrent history.
-  We present GDN Tree-Scan, a served verifier for Gated-DeltaNet hybrid language models integrated into vLLM. The system combines FlashAttention-2 tree-bias attention, branch-local GDN scan/replay, device-side multidraft commitment, and accepted-chain-only state publication. On the public Qwen3.6-27B-FP8 checkpoint, in a clean batch-one (B=1) SWE/Codex decode gate at temperature 0.6, a six-node root-branch tree increases committed tokens/event by 17.2% at near-native verify-forward time and reaches 23.88 token-weighted decode tokens/s versus 18.80 for native five-step MTP (E5), a 27.0% token-weighted decode-throughput gain. The per-request-equal latency view is +4.0%, and end-to-end task wall time remains prefill-heavy. Empirical equivalence evidence is scoped to recurrent-oracle probability-rescore (p-rescore) closure within the observed native flip floor, not a full distribution-distance proof.</p><a href="https://arxiv.org/abs/2609.23900" rel="nofollow noopener">原論文を読む →</a></div>
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2609.23900v2 Announce Type: replace 
+Abstract: Tree speculative decoding for hybrid language models must preserve one coherent continuation across recurrent, convolution, and attention state. We present LumoTree, a verifier that executes recurrent paths in parallel, reuses state tiles within each path, and coordinates native recurrent replay, convolution-history gathering, and attention-cache remapping through a shared logical tree. Fused candidate selection, GPU-resident acceptance, and grouped split-K attention support the verification cycle. Component experiments show exact candidate-selection parity and recurrent agreement within paired error bounds. An exploratory Qwen3.8-27B NVFP4 deployment on a single NVIDIA DGX Spark (GB10) records 25.63 pooled tokens/s on ten SWE-bench Verified Astropy tasks. The results characterize component-level numerical agreement and coding-agent deployment; complete-model continuation and controlled application speedups remain open.</p><a href="https://arxiv.org/abs/2609.23900" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2609.23900" rel="nofollow noopener">https://arxiv.org/abs/2609.23900</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
     <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="34088336622f.html"><div class="sim">関連</div><div class="info"><b>RBS-Attention: Radius-Bounded Sparse Prefill for Long-Context Large Language Models</b><div class="m">AI</div></div></a><a class="r" href="37d9347772d8.html"><div class="sim">関連</div><div class="info"><b>Attention-Aware Routing: Coupling Routing and Attention in MoEs</b><div class="m">AI</div></div></a><a class="r" href="f790dcf3a000.html"><div class="sim">関連</div><div class="info"><b>CaLR: Causal Latent Revision for Robust Diffusion Reasoning</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="41bdb722f99c.html"><div class="sim">関連</div><div class="info"><b>Reverse Item Response Theory for Sparsity-Robust Ranking in Fragmented Cancer Drug-Response Matrices</b><div class="m">アルゴリズム</div></div></a><a class="r" href="54c963e93e24.html"><div class="sim">関連</div><div class="info"><b>How Far is Adam from Natural Gradient Descent?</b><div class="m">アルゴリズム</div></div></a><a class="r" href="2b94985b1b4a.html"><div class="sim">関連</div><div class="info"><b>FourierQK: Filter Shape, Admissibility and the Leakage-Coverage Law</b><div class="m">アルゴリズム</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>
