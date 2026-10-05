@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Operator Calculus for Population-Based Optimization: A Mean-Field Convergence Theory — NewsMatome</title>
-<meta name="description" content="Operator Calculus for Population-Based Optimization: A Mean-Field Convergence Theory（EN→JA 翻訳・出典付き）">
+<title>Operator Calculus for Population-Based Optimization: Modular Convergence and Finite-Population Guarantees — NewsMatome</title>
+<meta name="description" content="Operator Calculus for Population-Based Optimization: Modular Convergence and Finite-Population Guarantees（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/8eff2ddb9d3c.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/8eff2ddb9d3c.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/8eff2ddb9d3c.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="Operator Calculus for Population-Based Optimization: A Mean-Field Convergence Theory">
-<meta property="og:description" content="Operator Calculus for Population-Based Optimization: A Mean-Field Convergence Theory（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="Operator Calculus for Population-Based Optimization: Modular Convergence and Finite-Population Guarantees">
+<meta property="og:description" content="Operator Calculus for Population-Based Optimization: Modular Convergence and Finite-Population Guarantees（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Operator Calculus for Population-Based Optimization: A Mean-Field Convergence Theory",
- "inLanguage":"ja","datePublished":"2026-06-16T07:00:00+09:00","dateModified":"2026-06-16T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Operator Calculus for Population-Based Optimization: Modular Convergence and Finite-Population Guarantees",
+ "inLanguage":"ja","datePublished":"2026-10-06T07:00:00+09:00","dateModified":"2026-10-06T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.14289","url":"https://liquitex-coder.github.io/worldtech-jp/articles/8eff2ddb9d3c.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>Operator Calculus for Population-Based Optimization: A Mean-Field Convergence Theory</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>Operator Calculus for Population-Based Optimization: Modular Convergence and Finite-Population Guarantees</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>Operator Calculus for Population-Based Optimization: A Mean-Field Convergence Theory</h1>
+      <h1>Operator Calculus for Population-Based Optimization: Modular Convergence and Finite-Population Guarantees</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/06/16 07:00</span><span>· 更新 2026/06/16</span>
+        <span>公開 2026/10/06 07:00</span><span>· 更新 2026/10/06</span>
       </div>
     </div>
     
@@ -74,24 +74,24 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2606.14289" rel="nofollow noopener">Operator Calculus for Population-Based Optimization: A Mean-Field Convergence Theory</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2606.14289" rel="nofollow noopener">Operator Calculus for Population-Based Optimization: Modular Convergence and Finite-Population Guarantees</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2606.14289v1 Announce Type: cross 
-Abstract: Population-based and distributional optimization methods, from evolution strategies and consensus-based optimization to covariance-matrix adaptation and stochastic gradient methods viewed as distributional dynamics, are widely used for nonconvex or black-box problems, yet their convergence analyses remain fragmented across algorithm-specific techniques. We introduce an operator calculus in which a broad class of such methods, after choosing an appropriate state space and, where necessary, augmenting the state by memory or strategy variables, is described as a composition of three elementary operators (mutation, selection, and recombination) acting on probability measures. Under explicit stability and regularity conditions, the composite operator admits a pre-generator whose continuous-time limit is a transport-reaction-jump (TRJ) PDE that preserves the operator splitting. On this foundation we establish a modular Lyapunov principle. If a state-space Lyapunov function both dissipates under the full generator and controls the relevant search-space gauges, then the state-space Lyapunov functional and the induced search errors decay exponentially. The additive generator structure allows dissipation estimates to be assembled operator by operator, providing a toolkit for certifying convergence of composite mean-field algorithms.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2606.14289v1 Announce Type: cross 
-Abstract: Population-based and distributional optimization methods, from evolution strategies and consensus-based optimization to covariance-matrix adaptation and stochastic gradient methods viewed as distributional dynamics, are widely used for nonconvex or black-box problems, yet their convergence analyses remain fragmented across algorithm-specific techniques. We introduce an operator calculus in which a broad class of such methods, after choosing an appropriate state space and, where necessary, augmenting the state by memory or strategy variables, is described as a composition of three elementary operators (mutation, selection, and recombination) acting on probability measures. Under explicit stability and regularity conditions, the composite operator admits a pre-generator whose continuous-time limit is a transport-reaction-jump (TRJ) PDE that preserves the operator splitting. On this foundation we establish a modular Lyapunov principle. If a state-space Lyapunov function both dissipates under the full generator and controls the relevant search-space gauges, then the state-space Lyapunov functional and the induced search errors decay exponentially. The additive generator structure allows dissipation estimates to be assembled operator by operator, providing a toolkit for certifying convergence of composite mean-field algorithms.</div>
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2606.14289v2 Announce Type: replace-cross 
+Abstract: Population-based optimizers combine update rules such as mutation, selection, and recombination. When one rule changes, it is often unclear which convergence guarantees survive or how the new combination should be assessed. We develop an operator calculus: an operator is a population-update rule, and the calculus specifies how separately checked effects can be combined. Under explicit regularity and small-step conditions, the leading changes caused by the updates add, yielding reusable building blocks for convergence analysis. The framework distinguishes finding and retaining a good solution, reducing the population&#x27;s mean objective, and concentrating candidates near an optimizer, and identifies the extra approximation conditions needed for finite evaluation-budget guarantees. Applications include distribution adaptation, recombinative evolution, and consensus dynamics, with verified nonconvex cases. Controlled experiments on a common nonconvex problem collection show how component effects change with population geometry and the performance measure: a rule can worsen the mean objective yet produce better candidates.</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2606.14289v2 Announce Type: replace-cross 
+Abstract: Population-based optimizers combine update rules such as mutation, selection, and recombination. When one rule changes, it is often unclear which convergence guarantees survive or how the new combination should be assessed. We develop an operator calculus: an operator is a population-update rule, and the calculus specifies how separately checked effects can be combined. Under explicit regularity and small-step conditions, the leading changes caused by the updates add, yielding reusable building blocks for convergence analysis. The framework distinguishes finding and retaining a good solution, reducing the population&#x27;s mean objective, and concentrating candidates near an optimizer, and identifies the extra approximation conditions needed for finite evaluation-budget guarantees. Applications include distribution adaptation, recombinative evolution, and consensus dynamics, with verified nonconvex cases. Controlled experiments on a common nonconvex problem collection show how component effects change with population geometry and the performance measure: a rule can worsen the mean objective yet produce better candidates.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2606.14289v1 Announce Type: cross 
-Abstract: Population-based and distributional optimization methods, from evolution strategies and consensus-based optimization to covariance-matrix adaptation and stochastic gradient methods viewed as distributional dynamics, are widely used for nonconvex or black-box problems, yet their convergence analyses remain fragmented across algorithm-specific techniques. We introduce an operator calculus in which a broad class of such methods, after choosing an appropriate state space and, where necessary, augmenting the state by memory or strategy variables, is described as a composition of three elementary operators (mutation, selection, and recombination) acting on probability measures. Under explicit stability and regularity conditions, the composite operator admits a pre-generator whose continuous-time limit is a transport-reaction-jump (TRJ) PDE that preserves the operator splitting. On this foundation we establish a modular Lyapunov principle. If a state-space Lyapunov function both dissipates under the full generator and controls the relevant search-space gauges, then the state-space Lyapunov functional and the induced search errors decay exponentially. The additive generator structure allows dissipation estimates to be assembled operator by operator, providing a toolkit for certifying convergence of composite mean-field algorithms.</p><a href="https://arxiv.org/abs/2606.14289" rel="nofollow noopener">原論文を読む →</a></div>
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2606.14289v2 Announce Type: replace-cross 
+Abstract: Population-based optimizers combine update rules such as mutation, selection, and recombination. When one rule changes, it is often unclear which convergence guarantees survive or how the new combination should be assessed. We develop an operator calculus: an operator is a population-update rule, and the calculus specifies how separately checked effects can be combined. Under explicit regularity and small-step conditions, the leading changes caused by the updates add, yielding reusable building blocks for convergence analysis. The framework distinguishes finding and retaining a good solution, reducing the population&#x27;s mean objective, and concentrating candidates near an optimizer, and identifies the extra approximation conditions needed for finite evaluation-budget guarantees. Applications include distribution adaptation, recombinative evolution, and consensus dynamics, with verified nonconvex cases. Controlled experiments on a common nonconvex problem collection show how component effects change with population geometry and the performance measure: a rule can worsen the mean objective yet produce better candidates.</p><a href="https://arxiv.org/abs/2606.14289" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2606.14289" rel="nofollow noopener">https://arxiv.org/abs/2606.14289</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
     <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="bd2a0d81f688.html"><div class="sim">関連</div><div class="info"><b>A Deep Reinforcement Learning (DRL)-Based Transformer Method for Solving the Open Shop Scheduling Problem</b><div class="m">AI</div></div></a><a class="r" href="fd5243405502.html"><div class="sim">関連</div><div class="info"><b>UP-NRPA: User Portrait based Nested Rollout Policy Adaptation for Planning with Large Language Models in Goal-oriented Dialogue Systems</b><div class="m">AI</div></div></a><a class="r" href="88cb2a282004.html"><div class="sim">関連</div><div class="info"><b>History of the Muddy Children Puzzle</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="3fb0589f112d.html"><div class="sim">関連</div><div class="info"><b>MintFlow: Minimal Trajectory Intervention for Constrained Flow Matching</b><div class="m">AI</div></div></a><a class="r" href="4db1850702f9.html"><div class="sim">関連</div><div class="info"><b>Fast Models, Slow Evidence: A Paired and Self-Audited Evaluation of System-1 Decision Models for LLM Agent Harnesses</b><div class="m">AI</div></div></a><a class="r" href="05ae2fbd2810.html"><div class="sim">関連</div><div class="info"><b>The AI Risk Observatory: What Can We Learn from AI Disclosures in Annual Reports About Societal Resilience?</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

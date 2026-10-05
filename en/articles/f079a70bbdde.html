@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GB-LSR: A Fast Local Spectral Image Representation with a Single Global Bandwidth for Continuous Reconstruction and Super-Resolution — NewsMatome (EN)</title>
-<meta name="description" content="GB-LSR: A Fast Local Spectral Image Representation with a Single Global Bandwidth for Continuous Reconstruction and Super-Resolution — original-language edition. Japanese translation available.">
+<title>GB-LSR: Local Spectral Decoding with a Learned Global Bandwidth for Arbitrary-Scale Super-Resolution — NewsMatome (EN)</title>
+<meta name="description" content="GB-LSR: Local Spectral Decoding with a Learned Global Bandwidth for Arbitrary-Scale Super-Resolution — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/f079a70bbdde.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/f079a70bbdde.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/f079a70bbdde.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/f079a70bbdde.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GB-LSR: A Fast Local Spectral Image Representation with a Single Global Bandwidth for Continuous Reconstruction and Super-Resolution">
+<meta property="og:title" content="GB-LSR: Local Spectral Decoding with a Learned Global Bandwidth for Arbitrary-Scale Super-Resolution">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"GB-LSR: A Fast Local Spectral Image Representation with a Single Global Bandwidth for Continuous Reconstruction and Super-Resolution",
- "inLanguage":"en","datePublished":"2026-06-20T07:00:00+09:00","dateModified":"2026-06-20T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"GB-LSR: Local Spectral Decoding with a Learned Global Bandwidth for Arbitrary-Scale Super-Resolution",
+ "inLanguage":"en","datePublished":"2026-10-06T07:00:00+09:00","dateModified":"2026-10-06T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.19617","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/f079a70bbdde.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>GB-LSR: A Fast Local Spectral Image Representation with a Single Global Bandwidth for Continuous Reconstruction and Super-Resolution</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/06/20</span></div>
+    <h1>GB-LSR: Local Spectral Decoding with a Learned Global Bandwidth for Arbitrary-Scale Super-Resolution</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/06</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/f079a70bbdde.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.19617" rel="nofollow noopener">https://arxiv.org/abs/2606.19617</a></span></div>
-  <div class="article-body"><p>arXiv:2606.19617v1 Announce Type: cross 
-Abstract: We present GB-LSR (Global-Bandwidth Local Spectral Representation), a fixed-grid local spectral representation for continuous image reconstruction. The image domain is partitioned into non-overlapping square patches, each carrying coefficients for a truncated Fourier basis predicted from shared convolutional-encoder features. A single trainable scalar bandwidth is shared globally across all patches and images, and reconstruction at any continuous coordinate is a fixed-size basis contraction whose cost is independent of image size. We study three bandwidth-handling variants: a trainable global scalar (main), a fixed global scalar, and a per-patch bandwidth field. On a standardized native-reconstruction benchmark across Kodak, Set14, and Urban100, the main variant outperforms matched-budget amortized LIIF / LTE / WIRE re-implementations by 2.8-3.6 dB PSNR and 0.11-0.15 LPIPS, while running at roughly one-quarter of the slowest baseline&#x27;s inference cost. The single global scalar suffices empirically: per-patch adaptive-bandwidth alternatives do not improve over it on either a closed-form locality diagnostic or an end-to-end ablation. In a separate arbitrary-scale super-resolution (ASR) extension, GB-LSR achieves competitive PSNR-Y under a canonical-style SR protocol and runs 1.44x faster than LIIF-RDN and 3.25x faster than LTE-SwinIR at x4; within the same extension, a variant trained and evaluated without 4-corner local-ensemble averaging gives a 1.77x speedup with 35% lower peak memory and negligible PSNR change, while additionally widening the RDN encoder from 64 to 96 channels gives a small positive PSNR shift with a 1.58x speedup and 31% lower peak memory. Native-reconstruction claims are scoped to the matched-budget amortized protocol, and ASR claims are scoped to a separate canonical-style SR protocol.</p></div>
+  <div class="article-body"><p>arXiv:2606.19617v2 Announce Type: replace-cross 
+Abstract: We present GB-LSR (Global-Bandwidth Local Spectral Representation), a fixed-grid local spectral representation for continuous image decoding. The image domain is partitioned into non-overlapping square patches. Each patch carries coefficients for a truncated Fourier basis, predicted by a single linear projection from shared convolutional-encoder features, and one trainable scalar bandwidth is shared across every patch and every image. As in earlier local spectral decoders, decoding at a continuous coordinate is a fixed-size basis contraction whose cost is set by the spectral cutoff; GB-LSR learns the bandwidth of that basis instead of fixing it. We evaluate an arbitrary-scale super-resolution extension, GB-LSR-Scalar-ASR, against the authors&#x27; released LIIF, LTE, and SRNO checkpoints on the same RDN encoder, with every method scored under one protocol and timed in one session per scale, each on one GPU. It runs 1.25x faster than LIIF-RDN at x4 and as fast as SRNO-RDN, whose released code uses 15 times as much peak memory on Urban100. It trails the three encoder-matched baselines by 0.07 to 0.79 dB PSNR-Y in distribution, SRNO-RDN by 0.35 dB on average. Removing the local ensemble raises the speedup to 2.41x over LIIF-RDN and 1.95x over SRNO-RDN at x4, and to 3.00x and 2.41x at x8, without changing PSNR-Y beyond seed variation, at the cost of value jumps at cell boundaries of 0.22 gray levels (of 255) on average at x4. Against the EDSR-baseline checkpoints of five recent methods at x4, GB-LSR-Scalar-ASR scores above or within 0.17 dB on PSNR-Y of LMF, SRNO-EDSR, and OPE-SR-EDSR (1.39 to 6.43 million parameters against 22.02) and 0.14 to 0.57 dB below GSASR and Thera (20.44 and 5.85 million), and has a higher mean LPIPS at x4 than every baseline.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>
