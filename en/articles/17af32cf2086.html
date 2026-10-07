@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Decoupling What from Where: How Should a Small GUI Grounding Model Receive the Action Type? — NewsMatome (EN)</title>
+<meta name="description" content="Decoupling What from Where: How Should a Small GUI Grounding Model Receive the Action Type? — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/17af32cf2086.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/17af32cf2086.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/17af32cf2086.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/17af32cf2086.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Decoupling What from Where: How Should a Small GUI Grounding Model Receive the Action Type?">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Decoupling What from Where: How Should a Small GUI Grounding Model Receive the Action Type?",
+ "inLanguage":"en","datePublished":"2026-10-08T07:00:00+09:00","dateModified":"2026-10-08T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.07444","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/17af32cf2086.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/17af32cf2086.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Decoupling What from Where: How Should a Small GUI Grounding Model Receive the Action Type?</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/08</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/17af32cf2086.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.07444" rel="nofollow noopener">https://arxiv.org/abs/2610.07444</a></span></div>
+  <div class="article-body"><p>arXiv:2610.07444v1 Announce Type: new 
+Abstract: A GUI agent decides which action to take and where to take it; we ask how a small grounding model should receive the action type. Fine-tuning Qwen2-VL-2B with LoRA on Android in the Wild, we compare a flat baseline with five ways of supplying the type under matched data, compute, and decoding: an auxiliary loss, a hard-routed action word, an additive learned embedding, a prepended learned token, and the type written into the prompt. With five seeds, an episode-clustered bootstrap, and seed-level paired tests, the ranking on a mixed stream is clear: the auxiliary loss, the additive embedding, and the prompt word each gain five to seven hit@0.10 points over the baseline, while hard routing and the prepended token are not distinguishable from it. Much of that gain is protection from a preprocessing choice of ours rather than a spatial prior. Our serializer clamps the off-screen touch point AITW records for type events to the origin; that class degrades the baseline&#x27;s click grounding, and removing it lifts the baseline by nearly seven points, after which no mechanism&#x27;s hit rate beats it and the intervals exclude a two-point effect, though the auxiliary loss still shortens the average miss; on a stream of taps and swipes none helps. Whether this generalizes beyond one serialization is open. For deployment, the pipeline&#x27;s margin over the baseline with predicted rather than gold types is not established (+0.016, 95% interval [-0.017, +0.052]), and a wrong type collapses every model conditioned at inference. The prepended token does not help at the shared learning rate, where its rows barely move from initialization; trained ten times faster it reaches the level of the other three, with a margin three seeds do not establish. We also document a silent failure: injecting conditioning through inputs_embeds makes Qwen2-VL fall back to 1-D positions for image tokens, costing nine points.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
