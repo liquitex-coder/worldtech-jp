@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Divide and Cooperate: Role-Decomposed Multi-Agent LLM Training with Cross-Agent Learning Signals — NewsMatome</title>
-<meta name="description" content="Divide and Cooperate: Role-Decomposed Multi-Agent LLM Training with Cross-Agent Learning Signals（EN→JA 翻訳・出典付き）">
+<title>Cross-Agent Learning Signals Enable Coordinated Role-Decomposed LLM Training — NewsMatome</title>
+<meta name="description" content="Cross-Agent Learning Signals Enable Coordinated Role-Decomposed LLM Training（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/78cd74574c53.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/78cd74574c53.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/78cd74574c53.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="Divide and Cooperate: Role-Decomposed Multi-Agent LLM Training with Cross-Agent Learning Signals">
-<meta property="og:description" content="Divide and Cooperate: Role-Decomposed Multi-Agent LLM Training with Cross-Agent Learning Signals（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="Cross-Agent Learning Signals Enable Coordinated Role-Decomposed LLM Training">
+<meta property="og:description" content="Cross-Agent Learning Signals Enable Coordinated Role-Decomposed LLM Training（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Divide and Cooperate: Role-Decomposed Multi-Agent LLM Training with Cross-Agent Learning Signals",
- "inLanguage":"ja","datePublished":"2026-06-11T07:00:00+09:00","dateModified":"2026-06-11T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Cross-Agent Learning Signals Enable Coordinated Role-Decomposed LLM Training",
+ "inLanguage":"ja","datePublished":"2026-10-09T07:00:00+09:00","dateModified":"2026-10-09T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.10684","url":"https://liquitex-coder.github.io/worldtech-jp/articles/78cd74574c53.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>Divide and Cooperate: Role-Decomposed Multi-Agent LLM Training with Cross-Agent Learning Signals</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>Cross-Agent Learning Signals Enable Coordinated Role-Decomposed LLM Training</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>Divide and Cooperate: Role-Decomposed Multi-Agent LLM Training with Cross-Agent Learning Signals</h1>
+      <h1>Cross-Agent Learning Signals Enable Coordinated Role-Decomposed LLM Training</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/06/11 07:00</span><span>· 更新 2026/06/11</span>
+        <span>公開 2026/10/09 07:00</span><span>· 更新 2026/10/09</span>
       </div>
     </div>
     
@@ -74,24 +74,24 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2606.10684" rel="nofollow noopener">Divide and Cooperate: Role-Decomposed Multi-Agent LLM Training with Cross-Agent Learning Signals</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2606.10684" rel="nofollow noopener">Cross-Agent Learning Signals Enable Coordinated Role-Decomposed LLM Training</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2606.10684v1 Announce Type: new 
-Abstract: Modern language agents which perform multi-step reasoning have shown strong performance in knowledge-intensive question answering. However, existing approaches typically couple evidence acquisition and answer generation within a single policy. This forces a single model to play multiple potentially conflicting roles, inducing a combinatorial explosion in the policy space and hindering efficient exploration. It also introduces a credit assignment problem during training: a search action that retrieves sufficient evidence may still be penalized when generation fails, and vice versa. We propose DAC (Divide and Cooperate), a role-decomposed multi-agent training framework that divides agentic search into two cooperative subtasks, each handled by a dedicated agent trained with role-specific learning signals. The generator serves a dual role as both an answer producer and an evidence sufficiency verifier, abstaining when retrieved evidence is insufficient. This abstention signal is incorporated into the search agent&#x27;s reward, providing structured cross-agent learning signals that improve credit assignment. Conversely, the searcher exposes the generator to diverse and challenging evidence environments by hard-positive evidence augmentation, improving its robustness. Experiments on general and multi-hop QA benchmarks show that DAC, implemented via parameter-efficient LoRA modules over a shared backbone, achieves strong performance against prior baselines that rely on full fine-tuning of monolithic models.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2606.10684v1 Announce Type: new 
-Abstract: Modern language agents which perform multi-step reasoning have shown strong performance in knowledge-intensive question answering. However, existing approaches typically couple evidence acquisition and answer generation within a single policy. This forces a single model to play multiple potentially conflicting roles, inducing a combinatorial explosion in the policy space and hindering efficient exploration. It also introduces a credit assignment problem during training: a search action that retrieves sufficient evidence may still be penalized when generation fails, and vice versa. We propose DAC (Divide and Cooperate), a role-decomposed multi-agent training framework that divides agentic search into two cooperative subtasks, each handled by a dedicated agent trained with role-specific learning signals. The generator serves a dual role as both an answer producer and an evidence sufficiency verifier, abstaining when retrieved evidence is insufficient. This abstention signal is incorporated into the search agent&#x27;s reward, providing structured cross-agent learning signals that improve credit assignment. Conversely, the searcher exposes the generator to diverse and challenging evidence environments by hard-positive evidence augmentation, improving its robustness. Experiments on general and multi-hop QA benchmarks show that DAC, implemented via parameter-efficient LoRA modules over a shared backbone, achieves strong performance against prior baselines that rely on full fine-tuning of monolithic models.</div>
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2606.10684v2 Announce Type: replace 
+Abstract: Agentic search systems must coordinate evidence acquisition and response generation, yet existing approaches either couple both roles under a single agent objective or decompose them without disentangling their respective contributions to the final outcome. We introduce DAC (Divide and Cooperate), a role-decomposed training framework that, given task-specific external verification signals, trains a searcher and a generator with role-specific cross-verification rewards. DAC allows the generator to abstain when the retrieved evidence appears insufficient, and uses this decision together with externally evaluated search sufficiency to assign appropriate credit to each role. To prevent degenerate over-abstention, we further introduce hard-positive evidence augmentation, which discourages abstaining on sufficient but hard evidence. Across seven general and multi-hop QA benchmarks and two model backbones, DAC consistently outperforms strong single-agent and multi-agent baselines. Controlled evaluations show that these gains arise from coordinated improvements in both search and generation. Our results highlight the importance of explicitly and properly assigning credit across interacting roles when training agentic search systems.</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2606.10684v2 Announce Type: replace 
+Abstract: Agentic search systems must coordinate evidence acquisition and response generation, yet existing approaches either couple both roles under a single agent objective or decompose them without disentangling their respective contributions to the final outcome. We introduce DAC (Divide and Cooperate), a role-decomposed training framework that, given task-specific external verification signals, trains a searcher and a generator with role-specific cross-verification rewards. DAC allows the generator to abstain when the retrieved evidence appears insufficient, and uses this decision together with externally evaluated search sufficiency to assign appropriate credit to each role. To prevent degenerate over-abstention, we further introduce hard-positive evidence augmentation, which discourages abstaining on sufficient but hard evidence. Across seven general and multi-hop QA benchmarks and two model backbones, DAC consistently outperforms strong single-agent and multi-agent baselines. Controlled evaluations show that these gains arise from coordinated improvements in both search and generation. Our results highlight the importance of explicitly and properly assigning credit across interacting roles when training agentic search systems.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2606.10684v1 Announce Type: new 
-Abstract: Modern language agents which perform multi-step reasoning have shown strong performance in knowledge-intensive question answering. However, existing approaches typically couple evidence acquisition and answer generation within a single policy. This forces a single model to play multiple potentially conflicting roles, inducing a combinatorial explosion in the policy space and hindering efficient exploration. It also introduces a credit assignment problem during training: a search action that retrieves sufficient evidence may still be penalized when generation fails, and vice versa. We propose DAC (Divide and Cooperate), a role-decomposed multi-agent training framework that divides agentic search into two cooperative subtasks, each handled by a dedicated agent trained with role-specific learning signals. The generator serves a dual role as both an answer producer and an evidence sufficiency verifier, abstaining when retrieved evidence is insufficient. This abstention signal is incorporated into the search agent&#x27;s reward, providing structured cross-agent learning signals that improve credit assignment. Conversely, the searcher exposes the generator to diverse and challenging evidence environments by hard-positive evidence augmentation, improving its robustness. Experiments on general and multi-hop QA benchmarks show that DAC, implemented via parameter-efficient LoRA modules over a shared backbone, achieves strong performance against prior baselines that rely on full fine-tuning of monolithic models.</p><a href="https://arxiv.org/abs/2606.10684" rel="nofollow noopener">原論文を読む →</a></div>
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2606.10684v2 Announce Type: replace 
+Abstract: Agentic search systems must coordinate evidence acquisition and response generation, yet existing approaches either couple both roles under a single agent objective or decompose them without disentangling their respective contributions to the final outcome. We introduce DAC (Divide and Cooperate), a role-decomposed training framework that, given task-specific external verification signals, trains a searcher and a generator with role-specific cross-verification rewards. DAC allows the generator to abstain when the retrieved evidence appears insufficient, and uses this decision together with externally evaluated search sufficiency to assign appropriate credit to each role. To prevent degenerate over-abstention, we further introduce hard-positive evidence augmentation, which discourages abstaining on sufficient but hard evidence. Across seven general and multi-hop QA benchmarks and two model backbones, DAC consistently outperforms strong single-agent and multi-agent baselines. Controlled evaluations show that these gains arise from coordinated improvements in both search and generation. Our results highlight the importance of explicitly and properly assigning credit across interacting roles when training agentic search systems.</p><a href="https://arxiv.org/abs/2606.10684" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2606.10684" rel="nofollow noopener">https://arxiv.org/abs/2606.10684</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
     <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="1e1c0a8f297b.html"><div class="sim">関連</div><div class="info"><b>Business World Model</b><div class="m">AI</div></div></a><a class="r" href="2bac3f878c2f.html"><div class="sim">関連</div><div class="info"><b>Deployment-Time Memorization in Foundation-Model Agents</b><div class="m">AI</div></div></a><a class="r" href="4d90847aef2c.html"><div class="sim">関連</div><div class="info"><b>Exploratory Responsiveness and Adaptive Rigidity under AI-Assisted Optimization</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="dc0104d61caf.html"><div class="sim">関連</div><div class="info"><b>GAMEGO: Training Game-Dev Agents with Synthetic Trajectories Anchored in Real-World Assets</b><div class="m">AI</div></div></a><a class="r" href="8b6a131a0fd9.html"><div class="sim">関連</div><div class="info"><b>Text2Dashboard: A Governed Agent Architecture for Natural-Language Dashboard Generation over Enterprise DataBrain</b><div class="m">AI</div></div></a><a class="r" href="bdc134cd22fd.html"><div class="sim">関連</div><div class="info"><b>FluidPD: In-Place Elasticity for SLO-Aware Prefill-Decode Disaggregated LLM Serving</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

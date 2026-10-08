@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Differential Refresh Policies for Models Trained on Lagging Data Snapshots: From a Single-Age Equivalence Limit to an Optimal Per-Segment Allocation — NewsMatome (EN)</title>
+<meta name="description" content="Differential Refresh Policies for Models Trained on Lagging Data Snapshots: From a Single-Age Equivalence Limit to an Optimal Per-Segment Allocation — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/15b77565004a.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/15b77565004a.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/15b77565004a.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/15b77565004a.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Differential Refresh Policies for Models Trained on Lagging Data Snapshots: From a Single-Age Equivalence Limit to an Optimal Per-Segment Allocation">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Differential Refresh Policies for Models Trained on Lagging Data Snapshots: From a Single-Age Equivalence Limit to an Optimal Per-Segment Allocation",
+ "inLanguage":"en","datePublished":"2026-10-09T07:00:00+09:00","dateModified":"2026-10-09T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.09519","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/15b77565004a.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/15b77565004a.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Differential Refresh Policies for Models Trained on Lagging Data Snapshots: From a Single-Age Equivalence Limit to an Optimal Per-Segment Allocation</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/09</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/15b77565004a.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.09519" rel="nofollow noopener">https://arxiv.org/abs/2610.09519</a></span></div>
+  <div class="article-body"><p>arXiv:2610.09519v1 Announce Type: new 
+Abstract: Production machine-learning models are derived artifacts of time-bounded training snapshots: a deployed model is a materialized view over a training cut that ages the instant it is built. A common response is to replace the fixed retraining cadence with an adaptive trigger -- a weighted staleness score that retrains when accumulated source risk crosses a threshold. We show this is the wrong lever, and identify the right one. First, an equivalence limit: any refresh trigger that is a static, strictly monotone function of a single shared global training-data age is operationally equivalent to a calibrated uniform age timer, so a global staleness budget, however elaborately it weights segments, sources, and sensitivities, carries no scheduling information a clock does not. The limit also shows how to escape it: refresh segments differentially, giving each its own age and refresh interval, which is meaningful when refresh cost is separable across segments (incremental training or per-segment models). We solve the resulting budget-allocation problem. In the frequent-refresh regime each segment&#x27;s optimal refresh rate is proportional to the square root of its risk $w_j \lambda_j$ (weight times change rate), and the optimal policy never costs more than the uniform timer, beating it by a closed-form Cauchy-Schwarz &quot;price of uniformity&quot; that is zero for homogeneous workloads and grows with heterogeneity. In a discrete-event simulation with real Poisson change events, the optimal policy lowers realized weighted stale exposure by 8-29% relative to the uniform timer at matched refresh budget, winning on 86-100% of seeds; a naive exposure-threshold policy does not, showing the allocation is what helps; and the advantage survives 50% rate-estimation noise. The leverage in model refresh is not a better score but a better action.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

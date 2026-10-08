@@ -17,7 +17,7 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"Learning in the Recurrent State: Gradient Descent with Linear Recurrent Networks",
- "inLanguage":"en","datePublished":"2026-06-17T07:00:00+09:00","dateModified":"2026-06-17T07:00:00+09:00",
+ "inLanguage":"en","datePublished":"2026-10-09T07:00:00+09:00","dateModified":"2026-10-09T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2410.11687","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/542be28ef2bd.html"}
@@ -35,11 +35,11 @@
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
     <h1>Learning in the Recurrent State: Gradient Descent with Linear Recurrent Networks</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/06/17</span></div>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/09</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/542be28ef2bd.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2410.11687" rel="nofollow noopener">https://arxiv.org/abs/2410.11687</a></span></div>
-  <div class="article-body"><p>arXiv:2410.11687v3 Announce Type: replace 
-Abstract: Linear recurrent networks (LRNNs) offer linear-time sequence modeling, but standard recurrent updates do not directly expose the supervised products needed for in-context gradient descent. We propose a sufficient constructive inductive bias for LRNNs: equip a diagonal recurrent state with multiplicative readout and a short sliding-window cross-product self-attention update. The resulting architecture, Gradient-based Recurrent In-context Learner (GRIL), can implement minibatch gradient descent on a task-specific linear predictor during a single forward pass. The same design extends to multi-step updates and cross-entropy classification, with a limited MLP-based extension to non-linear regression. Empirically, trained GRILs recover the behavior and parameters predicted by the construction on synthetic ICL tasks, and the same architectural bias yields useful performance on Long Range Arena and language modelling. These results present windowed cross-product self-attention as a practical, testable inductive bias for LRNNs that learn in context through gradient-descent-like updates.</p></div>
+  <div class="article-body"><p>arXiv:2410.11687v4 Announce Type: replace 
+Abstract: In-context learning lets a sequence model adapt to a new task from examples in its input. A prominent line of work shows how self-attention can be constructed to implement gradient descent on a linear predictor fit to the in-context examples during the forward pass. State-space models (SSMs) and other linear recurrent networks (LRNNs) model sequences at linear time cost, but it is unclear how their recurrent update could carry out the same in-context gradient descent. We introduce Gradient-based Recurrent In-context Learner (GRIL), a diagonal LRNN that factorizes a supervised gradient step into a short-window cross-product write and a multiplicative readout of the next query. For linear regression, this construction accumulates the context gradient in a matrix state and applies it in a single forward pass, with $O(f^2)$ learned degrees of freedom. The same design extends to multi-step updates and cross-entropy classification, with a limited MLP-based extension to non-linear regression. We show empirically that trained GRILs recover the behavior and parameters analytically predicted by the construction on synthetic ICL tasks. Furthermore, the same architecture can be extended and trained on general-purpose benchmarks, including Long Range Arena, language modeling and associative recall. Together, these results establish windowed cross-product self-attention as a concrete inductive bias that lets LRNNs learn in context through gradient-descent-like updates, while remaining trainable on general-purpose tasks.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

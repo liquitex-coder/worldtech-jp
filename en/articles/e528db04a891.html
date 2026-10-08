@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lossy Compression of PDE Training Inputs: Field Reconstruction Error Does Not Order the Cost to a Trained Operator — NewsMatome (EN)</title>
-<meta name="description" content="Lossy Compression of PDE Training Inputs: Field Reconstruction Error Does Not Order the Cost to a Trained Operator — original-language edition. Japanese translation available.">
+<title>Transmission Factors for Lossy Compression of PDE Training Data: Measuring What Reaches a Trained Operator — NewsMatome (EN)</title>
+<meta name="description" content="Transmission Factors for Lossy Compression of PDE Training Data: Measuring What Reaches a Trained Operator — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/e528db04a891.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/e528db04a891.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/e528db04a891.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/e528db04a891.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Lossy Compression of PDE Training Inputs: Field Reconstruction Error Does Not Order the Cost to a Trained Operator">
+<meta property="og:title" content="Transmission Factors for Lossy Compression of PDE Training Data: Measuring What Reaches a Trained Operator">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Lossy Compression of PDE Training Inputs: Field Reconstruction Error Does Not Order the Cost to a Trained Operator",
- "inLanguage":"en","datePublished":"2026-10-08T07:00:00+09:00","dateModified":"2026-10-08T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Transmission Factors for Lossy Compression of PDE Training Data: Measuring What Reaches a Trained Operator",
+ "inLanguage":"en","datePublished":"2026-10-09T07:00:00+09:00","dateModified":"2026-10-09T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2610.06095","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/e528db04a891.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Lossy Compression of PDE Training Inputs: Field Reconstruction Error Does Not Order the Cost to a Trained Operator</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/08</span></div>
+    <h1>Transmission Factors for Lossy Compression of PDE Training Data: Measuring What Reaches a Trained Operator</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/09</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/e528db04a891.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.06095" rel="nofollow noopener">https://arxiv.org/abs/2610.06095</a></span></div>
-  <div class="article-body"><p>arXiv:2610.06095v2 Announce Type: replace 
-Abstract: Operator-learning benchmarks are stored at full precision and have grown to terabyte scale. Rate-distortion theory says how many bits the stored field needs, while a practitioner needs to know how accurate an operator trained on the compressed data will be. We show that the first does not determine the second, and measure why, compressing the input fields while targets and test inputs stay at full precision. A solution operator attenuates a perturbation of its input. Pushing a compressed field through a surrogate already trained at full precision measures how much of the perturbation that surrogate transmits. The fraction is consistent with the smoothing behaviour of the underlying equation, and it spans more than two orders of magnitude across PDE families. Field reconstruction error is computed before the attenuation and cannot see it. For operators trained with mean squared error it inverts 36 of 104 cost comparisons across datasets, where a probe built from the same forward passes inverts 12. Two families that PDEBench stores with identical initial conditions differ threefold downstream at identical field error. Under the relative-L2 objective of the reference recipe the separation narrows, while the ordering of the family-level median transmission factors is unchanged. After one full-precision training run, the probe evaluates an entire rate curve by forward passes alone. It ranks datasets and rates consistently across the codecs and architectures we test, while its magnitude does not transfer between them.</p></div>
+  <div class="article-body"><p>arXiv:2610.06095v3 Announce Type: replace 
+Abstract: Operator-learning benchmarks ship as full-precision arrays, and they have grown to terabyte scale. A curator who wants to distribute one has to decide how coarsely to store it. That decision is usually made by fixing a tolerance on the reconstruction error of the stored field. We show that this quantity is measured in the wrong place. It compares the stored field with the original, before any model is trained. What the curator is buying is the accuracy of a model trained on the compressed copy, and the two can disagree: two PDEBench families stored to identical field error differ threefold downstream. A solution operator smooths, so only part of the codec error ever reaches the model&#x27;s output. That part can be measured. Push a compressed field through a model already trained at full precision, and compare its output against the output on the clean field. The measurement costs forward passes and no training on compressed data. It spans more than two orders of magnitude across six PDE families, and it orders downstream cost where field error does not, inverting 12 of 104 cross-dataset comparisons against field error&#x27;s 36. Read as a budget, the same curve nominates a storage rate for each dataset. A back-check against trained models finds those rates wrong in both directions by up to a factor of two in stored bits.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

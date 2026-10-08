@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Democratizing MoE inference on commodity GPUs with CoMoE — NewsMatome (EN)</title>
+<meta name="description" content="Democratizing MoE inference on commodity GPUs with CoMoE — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/6ce81a69e7ed.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/6ce81a69e7ed.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/6ce81a69e7ed.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/6ce81a69e7ed.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Democratizing MoE inference on commodity GPUs with CoMoE">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Democratizing MoE inference on commodity GPUs with CoMoE",
+ "inLanguage":"en","datePublished":"2026-10-09T07:00:00+09:00","dateModified":"2026-10-09T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.09424","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/6ce81a69e7ed.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/6ce81a69e7ed.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Democratizing MoE inference on commodity GPUs with CoMoE</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/09</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/6ce81a69e7ed.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.09424" rel="nofollow noopener">https://arxiv.org/abs/2610.09424</a></span></div>
+  <div class="article-body"><p>arXiv:2610.09424v1 Announce Type: cross 
+Abstract: Deploying Mixture-of-Experts (MoE) models relies heavily on Expert Parallelism, which generates intense inter-GPU communication. Consequently, state-of-the-art inference systems require high-bandwidth, P2P interconnects (e.g., NVLink) in datacenter GPUs to handle massive token routing, making deployment prohibitively expensive. Consumer GPUs offer comparable compute power at significantly lower cost, promising to democratize MoE inference for individuals and enable privacy-preserving local deployments. However, their bandwidth-limited (only weak PCIe bus bandwidth) and host-mediated interconnects (no P2P support) introduce severe communication bottlenecks.
+  We present CoMoE, a communication-efficient MoE inference system that resolves this mismatch through novel host-centric routing. Our key insight is that the unique communication topology provides the opportunity to elevate the host to an active routing hub, which can fundamentally reduce communication volume and eliminate global synchronization-induced stalls. Specifically, for token dispatch, we introduce host-backed token multicast to write shared tokens to the host exactly once, eliminating outbound transmission redundancy. For token combine, we propose a fine-grained, token-level aggregation mechanism using host staging buffers, which replaces rigid global synchronization and mitigates straggler effects. Evaluation on RTX 5090 GPUs shows that CoMoE improves inference throughput by up to 1.46x, approaching the performance of NVLink-capable A800 GPUs at only 23.4% of the hardware cost.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
