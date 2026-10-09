@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>A Parameter-Free Zeroth-Order Method with Covariance Matrix Adaptation and Effective Dimension — NewsMatome (EN)</title>
-<meta name="description" content="A Parameter-Free Zeroth-Order Method with Covariance Matrix Adaptation and Effective Dimension — original-language edition. Japanese translation available.">
+<title>Parameter-Free Zeroth-Order Optimization with Ellipsoidal Sampling — NewsMatome (EN)</title>
+<meta name="description" content="Parameter-Free Zeroth-Order Optimization with Ellipsoidal Sampling — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/39cbb307c421.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/39cbb307c421.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/39cbb307c421.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/39cbb307c421.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="A Parameter-Free Zeroth-Order Method with Covariance Matrix Adaptation and Effective Dimension">
+<meta property="og:title" content="Parameter-Free Zeroth-Order Optimization with Ellipsoidal Sampling">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"A Parameter-Free Zeroth-Order Method with Covariance Matrix Adaptation and Effective Dimension",
- "inLanguage":"en","datePublished":"2026-10-03T07:00:00+09:00","dateModified":"2026-10-03T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Parameter-Free Zeroth-Order Optimization with Ellipsoidal Sampling",
+ "inLanguage":"en","datePublished":"2026-10-10T07:00:00+09:00","dateModified":"2026-10-10T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2609.38561","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/39cbb307c421.html"}
@@ -34,14 +34,14 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>A Parameter-Free Zeroth-Order Method with Covariance Matrix Adaptation and Effective Dimension</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/03</span></div>
+    <h1>Parameter-Free Zeroth-Order Optimization with Ellipsoidal Sampling</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/10</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/39cbb307c421.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.38561" rel="nofollow noopener">https://arxiv.org/abs/2609.38561</a></span></div>
-  <div class="article-body"><p>arXiv:2609.38561v1 Announce Type: cross 
-Abstract: Zeroth-order optimization methods are essential for solving black-box problems where gradient information is unavailable or expensive to compute. This paper presents POEM-CMA, a novel parameter-free stochastic zeroth-order algorithm that extends the recent POEM method by integrating covariance matrix alignment and the notion of effective dimension.
-  In contrast to traditional zeroth-order approaches that rely on isotropic random directions, POEM-CMA performs anisotropic sampling by constructing a covariance matrix from gradient estimates. This enables the algorithm to focus sampling efforts on the most informative directions. We introduce the use of the empirical effective dimension $d^* = \frac{\operatorname{tr}(\hat{\Sigma})}{\lambda_{\max}(\hat{\Sigma})}$, which reflects the intrinsic dimensionality of the problem and replaces the ambient dimension in both sampling and complexity analysis.
-  We prove that POEM-CMA achieves a near-optimal convergence rate, requiring only $\tilde{\mathcal{O}}\left(\frac{d^* \kappa(\hat{\Sigma}) L^2 D_{\mathcal{X}}^2}{\varepsilon^2}\right)$ stochastic zeroth-order oracle queries. The method remains fully parameter-free and demonstrates significant improvements over the original POEM in problems with low-rank structure where $d^* \ll d$. Numerical experiments on hinge-loss binary classification tasks using LibSVM datasets confirm the practical superiority of the proposed approach.</p></div>
+  <div class="article-body"><p>arXiv:2609.38561v2 Announce Type: replace-cross 
+Abstract: Zeroth-order optimization methods are essential for solving black-box problems where gradient information is unavailable or expensive to compute. This paper presents POEM-ES, a novel parameter-free stochastic zeroth-order algorithm that extends the recent POEM method by integrating subspace preconditioning with ellipsoidal randomized sampling.
+  In contrast to traditional zeroth-order approaches that rely on isotropic random directions, POEM-ES performs anisotropic sampling guided by a fixed structural symmetric positive semi-definite (SPSD) preconditioner $\hat{\Sigma}$ that encodes the underlying low-dimensional geometry. Under a standard structural spectral normalization where $\lambda_{\max}(\hat{\Sigma}) = 1$, we introduce the use of the empirical effective dimension $d^* = \operatorname{tr}(\hat{\Sigma})$, which reflects the intrinsic dimensionality of the problem and guides both the sampling and randomized smoothing parameter schedules. In practice, such a preconditioner can be effectively obtained via pilot sampling, historical trajectories, or domain-specific expert knowledge.
+  We prove that POEM-ES achieves a dimension-reduced convergence rate under low-rank structural assumptions, requiring only $\tilde{\mathcal{O}}\left( \frac{\left( r^2 \kappa(\hat{\Sigma}) + d^* \right) L^2 D_{\mathcal{X}}^2}{\varepsilon^2} \right)$ stochastic zeroth-order oracle queries. The method remains fully parameter-free and demonstrates significant improvements over the original POEM in problems with low-rank structure where $d^* \ll d$. Numerical experiments on hinge-loss binary classification tasks using LibSVM datasets confirm the practical superiority of the proposed approach.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

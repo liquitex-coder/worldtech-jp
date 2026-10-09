@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Implementation Guidelines for Data Quality Metrics — NewsMatome (EN)</title>
+<meta name="description" content="Implementation Guidelines for Data Quality Metrics — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/919088c97026.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/919088c97026.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/919088c97026.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/919088c97026.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Implementation Guidelines for Data Quality Metrics">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Implementation Guidelines for Data Quality Metrics",
+ "inLanguage":"en","datePublished":"2026-10-10T07:00:00+09:00","dateModified":"2026-10-10T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.10919","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/919088c97026.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/919088c97026.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Implementation Guidelines for Data Quality Metrics</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/10</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/919088c97026.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.10919" rel="nofollow noopener">https://arxiv.org/abs/2610.10919</a></span></div>
+  <div class="article-body"><p>arXiv:2610.10919v1 Announce Type: cross 
+Abstract: Despite decades of data quality (DQ) research, a gap remains between DQ dimensions, such as accuracy or completeness, which the literature defines in textual form, and DQ tools, which typically implement low-level checks that are not aligned with these dimensions. ISO/IEC 25024 and ISO/IEC 5259 attempt to bridge this gap by defining DQ metrics for each dimension. However, these DQ metrics are hardly used, because the standards leave open how to implement them: for example, the metric for syntactic accuracy counts syntactically accurate values, but does not state how to decide that a value is syntactically accurate. This simply moves the problem to another level without solving it. As a result, DQ assessment currently cannot build on the standards.
+  In this paper, we make the ISO DQ metrics executable. We classify all data-level metrics of both standards into (i) generalizable metrics that need no input beyond the data, (ii) parameterized metrics whose parameters can be learned from clean reference data or set by an expert, and (iii) non-generalizable metrics that need qualitative judgment and cannot be automated. For the metrics that can be automated, i.e., categories (i) and (ii), we propose implementation guidelines that resolve what the standards leave open. We realize the guidelines in dqmeasure, an open-source library of 20 metrics that learns these parameters from reference data instead of relying on manually defined rules. Our experiments on real-world and synthetic datasets show that the metric scores decrease monotonically with an increasing number of injected errors, decline together with downstream ML performance, and scale linearly with the number of rows, which enables automated DQ monitoring based on the standards.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

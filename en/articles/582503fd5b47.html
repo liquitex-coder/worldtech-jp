@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ranking Prior Alignment for Credit Risk Modeling: When Do External Priors Matter? — NewsMatome (EN)</title>
+<meta name="description" content="Ranking Prior Alignment for Credit Risk Modeling: When Do External Priors Matter? — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/582503fd5b47.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/582503fd5b47.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/582503fd5b47.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/582503fd5b47.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ranking Prior Alignment for Credit Risk Modeling: When Do External Priors Matter?">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Ranking Prior Alignment for Credit Risk Modeling: When Do External Priors Matter?",
+ "inLanguage":"en","datePublished":"2026-10-10T07:00:00+09:00","dateModified":"2026-10-10T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.11146","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/582503fd5b47.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/582503fd5b47.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Ranking Prior Alignment for Credit Risk Modeling: When Do External Priors Matter?</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/10</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/582503fd5b47.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.11146" rel="nofollow noopener">https://arxiv.org/abs/2610.11146</a></span></div>
+  <div class="article-body"><p>arXiv:2610.11146v1 Announce Type: new 
+Abstract: Cold-start credit scoring -- deploying models with scarce labeled data, weak features, or minimal capacity -- is a recurring problem in financial machine learning. When a new lending product launches, labeled default data is scarce, feature pipelines are immature, and models must be deployed with minimal capacity to avoid overfitting. Standard defenses operate on the same limited data; what is needed is a source of external regularization grounded in domain knowledge.
+  We propose Ranking Prior Alignment, a model-agnostic framework that distills external ranking priors (from domain experts, teacher models, or LLMs) into any scoring model via a temperature-scaled KL divergence loss. The framework unifies neural (MIL attention) and tree-based (XGBoost custom objective) architectures through a single formulation: L = L_task + gamma(t) * KL(P_agent || P_model), where gamma(t) follows an exponential decay schedule. The method requires no external model at inference, and its tree-based instantiation tolerates annotation noise up to eta = 0.5.
+  On an industrial dataset of over 1.5M merchants, MIL alignment achieves 7/7 positive evaluation cells at 3K bags (1 ID + 3 OOT + 3 degradation metrics; peak Delta AUC = +0.020 on OOT-1), and XGBoost ablation achieves 9/9 positive metrics at 300 bags. Cross-dataset validation on public Amex shows 5/5 positive folds (avg Delta AUC = +0.041). Four model families (MIL, XGBoost, LightGBM, Logistic Regression) and four teacher architectures show that the framework is both model-agnostic and prior-source-independent.
+  We further observe that alignment gains exhibit an inverse-scaling pattern: benefits grow as data abundance N, model capacity C, and feature quality Q decrease, helping practitioners decide when to invest in prior annotation.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

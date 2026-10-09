@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Predicting Closed-Loop Performance of Latent World Models: Offline Checkpoint Selection for MPC and Model-Based RL Under Non-Markovian Rewards in LunarLander — NewsMatome (EN)</title>
-<meta name="description" content="Predicting Closed-Loop Performance of Latent World Models: Offline Checkpoint Selection for MPC and Model-Based RL Under Non-Markovian Rewards in LunarLander — original-language edition. Japanese translation available.">
+<title>Reward Observability and the Limits of Offline Checkpoint Selection in RSSM World Models — NewsMatome (EN)</title>
+<meta name="description" content="Reward Observability and the Limits of Offline Checkpoint Selection in RSSM World Models — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/e2a84a86a3aa.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/e2a84a86a3aa.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/e2a84a86a3aa.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/e2a84a86a3aa.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Predicting Closed-Loop Performance of Latent World Models: Offline Checkpoint Selection for MPC and Model-Based RL Under Non-Markovian Rewards in LunarLander">
+<meta property="og:title" content="Reward Observability and the Limits of Offline Checkpoint Selection in RSSM World Models">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Predicting Closed-Loop Performance of Latent World Models: Offline Checkpoint Selection for MPC and Model-Based RL Under Non-Markovian Rewards in LunarLander",
- "inLanguage":"en","datePublished":"2026-07-08T07:00:00+09:00","dateModified":"2026-07-08T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Reward Observability and the Limits of Offline Checkpoint Selection in RSSM World Models",
+ "inLanguage":"en","datePublished":"2026-10-10T07:00:00+09:00","dateModified":"2026-10-10T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.01736","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/e2a84a86a3aa.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Predicting Closed-Loop Performance of Latent World Models: Offline Checkpoint Selection for MPC and Model-Based RL Under Non-Markovian Rewards in LunarLander</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/08</span></div>
+    <h1>Reward Observability and the Limits of Offline Checkpoint Selection in RSSM World Models</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/10</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/e2a84a86a3aa.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.01736" rel="nofollow noopener">https://arxiv.org/abs/2607.01736</a></span></div>
-  <div class="article-body"><p>arXiv:2607.01736v2 Announce Type: replace 
-Abstract: We study how to predict the downstream closed-loop performance of a learned latent world model from validation-time diagnostics alone. Choosing the right checkpoint from a world-model training run is difficult: validation loss and multi-step prediction RMSE keep improving long after closed-loop performance has collapsed. We present a suite of structural validation-time diagnostics drawn from optimal-control theory and apply them to Gymnasium&#x27;s LunarLander v3, which features shaped rewards. We train an RSSM [5, 4] world model on it and treat per checkpoint CEM-MPC return as the oracle for closed-loop quality. By evaluating 40 metrics against this oracle, we find that the strongest single predictor is the Reward Observability Fraction (ROF), which measures the reward predictor&#x27;s dependence on the observable subspace. We combine ROF with three structural regularizers into a single-number offline checkpoint selection score, the Composite Reward Observability Fraction (CROF). The CROF-selected world model trains a model-based A2C policy that beats a fairly evaluated model-free A2C baseline by ~24.5 return points while using ~65x fewer real-environment interactions, and the same world model also drives a strong zero-shot CEM-MPC policy. Code and data: https://github.com/nsmoly/LunarLander_RSSM.</p></div>
+  <div class="article-body"><p>arXiv:2607.01736v3 Announce Type: replace 
+Abstract: We study the closed-loop properties of a recurrent state-space model (RSSM) world model trained on human demonstrations in Gymnasium&#x27;s LunarLander-v3. We use the trained world model for zero-shot CEM model-predictive control (MPC) and for actor-critic (A2C) training in imagination. Scored on 100 held-out episodes, the selected model-based A2C policy (trained on world-model checkpoint 280) reaches a mean return of +189.5, matching the best model-free A2C checkpoint (+183.7; 600- and 1000-step episode caps respectively) with ~65x fewer real training transitions. We also compare world-model MPC with a behaviour-cloning (BC) policy trained on the successful demonstrations. The BC policy matches MPC&#x27;s mean return only under stochastic action selection, and on the same 20 episodes it has one catastrophic episode where MPC has none. We then introduce the Reward Observability Fraction (ROF), the Euclidean fraction of the reward gradient in the observable subspace of the linearized latent dynamics, and show that the next H observations carry Fisher information about every direction in this subspace and none about directions orthogonal to it. ROF itself however depends on how the latent is scaled: rescaling it changes ROF but not the model, so raw levels are not comparable across models. Forcing the reward head onto the posterior-corrected latent z raises ROF, and the rise survives a coordinate-invariant check on the pair of runs we tested. Finally, we test whether ROF or other offline metrics can predict the closed-loop collapse of MPC. Collapse varies between training runs with identical data and configuration. ROF does not predict it, none of the 108 offline summaries we screened passes a permutation test, and the best candidate fails on new runs. Predicting collapse offline from the model and logged data alone remains open.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

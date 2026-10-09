@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Examining the Efficacy of Graph Neural Network Message-Passing in Regression Contexts — NewsMatome</title>
-<meta name="description" content="Examining the Efficacy of Graph Neural Network Message-Passing in Regression Contexts（EN→JA 翻訳・出典付き）">
+<title>How Much Does Message Passing Matter? A Drop-In Study of GNN Layers for Neural Network Graph Regression — NewsMatome</title>
+<meta name="description" content="How Much Does Message Passing Matter? A Drop-In Study of GNN Layers for Neural Network Graph Regression（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/df18a7c7259a.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/df18a7c7259a.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/df18a7c7259a.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="Examining the Efficacy of Graph Neural Network Message-Passing in Regression Contexts">
-<meta property="og:description" content="Examining the Efficacy of Graph Neural Network Message-Passing in Regression Contexts（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="How Much Does Message Passing Matter? A Drop-In Study of GNN Layers for Neural Network Graph Regression">
+<meta property="og:description" content="How Much Does Message Passing Matter? A Drop-In Study of GNN Layers for Neural Network Graph Regression（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Examining the Efficacy of Graph Neural Network Message-Passing in Regression Contexts",
- "inLanguage":"ja","datePublished":"2026-07-31T07:00:00+09:00","dateModified":"2026-07-31T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"How Much Does Message Passing Matter? A Drop-In Study of GNN Layers for Neural Network Graph Regression",
+ "inLanguage":"ja","datePublished":"2026-10-10T07:00:00+09:00","dateModified":"2026-10-10T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.26404","url":"https://liquitex-coder.github.io/worldtech-jp/articles/df18a7c7259a.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>Examining the Efficacy of Graph Neural Network Message-Passing in Regression Contexts</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>How Much Does Message Passing Matter? A Drop-In Study of GNN Layers for Neural Network Graph Regression</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>Examining the Efficacy of Graph Neural Network Message-Passing in Regression Contexts</h1>
+      <h1>How Much Does Message Passing Matter? A Drop-In Study of GNN Layers for Neural Network Graph Regression</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/07/31 07:00</span><span>· 更新 2026/07/31</span>
+        <span>公開 2026/10/10 07:00</span><span>· 更新 2026/10/10</span>
       </div>
     </div>
     
@@ -74,27 +74,27 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2607.26404" rel="nofollow noopener">Examining the Efficacy of Graph Neural Network Message-Passing in Regression Contexts</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2607.26404" rel="nofollow noopener">How Much Does Message Passing Matter? A Drop-In Study of GNN Layers for Neural Network Graph Regression</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2607.26404v1 Announce Type: new 
-Abstract: Graph Neural Networks (GNN) facilitate effective prediction on graph data such as molecules, media networks and neural network blueprints. GNNs facilitate prediction through message passing techniques which define how information flows from a node to its neighbors. Due to the ubiquity of the graph data type, the development of newer and better GNNs has garnered much interest in the machine learning community.
-  However, GNN evaluation and benchmarking is primarily driven by classification tasks. Thus, prospective GNN message passing layers are evaluated on their ability to outperform prior work in classification contexts. In contrast, GNNs are equally capable of performing scalar regression prediction, yet this class of problem is often overlooked when proposing new GNNs while the best classification GNNs are utilized in an a priori or off-the-shelf manner for regression problems. In response, this paper studies the efficacy of GNN layers in a slew of regression contexts from rank ordering, error minimization and insight extraction. Results show that deep convolutional GNNs, particularly GEN, are more effective at these tasks than attention-based GNNs, while other classical, theoretically-inspired GNNs remain competitive and efficient.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2607.26404v1 Announce Type: new 
-Abstract: Graph Neural Networks (GNN) facilitate effective prediction on graph data such as molecules, media networks and neural network blueprints. GNNs facilitate prediction through message passing techniques which define how information flows from a node to its neighbors. Due to the ubiquity of the graph data type, the development of newer and better GNNs has garnered much interest in the machine learning community.
-  However, GNN evaluation and benchmarking is primarily driven by classification tasks. Thus, prospective GNN message passing layers are evaluated on their ability to outperform prior work in classification contexts. In contrast, GNNs are equally capable of performing scalar regression prediction, yet this class of problem is often overlooked when proposing new GNNs while the best classification GNNs are utilized in an a priori or off-the-shelf manner for regression problems. In response, this paper studies the efficacy of GNN layers in a slew of regression contexts from rank ordering, error minimization and insight extraction. Results show that deep convolutional GNNs, particularly GEN, are more effective at these tasks than attention-based GNNs, while other classical, theoretically-inspired GNNs remain competitive and efficient.</div>
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2607.26404v2 Announce Type: replace 
+Abstract: Graph Neural Networks (GNNs) are widely used as regressors, for example to predict the accuracy of a neural architecture. Yet new message-passing (MP) layers are developed and benchmarked almost exclusively on classification tasks, and regression pipelines typically adopt a single MP layer without ablation. We ask how much the choice of MP layer matters for graph-level regression. Holding the architecture, loss and training recipe of four existing GNN regressors fixed, we substitute ten MP configurations spanning convolutional, isomorphism-based and attention-based designs.
+  We evaluate them on eleven datasets of neural-network graphs that range from under ten to over a thousand nodes per graph and from a few hundred to over four hundred thousand samples, measuring rank correlation, prediction error, top-$k$ retrieval, latency and memory. MP choice changes results substantially, and we find that the best choice depends on graph size, training-set size and regression objective. Classical layers such as GEN, $k$-GNN and PNA match or exceed attention-based layers on small architecture graphs at lower cost, while GATv2 performs well on datasets with few large graphs.</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2607.26404v2 Announce Type: replace 
+Abstract: Graph Neural Networks (GNNs) are widely used as regressors, for example to predict the accuracy of a neural architecture. Yet new message-passing (MP) layers are developed and benchmarked almost exclusively on classification tasks, and regression pipelines typically adopt a single MP layer without ablation. We ask how much the choice of MP layer matters for graph-level regression. Holding the architecture, loss and training recipe of four existing GNN regressors fixed, we substitute ten MP configurations spanning convolutional, isomorphism-based and attention-based designs.
+  We evaluate them on eleven datasets of neural-network graphs that range from under ten to over a thousand nodes per graph and from a few hundred to over four hundred thousand samples, measuring rank correlation, prediction error, top-$k$ retrieval, latency and memory. MP choice changes results substantially, and we find that the best choice depends on graph size, training-set size and regression objective. Classical layers such as GEN, $k$-GNN and PNA match or exceed attention-based layers on small architecture graphs at lower cost, while GATv2 performs well on datasets with few large graphs.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2607.26404v1 Announce Type: new 
-Abstract: Graph Neural Networks (GNN) facilitate effective prediction on graph data such as molecules, media networks and neural network blueprints. GNNs facilitate prediction through message passing techniques which define how information flows from a node to its neighbors. Due to the ubiquity of the graph data type, the development of newer and better GNNs has garnered much interest in the machine learning community.
-  However, GNN evaluation and benchmarking is primarily driven by classification tasks. Thus, prospective GNN message passing layers are evaluated on their ability to outperform prior work in classification contexts. In contrast, GNNs are equally capable of performing scalar regression prediction, yet this class of problem is often overlooked when proposing new GNNs while the best classification GNNs are utilized in an a priori or off-the-shelf manner for regression problems. In response, this paper studies the efficacy of GNN layers in a slew of regression contexts from rank ordering, error minimization and insight extraction. Results show that deep convolutional GNNs, particularly GEN, are more effective at these tasks than attention-based GNNs, while other classical, theoretically-inspired GNNs remain competitive and efficient.</p><a href="https://arxiv.org/abs/2607.26404" rel="nofollow noopener">原論文を読む →</a></div>
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2607.26404v2 Announce Type: replace 
+Abstract: Graph Neural Networks (GNNs) are widely used as regressors, for example to predict the accuracy of a neural architecture. Yet new message-passing (MP) layers are developed and benchmarked almost exclusively on classification tasks, and regression pipelines typically adopt a single MP layer without ablation. We ask how much the choice of MP layer matters for graph-level regression. Holding the architecture, loss and training recipe of four existing GNN regressors fixed, we substitute ten MP configurations spanning convolutional, isomorphism-based and attention-based designs.
+  We evaluate them on eleven datasets of neural-network graphs that range from under ten to over a thousand nodes per graph and from a few hundred to over four hundred thousand samples, measuring rank correlation, prediction error, top-$k$ retrieval, latency and memory. MP choice changes results substantially, and we find that the best choice depends on graph size, training-set size and regression objective. Classical layers such as GEN, $k$-GNN and PNA match or exceed attention-based layers on small architecture graphs at lower cost, while GATv2 performs well on datasets with few large graphs.</p><a href="https://arxiv.org/abs/2607.26404" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2607.26404" rel="nofollow noopener">https://arxiv.org/abs/2607.26404</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
     <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="5f8449b50a00.html"><div class="sim">関連</div><div class="info"><b>Do Models Fake Alignment Without Clear Consequences?</b><div class="m">AI</div></div></a><a class="r" href="3a089eb3b0fb.html"><div class="sim">関連</div><div class="info"><b>Beyond Memory: A Templated Substrate for Heterogeneous Collaborative Knowledge Work with LLM Agents</b><div class="m">AI</div></div></a><a class="r" href="f914ce76f855.html"><div class="sim">関連</div><div class="info"><b>Kernel Forge: An Agent Harness for LLM-based Generation and Optimization of CUDA Kernels</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="1a2a886b4baf.html"><div class="sim">関連</div><div class="info"><b>An Explainable Header-Centric Framework for Large-Scale Semantic Table Interpretation and Data Quality Assessment</b><div class="m">AI</div></div></a><a class="r" href="7555d57bfd57.html"><div class="sim">関連</div><div class="info"><b>Synthesis Through Simulation: Generating Coherent Enterprise Data via Scalable Agent-System Interaction</b><div class="m">AI</div></div></a><a class="r" href="8e3cf582f4f5.html"><div class="sim">関連</div><div class="info"><b>Agent-Controlled Forgetting for Tool-Using Agents: Reversible Context Curation in Practice</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>
