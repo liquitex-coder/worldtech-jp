@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Decoupling Logic from Persona: Structural Immunity of Edge LLM Agents to Context Pollution — NewsMatome (EN)</title>
+<meta name="description" content="Decoupling Logic from Persona: Structural Immunity of Edge LLM Agents to Context Pollution — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/db103e45b2af.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/db103e45b2af.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/db103e45b2af.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/db103e45b2af.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Decoupling Logic from Persona: Structural Immunity of Edge LLM Agents to Context Pollution">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Decoupling Logic from Persona: Structural Immunity of Edge LLM Agents to Context Pollution",
+ "inLanguage":"en","datePublished":"2026-10-13T07:00:00+09:00","dateModified":"2026-10-13T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.09772","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/db103e45b2af.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/db103e45b2af.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Decoupling Logic from Persona: Structural Immunity of Edge LLM Agents to Context Pollution</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/10/13</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/db103e45b2af.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.09772" rel="nofollow noopener">https://arxiv.org/abs/2610.09772</a></span></div>
+  <div class="article-body"><p>arXiv:2610.09772v2 Announce Type: replace-cross 
+Abstract: Edge language-model agents must hold a persona and reason correctly at once, in one context window that fills with history and persona instructions. We study what happens to the logical part of such an agent when that history is long, misleading and persona-heavy (persona-logic interference), and present a Decoupling Architecture (AO-DA) that separates logical inference (&quot;What&quot;) from persona expression (&quot;How&quot;) into two inference paths on one INT4 base model with hot-swappable LoRA adapters. The logic path receives only the core turn and emits a verifiable structured state (Micro-State); the persona path renders it in character with the full history. In same-base-model ablations on an Apple M2 laptop (Llama-3.1-8B-Instruct and Gemma-3-4B-it, 4-bit; 480 runs: 2 bases x 4 pollution levels x 3 arms x 2 tasks x 2 personas x 5 seeds) we find: (i) the decoupled logic path is structurally invariant to pollution: its prompt stays at 180 (Llama) or 167 (Gemma) tokens while the mixed single-pass prompt grows from 242 to 1,203 on Llama, and its outputs are byte-identical across levels (40/40); (ii) the mixed single pass degrades monotonically (composite logic score 0.669 to 0.150 on Llama, 0.487 to 0.150 on Gemma), mostly by failing to emit the required structured output (80-95% of runs on Llama, 100% on Gemma at the two highest levels); (iii) with the same pollution fed into the logic path, the dedicated-adapter, dedicated-format path is still more robust than the single pass on the 8B model (failure 0-20% vs 25-95% at L2-L4; paired $\Delta$ +0.30 to +0.50, Cliff&#x27;s $\delta$ 0.50-0.85, Holm-adjusted $p \le 0.03$) but not on the 4B model, where both collapse. Separation costs one extra decode on a topic&#x27;s first turn (28.2 s vs 18.2 s on Llama) and buys persona hot-swapping in 1.7 ms (warm median) without re-running the logic path. Code, logic-path adapters, logs and analysis scripts are released.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

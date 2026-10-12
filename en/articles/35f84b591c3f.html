@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Not All Dimensions Are Equal: Outlier-Aware Attention Linearization with Grouped Quadratic Kernels — NewsMatome (EN)</title>
+<meta name="description" content="Not All Dimensions Are Equal: Outlier-Aware Attention Linearization with Grouped Quadratic Kernels — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/35f84b591c3f.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/35f84b591c3f.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/35f84b591c3f.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/35f84b591c3f.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Not All Dimensions Are Equal: Outlier-Aware Attention Linearization with Grouped Quadratic Kernels">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Not All Dimensions Are Equal: Outlier-Aware Attention Linearization with Grouped Quadratic Kernels",
+ "inLanguage":"en","datePublished":"2026-10-13T07:00:00+09:00","dateModified":"2026-10-13T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.13674","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/35f84b591c3f.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/35f84b591c3f.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Not All Dimensions Are Equal: Outlier-Aware Attention Linearization with Grouped Quadratic Kernels</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/13</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/35f84b591c3f.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.13674" rel="nofollow noopener">https://arxiv.org/abs/2610.13674</a></span></div>
+  <div class="article-body"><p>arXiv:2610.13674v1 Announce Type: cross 
+Abstract: Linearizing softmax attention offers a route to efficient Transformer inference, but preserving pretrained attention remains challenging. We identify an important source of approximation error overlooked by standard linearization methods: a small number of outlier dimensions contribute disproportionately to query-key dot products and account for a large fraction of the approximation error. Motivated by this heterogeneity, we propose Outlier-Aware Attention Linearization (OAL), a dimension-aware method for constructing quadratic attention approximations. Starting from a second-order Taylor approximation, we introduce a Hadamard-product formulation that makes individual query-key contributions explicit. This formulation relaxes globally shared coefficients to support dimension-specific linear terms and cross-dimensional quadratic interactions while preserving separable evaluation. To retain this flexibility with fewer parameters, OAL groups dimensions with similar contribution scales to share coefficients, while allowing distinct treatment of the few outliers. The resulting positive quadratic kernel is calibrated against pretrained attention outputs and admits linear-time evaluation with respect to sequence length for fixed head dimensions. On Qwen2.5-0.5B, OAL reduces frozen-attention output relative MSE by approximately 8.9% compared with DiJiang. Replacing middle-layer attention modules and jointly fine-tuning the kernel coefficients with LoRA further lowers WikiText-103 perplexity from 31.71 to 27.50 compared with a learned global quadratic, while improving accuracy on PIQA, HellaSwag, and ARC-E. These results demonstrate the value of outlier-aware dimension grouping for both attention approximation and pretrained-model conversion. The code is available at https://github.com/wuqianyue09/OAL</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GlucoPRISM: Protocol-Supervised Pretraining for Cross-Cohort Glucose Transfer — NewsMatome (EN)</title>
+<meta name="description" content="GlucoPRISM: Protocol-Supervised Pretraining for Cross-Cohort Glucose Transfer — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/b4eb995d9dcf.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/b4eb995d9dcf.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/b4eb995d9dcf.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/b4eb995d9dcf.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GlucoPRISM: Protocol-Supervised Pretraining for Cross-Cohort Glucose Transfer">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"GlucoPRISM: Protocol-Supervised Pretraining for Cross-Cohort Glucose Transfer",
+ "inLanguage":"en","datePublished":"2026-10-13T07:00:00+09:00","dateModified":"2026-10-13T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.12528","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/b4eb995d9dcf.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/b4eb995d9dcf.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>GlucoPRISM: Protocol-Supervised Pretraining for Cross-Cohort Glucose Transfer</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/13</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/b4eb995d9dcf.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.12528" rel="nofollow noopener">https://arxiv.org/abs/2610.12528</a></span></div>
+  <div class="article-body"><p>arXiv:2610.12528v1 Announce Type: new 
+Abstract: Continuous glucose monitoring (CGM) foundation models encode each day as one vector that mixes who the person is, what happened that day and how the sensor measured it, so measurement differences travel with the representation into new cohorts. We ask whether pretraining can place the measurement component that harms transfer in known coordinates, so that deployment drops them with a fixed projection and no target data. GlucoPRISM supervises a GlucoFM backbone with response contracts, rules for how each part of the representation should change when only the day or only the sensor changes: a 64-dimensional Trait band should change with neither, a 48-dimensional State band only across days, and a 16-dimensional Sensor band should track the device. Synthetic sensor views calibrated on paired Dexcom and Libre recordings, different-day pairs and glucose-summary targets supply this supervision without clinical labels. Across twelve cross-cohort directions, dropping the Sensor band from the same frozen encoder raises mean transfer AUROC from 68.75 to 73.57, against 69.3 for GlucoFM. The gain has two parts. Into CGMacros, the one target cohort recorded with two sensor types, filtering adds 11 to 19 points, and this holds when the generator is recalibrated on half of the participants and scored on the other half. On the other eight directions filtering is neutral and the encoder itself exceeds GlucoFM by 3.5 points. The device remains linearly decodable after filtering, so the filter removes a device-related component that harms transfer rather than all measurement information. The retained bands improve window AUROC on thirteen of fourteen public task--cohort cells (Holm-adjusted p=0.031) and correlation on fourteen of fifteen clinical endpoints in an external cohort of 9,303 participants.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

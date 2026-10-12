@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Self-supervision drives representational convergence in medical foundation models more than clinical supervision — NewsMatome (EN)</title>
-<meta name="description" content="Self-supervision drives representational convergence in medical foundation models more than clinical supervision — original-language edition. Japanese translation available.">
+<title>Medical foundation models converge less under label supervision — NewsMatome (EN)</title>
+<meta name="description" content="Medical foundation models converge less under label supervision — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/7778f5e13491.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/7778f5e13491.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/7778f5e13491.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/7778f5e13491.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Self-supervision drives representational convergence in medical foundation models more than clinical supervision">
+<meta property="og:title" content="Medical foundation models converge less under label supervision">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Self-supervision drives representational convergence in medical foundation models more than clinical supervision",
- "inLanguage":"en","datePublished":"2026-07-24T07:00:00+09:00","dateModified":"2026-07-24T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Medical foundation models converge less under label supervision",
+ "inLanguage":"en","datePublished":"2026-10-13T07:00:00+09:00","dateModified":"2026-10-13T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.20274","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/7778f5e13491.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Self-supervision drives representational convergence in medical foundation models more than clinical supervision</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/24</span></div>
+    <h1>Medical foundation models converge less under label supervision</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/13</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/7778f5e13491.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.20274" rel="nofollow noopener">https://arxiv.org/abs/2607.20274</a></span></div>
-  <div class="article-body"><p>arXiv:2607.20274v1 Announce Type: cross 
-Abstract: Medical image encoders from different groups are increasingly treated as interchangeable, on the assumption that scale and clinical supervision concentrate their representations onto a shared structure. Whether this convergence is real, what produces it, and whether it is clinically usable are untested, and the similarity measures behind such claims are fragile. We present a controlled dissection across 18 image and 7 text encoders, all open-weight and run locally, spanning 7M to 27B parameters and five imaging modalities, including 650,982 chest radiographs from six datasets. To isolate cause, we train encoders that vary only the objective under fixed data, architecture, and scale, and reproduce the effect in a synthetic model. Convergence is modest but above a random floor, driven by the self-supervised objective, not clinical supervision: matched self-supervised encoders aligned most (40.4% on chest radiography), with label-supervised (21.1%) and image-text (3.3%) far lower, and did not grow with size (Spearman 0.302, p=0.223) or capability. It is within-modality, does not reach clinical language, and does not reproduce how radiologists judge case similarity. Yet a linear classifier transfers across encoders and to five held-out hospitals, retaining about 85% of within-encoder performance. Convergence in medical imaging is therefore set by the pretraining objective, not inherited from scale or clinical supervision. Interoperability is accordingly something to design for through that objective, and to validate where the shared geometry is weakest, across patient subgroups and against clinical judgment.</p></div>
+  <div class="article-body"><p>arXiv:2607.20274v3 Announce Type: replace-cross 
+Abstract: Diagnostic classifiers and imaging biomarkers are fitted on the embeddings of medical foundation models. These models are replaced as new versions appear. This practice assumes that different models represent images alike. We tested this assumption with more than 750,000 images from 14 datasets in 5 imaging modalities, 18 public models, and 101 models trained on chest radiographs and histopathology that differ in pretraining objective, label type, size, random seed, initialization, training patients, or training recipe. Agreement was measured as the mutual k-nearest-neighbor overlap, the share of an image&#x27;s nearest neighbors common to two models. Two public models shared on average 0.091 of the 10 nearest neighbors of a chest radiograph. A randomly initialized network shared 0.036 with them. In the four other modalities, they shared at most 0.300. On chest radiographs, agreement depended more on the source dataset and the radiographic view than on the findings. It was not significantly associated with accuracy. A linear mapping between the embeddings of two models, fitted on 4,096 unlabeled radiographs, transferred classifiers for 14 chest findings with 0.987 of their original area under the receiver operating characteristic curve. Convergence depended on the pretraining objective. Label-supervised models converged least at both model sizes in chest radiography and histopathology. On chest radiographs, two label-supervised models that differed only in their random seed shared 0.062 to 0.100 of their nearest neighbors. Two models trained with self-distillation, masked image modeling, or contrastive pretraining shared 0.411 to 0.802. Developers can therefore choose convergence when they choose the pretraining objective. Before replacing a model, users could test on unlabeled images whether its successor returns the same nearest neighbors.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>
