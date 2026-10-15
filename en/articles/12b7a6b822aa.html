@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>What Does a Discrete Diffusion Model Learn? — NewsMatome (EN)</title>
-<meta name="description" content="What Does a Discrete Diffusion Model Learn? — original-language edition. Japanese translation available.">
+<title>What Does a Discrete Diffusion Model Learn? One Reverse Process in Three Coordinates — NewsMatome (EN)</title>
+<meta name="description" content="What Does a Discrete Diffusion Model Learn? One Reverse Process in Three Coordinates — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/12b7a6b822aa.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/12b7a6b822aa.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/12b7a6b822aa.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/12b7a6b822aa.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="What Does a Discrete Diffusion Model Learn?">
+<meta property="og:title" content="What Does a Discrete Diffusion Model Learn? One Reverse Process in Three Coordinates">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"What Does a Discrete Diffusion Model Learn?",
- "inLanguage":"en","datePublished":"2026-07-08T07:00:00+09:00","dateModified":"2026-07-08T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"What Does a Discrete Diffusion Model Learn? One Reverse Process in Three Coordinates",
+ "inLanguage":"en","datePublished":"2026-10-16T07:00:00+09:00","dateModified":"2026-10-16T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.05381","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/12b7a6b822aa.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>What Does a Discrete Diffusion Model Learn?</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/08</span></div>
+    <h1>What Does a Discrete Diffusion Model Learn? One Reverse Process in Three Coordinates</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/16</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/12b7a6b822aa.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.05381" rel="nofollow noopener">https://arxiv.org/abs/2607.05381</a></span></div>
-  <div class="article-body"><p>arXiv:2607.05381v1 Announce Type: new 
-Abstract: What does a discrete diffusion model learn: a denoiser, a score ratio, or a bridge plug-in predictor? At the level of jump rates, these are one object in different coordinates, and reading a neural network in the wrong coordinate changes the process being trained and sampled. Starting with a rigorous derivation of the continuous-time Markov chain (CTMC) ELBO for any noising process, boundary terms included, we prove the \emph{Oracle Distance} theorem: the negative ELBO is exactly equal to the data entropy plus the path KL from the oracle reverse process to the learned one, not merely a bound. Its unique optimizer is therefore the conditional expectation of the true reverse jump rate given the current noisy state, and its irreducible cost is the rate at which the forward process $Z_t$ destroys information about the clean data $Z_0$, $-\tfrac{d}{dt}I(Z_0; Z_t)$, so every noising process shares the same best achievable negative ELBO: the data entropy. For sequences with token-factorizing noise, the oracle projection yields three exact coordinates for the optimizer: denoiser, cavity (bridge plug-in), and score, with closed-form conversions among them. This framework identifies which law each loss in the literature actually optimizes, recovering MDM, UDM, SEDD, and GIDD as special cases; explains why denoiser and cavity coincide for masked diffusion but not for uniform diffusion; proves that a denoiser parameterization makes the uniform ELBO diverge at initialization while the bridge plug-in stays finite; and calibrates ELBO implementations exactly at initialization. Every identity is verified numerically, without approximation, on an exactly solvable model.</p></div>
+  <div class="article-body"><p>arXiv:2607.05381v2 Announce Type: replace 
+Abstract: What does a discrete diffusion model actually learn? The literature trains denoisers, bridge plug-ins, and concrete scores, each deriving its own ELBO objective under different conventions. This fragmentation makes the object being learned unclear and ELBO values difficult to interpret and compare. All three methods learn the same object in different coordinates: the exact time-reversal of the noising process. We first prove the Oracle Distance identity: for any noising process, the negative ELBO is not just a bound on the likelihood; it equals the data entropy plus the path KL divergence from the reversed noising process to the learned one. Next, for token-factorizing noise, we show that denoiser, bridge plug-in, and concrete score are three coordinates of this reverse process, derive exact conversions between them, and identify the probability distribution learned by each. In particular, contrary to its standard interpretation, the bridge plug-in learns not a denoiser but the cavity distribution: the clean token given the noisy sequence excluding its own position. We confirm the theory by training all three coordinates with masked, uniform, and GIDD kernels on OpenWebText under a shared recipe, and by training uniform-diffusion solvers on four logic tasks. The learned coordinates agree after conversion, while confusing the cavity with the denoiser can severely degrade sampling quality. Together with exact boundary-term formulas, closed-form NELBO calibrations at initialization, and a clock interpretation of time schedules, these results provide a conceptual framework and a mechanical recipe for deriving, implementing, and comparing discrete diffusion processes.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

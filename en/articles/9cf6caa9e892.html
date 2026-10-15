@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Adaptive Compute in Latent World Models: When Depth Helps, Hurts, or Doesn&#x27;t Matter — NewsMatome (EN)</title>
-<meta name="description" content="Adaptive Compute in Latent World Models: When Depth Helps, Hurts, or Doesn&#x27;t Matter — original-language edition. Japanese translation available.">
+<title>Does Depth Survive Composition, and Can a Router Use It? Adaptive Compute in Latent World Models — NewsMatome (EN)</title>
+<meta name="description" content="Does Depth Survive Composition, and Can a Router Use It? Adaptive Compute in Latent World Models — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/9cf6caa9e892.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/9cf6caa9e892.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/9cf6caa9e892.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/9cf6caa9e892.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Adaptive Compute in Latent World Models: When Depth Helps, Hurts, or Doesn&#x27;t Matter">
+<meta property="og:title" content="Does Depth Survive Composition, and Can a Router Use It? Adaptive Compute in Latent World Models">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Adaptive Compute in Latent World Models: When Depth Helps, Hurts, or Doesn&#x27;t Matter",
- "inLanguage":"en","datePublished":"2026-07-22T07:00:00+09:00","dateModified":"2026-07-22T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Does Depth Survive Composition, and Can a Router Use It? Adaptive Compute in Latent World Models",
+ "inLanguage":"en","datePublished":"2026-10-16T07:00:00+09:00","dateModified":"2026-10-16T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.10203","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/9cf6caa9e892.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Adaptive Compute in Latent World Models: When Depth Helps, Hurts, or Doesn&#x27;t Matter</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/22</span></div>
+    <h1>Does Depth Survive Composition, and Can a Router Use It? Adaptive Compute in Latent World Models</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/16</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/9cf6caa9e892.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.10203" rel="nofollow noopener">https://arxiv.org/abs/2607.10203</a></span></div>
-  <div class="article-body"><p>arXiv:2607.10203v3 Announce Type: replace 
-Abstract: Adaptive compute for world models -- early-exit or mixture-of-depths predictors that spend variable depth per rollout step -- presumes that extra depth buys better predictions. In autoregressive rollouts, where planning actually happens, that premise requires depth&#x27;s per-step precision to survive composition. We test it directly with one pre-registered instrument, the shallow penalty rho = err(shallowest-exit rollout)/err(full-depth rollout), on nine DeepMind Control tasks under matched single-step (K=1) and multi-step (K=4) training, eight seeds each. Three regimes emerge: depth helps (intrinsic, 6/9 tasks, rho up to 8x), depth actively hurts (inversion, 2/9, rho down to 0.87x), or depth barely matters (flat). The inversion is created by training, not the dynamics: supervising early exits only at the first rollout step erases it (Delta=+0.28, n=8, non-overlapping distributions) -- a routability catch-22: the per-step deep supervision that makes exits routable also trains them to out-roll the full stack. The regime is predictable: a frozen dimensionality-only classifier, committed before training, labels held-out tasks correctly out-of-sample, including an extreme extrapolation. The inversion reproduces under a transformer predictor, yet its manifestation is configuration-dependent, shifting with metric space, horizon, encoder, backbone, and -- most strongly -- training data: on the two tasks we retrained, competent-policy data removes both the inversion and the intrinsic tradeoff, loss unchanged. In a CEM planner, rho predicts whether planning benefits from depth. Every threshold and gate was committed before the corresponding compute, including a pre-registered negative for the motivating hypothesis. Whether more compute helps a world model is not a task property; it is a property of the operating configuration, with a stable, predictable, mechanism-backed core.</p></div>
+  <div class="article-body"><p>arXiv:2607.10203v4 Announce Type: replace 
+Abstract: Adaptive-compute world models run fewer predictor blocks on some rollout steps than on others. This rests on two assumptions: that a deeper predictor gives a more accurate rollout, and that the steps which need depth can be identified before the predictor runs. We test both on nine DeepMind Control tasks with a twelve-block early-exit latent predictor, eight seeds per task. The first assumption fails on three tasks, where a shallower exit rolls out more accurately than the full stack on every seed, and composing predictions over ten steps moves the depth-error relation away from its one-step shape in both directions. In hindsight, choosing depth per step helps: a greedy oracle that sees the true next latent has 10-37% lower rollout error than the best mixture of fixed depths at equal average compute, and 8-28% lower than the best step-index schedule, on all nine tasks. No router we trained captures this. The difficulty router these models carry stays within 5% of fixed-depth mixtures; a router trained to predict each exit&#x27;s error beats them by up to 12% but no more than a fixed schedule does; and in closed-loop planning at equal compute the routed planner matches a fixed middle depth. On cheetah, where depth 2 rolls out more accurately than the full stack (an inversion), supervising the early exits only at the first rollout step removes the inversion, while a control with the same loss weight that supervises them at one random step keeps most of it (rho 0.91 vs 0.85 standard and 1.14 first-step-only, three seeds): the inversion depends on supervising exits from composed latents. These results change with the encoder, backbone, horizon and training data. The fixed-depth campaign was pre-registered; the routing analyses, planner runs, ablation control and one-step decomposition are exploratory.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

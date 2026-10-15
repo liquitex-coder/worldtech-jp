@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Essential Subspace Merging for Multi-Task Learning — NewsMatome (EN)</title>
-<meta name="description" content="Essential Subspace Merging for Multi-Task Learning — original-language edition. Japanese translation available.">
+<title>Data-Aware Model Merging in the Essential Subspace for Multi-Task Knowledge Aggregation — NewsMatome (EN)</title>
+<meta name="description" content="Data-Aware Model Merging in the Essential Subspace for Multi-Task Knowledge Aggregation — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/1e1f9010a642.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/1e1f9010a642.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/1e1f9010a642.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/1e1f9010a642.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Essential Subspace Merging for Multi-Task Learning">
+<meta property="og:title" content="Data-Aware Model Merging in the Essential Subspace for Multi-Task Knowledge Aggregation">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Essential Subspace Merging for Multi-Task Learning",
- "inLanguage":"en","datePublished":"2026-06-26T07:00:00+09:00","dateModified":"2026-06-26T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Data-Aware Model Merging in the Essential Subspace for Multi-Task Knowledge Aggregation",
+ "inLanguage":"en","datePublished":"2026-10-16T07:00:00+09:00","dateModified":"2026-10-16T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.19164","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/1e1f9010a642.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Essential Subspace Merging for Multi-Task Learning</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/06/26</span></div>
+    <h1>Data-Aware Model Merging in the Essential Subspace for Multi-Task Knowledge Aggregation</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/10/16</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/1e1f9010a642.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.19164" rel="nofollow noopener">https://arxiv.org/abs/2606.19164</a></span></div>
-  <div class="article-body"><p>arXiv:2606.19164v3 Announce Type: replace-cross 
-Abstract: Model merging aims to enable multi-task learning by integrating the capabilities of multiple models fine-tuned from the same pre-trained checkpoint into a single model. Its core challenge is inter-task interference among task-specific parameter updates. In this paper, we analyze the output shifts induced by task updates and observe that their energy is concentrated in a small number of principal directions. We call the subspace spanned by these directions the essential subspace. In contrast, most remaining directions carry little task-relevant energy, but their accumulation across multiple task updates can cause severe interference during merging. Motivated by this observation, we propose Essential Subspace Decomposition (ESD), which decomposes each task update according to the principal components of its activation shift. Based on ESD, we introduce Essential Subspace Merging (ESM), a training-free static merging method that orthogonalizes and fuses essential components into one compact multi-task model. We further extend ESM to ESM++, a training-free dynamic merging method that decomposes task-specific residuals into low-rank experts and selects the most relevant expert through prototype-based routing during forward inference. Extensive experiments across multiple task sets and model scales demonstrate that ESM and ESM++ effectively preserves task knowledge while reducing inter-task interference. Code is available at https://github.com/kiddo127/ESM.</p></div>
+  <div class="article-body"><p>arXiv:2606.19164v4 Announce Type: replace-cross 
+Abstract: Model merging enables training-free multi-task learning by aggregating knowledge from models fine-tuned from a shared checkpoint, but their task updates can interfere. Using proxy data, we find that task updates induce output shifts whose energy concentrates in a few dominant directions, while many low-energy directions can accumulate across tasks and impair performance. We call the span of the dominant directions the essential subspace. This observation motivates a data-aware framework to preserve essential task knowledge while reducing interference. Essential Subspace Decomposition (ESD) identifies each task&#x27;s essential subspace from activation shifts measured on proxy data and represents its update compactly while preserving functional behavior. Essential Subspace Merging (ESM) weights each task-update direction by its corresponding output-shift eigenvalue, thereby prioritizing core task knowledge; it then orthogonalizes the weighted directions across tasks to reduce interference. ESM++ extends this merged model by dynamically integrating low-rank task-specific residual experts for adaptive knowledge aggregation. Experiments across diverse task sets and model scales show that ESM and ESM++ effectively aggregate task knowledge while mitigating inter-task interference. Code is available at https://github.com/kiddo127/ESM.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

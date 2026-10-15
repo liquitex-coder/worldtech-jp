@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lost in Compaction: Evaluating Side-Constraint Loss under Context Compaction — NewsMatome (EN)</title>
-<meta name="description" content="Lost in Compaction: Evaluating Side-Constraint Loss under Context Compaction — original-language edition. Japanese translation available.">
+<title>Lost in Context Compaction: When LLM Systems Drop Side Constraints — NewsMatome (EN)</title>
+<meta name="description" content="Lost in Context Compaction: When LLM Systems Drop Side Constraints — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/c36c2f41b178.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/c36c2f41b178.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/c36c2f41b178.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/c36c2f41b178.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Lost in Compaction: Evaluating Side-Constraint Loss under Context Compaction">
+<meta property="og:title" content="Lost in Context Compaction: When LLM Systems Drop Side Constraints">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Lost in Compaction: Evaluating Side-Constraint Loss under Context Compaction",
- "inLanguage":"en","datePublished":"2026-08-14T07:00:00+09:00","dateModified":"2026-08-14T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Lost in Context Compaction: When LLM Systems Drop Side Constraints",
+ "inLanguage":"en","datePublished":"2026-10-16T07:00:00+09:00","dateModified":"2026-10-16T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2608.11242","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/c36c2f41b178.html"}
@@ -34,13 +34,13 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Lost in Compaction: Evaluating Side-Constraint Loss under Context Compaction</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/08/14</span></div>
+    <h1>Lost in Context Compaction: When LLM Systems Drop Side Constraints</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/10/16</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/c36c2f41b178.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.11242" rel="nofollow noopener">https://arxiv.org/abs/2608.11242</a></span></div>
-  <div class="article-body"><p>arXiv:2608.11242v1 Announce Type: cross 
-Abstract: When the context window is under pressure, LLM systems compact prior context to continue ongoing tasks. We identify a class of user-issued instructions, Session Constraints (SCs), such as &quot;do not delete any emails until I confirm,&quot; that are meant to constrain LLM&#x27;s behavior for the remainder of a session but are silently dropped during compaction. To quantify this loss, we introduce COMPINT, an evaluation suite that evaluates compactors across three long-context scenarios: multi-turn chat, agentic trajectory, and long-horizon research.
-  Current compactors retain only 17% of injected SCs on average, and most perform worse than running the same task without compaction. Retention varies sharply with compactor, prompt, context length, SC phrasing, and injection location, showing that the loss is systematic rather than tied to any single setting. We propose an SC-aware extractor that runs alongside the compactor as a plug-and-play module, achieving over 90% retention across all three scenarios without modifying the compactor or LLM. The COMPINT evaluation suite and accompanying implementation are available at https://github.com/ZhiqiEliWang/compaction-integrity.</p></div>
+  <div class="article-body"><p>arXiv:2608.11242v2 Announce Type: replace-cross 
+Abstract: When the context window is under pressure, LLM systems compact prior context to continue ongoing tasks. We study Side Constraints (SCs), user-issued instructions such as &quot;do not delete any emails until I confirm,&quot; that constrain an LLM&#x27;s behavior across subsequent turns but can be silently dropped during compaction. In an inbox experiment, an agent deleted emails without approval in 30/100 sessions after compaction, compared with none before compaction. To systematically evaluate SC preservation, we introduce CONPACT, an evaluation suite measuring semantic retention and downstream compliance across three scenarios: multi-turn chat, multi-turn tool use, and long-horizon research.
+  The evaluated compactors retain only 17% of injected SCs on average. Loss occurs across compactors and settings, with retention varying by compactor, context length, SC framing, and injection location. We propose an SC extractor that maintains constraints separately from the task summary and appends them to the compacted context, achieving over 90% retention across all three scenarios without modifying the compactor or LLM. Code and data are available at https://github.com/ZhiqiEliWang/compaction-integrity.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

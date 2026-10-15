@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Accuracy and Order Sensitivity Diverge Under Label-Free Strategies — NewsMatome (EN)</title>
-<meta name="description" content="Accuracy and Order Sensitivity Diverge Under Label-Free Strategies — original-language edition. Japanese translation available.">
+<title>A, B, C, or Stable? Accuracy and Order Sensitivity Diverge in LLM Multiple-Choice Evaluation — NewsMatome (EN)</title>
+<meta name="description" content="A, B, C, or Stable? Accuracy and Order Sensitivity Diverge in LLM Multiple-Choice Evaluation — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/1aeebeebef5d.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/1aeebeebef5d.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/1aeebeebef5d.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/1aeebeebef5d.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Accuracy and Order Sensitivity Diverge Under Label-Free Strategies">
+<meta property="og:title" content="A, B, C, or Stable? Accuracy and Order Sensitivity Diverge in LLM Multiple-Choice Evaluation">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Accuracy and Order Sensitivity Diverge Under Label-Free Strategies",
- "inLanguage":"en","datePublished":"2026-08-14T07:00:00+09:00","dateModified":"2026-08-14T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"A, B, C, or Stable? Accuracy and Order Sensitivity Diverge in LLM Multiple-Choice Evaluation",
+ "inLanguage":"en","datePublished":"2026-10-16T07:00:00+09:00","dateModified":"2026-10-16T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2608.11947","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/1aeebeebef5d.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Accuracy and Order Sensitivity Diverge Under Label-Free Strategies</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/08/14</span></div>
+    <h1>A, B, C, or Stable? Accuracy and Order Sensitivity Diverge in LLM Multiple-Choice Evaluation</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/10/16</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/1aeebeebef5d.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.11947" rel="nofollow noopener">https://arxiv.org/abs/2608.11947</a></span></div>
-  <div class="article-body"><p>arXiv:2608.11947v1 Announce Type: cross 
-Abstract: Multiple-choice benchmarks are widely used to evaluate large language models, but MCQ scores conflate knowledge with sensitivity to option order, which makes them unreliable measures of model knowledge. In this paper, we test whether preventing a model from seeing option labels while committing to an answer removes positional influence and, in turn, improves performance. We evaluate two different strategies for mitigating bias. The first uses a generation-then-matching approach, and the second scores options in isolation, which is positionally unbiased by construction. Neither reliably improves accuracy. A complete decomposition shows that the bottleneck is withholding options, not the matching step. The only configuration that consistently matches the baseline is the one that shows the model all options paired with an LLM matcher. However, eliminating positional influence entirely still does not reliably yield accuracy gains, while cyclic permutation often improves them. For two-stage prompting, an aggregate measure of recall imbalance and a direct per-question measure of order sensitivity both fail to show reliable debiasing.</p></div>
+  <div class="article-body"><p>arXiv:2608.11947v2 Announce Type: replace-cross 
+Abstract: Multiple-choice question (MCQ) benchmarks are widely used to evaluate large language models, yet a single reported accuracy number is not enough to distinguish a model&#x27;s latent ability from order sensitivity. Debiasing methods tend to be judged on one axis, which implicitly assumes that fixing order sensitivity and improving accuracy go together. We test this assumption with two proprietary models and two open-weight models on MMLU and ARC-Challenge, across four families of strategies. We measure order sensitivity with flip rate, capturing per-question instability, and recall standard deviation (RStd), capturing aggregate positional imbalance. We find accuracy and order sensitivity do not move together consistently: two-stage prompting reduces both flip rate and RStd for GPT on MMLU without a significant change in accuracy. The two sensitivity metrics also diverge from each other. Adding reasoning to direct answering leaves Llama&#x27;s MMLU flip rate statistically indistinguishable while RStd falls sharply. A $2\times2$ ablation across generation-then-matching, crossing option visibility with matcher type, shows that withholding options mainly harms semantic matching, which achieves zero flip rate by construction, yet loses significantly in accuracy; the effect is smaller when using an LLM matcher. We recommend reporting flip rate and RStd along with accuracy when evaluating MCQ strategies.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

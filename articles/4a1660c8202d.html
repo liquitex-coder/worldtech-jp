@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"From Mixing to Tearing: Graph Decomposition in Decentralized Optimization via Message Passing",
- "inLanguage":"ja","datePublished":"2026-10-06T07:00:00+09:00","dateModified":"2026-10-06T07:00:00+09:00",
+ "inLanguage":"ja","datePublished":"2026-10-16T07:00:00+09:00","dateModified":"2026-10-16T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2610.03709","url":"https://liquitex-coder.github.io/worldtech-jp/articles/4a1660c8202d.html"}
@@ -64,7 +64,7 @@
       <h1>From Mixing to Tearing: Graph Decomposition in Decentralized Optimization via Message Passing</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/10/06 07:00</span><span>· 更新 2026/10/06</span>
+        <span>公開 2026/10/16 07:00</span><span>· 更新 2026/10/16</span>
       </div>
     </div>
     
@@ -77,57 +77,21 @@
       <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2610.03709" rel="nofollow noopener">From Mixing to Tearing: Graph Decomposition in Decentralized Optimization via Message Passing</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2610.03709v1 Announce Type: cross 
-Abstract: We study the minimization of sums of smooth strongly convex functions over undirected graphs, with each function held by one agent and communication restricted to neighbors in the graph. Existing decentralized methods, whether based on gossip or on routing over spanning trees, typically
-  use the network to mix or aggregate information to enable
-  {\it prescribed} local optimization
-  updates. What this communication-centered viewpoint lacks is a general
-  framework that uses graph structure to {\it jointly} design the
-  optimization subproblems and the cooperative computation and communication through which agents solve them
-  cooperatively.
-  We develop such a framework from first principles,
-  jointly designing the linear representation of agreement constraints, the blocks of
-  the resulting dual variables (jointly optimized), and connected cluster of agents that
-  cooperatively solve each block subproblem over the assigned subgraph. GATE (Graph-Tearing message passing) is a first instance of this framework: one variable per edge and tree blocks. At each iteration, agents update their assigned edge variables by
-  minimizing the sum of the two endpoint cost-to-go messages and
-  relaxing the result. The messages are updated through local minimizations following the tree recursion. To reduce per-iteration computational and communication costs, we develop GATE-S, a surrogate variant using tractable local models and lightweight message parametrizations. We establish linear convergence with a rate explicit in the interplay among function regularity, network topology, and the chosen partition, revealing the effects of graph decomposition. Numerical experiments are conducted to validate the theoretical results and evaluate the efficiency of our algorithms.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2610.03709v1 Announce Type: cross 
-Abstract: We study the minimization of sums of smooth strongly convex functions over undirected graphs, with each function held by one agent and communication restricted to neighbors in the graph. Existing decentralized methods, whether based on gossip or on routing over spanning trees, typically
-  use the network to mix or aggregate information to enable
-  {\it prescribed} local optimization
-  updates. What this communication-centered viewpoint lacks is a general
-  framework that uses graph structure to {\it jointly} design the
-  optimization subproblems and the cooperative computation and communication through which agents solve them
-  cooperatively.
-  We develop such a framework from first principles,
-  jointly designing the linear representation of agreement constraints, the blocks of
-  the resulting dual variables (jointly optimized), and connected cluster of agents that
-  cooperatively solve each block subproblem over the assigned subgraph. GATE (Graph-Tearing message passing) is a first instance of this framework: one variable per edge and tree blocks. At each iteration, agents update their assigned edge variables by
-  minimizing the sum of the two endpoint cost-to-go messages and
-  relaxing the result. The messages are updated through local minimizations following the tree recursion. To reduce per-iteration computational and communication costs, we develop GATE-S, a surrogate variant using tractable local models and lightweight message parametrizations. We establish linear convergence with a rate explicit in the interplay among function regularity, network topology, and the chosen partition, revealing the effects of graph decomposition. Numerical experiments are conducted to validate the theoretical results and evaluate the efficiency of our algorithms.</div>
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2610.03709v2 Announce Type: replace-cross 
+Abstract: We study decentralized minimization of sums of smooth strongly convex functions, one per agent, with communication restricted to neighbors in a graph. Existing decentralized algorithms typically emulate a {\it centralized} method; {\it the network serves only to exchange information}, from which agents approximate the global quantities that the method needs. This paper breaks with this paradigm. We introduce a {\it graph decomposition framework} that uses the network to design the method, not merely execute it. It jointly determines how agreement is imposed, which variables are optimized jointly (blocks), and which connected subgraphs host the agents solving each block. The convergence analysis quantifies the trade-offs among these choices. GATE (Graph-Tearing message passing) instantiates the framework by assigning one dual variable per edge and partitioning the edges into trees. Agents interleave edge updates with local message passing recursions that summarize optimization within each tree (block). Its surrogate variant, GATE-S, uses tractable local models and compact messages to reduce computation and communication. We establish linear convergence and show that the topology-aware design acts as a \emph{preconditioner}: the rate depends {\it jointly} on topology and function geometry through the coupling between subproblems defined on the selected subgraphs, whereas consensus-based optimization methods pay the worst case of each separately, the centralized condition number times the inverse spectral gap. On tree-dominant graphs, convergence is provably faster: the rate scales with the tree {\it diameter}, linearly in the number of agents on rings and barbells against quadratically for non-accelerated consensus-optimization methods. Experiments support the predicted scaling and savings in iterations and communication.</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2610.03709v2 Announce Type: replace-cross 
+Abstract: We study decentralized minimization of sums of smooth strongly convex functions, one per agent, with communication restricted to neighbors in a graph. Existing decentralized algorithms typically emulate a {\it centralized} method; {\it the network serves only to exchange information}, from which agents approximate the global quantities that the method needs. This paper breaks with this paradigm. We introduce a {\it graph decomposition framework} that uses the network to design the method, not merely execute it. It jointly determines how agreement is imposed, which variables are optimized jointly (blocks), and which connected subgraphs host the agents solving each block. The convergence analysis quantifies the trade-offs among these choices. GATE (Graph-Tearing message passing) instantiates the framework by assigning one dual variable per edge and partitioning the edges into trees. Agents interleave edge updates with local message passing recursions that summarize optimization within each tree (block). Its surrogate variant, GATE-S, uses tractable local models and compact messages to reduce computation and communication. We establish linear convergence and show that the topology-aware design acts as a \emph{preconditioner}: the rate depends {\it jointly} on topology and function geometry through the coupling between subproblems defined on the selected subgraphs, whereas consensus-based optimization methods pay the worst case of each separately, the centralized condition number times the inverse spectral gap. On tree-dominant graphs, convergence is provably faster: the rate scales with the tree {\it diameter}, linearly in the number of agents on rings and barbells against quadratically for non-accelerated consensus-optimization methods. Experiments support the predicted scaling and savings in iterations and communication.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2610.03709v1 Announce Type: cross 
-Abstract: We study the minimization of sums of smooth strongly convex functions over undirected graphs, with each function held by one agent and communication restricted to neighbors in the graph. Existing decentralized methods, whether based on gossip or on routing over spanning trees, typically
-  use the network to mix or aggregate information to enable
-  {\it prescribed} local optimization
-  updates. What this communication-centered viewpoint lacks is a general
-  framework that uses graph structure to {\it jointly} design the
-  optimization subproblems and the cooperative computation and communication through which agents solve them
-  cooperatively.
-  We develop such a framework from first principles,
-  jointly designing the linear representation of agreement constraints, the blocks of
-  the resulting dual variables (jointly optimized), and connected cluster of agents that
-  cooperatively solve each block subproblem over the assigned subgraph. GATE (Graph-Tearing message passing) is a first instance of this framework: one variable per edge and tree blocks. At each iteration, agents update their assigned edge variables by
-  minimizing the sum of the two endpoint cost-to-go messages and
-  relaxing the result. The messages are updated through local minimizations following the tree recursion. To reduce per-iteration computational and communication costs, we develop GATE-S, a surrogate variant using tractable local models and lightweight message parametrizations. We establish linear convergence with a rate explicit in the interplay among function regularity, network topology, and the chosen partition, revealing the effects of graph decomposition. Numerical experiments are conducted to validate the theoretical results and evaluate the efficiency of our algorithms.</p><a href="https://arxiv.org/abs/2610.03709" rel="nofollow noopener">原論文を読む →</a></div>
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2610.03709v2 Announce Type: replace-cross 
+Abstract: We study decentralized minimization of sums of smooth strongly convex functions, one per agent, with communication restricted to neighbors in a graph. Existing decentralized algorithms typically emulate a {\it centralized} method; {\it the network serves only to exchange information}, from which agents approximate the global quantities that the method needs. This paper breaks with this paradigm. We introduce a {\it graph decomposition framework} that uses the network to design the method, not merely execute it. It jointly determines how agreement is imposed, which variables are optimized jointly (blocks), and which connected subgraphs host the agents solving each block. The convergence analysis quantifies the trade-offs among these choices. GATE (Graph-Tearing message passing) instantiates the framework by assigning one dual variable per edge and partitioning the edges into trees. Agents interleave edge updates with local message passing recursions that summarize optimization within each tree (block). Its surrogate variant, GATE-S, uses tractable local models and compact messages to reduce computation and communication. We establish linear convergence and show that the topology-aware design acts as a \emph{preconditioner}: the rate depends {\it jointly} on topology and function geometry through the coupling between subproblems defined on the selected subgraphs, whereas consensus-based optimization methods pay the worst case of each separately, the centralized condition number times the inverse spectral gap. On tree-dominant graphs, convergence is provably faster: the rate scales with the tree {\it diameter}, linearly in the number of agents on rings and barbells against quadratically for non-accelerated consensus-optimization methods. Experiments support the predicted scaling and savings in iterations and communication.</p><a href="https://arxiv.org/abs/2610.03709" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2610.03709" rel="nofollow noopener">https://arxiv.org/abs/2610.03709</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
     <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="3fb0589f112d.html"><div class="sim">関連</div><div class="info"><b>MintFlow: Minimal Trajectory Intervention for Constrained Flow Matching</b><div class="m">AI</div></div></a><a class="r" href="4db1850702f9.html"><div class="sim">関連</div><div class="info"><b>Fast Models, Slow Evidence: A Paired and Self-Audited Evaluation of System-1 Decision Models for LLM Agent Harnesses</b><div class="m">AI</div></div></a><a class="r" href="05ae2fbd2810.html"><div class="sim">関連</div><div class="info"><b>The AI Risk Observatory: What Can We Learn from AI Disclosures in Annual Reports About Societal Resilience?</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="a16d50c7df94.html"><div class="sim">関連</div><div class="info"><b>Artificiality&#x27;s First Exam: An LLM-Referenced C-test for Supraintelligence</b><div class="m">AI</div></div></a><a class="r" href="574863154eac.html"><div class="sim">関連</div><div class="info"><b>The Silent Failures in Agentic Data Science</b><div class="m">AI</div></div></a><a class="r" href="8ddbcf370a84.html"><div class="sim">関連</div><div class="info"><b>ClawLoop: Self-Improving Agents via Harness-Native Training Loop</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

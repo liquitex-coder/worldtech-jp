@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pooled Leaderboards Hide System-Specific Winners: A Reporting-Protocol Audit of Offline Root-Cause Analysis Benchmarks — NewsMatome (EN)</title>
-<meta name="description" content="Pooled Leaderboards Hide System-Specific Winners: A Reporting-Protocol Audit of Offline Root-Cause Analysis Benchmarks — original-language edition. Japanese translation available.">
+<title>What a Pooled Leaderboard Does Not Say: Auditing the Scope and Provenance of Method Comparisons in Microservice RCA Benchmarks — NewsMatome (EN)</title>
+<meta name="description" content="What a Pooled Leaderboard Does Not Say: Auditing the Scope and Provenance of Method Comparisons in Microservice RCA Benchmarks — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/82d73893fa11.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/82d73893fa11.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/82d73893fa11.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/82d73893fa11.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Pooled Leaderboards Hide System-Specific Winners: A Reporting-Protocol Audit of Offline Root-Cause Analysis Benchmarks">
+<meta property="og:title" content="What a Pooled Leaderboard Does Not Say: Auditing the Scope and Provenance of Method Comparisons in Microservice RCA Benchmarks">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Pooled Leaderboards Hide System-Specific Winners: A Reporting-Protocol Audit of Offline Root-Cause Analysis Benchmarks",
- "inLanguage":"en","datePublished":"2026-07-01T07:00:00+09:00","dateModified":"2026-07-01T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"What a Pooled Leaderboard Does Not Say: Auditing the Scope and Provenance of Method Comparisons in Microservice RCA Benchmarks",
+ "inLanguage":"en","datePublished":"2026-10-16T07:00:00+09:00","dateModified":"2026-10-16T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.29159","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/82d73893fa11.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Pooled Leaderboards Hide System-Specific Winners: A Reporting-Protocol Audit of Offline Root-Cause Analysis Benchmarks</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/01</span></div>
+    <h1>What a Pooled Leaderboard Does Not Say: Auditing the Scope and Provenance of Method Comparisons in Microservice RCA Benchmarks</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/10/16</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/82d73893fa11.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.29159" rel="nofollow noopener">https://arxiv.org/abs/2606.29159</a></span></div>
-  <div class="article-body"><p>arXiv:2606.29159v1 Announce Type: new 
-Abstract: Offline root-cause-analysis (RCA) benchmarks commonly rank methods by a single pooled top-1 accuracy across multiple subsystems, and engineers often read the pooled winner as a recommendation for their own subsystem. We audit that reading on three public RCA benchmark families -- OpenRCA, RCAEval, and PetShop -- covering 11 subsystems and 778 matched scoring units. To keep pairwise comparisons on identical cases, the main analysis retains four methods or comparators with complete coverage: BARO, a CD-1min adapter, max-$|Z|$, and per-service alert-count. All six pairwise comparisons show subsystem-level effects of both signs, every random-effects 95\% prediction interval crosses zero, and case-level interaction tests reject exchangeability in 5 of 6 pairs. Leave-one-system-out selection picks the lower-scoring method on up to 5 of 11 held-out subsystems, with regret reaching 24.8 pp on RCAEval / Sock-Shop. We release a 320-line audit module; given a matched RCA benchmark score table, it recomputes the same per-subsystem stability checks alongside pooled scores.</p></div>
+  <div class="article-body"><p>arXiv:2606.29159v2 Announce Type: replace 
+Abstract: Offline benchmarks for microservice root cause analysis (RCA) rank methods by a score pooled over several applications, and a pooled lead leaves two things unstated: on which of the systems it holds, and how the score was produced. We audit both on three public benchmark families (OpenRCA, RCAEval, and PetShop), running the released implementations of 16 methods under recorded configurations on 11 subsystems and on a second release of three of the applications. Whether a pooled lead between published methods holds on every subsystem is decided by a quantity the leaderboard withholds, the spread of the lead across subsystems: of 15 leads whose margin exceeds this spread, 14 hold everywhere; of the 8 whose margin is below it, 6 reverse. The per-fault and per-scenario tables that the benchmark papers publish split the same way, and every error of a ranking computed without one subsystem falls on a lead of the second kind. On the second release a third of the comparisons change sign, most through one method&#x27;s response to the metric kinds it records, and on several subsystems a simple probe or a shipped baseline beats every published method. How the score was produced matters as much: the input table that one released runner reads is not the one its documentation describes, and this choice alone reverses a comparison between published methods with intervals excluding zero both ways; an unpinned dependency and a duplicated column header each make a method return its input column order without an error. Of 23 RCA papers we examined, none releases the per-case outputs needed to check either premise. We recommend that a pooled comparison state the subsystems it covers and its spread across them, the input table, the handling of failed outputs, and the denominator, and be accompanied by per-case outputs, as ours are in our replication package.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

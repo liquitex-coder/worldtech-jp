@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Blackknife: Hard-Label Query-Limited Black-Box Attacks on Heterogeneous Graph Neural Networks — NewsMatome (EN)</title>
-<meta name="description" content="Blackknife: Hard-Label Query-Limited Black-Box Attacks on Heterogeneous Graph Neural Networks — original-language edition. Japanese translation available.">
+<title>Blackknife: Query-Free Black-Box Rewiring Attacks on Heterogeneous Graph Neural Networks — NewsMatome (EN)</title>
+<meta name="description" content="Blackknife: Query-Free Black-Box Rewiring Attacks on Heterogeneous Graph Neural Networks — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/3674e57f80f9.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/3674e57f80f9.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/3674e57f80f9.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/3674e57f80f9.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Blackknife: Hard-Label Query-Limited Black-Box Attacks on Heterogeneous Graph Neural Networks">
+<meta property="og:title" content="Blackknife: Query-Free Black-Box Rewiring Attacks on Heterogeneous Graph Neural Networks">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Blackknife: Hard-Label Query-Limited Black-Box Attacks on Heterogeneous Graph Neural Networks",
- "inLanguage":"en","datePublished":"2026-07-01T07:00:00+09:00","dateModified":"2026-07-01T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Blackknife: Query-Free Black-Box Rewiring Attacks on Heterogeneous Graph Neural Networks",
+ "inLanguage":"en","datePublished":"2026-10-16T07:00:00+09:00","dateModified":"2026-10-16T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.29240","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/3674e57f80f9.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Blackknife: Hard-Label Query-Limited Black-Box Attacks on Heterogeneous Graph Neural Networks</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/01</span></div>
+    <h1>Blackknife: Query-Free Black-Box Rewiring Attacks on Heterogeneous Graph Neural Networks</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/16</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/3674e57f80f9.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.29240" rel="nofollow noopener">https://arxiv.org/abs/2606.29240</a></span></div>
-  <div class="article-body"><p>arXiv:2606.29240v1 Announce Type: new 
-Abstract: Heterogeneous graph neural networks (HGNNs) have achieved strong performance in modeling complex graph-structured data with multiple node and relation types. However, their robustness under realistic black-box adversarial settings remains insufficiently explored. Existing attacks on HGNNs usually assume access to model gradients, soft prediction scores, or the complete graph structure, which is often unavailable when HGNN-based services are deployed as closed systems. In this paper, we propose Blackknife, a hard-label, query-limited, and structure-limited black-box evasion attack framework for heterogeneous graph neural networks. Blackknife assumes no access to the victim model architecture, parameters, gradients, logits, confidence scores, or the full graph structure. Instead, it only relies on locally observable one-hop heterogeneous structures and a small number of hard-label queries. To generate effective perturbations under these strict constraints, Blackknife first constructs a local relation-aware surrogate model from observable heterogeneous neighborhoods. It then relaxes discrete edge addition and deletion operations into continuous soft weights and optimizes them through projected gradient descent. Finally, the optimized perturbations are discretized into relation-preserving structural rewiring operations and verified using limited hard-label feedback from the victim model. Extensive experiments on three benchmark heterogeneous graph datasets, including ACM, DBLP, and IMDB, demonstrate that Blackknife consistently achieves strong attack success rates against representative HGNN models. The results further show that Blackknife remains effective under topology-based defense strategies, revealing the vulnerability of HGNNs to local structure-limited black-box attacks.</p></div>
+  <div class="article-body"><p>arXiv:2606.29240v3 Announce Type: replace 
+Abstract: Heterogeneous graph neural networks (HGNNs) perform well on graphs with multiple node and relation types, but their robustness to attacks with restricted structural access remains insufficiently understood. We propose Blackknife, a query-free, strict black-box evasion attack that observes only the one-hop structures of the attacked nodes, their ground-truth labels, and raw features within the permitted action space. No victim-model outputs are used to train the surrogate, generate perturbations, or select attacks.Blackknife trains a shared surrogate using only observable edges and relation types, then optimizes structural perturbations through continuous relaxation and projected gradient ascent. Each rewiring operation deletes one edge and adds another of the same relation type, preserving the target node&#x27;s total degree and degree for each relation type. A cosine-similarity penalty and an adaptive structural classifier further regularize the perturbations through bilevel optimization. Experiments on different datasets demonstrate competitive attack success rates across five victim architectures and three defense settings. The results expose HGNN vulnerabilities under jointly restricted graph access and query-free attack generation.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

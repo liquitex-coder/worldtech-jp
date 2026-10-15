@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Running Fewer Loops Removes Refusal Behaviour in Recurrent-Depth Language Models — NewsMatome (EN)</title>
+<meta name="description" content="Running Fewer Loops Removes Refusal Behaviour in Recurrent-Depth Language Models — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/fc23dff4dee6.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/fc23dff4dee6.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/fc23dff4dee6.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/fc23dff4dee6.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Running Fewer Loops Removes Refusal Behaviour in Recurrent-Depth Language Models">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Running Fewer Loops Removes Refusal Behaviour in Recurrent-Depth Language Models",
+ "inLanguage":"en","datePublished":"2026-10-16T07:00:00+09:00","dateModified":"2026-10-16T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.15218","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/fc23dff4dee6.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/fc23dff4dee6.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Running Fewer Loops Removes Refusal Behaviour in Recurrent-Depth Language Models</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/10/16</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/fc23dff4dee6.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.15218" rel="nofollow noopener">https://arxiv.org/abs/2610.15218</a></span></div>
+  <div class="article-body"><p>arXiv:2610.15218v1 Announce Type: new 
+Abstract: A recurrent-depth language model reuses one block of weights several times in a row. The number of repetitions, which we call loops, is chosen when the model runs, not when it is trained, and running fewer is cheaper and faster, so a deployment may choose to do it. Running fewer loops also makes these models less safe, and the loss of safety is larger than the loss of anything else we measured. We study four released Ouro checkpoints and Huginn-0125. At half of its trained depth, Ouro-1.4B-Thinking still solves 0.692 of the GSM8K maths problems, against 0.775 at full depth, keeping 89% of its accuracy. Over the same reduction, the rate at which it helps with harmful requests rises from 0.038 to 0.205, 5.3 times higher. The information is not lost: a linear classifier reads whether a request is harmful from the model&#x27;s internal state after a single loop, with an ROC AUC of 0.967 against 0.986 at full depth. What the missing loops remove is the refusal that should follow. We measure the effect with four instruments, one generating no text at all, and reproduce it on a second model family. Removing a single direction from Ouro-1.4B&#x27;s internal state at full depth drops its refusal rate on harmful prompts from 0.950 to 0.130, identifying what the shallow model is missing. Two run-time repairs do not help: the models&#x27; early-exit rules do not spend more loops on harmful requests, and choosing a depth per request does not recover the loss. Changing the training does. Standard safety training makes the shallow model safe only by refusing 0.865 of harmless requests, while training at randomly chosen depths reaches a separation of +0.399 between harmful and harmless refusal at one loop, against +0.118. On Huginn-0125 it keeps harmful help at or below 0.040 at every depth from 1 to 32 loops, where standard training reaches 0.194, and it costs no accuracy at full depth.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

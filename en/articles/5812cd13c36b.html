@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Attention Sinks in VLMs Are Borrowed, Not Seen — NewsMatome (EN)</title>
+<meta name="description" content="Attention Sinks in VLMs Are Borrowed, Not Seen — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/5812cd13c36b.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/5812cd13c36b.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/5812cd13c36b.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/5812cd13c36b.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Attention Sinks in VLMs Are Borrowed, Not Seen">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Attention Sinks in VLMs Are Borrowed, Not Seen",
+ "inLanguage":"en","datePublished":"2026-10-16T07:00:00+09:00","dateModified":"2026-10-16T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.15855","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/5812cd13c36b.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/5812cd13c36b.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Attention Sinks in VLMs Are Borrowed, Not Seen</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/10/16</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/5812cd13c36b.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.15855" rel="nofollow noopener">https://arxiv.org/abs/2610.15855</a></span></div>
+  <div class="article-body"><p>arXiv:2610.15855v1 Announce Type: new 
+Abstract: We study how to detect and mitigate visual attention sinks in vision-language models (VLMs). Visual attention sinks are image tokens that absorb a large share of attention over the image regardless of the query or task, and they mislead methods that treat attention maps as a record of where the model ``looked.&#x27;&#x27; Prior work has detected sinks through massive activation dimensions and proposed redistributing their attention, but none have addressed what makes a token become a sink. Comparing six candidate detectors on ten VLMs from four families, we find that only the centered cosine similarity between an image token&#x27;s key and the key of the language model&#x27;s text-sink detects visual sinks. Thus, a visual sink is an image token whose key aligns with the text-sink&#x27;s key. Moving a sink&#x27;s key component along this direction to the median of the image keys sends its attention back to the text-sink (\textbf{Are Borrowed}) while leaving model answers unchanged~(\textbf{Not Seen}). Building on this, we propose a training-free, entropy-triggered re-look that first cleans the attention map, then crops the most-attended region of the cleaned map and inserts it into the reasoning trace. Cleaning adds negligible computation to the forward pass, and the re-look improves accuracy with a mean gain of $+4.3$ points on fine-detail VQA benchmarks across model families.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

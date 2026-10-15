@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Retry, Switch, or Abstain? Learning Strategy-Aware Tool-Use Policies via Controlled Error Injection — NewsMatome</title>
-<meta name="description" content="Retry, Switch, or Abstain? Learning Strategy-Aware Tool-Use Policies via Controlled Error Injection（EN→JA 翻訳・出典付き）">
+<title>Bench2Robust: Scenario-Controlled Recovery for Tool-Using Agents — NewsMatome</title>
+<meta name="description" content="Bench2Robust: Scenario-Controlled Recovery for Tool-Using Agents（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/3efde39a4b37.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/3efde39a4b37.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/3efde39a4b37.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="Retry, Switch, or Abstain? Learning Strategy-Aware Tool-Use Policies via Controlled Error Injection">
-<meta property="og:description" content="Retry, Switch, or Abstain? Learning Strategy-Aware Tool-Use Policies via Controlled Error Injection（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="Bench2Robust: Scenario-Controlled Recovery for Tool-Using Agents">
+<meta property="og:description" content="Bench2Robust: Scenario-Controlled Recovery for Tool-Using Agents（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Retry, Switch, or Abstain? Learning Strategy-Aware Tool-Use Policies via Controlled Error Injection",
- "inLanguage":"ja","datePublished":"2026-08-14T07:00:00+09:00","dateModified":"2026-08-14T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Bench2Robust: Scenario-Controlled Recovery for Tool-Using Agents",
+ "inLanguage":"ja","datePublished":"2026-10-16T07:00:00+09:00","dateModified":"2026-10-16T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2608.11977","url":"https://liquitex-coder.github.io/worldtech-jp/articles/3efde39a4b37.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">AI</a><span class="sep">›</span><span>Retry, Switch, or Abstain? Learning Strategy-Aware Tool-Use Policies via Controlled Error Injection</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">AI</a><span class="sep">›</span><span>Bench2Robust: Scenario-Controlled Recovery for Tool-Using Agents</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>Retry, Switch, or Abstain? Learning Strategy-Aware Tool-Use Policies via Controlled Error Injection</h1>
+      <h1>Bench2Robust: Scenario-Controlled Recovery for Tool-Using Agents</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/08/14 07:00</span><span>· 更新 2026/08/14</span>
+        <span>公開 2026/10/16 07:00</span><span>· 更新 2026/10/16</span>
       </div>
     </div>
     
@@ -74,24 +74,24 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2608.11977" rel="nofollow noopener">Retry, Switch, or Abstain? Learning Strategy-Aware Tool-Use Policies via Controlled Error Injection</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2608.11977" rel="nofollow noopener">Bench2Robust: Scenario-Controlled Recovery for Tool-Using Agents</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2608.11977v1 Announce Type: new 
-Abstract: Tool-using LLM agents are commonly trained and evaluated in environments where tool calls succeed reliably, yet deployed tools can fail transiently, persistently, or silently. Robust recovery therefore requires more than repeated retries: an agent may need to retry the same path, switch to an alternative, or recognize that no viable path remains. We present BENCH2ROBUST, a framework that converts failure-free tool-use benchmarks into controlled stochastic environments with scenario-controlled solvability, where episodes explicitly require retrying, switching, or stopping after available paths are exhausted. We use BENCH2ROBUST to study two complementary interventions: structured runtime recovery context through Bayesian Tool Memory (BTM), and curriculum-controlled reinforcement learning. Across 7 models from 4 families and two multi-turn benchmark families, tool failures produce a near-universal robustness gap. On held-out Retail tasks, BTM improves robustness by up to 16.8 percentage points without retraining, while RL learns complementary recovery behavior that remains beneficial without inference-time BTM. Combining the two reaches 40.8-45.5% under injection while preserving failure-free performance. These results suggest that robust tool use benefits from combining environment-specific recovery knowledge with learned recovery behavior.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2608.11977v1 Announce Type: new 
-Abstract: Tool-using LLM agents are commonly trained and evaluated in environments where tool calls succeed reliably, yet deployed tools can fail transiently, persistently, or silently. Robust recovery therefore requires more than repeated retries: an agent may need to retry the same path, switch to an alternative, or recognize that no viable path remains. We present BENCH2ROBUST, a framework that converts failure-free tool-use benchmarks into controlled stochastic environments with scenario-controlled solvability, where episodes explicitly require retrying, switching, or stopping after available paths are exhausted. We use BENCH2ROBUST to study two complementary interventions: structured runtime recovery context through Bayesian Tool Memory (BTM), and curriculum-controlled reinforcement learning. Across 7 models from 4 families and two multi-turn benchmark families, tool failures produce a near-universal robustness gap. On held-out Retail tasks, BTM improves robustness by up to 16.8 percentage points without retraining, while RL learns complementary recovery behavior that remains beneficial without inference-time BTM. Combining the two reaches 40.8-45.5% under injection while preserving failure-free performance. These results suggest that robust tool use benefits from combining environment-specific recovery knowledge with learned recovery behavior.</div>
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2608.11977v2 Announce Type: replace 
+Abstract: Tool-using LLM agents are typically developed and post-trained in controlled environments with reliable tools, but deployment exposes them to tool failures, API and schema drift, and third-party services outside the developer&#x27;s control. We introduce Bench2Robust, a framework for scenario-controlled solvability that augments existing benchmarks with episodes requiring retrying the original path, switching to a fallback-equivalent tool, or recognizing that no viable path remains. By controlling recoverability, Bench2Robust separates recovery-policy quality from randomness in whether failures persist or resolve. Across 7 models from 4 families and 10 task/domain slices spanning customer-service and function-calling benchmarks, 69 of 70 model-subset pairs degrade under tool failures, by up to 46.7 percentage points. We propose Bayesian Tool Memory (BTM) for structured runtime recovery context and use reinforcement learning (RL) for learned recovery behavior. On held-out Retail tasks using the benchmark&#x27;s original tool set, BTM improves robustness by 16.8 percentage points without retraining, while RL retains a 6.3-point gain without inference-time BTM. Combining RL with BTM yields a 20.7-point improvement over the base model while preserving clean performance. These results show that robust tool use benefits from combining structured runtime recovery context with learned recovery behavior.</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2608.11977v2 Announce Type: replace 
+Abstract: Tool-using LLM agents are typically developed and post-trained in controlled environments with reliable tools, but deployment exposes them to tool failures, API and schema drift, and third-party services outside the developer&#x27;s control. We introduce Bench2Robust, a framework for scenario-controlled solvability that augments existing benchmarks with episodes requiring retrying the original path, switching to a fallback-equivalent tool, or recognizing that no viable path remains. By controlling recoverability, Bench2Robust separates recovery-policy quality from randomness in whether failures persist or resolve. Across 7 models from 4 families and 10 task/domain slices spanning customer-service and function-calling benchmarks, 69 of 70 model-subset pairs degrade under tool failures, by up to 46.7 percentage points. We propose Bayesian Tool Memory (BTM) for structured runtime recovery context and use reinforcement learning (RL) for learned recovery behavior. On held-out Retail tasks using the benchmark&#x27;s original tool set, BTM improves robustness by 16.8 percentage points without retraining, while RL retains a 6.3-point gain without inference-time BTM. Combining RL with BTM yields a 20.7-point improvement over the base model while preserving clean performance. These results show that robust tool use benefits from combining structured runtime recovery context with learned recovery behavior.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2608.11977v1 Announce Type: new 
-Abstract: Tool-using LLM agents are commonly trained and evaluated in environments where tool calls succeed reliably, yet deployed tools can fail transiently, persistently, or silently. Robust recovery therefore requires more than repeated retries: an agent may need to retry the same path, switch to an alternative, or recognize that no viable path remains. We present BENCH2ROBUST, a framework that converts failure-free tool-use benchmarks into controlled stochastic environments with scenario-controlled solvability, where episodes explicitly require retrying, switching, or stopping after available paths are exhausted. We use BENCH2ROBUST to study two complementary interventions: structured runtime recovery context through Bayesian Tool Memory (BTM), and curriculum-controlled reinforcement learning. Across 7 models from 4 families and two multi-turn benchmark families, tool failures produce a near-universal robustness gap. On held-out Retail tasks, BTM improves robustness by up to 16.8 percentage points without retraining, while RL learns complementary recovery behavior that remains beneficial without inference-time BTM. Combining the two reaches 40.8-45.5% under injection while preserving failure-free performance. These results suggest that robust tool use benefits from combining environment-specific recovery knowledge with learned recovery behavior.</p><a href="https://arxiv.org/abs/2608.11977" rel="nofollow noopener">原論文を読む →</a></div>
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2608.11977v2 Announce Type: replace 
+Abstract: Tool-using LLM agents are typically developed and post-trained in controlled environments with reliable tools, but deployment exposes them to tool failures, API and schema drift, and third-party services outside the developer&#x27;s control. We introduce Bench2Robust, a framework for scenario-controlled solvability that augments existing benchmarks with episodes requiring retrying the original path, switching to a fallback-equivalent tool, or recognizing that no viable path remains. By controlling recoverability, Bench2Robust separates recovery-policy quality from randomness in whether failures persist or resolve. Across 7 models from 4 families and 10 task/domain slices spanning customer-service and function-calling benchmarks, 69 of 70 model-subset pairs degrade under tool failures, by up to 46.7 percentage points. We propose Bayesian Tool Memory (BTM) for structured runtime recovery context and use reinforcement learning (RL) for learned recovery behavior. On held-out Retail tasks using the benchmark&#x27;s original tool set, BTM improves robustness by 16.8 percentage points without retraining, while RL retains a 6.3-point gain without inference-time BTM. Combining RL with BTM yields a 20.7-point improvement over the base model while preserving clean performance. These results show that robust tool use benefits from combining structured runtime recovery context with learned recovery behavior.</p><a href="https://arxiv.org/abs/2608.11977" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2608.11977" rel="nofollow noopener">https://arxiv.org/abs/2608.11977</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
     <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="c6693bb7de7b.html"><div class="sim">関連</div><div class="info"><b>Dynamic Governance of Multi-LLM Agent Systems for Collaborative Conversational Outcomes</b><div class="m">AI</div></div></a><a class="r" href="1465369cd462.html"><div class="sim">関連</div><div class="info"><b>Distribird: Literature-Informed Prior Distribution Design for Bayesian Model Calibration</b><div class="m">AI</div></div></a><a class="r" href="6e2366612b68.html"><div class="sim">関連</div><div class="info"><b>A Forced-Structure Reduction and Verifiable Bounds for Conway&#x27;s 99-Graph</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="a16d50c7df94.html"><div class="sim">関連</div><div class="info"><b>Artificiality&#x27;s First Exam: An LLM-Referenced C-test for Supraintelligence</b><div class="m">AI</div></div></a><a class="r" href="574863154eac.html"><div class="sim">関連</div><div class="info"><b>The Silent Failures in Agentic Data Science</b><div class="m">AI</div></div></a><a class="r" href="8ddbcf370a84.html"><div class="sim">関連</div><div class="info"><b>ClawLoop: Self-Improving Agents via Harness-Native Training Loop</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

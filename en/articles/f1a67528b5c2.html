@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GateSight: Recurrent Memory Anticipates Attention Memory for Query-Agnostic KV Eviction in Hybrid LLMs — NewsMatome (EN)</title>
+<meta name="description" content="GateSight: Recurrent Memory Anticipates Attention Memory for Query-Agnostic KV Eviction in Hybrid LLMs — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/f1a67528b5c2.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/f1a67528b5c2.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/f1a67528b5c2.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/f1a67528b5c2.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GateSight: Recurrent Memory Anticipates Attention Memory for Query-Agnostic KV Eviction in Hybrid LLMs">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"GateSight: Recurrent Memory Anticipates Attention Memory for Query-Agnostic KV Eviction in Hybrid LLMs",
+ "inLanguage":"en","datePublished":"2026-10-16T07:00:00+09:00","dateModified":"2026-10-16T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.14754","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/f1a67528b5c2.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/f1a67528b5c2.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>GateSight: Recurrent Memory Anticipates Attention Memory for Query-Agnostic KV Eviction in Hybrid LLMs</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/10/16</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/f1a67528b5c2.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.14754" rel="nofollow noopener">https://arxiv.org/abs/2610.14754</a></span></div>
+  <div class="article-body"><p>arXiv:2610.14754v1 Announce Type: new 
+Abstract: Hybrid language models interleave Gated DeltaNet (GDN) layers, whose recurrent memory has a fixed size, with full-attention layers, whose key-value (KV) cache grows with the context and dominates serving memory. In this paper, we ask whether the recurrent memory already knows what the attention memory will need. We first show that which GDN heads of Qwen3.8-27B keep long memories is fixed by the weights rather than by the document. Next, we define the future utility of a KV entry by how much removing it changes the attention output over the model&#x27;s own continuations, and find that the write gate, decay and write magnitude that GDN layers emit during prefill anticipate this utility before any query is seen. Because the relation is spread across many GDN heads and layers, and a linear map recovers its trend but less of its high-utility tail than a nonlinear one, we propose GateSight, which learns it with lightweight per-head multilayer perceptrons that read these signals and no attention score. Their predicted utility decides which entries each attention layer keeps, and how much each layer keeps is set by the model&#x27;s native attention output gate, whose mean differs by more than an order of magnitude across layers. Finally, at serving time, GateSight scores the cache once after prefill and physically releases discarded KV entries. Experimental results on SCBench and RULER-4096 with Qwen3.8-27B and, with the same recipe, the sparse-attention model Qwen3.8-Flash-Next, up to the 262K-token limit of the models, show that with a tenth of the attention KV cache, GateSight is the most accurate of five query-agnostic methods on three of the four model-benchmark pairs and leads KVzip on all four, by 9.5 to 47.2 points. Notably, it scores a full-length context with negligible overhead relative to prefill.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

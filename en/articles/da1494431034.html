@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verification as an Architectural Layer for LLM Agents: A V-Model Design, and a Pilot Study of Its Deterministic Core — NewsMatome (EN)</title>
+<meta name="description" content="Verification as an Architectural Layer for LLM Agents: A V-Model Design, and a Pilot Study of Its Deterministic Core — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/da1494431034.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/da1494431034.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/da1494431034.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/da1494431034.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Verification as an Architectural Layer for LLM Agents: A V-Model Design, and a Pilot Study of Its Deterministic Core">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Verification as an Architectural Layer for LLM Agents: A V-Model Design, and a Pilot Study of Its Deterministic Core",
+ "inLanguage":"en","datePublished":"2026-10-16T07:00:00+09:00","dateModified":"2026-10-16T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.31937","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/da1494431034.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/da1494431034.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Verification as an Architectural Layer for LLM Agents: A V-Model Design, and a Pilot Study of Its Deterministic Core</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/10/16</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/da1494431034.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.31937" rel="nofollow noopener">https://arxiv.org/abs/2609.31937</a></span></div>
+  <div class="article-body"><p>arXiv:2609.31937v2 Announce Type: replace-cross 
+Abstract: Large language model (LLM) agents built on the ReAct pattern concentrate four responsibilities in one model: selecting a strategy, choosing each action, formatting it, and judging whether the result is adequate. Nothing outside the generative loop can reject its output, so an agent that cannot make progress does not report failure; it runs until an external budget stops it. We propose treating verification as an architectural layer by adapting the V-model from software engineering: specification levels descend from requirements to individual steps, each level is paired with a dedicated verifier, a deterministic controller enforces every verdict, and only verification outcomes write to memory, so a rejection localizes the level that introduced the fault and an agent halts by declining rather than by exhaustion. Each verifier separates a zero-cost deterministic \emph{gate} from an optional LLM \emph{judge}, so the contribution and cost of each can be measured independently. We report a pilot implementing the acceptance- and unit-level verifier pairs, comparing five configurations that share one executor, tool set, and scorer and differ only in verification, on the four-hop stratum of MuSiQue with an 8B-parameter backbone. Across 47 executions, the two unverified configurations answered none of ten questions, every run ending at a step cap or provider token limit; the verified configuration without a planner answered eight and abstained on the rest. Deterministic gates produced eight of the nine observed corrections at zero marginal cost, and planning degraded performance once verification was present. These results characterize termination behavior, not accuracy at scale; we outline a twelve-month plan to complete and evaluate the full architecture, including the integration-level pair the pilot omits.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

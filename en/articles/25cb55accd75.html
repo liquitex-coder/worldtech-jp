@@ -17,8 +17,8 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"Surrogate Substitution Preserves PHI Detectability: A Multi-Detector Equivalence Study",
- "inLanguage":"en","datePublished":"2026-08-16T07:00:00+09:00","dateModified":"2026-08-16T07:00:00+09:00",
- "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "inLanguage":"en","datePublished":"2026-10-16T07:00:00+09:00","dateModified":"2026-10-16T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2608.03172","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/25cb55accd75.html"}
 </script>
@@ -32,14 +32,14 @@
 </div></header>
 <div class="wrap"><article class="article">
   <div class="article-head">
-    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
     <h1>Surrogate Substitution Preserves PHI Detectability: A Multi-Detector Equivalence Study</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/08/16</span></div>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/16</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/25cb55accd75.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.03172" rel="nofollow noopener">https://arxiv.org/abs/2608.03172</a></span></div>
-  <div class="article-body"><p>arXiv:2608.03172v3 Announce Type: replace 
-Abstract: Structure-preserving de-identification replaces protected health information (PHI) with realistic same-type surrogates -- &quot;Anna S.&quot; becomes &quot;Maria S.&quot;, not [NAME] -- so that clinical text stays fluent and downstream tools keep working. But this only helps if the substitution does not itself corrupt the signal those tools rely on. We ask a narrow, testable question: on the spans a de-identifier actually masks, can downstream PHI detectors still find the surrogate? We introduce a paired, multi-detector evaluation protocol that (i) scores utility only on masked spans, decoupling coverage from utility; (ii) uses equivalence testing (TOST) rather than null-hypothesis significance testing, which is uninformative at our sample size (57k paired spans); and (iii) builds a surrogate-failure typology separating fixable generator defects from intrinsic detector limits. Across 11 detectors, 7 benchmarks, and 7 languages (1,750 documents), recall on masked spans moves from 76.1% to 74.9% -- a change our equivalence test shows is statistically equivalent to zero within a +/-2-point margin (p ~ 3e-9), with detector ranking preserved. The residual loss does not reflect detectors getting worse at PHI: it concentrates in malformed and out-of-distribution surrogates (truncation Chicago -&gt; Illino, salience loss Cedars-Sinai -&gt; Vidant). A redaction floor and an open-source surrogate baseline indicate the effect is a property of well-formed substitution, not of one tool. We release the evaluation subsets, scoring code, and an interactive dashboard at https://custodianai.pages.dev so the protocol can audit any structure-preserving transform.</p></div>
+  <div class="article-body"><p>arXiv:2608.03172v5 Announce Type: replace-cross 
+Abstract: Structure-preserving de-identification replaces each detected identifier with a realistic same-type surrogate (&quot;Anna S.&quot; -&gt; &quot;Maria S.&quot;) rather than a tag such as [NAME]. If downstream PHI detectors no longer recognise surrogates, hiding-in-plain-sight protection and second-pass safety nets weaken. We ask: on the spans a de-identifier actually replaced, do detectors find the surrogate as often as the original value? We call this detectability preservation and treat it as a proxy, not a full measure of utility. Our paired protocol (i) scores detectability only on replaced spans, separately from coverage; (ii) runs an identical heterogeneous detector panel on original and transformed text; and (iii) bounds the paired change with document-level cluster-bootstrap equivalence testing and posterior probabilities instead of significance tests. For one commercial transform on 7 clinical and general-PII benchmarks in 7 languages (1,750 documents, 5,333 replaced spans, 11 detectors), masked-span recall moves from 75.8% to 74.6% (90% CI of the change [-1.62, -0.82] points; posterior probability &gt; 0.99 of lying within +/-2 points). The change reaches 2-3 points on dense Spanish and Dutch text, and replaced spans are easier to detect than unreplaced ones (+16.6 points), so the result describes the replaced population only. Coverage is a separate, weaker axis (48% of gold PHI on MEDDOCAN). On financial, legal and enterprise text (750 documents, 10 detectors) the pooled result replicates (72.4% -&gt; 72.8%), but rule-based and fine-tuned detectors lose 2-4 points on finance, and the transform edits substantial non-PII text. Redaction and Faker baselines give reference points. We release per-span predictions and analysis code.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

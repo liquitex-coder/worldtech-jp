@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlowWise: Stateful Fast-Slow Model Serving for Streaming Traffic Intelligence — NewsMatome (EN)</title>
+<meta name="description" content="FlowWise: Stateful Fast-Slow Model Serving for Streaming Traffic Intelligence — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/f3e01d46f8df.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/f3e01d46f8df.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/f3e01d46f8df.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/f3e01d46f8df.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FlowWise: Stateful Fast-Slow Model Serving for Streaming Traffic Intelligence">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"FlowWise: Stateful Fast-Slow Model Serving for Streaming Traffic Intelligence",
+ "inLanguage":"en","datePublished":"2026-10-16T07:00:00+09:00","dateModified":"2026-10-16T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2402.03694","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/f3e01d46f8df.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/f3e01d46f8df.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>FlowWise: Stateful Fast-Slow Model Serving for Streaming Traffic Intelligence</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/10/16</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/f3e01d46f8df.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2402.03694" rel="nofollow noopener">https://arxiv.org/abs/2402.03694</a></span></div>
+  <div class="article-body"><p>arXiv:2402.03694v3 Announce Type: replace-cross 
+Abstract: Network traffic analysis in cloud and internet service provider (ISP) networks increasingly relies on machine learning (ML) models, as encryption and service consolidation make rule-based classification unreliable. At high flow-arrival rates, however, new flows can arrive faster than end-to-end analysis pipelines can process. Unlike typical cloud inference workloads, packets from the same flow arrive over time and require per-flow state. This streaming, stateful setting limits naive scale-out with stateless workers. This paper presents FlowWise, a serving system for streaming, stateful flow intelligence on commodity CPU/GPU servers that jointly selects (i) how many packets to collect and (ii) which model(s) to apply for each flow to balance latency, service rate, and accuracy. Across three representative tasks, inference time across candidate models differs by 1.8x-141.3x, while packet waiting time can exceed feature computation and inference by 6-8 orders of magnitude at the tail. FlowWise exploits these gaps with an uncertainty-driven fast-slow cascade: it issues early predictions from a one-packet model and escalates only uncertain flows to slower models that wait for additional packets and use richer features. A queue-centric runtime maintains per-flow state, performs asynchronous feature joining, and uses brokered, flow-ID-keyed streams to distribute workload across heterogeneous workers. FlowWise serves 76.3% of flows within 16 ms, improving median end-to-end serving latency by 40.5x while increasing service rate and maintaining similar accuracy to always running the slow model. With thousands of packet-header features per flow, our scale-up benchmark sustains over 48.5k new flows per second on a single 16-core commodity CPU server, comparable to reported flow-arrival rates in city-backbone traces. FlowWise is open sourced at https://github.com/noise-lab/FlowWise.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

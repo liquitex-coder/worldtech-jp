@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>A Nesterov-Accelerated Byzantine-Robust Federated Learning — NewsMatome</title>
-<meta name="description" content="A Nesterov-Accelerated Byzantine-Robust Federated Learning（EN→JA 翻訳・出典付き）">
+<title>A Byzantine-Robust Federated Learning with Nesterov Momentum — NewsMatome</title>
+<meta name="description" content="A Byzantine-Robust Federated Learning with Nesterov Momentum（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/6a1798a34383.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/6a1798a34383.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/6a1798a34383.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="A Nesterov-Accelerated Byzantine-Robust Federated Learning">
-<meta property="og:description" content="A Nesterov-Accelerated Byzantine-Robust Federated Learning（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="A Byzantine-Robust Federated Learning with Nesterov Momentum">
+<meta property="og:description" content="A Byzantine-Robust Federated Learning with Nesterov Momentum（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"A Nesterov-Accelerated Byzantine-Robust Federated Learning",
- "inLanguage":"ja","datePublished":"2026-09-05T07:00:00+09:00","dateModified":"2026-09-05T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"A Byzantine-Robust Federated Learning with Nesterov Momentum",
+ "inLanguage":"ja","datePublished":"2026-10-16T07:00:00+09:00","dateModified":"2026-10-16T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2511.02657","url":"https://liquitex-coder.github.io/worldtech-jp/articles/6a1798a34383.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>A Nesterov-Accelerated Byzantine-Robust Federated Learning</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>A Byzantine-Robust Federated Learning with Nesterov Momentum</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>A Nesterov-Accelerated Byzantine-Robust Federated Learning</h1>
+      <h1>A Byzantine-Robust Federated Learning with Nesterov Momentum</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/09/05 07:00</span><span>· 更新 2026/09/05</span>
+        <span>公開 2026/10/16 07:00</span><span>· 更新 2026/10/16</span>
       </div>
     </div>
     
@@ -74,24 +74,24 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2511.02657" rel="nofollow noopener">A Nesterov-Accelerated Byzantine-Robust Federated Learning</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2511.02657" rel="nofollow noopener">A Byzantine-Robust Federated Learning with Nesterov Momentum</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2511.02657v2 Announce Type: replace 
-Abstract: We investigate robust federated learning, where a group of workers collaboratively train a shared model under the orchestration of a central server in the presence of Byzantine adversaries capable of arbitrary and potentially malicious behaviors. To simultaneously enhance communication efficiency and resilience against such adversaries, we propose a Byzantine-resilient Nesterov-accelerated federated learning (Byrd-NAFL) algorithm. Byrd-NAFL seamlessly integrates Nesterov&#x27;s momentum into the federated learning process alongside Byzantine-resilient aggregation rules to achieve fast and safe convergence against gradient corruption. We establish a finite-time convergence guarantee for Byrd-NAFL under non-convex and smooth loss functions with relaxed assumptions on the aggregated gradients. Extensive numerical experiments validate the effectiveness of Byrd-NAFL and demonstrate the superiority over existing benchmarks in terms of convergence speed, accuracy, and resilience to diverse malicious attacks.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2511.02657v2 Announce Type: replace 
-Abstract: We investigate robust federated learning, where a group of workers collaboratively train a shared model under the orchestration of a central server in the presence of Byzantine adversaries capable of arbitrary and potentially malicious behaviors. To simultaneously enhance communication efficiency and resilience against such adversaries, we propose a Byzantine-resilient Nesterov-accelerated federated learning (Byrd-NAFL) algorithm. Byrd-NAFL seamlessly integrates Nesterov&#x27;s momentum into the federated learning process alongside Byzantine-resilient aggregation rules to achieve fast and safe convergence against gradient corruption. We establish a finite-time convergence guarantee for Byrd-NAFL under non-convex and smooth loss functions with relaxed assumptions on the aggregated gradients. Extensive numerical experiments validate the effectiveness of Byrd-NAFL and demonstrate the superiority over existing benchmarks in terms of convergence speed, accuracy, and resilience to diverse malicious attacks.</div>
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2511.02657v4 Announce Type: replace 
+Abstract: We investigate robust federated learning, where a group of workers collaboratively train a shared model under the orchestration of a central server in the presence of Byzantine adversaries capable of arbitrary and potentially malicious behaviors. To improve communication efficiency while retaining resilience against such adversaries, we propose a Byzantine-resilient Nesterov-augmented federated learning (Byrd-NAFL) algorithm. Byrd-NAFL applies Nesterov&#x27;s momentum at the server to the output of any soft $\gamma$-Byzantine resilient aggregation rule, while each worker only computes and uploads a stochastic gradient, which keeps the workers stateless, as desired for intermittently participating Internet of Things devices. For smooth non-convex losses, we establish a finite-time convergence guarantee for all momentum factors $\beta\in[0,1)$ without requiring the aggregated gradient to be unbiased or bounded; the bound reduces to that of Byzantine-resilient stochastic gradient descent at $\beta=0$ and is tighter than that of server-side heavy-ball momentum. Experiments on MNIST, CIFAR-10, and Sentiment140 show that Byrd-NAFL converges faster and attains higher accuracy than existing benchmarks in most i.i.d. and non-i.i.d. setups under diverse attacks, while its resilience is bounded by that of the underlying aggregation rule.</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2511.02657v4 Announce Type: replace 
+Abstract: We investigate robust federated learning, where a group of workers collaboratively train a shared model under the orchestration of a central server in the presence of Byzantine adversaries capable of arbitrary and potentially malicious behaviors. To improve communication efficiency while retaining resilience against such adversaries, we propose a Byzantine-resilient Nesterov-augmented federated learning (Byrd-NAFL) algorithm. Byrd-NAFL applies Nesterov&#x27;s momentum at the server to the output of any soft $\gamma$-Byzantine resilient aggregation rule, while each worker only computes and uploads a stochastic gradient, which keeps the workers stateless, as desired for intermittently participating Internet of Things devices. For smooth non-convex losses, we establish a finite-time convergence guarantee for all momentum factors $\beta\in[0,1)$ without requiring the aggregated gradient to be unbiased or bounded; the bound reduces to that of Byzantine-resilient stochastic gradient descent at $\beta=0$ and is tighter than that of server-side heavy-ball momentum. Experiments on MNIST, CIFAR-10, and Sentiment140 show that Byrd-NAFL converges faster and attains higher accuracy than existing benchmarks in most i.i.d. and non-i.i.d. setups under diverse attacks, while its resilience is bounded by that of the underlying aggregation rule.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2511.02657v2 Announce Type: replace 
-Abstract: We investigate robust federated learning, where a group of workers collaboratively train a shared model under the orchestration of a central server in the presence of Byzantine adversaries capable of arbitrary and potentially malicious behaviors. To simultaneously enhance communication efficiency and resilience against such adversaries, we propose a Byzantine-resilient Nesterov-accelerated federated learning (Byrd-NAFL) algorithm. Byrd-NAFL seamlessly integrates Nesterov&#x27;s momentum into the federated learning process alongside Byzantine-resilient aggregation rules to achieve fast and safe convergence against gradient corruption. We establish a finite-time convergence guarantee for Byrd-NAFL under non-convex and smooth loss functions with relaxed assumptions on the aggregated gradients. Extensive numerical experiments validate the effectiveness of Byrd-NAFL and demonstrate the superiority over existing benchmarks in terms of convergence speed, accuracy, and resilience to diverse malicious attacks.</p><a href="https://arxiv.org/abs/2511.02657" rel="nofollow noopener">原論文を読む →</a></div>
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2511.02657v4 Announce Type: replace 
+Abstract: We investigate robust federated learning, where a group of workers collaboratively train a shared model under the orchestration of a central server in the presence of Byzantine adversaries capable of arbitrary and potentially malicious behaviors. To improve communication efficiency while retaining resilience against such adversaries, we propose a Byzantine-resilient Nesterov-augmented federated learning (Byrd-NAFL) algorithm. Byrd-NAFL applies Nesterov&#x27;s momentum at the server to the output of any soft $\gamma$-Byzantine resilient aggregation rule, while each worker only computes and uploads a stochastic gradient, which keeps the workers stateless, as desired for intermittently participating Internet of Things devices. For smooth non-convex losses, we establish a finite-time convergence guarantee for all momentum factors $\beta\in[0,1)$ without requiring the aggregated gradient to be unbiased or bounded; the bound reduces to that of Byzantine-resilient stochastic gradient descent at $\beta=0$ and is tighter than that of server-side heavy-ball momentum. Experiments on MNIST, CIFAR-10, and Sentiment140 show that Byrd-NAFL converges faster and attains higher accuracy than existing benchmarks in most i.i.d. and non-i.i.d. setups under diverse attacks, while its resilience is bounded by that of the underlying aggregation rule.</p><a href="https://arxiv.org/abs/2511.02657" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2511.02657" rel="nofollow noopener">https://arxiv.org/abs/2511.02657</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
     <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="700e3c0de241.html"><div class="sim">関連</div><div class="info"><b>Structure and Implementation of New Practical English Textbooks Driven by Artificial Intelligence</b><div class="m">AI</div></div></a><a class="r" href="f736e609f8e5.html"><div class="sim">関連</div><div class="info"><b>MasterControl Seventeen Every Time</b><div class="m">AI</div></div></a><a class="r" href="16782e343d11.html"><div class="sim">関連</div><div class="info"><b>Speculative Macro Commit for Faster Tool-Using Agents</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="a16d50c7df94.html"><div class="sim">関連</div><div class="info"><b>Artificiality&#x27;s First Exam: An LLM-Referenced C-test for Supraintelligence</b><div class="m">AI</div></div></a><a class="r" href="574863154eac.html"><div class="sim">関連</div><div class="info"><b>The Silent Failures in Agentic Data Science</b><div class="m">AI</div></div></a><a class="r" href="8ddbcf370a84.html"><div class="sim">関連</div><div class="info"><b>ClawLoop: Self-Improving Agents via Harness-Native Training Loop</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

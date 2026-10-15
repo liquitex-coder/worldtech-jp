@@ -3,22 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HALLMARK: Diagnosing Three Failure Modes in LLM Citation Verifiers — NewsMatome (EN)</title>
-<meta name="description" content="HALLMARK: Diagnosing Three Failure Modes in LLM Citation Verifiers — original-language edition. Japanese translation available.">
+<title>HALLMARK: How to Diagnose LLM Citation Verifiers and When to Deploy Them — NewsMatome (EN)</title>
+<meta name="description" content="HALLMARK: How to Diagnose LLM Citation Verifiers and When to Deploy Them — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/e3e7bbaaecdf.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/e3e7bbaaecdf.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/e3e7bbaaecdf.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/e3e7bbaaecdf.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HALLMARK: Diagnosing Three Failure Modes in LLM Citation Verifiers">
+<meta property="og:title" content="HALLMARK: How to Diagnose LLM Citation Verifiers and When to Deploy Them">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"HALLMARK: Diagnosing Three Failure Modes in LLM Citation Verifiers",
- "inLanguage":"en","datePublished":"2026-07-23T07:00:00+09:00","dateModified":"2026-07-23T07:00:00+09:00",
- "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"HALLMARK: How to Diagnose LLM Citation Verifiers and When to Deploy Them",
+ "inLanguage":"en","datePublished":"2026-10-16T07:00:00+09:00","dateModified":"2026-10-16T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.18360","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/e3e7bbaaecdf.html"}
 </script>
@@ -32,14 +32,14 @@
 </div></header>
 <div class="wrap"><article class="article">
   <div class="article-head">
-    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>HALLMARK: Diagnosing Three Failure Modes in LLM Citation Verifiers</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/23</span></div>
+    <h1>HALLMARK: How to Diagnose LLM Citation Verifiers and When to Deploy Them</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/10/16</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/e3e7bbaaecdf.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.18360" rel="nofollow noopener">https://arxiv.org/abs/2607.18360</a></span></div>
-  <div class="article-body"><p>arXiv:2607.18360v1 Announce Type: cross 
-Abstract: Large language models (LLMs) now routinely draft literature reviews and assist with academic writing, which means a higher risk of fabricated references: GPTZero found 53 papers with hallucinated citations among NeurIPS 2025&#x27;s accepted set. Rule- and LLM-based verifiers are emerging, but no shared benchmark compares them and gives detailed failure diagnostics. We close that gap with HALLMARK (Hallucination benchmark): 2,526 BibTeX entries spanning 14 hallucination types, three difficulty tiers, six diagnostic sub-tests per entry, and a contamination-resistant held-out split. On it we evaluate a DOI-lookup baseline, frontier LLMs zero-shot, tool-augmented agents, and our own rule-based, co-designed verifier bibtex-updater. Across the benchmark one result is consistent: the false-positive rate, not recall, decides whether a verifier is deployable. HALLMARK makes it concrete through three failure modes: agentic lookups buy recall but inflate false positives; at a venue-realistic base rate, the order-of-magnitude spread in false-positive rates (FPRs) -- not recall -- governs whether a verifier&#x27;s flags are mostly true catches or mostly noise; and most LLMs over-flag papers published past their training cutoff, where only the two latest-cutoff models hold their false-positive rate near in-distribution levels (a signal we report as descriptive, since it is confounded with possible recall of those entries). Thus FPR is the deployment bottleneck, but an undetected fabrication remains the costlier error for the scientific record.</p></div>
+  <div class="article-body"><p>arXiv:2607.18360v2 Announce Type: replace-cross 
+Abstract: GPTZero found 53 NeurIPS 2025 accepted papers with hallucinated citations, and venues now screen submissions with automated reference checkers. Rule- and Large Language Model (LLM)-based verifiers are emerging, but many are released without a shared evaluation and each flags a different kind of error, so it is unclear which to trust or when to deploy them. We address this with HALLMARK (Hallucination benchmark): 2,526 BibTeX entries spanning 14 hallucination types, with per-type and diagnostic sub-test labels and further temporal, cross-domain, and real-world evaluation splits. We evaluate zero-shot and tool-augmented LLMs, a DOI-lookup baseline, and our own co-designed rule-based verifier, bibtex-updater. Verifiers can miss hallucinations and wrongly flag correct papers, so every flag still needs human review. The false positive rate (FPR) determines the review effort and thus limits deployment. The tested models exhibit an order-of-magnitude spread in FPR; agentic lookups buy recall but inflate FPR, and neither smaller models nor prompt optimization reach the frontier&#x27;s operating point. A two-stage cascade with bibtex-updater avoids that inflation, providing an upper bound, given the co-design. These rankings, however, depend on what counts as a hallucination: re-scoring the types that describe a real work cited inaccurately changes which verifier ranks first, and venues have not agreed on a definition. We call for a community definition and release per-type labels and a re-scoring protocol so that any agreed definition can be scored against every verifier.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

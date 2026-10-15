@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prompt Interference in LLM Post-Training: Why Pass@k Optimization Can Degrade Pass@1 — NewsMatome (EN)</title>
+<meta name="description" content="Prompt Interference in LLM Post-Training: Why Pass@k Optimization Can Degrade Pass@1 — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/b2f5abba917f.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/b2f5abba917f.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/b2f5abba917f.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/b2f5abba917f.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Prompt Interference in LLM Post-Training: Why Pass@k Optimization Can Degrade Pass@1">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Prompt Interference in LLM Post-Training: Why Pass@k Optimization Can Degrade Pass@1",
+ "inLanguage":"en","datePublished":"2026-10-16T07:00:00+09:00","dateModified":"2026-10-16T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2602.21189","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/b2f5abba917f.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/b2f5abba917f.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Prompt Interference in LLM Post-Training: Why Pass@k Optimization Can Degrade Pass@1</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/10/16</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/b2f5abba917f.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2602.21189" rel="nofollow noopener">https://arxiv.org/abs/2602.21189</a></span></div>
+  <div class="article-body"><p>arXiv:2602.21189v3 Announce Type: replace-cross 
+Abstract: Pass@$k$ is a widely used performance metric for verifiable large language model tasks, including mathematical reasoning, code generation, and short-answer reasoning. It defines success if any of $k$ independently sampled solutions passes a verifier. This multi-sample inference metric has motivated inference-aware fine-tuning methods that directly optimize pass@$k$. However, prior work reports a trade-off: pass@$k$ improves while pass@1 degrades under such methods. This trade-off is practically important because pass@1 often remains a hard operational constraint due to latency and cost budgets, imperfect verifier coverage, and the need for a reliable single-shot fallback. We study the origin of this trade-off and provide a theoretical characterization of when pass@$k$ policy optimization can reduce pass@1 through gradient conflict induced by prompt interference. This interference arises because shared model parameters couple prompts, so improving performance on some prompts can adversely affect others. We show that pass@$k$ policy gradients can conflict with pass@1 gradients because pass@$k$ optimization implicitly reweights prompts toward low-success prompts; when these prompts are negatively interfering, their upweighting can rotate the pass@$k$ update direction away from the pass@1 direction. We illustrate our findings with large language model experiments on verifiable mathematical reasoning and coding tasks.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
