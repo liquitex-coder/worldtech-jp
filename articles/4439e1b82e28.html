@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ManifoldFlow: SPD-Relaxed Stiefel Layers with Learnable Singular Spectrum — NewsMatome</title>
-<meta name="description" content="ManifoldFlow: SPD-Relaxed Stiefel Layers with Learnable Singular Spectrum（EN→JA 翻訳・出典付き）">
+<title>ManifoldFlow: Spectrum-Learnable Stiefel Optimization via SPD Relaxation — NewsMatome</title>
+<meta name="description" content="ManifoldFlow: Spectrum-Learnable Stiefel Optimization via SPD Relaxation（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/4439e1b82e28.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/4439e1b82e28.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/4439e1b82e28.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="ManifoldFlow: SPD-Relaxed Stiefel Layers with Learnable Singular Spectrum">
-<meta property="og:description" content="ManifoldFlow: SPD-Relaxed Stiefel Layers with Learnable Singular Spectrum（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="ManifoldFlow: Spectrum-Learnable Stiefel Optimization via SPD Relaxation">
+<meta property="og:description" content="ManifoldFlow: Spectrum-Learnable Stiefel Optimization via SPD Relaxation（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"ManifoldFlow: SPD-Relaxed Stiefel Layers with Learnable Singular Spectrum",
- "inLanguage":"ja","datePublished":"2026-10-04T07:00:00+09:00","dateModified":"2026-10-04T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"ManifoldFlow: Spectrum-Learnable Stiefel Optimization via SPD Relaxation",
+ "inLanguage":"ja","datePublished":"2026-10-17T07:00:00+09:00","dateModified":"2026-10-17T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.04535","url":"https://liquitex-coder.github.io/worldtech-jp/articles/4439e1b82e28.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>ManifoldFlow: SPD-Relaxed Stiefel Layers with Learnable Singular Spectrum</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>ManifoldFlow: Spectrum-Learnable Stiefel Optimization via SPD Relaxation</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>ManifoldFlow: SPD-Relaxed Stiefel Layers with Learnable Singular Spectrum</h1>
+      <h1>ManifoldFlow: Spectrum-Learnable Stiefel Optimization via SPD Relaxation</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/10/04 07:00</span><span>· 更新 2026/10/04</span>
+        <span>公開 2026/10/17 07:00</span><span>· 更新 2026/10/17</span>
       </div>
     </div>
     
@@ -74,24 +74,24 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2607.04535" rel="nofollow noopener">ManifoldFlow: SPD-Relaxed Stiefel Layers with Learnable Singular Spectrum</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2607.04535" rel="nofollow noopener">ManifoldFlow: Spectrum-Learnable Stiefel Optimization via SPD Relaxation</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2607.04535v2 Announce Type: replace 
-Abstract: Orthogonal and Stiefel layers give neural weights exact spectral control, but they also impose a strong modeling constraint: all represented singular values are fixed at one. Many settings that benefit from an orthonormal basis still need direction-dependent attenuation or amplification. We introduce ManifoldFlow, a minimal relaxation of a fixed-spectrum Stiefel layer that keeps the basis on the Stiefel manifold while learning a bounded positive spectrum through W = Q S^{1/2}, with Q^T Q = I and S positive definite. Since W^T W = S, the eigenvalues of S are exactly the squared singular values of the realized weight, making eigenvalue clipping a direct singular-value control mechanism. Across paired sequence, tabular, and image experiments, the learnable SPD spectrum improves the fixed-spectrum Stiefel counterpart in the reported settings where the Stiefel prior is useful, with the largest gains in recurrent language-model projections. Boundary cases in convolutional classifier heads clarify the intended scope: ManifoldFlow is not a universal dense-layer replacement, but a spectrum-learnable Stiefel relaxation for settings where an orthonormal basis is a useful prior. When the basis should be orthonormal, its spectrum need not be frozen. Code available at https://github.com/Hik289/manifold_flow</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2607.04535v2 Announce Type: replace 
-Abstract: Orthogonal and Stiefel layers give neural weights exact spectral control, but they also impose a strong modeling constraint: all represented singular values are fixed at one. Many settings that benefit from an orthonormal basis still need direction-dependent attenuation or amplification. We introduce ManifoldFlow, a minimal relaxation of a fixed-spectrum Stiefel layer that keeps the basis on the Stiefel manifold while learning a bounded positive spectrum through W = Q S^{1/2}, with Q^T Q = I and S positive definite. Since W^T W = S, the eigenvalues of S are exactly the squared singular values of the realized weight, making eigenvalue clipping a direct singular-value control mechanism. Across paired sequence, tabular, and image experiments, the learnable SPD spectrum improves the fixed-spectrum Stiefel counterpart in the reported settings where the Stiefel prior is useful, with the largest gains in recurrent language-model projections. Boundary cases in convolutional classifier heads clarify the intended scope: ManifoldFlow is not a universal dense-layer replacement, but a spectrum-learnable Stiefel relaxation for settings where an orthonormal basis is a useful prior. When the basis should be orthonormal, its spectrum need not be frozen. Code available at https://github.com/Hik289/manifold_flow</div>
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2607.04535v4 Announce Type: replace 
+Abstract: Orthogonal and Stiefel constraints are widely used in neural network optimization to control weight geometry, improve conditioning, and stabilize signal propagation. Yet standard Stiefel optimization imposes a hidden restriction: while learning the directions of a linear map, it fixes every singular value to one, preventing the model from learning how strongly different directions should be amplified or suppressed. We introduce ManifoldFlow, a spectrum-learnable extension of Stiefel optimization that separates directional geometry from spectral scaling through $W=QS^{1/2}$, where $Q^\top Q=I$ and $S\succ0$. Beyond simply making the spectrum trainable, ManifoldFlow uses the gradient component rejected by the Stiefel constraint as a signal for how the spectrum should change, accumulates this signal across aligned tangent spaces, and jointly updates the orthonormal basis and a bounded SPD spectrum. This construction preserves exact spectral interpretability because $W^\top W=S$, while recovering standard Stiefel optimization when $S=I$. We establish the geometry of the rejected gradient, characterize optimization over the resulting Stiefel--SPD product space, and derive how the learned spectrum affects conditioning, signal propagation, and spectral complexity. Across diverse tasks, ManifoldFlow consistently outperforms matched fixed-spectrum Stiefel baselines, with particularly strong gains in recurrent language modeling. Our code is available at https://github.com/Hik289/manifold_flow.git.</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2607.04535v4 Announce Type: replace 
+Abstract: Orthogonal and Stiefel constraints are widely used in neural network optimization to control weight geometry, improve conditioning, and stabilize signal propagation. Yet standard Stiefel optimization imposes a hidden restriction: while learning the directions of a linear map, it fixes every singular value to one, preventing the model from learning how strongly different directions should be amplified or suppressed. We introduce ManifoldFlow, a spectrum-learnable extension of Stiefel optimization that separates directional geometry from spectral scaling through $W=QS^{1/2}$, where $Q^\top Q=I$ and $S\succ0$. Beyond simply making the spectrum trainable, ManifoldFlow uses the gradient component rejected by the Stiefel constraint as a signal for how the spectrum should change, accumulates this signal across aligned tangent spaces, and jointly updates the orthonormal basis and a bounded SPD spectrum. This construction preserves exact spectral interpretability because $W^\top W=S$, while recovering standard Stiefel optimization when $S=I$. We establish the geometry of the rejected gradient, characterize optimization over the resulting Stiefel--SPD product space, and derive how the learned spectrum affects conditioning, signal propagation, and spectral complexity. Across diverse tasks, ManifoldFlow consistently outperforms matched fixed-spectrum Stiefel baselines, with particularly strong gains in recurrent language modeling. Our code is available at https://github.com/Hik289/manifold_flow.git.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2607.04535v2 Announce Type: replace 
-Abstract: Orthogonal and Stiefel layers give neural weights exact spectral control, but they also impose a strong modeling constraint: all represented singular values are fixed at one. Many settings that benefit from an orthonormal basis still need direction-dependent attenuation or amplification. We introduce ManifoldFlow, a minimal relaxation of a fixed-spectrum Stiefel layer that keeps the basis on the Stiefel manifold while learning a bounded positive spectrum through W = Q S^{1/2}, with Q^T Q = I and S positive definite. Since W^T W = S, the eigenvalues of S are exactly the squared singular values of the realized weight, making eigenvalue clipping a direct singular-value control mechanism. Across paired sequence, tabular, and image experiments, the learnable SPD spectrum improves the fixed-spectrum Stiefel counterpart in the reported settings where the Stiefel prior is useful, with the largest gains in recurrent language-model projections. Boundary cases in convolutional classifier heads clarify the intended scope: ManifoldFlow is not a universal dense-layer replacement, but a spectrum-learnable Stiefel relaxation for settings where an orthonormal basis is a useful prior. When the basis should be orthonormal, its spectrum need not be frozen. Code available at https://github.com/Hik289/manifold_flow</p><a href="https://arxiv.org/abs/2607.04535" rel="nofollow noopener">原論文を読む →</a></div>
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2607.04535v4 Announce Type: replace 
+Abstract: Orthogonal and Stiefel constraints are widely used in neural network optimization to control weight geometry, improve conditioning, and stabilize signal propagation. Yet standard Stiefel optimization imposes a hidden restriction: while learning the directions of a linear map, it fixes every singular value to one, preventing the model from learning how strongly different directions should be amplified or suppressed. We introduce ManifoldFlow, a spectrum-learnable extension of Stiefel optimization that separates directional geometry from spectral scaling through $W=QS^{1/2}$, where $Q^\top Q=I$ and $S\succ0$. Beyond simply making the spectrum trainable, ManifoldFlow uses the gradient component rejected by the Stiefel constraint as a signal for how the spectrum should change, accumulates this signal across aligned tangent spaces, and jointly updates the orthonormal basis and a bounded SPD spectrum. This construction preserves exact spectral interpretability because $W^\top W=S$, while recovering standard Stiefel optimization when $S=I$. We establish the geometry of the rejected gradient, characterize optimization over the resulting Stiefel--SPD product space, and derive how the learned spectrum affects conditioning, signal propagation, and spectral complexity. Across diverse tasks, ManifoldFlow consistently outperforms matched fixed-spectrum Stiefel baselines, with particularly strong gains in recurrent language modeling. Our code is available at https://github.com/Hik289/manifold_flow.git.</p><a href="https://arxiv.org/abs/2607.04535" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2607.04535" rel="nofollow noopener">https://arxiv.org/abs/2607.04535</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
     <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="41bdb722f99c.html"><div class="sim">関連</div><div class="info"><b>Reverse Item Response Theory for Sparsity-Robust Ranking in Fragmented Cancer Drug-Response Matrices</b><div class="m">アルゴリズム</div></div></a><a class="r" href="54c963e93e24.html"><div class="sim">関連</div><div class="info"><b>How Far is Adam from Natural Gradient Descent?</b><div class="m">アルゴリズム</div></div></a><a class="r" href="2b94985b1b4a.html"><div class="sim">関連</div><div class="info"><b>FourierQK: Filter Shape, Admissibility and the Leakage-Coverage Law</b><div class="m">アルゴリズム</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="5a4c85ab654b.html"><div class="sim">関連</div><div class="info"><b>The World Won&#x27;t Wait: Evaluating and Teaching Agents Under a Live Clock</b><div class="m">AI</div></div></a><a class="r" href="4f5a3d65e49a.html"><div class="sim">関連</div><div class="info"><b>Evaluating Model Capabilities After Benchmark Saturation</b><div class="m">AI</div></div></a><a class="r" href="f86f8cbf4aa8.html"><div class="sim">関連</div><div class="info"><b>Value-Informed Schedule Trimming for Accelerated Sequential Monte Carlo Guidance in Discrete Diffusion</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

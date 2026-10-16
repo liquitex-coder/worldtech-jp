@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comfortably Stuck: Evaluation Pitfalls in Bench2Drive&#x27;s Closed-Loop Protocol — NewsMatome (EN)</title>
+<meta name="description" content="Comfortably Stuck: Evaluation Pitfalls in Bench2Drive&#x27;s Closed-Loop Protocol — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/45471e3260e2.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/45471e3260e2.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/45471e3260e2.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/45471e3260e2.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Comfortably Stuck: Evaluation Pitfalls in Bench2Drive&#x27;s Closed-Loop Protocol">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Comfortably Stuck: Evaluation Pitfalls in Bench2Drive&#x27;s Closed-Loop Protocol",
+ "inLanguage":"en","datePublished":"2026-10-17T07:00:00+09:00","dateModified":"2026-10-17T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"ロボット技術担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.21741","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/45471e3260e2.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/45471e3260e2.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#ef4444"></span>ロボット技術</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Comfortably Stuck: Evaluation Pitfalls in Bench2Drive&#x27;s Closed-Loop Protocol</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b></span></span><span>2026/10/17</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/45471e3260e2.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.21741" rel="nofollow noopener">https://arxiv.org/abs/2610.21741</a></span></div>
+  <div class="article-body"><p>arXiv:2610.21741v1 Announce Type: new 
+Abstract: Closed-loop evaluation is widely regarded as a more faithful way to assess end-to-end (E2E) driving models than open-loop evaluation, and Bench2Drive, built on the CARLA simulator, has become the dominant benchmark for it. We show that its evaluation protocol itself contains pitfalls that can misrepresent the models scored on it. Bench2Drive&#x27;s comfort metric, adapted from nuPlan, has several implementation errors and a segmentation scheme that rewards standing still, so it mostly measures how long a vehicle stays stationary, correlating with stationary time at r = 0.97 across eight models. We propose a corrected, distance-based metric that cuts that correlation to r = 0.06. Under it, the strong driving-score/comfort tradeoff the original metric reports is no longer detectable once models are compared at matched driving speed, which suggests that comfort trades against how fast a model drives rather than against how well it drives. We also uncover two pitfalls in how the harness supplies navigation signals: the default controller can replace a model&#x27;s own steering with an angle toward the route target point, and the target point supplied at evaluation time can differ substantially from what a model saw in training. We demonstrate both on UniAD and VAD, where their effects differ sharply, and argue that future closed-loop evaluations should check for them. We will release all fixes as standalone code, so corrected comfort scores can be obtained from logged trajectories without re-running closed-loop simulation.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

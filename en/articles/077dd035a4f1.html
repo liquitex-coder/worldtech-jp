@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Task-Phase-Conditioned Expert Routing Is Not a Reliable Proxy for Quantization Sensitivity in MoE FFN Tensors — NewsMatome (EN)</title>
+<meta name="description" content="Task-Phase-Conditioned Expert Routing Is Not a Reliable Proxy for Quantization Sensitivity in MoE FFN Tensors — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/077dd035a4f1.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/077dd035a4f1.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/077dd035a4f1.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/077dd035a4f1.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Task-Phase-Conditioned Expert Routing Is Not a Reliable Proxy for Quantization Sensitivity in MoE FFN Tensors">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Task-Phase-Conditioned Expert Routing Is Not a Reliable Proxy for Quantization Sensitivity in MoE FFN Tensors",
+ "inLanguage":"en","datePublished":"2026-10-17T07:00:00+09:00","dateModified":"2026-10-17T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.20826","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/077dd035a4f1.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/077dd035a4f1.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Task-Phase-Conditioned Expert Routing Is Not a Reliable Proxy for Quantization Sensitivity in MoE FFN Tensors</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/17</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/077dd035a4f1.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.20826" rel="nofollow noopener">https://arxiv.org/abs/2610.20826</a></span></div>
+  <div class="article-body"><p>arXiv:2610.20826v1 Announce Type: new 
+Abstract: We investigate whether per-layer, per-task-phase (prompt/reasoning/response) expert-routing statistics in a Mixture-of-Experts (MoE) language model can guide layer-wise mixed-precision quantization of routed-expert FFN tensors (down/gate and up). To attain layerwise routing statistics, we build a routing-capture and profiling pipeline for Qwen-3.6-35B-A3B in ik_llama.cpp, derive a composite sensitivity score from routing entropy/decisiveness, coefficient of variation (CV), Jaccard/phase-fragility, and top-1 expert strength, and use coordinate descent to tune a layer allocation that respects a fixed average bits-per-weight budget. Notably, the profiling pipeline is applicable to standard top-k MoE architectures. Across independent experimental conditions (about 4.0 bpw flat, about 2.7 bpw steep, and about 2.7 bpw random allocation as a control), reallocation fails to outperform the uniform baseline within each quality tier. In the flat regime, reallocation is statistically neutral (z about 0.9). For the steep tier, the random reallocation performs within 1 SE of the routing-guided reallocation at the same tier, indicating a structural loss at this quality rung caused by mandatory downgrades and Kullback-Leibler Divergence (KLD) tail injection. This aggressive-budget condition shows a decisive loss (z greater than 4 SE) replicated across three independent weight vectors. We argue that the deeper issue is that routing-behavior statistics are an unvalidated proxy for true per-layer quantization cost.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

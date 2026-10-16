@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlashAttention with Statistics: Low-Overhead Attention Features for Compact Hallucination Detectors — NewsMatome (EN)</title>
+<meta name="description" content="FlashAttention with Statistics: Low-Overhead Attention Features for Compact Hallucination Detectors — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/6ae8b50a1d5b.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/6ae8b50a1d5b.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/6ae8b50a1d5b.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/6ae8b50a1d5b.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FlashAttention with Statistics: Low-Overhead Attention Features for Compact Hallucination Detectors">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"FlashAttention with Statistics: Low-Overhead Attention Features for Compact Hallucination Detectors",
+ "inLanguage":"en","datePublished":"2026-10-17T07:00:00+09:00","dateModified":"2026-10-17T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.21483","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/6ae8b50a1d5b.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/6ae8b50a1d5b.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>FlashAttention with Statistics: Low-Overhead Attention Features for Compact Hallucination Detectors</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/10/17</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/6ae8b50a1d5b.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.21483" rel="nofollow noopener">https://arxiv.org/abs/2610.21483</a></span></div>
+  <div class="article-body"><p>arXiv:2610.21483v1 Announce Type: new 
+Abstract: Large language models can produce fluent answers that the supplied context does not support. A compact frozen proxy model can detect such answers by reading the context and another model&#x27;s response, even from a proprietary generator. Attention-based detectors use summary statistics of the proxy&#x27;s attention weights, but standard pipelines materialize the attention matrix, whose memory grows quadratically with sequence length. We compute these statistics without materializing attention, by accumulation in the FlashAttention pass, sparse lookups after it, or a second tiled pass over the scores, and classify them by this path into nearly free and costlier ones. On an H100, the statistics of five published detectors add 16% to the latency of a Qwen3-8B forward at 2K tokens, falling to 1.4% at 35K, and store 22.5 KiB per response token. On three benchmarks, probes trained on frozen Qwen3 proxies of 0.6B to 8B parameters prove strong detectors: a 4B proxy outperforms the strongest of nine zero-shot 4-9B LLM judges in F1 on two of the three, the proxies match or outperform specialized grounding checkers of up to 7B parameters, probing each proxy beats prompting it as a judge, and adding attention features significantly improves F1 in half of the 12 benchmark-proxy pairs, never significantly lowering it.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Beyond Accuracy and Cost: Latency-Aware LLM Query Routing for Dynamic Workloads — NewsMatome (EN)</title>
-<meta name="description" content="Beyond Accuracy and Cost: Latency-Aware LLM Query Routing for Dynamic Workloads — original-language edition. Japanese translation available.">
+<title>Mind the Delay: Latency-aware Query Routing for Heterogeneous LLM pools — NewsMatome (EN)</title>
+<meta name="description" content="Mind the Delay: Latency-aware Query Routing for Heterogeneous LLM pools — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/cb0224796105.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/cb0224796105.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/cb0224796105.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/cb0224796105.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Beyond Accuracy and Cost: Latency-Aware LLM Query Routing for Dynamic Workloads">
+<meta property="og:title" content="Mind the Delay: Latency-aware Query Routing for Heterogeneous LLM pools">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Beyond Accuracy and Cost: Latency-Aware LLM Query Routing for Dynamic Workloads",
- "inLanguage":"en","datePublished":"2026-07-23T07:00:00+09:00","dateModified":"2026-07-23T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Mind the Delay: Latency-aware Query Routing for Heterogeneous LLM pools",
+ "inLanguage":"en","datePublished":"2026-10-17T07:00:00+09:00","dateModified":"2026-10-17T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.18253","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/cb0224796105.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Beyond Accuracy and Cost: Latency-Aware LLM Query Routing for Dynamic Workloads</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/07/23</span></div>
+    <h1>Mind the Delay: Latency-aware Query Routing for Heterogeneous LLM pools</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/10/17</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/cb0224796105.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.18253" rel="nofollow noopener">https://arxiv.org/abs/2607.18253</a></span></div>
-  <div class="article-body"><p>arXiv:2607.18253v1 Announce Type: new 
-Abstract: Modern language query routers improve inference efficiency by assigning each query to a model that balances response quality and monetary cost. However, current query routers are largely latency-agnostic and do not consider the generation latency experienced by queries at model instances. In practice, latency is often controlled by load-balancing policies such as round-robin or join-the-shortest-queue, which do not account for model accuracy or inference cost. Incorporating query latency into routing is challenging as it depends not only on the query&#x27;s prompt length, but also on the current prefill and decode workload at the model instance and the scheduling and batching policy of the serving framework. We design a lightweight latency estimator that simulates autoregressive token batch processing in the serving framework and estimates the time-to-first-token (TTFT) of queries. We incorporate this latency estimator into a latency-aware router that jointly optimizes latency, accuracy, and cost when assigning queries to model instances. Our experimental results indicate that this joint optimization yields up to 40% improvement in accuracy--cost utility while maintaining the same latencies as standard load-balancing approaches.</p></div>
+  <div class="article-body"><p>arXiv:2607.18253v2 Announce Type: replace 
+Abstract: Large language model (LLM) query routers typically assign each query to a suitable model that balances response accuracy and monetary cost. Subsequently, separate system-level load balancers based on policies such as join-the-shortest-queue or round-robin distribute the queries across replicas of each model to reduce latency. However, decoupling accuracy-cost and latency considerations can lead to suboptimal routing decisions. We introduce the Batch Evolution Aware (BEA) estimator to provide a fine-grained estimate of the latency, that is, the time-to-first-token (TTFT) experienced by an arriving query. Unlike existing load balancers that rely on coarse signals such as queue lengths, per-model processing rates, or historical average latencies, BEA replays the serving framework&#x27;s token-batch formation using a snapshot of an instance&#x27;s current workload, stopping when the incoming query&#x27;s first token is generated. Taking into account the compute and memory requirements of the prefill and decode phases of language queries as well as the contention between multiple queries that are served in the same batch, BEA predicts TTFT within an error of approximately 5%. Each prediction takes about 0.1 ms, which is fast enough to run on the critical routing path. We also design an analytical framework for a model instance under a limited processor-sharing scheme that calculates expected TTFT in closed form and captures the qualitative trend of latencies as the load increases. The TTFT estimates produced by BEA are then used in our latency-aware router, BEAR, which simultaneously balances accuracy, cost, and latency to select the best model instance from a heterogeneous pool of LLMs. Against seven baselines, BEAR improves the utility of responses delivered within their targets by 63% on average over existing latency-aware routers, and by 30.5% over the best baseline at each arrival rate.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

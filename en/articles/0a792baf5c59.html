@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Right Byte First: How UTF-16 Helps Multilingual Boundary Prediction — NewsMatome (EN)</title>
+<meta name="description" content="The Right Byte First: How UTF-16 Helps Multilingual Boundary Prediction — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/0a792baf5c59.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/0a792baf5c59.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/0a792baf5c59.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/0a792baf5c59.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Right Byte First: How UTF-16 Helps Multilingual Boundary Prediction">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"The Right Byte First: How UTF-16 Helps Multilingual Boundary Prediction",
+ "inLanguage":"en","datePublished":"2026-10-17T07:00:00+09:00","dateModified":"2026-10-17T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.22071","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/0a792baf5c59.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/0a792baf5c59.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>The Right Byte First: How UTF-16 Helps Multilingual Boundary Prediction</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/17</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/0a792baf5c59.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.22071" rel="nofollow noopener">https://arxiv.org/abs/2610.22071</a></span></div>
+  <div class="article-body"><p>arXiv:2610.22071v1 Announce Type: cross 
+Abstract: Many hierarchical byte-level language models group bytes into patches using a learned boundary predictor whose view of the next codepoint depends on encoding and lookahead. In UTF-8, codepoints of many scripts take three bytes: 8 of 24 bits mark length and continuation, and the first byte carries only 4 high codepoint bits. After the same left context, a mark extending a grapheme cluster and a letter starting the next can thus share their first byte. Universal Byte-Level Encoding (UBE) keeps one- and two-byte UTF-8 encodings but writes these codepoints as two UTF-16 bytes, low byte first, so its first symbol carries 8 low codepoint bits that can distinguish such continuations. We train small causal predictors on matched FineWeb-2 text and evaluate on FLORES-200 under UTF-8, UBE, and UBE&#x27;s same-length big-endian variant. At one-symbol lookahead, balanced grapheme-boundary error at codepoint boundaries across 17 languages in 13 Brahmic scripts is 8.76% with UTF-8, 8.62% with the big-endian variant, and 0.06% with UBE. When the target instead retains a parent tokenizer&#x27;s subword cuts at grapheme boundaries, UBE lowers the mean error relative to UTF-8 at the same lookahead by 72.91% in Korean, 35.29% in Chinese, and 67.32-99.55% in eight more scripts. In the seven of them whose main Unicode block fits on one 256-codepoint page, the big-endian variant stays within 3.0% of UTF-8, so the gain follows byte order, not length. In Korean and Chinese, UBE&#x27;s mean error falls below UTF-8&#x27;s final mean error after only 25% and 37.5% of training. Which byte comes first thus affects how much lookahead a byte-level boundary predictor needs.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

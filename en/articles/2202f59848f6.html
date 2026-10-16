@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Averaged Evaluation Masks Capability Trade-Offs: Multi-Source Calibration for High-Sparsity LLM Pruning — NewsMatome (EN)</title>
-<meta name="description" content="Averaged Evaluation Masks Capability Trade-Offs: Multi-Source Calibration for High-Sparsity LLM Pruning — original-language edition. Japanese translation available.">
+<title>Rethinking Calibration for High-Sparsity LLM Pruning: From Single Sources to Capability Coverage — NewsMatome (EN)</title>
+<meta name="description" content="Rethinking Calibration for High-Sparsity LLM Pruning: From Single Sources to Capability Coverage — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/2202f59848f6.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/2202f59848f6.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/2202f59848f6.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/2202f59848f6.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Averaged Evaluation Masks Capability Trade-Offs: Multi-Source Calibration for High-Sparsity LLM Pruning">
+<meta property="og:title" content="Rethinking Calibration for High-Sparsity LLM Pruning: From Single Sources to Capability Coverage">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Averaged Evaluation Masks Capability Trade-Offs: Multi-Source Calibration for High-Sparsity LLM Pruning",
- "inLanguage":"en","datePublished":"2026-08-01T07:00:00+09:00","dateModified":"2026-08-01T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Rethinking Calibration for High-Sparsity LLM Pruning: From Single Sources to Capability Coverage",
+ "inLanguage":"en","datePublished":"2026-10-17T07:00:00+09:00","dateModified":"2026-10-17T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.03328","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/2202f59848f6.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Averaged Evaluation Masks Capability Trade-Offs: Multi-Source Calibration for High-Sparsity LLM Pruning</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/01</span></div>
+    <h1>Rethinking Calibration for High-Sparsity LLM Pruning: From Single Sources to Capability Coverage</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/17</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/2202f59848f6.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.03328" rel="nofollow noopener">https://arxiv.org/abs/2606.03328</a></span></div>
-  <div class="article-body"><p>arXiv:2606.03328v3 Announce Type: replace 
-Abstract: Calibration data are often treated as a minor implementation detail in post-training LLM pruning because averaged evaluations suggest only modest effects. We show that this conclusion is an averaging artifact: at 60\% SparseGPT sparsity, calibration strategies separated by only 2.85 points in averaged commonsense accuracy differ by 51.9 points in Code retention. Across 15 sources, capability-decomposed analysis reveals an opposing pattern: calibration perplexity is positively associated with General retention but negatively associated with Math or Code retention, leaving no evaluated single source uniformly strong across capabilities. This finding motivates capability-balanced multi-source calibration. Under the same calibration budget, a balanced real-data mixture outperforms every evaluated single source on LLaMA-3.1-8B, beating C4 by 18.8 points; the advantage grows with sparsity and persists on LLaMA-3.1-70B. Because the original pretraining data of advanced LLMs are often inaccessible, we further introduce Information-Guided Self-Calibration for Pruning (IGSP). Using only the base model and evaluation taxonomy, IGSP generates capability-stratified pools and selects low-redundancy samples within capability-specific perplexity ranges, outperforming Self-Cal and SGS by up to 4.8 points. Together, these results recast calibration as a capability-coverage problem and identify multi-source design as a practical principle for preserving capabilities in high-sparsity LLM pruning.</p></div>
+  <div class="article-body"><p>arXiv:2606.03328v4 Announce Type: replace 
+Abstract: Post-training LLM pruning relies on a small calibration set, usually chosen heuristically and judged by WikiText perplexity or by mean accuracy on general-domain commonsense benchmarks. This single-axis view hides capability-specific effects: at 60\% sparsity, strategies separated by $2.85$ points in averaged commonsense accuracy diverge by $51.9$ points in code retention, and across 15 sources no single one preserves all capabilities. We treat calibration as a capability-coverage problem. Balanced, a uniform four-way mixture under a fixed budget, tests the principle on real corpora: it outperforms every evaluated single source, and its margin over C4 grows from $+4.6$ points at 30\% sparsity to $+18.8$ at 60\%. The advantage holds across model scale and a second model family, and transfers to held-out benchmarks disjoint from calibration construction. When aligned corpora are unavailable, IGSP approximates that mixture from the base model and the evaluation taxonomy alone, outperforming prior self-generation methods by $7.23$--$12.79$ points on the LLaMA main suite. On Qwen2.5-7B, IGSP exceeds Balanced on both the main suite and held-out benchmarks. Capability coverage is a first-order design variable for high-sparsity pruning.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>
