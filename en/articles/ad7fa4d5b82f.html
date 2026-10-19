@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Memory Bandwidth, Not FLOPs: Profiling and Accelerating Query-Based Segmentation Decoders on Edge GPUs — NewsMatome (EN)</title>
+<meta name="description" content="Memory Bandwidth, Not FLOPs: Profiling and Accelerating Query-Based Segmentation Decoders on Edge GPUs — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/ad7fa4d5b82f.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/ad7fa4d5b82f.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/ad7fa4d5b82f.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/ad7fa4d5b82f.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Memory Bandwidth, Not FLOPs: Profiling and Accelerating Query-Based Segmentation Decoders on Edge GPUs">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Memory Bandwidth, Not FLOPs: Profiling and Accelerating Query-Based Segmentation Decoders on Edge GPUs",
+ "inLanguage":"en","datePublished":"2026-10-20T07:00:00+09:00","dateModified":"2026-10-20T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.22377","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/ad7fa4d5b82f.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/ad7fa4d5b82f.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Memory Bandwidth, Not FLOPs: Profiling and Accelerating Query-Based Segmentation Decoders on Edge GPUs</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/20</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/ad7fa4d5b82f.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.22377" rel="nofollow noopener">https://arxiv.org/abs/2610.22377</a></span></div>
+  <div class="article-body"><p>arXiv:2610.22377v1 Announce Type: cross 
+Abstract: Query-based segmentation models achieve strong performance even under real-time inference on workstation GPUs. On edge devices, however, we show their transformer decoders are deeply memory-bandwidth-bound, a bottleneck invisible to standard FLOP analysis that worsens with input resolution and limited DRAM bandwidth. An FP16 roofline analysis with tensor-core GEMMs active and hardware DRAM counters shows that the non-tensor-core aggregates of FastInst and Mask2Former reach only $2.5\%$ to $6\%$ of the CUDA-core ridge yet account for $53\%$ to $70\%$ of decoder time and $61\%$ to $71\%$ of decoder bytes. The largest individual kernels sustain up to $90\%$ of nominal peak DRAM bandwidth, effectively saturating the memory bus. The bottleneck is therefore not primarily low GEMM intensity, but cross-kernel activation traffic. CompactInst addresses this bottleneck using parameter-free spatial pooling at $4{\times}$, which reduces the bytes moved within the transformer decoder, while a two-convolution refinement head recovers spatial detail. Under TensorRT FP16 on Jetson Orin Nano, CompactInst delivers decoder speedups from $2.35{\times}$ to $4.74{\times}$ and model speedups from $1.57{\times}$ to $2.62{\times}$ as input resolution grows, while closely matching accuracy ($-0.4$ AP on COCO val2017, $+0.2$ AP on Cityscapes test). A heavier variant with $2.57{\times}$ more decoder FLOPs still runs its decoder $1.74{\times}$ faster on the most bandwidth-constrained device, confirming at the deployment level that decoder bytes, not FLOPs, govern latency.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bandit Multiclass PAC Learning: Corrected Lower Bounds, Exact Families, and a Confidence Direct-Sum Phenomenon — NewsMatome</title>
-<meta name="description" content="Bandit Multiclass PAC Learning: Corrected Lower Bounds, Exact Families, and a Confidence Direct-Sum Phenomenon（EN→JA 翻訳・出典付き）">
+<title>Bandit Multiclass PAC Learning: Structural Baselines and a Confidence Direct Sum — NewsMatome</title>
+<meta name="description" content="Bandit Multiclass PAC Learning: Structural Baselines and a Confidence Direct Sum（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/8a4e205a159c.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/8a4e205a159c.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/8a4e205a159c.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="Bandit Multiclass PAC Learning: Corrected Lower Bounds, Exact Families, and a Confidence Direct-Sum Phenomenon">
-<meta property="og:description" content="Bandit Multiclass PAC Learning: Corrected Lower Bounds, Exact Families, and a Confidence Direct-Sum Phenomenon（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="Bandit Multiclass PAC Learning: Structural Baselines and a Confidence Direct Sum">
+<meta property="og:description" content="Bandit Multiclass PAC Learning: Structural Baselines and a Confidence Direct Sum（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Bandit Multiclass PAC Learning: Corrected Lower Bounds, Exact Families, and a Confidence Direct-Sum Phenomenon",
- "inLanguage":"ja","datePublished":"2026-09-26T07:00:00+09:00","dateModified":"2026-09-26T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Bandit Multiclass PAC Learning: Structural Baselines and a Confidence Direct Sum",
+ "inLanguage":"ja","datePublished":"2026-10-20T07:00:00+09:00","dateModified":"2026-10-20T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2609.29694","url":"https://liquitex-coder.github.io/worldtech-jp/articles/8a4e205a159c.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>Bandit Multiclass PAC Learning: Corrected Lower Bounds, Exact Families, and a Confidence Direct-Sum Phenomenon</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>Bandit Multiclass PAC Learning: Structural Baselines and a Confidence Direct Sum</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>Bandit Multiclass PAC Learning: Corrected Lower Bounds, Exact Families, and a Confidence Direct-Sum Phenomenon</h1>
+      <h1>Bandit Multiclass PAC Learning: Structural Baselines and a Confidence Direct Sum</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/09/26 07:00</span><span>· 更新 2026/09/26</span>
+        <span>公開 2026/10/20 07:00</span><span>· 更新 2026/10/20</span>
       </div>
     </div>
     
@@ -74,30 +74,24 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2609.29694" rel="nofollow noopener">Bandit Multiclass PAC Learning: Corrected Lower Bounds, Exact Families, and a Confidence Direct-Sum Phenomenon</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2609.29694" rel="nofollow noopener">Bandit Multiclass PAC Learning: Structural Baselines and a Confidence Direct Sum</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2609.29694v1 Announce Type: new 
-Abstract: We study realizable multiclass PAC learning with bandit feedback: the learner observes an i.i.d. instance, predicts one of $K$ labels, and learns only whether the prediction was correct. Hanneke, Meng, Moran, and Shaeiri (arXiv:2605.25678) characterized the optimal sample complexity via the bandit DS dimension $\mathrm{BDS}$ up to logarithmic factors, and asked whether every class admits sample complexity $O((\mathrm{BDS}+\log(1/\delta))/\epsilon)$.
-  First, we show that the published lower bound $\Omega((\mathrm{BDS}+\log(1/\delta))/\epsilon)$ is incorrect as stated: we exhibit explicit classes with $\mathrm{BDS}=K-1$ whose sample complexity is exponentially smaller, and locate two independent gaps in its proof. We repair the lower-bound theory around a new anchored dimension $\mathrm{aBDS}\le\mathrm{BDS}$, proving a constant-free three-part lower bound. On the upper-bound side we remove the ambient label count $K$ entirely, proving $O((B\log^3 B+B\log(1/\delta))/\epsilon)$ for $B=\mathrm{BDS}$, plus a constant-confidence bound via a new fiberization lemma; for two natural families we determine the sample complexity up to constant factors.
-  Finally, we answer the open question in the negative under its uniform-constant reading, and show the failure is intrinsic: for an explicit affine multiplexer class we establish the full confidence profile $\Theta((n\min{n,\log(1/\delta)}+\log(1/\delta))/\epsilon)$, a confidence direct-sum regime where a multiplicative $\log(1/\delta)$ cost is information-theoretically necessary, followed by a rank-saturation phase transition. Two classes with identical dimension profiles can have polynomially different sample complexities, so no characterization by these dimensions alone is accurate to polylogarithmic factors. We also show these results are consistent with additive-confidence list-PAC guarantees via the ListCascade bridge.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2609.29694v1 Announce Type: new 
-Abstract: We study realizable multiclass PAC learning with bandit feedback: the learner observes an i.i.d. instance, predicts one of $K$ labels, and learns only whether the prediction was correct. Hanneke, Meng, Moran, and Shaeiri (arXiv:2605.25678) characterized the optimal sample complexity via the bandit DS dimension $\mathrm{BDS}$ up to logarithmic factors, and asked whether every class admits sample complexity $O((\mathrm{BDS}+\log(1/\delta))/\epsilon)$.
-  First, we show that the published lower bound $\Omega((\mathrm{BDS}+\log(1/\delta))/\epsilon)$ is incorrect as stated: we exhibit explicit classes with $\mathrm{BDS}=K-1$ whose sample complexity is exponentially smaller, and locate two independent gaps in its proof. We repair the lower-bound theory around a new anchored dimension $\mathrm{aBDS}\le\mathrm{BDS}$, proving a constant-free three-part lower bound. On the upper-bound side we remove the ambient label count $K$ entirely, proving $O((B\log^3 B+B\log(1/\delta))/\epsilon)$ for $B=\mathrm{BDS}$, plus a constant-confidence bound via a new fiberization lemma; for two natural families we determine the sample complexity up to constant factors.
-  Finally, we answer the open question in the negative under its uniform-constant reading, and show the failure is intrinsic: for an explicit affine multiplexer class we establish the full confidence profile $\Theta((n\min{n,\log(1/\delta)}+\log(1/\delta))/\epsilon)$, a confidence direct-sum regime where a multiplicative $\log(1/\delta)$ cost is information-theoretically necessary, followed by a rank-saturation phase transition. Two classes with identical dimension profiles can have polynomially different sample complexities, so no characterization by these dimensions alone is accurate to polylogarithmic factors. We also show these results are consistent with additive-confidence list-PAC guarantees via the ListCascade bridge.</div>
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2609.29694v2 Announce Type: replace 
+Abstract: How much does high confidence cost when a multiclass learner sees only whether its prediction is correct? We separate two behaviors in realizable bandit PAC learning. An anchored dimension gives a general lower bound that is attained, up to universal constants, by a family of product-block classes. In contrast, for $n\ge16$ divisible by four, an affine multiplexer with bandit DS dimension $2n-1$ has sample complexity $\Theta((n\min\{n,\ln(1/\delta)\}+\ln(1/\delta))/\varepsilon)$ in the standard accuracy and confidence regime. Its lower bound applies to adaptive randomized learners with improper outputs. The obstruction is that evidence collected against one candidate group cannot be reused against the others. The better of two algorithms matches this cost. One finds the correct group through a positive response. The other exhausts the rank of successive groups. The resulting confidence profile rules out a universal additive-confidence bound linear in the bandit DS dimension. Moreover, classes with identical anchored dimension, bandit DS dimension, and pointwise label width can have polynomially different sample complexities. We also sharpen the confidence accounting in ListCascade and show how one positive response replaces the bandit DS dimension by the anchored dimension in a general upper bound.</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2609.29694v2 Announce Type: replace 
+Abstract: How much does high confidence cost when a multiclass learner sees only whether its prediction is correct? We separate two behaviors in realizable bandit PAC learning. An anchored dimension gives a general lower bound that is attained, up to universal constants, by a family of product-block classes. In contrast, for $n\ge16$ divisible by four, an affine multiplexer with bandit DS dimension $2n-1$ has sample complexity $\Theta((n\min\{n,\ln(1/\delta)\}+\ln(1/\delta))/\varepsilon)$ in the standard accuracy and confidence regime. Its lower bound applies to adaptive randomized learners with improper outputs. The obstruction is that evidence collected against one candidate group cannot be reused against the others. The better of two algorithms matches this cost. One finds the correct group through a positive response. The other exhausts the rank of successive groups. The resulting confidence profile rules out a universal additive-confidence bound linear in the bandit DS dimension. Moreover, classes with identical anchored dimension, bandit DS dimension, and pointwise label width can have polynomially different sample complexities. We also sharpen the confidence accounting in ListCascade and show how one positive response replaces the bandit DS dimension by the anchored dimension in a general upper bound.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2609.29694v1 Announce Type: new 
-Abstract: We study realizable multiclass PAC learning with bandit feedback: the learner observes an i.i.d. instance, predicts one of $K$ labels, and learns only whether the prediction was correct. Hanneke, Meng, Moran, and Shaeiri (arXiv:2605.25678) characterized the optimal sample complexity via the bandit DS dimension $\mathrm{BDS}$ up to logarithmic factors, and asked whether every class admits sample complexity $O((\mathrm{BDS}+\log(1/\delta))/\epsilon)$.
-  First, we show that the published lower bound $\Omega((\mathrm{BDS}+\log(1/\delta))/\epsilon)$ is incorrect as stated: we exhibit explicit classes with $\mathrm{BDS}=K-1$ whose sample complexity is exponentially smaller, and locate two independent gaps in its proof. We repair the lower-bound theory around a new anchored dimension $\mathrm{aBDS}\le\mathrm{BDS}$, proving a constant-free three-part lower bound. On the upper-bound side we remove the ambient label count $K$ entirely, proving $O((B\log^3 B+B\log(1/\delta))/\epsilon)$ for $B=\mathrm{BDS}$, plus a constant-confidence bound via a new fiberization lemma; for two natural families we determine the sample complexity up to constant factors.
-  Finally, we answer the open question in the negative under its uniform-constant reading, and show the failure is intrinsic: for an explicit affine multiplexer class we establish the full confidence profile $\Theta((n\min{n,\log(1/\delta)}+\log(1/\delta))/\epsilon)$, a confidence direct-sum regime where a multiplicative $\log(1/\delta)$ cost is information-theoretically necessary, followed by a rank-saturation phase transition. Two classes with identical dimension profiles can have polynomially different sample complexities, so no characterization by these dimensions alone is accurate to polylogarithmic factors. We also show these results are consistent with additive-confidence list-PAC guarantees via the ListCascade bridge.</p><a href="https://arxiv.org/abs/2609.29694" rel="nofollow noopener">原論文を読む →</a></div>
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2609.29694v2 Announce Type: replace 
+Abstract: How much does high confidence cost when a multiclass learner sees only whether its prediction is correct? We separate two behaviors in realizable bandit PAC learning. An anchored dimension gives a general lower bound that is attained, up to universal constants, by a family of product-block classes. In contrast, for $n\ge16$ divisible by four, an affine multiplexer with bandit DS dimension $2n-1$ has sample complexity $\Theta((n\min\{n,\ln(1/\delta)\}+\ln(1/\delta))/\varepsilon)$ in the standard accuracy and confidence regime. Its lower bound applies to adaptive randomized learners with improper outputs. The obstruction is that evidence collected against one candidate group cannot be reused against the others. The better of two algorithms matches this cost. One finds the correct group through a positive response. The other exhausts the rank of successive groups. The resulting confidence profile rules out a universal additive-confidence bound linear in the bandit DS dimension. Moreover, classes with identical anchored dimension, bandit DS dimension, and pointwise label width can have polynomially different sample complexities. We also sharpen the confidence accounting in ListCascade and show how one positive response replaces the bandit DS dimension by the anchored dimension in a general upper bound.</p><a href="https://arxiv.org/abs/2609.29694" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2609.29694" rel="nofollow noopener">https://arxiv.org/abs/2609.29694</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
     <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="2907ba2fb91d.html"><div class="sim">関連</div><div class="info"><b>When Should Forecasting Agents Reason? Behavioral Stress Tests for Reliability Routing</b><div class="m">AI</div></div></a><a class="r" href="18734c63e6d8.html"><div class="sim">関連</div><div class="info"><b>TW3Cast: A Frozen Router of Lightly Fine-Tuned Foundation Models for Time-Series Forecasting on GIFT-Eval, Selected Entirely on the Training Split</b><div class="m">AI</div></div></a><a class="r" href="b301ad5404a1.html"><div class="sim">関連</div><div class="info"><b>PAWS: Policy-driven Agentic World Simulation</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="5321156d3629.html"><div class="sim">関連</div><div class="info"><b>Structured Authority Injection: Persistent Human Control for LLM Agents via Typed MCP Overrides</b><div class="m">AI</div></div></a><a class="r" href="2bee2336398d.html"><div class="sim">関連</div><div class="info"><b>Rethinking User Encoders: Routing Diffusion States for Scenario-Adaptive User Representation</b><div class="m">AI</div></div></a><a class="r" href="f9e326afccdd.html"><div class="sim">関連</div><div class="info"><b>From Events to Reasoning: Hierarchical Rule Composition over Explicit States</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

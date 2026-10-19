@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FuTransformer: FP8 prefill and INT4 decode for Llama-style inference on Hopper — NewsMatome (EN)</title>
+<meta name="description" content="FuTransformer: FP8 prefill and INT4 decode for Llama-style inference on Hopper — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/01e847633c16.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/01e847633c16.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/01e847633c16.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/01e847633c16.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FuTransformer: FP8 prefill and INT4 decode for Llama-style inference on Hopper">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"FuTransformer: FP8 prefill and INT4 decode for Llama-style inference on Hopper",
+ "inLanguage":"en","datePublished":"2026-10-20T07:00:00+09:00","dateModified":"2026-10-20T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.23796","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/01e847633c16.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/01e847633c16.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>FuTransformer: FP8 prefill and INT4 decode for Llama-style inference on Hopper</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/10/20</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/01e847633c16.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.23796" rel="nofollow noopener">https://arxiv.org/abs/2610.23796</a></span></div>
+  <div class="article-body"><p>arXiv:2610.23796v1 Announce Type: new 
+Abstract: Transformer prefill reuses weights across tokens and is dominated by matrix multiplication and activation data movement; single-token decode has limited reuse and is dominated by weight and KV-cache reads. We present FUTRANSFORMER, a CUDA implementation of a Llama-style Transformer block for NVIDIA Hopper GPUs. It applies CODA&#x27;s GEMM-plus-epilogue approach to inference, adding direct KV-cache placement, folding the fixed RMSNorm gain into weights, writing FP8 output directly with delayed scaling, and supporting prefill without padding. Decode uses INT4 projection weights and an INT4 KV-cache copy. Weights and keys follow Tensor Core fragment layouts for direct dequantization into MMA operands without full intermediate tiles. A block-diagonal Hadamard transform reduces cache quantization error from outlier channels. On one H100, prefill is up to 1.48x faster than compiled PyTorch FP8 and reaches 1.29 PFLOP/s. For gate/up projection with SwiGLU at the 8B shape, our BF16 path is 1.13x faster than CODA. Our FP8 path is 2.02-2.18x faster than the evaluated BF16 CODA path. Across 8B and 70B shapes at batches 1-32, INT4 decode is 1.3-2.4x faster than the faster of PyTorch&#x27;s BF16 and INT4 blocks at each point: 2.1-3.3x faster than compiled, CUDA-graphed BF16 and 1.3-6.3x faster than the same block using PyTorch&#x27;s INT4 projection kernel, which targets a single query row and loses to BF16 at batch 32. It is also 31-51% faster than our FP8 path. Complete Llama-3.1-8B decode takes 2.8 ms per step at batch one, versus 8.1 ms for the compiled transformers implementation. Decoding every WikiText-2 token through the INT4 weight path raises perplexity from 6.24 to 7.23 with round-to-nearest weights or 6.99 with GPTQ in the same format; the rotated INT4 cache adds 0.20. The kernels match a quantized reference computation within 0.001 perplexity.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

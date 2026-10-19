@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Replay Pruning and Few-Bit Integer Inference for Hardware-Efficient Speed-Sign Recognition — NewsMatome (EN)</title>
+<meta name="description" content="Replay Pruning and Few-Bit Integer Inference for Hardware-Efficient Speed-Sign Recognition — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/cdff7af4769e.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/cdff7af4769e.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/cdff7af4769e.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/cdff7af4769e.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Replay Pruning and Few-Bit Integer Inference for Hardware-Efficient Speed-Sign Recognition">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Replay Pruning and Few-Bit Integer Inference for Hardware-Efficient Speed-Sign Recognition",
+ "inLanguage":"en","datePublished":"2026-10-20T07:00:00+09:00","dateModified":"2026-10-20T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.22811","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/cdff7af4769e.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/cdff7af4769e.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Replay Pruning and Few-Bit Integer Inference for Hardware-Efficient Speed-Sign Recognition</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/20</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/cdff7af4769e.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.22811" rel="nofollow noopener">https://arxiv.org/abs/2610.22811</a></span></div>
+  <div class="article-body"><p>arXiv:2610.22811v1 Announce Type: cross 
+Abstract: Speed-limit sign recognition on an automotive camera system-on-chip (SoC) must fit a detector and a classifier (the reader) into the memory, arithmetic, and energy budgets of the device. In our two-stage recognizer, the detector, a YOLO-family network with ReLU and hard-sigmoid operators, is compressed by channel replay: an iterative pruning cascade identifies the channels to remove, the recorded deletions are replayed on the original task-trained network, the parent, and one continuous knowledge-distillation recovery follows. On a YOLOv5n, replay removes 60.3% of the parameters at the accuracy of the parent and, in validation mAP50-95 over five matched seeds, outperforms iterative pruning and training from scratch, and its per-step variant (per-step replay) is the most accurate pruning method. On a YOLOv8n, replay and per-step replay outperform every other method and the unpruned parent. The reader, a five-layer CNN with 18k parameters, and the post-processing of the YOLOv5n and YOLOv8n heads use integer arithmetic only. With 4-bit weights and 8-bit activations (W4A8), the reader matches FP32 accuracy in 12.1 KB of on-chip memory, and an executable streaming model reproduces the INT8 class predictions of its runtime on all 9,850 test crops. On a Jetson AGX Orin, INT8 is faster than FP16 only in the implicit formulation of TensorRT, and the replay detector runs fastest on the deep-learning accelerator (DLA). Trained on public data only, the combined system of 0.72 M parameters recognizes 95.2% of the signs of a held-out automotive camera at 90% precision and 94 frames per second.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

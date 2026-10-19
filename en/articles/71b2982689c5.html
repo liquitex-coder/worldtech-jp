@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One Communicator, Three Vendors: Extending the MoA Predictive Theory to a Real NVIDIA+AMD+CPU MPI Ensemble — NewsMatome (EN)</title>
+<meta name="description" content="One Communicator, Three Vendors: Extending the MoA Predictive Theory to a Real NVIDIA+AMD+CPU MPI Ensemble — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/71b2982689c5.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/71b2982689c5.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/71b2982689c5.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/71b2982689c5.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="One Communicator, Three Vendors: Extending the MoA Predictive Theory to a Real NVIDIA+AMD+CPU MPI Ensemble">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"One Communicator, Three Vendors: Extending the MoA Predictive Theory to a Real NVIDIA+AMD+CPU MPI Ensemble",
+ "inLanguage":"en","datePublished":"2026-10-20T07:00:00+09:00","dateModified":"2026-10-20T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.22769","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/71b2982689c5.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/71b2982689c5.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>One Communicator, Three Vendors: Extending the MoA Predictive Theory to a Real NVIDIA+AMD+CPU MPI Ensemble</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/20</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/71b2982689c5.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.22769" rel="nofollow noopener">https://arxiv.org/abs/2610.22769</a></span></div>
+  <div class="article-body"><p>arXiv:2610.22769v1 Announce Type: cross 
+Abstract: The companion MPI-extension paper validated the first communication-bearing machine-shape ensemble: four NVIDIA A100 ranks and four CPU ranks on one NCSA Delta node under one Open MPI job, reassembled by MPI_Gatherv. This paper extends it to a multi-vendor communicator. A Slurm heterogeneous job spanning Delta&#x27;s A100 and AMD MI100 partitions places A100, MI100 and CPU ranks (nine in all) under one communicator for the first time. We give the theory (a w_i proportional to 1/t_i weight split for three concurrent realizations; a het-job specification as an admissible directive) and report real results, including what the run exposed: the 1/t split assumes time linear in rows, and this fails for the MI100 rank (6 rows took 597 ms against a linear prediction of 1.6 ms). A launch-geometry model, with predictions recorded before measuring, succeeds for the A100 (time flat from 128 to 3456 rows, stepping at exactly 3520 and 6976) and places the MI100 floor in the key loop; changing its launch settings cut about 600 ms to 14.6 ms and the energy per call at 6 rows by 32x, though the MI100 remains about 95x slower than an A100 at 8192 rows. Controlled reruns show that the companion paper&#x27;s 8.1x A100 result and 22 ms Gatherv were artifacts of four ranks sharing one GPU under Open MPI&#x27;s default transport. A key/value-split partition whose message sizes are derived from shapes alone is then run: the ring Allreduce of the 8.5 MB message took 11.3, 16.0 and 15.3 ms against a predicted 11-12 ms, the small Allreduce missed its prediction in every run, and compute times reproduce to about 1% while communication times vary up to 4x between runs. Each idea is introduced with a figure and closed with worked examples.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
