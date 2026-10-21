@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TTS-Q: Perception-Guided Post-Training Quantization of Text-to-Speech Diffusion Transformers — NewsMatome (EN)</title>
-<meta name="description" content="TTS-Q: Perception-Guided Post-Training Quantization of Text-to-Speech Diffusion Transformers — original-language edition. Japanese translation available.">
+<title>TTS-Q: Speaker-Aware Post-Training Quantization of Text-to-Speech Diffusion Transformers — NewsMatome (EN)</title>
+<meta name="description" content="TTS-Q: Speaker-Aware Post-Training Quantization of Text-to-Speech Diffusion Transformers — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/cbef8a87e25c.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/cbef8a87e25c.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/cbef8a87e25c.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/cbef8a87e25c.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TTS-Q: Perception-Guided Post-Training Quantization of Text-to-Speech Diffusion Transformers">
+<meta property="og:title" content="TTS-Q: Speaker-Aware Post-Training Quantization of Text-to-Speech Diffusion Transformers">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"TTS-Q: Perception-Guided Post-Training Quantization of Text-to-Speech Diffusion Transformers",
- "inLanguage":"en","datePublished":"2026-10-17T07:00:00+09:00","dateModified":"2026-10-17T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"TTS-Q: Speaker-Aware Post-Training Quantization of Text-to-Speech Diffusion Transformers",
+ "inLanguage":"en","datePublished":"2026-10-22T07:00:00+09:00","dateModified":"2026-10-22T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2610.12474","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/cbef8a87e25c.html"}
@@ -34,11 +34,11 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>TTS-Q: Perception-Guided Post-Training Quantization of Text-to-Speech Diffusion Transformers</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/17</span></div>
+    <h1>TTS-Q: Speaker-Aware Post-Training Quantization of Text-to-Speech Diffusion Transformers</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/22</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/cbef8a87e25c.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.12474" rel="nofollow noopener">https://arxiv.org/abs/2610.12474</a></span></div>
-  <div class="article-body"><p>arXiv:2610.12474v2 Announce Type: replace-cross 
+  <div class="article-body"><p>arXiv:2610.12474v3 Announce Type: replace-cross 
 Abstract: Zero-shot text-to-speech (TTS) can clone a voice from seconds of audio. Yet the quality comes from billion-parameter diffusion transformers whose size and multi-step sampling put them out of reach of the on-device, assistive, and real-time applications that need them most. Post-training quantization (PTQ) shrinks such models without retraining, but it has been built for language and vision, not speech. At 4 bits, a strong quantizer leaves intelligibility close to full precision but consistently erodes speaker timbre, so error rates stay low while the voice drifts from the target speaker. We ask why quantization hurts speech, where the damage lives, and whether it can be repaired without retraining. To find out, we run the first 4-bit weight-and-activation (W4A4) PTQ study of a TTS diffusion transformer at 1B and 3.5B. The timbre cost comes from both the weight and the activation quantization, but only the activation part has the timestep structure a precision schedule can exploit. We therefore introduce TTS-Q, which selects hard-to-quantize items from task-matched calibration candidates and applies a budget-balanced mixed-precision schedule that assigns higher precision to late-step feed-forward activations. TTS-Q recovers timbre best at both scales, at no cost to intelligibility. Separately, the deployed calibrated-W4A4 reference reduces peak memory on GPU, providing a practical reference for resource-constrained TTS deployment.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>

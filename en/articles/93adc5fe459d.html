@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recoverability and Verifier Strength: Two Measured Preconditions for Unattended Agent Self-Improvement — NewsMatome (EN)</title>
+<meta name="description" content="Recoverability and Verifier Strength: Two Measured Preconditions for Unattended Agent Self-Improvement — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/93adc5fe459d.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/93adc5fe459d.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/93adc5fe459d.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/93adc5fe459d.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Recoverability and Verifier Strength: Two Measured Preconditions for Unattended Agent Self-Improvement">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Recoverability and Verifier Strength: Two Measured Preconditions for Unattended Agent Self-Improvement",
+ "inLanguage":"en","datePublished":"2026-10-22T07:00:00+09:00","dateModified":"2026-10-22T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.27465","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/93adc5fe459d.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/93adc5fe459d.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Recoverability and Verifier Strength: Two Measured Preconditions for Unattended Agent Self-Improvement</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/10/22</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/93adc5fe459d.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.27465" rel="nofollow noopener">https://arxiv.org/abs/2610.27465</a></span></div>
+  <div class="article-body"><p>arXiv:2610.27465v1 Announce Type: new 
+Abstract: Agent platforms are starting to improve their own agents: they read a deployed agent&#x27;s execution traces, derive a change, have an automated verifier approve it, and release it with no human author. How much of this loop can safely run without a human? We propose two quantities a platform can measure. Verifier strength $\sigma$ is how well the available verifier -- often an LLM judge -- agrees with a trusted reference verifier; it limits how much a step can improve the agent. Recoverability is how cheaply a bad change can be undone: whether undoing it needs a new verifier approval, and how much of the old behavior a rollback restores. A step should run unattended only if both are adequate. On our platform this rule allows prompt, tool and skill edits to run unattended and keeps weight updates under human sign-off.
+  Our main contribution is these two definitions and how to measure them. We built a platform that applies the rule and tested it in two ways: on the platform&#x27;s own approval gate, and in controlled experiments on the $\tau^2$-bench agent benchmark. On verifier strength, the platform&#x27;s LLM judge sometimes gave the same score no matter what it was shown (9 of 37 settings) and reported no error, so a verifier can look healthy while approving anything; its strength must be measured, and two simple tests catch the failure. On recoverability, restoring a saved copy brought the agent back to its original behavior, but a regenerated undo did not, so only changes whose old version is kept can be reversed without a human; and while a change was deployed, it altered the outcome of 17 percent of tasks beyond normal run-to-run variation, which no undo repairs. Together these support the rule: a change can run unattended only when its old version is kept and its verifier&#x27;s strength has been measured.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
