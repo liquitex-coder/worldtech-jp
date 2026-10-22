@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Much Gradient Does Truncated Backprop Lose in Looped Transformers? — NewsMatome (EN)</title>
+<meta name="description" content="How Much Gradient Does Truncated Backprop Lose in Looped Transformers? — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/3c9d3dfcf2a0.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/3c9d3dfcf2a0.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/3c9d3dfcf2a0.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/3c9d3dfcf2a0.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How Much Gradient Does Truncated Backprop Lose in Looped Transformers?">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"How Much Gradient Does Truncated Backprop Lose in Looped Transformers?",
+ "inLanguage":"en","datePublished":"2026-10-23T07:00:00+09:00","dateModified":"2026-10-23T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.28871","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/3c9d3dfcf2a0.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/3c9d3dfcf2a0.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>How Much Gradient Does Truncated Backprop Lose in Looped Transformers?</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/23</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/3c9d3dfcf2a0.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.28871" rel="nofollow noopener">https://arxiv.org/abs/2610.28871</a></span></div>
+  <div class="article-body"><p>arXiv:2610.28871v1 Announce Type: new 
+Abstract: Looped transformers reuse one block of layers many times and are often trained by backpropagating through only the last k loops. We measure how much of the weight gradient this throws away, exactly and for every k from one backward pass, on nine looped language models, and report three findings. First, on a trained model this lost gradient is set near the output: once the loop count is well above k, it barely changes with the loop count (within about 0.03 from 32 to 64 loops on the three models we tested, as a pre-registered test predicted for Parcae). Where the backward signal shrinks, $\rho^k$, with $\rho$ the signal&#x27;s fitted shrink per loop, approximates it at moderate loop counts but overstates it at long ones, because the fitted $\rho$ drifts up as the fit takes in more loops. On Ouro the signal grows, and keeping two of four loops still loses 81% of the final output&#x27;s gradient. Second, the lost gradient falls during fine-tuning, by 0.07-0.22 within 300 steps on three of four models, on held-out problems too. The fall is not just the read-out&#x27;s share of the gradient; training only the layers outside the loop reproduced up to half of it, and it also falls under truncated training. So a trained model&#x27;s value overstates what truncation removes later. Third, we could not show that it predicts the training cost of truncation better than rules that need no measurement: on two new models it tied Parcae&#x27;s cost at the same k, in a test too small to separate them.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
