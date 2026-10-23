@@ -17,7 +17,7 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"When Agent Evaluation Becomes Unreliable: An Empirical Study of Oracle Failures and Configuration-Dependent Measurement in an LLM Agent Benchmark",
- "inLanguage":"en","datePublished":"2026-10-16T07:00:00+09:00","dateModified":"2026-10-16T07:00:00+09:00",
+ "inLanguage":"en","datePublished":"2026-10-24T07:00:00+09:00","dateModified":"2026-10-24T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2610.16067","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/483ab2417dc5.html"}
@@ -35,15 +35,14 @@
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
     <h1>When Agent Evaluation Becomes Unreliable: An Empirical Study of Oracle Failures and Configuration-Dependent Measurement in an LLM Agent Benchmark</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/10/16</span></div>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/10/24</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/483ab2417dc5.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.16067" rel="nofollow noopener">https://arxiv.org/abs/2610.16067</a></span></div>
-  <div class="article-body"><p>arXiv:2610.16067v1 Announce Type: cross 
-Abstract: Agent evaluation harnesses are software systems that run test suites, generate inputs, and decide outcomes with test oracles. This paper audits such software for reliability defects that score tables cannot reveal.
-  We introduce an oracle-integrity auditing approach with five state-integrity invariants and three known-answer controls. We evaluate it by injecting seven oracle defect classes across two task domains and a synthetic domain. All injected defect classes are detected, and the repaired oracle has no false positives. Applied to an agent benchmark, the audit reveals a reward-function defect that changes the environment state before post-run scoring. Across 4,320 episodes, replay-based correction changes database-pass labels from 4,194 to 2,883 and reduces measured success from 94.3% to 65.5%.
-  We also study configuration-dependent measurement effects. A component ablation over 3,240 episodes shows that the agent&#x27;s policy documents, tool descriptions, and tool error strings influence observed trajectory reliability, with tool descriptions showing the largest exploratory effect (-9.2 pp) and error strings the smallest (-5.3 pp). A second task domain reverses the sign of the language effect, so the result is bounded to the tested configuration.
-  Finally, we report a portability boundary: the auditing approach cannot validate a second independently implemented benchmark because the required reference terminal state cannot be reconstructed from its recorded API-call log.
-  The paper releases a replication package containing the auditing suite, fault-injection catalogue, frozen records, deviation logs, and offline analysis entry points without network access, API keys, or model calls.</p></div>
+  <div class="article-body"><p>arXiv:2610.16067v2 Announce Type: replace-cross 
+Abstract: Agent evaluation harnesses are software: they run a test suite, drive a test input generator, and decide outcomes with a test oracle. We audit them for defects a score table cannot show.
+  First, a systematic oracle-integrity auditing approach - five state-integrity invariants and three known-answer controls - is measured by injecting seven oracle defect classes across two task domains and a synthetic domain. Every class is detected, and on the 57 separable variant-target combinations it detects 54; the repaired oracle yields no false positive. On a widely used agent benchmark, it exposes a reward function that resets the database to build a ground-truth hash and never restores it, so a harness scoring afterwards reads the reference solution&#x27;s state: recorded labels report 4,194 database passes over 4,320 episodes, replay gives 2,883, and success falls from 94.3% to 65.5%. The correction is not a uniform offset; it removes 24 to 34 points from each agent and changes which agent this matrix measures as strongest.
+  Second, more weakly, localising the apparatus is a property of the measurement: a 3,240-episode ablation associates the three documents with lower collapse in the tested configuration, without ordering them, and a second task domain reverses the language effect.
+  Third, the method did not transfer to a second, independently implemented benchmark; we name the contract required. A replication package recomputes every analysis offline with no model calls.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

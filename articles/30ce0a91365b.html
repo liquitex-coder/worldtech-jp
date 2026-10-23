@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rubric Dropout: A Simple Way to Mitigate Reward Hacking in Rubric-as-Reward RL — NewsMatome</title>
-<meta name="description" content="Rubric Dropout: A Simple Way to Mitigate Reward Hacking in Rubric-as-Reward RL（EN→JA 翻訳・出典付き）">
+<title>Rubric Dropout: A Simple Way to Mitigate Reward Hacking in Rubric-Based RL — NewsMatome</title>
+<meta name="description" content="Rubric Dropout: A Simple Way to Mitigate Reward Hacking in Rubric-Based RL（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/30ce0a91365b.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/30ce0a91365b.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/30ce0a91365b.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="Rubric Dropout: A Simple Way to Mitigate Reward Hacking in Rubric-as-Reward RL">
-<meta property="og:description" content="Rubric Dropout: A Simple Way to Mitigate Reward Hacking in Rubric-as-Reward RL（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="Rubric Dropout: A Simple Way to Mitigate Reward Hacking in Rubric-Based RL">
+<meta property="og:description" content="Rubric Dropout: A Simple Way to Mitigate Reward Hacking in Rubric-Based RL（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Rubric Dropout: A Simple Way to Mitigate Reward Hacking in Rubric-as-Reward RL",
- "inLanguage":"ja","datePublished":"2026-10-16T07:00:00+09:00","dateModified":"2026-10-16T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Rubric Dropout: A Simple Way to Mitigate Reward Hacking in Rubric-Based RL",
+ "inLanguage":"ja","datePublished":"2026-10-24T07:00:00+09:00","dateModified":"2026-10-24T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2608.11669","url":"https://liquitex-coder.github.io/worldtech-jp/articles/30ce0a91365b.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>Rubric Dropout: A Simple Way to Mitigate Reward Hacking in Rubric-as-Reward RL</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>Rubric Dropout: A Simple Way to Mitigate Reward Hacking in Rubric-Based RL</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>Rubric Dropout: A Simple Way to Mitigate Reward Hacking in Rubric-as-Reward RL</h1>
+      <h1>Rubric Dropout: A Simple Way to Mitigate Reward Hacking in Rubric-Based RL</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/10/16 07:00</span><span>· 更新 2026/10/16</span>
+        <span>公開 2026/10/24 07:00</span><span>· 更新 2026/10/24</span>
       </div>
     </div>
     
@@ -74,16 +74,16 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2608.11669" rel="nofollow noopener">Rubric Dropout: A Simple Way to Mitigate Reward Hacking in Rubric-as-Reward RL</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2608.11669" rel="nofollow noopener">Rubric Dropout: A Simple Way to Mitigate Reward Hacking in Rubric-Based RL</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2608.11669v2 Announce Type: replace 
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2608.11669v4 Announce Type: replace 
 Abstract: Rubric-based reinforcement learning, in which an LLM judge scores responses against prompt-specific criteria, has become a standard way to post-train language models on tasks without verifiable answers. The rubric, however, is only a proxy for response quality, and a policy trained against it long enough learns to exploit the difference. We train models with GRPO on medical and science rubrics and grade their responses on out-of-distribution (OOD) benchmarks throughout training with two judges: the training judge and a stronger OOD judge. The two scores first rise together and then diverge. The policy is learning to satisfy the training judge without writing better responses, which is a form of reward hacking. To mitigate it, we propose Rubric Dropout, which applies dropout to rubric criteria: at each training step, a random subset of each rubric&#x27;s criteria is removed from the reward, so the rewarded subset of criteria is resampled at each step. All responses sampled for the same prompt are scored on the same subset, so their rewards remain comparable, and evaluation always uses the full rubric. We also introduce Block Dropout, which drops semantically similar criteria together so that a near duplicate of a dropped criterion cannot keep rewarding the same behavior. Across both benchmarks and models from 1.7B to 8B, dropout improves the gold judge&#x27;s score on OOD benchmarks by up to 3 percent on HealthBench-Hard and 7 percent on ResearchQA, and it reduces both the gap between the two judges and over-crediting. It keeps in-domain reward close to the baseline, and dropout rates of 30-50 percent work best. Block Dropout improves the gold judge&#x27;s OOD score further at the same dropout rate. Changing which criteria are rewarded at each step is a simple, inexpensive way to make rubric rewards harder to exploit.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2608.11669v2 Announce Type: replace 
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2608.11669v4 Announce Type: replace 
 Abstract: Rubric-based reinforcement learning, in which an LLM judge scores responses against prompt-specific criteria, has become a standard way to post-train language models on tasks without verifiable answers. The rubric, however, is only a proxy for response quality, and a policy trained against it long enough learns to exploit the difference. We train models with GRPO on medical and science rubrics and grade their responses on out-of-distribution (OOD) benchmarks throughout training with two judges: the training judge and a stronger OOD judge. The two scores first rise together and then diverge. The policy is learning to satisfy the training judge without writing better responses, which is a form of reward hacking. To mitigate it, we propose Rubric Dropout, which applies dropout to rubric criteria: at each training step, a random subset of each rubric&#x27;s criteria is removed from the reward, so the rewarded subset of criteria is resampled at each step. All responses sampled for the same prompt are scored on the same subset, so their rewards remain comparable, and evaluation always uses the full rubric. We also introduce Block Dropout, which drops semantically similar criteria together so that a near duplicate of a dropped criterion cannot keep rewarding the same behavior. Across both benchmarks and models from 1.7B to 8B, dropout improves the gold judge&#x27;s score on OOD benchmarks by up to 3 percent on HealthBench-Hard and 7 percent on ResearchQA, and it reduces both the gap between the two judges and over-crediting. It keeps in-domain reward close to the baseline, and dropout rates of 30-50 percent work best. Block Dropout improves the gold judge&#x27;s OOD score further at the same dropout rate. Changing which criteria are rewarded at each step is a simple, inexpensive way to make rubric rewards harder to exploit.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2608.11669v2 Announce Type: replace 
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2608.11669v4 Announce Type: replace 
 Abstract: Rubric-based reinforcement learning, in which an LLM judge scores responses against prompt-specific criteria, has become a standard way to post-train language models on tasks without verifiable answers. The rubric, however, is only a proxy for response quality, and a policy trained against it long enough learns to exploit the difference. We train models with GRPO on medical and science rubrics and grade their responses on out-of-distribution (OOD) benchmarks throughout training with two judges: the training judge and a stronger OOD judge. The two scores first rise together and then diverge. The policy is learning to satisfy the training judge without writing better responses, which is a form of reward hacking. To mitigate it, we propose Rubric Dropout, which applies dropout to rubric criteria: at each training step, a random subset of each rubric&#x27;s criteria is removed from the reward, so the rewarded subset of criteria is resampled at each step. All responses sampled for the same prompt are scored on the same subset, so their rewards remain comparable, and evaluation always uses the full rubric. We also introduce Block Dropout, which drops semantically similar criteria together so that a near duplicate of a dropped criterion cannot keep rewarding the same behavior. Across both benchmarks and models from 1.7B to 8B, dropout improves the gold judge&#x27;s score on OOD benchmarks by up to 3 percent on HealthBench-Hard and 7 percent on ResearchQA, and it reduces both the gap between the two judges and over-crediting. It keeps in-domain reward close to the baseline, and dropout rates of 30-50 percent work best. Block Dropout improves the gold judge&#x27;s OOD score further at the same dropout rate. Changing which criteria are rewarded at each step is a simple, inexpensive way to make rubric rewards harder to exploit.</p><a href="https://arxiv.org/abs/2608.11669" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2608.11669" rel="nofollow noopener">https://arxiv.org/abs/2608.11669</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
@@ -91,7 +91,7 @@ Abstract: Rubric-based reinforcement learning, in which an LLM judge scores resp
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="a16d50c7df94.html"><div class="sim">関連</div><div class="info"><b>Artificiality&#x27;s First Exam: An LLM-Referenced C-test for Supraintelligence</b><div class="m">AI</div></div></a><a class="r" href="574863154eac.html"><div class="sim">関連</div><div class="info"><b>The Silent Failures in Agentic Data Science</b><div class="m">AI</div></div></a><a class="r" href="8ddbcf370a84.html"><div class="sim">関連</div><div class="info"><b>ClawLoop: Self-Improving Agents via Harness-Native Training Loop</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="74bd144fb682.html"><div class="sim">関連</div><div class="info"><b>A Small Model Asks Better: Fine-Tuning Query Clarification for Retrieval-Augmented Generation</b><div class="m">AI</div></div></a><a class="r" href="4327a145e809.html"><div class="sim">関連</div><div class="info"><b>Scaling in Games: Continued Pre-Training For Embodied Agents In Diverse Virtual Worlds</b><div class="m">AI</div></div></a><a class="r" href="0b13060c669d.html"><div class="sim">関連</div><div class="info"><b>SpecEvo: Speculative Evolution with Large Language Models for Cost-Efficient Scientific Discovery</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Theoretical Analysis of Why Masked Diffusion Models Mitigate the Reversal Curse — NewsMatome (EN)</title>
+<meta name="description" content="A Theoretical Analysis of Why Masked Diffusion Models Mitigate the Reversal Curse — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/bb086480e6e3.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/bb086480e6e3.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/bb086480e6e3.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/bb086480e6e3.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A Theoretical Analysis of Why Masked Diffusion Models Mitigate the Reversal Curse">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"A Theoretical Analysis of Why Masked Diffusion Models Mitigate the Reversal Curse",
+ "inLanguage":"en","datePublished":"2026-10-24T07:00:00+09:00","dateModified":"2026-10-24T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2602.02133","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/bb086480e6e3.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/bb086480e6e3.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>A Theoretical Analysis of Why Masked Diffusion Models Mitigate the Reversal Curse</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/10/24</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/bb086480e6e3.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2602.02133" rel="nofollow noopener">https://arxiv.org/abs/2602.02133</a></span></div>
+  <div class="article-body"><p>arXiv:2602.02133v3 Announce Type: replace 
+Abstract: Autoregressive language models (ARMs) suffer from the reversal curse: after learning &#x27;&#x27;$A$ is $B$,&#x27;&#x27; they often fail on the reverse query &#x27;&#x27;$B$ is $A$.&#x27;&#x27; Masked diffusion language models (MDMs) exhibit this failure in a much weaker form, but the underlying reason has remained unclear. A common explanation attributes this mitigation to their any-order masked training objective. However, observing &#x27;&#x27;$[\mathbf{M}]$ is $B$&#x27;&#x27; during training teaches recovery of $A$ from $B$ in one positional configuration, and does not by itself explain why the learned evidence should transfer to the reverse prompt &#x27;&#x27;$B$ is $[\mathbf{M}]$.&#x27;&#x27; We provide a theoretical analysis showing that this transfer arises from a parameter-level coupling between forward and reverse positional conditionals: shared Transformer parameters store token-pair evidence, while relative positional encodings route attention through queries and keys without changing the value-side evidence being retrieved. In a one-layer MDM, we prove that forward masked training strengthens evidence that is reusable in reverse queries, induces correlated forward--reverse attention routes, and yields a positively aligned shared-storage gradient component that decreases the reverse loss to first order. Controlled one-layer experiments and large-scale LLaDA/Dream experiments verify these signatures and show that they translate into improved reverse prediction.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

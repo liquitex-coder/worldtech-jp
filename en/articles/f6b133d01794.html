@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SAKURA: Serving Attention Key-Value State Under Rate Adaptation for Private Image Editing on Phones — NewsMatome (EN)</title>
+<meta name="description" content="SAKURA: Serving Attention Key-Value State Under Rate Adaptation for Private Image Editing on Phones — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/f6b133d01794.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/f6b133d01794.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/f6b133d01794.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/f6b133d01794.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SAKURA: Serving Attention Key-Value State Under Rate Adaptation for Private Image Editing on Phones">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"SAKURA: Serving Attention Key-Value State Under Rate Adaptation for Private Image Editing on Phones",
+ "inLanguage":"en","datePublished":"2026-10-24T07:00:00+09:00","dateModified":"2026-10-24T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.29733","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/f6b133d01794.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/f6b133d01794.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>SAKURA: Serving Attention Key-Value State Under Rate Adaptation for Private Image Editing on Phones</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/10/24</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/f6b133d01794.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.29733" rel="nofollow noopener">https://arxiv.org/abs/2610.29733</a></span></div>
+  <div class="article-body"><p>arXiv:2610.29733v1 Announce Type: cross 
+Abstract: Diffusion transformers are widely used in image-editing services. To preserve both efficiency and privacy, existing systems commonly rely on cloud-device collaboration. Keeping request-specific inference on the device avoids sending personal images and prompts to the cloud. These workloads often use common templates, such as in face swapping and virtual try-on, enabling KV state to be precomputed and reused across requests. However, this reusable state is large and scales with the number of templates, making it impractical to store all of them on mobile devices. Storing them in the cloud addresses this capacity issue, but cache transfer is placed onto the inference path and can even be slower than on-device computation, especially under fluctuating mobile networks.
+  We introduce SAKURA, a cloud-edge architecture that delivers reusable attention state to mobile devices under a bandwidth budget. It first uses a fine-grained token-importance-aware compression method to preserve image quality under limited transfer budgets. At runtime, SAKURA adaptively selects the cache representation for each upcoming shard based on network bandwidth. To enable efficient execution, we develop a pipelined runtime that overlaps cache transfer and reconstruction with on-device execution. We evaluate SAKURA using three editing tasks and two diffusion models, using a Snapdragon 8 Elite Gen 5 phone. SAKURA reduces latency by 1.82x and 3.27x over CacheGen adapted to DiT and on-device generation, respectively. It also reduces cache storage by 3.06x over uncompressed cache, while preserving image quality.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

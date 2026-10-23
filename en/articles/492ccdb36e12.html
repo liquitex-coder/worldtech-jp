@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Toward System One Clinical Intelligence: Parameter-Efficient Fine-Tuning and Counterfactual Explainability of Decision Foundation Models — NewsMatome (EN)</title>
-<meta name="description" content="Toward System One Clinical Intelligence: Parameter-Efficient Fine-Tuning and Counterfactual Explainability of Decision Foundation Models — original-language edition. Japanese translation available.">
+<title>Is a 9B Decision Foundation Model Needed for Symptom-to-Disease Classification? Fine-Tuning Clef-Flash Against TF-IDF Baselines — NewsMatome (EN)</title>
+<meta name="description" content="Is a 9B Decision Foundation Model Needed for Symptom-to-Disease Classification? Fine-Tuning Clef-Flash Against TF-IDF Baselines — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/492ccdb36e12.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/492ccdb36e12.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/492ccdb36e12.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/492ccdb36e12.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Toward System One Clinical Intelligence: Parameter-Efficient Fine-Tuning and Counterfactual Explainability of Decision Foundation Models">
+<meta property="og:title" content="Is a 9B Decision Foundation Model Needed for Symptom-to-Disease Classification? Fine-Tuning Clef-Flash Against TF-IDF Baselines">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Toward System One Clinical Intelligence: Parameter-Efficient Fine-Tuning and Counterfactual Explainability of Decision Foundation Models",
- "inLanguage":"en","datePublished":"2026-10-16T07:00:00+09:00","dateModified":"2026-10-16T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Is a 9B Decision Foundation Model Needed for Symptom-to-Disease Classification? Fine-Tuning Clef-Flash Against TF-IDF Baselines",
+ "inLanguage":"en","datePublished":"2026-10-24T07:00:00+09:00","dateModified":"2026-10-24T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2610.15029","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/492ccdb36e12.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Toward System One Clinical Intelligence: Parameter-Efficient Fine-Tuning and Counterfactual Explainability of Decision Foundation Models</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/10/16</span></div>
+    <h1>Is a 9B Decision Foundation Model Needed for Symptom-to-Disease Classification? Fine-Tuning Clef-Flash Against TF-IDF Baselines</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/10/24</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/492ccdb36e12.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.15029" rel="nofollow noopener">https://arxiv.org/abs/2610.15029</a></span></div>
-  <div class="article-body"><p>arXiv:2610.15029v1 Announce Type: cross 
-Abstract: Automated disease classification from patient-reported symptoms requires balancing the speed of lightweight discriminative models against the contextual understanding and latency costs of autoregressive large language models (LLMs). Decision foundation models offer an alternative by mapping representations directly to candidate classes without free-form text generation. We adapt Clef-Flash, a 9-billion-parameter decision model built on a Qwen3.5 backbone, for 24-class disease classification on the Symptom2Disease benchmark. Using 4-bit quantized low-rank adaptation (QLoRA) with differential learning rates and a stratified split of 960 training and 240 test cases, the model achieves 95.42% diagnostic accuracy and a macro F1 score of 0.9551. This improves upon the reported zero-shot baselines of 61.67% for a remote API and 65.00% for a local unadapted initialization, and outperforms the ClinicalBERT baseline (90.90%). By evaluating candidate logits in a single forward pass without autoregressive decoding, inference takes under 80 milliseconds per record on a single GPU, yielding a reported 31-fold speedup over generative LLM baselines. To examine symptom-level evidence, we introduce a Leave-One-Symptom-Out (LOSO) counterfactual perturbation framework. Removing disease-defining symptom clauses in a psoriasis example reduces predicted-class confidence from 100.00% to 0.12% and shifts the prediction to impetigo with 99.59% confidence, while removing secondary systemic symptoms produces less than 0.01% change in confidence. These findings suggest that decision-based architectures can combine the linguistic capabilities of large foundation models with low-latency inference and symptom-level interpretability for clinical triage.</p></div>
+  <div class="article-body"><p>arXiv:2610.15029v2 Announce Type: replace-cross 
+Abstract: Disease classification from patient-reported symptom descriptions is usually approached with lightweight discriminative models or with autoregressive large language models (LLMs), which understand language broadly but generate text token by token and require output parsing. We study decision foundation models, which score a closed set of candidate labels in a single forward pass without generating text. We adapt Clef-Flash, a 9-billion parameter decision model built on a Qwen3.5 backbone, to the 24-class Symptom2Disease benchmark using 4-bit quantized low-rank adaptation (QLoRA) on a stratified split of 960 training and 240 test cases. The fine-tuned model reaches 95.42% accuracy (95% CI 91.98-97.42%) and a macro F1 of 0.9551, up from 65.00% for the unadapted weights (62.92% through the remote API). However, TF-IDF linear SVM and logistic regression baselines trained on the same split reach 98.75% (95% CI 96.39-99.57%) with sub-millisecond CPU inference, so on this benchmark the fine-tuned model offers no accuracy advantage over a well-tuned linear classifier. A Leave-One-Symptom-Out clause-ablation analysis of four illustrative narratives shows predictions depending on distinguishing clauses: in a psoriasis example, removing the clause describing silvery scales lowers the predicted probability from above 99.99% to 0.12% and shifts the prediction to impetigo, while removing other clauses changes it by less than 0.001 percentage points. Decision architectures deliver structured, single-pass predictions from large language backbones, but short, lexically distinctive benchmarks such as Symptom2Disease cannot show an advantage over simple baselines; validation on longer, real clinical text and clinician review are needed.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>
