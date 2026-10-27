@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VLA-HWBench: Where the Time Goes When VLA Models Run on Edge Hardware — NewsMatome (EN)</title>
+<meta name="description" content="VLA-HWBench: Where the Time Goes When VLA Models Run on Edge Hardware — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/afb2286bb37d.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/afb2286bb37d.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/afb2286bb37d.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/afb2286bb37d.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VLA-HWBench: Where the Time Goes When VLA Models Run on Edge Hardware">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"VLA-HWBench: Where the Time Goes When VLA Models Run on Edge Hardware",
+ "inLanguage":"en","datePublished":"2026-10-28T07:00:00+09:00","dateModified":"2026-10-28T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"ロボット技術担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.34717","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/afb2286bb37d.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/afb2286bb37d.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#ef4444"></span>ロボット技術</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>VLA-HWBench: Where the Time Goes When VLA Models Run on Edge Hardware</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b></span></span><span>2026/10/28</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/afb2286bb37d.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.34717" rel="nofollow noopener">https://arxiv.org/abs/2610.34717</a></span></div>
+  <div class="article-body"><p>arXiv:2610.34717v1 Announce Type: new 
+Abstract: Vision--language--action (VLA) models increasingly run on edge devices aboard robots, where inference latency constrains closed-loop robot control. However, it remains unclear how to design VLA models, their inference software and edge hardware so that robots can run VLA inference in real time. Most VLA models report only task success, while prior studies cover limited action-generation strategies, divide inference into at most three stages, and lack comparisons of inference optimizations on the same models.benchmarking 18 open VLA models across released and alternative backends on NVIDIA Jetson AGX Thor and AMD Ryzen AI Max+ PRO 395, with a seven-stage inference breakdown. Our study reveals three insights. First, action-generation strategy matters more than model size. It dominates 14 of 19 Jetson configurations, latency varies by $82\times$ on Jetson and $157\times$ on AMD, and parameter count explains at most 15% of latency variance. Models that generate long action chunks in a few flow-matching steps keep up with control, whereas token-by-token decoding does not. Second, kernel fusion with 4-bit weights helps most, running $\pi_{0.5}$ and GR00T N1.7 2.6--2.9$\times$ faster than PyTorch with \texttt{torch.compile}, but it exists for only these two models and only on the Jetson. Optimization also moves the time to the stages it shortens least, as CPU preprocessing grows from 12\% to 39\% of the GR00T N1.7 call. Third, after optimization, memory bandwidth limits only the stages that process few tokens on the Jetson, such as the denoising steps, whereas software limits all other stages, from unfused kernels to serial preprocessing on the host CPU. Overall, low-latency edge VLAs should use few action-generation iterations, inference software should extend kernel fusion and low-bit weights to more models and platforms, and edge hardware needs high memory bandwidth and a fast host CPU.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

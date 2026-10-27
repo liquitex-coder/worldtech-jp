@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Memory-Aware Keyframe Management for Dense Maps on Memory-Constrained Robots — NewsMatome (EN)</title>
+<meta name="description" content="Memory-Aware Keyframe Management for Dense Maps on Memory-Constrained Robots — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/94ae5fcd99dd.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/94ae5fcd99dd.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/94ae5fcd99dd.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/94ae5fcd99dd.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Memory-Aware Keyframe Management for Dense Maps on Memory-Constrained Robots">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Memory-Aware Keyframe Management for Dense Maps on Memory-Constrained Robots",
+ "inLanguage":"en","datePublished":"2026-10-28T07:00:00+09:00","dateModified":"2026-10-28T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"ロボット技術担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.33574","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/94ae5fcd99dd.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/94ae5fcd99dd.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#ef4444"></span>ロボット技術</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Memory-Aware Keyframe Management for Dense Maps on Memory-Constrained Robots</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b></span></span><span>2026/10/28</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/94ae5fcd99dd.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.33574" rel="nofollow noopener">https://arxiv.org/abs/2610.33574</a></span></div>
+  <div class="article-body"><p>arXiv:2610.33574v1 Announce Type: new 
+Abstract: Running a language model and a dense 3D map on one device means the two share one memory, and exceeding its limit is an out-of-memory failure. Map systems that keep a bounded working set bound it by a count of keyframes, but the memory one keyframe occupies varies widely with what it carries, so a count does not control what the working set occupies. The unit of admission is as poorly matched, since a radius around the pose, a fixed cell, or the graph neighbors of the last matched keyframe all move parts of the map that are not needed. We therefore propose two decisions. First, the memory the resident map uses is bounded directly, and the cost of every admission is known before any data is read, from per-keyframe resident sizes computed offline and carried with the map. Second, keyframes are admitted and released at a semantic spatial unit, the rooms and corridors of the building, so that the robot holds the zone it occupies together with the zone it is about to enter while the zones it has passed are released. Every admission measures the resident total, makes room, and only then reads, so the budget is never overshot. On two NVIDIA Jetson boards the budget holds in every run and the model gives up at most 0.8 percent of its throughput, whereas without it the operating system kills the model or the map. Under that budget, and over the environments evaluated, admission by semantic zone localizes 6-9 points more of the query frames than a geometric partition of matched zone count and about twice as much as the retrieval of RTAB-Map, at a lower ATE. Bounding memory lets the map and the model coexist, and moving the map in semantic zones makes the bounded map usable.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

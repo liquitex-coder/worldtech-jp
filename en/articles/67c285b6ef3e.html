@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CFL-aware edge design for graph neural solvers of hyperbolic transport — NewsMatome (EN)</title>
+<meta name="description" content="CFL-aware edge design for graph neural solvers of hyperbolic transport — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/67c285b6ef3e.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/67c285b6ef3e.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/67c285b6ef3e.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/67c285b6ef3e.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CFL-aware edge design for graph neural solvers of hyperbolic transport">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"CFL-aware edge design for graph neural solvers of hyperbolic transport",
+ "inLanguage":"en","datePublished":"2026-10-28T07:00:00+09:00","dateModified":"2026-10-28T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.33769","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/67c285b6ef3e.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/67c285b6ef3e.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>CFL-aware edge design for graph neural solvers of hyperbolic transport</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/10/28</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/67c285b6ef3e.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.33769" rel="nofollow noopener">https://arxiv.org/abs/2610.33769</a></span></div>
+  <div class="article-body"><p>arXiv:2610.33769v1 Announce Type: cross 
+Abstract: Hyperbolic partial differential equations (PDEs) transport information at finite speed along characteristics, often producing shocks and discontinuities that are challenging to capture numerically. Graph neural networks (GNNs) offer learned update rules, but neighbor aggregation alone does not tell a GNN how far information must travel and along which edge. As a result, when a GNN model takes a time step larger than what was used in training, shock fronts smear and oscillations grow. In this work, we ask whether making the scale of transport explicit as an edge-local Courant-Friedrichs-Lewy (CFL) signal can enhance GNNs&#x27; ability to model hyperbolic PDEs. Holding the architecture fixed, we vary only the information given to each edge, from a raw edge form to forms that progressively expose the edge-local transport interaction through direction, length, and wave speed. Because all of these are computed from the same ingredients, what changes is not the amount of information but its form. The results show a consistent pattern, in which feature count is not the limiting factor, and appending CFL directly to a raw edge form produces almost no benefit. The CFL conditioning proves most effective when the edge information already exposes the transport interaction, reducing final-step error by 10.4-14.4%, and the improvement widens as the step size grows larger. Notably, this improvement arises not from smearing the solution but from suppressing oscillations near shocks. These results point to a specific design principle that CFL conditioning is most effective when the edge representation already separates the direction of interaction from spatial scale, so that the CFL value has a well-defined quantity to modulate.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

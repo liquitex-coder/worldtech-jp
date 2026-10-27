@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TraceQuery: learning what to recompute from full-denoising trajectory in diffusion language models — NewsMatome (EN)</title>
+<meta name="description" content="TraceQuery: learning what to recompute from full-denoising trajectory in diffusion language models — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/9ccccea5977f.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/9ccccea5977f.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/9ccccea5977f.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/9ccccea5977f.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TraceQuery: learning what to recompute from full-denoising trajectory in diffusion language models">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"TraceQuery: learning what to recompute from full-denoising trajectory in diffusion language models",
+ "inLanguage":"en","datePublished":"2026-10-28T07:00:00+09:00","dateModified":"2026-10-28T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.33008","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/9ccccea5977f.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/9ccccea5977f.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>TraceQuery: learning what to recompute from full-denoising trajectory in diffusion language models</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/10/28</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/9ccccea5977f.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.33008" rel="nofollow noopener">https://arxiv.org/abs/2610.33008</a></span></div>
+  <div class="article-body"><p>arXiv:2610.33008v1 Announce Type: cross 
+Abstract: Diffusion large language models (dLLMs) enable flexible generation through iterative masked denoising, but incur substantial inference cost because token representations are repeatedly recomputed across denoising steps. Existing cache-based methods reduce this cost by reusing intermediate results across denoising steps and recomputing only a subset of positions at each step, chosen either on a fixed schedule or by heuristic signals of change. Our trajectory experiments instead point to decoding trajectory as the more relevant quantity. Cached generation remains accurate when it stays close to the full-denoising trajectory, with errors concentrated around unmask-order deviations and reduced as longer reference prefixes are recovered. This suggests a more direct principle: limiting representation error helps, but keeping generation on the full-denoising trajectory is a more direct route to accurate decoding. We therefore formulate efficient dLLM inference as trajectory-guided querying. Rather than broadly repairing representation error, we use full-denoising trajectories to supervise which unresolved positions should receive limited fresh computation. Based on this formulation, we introduce TRACEQUERY, a lightweight sparse decoding framework that predicts a small set of near-future trajectory-relevant positions, queries only those candidates, and lets the backbone select which one to commit from their fresh predictions. TRACEQUERY delivers the strongest quality-computation trade-off among cache-based approaches, sustaining high accuracy with substantially fewer fresh token computations, and generalizes across tasks, model variants, and families. Code: https://github.com/fish1928/tracequery.git</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

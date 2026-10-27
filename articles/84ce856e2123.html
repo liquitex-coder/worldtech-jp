@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pseudospectral Bounds for Transient Amplification in Coupled Gradient Descent — NewsMatome</title>
-<meta name="description" content="Pseudospectral Bounds for Transient Amplification in Coupled Gradient Descent（EN→JA 翻訳・出典付き）">
+<title>Transient Amplification in Cascaded Gradient Methods: Exact Minimax Laws and Tracking without Resonance — NewsMatome</title>
+<meta name="description" content="Transient Amplification in Cascaded Gradient Methods: Exact Minimax Laws and Tracking without Resonance（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/84ce856e2123.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/84ce856e2123.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/84ce856e2123.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="Pseudospectral Bounds for Transient Amplification in Coupled Gradient Descent">
-<meta property="og:description" content="Pseudospectral Bounds for Transient Amplification in Coupled Gradient Descent（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="Transient Amplification in Cascaded Gradient Methods: Exact Minimax Laws and Tracking without Resonance">
+<meta property="og:description" content="Transient Amplification in Cascaded Gradient Methods: Exact Minimax Laws and Tracking without Resonance（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Pseudospectral Bounds for Transient Amplification in Coupled Gradient Descent",
- "inLanguage":"ja","datePublished":"2026-07-08T07:00:00+09:00","dateModified":"2026-07-08T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Transient Amplification in Cascaded Gradient Methods: Exact Minimax Laws and Tracking without Resonance",
+ "inLanguage":"ja","datePublished":"2026-10-28T07:00:00+09:00","dateModified":"2026-10-28T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.04031","url":"https://liquitex-coder.github.io/worldtech-jp/articles/84ce856e2123.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>Pseudospectral Bounds for Transient Amplification in Coupled Gradient Descent</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>Transient Amplification in Cascaded Gradient Methods: Exact Minimax Laws and Tracking without Resonance</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>Pseudospectral Bounds for Transient Amplification in Coupled Gradient Descent</h1>
+      <h1>Transient Amplification in Cascaded Gradient Methods: Exact Minimax Laws and Tracking without Resonance</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/07/08 07:00</span><span>· 更新 2026/07/08</span>
+        <span>公開 2026/10/28 07:00</span><span>· 更新 2026/10/28</span>
       </div>
     </div>
     
@@ -74,24 +74,24 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2606.04031" rel="nofollow noopener">Pseudospectral Bounds for Transient Amplification in Coupled Gradient Descent</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2606.04031" rel="nofollow noopener">Transient Amplification in Cascaded Gradient Methods: Exact Minimax Laws and Tracking without Resonance</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2606.04031v2 Announce Type: replace 
-Abstract: Coupled gradient descent - where the update of one parameter depends on another - arises naturally in bilevel optimization, two-time-scale stochastic approximation, and generative adversarial networks. When the coupled Jacobian is block-triangular, asymptotic stability is determined by the spectral radii of the diagonal blocks, yet transient amplification before convergence can be arbitrarily large due to non-normality. We develop a sharp pseudospectral theory for block-triangular Jacobians J = [[A, 0], [C, D]], proving Kreiss-constant bounds of the form K(J) &lt;= 2/(1-\gamma) + ||C||/(4(1-\gamma)) when \rho(A), \rho(D) &lt;= \gamma &lt; 1 and A, D are symmetric, and establishing matching minimax lower bounds. We characterize the critical coupling threshold for spectral instability and extend the theory to nearly self-referential systems via a Neumann-series perturbation framework. As a consequence, we obtain a finite-horizon O(K(J)^2 log(1/\delta)) iteration complexity bound. Framed as scaling laws for stochastic two-time-scale optimization, our results expose a non-asymptotic, instance-dependent regime of high-dimensional learning dynamics that is invisible to spectral-radius analysis. Experiments on linear-quadratic problems, IQC-based comparisons, and neural-network training confirm the theory.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2606.04031v2 Announce Type: replace 
-Abstract: Coupled gradient descent - where the update of one parameter depends on another - arises naturally in bilevel optimization, two-time-scale stochastic approximation, and generative adversarial networks. When the coupled Jacobian is block-triangular, asymptotic stability is determined by the spectral radii of the diagonal blocks, yet transient amplification before convergence can be arbitrarily large due to non-normality. We develop a sharp pseudospectral theory for block-triangular Jacobians J = [[A, 0], [C, D]], proving Kreiss-constant bounds of the form K(J) &lt;= 2/(1-\gamma) + ||C||/(4(1-\gamma)) when \rho(A), \rho(D) &lt;= \gamma &lt; 1 and A, D are symmetric, and establishing matching minimax lower bounds. We characterize the critical coupling threshold for spectral instability and extend the theory to nearly self-referential systems via a Neumann-series perturbation framework. As a consequence, we obtain a finite-horizon O(K(J)^2 log(1/\delta)) iteration complexity bound. Framed as scaling laws for stochastic two-time-scale optimization, our results expose a non-asymptotic, instance-dependent regime of high-dimensional learning dynamics that is invisible to spectral-radius analysis. Experiments on linear-quadratic problems, IQC-based comparisons, and neural-network training confirm the theory.</div>
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2606.04031v3 Announce Type: replace 
+Abstract: Leader-follower gradient iterations, including bilevel and two-time-scale methods, can exhibit large finite-time excursions despite asymptotic stability. For cascaded iterations with block matrix J = [[A,0],[C,D]], symmetric diagonal blocks of norm at most gamma &lt; 1, and coupling norm at most c, we prove an exact, dimension-free minimax formula: at every horizon t, the worst-case amplification equals the spectral norm of [[gamma^t,0],[c t gamma^(t-1),gamma^t]], attained by an aligned two-dimensional quadratic. Consequently, the worst transient is on the order of 1 + c/(1-gamma), and eigenvalues alone cannot predict finite-time gain. Under martingale noise, the aligned system has stationary follower variance sigma^2 c^2 (1+gamma^2)/(1-gamma^2)^3, establishing cubic inverse-gap scaling. For quadratic followers, the coupling is linked to follower sensitivity R by C = (I-D)R. When the leader is isotropic and the follower map is positive semidefinite, amplification is at most 1 plus the operator norm of R, independently of the spectral gaps. A look-ahead Newton update eliminates follower memory and is minimax-optimal among linear updates that track the leader exactly. Experiments validate the bounds and show that accelerated or inexact follower solvers can exceed the sensitivity bound when their effective maps have negative eigenvalues. Code and experiment scripts: https://github.com/Axym-Labs/transient-amplification</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2606.04031v3 Announce Type: replace 
+Abstract: Leader-follower gradient iterations, including bilevel and two-time-scale methods, can exhibit large finite-time excursions despite asymptotic stability. For cascaded iterations with block matrix J = [[A,0],[C,D]], symmetric diagonal blocks of norm at most gamma &lt; 1, and coupling norm at most c, we prove an exact, dimension-free minimax formula: at every horizon t, the worst-case amplification equals the spectral norm of [[gamma^t,0],[c t gamma^(t-1),gamma^t]], attained by an aligned two-dimensional quadratic. Consequently, the worst transient is on the order of 1 + c/(1-gamma), and eigenvalues alone cannot predict finite-time gain. Under martingale noise, the aligned system has stationary follower variance sigma^2 c^2 (1+gamma^2)/(1-gamma^2)^3, establishing cubic inverse-gap scaling. For quadratic followers, the coupling is linked to follower sensitivity R by C = (I-D)R. When the leader is isotropic and the follower map is positive semidefinite, amplification is at most 1 plus the operator norm of R, independently of the spectral gaps. A look-ahead Newton update eliminates follower memory and is minimax-optimal among linear updates that track the leader exactly. Experiments validate the bounds and show that accelerated or inexact follower solvers can exceed the sensitivity bound when their effective maps have negative eigenvalues. Code and experiment scripts: https://github.com/Axym-Labs/transient-amplification</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2606.04031v2 Announce Type: replace 
-Abstract: Coupled gradient descent - where the update of one parameter depends on another - arises naturally in bilevel optimization, two-time-scale stochastic approximation, and generative adversarial networks. When the coupled Jacobian is block-triangular, asymptotic stability is determined by the spectral radii of the diagonal blocks, yet transient amplification before convergence can be arbitrarily large due to non-normality. We develop a sharp pseudospectral theory for block-triangular Jacobians J = [[A, 0], [C, D]], proving Kreiss-constant bounds of the form K(J) &lt;= 2/(1-\gamma) + ||C||/(4(1-\gamma)) when \rho(A), \rho(D) &lt;= \gamma &lt; 1 and A, D are symmetric, and establishing matching minimax lower bounds. We characterize the critical coupling threshold for spectral instability and extend the theory to nearly self-referential systems via a Neumann-series perturbation framework. As a consequence, we obtain a finite-horizon O(K(J)^2 log(1/\delta)) iteration complexity bound. Framed as scaling laws for stochastic two-time-scale optimization, our results expose a non-asymptotic, instance-dependent regime of high-dimensional learning dynamics that is invisible to spectral-radius analysis. Experiments on linear-quadratic problems, IQC-based comparisons, and neural-network training confirm the theory.</p><a href="https://arxiv.org/abs/2606.04031" rel="nofollow noopener">原論文を読む →</a></div>
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2606.04031v3 Announce Type: replace 
+Abstract: Leader-follower gradient iterations, including bilevel and two-time-scale methods, can exhibit large finite-time excursions despite asymptotic stability. For cascaded iterations with block matrix J = [[A,0],[C,D]], symmetric diagonal blocks of norm at most gamma &lt; 1, and coupling norm at most c, we prove an exact, dimension-free minimax formula: at every horizon t, the worst-case amplification equals the spectral norm of [[gamma^t,0],[c t gamma^(t-1),gamma^t]], attained by an aligned two-dimensional quadratic. Consequently, the worst transient is on the order of 1 + c/(1-gamma), and eigenvalues alone cannot predict finite-time gain. Under martingale noise, the aligned system has stationary follower variance sigma^2 c^2 (1+gamma^2)/(1-gamma^2)^3, establishing cubic inverse-gap scaling. For quadratic followers, the coupling is linked to follower sensitivity R by C = (I-D)R. When the leader is isotropic and the follower map is positive semidefinite, amplification is at most 1 plus the operator norm of R, independently of the spectral gaps. A look-ahead Newton update eliminates follower memory and is minimax-optimal among linear updates that track the leader exactly. Experiments validate the bounds and show that accelerated or inexact follower solvers can exceed the sensitivity bound when their effective maps have negative eigenvalues. Code and experiment scripts: https://github.com/Axym-Labs/transient-amplification</p><a href="https://arxiv.org/abs/2606.04031" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2606.04031" rel="nofollow noopener">https://arxiv.org/abs/2606.04031</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
     <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="75ce61c86b70.html"><div class="sim">関連</div><div class="info"><b>iFLYTEK-Embodied-Omni Technical Report</b><div class="m">AI</div></div></a><a class="r" href="83654496cd83.html"><div class="sim">関連</div><div class="info"><b>Internal Pluralism and the Limits of Pairwise Comparisons</b><div class="m">AI</div></div></a><a class="r" href="3b7f7894795b.html"><div class="sim">関連</div><div class="info"><b>ASK in the Dark: Uncertainty-Gated LLM Assistance under Partial Observability</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="8ce98afe9175.html"><div class="sim">関連</div><div class="info"><b>Inverse Modeling for Laser Pulse Shape Design in Inertial Confinement Fusion</b><div class="m">AI</div></div></a><a class="r" href="f9b6042eeb94.html"><div class="sim">関連</div><div class="info"><b>IRON-Meme: A Benchmark for Structured Understanding of Identities and Roles in Online Meme Narratives</b><div class="m">AI</div></div></a><a class="r" href="c156781cefae.html"><div class="sim">関連</div><div class="info"><b>Prospect Theory in Large Language Models: A Meta-Analysis of Loss Aversion, Diminishing Sensitivity, and Probability Weighting</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

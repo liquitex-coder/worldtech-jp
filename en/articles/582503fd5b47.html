@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>When Do External Priors Help Low-Resource Structured Prediction? A Ranking-Level Alignment Study — NewsMatome (EN)</title>
-<meta name="description" content="When Do External Priors Help Low-Resource Structured Prediction? A Ranking-Level Alignment Study — original-language edition. Japanese translation available.">
+<title>What Transfers from Training-Only Priors? Separating Knowledge, Ordinal Targets, and Optimization — NewsMatome (EN)</title>
+<meta name="description" content="What Transfers from Training-Only Priors? Separating Knowledge, Ordinal Targets, and Optimization — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/582503fd5b47.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/582503fd5b47.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/582503fd5b47.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/582503fd5b47.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="When Do External Priors Help Low-Resource Structured Prediction? A Ranking-Level Alignment Study">
+<meta property="og:title" content="What Transfers from Training-Only Priors? Separating Knowledge, Ordinal Targets, and Optimization">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"When Do External Priors Help Low-Resource Structured Prediction? A Ranking-Level Alignment Study",
- "inLanguage":"en","datePublished":"2026-10-13T07:00:00+09:00","dateModified":"2026-10-13T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"What Transfers from Training-Only Priors? Separating Knowledge, Ordinal Targets, and Optimization",
+ "inLanguage":"en","datePublished":"2026-10-28T07:00:00+09:00","dateModified":"2026-10-28T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2610.11146","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/582503fd5b47.html"}
@@ -34,13 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>When Do External Priors Help Low-Resource Structured Prediction? A Ranking-Level Alignment Study</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/13</span></div>
+    <h1>What Transfers from Training-Only Priors? Separating Knowledge, Ordinal Targets, and Optimization</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/28</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/582503fd5b47.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.11146" rel="nofollow noopener">https://arxiv.org/abs/2610.11146</a></span></div>
-  <div class="article-body"><p>arXiv:2610.11146v2 Announce Type: replace 
-Abstract: Cold-start credit scoring (scarce labels, immature features, or minimal capacity) motivates injecting external priors (teacher models, LLMs, or domain experts) into training. We study Ranking Prior Alignment (RPA), a model-agnostic objective that aligns a model&#x27;s ranking distribution to an external prior via a temperature-scaled KL loss with an annealed weight, $\mathcal{L} = \mathcal{L}_{\text{task}} + \gamma(t)\,\text{KL}(P_{\text{agent}} \| P_{\text{model}})$, and requires no external model at inference. Across tree-ensemble and multiple-instance-learning (MIL) instantiations on the public Amex dataset and an industrial merchant-credit dataset (1.5M+ merchants), we ask when such priors genuinely transfer information rather than merely act as a regularizer.
-  Our central finding: the prior&#x27;s quality $\pi$ (its rank correlation with the label) governs transfer only when the alignment granularity matches the granularity at which $\pi$ is measured. On cross-sample tree alignment (Amex), a high-$\pi$ teacher yields $+0.028$ AUC over the no-alignment baseline (paired bootstrap 95% CI $[0.022, 0.035]$) whereas zero-information priors (uniform, random) yield none, and $\Delta$AUC tracks $\pi$ (XGBoost Pearson $r = 0.985$); this replicates on a second public dataset (LendingClub). On within-bag MIL-attention alignment, the same high-$\pi$ teacher transfers nothing: it is significantly worse than its own within-bag shuffle (net $-0.017$, 95% CI $&lt; 0$, sign $p = 0.021$ over 10 seeds), while zero-information priors give the only significant gains: the KL term collapses to pure entropy regularization. We distill these results into a two-factor $N \cdot \mathcal{C}$ decision rule (gains concentrate at low sample size and capacity and vanish as either grows) and a scale-controlled paired protocol that separates information transfer from regularization.</p></div>
+  <div class="article-body"><p>arXiv:2610.11146v3 Announce Type: replace 
+Abstract: Training-only teacher access lets a compact student deploy with local features and exported weights. This established distillation interface does not identify what transfers or when it helps. We separate label, query, capacity, and source-access budgets on three public credit archives and a previously unexamined bankruptcy archive. Shared tree parameters, shuffles, and optimizer interventions expose limitations of historical Ranking Prior Alignment; no tested single repair consistently rescues it. Heldout source queries and matched warmup and mappings retain a rank-listwise advantage over mapped staged KD in 24 credit configuration means and all six teacher--capacity means of a frozen new-archive test, with explicit query failures and stronger source-weight delivery under a different interface. A pretrained TabICLv2 follow-up at 100 labels initially improves matched supervision in only one of eight means; six of nine source-predicted policy gains reverse on target. A registered seen-archive intervention adds 500 or 2,000 unlabeled queries: all eight matched AUC means become positive under selected and fixed alpha. However, outer effects are mixed and no conditional paired-draw interval for these supervised contrasts lies wholly above zero. Increasing teacher context at 500 student labels does not beat matched supervision in any of eight ordinary-context means, despite stronger direct teacher performance. Rank KD retains substantial probability errors. Independent reloads verify zero guarded external inference accesses. Results support query/context boundary diagnostics, without universal superiority, population significance, a prospective transfer rule, or an LLM-specific advantage.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

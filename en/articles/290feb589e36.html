@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TileShare: Training-Free Acceleration of Overlapping Tiled ViT Decoding — NewsMatome (EN)</title>
+<meta name="description" content="TileShare: Training-Free Acceleration of Overlapping Tiled ViT Decoding — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/290feb589e36.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/290feb589e36.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/290feb589e36.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/290feb589e36.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TileShare: Training-Free Acceleration of Overlapping Tiled ViT Decoding">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"TileShare: Training-Free Acceleration of Overlapping Tiled ViT Decoding",
+ "inLanguage":"en","datePublished":"2026-10-28T07:00:00+09:00","dateModified":"2026-10-28T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.32233","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/290feb589e36.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/290feb589e36.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>TileShare: Training-Free Acceleration of Overlapping Tiled ViT Decoding</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/28</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/290feb589e36.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.32233" rel="nofollow noopener">https://arxiv.org/abs/2610.32233</a></span></div>
+  <div class="article-body"><p>arXiv:2610.32233v1 Announce Type: cross 
+Abstract: Fixed-window Vision Transformer (ViT) decoders run at deployment resolution as overlapping tiles: every token in an overlap band is processed by several full decoder instances. In the 2.4B-parameter MiniMax-H3 video decoder, about half of all per-token computation is duplicated. Removing the tiles fails because attention, global tokens and coordinates are bound to them. TileShare keeps each released tile&#x27;s attention and computes every other operation once per token. The released computation changes at one kind of step only: an overlap token&#x27;s per-tile results are blended into one shared state with the released weights. Interventions show that this blend costs quality where attention reads the shared states, mainly in the first few layers, which TileShare therefore keeps per tile. Without training, keeping six layers per tile decodes 1.38-1.51x faster than batched and compiled tiling on two GPU types (up to 1.96x with FP8) and is equivalent to the released decoder in PSNR, LPIPS and DISTS on DAVIS videos. On unseen UVG videos with the setting frozen beforehand, it matches PSNR and DISTS and improves LPIPS. TileShare carries over to two further decoders and is again confirmed on unseen data. It is equivalent in PSNR and DISTS on MAGI-1. On the ViTok-v2 image autoencoder at 2K-4K, it matches overlapping tiling in PSNR, improves LPIPS and DISTS and decodes 1.5-1.8x faster. How many layers stay per tile is measured once per model (for decoders, without labels); we report it for 14 decoders and encoders. Optionally, two GPU-hours of self-distillation let MiniMax-H3 share every layer without a loss in PSNR, and a coordinate field trained while the network stays frozen brings fully shared CLIP-based open-vocabulary segmentation to parity with sliding windows on seven benchmarks.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

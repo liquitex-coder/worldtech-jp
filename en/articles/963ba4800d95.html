@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bandits with Probing: Optimal Regret and the Limits of Winner Feedback — NewsMatome (EN)</title>
-<meta name="description" content="Bandits with Probing: Optimal Regret and the Limits of Winner Feedback — original-language edition. Japanese translation available.">
+<title>Bandits with Probing: Optimal Coverage and the Role of Feedback — NewsMatome (EN)</title>
+<meta name="description" content="Bandits with Probing: Optimal Coverage and the Role of Feedback — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/963ba4800d95.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/963ba4800d95.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/963ba4800d95.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/963ba4800d95.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Bandits with Probing: Optimal Regret and the Limits of Winner Feedback">
+<meta property="og:title" content="Bandits with Probing: Optimal Coverage and the Role of Feedback">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Bandits with Probing: Optimal Regret and the Limits of Winner Feedback",
- "inLanguage":"en","datePublished":"2026-09-16T07:00:00+09:00","dateModified":"2026-09-16T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Bandits with Probing: Optimal Coverage and the Role of Feedback",
+ "inLanguage":"en","datePublished":"2026-10-28T07:00:00+09:00","dateModified":"2026-10-28T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2609.15248","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/963ba4800d95.html"}
@@ -34,12 +34,13 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Bandits with Probing: Optimal Regret and the Limits of Winner Feedback</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/16</span></div>
+    <h1>Bandits with Probing: Optimal Coverage and the Role of Feedback</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/28</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/963ba4800d95.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.15248" rel="nofollow noopener">https://arxiv.org/abs/2609.15248</a></span></div>
-  <div class="article-body"><p>arXiv:2609.15248v1 Announce Type: new 
-Abstract: A learner probes at most $k$ of $n$ arms each round, receives the maximum of their rewards in $[0,1]$, and competes with the best fixed arm. When does the probing advantage pay for learning? We determine two minimax laws. Under independent stochastic rewards with winner feedback (the maximum and a winning label), or on arbitrary fixed sequences given a single signed contrast between block maxima, the minimax regret has order $\Phi_{n,k}(T)=\min\{\frac{n-k}{n}T,\frac{n-k}{k}\}$, $2\le k&lt;n$. Under winner feedback, both arbitrary joint i.i.d. rewards and fixed sequences have minimax regret of order $R_{n,k}(T)=\frac{n-k}{n}\min\{T,\frac{n+T}{k},\sqrt{\frac{nT}{k}}\}$. Both laws have universal constants and anytime upper bounds. The first reduces regret to a pure coverage cost: same-round contrasts absorb the stability cost, and independence permits exact resampling whose gains fund sample advancement. The second adds a learning cost that becomes comparable to coverage at horizon $n$; beyond $nk$, numerical maxima improve over labels alone. The lower bound allows every adaptive action size.</p></div>
+  <div class="article-body"><p>arXiv:2609.15248v2 Announce Type: replace 
+Abstract: In bandits with probing, a learner selects at most $k$ of $n$ arms per round, earns the largest of their rewards, and competes with the best fixed single arm. For independent arms with i.i.d. rewards in $[0,1]$ and $2\le k&lt;n$, the minimax regret is $\Theta\bigl(\frac{n-k}{n}\min\{T,n/k\}\bigr)$, the cost of locating an unknown good arm, and observing only the maximum suffices to attain it. In particular, two probes give $\Theta(\min\{T,n\})$ regret, which resolves two open questions of Bhaskara et al. (2023) with weaker feedback. Our policy turns the probing surplus, the excess of the maximum over each probed arm, into exploration capital, and a permanent random core yields the sharp dependence on $k$.
+  On arbitrary fixed reward arrays, same-round contrasts between blocks of arms attain the same rate, because the surplus pays for the stability of mirror descent. Winner feedback, the maximum together with its winning label, instead incurs an additional learning cost under joint i.i.d. rewards and on fixed arrays. We characterize this cost even when values are revealed only intermittently, using policies that know neither the horizon nor the revelation rate. For three independent arms and two probes, exact maxima, Bernoulli-rounded maxima with winning labels, and winning labels alone have minimax regret $\Theta(1)$, $\Theta(\sqrt T)$, and $\Theta(T)$: rounding preserves conditional means but not the rate.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

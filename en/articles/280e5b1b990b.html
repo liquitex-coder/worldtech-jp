@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ThinkBit: Search Codewords, Recalibrate Scales, Select by Reasoning — NewsMatome (EN)</title>
+<meta name="description" content="ThinkBit: Search Codewords, Recalibrate Scales, Select by Reasoning — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/280e5b1b990b.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/280e5b1b990b.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/280e5b1b990b.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/280e5b1b990b.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ThinkBit: Search Codewords, Recalibrate Scales, Select by Reasoning">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"ThinkBit: Search Codewords, Recalibrate Scales, Select by Reasoning",
+ "inLanguage":"en","datePublished":"2026-10-28T07:00:00+09:00","dateModified":"2026-10-28T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.34886","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/280e5b1b990b.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/280e5b1b990b.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>ThinkBit: Search Codewords, Recalibrate Scales, Select by Reasoning</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/10/28</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/280e5b1b990b.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.34886" rel="nofollow noopener">https://arxiv.org/abs/2610.34886</a></span></div>
+  <div class="article-body"><p>arXiv:2610.34886v1 Announce Type: new 
+Abstract: Reasoning language models generate thousands of tokens per answer, and generation speed is limited by memory bandwidth, so storing weights in two bits instead of bfloat16 can potentially make inference 8$\times$ cheaper. Two-bit methods are usually judged by perplexity and multiple-choice question-answering accuracy, both of which say little about whether a model can still reason through more difficult problems. We present ThinkBit, a strictly scalar two-bit framework built to preserve reasoning, in which every weight is an integer codeword times a bfloat16 scale shared by a group of weights. We first use a sensitivity metric to assign each layer a ternary, 2-bit, or 3-bit tier to allocate bitwidths optimally among layers. This is followed by a layerwise Gumbel-softmax-based scalar quantization algorithm that searches for optimal codewords block by block. Since a layerwise scheme does not capture how quantized layers interact with each other, we recalibrate scales, with the codewords frozen, using a knowledge-distillation-based loss against the teacher model. We then perform a short quantization-aware training (QAT) stage that lets the model mimic the base model&#x27;s distribution by reassigning codewords. Finally, a paired reasoning test on training problems selects the final checkpoint between the recalibration stage and the QAT stage. On Qwen3-1.7B at matched size, our recalibrated checkpoint scores 46.7 on MATH-500 against 30.0 for EfficientQAT trained on the same data, and 73.0 after QAT on reasoning traces; at 0.52 GB it is smaller than every published 2-bit GGUF of the model yet more accurate on MATH-500. We show that this framework scales and up to 14B, a 3.74 GB model scores 94.8 on MATH-500, against 97.5 for the 29.5 GB bfloat16 model.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

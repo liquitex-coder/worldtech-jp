@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Asymmetric Effects of Knowledge Distillation on Bias in Small Language Models — NewsMatome (EN)</title>
-<meta name="description" content="The Asymmetric Effects of Knowledge Distillation on Bias in Small Language Models — original-language edition. Japanese translation available.">
+<title>What the Abstention Option Measures: Refusal Loss, Sampling Churn, and Option Capture in Distilled Small Language Models — NewsMatome (EN)</title>
+<meta name="description" content="What the Abstention Option Measures: Refusal Loss, Sampling Churn, and Option Capture in Distilled Small Language Models — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/ae11329cf8b4.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/ae11329cf8b4.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/ae11329cf8b4.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/ae11329cf8b4.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="The Asymmetric Effects of Knowledge Distillation on Bias in Small Language Models">
+<meta property="og:title" content="What the Abstention Option Measures: Refusal Loss, Sampling Churn, and Option Capture in Distilled Small Language Models">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"The Asymmetric Effects of Knowledge Distillation on Bias in Small Language Models",
- "inLanguage":"en","datePublished":"2026-08-06T07:00:00+09:00","dateModified":"2026-08-06T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"What the Abstention Option Measures: Refusal Loss, Sampling Churn, and Option Capture in Distilled Small Language Models",
+ "inLanguage":"en","datePublished":"2026-10-28T07:00:00+09:00","dateModified":"2026-10-28T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.28639","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/ae11329cf8b4.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>The Asymmetric Effects of Knowledge Distillation on Bias in Small Language Models</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/08/06</span></div>
+    <h1>What the Abstention Option Measures: Refusal Loss, Sampling Churn, and Option Capture in Distilled Small Language Models</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/10/28</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/ae11329cf8b4.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.28639" rel="nofollow noopener">https://arxiv.org/abs/2607.28639</a></span></div>
-  <div class="article-body"><p>arXiv:2607.28639v2 Announce Type: replace-cross 
-Abstract: We show that knowledge distillation (KD) in small instruction-tuned language models has asymmetric effects on bias, and that measuring them correctly requires accounting for where refusal mass moves and what the parser can legitimately score. On unambiguous tasks (BBQ-disambig), response-based distillation from a Mistral-7B teacher genuinely improves context-following for the most context-biased baseline (SmolLM2-1.7B-Instruct): among committed (non-abstaining) answers, the rate of overriding correct context with a stereotype falls from 44.5% to 37.2%, with accuracy rising from 0.55 to 0.61. On ambiguous tasks (BBQ-ambig), the same distillation degrades conditional refusal: 15% of the cases where the baseline correctly abstained instead receive stereotype answers (silence-loss), and the distilled refusal pattern only weakly preserves the baseline&#x27;s (Spearman rho=0.44). The harm reproduces, aggravated, on a second student family (OLMo-2-1B-Instruct): silence-loss reaches 49% and filled-silence accounts for 95% of new bias. Two apparently stronger results are artifacts. An unconditioned override metric reports a 44% -&gt; 23% improvement under a Gemma-2-9B teacher that shrinks to 44.5% -&gt; 39.8% once conditioned on committed answers: the model abstains on 43% of items and its accuracy collapses from 0.55 to 0.35. An apparent cross-condition independence reverses to a positive correlation (rho=0.58, p&lt;0.01) on the valid 19-configuration grid once parser-invalid logit-KD configurations are excluded and the parser is corrected. Aggregate metrics (CrowS-Pairs, overall BBQ Stereotype Reliance Score) average over both effects and conceal the per-item harm. We propose Per-Condition Calibration Diagnosis (PCCD), a three-step protocol evaluating refusal-pattern preservation, committed-answer context-following, and capability preservation. No configuration in our grid passes all three steps.</p></div>
+  <div class="article-body"><p>arXiv:2607.28639v3 Announce Type: replace-cross 
+Abstract: Small instruction-tuned language models reach phones, cars, and offline assistants through knowledge distillation, and whether a distilled model is fair enough to ship is often decided by a multiple-choice bias score on a benchmark that offers an abstention option. Three mechanisms move behavior around the abstention option: refusal loss, where the student stops declining on items its pre-distillation reference declined; sampling churn, the same change observed between two runs of the reference itself; and option capture, where the student takes an abstention option whenever one is offered. Injecting each mechanism into a reference&#x27;s own records shows that aggregate scores see only outright loss, per-item scores see churn and remapping, and only conditioning on committed answers stops moved refusal mass from reading as fairness. Resampling a reference across inference seeds already turns 10% to 27% of its refusals into stereotype answers, so a per-item refusal metric reported without that floor overstates damage. Option capture is what corpus repair teaches: students trained with refusal exemplars take an offered abstention option on up to 95% of science questions where abstention is never correct, and the habit carries to three further benchmarks. Free-form evaluation shows that the refusals multiple choice loses are not where free-form stereotyping occurs. We distill these findings into a per-condition report anchored to the reference, with measured floors and ceilings, and apply it to four student families against a fine-tuning control: distillation keeps fewer of the reference&#x27;s refusals than fine-tuning on the same prompts where the reference&#x27;s refusals are reliable, by a few points, while the common metrics report improvements whenever refusal mass moves. A bias score quoted for a distilled model should say which of these it reports.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

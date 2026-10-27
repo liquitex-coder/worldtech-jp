@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Decoupled Prune-and-Reconstruct: Training on a Compact Core with Double-Layer Sparsification — NewsMatome (EN)</title>
+<meta name="description" content="Decoupled Prune-and-Reconstruct: Training on a Compact Core with Double-Layer Sparsification — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/b3f7248d7fc6.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/b3f7248d7fc6.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/b3f7248d7fc6.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/b3f7248d7fc6.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Decoupled Prune-and-Reconstruct: Training on a Compact Core with Double-Layer Sparsification">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Decoupled Prune-and-Reconstruct: Training on a Compact Core with Double-Layer Sparsification",
+ "inLanguage":"en","datePublished":"2026-10-28T07:00:00+09:00","dateModified":"2026-10-28T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.34140","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/b3f7248d7fc6.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/b3f7248d7fc6.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Decoupled Prune-and-Reconstruct: Training on a Compact Core with Double-Layer Sparsification</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/10/28</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/b3f7248d7fc6.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.34140" rel="nofollow noopener">https://arxiv.org/abs/2610.34140</a></span></div>
+  <div class="article-body"><p>arXiv:2610.34140v1 Announce Type: cross 
+Abstract: On million-node graphs, the memory wall arrives before the compute wall: a GNN that never fits in VRAM cannot deliver the all-node inference its accuracy promises. The standard remedy, pruning, has always been an accuracy tax - paid once and never refunded. DPR refuses this framing. Its central insight is that the mask that shrinks training can also scaffold recovery: one compact node set bounds both computations of graph learning, serving as the encoder&#x27;s training graph and, at inference, as the anchor from which a sparse structure-aware decoder rebuilds every pruned node (double-layer sparsification). The order is inverted - prune for efficiency, then reconstruct for accuracy - and the tax is repaid: the deployed 30%-budget model trains in 1,450 MiB of peak memory on one 6 GB GPU and recovers 96.9% of its dense-reconstruction reference, beating a same-GPU rerun of the edge-sparsification baseline DSpar by +1.36 pp at 50.1% lower peak training memory; against the same-protocol full-batch no-prune encoder the deployed point pays a measured 2.64 pp accuracy tax for a 2.8x smaller training footprint. Pruning without reconstruction leaves the encoder at 0.378 within the same 40-epoch window (Fig. 4), and all-node serving runs 46x faster than sampling-based GraphSAGE, giving up approx. 5.4 pp of test accuracy. The framework scales to a 2.45M-node production graph at 6,285 MiB of peak training memory; extended variants (long-range context, external text features, a CAN-bus application) are reported as extensions and do not compete with the deployed method, and the 41.8%-budget M4 point, scored on a coarsened super-node graph with its own split, is reported separately rather than compared with the original-node baselines. DPR thus turns aggressive node pruning from an accuracy tax into a safe training accelerator for VRAM-limited all-node inference.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

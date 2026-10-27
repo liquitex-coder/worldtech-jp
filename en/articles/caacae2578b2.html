@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Canary in the Neural Mine: Catching an Image Classifier&#x27;s Silent, Confident Failures — NewsMatome (EN)</title>
+<meta name="description" content="A Canary in the Neural Mine: Catching an Image Classifier&#x27;s Silent, Confident Failures — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/caacae2578b2.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/caacae2578b2.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/caacae2578b2.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/caacae2578b2.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A Canary in the Neural Mine: Catching an Image Classifier&#x27;s Silent, Confident Failures">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"A Canary in the Neural Mine: Catching an Image Classifier&#x27;s Silent, Confident Failures",
+ "inLanguage":"en","datePublished":"2026-10-28T07:00:00+09:00","dateModified":"2026-10-28T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.33063","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/caacae2578b2.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/caacae2578b2.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>A Canary in the Neural Mine: Catching an Image Classifier&#x27;s Silent, Confident Failures</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/10/28</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/caacae2578b2.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.33063" rel="nofollow noopener">https://arxiv.org/abs/2610.33063</a></span></div>
+  <div class="article-body"><p>arXiv:2610.33063v1 Announce Type: cross 
+Abstract: Deployed vision models auto-accept confident predictions, so high-confidence errors propagate silently. Maximum Softmax Probability (MSP), the standard failure predictor, has a structural blind spot: as a scalar read from the classifier head, it is first-order blind to feature variation orthogonal to its confidence gradient. Through a factorial analysis of feature-space detectors, we identify a conditional-redundancy principle explaining why they fail to complement MSP: the class-separability geometry they measure is already encoded in MSP and collapses under fusion. The signal that survives is class-conditional typicality on the off-manifold residual---and because this residual&#x27;s distribution varies by backbone, from near-Gaussian to heavy-tailed, it must be estimated non-parametrically. We instantiate these findings as CANARY, a training-free detector that computes a per-class kNN distance on the PCA residual of the penultimate feature, percentile-calibrates it on validation data, and fuses it with MSP through a single validation-tuned weight. CANARY&#x27;s benefit follows a headroom law: gains grow as baseline MSP quality falls, so a single clean-validation number forecasts the improvement. With every parameter selected on in-distribution data alone, CANARY matches or improves 382 of 385 shift cells (e-AURC; 379 on AUROC) across five backbones, with worst-case regression within seed noise ($-0.0002$ AUROC) and the largest gains on natural distribution shifts (ImageNet-A/R, ObjectNet)---where deployed models are most exposed.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

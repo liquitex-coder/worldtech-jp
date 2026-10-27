@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Do Halting Heads Really Save Compute in Looped Language Models? — NewsMatome (EN)</title>
+<meta name="description" content="Do Halting Heads Really Save Compute in Looped Language Models? — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/f50a7a44886f.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/f50a7a44886f.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/f50a7a44886f.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/f50a7a44886f.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Do Halting Heads Really Save Compute in Looped Language Models?">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Do Halting Heads Really Save Compute in Looped Language Models?",
+ "inLanguage":"en","datePublished":"2026-10-28T07:00:00+09:00","dateModified":"2026-10-28T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.32246","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/f50a7a44886f.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/f50a7a44886f.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Do Halting Heads Really Save Compute in Looped Language Models?</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/28</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/f50a7a44886f.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.32246" rel="nofollow noopener">https://arxiv.org/abs/2610.32246</a></span></div>
+  <div class="article-body"><p>arXiv:2610.32246v1 Announce Type: cross 
+Abstract: Looped language models run each token through the same layers several times, and each run is one iteration. To save compute, an extra layer, the halting head, gives after each iteration the probability that the token stops there, so that easy tokens can stop early. Pretraining models from scratch, up to 1.3B parameters, we find two problems. First, heads trained on a mix of all iterations predict that tokens need under half the iterations, yet under the standard stopping rule tokens run almost every iteration, because this training never scores the single iteration where a token stops. Scoring every iteration instead fixes this, but in our runs it works only with a strong penalty favoring early stops. Second, savings are commonly reported as an average number of iterations per token, but when sequences are generated in batches that run until their slowest token stops, a model without a head is almost as good at that cost. The reported average can therefore overstate the saving. We recommend reporting the iterations tokens actually run, with the stopping threshold and batch size, and give a test, run before training a head, that bounds its gain.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
