@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Error Diffusion Replaces Latent Weights: Training Binary-Weight Language Models on a Few Bits of Dithered State — NewsMatome (EN)</title>
+<meta name="description" content="Error Diffusion Replaces Latent Weights: Training Binary-Weight Language Models on a Few Bits of Dithered State — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/6980e69a3c8d.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/6980e69a3c8d.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/6980e69a3c8d.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/6980e69a3c8d.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Error Diffusion Replaces Latent Weights: Training Binary-Weight Language Models on a Few Bits of Dithered State">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Error Diffusion Replaces Latent Weights: Training Binary-Weight Language Models on a Few Bits of Dithered State",
+ "inLanguage":"en","datePublished":"2026-10-29T07:00:00+09:00","dateModified":"2026-10-29T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.34566","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/6980e69a3c8d.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/6980e69a3c8d.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Error Diffusion Replaces Latent Weights: Training Binary-Weight Language Models on a Few Bits of Dithered State</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/29</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/6980e69a3c8d.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.34566" rel="nofollow noopener">https://arxiv.org/abs/2610.34566</a></span></div>
+  <div class="article-body"><p>arXiv:2610.34566v1 Announce Type: new 
+Abstract: Binary-weight language models store one bit per weight, but training them keeps a full-precision latent copy of each weight plus Adam state, about 96 extra bits per weight, so a deployed binary model cannot be adapted on the device that runs it. We replace the latent weight with a 2-8-bit residual buffer quantized by stochastic rounding, which cuts the training state per weight from 97 bits to 3-9, up to 19x less. The resulting error-diffusion (ED) optimizer moves the residual-carrying loop of image halftoning onto the weight-update path. Each buffer accumulates the unrealized part of every update and flips the weight when the accumulated value crosses a threshold, and it works only when its quantization grid has a level exactly at that threshold. Under this threshold-alignment rule, 4-bit buffers match 8-bit buffers on a binary multilayer perceptron benchmark, and the same rule lifts a different latent-free optimizer, Bop, from a 10-point deficit at 4 bits to full-precision accuracy. On character-level transformers with 97% of parameters binary, ED trains within 5-11% of the latent-weight reference at a 2,000-step budget and within 1.7% at convergence. On scaling ladders over enwik8 and wikitext-103, up to 19M parameters on enwik8 (70M with the wikitext-103 embeddings), the latent-free loss stays within -2.3% to +2.9% of the reference at all six sizes once a per-step cap on the buffer update removes a launch instability; without the cap it trails by 10% at the largest tokenized size. A deployed binary model continues training under ED at one tenth of the latent training state, matching latent-weight continuation, and a fused CPU kernel completes the adaptation within a 275 MB training-memory budget, which latent-weight training cannot. A 250-step probe sets the flip learning rate at any new scale.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Scalable Stress-Constrained Topology Optimization: A Super-resolution and Simultaneous Approach Based on Machine Learning — NewsMatome (EN)</title>
-<meta name="description" content="Scalable Stress-Constrained Topology Optimization: A Super-resolution and Simultaneous Approach Based on Machine Learning — original-language edition. Japanese translation available.">
+<title>Scalable Stress-Constrained Topology Optimization: A Simultaneous Approach Based on Machine Learning — NewsMatome (EN)</title>
+<meta name="description" content="Scalable Stress-Constrained Topology Optimization: A Simultaneous Approach Based on Machine Learning — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/8b1ebaf87a87.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/8b1ebaf87a87.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/8b1ebaf87a87.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/8b1ebaf87a87.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Scalable Stress-Constrained Topology Optimization: A Super-resolution and Simultaneous Approach Based on Machine Learning">
+<meta property="og:title" content="Scalable Stress-Constrained Topology Optimization: A Simultaneous Approach Based on Machine Learning">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Scalable Stress-Constrained Topology Optimization: A Super-resolution and Simultaneous Approach Based on Machine Learning",
- "inLanguage":"en","datePublished":"2026-10-23T07:00:00+09:00","dateModified":"2026-10-23T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Scalable Stress-Constrained Topology Optimization: A Simultaneous Approach Based on Machine Learning",
+ "inLanguage":"en","datePublished":"2026-10-29T07:00:00+09:00","dateModified":"2026-10-29T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2610.28703","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/8b1ebaf87a87.html"}
@@ -34,12 +34,13 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Scalable Stress-Constrained Topology Optimization: A Super-resolution and Simultaneous Approach Based on Machine Learning</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/23</span></div>
+    <h1>Scalable Stress-Constrained Topology Optimization: A Simultaneous Approach Based on Machine Learning</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/29</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/8b1ebaf87a87.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.28703" rel="nofollow noopener">https://arxiv.org/abs/2610.28703</a></span></div>
-  <div class="article-body"><p>arXiv:2610.28703v1 Announce Type: new 
-Abstract: Large-scale topology optimization (TO) remains computationally demanding, especially for stress-constrained problems. To address this challenge, we propose the simultaneous neural topology optimization (SNTO) framework where we represent state, adjoint, and design variables with custom neural networks (NNs) whose parameters are jointly optimized within a single optimization loop that leverages continuous adjoint analysis and automatic differentiation. This optimization minimizes a multi-component loss function that combines the design objective, an aggregation of the local stress constraints, and the potential energy functionals. Our NNs have a unique architecture that accelerates convergence while enabling the networks to capture sharp gradients and boundaries which are critical to stress-constrained TO. To achieve scalability to millions of degrees of freedom (DoF), we develop a hardware-aware training scheme in which the design domain is partitioned into subdomains that are distributed across multiple GPUs. To control peak GPU memory usage, we further slice each subdomain into smaller regions whose loss gradients are evaluated sequentially and accumulated to update the NN parameters. Unlike domain decomposition approaches, our partitioning naturally ensures field continuity across the subdomains and does not require the introduction of additional terms into the loss function. For validation, we first evaluate the proposed framework on various 2D stress-constrained benchmarks and compare our results to a conventional finite element-based approach, showing that SNTO produces super-resolution designs with sharper boundaries, smaller gray areas, and lower volume fractions. We then consider large-scale 3D problems with up to eight million collocation points and distribute the training over up to eight GPUs.</p></div>
+  <div class="article-body"><p>arXiv:2610.28703v2 Announce Type: replace 
+Abstract: Large-scale topology optimization (TO) remains computationally demanding, especially for stress-constrained problems. To address this challenge, we propose the simultaneous neural topology optimization (SNTO) framework where state, adjoint, and design variables are represented with custom neural networks (NNs) whose parameters are jointly optimized within a single loop using adjoint analysis and automatic differentiation. The loss function combines the design objective, an aggregation of the local stress constraints, and the potential energy functionals. Our NNs have a unique architecture that accelerates convergence while capturing the sharp gradients and boundaries which are critical to stress-constrained TO. To scale to millions of degrees of freedom, we develop a hardware-aware training scheme in which the design domain is partitioned into subdomains distributed across multiple graphics processing units (GPUs). To control peak GPU memory, we further slice each subdomain into smaller regions whose loss gradients are evaluated sequentially and accumulated. Unlike domain decomposition, our partitioning naturally ensures field continuity across subdomains without additional loss terms. We first evaluate SNTO on two-dimensional (2D) stress-constrained benchmarks and compare the results to a conventional finite element-based approach, showing that SNTO produces designs with sharper boundaries and smaller gray areas. We then solve three-dimensional (3D) problems with up to eight million collocation points on eight GPUs. The training time decreases nearly in proportion to the number of GPUs and the peak GPU memory is reduced by increasing the number of sub-slices.
+  Overall, SNTO offers an effective pathway to large-scale stress-constrained TO on limited computational resources.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Speculative Forking: Turning Idle Wait into Parallel Exploration for Repository Environment Setup — NewsMatome (EN)</title>
+<meta name="description" content="Speculative Forking: Turning Idle Wait into Parallel Exploration for Repository Environment Setup — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/b0786cd5440b.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/b0786cd5440b.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/b0786cd5440b.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/b0786cd5440b.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Speculative Forking: Turning Idle Wait into Parallel Exploration for Repository Environment Setup">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Speculative Forking: Turning Idle Wait into Parallel Exploration for Repository Environment Setup",
+ "inLanguage":"en","datePublished":"2026-10-29T07:00:00+09:00","dateModified":"2026-10-29T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.33129","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/b0786cd5440b.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/b0786cd5440b.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Speculative Forking: Turning Idle Wait into Parallel Exploration for Repository Environment Setup</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/29</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/b0786cd5440b.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.33129" rel="nofollow noopener">https://arxiv.org/abs/2610.33129</a></span></div>
+  <div class="article-body"><p>arXiv:2610.33129v1 Announce Type: cross 
+Abstract: Before developers can use a software project, they must first get it to run. This often requires installing the right language runtime, system packages, build tools, and test commands. Recent LLM-based agents automate environment setup by inspecting a repository, writing setup scripts, running them, and repairing the resulting errors. However, these agents still follow a sequential trial-and-error loop: they try one setup route, wait for slow commands to finish, observe the failure, and only then decide what to try next. Because environment commands often take long to run, this sequential workflow makes setup slow and limits exploration to one route at a time.
+  We present SpecBuild, an LLM-based environment setup system designed to be both faster and more successful through speculative forking. SpecBuild explores candidate setup branches in parallel, returns the first committed environment, and discards the rest. It applies this design at two granularities: strategy-level forking explores alternative setup routes, such as different base images and dependency policies, while command-level forking predicts failures of running commands and prepares repair branches before those failures are observed.
+  We evaluate SpecBuild on Multi-Docker-Eval, covering 334 tasks from 40 repositories and 9 programming languages. Across three backbone models, SpecBuild improves the success rate by 6.4 to 12.0 percentage points over the strongest baseline, while reducing average setup time by 22.4% to 41.6%. These results show that LLM-based environment setup need not trade speed for reliability: parallel speculative exploration can make agents both faster and more successful.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

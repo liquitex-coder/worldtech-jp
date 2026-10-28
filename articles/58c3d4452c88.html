@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Measuring and Exploiting Contextual Bias in LLM-Assisted Security Code Review — NewsMatome</title>
-<meta name="description" content="Measuring and Exploiting Contextual Bias in LLM-Assisted Security Code Review（EN→JA 翻訳・出典付き）">
+<title>When AI Agrees Too Much: Manipulating Automated Code Review via Bias Injection — NewsMatome</title>
+<meta name="description" content="When AI Agrees Too Much: Manipulating Automated Code Review via Bias Injection（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/58c3d4452c88.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/58c3d4452c88.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/58c3d4452c88.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="Measuring and Exploiting Contextual Bias in LLM-Assisted Security Code Review">
-<meta property="og:description" content="Measuring and Exploiting Contextual Bias in LLM-Assisted Security Code Review（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="When AI Agrees Too Much: Manipulating Automated Code Review via Bias Injection">
+<meta property="og:description" content="When AI Agrees Too Much: Manipulating Automated Code Review via Bias Injection（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Measuring and Exploiting Contextual Bias in LLM-Assisted Security Code Review",
- "inLanguage":"ja","datePublished":"2026-09-25T07:00:00+09:00","dateModified":"2026-09-25T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"When AI Agrees Too Much: Manipulating Automated Code Review via Bias Injection",
+ "inLanguage":"ja","datePublished":"2026-10-29T07:00:00+09:00","dateModified":"2026-10-29T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2603.18740","url":"https://liquitex-coder.github.io/worldtech-jp/articles/58c3d4452c88.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">AI</a><span class="sep">›</span><span>Measuring and Exploiting Contextual Bias in LLM-Assisted Security Code Review</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">AI</a><span class="sep">›</span><span>When AI Agrees Too Much: Manipulating Automated Code Review via Bias Injection</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>Measuring and Exploiting Contextual Bias in LLM-Assisted Security Code Review</h1>
+      <h1>When AI Agrees Too Much: Manipulating Automated Code Review via Bias Injection</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/09/25 07:00</span><span>· 更新 2026/09/25</span>
+        <span>公開 2026/10/29 07:00</span><span>· 更新 2026/10/29</span>
       </div>
     </div>
     
@@ -74,18 +74,18 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2603.18740" rel="nofollow noopener">Measuring and Exploiting Contextual Bias in LLM-Assisted Security Code Review</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2603.18740" rel="nofollow noopener">When AI Agrees Too Much: Manipulating Automated Code Review via Bias Injection</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2603.18740v4 Announce Type: replace-cross 
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2603.18740v5 Announce Type: replace-cross 
 Abstract: Automated Code Review (ACR) systems integrating Large Language Models (LLMs) are increasingly adopted in software development workflows, ranging from interactive assistants to autonomous agents in CI/CD pipelines. In this paper, we study how LLM-based vulnerability detection in ACR is affected by the framing effect: the tendency to let the presentation of information override its semantic content in forming judgments. We examine whether adversaries can exploit this through contextual-bias injection (crafting PR metadata to bias ACR security judgments) as a supply-chain attack vector against real-world ACR pipelines. To this end, we first conduct a large-scale exploratory study across 6 LLMs under five framing conditions, establishing the framing effect as a systematic and widespread phenomenon in LLM-based vulnerability detection.
   We then design a realistic and controlled experimental environment, evaluating 33 CVEs across 20 real-world projects and two popular ACR pipelines (Claude Code and CodeRabbit), to assess the susceptibility of real-world ACR pipelines to vulnerability re-introduction attacks. We employ two attack strategies: a template-based attack inspired by prior related work, and a novel LLM-assisted refinement attack. We find that template-based attacks are ineffective and may even backfire, as direct biasing attempts raise suspicions. Our refinement attack, on the other hand, is successful in 32/33 (97%) cases, exploiting a fundamental asymmetry: attackers can iteratively refine attacks against a local clone of the review pipeline, while defenders have only one chance to detect them. Overall, our findings highlight the dangers of over-relying on ACR and stress the importance of human oversight and contributor trust in the development process.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2603.18740v4 Announce Type: replace-cross 
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2603.18740v5 Announce Type: replace-cross 
 Abstract: Automated Code Review (ACR) systems integrating Large Language Models (LLMs) are increasingly adopted in software development workflows, ranging from interactive assistants to autonomous agents in CI/CD pipelines. In this paper, we study how LLM-based vulnerability detection in ACR is affected by the framing effect: the tendency to let the presentation of information override its semantic content in forming judgments. We examine whether adversaries can exploit this through contextual-bias injection (crafting PR metadata to bias ACR security judgments) as a supply-chain attack vector against real-world ACR pipelines. To this end, we first conduct a large-scale exploratory study across 6 LLMs under five framing conditions, establishing the framing effect as a systematic and widespread phenomenon in LLM-based vulnerability detection.
   We then design a realistic and controlled experimental environment, evaluating 33 CVEs across 20 real-world projects and two popular ACR pipelines (Claude Code and CodeRabbit), to assess the susceptibility of real-world ACR pipelines to vulnerability re-introduction attacks. We employ two attack strategies: a template-based attack inspired by prior related work, and a novel LLM-assisted refinement attack. We find that template-based attacks are ineffective and may even backfire, as direct biasing attempts raise suspicions. Our refinement attack, on the other hand, is successful in 32/33 (97%) cases, exploiting a fundamental asymmetry: attackers can iteratively refine attacks against a local clone of the review pipeline, while defenders have only one chance to detect them. Overall, our findings highlight the dangers of over-relying on ACR and stress the importance of human oversight and contributor trust in the development process.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2603.18740v4 Announce Type: replace-cross 
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2603.18740v5 Announce Type: replace-cross 
 Abstract: Automated Code Review (ACR) systems integrating Large Language Models (LLMs) are increasingly adopted in software development workflows, ranging from interactive assistants to autonomous agents in CI/CD pipelines. In this paper, we study how LLM-based vulnerability detection in ACR is affected by the framing effect: the tendency to let the presentation of information override its semantic content in forming judgments. We examine whether adversaries can exploit this through contextual-bias injection (crafting PR metadata to bias ACR security judgments) as a supply-chain attack vector against real-world ACR pipelines. To this end, we first conduct a large-scale exploratory study across 6 LLMs under five framing conditions, establishing the framing effect as a systematic and widespread phenomenon in LLM-based vulnerability detection.
   We then design a realistic and controlled experimental environment, evaluating 33 CVEs across 20 real-world projects and two popular ACR pipelines (Claude Code and CodeRabbit), to assess the susceptibility of real-world ACR pipelines to vulnerability re-introduction attacks. We employ two attack strategies: a template-based attack inspired by prior related work, and a novel LLM-assisted refinement attack. We find that template-based attacks are ineffective and may even backfire, as direct biasing attempts raise suspicions. Our refinement attack, on the other hand, is successful in 32/33 (97%) cases, exploiting a fundamental asymmetry: attackers can iteratively refine attacks against a local clone of the review pipeline, while defenders have only one chance to detect them. Overall, our findings highlight the dangers of over-relying on ACR and stress the importance of human oversight and contributor trust in the development process.</p><a href="https://arxiv.org/abs/2603.18740" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
@@ -94,7 +94,7 @@ Abstract: Automated Code Review (ACR) systems integrating Large Language Models 
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="671531aca991.html"><div class="sim">関連</div><div class="info"><b>Silent Failures in Agent-Tool Interaction: An Audit of ToolUniverse</b><div class="m">AI</div></div></a><a class="r" href="44b4f151ffd3.html"><div class="sim">関連</div><div class="info"><b>Harness as a Language: A Minimalist Agent Framework With Maximal Expressivity</b><div class="m">AI</div></div></a><a class="r" href="b7e0b4ef98a9.html"><div class="sim">関連</div><div class="info"><b>TwinCheck: Evidence-Grounded Negative-Twin Verification for Stateful Tool Agents</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="389ab8c96373.html"><div class="sim">関連</div><div class="info"><b>Counting the Bandages: On measuring the time that AI saves</b><div class="m">AI</div></div></a><a class="r" href="e5ad0fc304d9.html"><div class="sim">関連</div><div class="info"><b>Enhancing Deep Learning Model Performance through Data Generation Strategies: Classification of Olive Tree Diseases</b><div class="m">AI</div></div></a><a class="r" href="5876e7a1f716.html"><div class="sim">関連</div><div class="info"><b>The Trinity:Capability-Driven Recursive Self-Improvement for Multimodal Agents</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

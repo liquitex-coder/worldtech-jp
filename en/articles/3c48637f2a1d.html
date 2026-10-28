@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>UAOR: Uncertainty-aware Observation Reinjection for Vision-Language-Action Models — NewsMatome (EN)</title>
-<meta name="description" content="UAOR: Uncertainty-aware Observation Reinjection for Vision-Language-Action Models — original-language edition. Japanese translation available.">
+<title>AWARE: Action-Entropy-Weighted and Attention-Guided Retrieval of Observation Evidence for Vision-Language-Action Models — NewsMatome (EN)</title>
+<meta name="description" content="AWARE: Action-Entropy-Weighted and Attention-Guided Retrieval of Observation Evidence for Vision-Language-Action Models — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/3c48637f2a1d.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/3c48637f2a1d.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/3c48637f2a1d.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/3c48637f2a1d.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="UAOR: Uncertainty-aware Observation Reinjection for Vision-Language-Action Models">
+<meta property="og:title" content="AWARE: Action-Entropy-Weighted and Attention-Guided Retrieval of Observation Evidence for Vision-Language-Action Models">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"UAOR: Uncertainty-aware Observation Reinjection for Vision-Language-Action Models",
- "inLanguage":"en","datePublished":"2026-06-10T07:00:00+09:00","dateModified":"2026-06-10T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"AWARE: Action-Entropy-Weighted and Attention-Guided Retrieval of Observation Evidence for Vision-Language-Action Models",
+ "inLanguage":"en","datePublished":"2026-10-29T07:00:00+09:00","dateModified":"2026-10-29T07:00:00+09:00",
  "author":{"@type":"Organization","name":"ロボット技術担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2602.18020","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/3c48637f2a1d.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#ef4444"></span>ロボット技術</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>UAOR: Uncertainty-aware Observation Reinjection for Vision-Language-Action Models</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b></span></span><span>2026/06/10</span></div>
+    <h1>AWARE: Action-Entropy-Weighted and Attention-Guided Retrieval of Observation Evidence for Vision-Language-Action Models</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b></span></span><span>2026/10/29</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/3c48637f2a1d.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2602.18020" rel="nofollow noopener">https://arxiv.org/abs/2602.18020</a></span></div>
-  <div class="article-body"><p>arXiv:2602.18020v2 Announce Type: replace-cross 
-Abstract: Vision-Language-Action (VLA) models leverage pretrained Vision-Language Models (VLMs) as backbones to map images and instructions to actions, demonstrating remarkable potential for generalizable robotic manipulation. To enhance performance, existing methods often incorporate extra observation cues (e.g., depth maps, point clouds) or auxiliary modules (e.g., object detectors, encoders) to enable more precise and reliable task execution, yet these typically require costly data collection and additional training. Inspired by the finding that Feed-Forward Network (FFN) in language models can act as &quot;key-value memory&quot;, we propose Uncertainty-aware Observation Reinjection (UAOR), an effective, training-free and plug-and-play module for VLA models. Specifically, when the current language model layer exhibits high uncertainty, measured by Action Entropy, it reinjects key observation information into the next layer&#x27;s Feed-Forward Network (FFN) through attention retrieval. This mechanism directly augments the hidden states with observation evidence at high-uncertainty layers, enabling more accurate and reliable action generation. Comprehensive experiments show that our method consistently improves diverse VLA models across simulation and real-world tasks with minimal overhead. Notably, UAOR eliminates the need for additional observation cues or modules, making it a versatile and practical plug-in for existing VLA pipelines. The project page is at https://uaor.jiabingyang.cn.</p></div>
+  <div class="article-body"><p>arXiv:2602.18020v3 Announce Type: replace-cross 
+Abstract: Vision-Language-Action (VLA) models combine multimodal perception with robotic control, demonstrating remarkable potential for generalizable manipulation. Yet, enhancing their execution typically relies on auxiliary sensory inputs (e.g., depth, 3D point clouds) or costly fine-tuning. Inspired by the insight that Feed-Forward Networks (FFNs) act as key-value memory, we propose Action-Entropy-Weighted and Attention-Guided Retrieval of Observation Evidence (AWARE), an effective, training-free, and plug-and-play module for VLAs. Specifically, AWARE tracks layer-wise uncertainty via an element-wise Action Entropy metric, and retrieves observation evidence into the element&#x27;s FFN through associative memory lookup. Crucially, the retrieved features are weighted by instruction-guided cross-modal attention to isolate task-relevant observation cues, while injection strength is adaptively scaled by the element&#x27;s entropy and relative network depth. This selectively channels observation evidence to high-entropy action dimensions and deep layers where grounding decays, while leaving converged representations intact. Across LIBERO, SIMPLER, CALVIN, and real-world robot manipulation, AWARE consistently improves diverse VLA architectures with minimal computational overhead, achieving the largest gains on long-horizon tasks without architectural changes or additional training. Project page: https://jiabingyang01.github.io/AWARE/.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

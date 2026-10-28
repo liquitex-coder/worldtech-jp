@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Measuring and Reducing WebGPU Dispatch Overhead for LLM Inference — NewsMatome (EN)</title>
-<meta name="description" content="Measuring and Reducing WebGPU Dispatch Overhead for LLM Inference — original-language edition. Japanese translation available.">
+<title>Dispatch Overhead, Not Kernel Quality: The Performance Bottleneck in Single-Stream WebGPU LLM Inference — NewsMatome (EN)</title>
+<meta name="description" content="Dispatch Overhead, Not Kernel Quality: The Performance Bottleneck in Single-Stream WebGPU LLM Inference — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/6d9d7d43c82f.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/6d9d7d43c82f.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/6d9d7d43c82f.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/6d9d7d43c82f.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Measuring and Reducing WebGPU Dispatch Overhead for LLM Inference">
+<meta property="og:title" content="Dispatch Overhead, Not Kernel Quality: The Performance Bottleneck in Single-Stream WebGPU LLM Inference">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Measuring and Reducing WebGPU Dispatch Overhead for LLM Inference",
- "inLanguage":"en","datePublished":"2026-08-13T07:00:00+09:00","dateModified":"2026-08-13T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Dispatch Overhead, Not Kernel Quality: The Performance Bottleneck in Single-Stream WebGPU LLM Inference",
+ "inLanguage":"en","datePublished":"2026-10-29T07:00:00+09:00","dateModified":"2026-10-29T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2608.08730","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/6d9d7d43c82f.html"}
@@ -34,12 +34,14 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Measuring and Reducing WebGPU Dispatch Overhead for LLM Inference</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/13</span></div>
+    <h1>Dispatch Overhead, Not Kernel Quality: The Performance Bottleneck in Single-Stream WebGPU LLM Inference</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/29</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/6d9d7d43c82f.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.08730" rel="nofollow noopener">https://arxiv.org/abs/2608.08730</a></span></div>
-  <div class="article-body"><p>arXiv:2608.08730v2 Announce Type: replace 
-Abstract: Large Language Models are deployed to multiple types of environments, from internet browsers to edge devices, and WebGPU serves as a modern cross-platform standard. The engines for browser-based LLM inference have proliferated, yet the overhead of WebGPU per-operation dispatch remains poorly characterized. In this work, we introduce a sequential-dispatch measurement method and show that naive single-operation measurements overestimate per-dispatch cost by conflating dispatch with synchronization. Using our method, we measure the per-dispatch cost and show that it is independent of data type used. We show that the dispatch overhead, not kernel quality, is the bottleneck at batch size 1, and isolate the dispatch count as the cause. Therefore, we conclude that at batch size 1, the effective approach to LLM inference optimization in WebGPU is reducing dispatch count. Our findings point to dispatch amortization, in the inference engines and in the WebGPU specification, as a path to practical browser-based inference.</p></div>
+  <div class="article-body"><p>arXiv:2608.08730v3 Announce Type: replace 
+Abstract: Large Language Models are increasingly deployed in resource-constrained, single-stream settings, from internet browsers to edge devices, where requests arrive one at a time at batch size 1 rather than in large batches. In this regime, where WebGPU serves as a modern cross-platform standard, per-operation dispatch overhead, rather than kernel compute, can dominate inference cost, yet it remains poorly characterized.
+  In this work, we introduce a sequential-dispatch measurement method and show that naive single-operation measurements overestimate per-dispatch cost by conflating dispatch with synchronization. Using our method, we measure the per-dispatch cost and show that it is independent of data type used. Through a controlled fusion experiment, we show that the dispatch overhead, not kernel quality, is the bottleneck at batch size 1, and isolate the dispatch count as the cause.
+  We conclude that at batch size 1, the effective approach to LLM inference optimization in WebGPU is reducing dispatch count. Our findings point to dispatch amortization, in the inference engines and in the WebGPU specification, as a path to practical browser-based inference.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>
