@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Where the Error Lives: Spectral Representations of Learned Kohn-Sham Hamiltonians — NewsMatome (EN)</title>
+<meta name="description" content="Where the Error Lives: Spectral Representations of Learned Kohn-Sham Hamiltonians — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/cd03a5969665.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/cd03a5969665.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/cd03a5969665.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/cd03a5969665.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Where the Error Lives: Spectral Representations of Learned Kohn-Sham Hamiltonians">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Where the Error Lives: Spectral Representations of Learned Kohn-Sham Hamiltonians",
+ "inLanguage":"en","datePublished":"2026-11-01T07:00:00+09:00","dateModified":"2026-11-01T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.37843","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/cd03a5969665.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/cd03a5969665.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Where the Error Lives: Spectral Representations of Learned Kohn-Sham Hamiltonians</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/11/01</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/cd03a5969665.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.37843" rel="nofollow noopener">https://arxiv.org/abs/2610.37843</a></span></div>
+  <div class="article-body"><p>arXiv:2610.37843v1 Announce Type: cross 
+Abstract: Kohn-Sham density functional theory (DFT) is the standard method for computing the electronic structure of molecules and materials, but its self-consistent-field (SCF) iterations make it expensive for large systems and high-throughput screening. Machine-learned Hamiltonian models offer a shortcut: an equivariant network predicts the Kohn-Sham Hamiltonian matrix in one forward pass, and diagonalizing the prediction yields orbital energies, the HOMO-LUMO gap, molecular orbitals and the electron density. These models are trained to match the reference matrix entry by entry, yet a small entry-wise error does not guarantee accurate eigenvalues or eigenvectors. Two physics-informed alternatives go partway: a recently proposed wavefunction-alignment loss adds a spectral penalty without diagonalizing the prediction, and matching the electron density of the diagonalized prediction supervises it directly. Neither is complete: by representing the prediction error in the eigenbasis of the reference Hamiltonian, we show that each sees only part of the error, and that shifting the predicted orbital energies leaves the electron density exactly unchanged. The same analysis identifies a complete training signal: the cumulative local density of states (cumulative LDOS), the number of electrons at each point in space with energy below a given threshold. The cumulative LDOS is a single physical observable that contains the electron density as a special case, responds to every component of the error, determines the Hamiltonian uniquely, and yields gradients that do not vanish for large orbitalenergy errors. Fine-tuning three Hamiltonian networks on QH9 in this way, which we call FermiScope, reduces the HOMO-LUMO gap error without increasing the element-wise error. The gains carry over to out-of-distribution and molecular-dynamics splits, where the wavefunction-alignment loss helps less.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

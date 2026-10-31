@@ -17,8 +17,8 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"Fine-tuning Multi-modal LLMs with ART: Art-based Reinforcement Training",
- "inLanguage":"en","datePublished":"2026-06-13T07:00:00+09:00","dateModified":"2026-06-13T07:00:00+09:00",
- "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "inLanguage":"en","datePublished":"2026-11-01T07:00:00+09:00","dateModified":"2026-11-01T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.11854","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/b55820e0d6f6.html"}
 </script>
@@ -32,14 +32,14 @@
 </div></header>
 <div class="wrap"><article class="article">
   <div class="article-head">
-    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
     <h1>Fine-tuning Multi-modal LLMs with ART: Art-based Reinforcement Training</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/06/13</span></div>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/11/01</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/b55820e0d6f6.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.11854" rel="nofollow noopener">https://arxiv.org/abs/2606.11854</a></span></div>
-  <div class="article-body"><p>arXiv:2606.11854v1 Announce Type: new 
-Abstract: There are two main Parameter-Efficient Fine-Tuning (PEFT) techniques for Large Language Models (LLMs). While Low-Rank Adaptation (LoRA) introduces additional weights between the LLM layers, Soft Prompting introduces additional fine-tuning-specific raw tokens to an LLM input. However, both require modification to the computational graphs of precompiled, preoptimized LLMs. As a result, neither is fully supported in high-throughput engines like vLLM. We propose fine-tuning with ART (Art-based Reinforcement Training). The method injects information into a frozen Multimodal Large Language Model (MLLM) by optimizing only its raw visual input, thus enabling the soft-token approach on pre-compiled computational graphs. It relies on backpropagation of gradients back into a plain pixel array and thus supports any fine-tuning objective. Moreover, the optimized visual input can be stylized as task-relevant computational artworks. The approach&#x27;s effectiveness is confirmed for different sizes of a popular open Qwen architecture and for several textual benchmarks. Specifically, ART reaches accuracy competitive with LoRA across mathematics and structured-tool-use benchmarks.</p></div>
+  <div class="article-body"><p>arXiv:2606.11854v2 Announce Type: replace-cross 
+Abstract: Adapting Large Language Models (LLMs) to specific tasks usually involves fine-tuning: Low-Rank Adaptation (LoRA) edits the weights, while soft prompting prepends trainable virtual tokens. Both change how an already-optimized model is served, so serving many task-specific adapters at high throughput requires adapter-aware infrastructure. We propose Art-Based Reinforcement Training (ART), which optimizes a single auxiliary input image to specialize a frozen Multimodal Large Language Model (MLLM) for a specific task. At inference time, ART simply includes this image in each standard multimodal prompt, requiring no changes to the serving engine. We compare ART with LoRA and soft prompting across five reasoning benchmarks for four small MLLMs from three architectures. While different methods perform best for different tasks, ART ranks first or second in 10 of 20 benchmark-MLLM pairs, with its best results on the two math word problem benchmarks (GSM8k and SVAMP). It is significantly ahead of the next best adapter in 2 cases, within the noise of the next best adapter in 6, and significantly above the text-only baseline in 18. ART therefore reaches accuracy close to LoRA and soft prompts while serving faster than LoRA. In the vLLM serving stack, ART reduces throughput by 6% to 14% relative to text-only requests, compared to LoRA&#x27;s 13% to 93% slowdown. Beyond efficient serving, ART artifacts are plain images, making them easy to store, distribute, and share. This approach keep task-specific adaptation outside the model weights, so the same frozen model can support different tasks without separate model variants.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

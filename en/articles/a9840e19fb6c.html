@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rethinking Bayesian Optimization for Co-Optimizing LLM Training Configurations — NewsMatome (EN)</title>
+<meta name="description" content="Rethinking Bayesian Optimization for Co-Optimizing LLM Training Configurations — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/a9840e19fb6c.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/a9840e19fb6c.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/a9840e19fb6c.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/a9840e19fb6c.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Rethinking Bayesian Optimization for Co-Optimizing LLM Training Configurations">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Rethinking Bayesian Optimization for Co-Optimizing LLM Training Configurations",
+ "inLanguage":"en","datePublished":"2026-11-01T07:00:00+09:00","dateModified":"2026-11-01T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2602.08351","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/a9840e19fb6c.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/a9840e19fb6c.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Rethinking Bayesian Optimization for Co-Optimizing LLM Training Configurations</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/11/01</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/a9840e19fb6c.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2602.08351" rel="nofollow noopener">https://arxiv.org/abs/2602.08351</a></span></div>
+  <div class="article-body"><p>arXiv:2602.08351v3 Announce Type: replace-cross 
+Abstract: Fine-tuning an LLM to maximize performance on a downstream task requires finding the optimal data and model configuration. This is a black-box optimization problem that Bayesian optimization (BO) addresses by sequentially evaluating training configurations and using observed performance feedback to adaptively guide the search towards better configurations. However, directly applying BO to the joint data-model space suffers from two fundamental challenges: the prohibitive cost of full LLM training at each iteration, and the large number of BO iterations required for effective exploration due to the high problem dimensionality. This paper introduces JoBS, a BO-based approach that co-optimizes data and model configurations without requiring a full training run at every iteration. JoBS allocates an initial portion of the optimization budget to learn a scaling-law-inspired performance predictor that estimates fully trained LLM performance from only a small number of training steps. The remaining budget is then used to run BO with this predictor, eliminating the need for full training runs and enabling JoBS to explore significantly more data and model configurations within the same budget. We analyze JoBS&#x27;s average regret and derive the optimal budget allocation between predictor learning and BO iterations. Empirically, JoBS outperforms independent data and model optimization methods and existing multi-fidelity BO baselines across a diverse set of downstream tasks. Our code is available at https://github.com/chenzhiliang94/BO-for-LLMs.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

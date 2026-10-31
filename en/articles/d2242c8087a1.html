@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Discovering Jailbreaks via Curriculum of Models — NewsMatome (EN)</title>
+<meta name="description" content="Discovering Jailbreaks via Curriculum of Models — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/d2242c8087a1.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/d2242c8087a1.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/d2242c8087a1.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/d2242c8087a1.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Discovering Jailbreaks via Curriculum of Models">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Discovering Jailbreaks via Curriculum of Models",
+ "inLanguage":"en","datePublished":"2026-11-01T07:00:00+09:00","dateModified":"2026-11-01T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.38833","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/d2242c8087a1.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/d2242c8087a1.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Discovering Jailbreaks via Curriculum of Models</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/11/01</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/d2242c8087a1.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.38833" rel="nofollow noopener">https://arxiv.org/abs/2610.38833</a></span></div>
+  <div class="article-body"><p>arXiv:2610.38833v1 Announce Type: cross 
+Abstract: Automated jailbreak discovery aims to find prompts that elicit prohibited behaviors from safety-trained language models, helping developers identify vulnerabilities before deployment. One class of approaches uses reinforcement learning to train an investigator model to generate prompts that elicit a specified behavior from a target model. However, training directly against a safety-trained target is difficult because nearly all prompts are refused, leaving the investigator with a sparse reward signal. Prior work addresses this with the propensity bound (PRBO), a proxy reward estimated by sampling responses from a more compliant target, and then adjusting for how likely those responses would have been under the original target.
+  We introduce Curriculum of Models (CoM), an alternative method that trains the investigator against a sequence of modified versions of the target, progressing gradually from a version that readily exhibits the specified behavior to the original target. For jailbreak discovery, training begins against a target version that rarely refuses harmful requests, and advances to the next, harder version once the investigator reliably elicits the behavior from the current one.
+  We evaluate CoM on elicitation tasks involving CBRN materials, explosives, and illicit drugs, using two open-weight targets, gemma-4-31b-it and gpt-oss-120b. We compare against PRBO and direct training on the original target without a curriculum. When the investigator is trained to elicit a single behavior, CoM finds successful jailbreaks more reliably than either baseline. When trained on multiple behaviors simultaneously, the CoM-trained investigator can elicit held-out behaviors, though PRBO-trained investigators achieve higher success rates. Our results suggest that a simple curriculum over target models offers a promising approach for addressing sparse rewards in rare-behavior elicitation.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

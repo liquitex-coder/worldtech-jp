@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Loop Your Transformer: Loop Scaling, Specialization, and Parallel Inference — NewsMatome (EN)</title>
+<meta name="description" content="How to Loop Your Transformer: Loop Scaling, Specialization, and Parallel Inference — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/279c0fa0c0ae.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/279c0fa0c0ae.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/279c0fa0c0ae.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/279c0fa0c0ae.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Loop Your Transformer: Loop Scaling, Specialization, and Parallel Inference">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"How to Loop Your Transformer: Loop Scaling, Specialization, and Parallel Inference",
+ "inLanguage":"en","datePublished":"2026-11-01T07:00:00+09:00","dateModified":"2026-11-01T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.40325","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/279c0fa0c0ae.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/279c0fa0c0ae.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>How to Loop Your Transformer: Loop Scaling, Specialization, and Parallel Inference</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/11/01</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/279c0fa0c0ae.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.40325" rel="nofollow noopener">https://arxiv.org/abs/2610.40325</a></span></div>
+  <div class="article-body"><p>arXiv:2610.40325v1 Announce Type: cross 
+Abstract: Looping in transformer models reuses weights by repeatedly applying the same transformer, or parts of it, making the model deeper without increasing its parameter count. Whether looping is useful depends on which constraint dominates: model size, training compute, or autoregressive inference efficiency. We study these trade-offs jointly in dense decoder-only transformers trained from scratch, varying which parts of the model are looped, how many loops are applied, and how information is passed between loops. Our experiments span models with up to 1B parameters, trained on up to 155B tokens with up to $1.07\times10^{21}$ FLOPs and 32 loops. We find that looping the full transformer generally gives the strongest quality at a fixed parameter budget, whereas looping a middle block of layers gives a better return when training FLOPs are constrained. Adding loops is not uniformly beneficial: gains eventually saturate, reverse, or become unstable. This motivates asking whether forcing every loop to use the same weights limits the benefit of deeper looping. We address this by adding small loop-specific low-rank adapters that improve quality, with larger gains as more loops are added. Looped transformers also suffer a decoding slowdown proportional to the number of loops. Parallel Loop Transformers address this by passing hidden states between loops across adjacent token positions, allowing loop stages to run concurrently. However, in our experiments the original formulation does not consistently retain the quality gains of ordinary looping. We find that preserving the current-token embedding and separately normalizing it and the previous-token hidden state before combining them recovers strong performance across model scales and training budgets. Together, these results show that effective looping requires matching the design to the resource constraint and inference setting.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

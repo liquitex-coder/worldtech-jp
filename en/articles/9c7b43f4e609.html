@@ -17,8 +17,8 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"A Sign Law for Entropy Drift under Sampler Mismatch in RLVR",
- "inLanguage":"en","datePublished":"2026-10-29T07:00:00+09:00","dateModified":"2026-10-29T07:00:00+09:00",
- "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "inLanguage":"en","datePublished":"2026-11-01T07:00:00+09:00","dateModified":"2026-11-01T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2610.34044","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/9c7b43f4e609.html"}
 </script>
@@ -32,14 +32,14 @@
 </div></header>
 <div class="wrap"><article class="article">
   <div class="article-head">
-    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
     <h1>A Sign Law for Entropy Drift under Sampler Mismatch in RLVR</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/29</span></div>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/11/01</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/9c7b43f4e609.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.34044" rel="nofollow noopener">https://arxiv.org/abs/2610.34044</a></span></div>
-  <div class="article-body"><p>arXiv:2610.34044v1 Announce Type: new 
-Abstract: Entropy in reinforcement learning with verifiable rewards (RLVR) moves up or down depending on choices that should be neutral, such as whether over-length responses are masked or counted as failures. We trace this to sampler mismatch, where rollouts are drawn with top-k/top-p truncation or at a temperature the learner does not apply, and prove that a constant advantage shift then changes the entropy of a softmax policy, at first order and in expectation, with a sign fixed by the sampler: positive shifts sharpen the policy under any sampler whose likelihood ratio to the policy increases with token probability, including top-k, top-p, min-p, and temperatures below one, and flatten it under flatter samplers. In group-based RLVR with token-level losses, the baseline-controlled part of this drift is set by the token-weighted net advantage, which masking and failing over-length responses can push to opposite signs; the remainder, a covariance between advantages and the sampler&#x27;s sharpness gap, can feed back over long horizons. On a 2B model, the entropy slope is linear in shifts of the net advantage under truncated sampling and indistinguishable from flat under exact sampling, and token-level importance ratios leave 98% of the drift. In 100-step runs, a net-zero baseline only delays an entropy explosion that exact sampling does not show, a fixed positive shift delays it further, and a baseline weighted by the sharpness gap keeps entropy stable without changing the learner. On a 9B reasoning model over ten steps, the uncorrected rule loses held-out accuracy, whereas zeroing the net advantage or renormalizing the learner gains 8.2 and 8.8 points over it, with no held-out effect under exact sampling.</p></div>
+  <div class="article-body"><p>arXiv:2610.34044v2 Announce Type: replace-cross 
+Abstract: In reinforcement learning with verifiable rewards (RLVR), whether entropy rises or falls can depend on choices that matter little under exact sampling, such as whether over-length responses are masked or counted as failures. We trace this to sampler mismatch: rollouts are drawn with top-k/top-p truncation or at a temperature the learner does not apply. We prove that a constant advantage shift then changes the entropy of a softmax policy, at first order and in expectation, with a sign fixed by the sampler. Positive shifts sharpen the policy under any sampler whose likelihood ratio to the policy increases with token probability, including top-k, top-p, min-p, and temperatures below one, and flatten it under flatter samplers. In group-based RLVR with token-level losses, the baseline-dependent part of this drift is set by the token-weighted net advantage, which masking and failing can push to opposite signs. The rest comes from a covariance between advantages and the sampler&#x27;s sharpness gap and feeds back on itself: in a two-level model, a push away from a sharper sampler takes off in finite time, while a pull toward it saturates. On a 2B model, the entropy slope is linear in shifts of the net advantage under truncated sampling and indistinguishable from flat under exact sampling. Token-level importance ratios leave 98% of the drift, and four clipped minibatch updates per batch amplify it sevenfold. In 100-step runs, a net-zero baseline only delays an entropy explosion, and entropy raised at the start keeps rising only under truncation; cancelling the first-order drift at every step keeps entropy bounded without changing the learner. On a 9B reasoning model forked from an uncorrected run, zeroing the net advantage or renormalizing the learner raises held-out accuracy after ten steps by 8.2 and 8.8 points over the uncorrected rule, with no difference under exact sampling.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

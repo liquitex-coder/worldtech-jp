@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Geometry Matters in Packed 3D Attention — NewsMatome (EN)</title>
+<meta name="description" content="Geometry Matters in Packed 3D Attention — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/e428b00901d0.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/e428b00901d0.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/e428b00901d0.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/e428b00901d0.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Geometry Matters in Packed 3D Attention">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Geometry Matters in Packed 3D Attention",
+ "inLanguage":"en","datePublished":"2026-11-01T07:00:00+09:00","dateModified":"2026-11-01T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.38694","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/e428b00901d0.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/e428b00901d0.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Geometry Matters in Packed 3D Attention</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/11/01</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/e428b00901d0.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.38694" rel="nofollow noopener">https://arxiv.org/abs/2610.38694</a></span></div>
+  <div class="article-body"><p>arXiv:2610.38694v1 Announce Type: cross 
+Abstract: Packing a 3D volume into a token sequence is not merely long-sequence modeling. Once the volume is packed, sequence order no longer encodes the geometry of the sample---so a positional mechanism indexed by sequence position can learn the memory layout rather than the object. This is a general failure mode for attention over packed geometric data. We introduce PACK3D, a local-global attention operator that separates memory layout from attention geometry. PACK3D keeps local neighborhood attention exact, compresses only distant context into contiguous 3D block summaries, and indexes every query-key interaction with axial RoPE on true token-grid coordinates rather than packed positions. Because the rotation is applied before a block is summarized, the query-to-summary logit remains a weighted sum of query-relative 3D displacements; compressed global context therefore stays spatially interpretable after packing, instead of collapsing to anonymous pooled content. We measure the failure mode directly. On a controlled synthetic task---train on one packing, change only the memory order of the tokens, hold the physical labeling rule fixed---learned positional embeddings and packed-sequence RoPE solve the training layout perfectly yet collapse under Morton, block-contiguous, and random repacking, while axial grid-coordinate RoPE stays exact throughout. The same coordinate system carries to real data: on Allen WTC-11 hiPSC microscopy, PACK3D improves over a parameter-matched 3D U-Net on the 15-structure joint task and over a matched learned-position local-global baseline, with controls isolating the coordinate system, not encoder capacity, as the source of the gain. A fused Triton implementation matches windowed-attention latency at 65k tokens while supplying the long-range context windowing cannot---so the operator is not only correct but trainable at scale.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GAAC: Lossless KV Compression for Bandwidth-Efficient LLM Inference on Personal Devices — NewsMatome (EN)</title>
+<meta name="description" content="GAAC: Lossless KV Compression for Bandwidth-Efficient LLM Inference on Personal Devices — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/9c3750ea1dc3.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/9c3750ea1dc3.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/9c3750ea1dc3.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/9c3750ea1dc3.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GAAC: Lossless KV Compression for Bandwidth-Efficient LLM Inference on Personal Devices">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"GAAC: Lossless KV Compression for Bandwidth-Efficient LLM Inference on Personal Devices",
+ "inLanguage":"en","datePublished":"2026-11-01T07:00:00+09:00","dateModified":"2026-11-01T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2610.38210","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/9c3750ea1dc3.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/9c3750ea1dc3.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>GAAC: Lossless KV Compression for Bandwidth-Efficient LLM Inference on Personal Devices</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/11/01</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/9c3750ea1dc3.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.38210" rel="nofollow noopener">https://arxiv.org/abs/2610.38210</a></span></div>
+  <div class="article-body"><p>arXiv:2610.38210v1 Announce Type: new 
+Abstract: Weight-only, lossy quantization substantially reduces the storage and memory requirements for serving large language models (LLMs), but the growing key-value (KV) cache remains a bottleneck for long-context inference on personal devices. We present Group-Adaptive Additive Codec (GAAC), a lossless KV compression and serving system that exploits exponent redundancy to reduce storage and accelerate attention without introducing KV approximation. GAAC encodes BF16 exponents using calibrated per-channel base-plus-offset codes over contiguous ranges. GAAC adapts code widths across small groups while preserving KV values bit-for-bit. A fused attention kernel reconstructs KV tiles on the fly, avoiding full-cache decompression. Block-wise compression and fixed-capacity slots support incremental cache updates and paged serving. Across five tested models, GAAC achieves 1.405-1.407$\times$ lossless BF16 KV compression. We also study compression performance on low-precision tensors FP8 E4M3 caches ( 1.09-1.14$\times$) and E5M2 caches (1.25-1.30$\times$). On NVIDIA DGX Spark, GAAC accelerates decode attention at a 64K-token context by 1.19-1.27$\times$ and end-to-end W4A16 decode steps by 1.04-1.15$\times$. In serving, it reduces resident KV memory by approximately 26% and increases aggregate throughput by 13-29% under comparable KV-memory budgets. On Apple M4, GAAC achieves 1.02-1.25$\times$ attention speedups, demonstrating portability beyond NVIDIA GPUs.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
