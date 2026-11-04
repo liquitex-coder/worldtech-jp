@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>$M^3$: A Multi-LLM System for Multi-Turn Jailbreaking as a Markov Decision Process — NewsMatome</title>
-<meta name="description" content="$M^3$: A Multi-LLM System for Multi-Turn Jailbreaking as a Markov Decision Process（EN→JA 翻訳・出典付き）">
+<title>Reject, Remember, Retry: Why Multi-Turn Attackers Should Remember Their Mistakes — NewsMatome</title>
+<meta name="description" content="Reject, Remember, Retry: Why Multi-Turn Attackers Should Remember Their Mistakes（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/29036885ebab.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/29036885ebab.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/29036885ebab.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="$M^3$: A Multi-LLM System for Multi-Turn Jailbreaking as a Markov Decision Process">
-<meta property="og:description" content="$M^3$: A Multi-LLM System for Multi-Turn Jailbreaking as a Markov Decision Process（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="Reject, Remember, Retry: Why Multi-Turn Attackers Should Remember Their Mistakes">
+<meta property="og:description" content="Reject, Remember, Retry: Why Multi-Turn Attackers Should Remember Their Mistakes（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"$M^3$: A Multi-LLM System for Multi-Turn Jailbreaking as a Markov Decision Process",
- "inLanguage":"ja","datePublished":"2026-10-27T07:00:00+09:00","dateModified":"2026-10-27T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Reject, Remember, Retry: Why Multi-Turn Attackers Should Remember Their Mistakes",
+ "inLanguage":"ja","datePublished":"2026-11-04T07:00:00+09:00","dateModified":"2026-11-04T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2610.31937","url":"https://liquitex-coder.github.io/worldtech-jp/articles/29036885ebab.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">AI</a><span class="sep">›</span><span>$M^3$: A Multi-LLM System for Multi-Turn Jailbreaking as a Markov Decision Process</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">AI</a><span class="sep">›</span><span>Reject, Remember, Retry: Why Multi-Turn Attackers Should Remember Their Mistakes</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>$M^3$: A Multi-LLM System for Multi-Turn Jailbreaking as a Markov Decision Process</h1>
+      <h1>Reject, Remember, Retry: Why Multi-Turn Attackers Should Remember Their Mistakes</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/10/27 07:00</span><span>· 更新 2026/10/27</span>
+        <span>公開 2026/11/04 07:00</span><span>· 更新 2026/11/04</span>
       </div>
     </div>
     
@@ -74,24 +74,24 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2610.31937" rel="nofollow noopener">$M^3$: A Multi-LLM System for Multi-Turn Jailbreaking as a Markov Decision Process</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2610.31937" rel="nofollow noopener">Reject, Remember, Retry: Why Multi-Turn Attackers Should Remember Their Mistakes</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2610.31937v1 Announce Type: new 
-Abstract: Modern Large Language Models (LLMs) remain vulnerable to carefully orchestrated multi-turn interactions that progressively bypass safety mechanisms. However, many existing red-teaming approaches rely on heuristics or impose strong assumptions that limit their applicability in fully black box settings. We address this gap by introducing $M^3$, an automated red-teaming framework that formalizes multi-turn jailbreaking as a finite-horizon Markov Decision Process (MDP). In $M^3$, an attacker LLM interacts with a target LLM while operating over a compact internal state produced by a state LLM. Across two benchmarks and six target models, $M^3$ consistently outperforms state-of-the-art multi-turn red-teaming methods in Attack Success Rates (ASR), achieving improvements of up to 53% in ASR@5. Even with lightweight attacker, $M^3$ attains gains up to 26% in ASR@1 and 34% in ASR@5, compared to baselines that use higher capacity attackers. Beyond improved effectiveness, $M^3$ exhibits steeper risk escalation over conversational turns and achieves more consistent performance across risk categories (up to 4.82 improvement in Gini index) without relying on predefined risk taxonomy, providing a scalable and principled framework for multi-turn red-teaming and safety evaluation.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2610.31937v1 Announce Type: new 
-Abstract: Modern Large Language Models (LLMs) remain vulnerable to carefully orchestrated multi-turn interactions that progressively bypass safety mechanisms. However, many existing red-teaming approaches rely on heuristics or impose strong assumptions that limit their applicability in fully black box settings. We address this gap by introducing $M^3$, an automated red-teaming framework that formalizes multi-turn jailbreaking as a finite-horizon Markov Decision Process (MDP). In $M^3$, an attacker LLM interacts with a target LLM while operating over a compact internal state produced by a state LLM. Across two benchmarks and six target models, $M^3$ consistently outperforms state-of-the-art multi-turn red-teaming methods in Attack Success Rates (ASR), achieving improvements of up to 53% in ASR@5. Even with lightweight attacker, $M^3$ attains gains up to 26% in ASR@1 and 34% in ASR@5, compared to baselines that use higher capacity attackers. Beyond improved effectiveness, $M^3$ exhibits steeper risk escalation over conversational turns and achieves more consistent performance across risk categories (up to 4.82 improvement in Gini index) without relying on predefined risk taxonomy, providing a scalable and principled framework for multi-turn red-teaming and safety evaluation.</div>
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2610.31937v2 Announce Type: replace 
+Abstract: Existing multi-turn jailbreak attackers condition on the same conversation history as the target. We introduce $R^3$ (Reject, Remember, Retry), a black-box multi-LLM framework in which the attacker conditions on a compact state rather than the raw transcript. Turns that fail to raise the attack risk score are removed from the target&#x27;s context but remembered by the attacker, together with the reason for failure. We call this asymmetric memory. Across two benchmarks and six target LLMs, $R^3$ outperforms state-of-the-art baselines by up to 53% in ASR@5 under matched query budgets, and a low-capacity attacker with $R^3$&#x27;s state is able to outperform high-capacity attackers without it by up to 34% in ASR@5. Ablations attribute most gains to remembering rejected turns, and the risk score acts as a coarse threshold rather than a progress measure.</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2610.31937v2 Announce Type: replace 
+Abstract: Existing multi-turn jailbreak attackers condition on the same conversation history as the target. We introduce $R^3$ (Reject, Remember, Retry), a black-box multi-LLM framework in which the attacker conditions on a compact state rather than the raw transcript. Turns that fail to raise the attack risk score are removed from the target&#x27;s context but remembered by the attacker, together with the reason for failure. We call this asymmetric memory. Across two benchmarks and six target LLMs, $R^3$ outperforms state-of-the-art baselines by up to 53% in ASR@5 under matched query budgets, and a low-capacity attacker with $R^3$&#x27;s state is able to outperform high-capacity attackers without it by up to 34% in ASR@5. Ablations attribute most gains to remembering rejected turns, and the risk score acts as a coarse threshold rather than a progress measure.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2610.31937v1 Announce Type: new 
-Abstract: Modern Large Language Models (LLMs) remain vulnerable to carefully orchestrated multi-turn interactions that progressively bypass safety mechanisms. However, many existing red-teaming approaches rely on heuristics or impose strong assumptions that limit their applicability in fully black box settings. We address this gap by introducing $M^3$, an automated red-teaming framework that formalizes multi-turn jailbreaking as a finite-horizon Markov Decision Process (MDP). In $M^3$, an attacker LLM interacts with a target LLM while operating over a compact internal state produced by a state LLM. Across two benchmarks and six target models, $M^3$ consistently outperforms state-of-the-art multi-turn red-teaming methods in Attack Success Rates (ASR), achieving improvements of up to 53% in ASR@5. Even with lightweight attacker, $M^3$ attains gains up to 26% in ASR@1 and 34% in ASR@5, compared to baselines that use higher capacity attackers. Beyond improved effectiveness, $M^3$ exhibits steeper risk escalation over conversational turns and achieves more consistent performance across risk categories (up to 4.82 improvement in Gini index) without relying on predefined risk taxonomy, providing a scalable and principled framework for multi-turn red-teaming and safety evaluation.</p><a href="https://arxiv.org/abs/2610.31937" rel="nofollow noopener">原論文を読む →</a></div>
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2610.31937v2 Announce Type: replace 
+Abstract: Existing multi-turn jailbreak attackers condition on the same conversation history as the target. We introduce $R^3$ (Reject, Remember, Retry), a black-box multi-LLM framework in which the attacker conditions on a compact state rather than the raw transcript. Turns that fail to raise the attack risk score are removed from the target&#x27;s context but remembered by the attacker, together with the reason for failure. We call this asymmetric memory. Across two benchmarks and six target LLMs, $R^3$ outperforms state-of-the-art baselines by up to 53% in ASR@5 under matched query budgets, and a low-capacity attacker with $R^3$&#x27;s state is able to outperform high-capacity attackers without it by up to 34% in ASR@5. Ablations attribute most gains to remembering rejected turns, and the risk score acts as a coarse threshold rather than a progress measure.</p><a href="https://arxiv.org/abs/2610.31937" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2610.31937" rel="nofollow noopener">https://arxiv.org/abs/2610.31937</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
     <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="93de3524eec5.html"><div class="sim">関連</div><div class="info"><b>Tradeoff-Aware Territory Design: A Multi-Objective Decision System for Enterprise Customer-to-Seller Allocation</b><div class="m">AI</div></div></a><a class="r" href="99f3871737e9.html"><div class="sim">関連</div><div class="info"><b>Phronix: The Capability-Centric Learning Paradigm for Agents</b><div class="m">AI</div></div></a><a class="r" href="fdabadb313a8.html"><div class="sim">関連</div><div class="info"><b>Patronizing and Condescending Language Detection in English and Mandarin</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="5edce6250153.html"><div class="sim">関連</div><div class="info"><b>More Rules, Longer Lists? Benchmarking Self-Evolving Agents on a Hidden-Rule Curriculum</b><div class="m">AI</div></div></a><a class="r" href="f3d86479cf13.html"><div class="sim">関連</div><div class="info"><b>Beyond Plausible Prediction: Safety Sufficiency in Web World Models</b><div class="m">AI</div></div></a><a class="r" href="3996af2289fc.html"><div class="sim">関連</div><div class="info"><b>Circumventing the Computational Hardness of Computational Arbitrage</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>
