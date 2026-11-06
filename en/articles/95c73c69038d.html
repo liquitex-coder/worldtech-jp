@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EchoKV: Self-Corrective KV Cache Eviction via Iterative Query Feedback — NewsMatome (EN)</title>
+<meta name="description" content="EchoKV: Self-Corrective KV Cache Eviction via Iterative Query Feedback — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/95c73c69038d.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/95c73c69038d.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/95c73c69038d.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/95c73c69038d.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EchoKV: Self-Corrective KV Cache Eviction via Iterative Query Feedback">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"EchoKV: Self-Corrective KV Cache Eviction via Iterative Query Feedback",
+ "inLanguage":"en","datePublished":"2026-11-06T07:00:00+09:00","dateModified":"2026-11-06T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2611.05903","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/95c73c69038d.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/95c73c69038d.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>EchoKV: Self-Corrective KV Cache Eviction via Iterative Query Feedback</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/11/06</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/95c73c69038d.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2611.05903" rel="nofollow noopener">https://arxiv.org/abs/2611.05903</a></span></div>
+  <div class="article-body"><p>arXiv:2611.05903v1 Announce Type: new 
+Abstract: KV cache eviction is not merely a token-ranking problem: the workspace retained for generating eviction queries also determines the quality of those queries. Consequently, an early workspace error can distort later query observations and reinforce an incorrect final eviction decision, particularly when evidence is dispersed across a long context. We present EchoKV, which discovers and addresses this failure mode with iterative correction. It initializes a feedback-compatible bootstrap workspace using proposals at future decode positions, then uses early decode-generated queries to recover the workspace before the remaining lookahead steps. It uses the same number of workspace forward passes as LAQ while adding a tensor re-scoring operation for workspace repair. On LongBench (16 tasks, Mistral-7B-Instruct-v0.2 and Qwen2.5-7B-Instruct), EchoKV shows notable improvements over LAQ on several tasks requiring dispersed evidence, including multi-hop cross-document QA and long single-document comprehension. Across budgets and backbones, EchoKV selectively improves evidence-intensive tasks while maintaining comparable performance on the remaining LongBench subsets. These results identify query--workspace coupling as a practical failure mode of query-driven KV eviction.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

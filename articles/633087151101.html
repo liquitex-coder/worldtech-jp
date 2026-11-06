@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Self-Improving VLA Policies: Selected Diffusion Noise for Spurious-Robust Action Smoothing — NewsMatome</title>
-<meta name="description" content="Self-Improving VLA Policies: Selected Diffusion Noise for Spurious-Robust Action Smoothing（EN→JA 翻訳・出典付き）">
+<title>Test-Time Improvement of VLA Policies via Selected Diffusion Noise for Spurious-Robust Action Smoothing — NewsMatome</title>
+<meta name="description" content="Test-Time Improvement of VLA Policies via Selected Diffusion Noise for Spurious-Robust Action Smoothing（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/633087151101.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/633087151101.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/633087151101.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="Self-Improving VLA Policies: Selected Diffusion Noise for Spurious-Robust Action Smoothing">
-<meta property="og:description" content="Self-Improving VLA Policies: Selected Diffusion Noise for Spurious-Robust Action Smoothing（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="Test-Time Improvement of VLA Policies via Selected Diffusion Noise for Spurious-Robust Action Smoothing">
+<meta property="og:description" content="Test-Time Improvement of VLA Policies via Selected Diffusion Noise for Spurious-Robust Action Smoothing（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Self-Improving VLA Policies: Selected Diffusion Noise for Spurious-Robust Action Smoothing",
- "inLanguage":"ja","datePublished":"2026-06-16T07:00:00+09:00","dateModified":"2026-06-16T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Test-Time Improvement of VLA Policies via Selected Diffusion Noise for Spurious-Robust Action Smoothing",
+ "inLanguage":"ja","datePublished":"2026-11-06T07:00:00+09:00","dateModified":"2026-11-06T07:00:00+09:00",
  "author":{"@type":"Organization","name":"ロボット技術担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.14084","url":"https://liquitex-coder.github.io/worldtech-jp/articles/633087151101.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">ロボット技術</a><span class="sep">›</span><span>Self-Improving VLA Policies: Selected Diffusion Noise for Spurious-Robust Action Smoothing</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">ロボット技術</a><span class="sep">›</span><span>Test-Time Improvement of VLA Policies via Selected Diffusion Noise for Spurious-Robust Action Smoothing</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>Self-Improving VLA Policies: Selected Diffusion Noise for Spurious-Robust Action Smoothing</h1>
+      <h1>Test-Time Improvement of VLA Policies via Selected Diffusion Noise for Spurious-Robust Action Smoothing</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/06/16 07:00</span><span>· 更新 2026/06/16</span>
+        <span>公開 2026/11/06 07:00</span><span>· 更新 2026/11/06</span>
       </div>
     </div>
     
@@ -74,24 +74,24 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2606.14084" rel="nofollow noopener">Self-Improving VLA Policies: Selected Diffusion Noise for Spurious-Robust Action Smoothing</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2606.14084" rel="nofollow noopener">Test-Time Improvement of VLA Policies via Selected Diffusion Noise for Spurious-Robust Action Smoothing</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2606.14084v1 Announce Type: new 
-Abstract: Diffusion-based Vision-Language-Action (VLA) policies enable strong generalization in robotic manipulation, but remain sensitive to spurious visual correlations and noisy action generation, leading to brittle behavior under perturbations. We introduce Selected Diffusion Noise (SDN), a simple, training-free test-time method that improves both robustness and success rate by leveraging the diffusion noise space as a controllable degree of freedom. SDN dynamically samples noise vectors that are maximally separated from a reference set to mitigate reliance on spurious cues, while selecting candidates that yield more coherent action trajectories. This dual objective encourages stable behavior even under object-masked observations and reduces action jitter without modifying model parameters. We evaluate SDN on two simulation benchmarks (Google Robot, Widow-X) and two real-world robotic datasets across multiple VLA policies, including pi_0, Groot-N1.5, and Groot-N1.6. SDN consistently improves success rates by +8% in simulation and +10% in real-world settings, while producing smoother and more stable actions. Our results highlight that diffusion noise selection can serve as an effective and general mechanism for enhancing VLA policies at test time.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2606.14084v1 Announce Type: new 
-Abstract: Diffusion-based Vision-Language-Action (VLA) policies enable strong generalization in robotic manipulation, but remain sensitive to spurious visual correlations and noisy action generation, leading to brittle behavior under perturbations. We introduce Selected Diffusion Noise (SDN), a simple, training-free test-time method that improves both robustness and success rate by leveraging the diffusion noise space as a controllable degree of freedom. SDN dynamically samples noise vectors that are maximally separated from a reference set to mitigate reliance on spurious cues, while selecting candidates that yield more coherent action trajectories. This dual objective encourages stable behavior even under object-masked observations and reduces action jitter without modifying model parameters. We evaluate SDN on two simulation benchmarks (Google Robot, Widow-X) and two real-world robotic datasets across multiple VLA policies, including pi_0, Groot-N1.5, and Groot-N1.6. SDN consistently improves success rates by +8% in simulation and +10% in real-world settings, while producing smoother and more stable actions. Our results highlight that diffusion noise selection can serve as an effective and general mechanism for enhancing VLA policies at test time.</div>
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2606.14084v2 Announce Type: replace 
+Abstract: Diffusion-based Vision-Language-Action (VLA) policies have demonstrated strong generalization in robot manipulation, but their deployment can remain unreliable due to spurious visual reliance and stochastic action generation, leading to grounding failures and kinematically unstable behaviors. We introduce Selected Diffusion Noise (SDN), a training-free method that treats diffusion noise as a controllable degree of freedom for improving test-time reliability. SDN samples multiple candidate action chunks and applies two-stage selection: it first filters candidates based on task-relevant visual grounding using a counterfactual negative set, then selects the kinematically most stable chunk based on JerkRMS. Experiments on three VLA policies across both simulation and real-world environments show improvements of 8-10% and 18.33%, respectively, demonstrating SDN&#x27;s effectiveness for test-time improvement.</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2606.14084v2 Announce Type: replace 
+Abstract: Diffusion-based Vision-Language-Action (VLA) policies have demonstrated strong generalization in robot manipulation, but their deployment can remain unreliable due to spurious visual reliance and stochastic action generation, leading to grounding failures and kinematically unstable behaviors. We introduce Selected Diffusion Noise (SDN), a training-free method that treats diffusion noise as a controllable degree of freedom for improving test-time reliability. SDN samples multiple candidate action chunks and applies two-stage selection: it first filters candidates based on task-relevant visual grounding using a counterfactual negative set, then selects the kinematically most stable chunk based on JerkRMS. Experiments on three VLA policies across both simulation and real-world environments show improvements of 8-10% and 18.33%, respectively, demonstrating SDN&#x27;s effectiveness for test-time improvement.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2606.14084v1 Announce Type: new 
-Abstract: Diffusion-based Vision-Language-Action (VLA) policies enable strong generalization in robotic manipulation, but remain sensitive to spurious visual correlations and noisy action generation, leading to brittle behavior under perturbations. We introduce Selected Diffusion Noise (SDN), a simple, training-free test-time method that improves both robustness and success rate by leveraging the diffusion noise space as a controllable degree of freedom. SDN dynamically samples noise vectors that are maximally separated from a reference set to mitigate reliance on spurious cues, while selecting candidates that yield more coherent action trajectories. This dual objective encourages stable behavior even under object-masked observations and reduces action jitter without modifying model parameters. We evaluate SDN on two simulation benchmarks (Google Robot, Widow-X) and two real-world robotic datasets across multiple VLA policies, including pi_0, Groot-N1.5, and Groot-N1.6. SDN consistently improves success rates by +8% in simulation and +10% in real-world settings, while producing smoother and more stable actions. Our results highlight that diffusion noise selection can serve as an effective and general mechanism for enhancing VLA policies at test time.</p><a href="https://arxiv.org/abs/2606.14084" rel="nofollow noopener">原論文を読む →</a></div>
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2606.14084v2 Announce Type: replace 
+Abstract: Diffusion-based Vision-Language-Action (VLA) policies have demonstrated strong generalization in robot manipulation, but their deployment can remain unreliable due to spurious visual reliance and stochastic action generation, leading to grounding failures and kinematically unstable behaviors. We introduce Selected Diffusion Noise (SDN), a training-free method that treats diffusion noise as a controllable degree of freedom for improving test-time reliability. SDN samples multiple candidate action chunks and applies two-stage selection: it first filters candidates based on task-relevant visual grounding using a counterfactual negative set, then selects the kinematically most stable chunk based on JerkRMS. Experiments on three VLA policies across both simulation and real-world environments show improvements of 8-10% and 18.33%, respectively, demonstrating SDN&#x27;s effectiveness for test-time improvement.</p><a href="https://arxiv.org/abs/2606.14084" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2606.14084" rel="nofollow noopener">https://arxiv.org/abs/2606.14084</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
     <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="bd2a0d81f688.html"><div class="sim">関連</div><div class="info"><b>A Deep Reinforcement Learning (DRL)-Based Transformer Method for Solving the Open Shop Scheduling Problem</b><div class="m">AI</div></div></a><a class="r" href="fd5243405502.html"><div class="sim">関連</div><div class="info"><b>UP-NRPA: User Portrait based Nested Rollout Policy Adaptation for Planning with Large Language Models in Goal-oriented Dialogue Systems</b><div class="m">AI</div></div></a><a class="r" href="88cb2a282004.html"><div class="sim">関連</div><div class="info"><b>History of the Muddy Children Puzzle</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="f07a268d849a.html"><div class="sim">関連</div><div class="info"><b>Who May Overrule the Agent? Evidence-Gated Authority in LLM Review Institutions</b><div class="m">AI</div></div></a><a class="r" href="4aed649a245d.html"><div class="sim">関連</div><div class="info"><b>Agent Harness Awareness: Turning Verified Telemetry into Operational Control for Tool-Using Agents</b><div class="m">AI</div></div></a><a class="r" href="473a023bdb2d.html"><div class="sim">関連</div><div class="info"><b>Uncertainty-Aware Resource Orchestration for Agentic AI Systems</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

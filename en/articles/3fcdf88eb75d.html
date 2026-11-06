@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diversity-Aware Experience Replay via Statistical Leverage Scores — NewsMatome (EN)</title>
+<meta name="description" content="Diversity-Aware Experience Replay via Statistical Leverage Scores — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/3fcdf88eb75d.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/3fcdf88eb75d.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/3fcdf88eb75d.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/3fcdf88eb75d.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Diversity-Aware Experience Replay via Statistical Leverage Scores">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Diversity-Aware Experience Replay via Statistical Leverage Scores",
+ "inLanguage":"en","datePublished":"2026-11-06T07:00:00+09:00","dateModified":"2026-11-06T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2611.05929","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/3fcdf88eb75d.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/3fcdf88eb75d.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Diversity-Aware Experience Replay via Statistical Leverage Scores</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/11/06</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/3fcdf88eb75d.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2611.05929" rel="nofollow noopener">https://arxiv.org/abs/2611.05929</a></span></div>
+  <div class="article-body"><p>arXiv:2611.05929v1 Announce Type: cross 
+Abstract: Off-policy deep reinforcement learning trains on random samples from a replay buffer of past experience. In physical robot settings, that buffer is dominated by routine: thousands of near-identical transitions from normal operation, while the rare events that define the edges of the task are rarely sampled. We propose scoring every stored transition by its statistical leverage, which measures how unusual it is relative to the buffer&#x27;s own data, computed from the stored numbers alone, with no labels, rewards, or value network. We draw each mini-batch from a mixture of this score and uniform sampling. First, the natural way to build the score along the directions where the data varies most turns out to be blind when actions are stored as one-hot indicators, because indicator columns always win the variance ranking; we instead select the feature columns with the heaviest tails (largest kurtosis) where small far-away populations are revealed. Second, the importance weights that prioritized replay uses to keep gradients unbiased cancel the method exactly: with full correction, training matches uniform sampling, so we drop the correction and deliberately optimize the rebalanced objective. Third, when the rare situations of a log are relational, visible only in how a stretch of behavior relates to its goal, not in any single stored coordinate-per-transition scores are blind; applying the same tail rule to short trajectory windows described relative to their goal restores the signal, and on a three-joint arm that must push an object around an obstacle it raises the rare-task success from 0.49 to 0.69 against a labeled-oracle ceiling of 0.74.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

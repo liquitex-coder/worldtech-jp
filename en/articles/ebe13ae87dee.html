@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Does RRT* Work on Uneven Terrain Meshes? — NewsMatome (EN)</title>
+<meta name="description" content="Does RRT* Work on Uneven Terrain Meshes? — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/ebe13ae87dee.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/ebe13ae87dee.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/ebe13ae87dee.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/ebe13ae87dee.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Does RRT* Work on Uneven Terrain Meshes?">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Does RRT* Work on Uneven Terrain Meshes?",
+ "inLanguage":"en","datePublished":"2026-11-06T07:00:00+09:00","dateModified":"2026-11-06T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"ロボット技術担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2611.05885","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/ebe13ae87dee.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/ebe13ae87dee.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#ef4444"></span>ロボット技術</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Does RRT* Work on Uneven Terrain Meshes?</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b></span></span><span>2026/11/06</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/ebe13ae87dee.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2611.05885" rel="nofollow noopener">https://arxiv.org/abs/2611.05885</a></span></div>
+  <div class="article-body"><p>arXiv:2611.05885v1 Announce Type: new 
+Abstract: The optimal rapidly exploring random tree (RRT*) is proven asymptotically optimal on open subsets of Euclidean space with straight-line local planning. We ask whether it works on a triangle-mesh terrain, a two-dimensional surface in R^3. First, the original RRT* cannot run on a mesh: the surface has zero volume, so uniform sampling never hits it, no clearance ball fits in it, and chords across a fold leave it. Second, the surface reformulation we call Mesh RRT*, with its naive edge, the chord costed by its length, solved every run on heightfields with slopes up to 75 degrees but minimises the wrong objective: its cost, the straight-line length of a polyline whose vertices lie on the surface while its segments may leave it by a tolerance tau, is the length of no route on the surface and lies strictly below the geodesic length on any curved mesh. In numeric simulation and after 30,000 iterations the reported cost is on average up to 2.7% below the exact geodesic, a cost no path attains, and the returned route on average 0.1-0.5% longer than it. Rewiring keeps the biased edges, the bias decays only linearly with the step on polyhedral surfaces, and shrinking tau trades bias for connectivity. Third, replacing each chord by a path on the surface above it, built from projected points joined across the mesh edges they straddle and costed by its own length, makes every edge cost the exact length of a feasible path; with no other change the exact length of the returned routes is on average within 0.07-0.16% of the geodesic at every roughness tested, two to 3.4 times closer than with chords on the rougher terrains. The planner is in MeshNav3D 0.2.0 (release pending).</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

@@ -17,7 +17,7 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"Online Draft Co-Training for Speculative Decoding in Large-Scale, Long-Context RL Post-Training",
- "inLanguage":"en","datePublished":"2026-09-11T07:00:00+09:00","dateModified":"2026-09-11T07:00:00+09:00",
+ "inLanguage":"en","datePublished":"2026-11-06T07:00:00+09:00","dateModified":"2026-11-06T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2609.07108","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/1253536ec53e.html"}
@@ -35,11 +35,11 @@
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
     <h1>Online Draft Co-Training for Speculative Decoding in Large-Scale, Long-Context RL Post-Training</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/11</span></div>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/11/06</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/1253536ec53e.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.07108" rel="nofollow noopener">https://arxiv.org/abs/2609.07108</a></span></div>
-  <div class="article-body"><p>arXiv:2609.07108v1 Announce Type: new 
-Abstract: Speculative decoding accelerates rollout generation, which dominates the cost of reinforcement learning (RL) post-training. Online co-training can further increase the draft&#x27;s accuracy, yielding greater speedups. However, scaling this approach to co-training on large models with long contexts poses two obstacles: (1) branch attention is unsupported by standard causal context-parallel (CP) implementations, and (2) target features span across pipeline-parallel (PP) stages. We address both with an end-to-end system for large-scale online draft co-training. For CP, we extend packed, load-balanced zigzag ring attention by merging rank-local branch attention with causal main-sequence attention. For PP, TapChannel transports intermediate target features across stages via a separate path, leaving the pipeline schedule unaffected. Experiments demonstrate that co-trained drafts closely track the policy baseline while delivering substantial rollout and end-to-end speedups across model scales up to 122B. Our CP design achieves strong scaling at 256K tokens with significant memory savings over prior work, and our PP transport incurs modest overhead. Code can be found at https://github.com/NVIDIA-NeMo/RL/issues/3698.</p></div>
+  <div class="article-body"><p>arXiv:2609.07108v3 Announce Type: replace 
+Abstract: Speculative decoding accelerates rollout generation, which dominates the cost of reinforcement learning (RL) post-training. Online co-training keeps the draft aligned with the evolving policy, further increasing acceptance length and speedup. However, training large models on long contexts requires context parallelism (CP) and pipeline parallelism (PP), and co-training drafts under this layout poses two obstacles: (1) the draft&#x27;s branch attention is unsupported by causal CP, and (2) the target features that the draft consumes are spread across PP stages. In this paper, we present the design and implementation of online draft co-training in NeMo-RL. For CP, we extend packed, load-balanced zigzag ring attention by merging rank-local branch attention with causal main-sequence attention. For PP, TapChannel transports intermediate target features across stages via a separate path, leaving the pipeline schedule unaffected. Experiments show that co-training keeps the policy&#x27;s reward and accuracy close to the no-draft baseline while delivering $1.48$--$2.25\times$ rollout speedups and $1.19$--$1.88\times$ end-to-end training speedups across model scales up to 122B. Our CP design achieves strong scaling at 256K sequence length with significant memory savings over prior work, and our PP transport incurs modest overhead. Code can be found at https://github.com/NVIDIA-NeMo/RL/issues/3698.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

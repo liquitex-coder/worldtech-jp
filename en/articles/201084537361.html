@@ -17,7 +17,7 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"PolicyMem: Geometric Policy Memory for LLM Governance",
- "inLanguage":"en","datePublished":"2026-09-16T07:00:00+09:00","dateModified":"2026-09-16T07:00:00+09:00",
+ "inLanguage":"en","datePublished":"2026-11-06T07:00:00+09:00","dateModified":"2026-11-06T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2609.13734","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/201084537361.html"}
@@ -35,11 +35,11 @@
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
     <h1>PolicyMem: Geometric Policy Memory for LLM Governance</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/16</span></div>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/11/06</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/201084537361.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.13734" rel="nofollow noopener">https://arxiv.org/abs/2609.13734</a></span></div>
-  <div class="article-body"><p>arXiv:2609.13734v1 Announce Type: cross 
-Abstract: As large language models (LLMs) are increasingly deployed in real-world high-stakes applications, effective governance has become essential. Existing safeguards largely follow two paradigms: learning-based guards provide strong semantic discrimination but couple policy behavior to trained models and taxonomies, while programmable frameworks offer flexible control but require substantial manual prompt and workflow engineering. Neither externalizes policies as reusable operational states, making it difficult to consistently reuse policy evidence across detection, intervention, and verification. In this paper, we introduce PolicyMem, a geometric policy memory that externalizes natural-language policies as reusable geometric memory objects represented by low-rank subspaces in a shared representation space. A memory writer compiles natural-language policies into policy memory slots, and query-response pairs read the policy memory through projection energy. The resulting policy-evidence profile directly mediates the safety verdict and is reused for policy attribution and post-intervention verification. Coupled with a response rewriter, PolicyMem enables a detect-rewrite-verify loop for LLM governance. Across five widely used benchmarks, PolicyMem achieves state-of-the-art unsafe behavior detection while enabling effective policy attribution, rewriting, and post-intervention verification through the shared policy memory.</p></div>
+  <div class="article-body"><p>arXiv:2609.13734v2 Announce Type: replace-cross 
+Abstract: Effective LLM governance extends beyond detecting unsafe responses to guiding their correction through closed-loop assessment, revision, and verification. Learning-based guards provide strong semantic discrimination but often leave policy knowledge implicit in trained parameters, limiting its explicit reuse across stages. Programmable guardrails make policies explicit through prompts and workflows, but rely heavily on manual engineering to operationalize them. This motivates explicit policy representations that are both learnable and reusable across governance operations. To this end, we introduce PolicyMem, a geometric policy memory that compiles natural-language policies into learnable low-rank subspaces for reuse across governance stages. A policy assessor projects query-response representations onto these subspaces, producing evidence that directly mediates safety judgments and policy attribution. A response rewriter uses the implicated policies to revise unsafe responses, with the same assessor re-evaluating the revised responses. Beyond inference, the same memory constructs training data from model-generated candidates to supervise the rewriter without external teacher calls. Across five widely used benchmarks, PolicyMem achieves the best average unsafe-behavior detection performance among representative baselines while supporting effective policy attribution, rewriting, and post-intervention assessment through the shared policy memory.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

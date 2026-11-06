@@ -17,7 +17,7 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"Do Tabular Foundation Models Agree with Themselves?",
- "inLanguage":"en","datePublished":"2026-08-08T07:00:00+09:00","dateModified":"2026-08-08T07:00:00+09:00",
+ "inLanguage":"en","datePublished":"2026-11-06T07:00:00+09:00","dateModified":"2026-11-06T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2608.06004","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/42fcc4b3ab6b.html"}
@@ -35,12 +35,11 @@
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
     <h1>Do Tabular Foundation Models Agree with Themselves?</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/08</span></div>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/11/06</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/42fcc4b3ab6b.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.06004" rel="nofollow noopener">https://arxiv.org/abs/2608.06004</a></span></div>
-  <div class="article-body"><p>arXiv:2608.06004v1 Announce Type: new 
-Abstract: Tabular Foundation Models (TFMs) are currently the best approach to tabular prediction problems. They are constructed as transformers that approximate the Bayesian posterior predictive distribution based on a pre-training prior. These univariate predictors can be converted into multivariate ones autoregressively by sampling one target and adding it to the features.
-  However, the faithfulness of the resulting joint has not been investigated. Furthermore, TFMs cannot be evaluated against the posterior itself, at least not on real-world datasets, because the ground-truth distribution is unknown. We therefore propose asking a different question: could a model&#x27;s predictions result from any joint distribution? To answer this question, we pose two requirements that any such model must satisfy. The first is marginalization consistency, which demands that marginalized conditionals are equal to directly predicted marginals. The second is factorization consistency, which demands that different factorization orders result in equal joint distributions. Every TFM that we evaluate violates both of these requirements for both classification and regression across all datasets.</p></div>
+  <div class="article-body"><p>arXiv:2608.06004v2 Announce Type: replace 
+Abstract: Tabular Foundation Models (TFMs) are the state of the art for many tabular prediction tasks. They are transformers that approximate the Bayesian posterior predictive distribution under a pretraining prior. TFMs become multivariate predictors autoregressively, by sampling one target and appending it to the features. This paper is the first to evaluate whether this setup induces a valid stochastic process. Informally, we ask: *Do we get the same answer to the same question asked in two different ways?* The standard Kolmogorov consistency conditions cannot be checked on TFMs directly, since TFMs are unable to model certain conditional distributions. We therefore propose two adapted, testable requirements. Marginalization consistency demands that marginalized conditionals equal directly predicted marginals, and factorization consistency that both factorization orders yield the same joint. Since the data-generating distribution satisfies both, a perfect TFM would as well, and every violation lower-bounds how far the model&#x27;s predictions are from the ground truth. Every TFM we evaluate violates both requirements, for classification and regression, on all datasets.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>
