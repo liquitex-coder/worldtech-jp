@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teach the Way It Thinks: Guiding LLM Post-training Data Engineering with Sparse Autoencoders — NewsMatome (EN)</title>
+<meta name="description" content="Teach the Way It Thinks: Guiding LLM Post-training Data Engineering with Sparse Autoencoders — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/7649a3a05bda.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/7649a3a05bda.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/7649a3a05bda.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/7649a3a05bda.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Teach the Way It Thinks: Guiding LLM Post-training Data Engineering with Sparse Autoencoders">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Teach the Way It Thinks: Guiding LLM Post-training Data Engineering with Sparse Autoencoders",
+ "inLanguage":"en","datePublished":"2026-11-07T07:00:00+09:00","dateModified":"2026-11-07T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2605.27354","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/7649a3a05bda.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/7649a3a05bda.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Teach the Way It Thinks: Guiding LLM Post-training Data Engineering with Sparse Autoencoders</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/11/07</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/7649a3a05bda.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2605.27354" rel="nofollow noopener">https://arxiv.org/abs/2605.27354</a></span></div>
+  <div class="article-body"><p>arXiv:2605.27354v2 Announce Type: replace 
+Abstract: Data engineering for large language model (LLM) reinforcement learning (RL) decides which samples to train on, when to present them, and which to batch together. Existing methods mostly rely on external feedback, such as pass rates or difficulty labels, which observes only the outcome on each sample. We argue that model internals offer richer and more model-intrinsic feedback that can guide all three decisions. We propose SAERL which organizes RL training data in the feature space of Sparse Autoencoders (SAEs), a mechanistic interpretability tool that decomposes model internals into sparse, interpretable features. SAE features let us view the model as a set of functional regions, each formed by features that related samples activate together. For each sample, its SAE activations indicate which regions it engages, and its gradients projected onto SAE features indicate how training on it would change these regions. Guided by this view, SAERL keeps samples with strong and non-redundant gradient signals, trains each functional region from easy to hard, and trains one functional region at a time, drawing each batch from a single activation cluster with moderate cross-cluster mixing. The resulting curriculum is constructed once with small models and transfers to larger ones. Experiments on mathematical reasoning show consistent gains across model scales and RL algorithms. For instance, on Qwen2.5-Math-1.5B, SAERL improves the average accuracy of GRPO by 3.1% and reaches the target accuracy with 42% fewer training steps. Further analyses reveal that ordering and batching are complementary. These results demonstrate that model internals are a powerful and practical foundation for post-training data engineering.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

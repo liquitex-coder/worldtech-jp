@@ -17,7 +17,7 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"Invariant Discovery for Networked Systems",
- "inLanguage":"en","datePublished":"2026-07-30T07:00:00+09:00","dateModified":"2026-07-30T07:00:00+09:00",
+ "inLanguage":"en","datePublished":"2026-11-07T07:00:00+09:00","dateModified":"2026-11-07T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.22944","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/f12099b790a6.html"}
@@ -35,11 +35,11 @@
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
     <h1>Invariant Discovery for Networked Systems</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/30</span></div>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/11/07</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/f12099b790a6.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.22944" rel="nofollow noopener">https://arxiv.org/abs/2607.22944</a></span></div>
-  <div class="article-body"><p>arXiv:2607.22944v1 Announce Type: cross 
-Abstract: Invariants, the relations expected to hold among measured signals of a network, underpin applications from verification to traffic generation, telemetry imputation, and input validation, yet writing them by hand demands rare expertise in both formal logic and networking. Automatic miners can help but fall short on two fronts: they still require the hardest input (the grammar of admissible invariants) and they learn only exact, ``hard&#x27;&#x27; rules, struggling with real-world approximation caused by inherent noise in data. LLMs are tools that can provide semantic reasoning over data, but are non-deterministic and opaque in their learning. Our key idea is to partition the invariant search problem into an AI-driven grammar ``discovery&#x27;&#x27; problem, followed by a statistics-driven ``search&#x27;&#x27; problem within the learned grammar. Taken together, this allows non-deterministic, hallucination-prone AI to help produce auditable invariants with formal guarantees. We design and implement such a system, Autogram, and evaluate it on both public and production telemetry data, recovering expert-derived invariants with high coverage and low false positives. We close with discussion on open problems on the path toward fully open-ended discovery.</p></div>
+  <div class="article-body"><p>arXiv:2607.22944v2 Announce Type: replace-cross 
+Abstract: Invariants, the relations expected to hold among measured signals of a network, underpin applications from verification to traffic generation, telemetry imputation, and input validation. Yet, writing them by hand demands rare expertise in both formal logic and networking. Testing all possible combinations of telemetry variables statistically is intractable at network scale, while existing automatic tools still require a human-authored grammar of admissible invariants and learn only exact, &quot;hard&quot; rules that break under real-world noise. Our key idea is to use an LLM to inspect variable metadata, classify counter data types, and predict candidate syntactic relationships that form a compact grammar, followed by a deterministic statistical search within that grammar. If the initial grammar fails to recover trusted known invariants on held-out telemetry, Autogram instructs the LLM to iteratively widen the grammar until recovery succeeds. By confining the LLM to grammar induction and re-induction while delegating candidate verification to logical and statistical checks, Autogram turns non-deterministic AI proposals into auditable invariants with formal guarantees within the induced grammar. We design and prototype Autogram and evaluate it on both public and production WAN telemetry, recovering expert-derived invariants with full recall and low false positives. We close with a discussion of open problems on the path toward fully open-ended invariant discovery.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Long Range Frequency Tuning for QML — NewsMatome (EN)</title>
-<meta name="description" content="Long Range Frequency Tuning for QML — original-language edition. Japanese translation available.">
+<title>How Far Can a Trainable Frequency Move? Resolution, Grids and Coupling in Trainable-FrequencyQuantum Models — NewsMatome (EN)</title>
+<meta name="description" content="How Far Can a Trainable Frequency Move? Resolution, Grids and Coupling in Trainable-FrequencyQuantum Models — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/4022d7d695eb.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/4022d7d695eb.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/4022d7d695eb.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/4022d7d695eb.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Long Range Frequency Tuning for QML">
+<meta property="og:title" content="How Far Can a Trainable Frequency Move? Resolution, Grids and Coupling in Trainable-FrequencyQuantum Models">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Long Range Frequency Tuning for QML",
- "inLanguage":"en","datePublished":"2026-07-22T07:00:00+09:00","dateModified":"2026-07-22T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"How Far Can a Trainable Frequency Move? Resolution, Grids and Coupling in Trainable-FrequencyQuantum Models",
+ "inLanguage":"en","datePublished":"2026-11-07T07:00:00+09:00","dateModified":"2026-11-07T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2602.23409","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/4022d7d695eb.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Long Range Frequency Tuning for QML</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/07/22</span></div>
+    <h1>How Far Can a Trainable Frequency Move? Resolution, Grids and Coupling in Trainable-FrequencyQuantum Models</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/11/07</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/4022d7d695eb.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2602.23409" rel="nofollow noopener">https://arxiv.org/abs/2602.23409</a></span></div>
-  <div class="article-body"><p>arXiv:2602.23409v3 Announce Type: replace 
-Abstract: Angle-encoded variational quantum circuits admit a truncated Fourier series representation of their output, but approximating functions with maximum frequency $\omega_{\max}$ using fixed unary encoding requires $\mathcal{O}(\omega_{\max})$ encoding gates. Trainable-frequency (TF) circuits promise a reduction by learning the data-encoding prefactors alongside the ansatz parameters, adapting the accessible frequency spectrum to the target during training. We identify a practical barrier that prevents this promise from being realized: the prefactor gradient is suppressed by the spectral gap between the circuit&#x27;s accessible frequencies and the target spectrum, independently of the ansatz parameters, confining gradient-driven prefactor movement to a narrow neighborhood of initialization. We propose \emph{ternary grid initialization} -- setting prefactors to $\{1, 3, 9, \ldots, 3^{k-1}\}$ -- which ensures every target frequency within $[-\omega_{\max}, \omega_{\max}]$ lies within $\tfrac{1}{2}$ unit of the accessible spectrum at initialization, so that the spectral-gap bound no longer constrains the target-driven gradient to be small. This is a necessary condition for reliable convergence, whose sufficiency we establish empirically. On a synthetic benchmark with target frequencies shifted well beyond the standard initialization range, ternary initialization achieves median $R^2 = 0.997$ versus $0.18$ for unary initialization, with $100\%$ of runs achieving $R^2 &gt; 0.95$ against $0\%$. CMA-ES with $20\times$ the evaluation budget reaches only $25\%$ success, confirming the limitation is a property of the optimization landscape rather than of gradient-based optimization specifically. Real-world validation on two benchmark datasets demonstrates consistent advantages over both fixed and trainable unary baselines.</p></div>
+  <div class="article-body"><p>arXiv:2602.23409v4 Announce Type: replace 
+Abstract: Trainable-frequency quantum models train the prefactors of their encoding gates so that the circuit&#x27;s frequencies can move onto the target&#x27;s. From the unit start of prior work, training rarely reaches a target more than one resolution step away. We show that the target-driven part of the prefactor gradient is a weighted sum of slopes of the overlap $\sin u/u$, where $u$ is the model-target frequency distance scaled by the window half-width. This gives each frequency a reach: under gradient flow, an isolated real frequency whose coefficient adapts optimally reaches its target from within half a step, for every target at least one step from zero frequency; with a fixed coefficient, a phase-dependent barrier can stop it. A ternary prefactor grid places a model frequency within half a step of every band frequency, with logarithmically many encoding gates. Single-frequency circuits trained with Adam and jointly trained amplitudes behave as predicted: inside the first side lobe, a frequency starts toward its target exactly when in phase with it in 98% of runs, and only 11 of 768 frequencies starting beyond the lobe reached their target. With several frequencies, the grid start raised successful fits on synthetic targets from 69% to 84% against the best random start. With many target frequencies, least squares on the fixed grid fits near-perfectly, but the circuit does not reach the coefficients; training the prefactors narrows this shortfall, but with 8 and 24 target frequencies, training the fixed grid ten times longer fitted better. On real series, training the frequencies improved held-out $R^2$ at equal budget by 0.010--0.045 on four of seven series, but a classical screen did not separate these from the others. A classical model with independently trainable frequencies shows the same dependence on the start; our results describe how to train such models, not an advantage of the circuit.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

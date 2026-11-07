@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZYFA: Speed and Accuracy of FP8 FlashAttention on AMD CDNA4 — NewsMatome (EN)</title>
+<meta name="description" content="ZYFA: Speed and Accuracy of FP8 FlashAttention on AMD CDNA4 — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/4852d9f8d219.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/4852d9f8d219.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/4852d9f8d219.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/4852d9f8d219.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ZYFA: Speed and Accuracy of FP8 FlashAttention on AMD CDNA4">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"ZYFA: Speed and Accuracy of FP8 FlashAttention on AMD CDNA4",
+ "inLanguage":"en","datePublished":"2026-11-07T07:00:00+09:00","dateModified":"2026-11-07T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2611.07496","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/4852d9f8d219.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/4852d9f8d219.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>ZYFA: Speed and Accuracy of FP8 FlashAttention on AMD CDNA4</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/11/07</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/4852d9f8d219.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2611.07496" rel="nofollow noopener">https://arxiv.org/abs/2611.07496</a></span></div>
+  <div class="article-body"><p>arXiv:2611.07496v1 Announce Type: cross 
+Abstract: Attention is a core building block of frontier models and often dominates compute-bound prefill at long context. FP8 matrix instructions offer twice the peak throughput of BF16, but they accelerate only matrix multiplication, and the softmax between the two matrix multiplications of attention runs on vector units that FP8 does not accelerate. On the AMD Instinct MI355X, the vendor&#x27;s AITER kernels reach 39% of peak FP8 matrix throughput at 32K tokens, compared with 49% in BF16. Attention is also more numerically sensitive to quantization than feed-forward layers, and unlike NVIDIA&#x27;s Hopper and Blackwell GPUs, the MI355X does not track the completion of matrix instructions in hardware, so overlapping the softmax with the matrix multiplications depends on instruction order. We present ZYFA, prefill kernels for the MI355X built on three techniques: (1) computing each FP8 probability directly from its score with a multiply-add and an integer conversion instead of an exponential; (2) a ping-pong schedule in which one group of threads computes its softmax while another executes its matrix multiplications; and (3) scaling each block of probabilities up by a power of two before rounding, and normalizing by the sum of the rounded probabilities. On attention inputs captured from three models and timed at sustained clock speeds, ZYFA achieves 1.16-1.76x the throughput of AITER. On the Gaussian inputs of kernel benchmarks at 32K tokens, it achieves 1.26-1.37x at head dimension 128 and 1.99x for DeepSeek-style multi-head latent attention. The sustained clock of the MI355X depends on operand values, so throughput on random inputs does not reliably predict throughput on real model activations. At head dimension 128, ZYFA&#x27;s numerical error is within a few percent of that of Composable Kernel and Triton and 62-78% lower than that of AITER&#x27;s. The source code is available at https://github.com/Zyphra/zyfa.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

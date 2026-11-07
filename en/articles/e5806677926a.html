@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FastAFD: When Does Attention-FFN Disaggregation Pay on Rack-Scale NVLink? — NewsMatome (EN)</title>
+<meta name="description" content="FastAFD: When Does Attention-FFN Disaggregation Pay on Rack-Scale NVLink? — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/e5806677926a.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/e5806677926a.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/e5806677926a.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/e5806677926a.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FastAFD: When Does Attention-FFN Disaggregation Pay on Rack-Scale NVLink?">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"FastAFD: When Does Attention-FFN Disaggregation Pay on Rack-Scale NVLink?",
+ "inLanguage":"en","datePublished":"2026-11-07T07:00:00+09:00","dateModified":"2026-11-07T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2611.07149","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/e5806677926a.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/e5806677926a.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>FastAFD: When Does Attention-FFN Disaggregation Pay on Rack-Scale NVLink?</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/11/07</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/e5806677926a.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2611.07149" rel="nofollow noopener">https://arxiv.org/abs/2611.07149</a></span></div>
+  <div class="article-body"><p>arXiv:2611.07149v1 Announce Type: cross 
+Abstract: Attention-FFN disaggregation (AFD) separates attention from the experts of a mixture-of-experts (MoE) model and has been reported to raise decode throughput over colocated serving. Whether this advantage holds on rack-scale NVLink systems such as GB200 NVL72 remains unclear: prior results were obtained on other hardware, against narrower colocated baselines, or with analytical models, whereas production engines serve large MoE models on these systems with wide expert parallelism (wide EP). We build and tune FastAFD, an AFD engine for GB200 NVL72 that overlaps the MoE of one microbatch with the attention of the other, and compare it against the best vLLM wide EP setting. Experiments show that AFD has a throughput advantage of up to 1.17x over wide EP on Qwen3 and 1.16x on Qwen3.5, and matches it on MiniMax-M2.5. We derive an analytical model that predicts AFD throughput within 3% using only profiles of colocated vLLM, telling whether switching to AFD would pay off before deploying it. The model yields a concise insight: AFD&#x27;s speedup factors into a batch gain (larger batches, since attention GPUs hold no expert weights), an overlap gain (shorter steps, since the MoE runs on the expert GPUs behind attention), and a disaggregation cost (the GPUs given to experts). AFD has the advantage when the two gains outweigh the cost. This view explains which models benefit from AFD, and shows that speculative decoding helps light-expert models most, where the enlarged overlap gain outweighs the larger disaggregation cost and adds a further 8% to AFD&#x27;s advantage over wide EP. Looking ahead, serving the experts on accelerators that keep their weights in on-chip SRAM, such as the Groq LPX accelerators paired with Vera Rubin NVL72, would remove most of the disaggregation cost, raising the ideal speedup to 2.48x with speculative decoding. FastAFD is open source at https://github.com/hao-ai-lab/FastAFD.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

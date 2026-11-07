@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taming the Entropy Cliff: Variable Codebook Size Quantization for Autoregressive Visual Generation — NewsMatome (EN)</title>
+<meta name="description" content="Taming the Entropy Cliff: Variable Codebook Size Quantization for Autoregressive Visual Generation — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/e54146a484fa.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/e54146a484fa.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/e54146a484fa.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/e54146a484fa.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Taming the Entropy Cliff: Variable Codebook Size Quantization for Autoregressive Visual Generation">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Taming the Entropy Cliff: Variable Codebook Size Quantization for Autoregressive Visual Generation",
+ "inLanguage":"en","datePublished":"2026-11-07T07:00:00+09:00","dateModified":"2026-11-07T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2605.06207","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/e54146a484fa.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/e54146a484fa.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Taming the Entropy Cliff: Variable Codebook Size Quantization for Autoregressive Visual Generation</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/11/07</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/e54146a484fa.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2605.06207" rel="nofollow noopener">https://arxiv.org/abs/2605.06207</a></span></div>
+  <div class="article-body"><p>arXiv:2605.06207v2 Announce Type: replace-cross 
+Abstract: Most discrete visual tokenizers rely on a default design: every position in the sequence shares the same codebook. Such a constant-codebook design can consume the finite-data entropy budget very quickly. We observe that the per-position empirical conditional entropy decays so quickly along the sequence that, after a few positions, the conditional distribution becomes essentially deterministic. On ImageNet with $K=16384$, this happens after only about 2 out of 256 positions, when most prefixes already identify individual images in the dataset. We call this phenomenon the Entropy Cliff. Under full conditional utilization, larger codebooks exhaust the finite-data entropy budget in fewer positions. The empirical entropy decreases more gradually in our language comparison, where the effective entropy per position stays below the codebook capacity. To address this, we propose Variable Codebook Size Quantization (VCQ), where the codebook size $K_t$ grows monotonically along the sequence from $K_{\min}=2$ to $K_{\max}$, leaving the loss function, parameter count, and AR training procedure unchanged. With a vanilla autoregressive Transformer and standard next-token prediction, VCQ-Base achieves gFID w/o CFG 14.80 on ImageNet $256\times256$, compared with 27.98 and 18.16 for constant codebooks of size 16384 and 8192, respectively. Scaled up, it reaches gFID 1.71 with 684M autoregressive parameters, without any extra training techniques such as semantic regularization or causal alignment. The extreme information bottleneck at $K_{\min}=2$ encourages semantic concentration in early encoder features: a linear probe on features from only the first 10 positions reaches 43.8% top-1 accuracy on ImageNet, compared to 27.1% for uniform codebooks. These results show that what matters is not only the total capacity of the codebook, but also how that capacity is distributed and organized.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

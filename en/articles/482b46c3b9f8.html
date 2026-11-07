@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Latency-Aware Adaptive Best-of-$N$ — NewsMatome (EN)</title>
+<meta name="description" content="Latency-Aware Adaptive Best-of-$N$ — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/482b46c3b9f8.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/482b46c3b9f8.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/482b46c3b9f8.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/482b46c3b9f8.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Latency-Aware Adaptive Best-of-$N$">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Latency-Aware Adaptive Best-of-$N$",
+ "inLanguage":"en","datePublished":"2026-11-07T07:00:00+09:00","dateModified":"2026-11-07T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2611.07453","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/482b46c3b9f8.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/482b46c3b9f8.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Latency-Aware Adaptive Best-of-$N$</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/11/07</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/482b46c3b9f8.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2611.07453" rel="nofollow noopener">https://arxiv.org/abs/2611.07453</a></span></div>
+  <div class="article-body"><p>arXiv:2611.07453v1 Announce Type: cross 
+Abstract: Test-time compute (TTC) improves language model responses by spending additional computation at inference time, and the right amount of compute depends on the prompt. Adaptive TTC methods allocate compute based on signals of response quality such as observed rewards, often by stopping once the signal exceeds a fixed threshold, and generally measure cost by the number of generations or tokens. But in online serving, latency is also a cost: it grows with server load, so a method using a fixed threshold spends too little compute when generation is fast and too much when it is slow. For Best-of-$N$ sampling, a widely used TTC method, we propose a two-stage adaptive algorithm that draws an initial batch, then uses the observed rewards and the batch&#x27;s latency to decide whether to draw a second batch and at what size by comparing expected improvement against predicted cost: it draws one when the first batch&#x27;s best reward is below a threshold that decreases with the first batch&#x27;s latency, without explicitly measuring server load. We map each reward to its value under the cumulative distribution function (CDF) of the prompt&#x27;s reward distribution, so the same tradeoff parameters can be reused across tasks; a regression fitted offline on other prompts predicts a distribution for the CDF value of the first batch&#x27;s best reward, giving the expected improvement in closed form. We evaluate the method by simulation on a preference-based alignment benchmark, measuring generations-equivalent cost: generations plus latency, converted to generations. The method reaches Best-of-$N$&#x27;s reward at lower generations-equivalent cost, and conditioning on the measured first-batch latency saves at least as much of that cost as fixed-threshold (latency-unaware) baselines, and more when latency is highly variable, when it grows with batch size, and when the second batch&#x27;s latency is highly predictable from the first&#x27;s.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
