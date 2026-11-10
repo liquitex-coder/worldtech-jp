@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hold-Out Self-Validation Cannot Certify Photogrammetric Accuracy: Saturation and Blindness to Coherent Distortion — NewsMatome (EN)</title>
-<meta name="description" content="Hold-Out Self-Validation Cannot Certify Photogrammetric Accuracy: Saturation and Blindness to Coherent Distortion — original-language edition. Japanese translation available.">
+<title>Hold-Out Self-Validation Cannot Certify the Accuracy of Photogrammetric Reconstructions — NewsMatome (EN)</title>
+<meta name="description" content="Hold-Out Self-Validation Cannot Certify the Accuracy of Photogrammetric Reconstructions — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/f71faec7b3c6.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/f71faec7b3c6.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/f71faec7b3c6.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/f71faec7b3c6.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hold-Out Self-Validation Cannot Certify Photogrammetric Accuracy: Saturation and Blindness to Coherent Distortion">
+<meta property="og:title" content="Hold-Out Self-Validation Cannot Certify the Accuracy of Photogrammetric Reconstructions">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Hold-Out Self-Validation Cannot Certify Photogrammetric Accuracy: Saturation and Blindness to Coherent Distortion",
- "inLanguage":"en","datePublished":"2026-09-05T07:00:00+09:00","dateModified":"2026-09-05T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Hold-Out Self-Validation Cannot Certify the Accuracy of Photogrammetric Reconstructions",
+ "inLanguage":"en","datePublished":"2026-11-10T07:00:00+09:00","dateModified":"2026-11-10T07:00:00+09:00",
  "author":{"@type":"Organization","name":"ロボット技術担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.24852","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/f71faec7b3c6.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#ef4444"></span>ロボット技術</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Hold-Out Self-Validation Cannot Certify Photogrammetric Accuracy: Saturation and Blindness to Coherent Distortion</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b></span></span><span>2026/09/05</span></div>
+    <h1>Hold-Out Self-Validation Cannot Certify the Accuracy of Photogrammetric Reconstructions</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b></span></span><span>2026/11/10</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/f71faec7b3c6.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.24852" rel="nofollow noopener">https://arxiv.org/abs/2607.24852</a></span></div>
-  <div class="article-body"><p>arXiv:2607.24852v4 Announce Type: replace-cross 
-Abstract: Internal self-consistency cannot certify the accuracy of a photogrammetric reconstruction, and the failure is structural rather than a matter of tuning. This matters because hold-out self-validation scores are increasingly offered as quality evidence for metric deliverables whose correctness is otherwise unknown without an external survey. We formalise a track-leakage-free hold-out protocol: a deterministic image subset is withheld, and each withheld view is re-localised against only those 3D points supported by two or more retained images, so no view is tested against structure it helped create. We evaluate it on five GNSS-referenced captures across four sites, 13 ETH3D scenes, a EuRoC flight and 30 IMC 2025 scenes. The protocol is well-posed but does not measure accuracy. It saturates: the internal confidence score stays pinned at 1.00 while true error swings 14.1x within one capture. It is blind to coherent distortion: fragmenting corruption is caught, but internally self-consistent, globally distorted models are not, and were wrong by 55-106 m at confidence 1.00 at three of four captures. On IMC 2025 it separates failed from successful reconstructions (rho = 0.68) yet ranks nothing among the successful (rho = 0.01). Track-leakage-free hold-out measures internal geometric consistency: a fragmentation warning, not a substitute for control-point accuracy assessment.</p></div>
+  <div class="article-body"><p>arXiv:2607.24852v5 Announce Type: replace-cross 
+Abstract: Photogrammetric reconstructions used for inspection are often delivered without an independent accuracy check. Hold-out self-validation is a possible substitute. Images are withheld, their orientations are re-estimated from the rest of the block, and agreement is taken as evidence of quality. We test it on ten GNSS-referenced aerial captures from eight sites, on ETH3D and EuRoC, and on 30 IMC 2025 scenes. The standard form re-localises each withheld image only against points seen by at least two retained images. Its score saturates. It stayed at 1.00 in all 40 thinned reconstructions while camera-position error varied by a factor of up to 5.9 within one capture. It also scored 1.00 on a corrupted model with only one of 226 cameras within 5 m. Reprojection error ranked some of the worst models best. A few lost cameras can raise the least-squares RMSE to the size of the block, so we also evaluate with a robust alignment. Taking the correspondences from the verified matches lowered the score below 0.95 in 14 of 18 corrupted runs, against 4 for the standard form and 10 when its failed resections count as errors, with all seven nominal runs at 1.00. Mapping the block again without the withheld images also responds, but mapping the same corrupted data twice without withholding gave a similar disagreement, so the signal is mainly that a corrupted reconstruction is not reproducible. Neither test can see an error that every reconstruction repeats, and neither can replace check points.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>
