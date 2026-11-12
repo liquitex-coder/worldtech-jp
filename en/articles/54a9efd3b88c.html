@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Train High, Ship Low: Efficient LoRA Synchronization for Distributed On-Policy Post-Training — NewsMatome (EN)</title>
+<meta name="description" content="Train High, Ship Low: Efficient LoRA Synchronization for Distributed On-Policy Post-Training — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/54a9efd3b88c.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/54a9efd3b88c.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/54a9efd3b88c.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/54a9efd3b88c.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Train High, Ship Low: Efficient LoRA Synchronization for Distributed On-Policy Post-Training">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Train High, Ship Low: Efficient LoRA Synchronization for Distributed On-Policy Post-Training",
+ "inLanguage":"en","datePublished":"2026-11-12T07:00:00+09:00","dateModified":"2026-11-12T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2611.13306","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/54a9efd3b88c.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/54a9efd3b88c.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Train High, Ship Low: Efficient LoRA Synchronization for Distributed On-Policy Post-Training</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/11/12</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/54a9efd3b88c.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2611.13306" rel="nofollow noopener">https://arxiv.org/abs/2611.13306</a></span></div>
+  <div class="article-body"><p>arXiv:2611.13306v1 Announce Type: new 
+Abstract: Transmitting LoRA adapters to rollout workers can bottleneck distributed on-policy post-training over bandwidth-constrained networks. Lowering the training rank may limit the capacity a workload needs, while adaptive optimizer updates are difficult to compress. Rollout workers can instead reconstruct updates from gradients by maintaining replicated optimizer states. We introduce HiLo, a compressor-agnostic framework that replaces parameter transmission with compressed gradient dissemination and local optimizer replay. By applying the same decoded gradients, the learner and workers maintain consistent policy states at the same version under reproducible execution. We further develop Spar, a budget-aware gradient compressor that combines spectral truncation, adaptive rank allocation and error feedback to decouple training rank from communication cost. Experiments across on-policy distillation and reward-guided post-training show that HiLo with Spar maintains learning quality close to full synchronization while transmitting as little as 1.6% of the adapter bytes, and accelerates end-to-end updates by up to $2.2\times$ under bandwidth constraints.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

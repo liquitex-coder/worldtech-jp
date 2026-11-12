@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One Byte, One Token: Byteifying a 27B Hybrid-Attention LLM with Self-Generated Data — NewsMatome (EN)</title>
+<meta name="description" content="One Byte, One Token: Byteifying a 27B Hybrid-Attention LLM with Self-Generated Data — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/d0b6d4c9eab6.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/d0b6d4c9eab6.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/d0b6d4c9eab6.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/d0b6d4c9eab6.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="One Byte, One Token: Byteifying a 27B Hybrid-Attention LLM with Self-Generated Data">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"One Byte, One Token: Byteifying a 27B Hybrid-Attention LLM with Self-Generated Data",
+ "inLanguage":"en","datePublished":"2026-11-12T07:00:00+09:00","dateModified":"2026-11-12T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2611.13607","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/d0b6d4c9eab6.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/d0b6d4c9eab6.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>One Byte, One Token: Byteifying a 27B Hybrid-Attention LLM with Self-Generated Data</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/11/12</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/d0b6d4c9eab6.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2611.13607" rel="nofollow noopener">https://arxiv.org/abs/2611.13607</a></span></div>
+  <div class="article-body"><p>arXiv:2611.13607v1 Announce Type: cross 
+Abstract: Byte-level BPE fragments Chinese text (for Qwen3.8 on Chinese Wikipedia, 3.84 bytes per token on average; 64% of tokens are single characters) and hides spelling from the model. We ask whether an already-trained 27B subword model can be converted directly into a pure byte-level model (one byte, one token), without a patching structure or a local encoder, while keeping most of its ability. Starting from Qwen3.8-27B (48 Gated DeltaNet layers + 16 full-attention layers), we shrink the vocabulary from 248,320 to 384 entries (the 256 byte symbols already in the BPE vocabulary plus special ids), leave every other weight untouched, and continue training in a two-stage curriculum (encoding first, then reading) on 4.77 GB of supervised bytes: all dialogue/behavioral supervision is generated on-policy by the original model itself (character dictionary, word dictionary, general dialogue, coding sessions), and knowledge reading uses encyclopedia text (54% of supervised bytes). Training takes 178.6 h on 8xH200. On the same GPU and serving stack, the byte model&#x27;s gap to the original falls within the paired bootstrap interval on MATH-500, HumanEval+, MMLU-Pro and non-thinking GSM8K, and it loses 4-6 points on C-Eval, thinking-mode GSM8K and non-thinking IFEval. Without thinking it leads on every character-level task (CUTE 75.2 -&gt; 84.0, EXECUTE-zho 81.6 -&gt; 93.9, our Chinese character suite 54.4 -&gt; 64.0), but lookup knowledge about Chinese characters such as pronunciation and stroke count drops, and thinking does not recover it. The cost is throughput: per-step speed is identical, but each step yields 3-5x less output; Chinese characters per second is about 1/4 of the original, and prefill at 64K bytes is 6.5x slower. We also document four byte-model failure modes (greedy runaway, sampling breaking UTF-8, ineffective penalty terms on a small vocabulary, repetition) and their fixes.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

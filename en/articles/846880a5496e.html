@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dynamic Mixed-Precision Routing for Efficient Multi-step LLM Interaction — NewsMatome (EN)</title>
+<meta name="description" content="Dynamic Mixed-Precision Routing for Efficient Multi-step LLM Interaction — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/846880a5496e.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/846880a5496e.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/846880a5496e.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/846880a5496e.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dynamic Mixed-Precision Routing for Efficient Multi-step LLM Interaction">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Dynamic Mixed-Precision Routing for Efficient Multi-step LLM Interaction",
+ "inLanguage":"en","datePublished":"2026-11-12T07:00:00+09:00","dateModified":"2026-11-12T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2602.02711","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/846880a5496e.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/846880a5496e.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Dynamic Mixed-Precision Routing for Efficient Multi-step LLM Interaction</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/11/12</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/846880a5496e.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2602.02711" rel="nofollow noopener">https://arxiv.org/abs/2602.02711</a></span></div>
+  <div class="article-body"><p>arXiv:2602.02711v4 Announce Type: replace 
+Abstract: Large language models (LLMs) achieve strong performance in long-horizon agentic tasks through multi-step interaction and reasoning at test time. However, repeatedly invoking these models incurs substantial inference cost over an episode. Post-training quantization (PTQ) reduces this cost, but using a fixed low precision throughout an episode can sharply lower task success. We observe that interaction steps differ sharply in their sensitivity to quantization: given the same context, decoding a step at low precision turns a success into a failure at only about 1% of the steps, which we call critical steps. Based on this observation, we propose Dynamic Mixed-Precision Routing (DMR), a framework that adaptively selects between high-precision and low-precision versions of the same LLM at each decision step. Leveraging an entire-space factorization to jointly predict a step&#x27;s divergence and its effect on the outcome, DMR learns to recognize these critical steps by training only a lightweight router on the model&#x27;s hidden state. By reusing a shared high-precision KV cache and the hidden states, DMR avoids redundant context prefill and a separate text encoder, enabling precision switching with less than 1 ms of overhead per step and adding less than 0.11% to step latency for routing. This mixed-precision design also enables nested quantization, reducing the memory footprint by 39% on average compared with FP16. Across three long-horizon agentic benchmarks with nested quantization, DMR achieves an average 2.44x decode speedup over FP16 at comparable task success rates, without fine-tuning the underlying model. On ALFWorld with GPTQ, DMR achieves a 1.71x decode speedup with 86.9% success, compared with 87.2% for FP16.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

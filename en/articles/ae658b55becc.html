@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stochastic Projections and Rank-Aware Learning Rates for Federated LoRA — NewsMatome (EN)</title>
+<meta name="description" content="Stochastic Projections and Rank-Aware Learning Rates for Federated LoRA — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/ae658b55becc.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/ae658b55becc.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/ae658b55becc.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/ae658b55becc.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Stochastic Projections and Rank-Aware Learning Rates for Federated LoRA">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Stochastic Projections and Rank-Aware Learning Rates for Federated LoRA",
+ "inLanguage":"en","datePublished":"2026-11-12T07:00:00+09:00","dateModified":"2026-11-12T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2611.13331","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/ae658b55becc.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/ae658b55becc.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Stochastic Projections and Rank-Aware Learning Rates for Federated LoRA</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/11/12</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/ae658b55becc.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2611.13331" rel="nofollow noopener">https://arxiv.org/abs/2611.13331</a></span></div>
+  <div class="article-body"><p>arXiv:2611.13331v1 Announce Type: new 
+Abstract: Fine-tuning large-scale foundation models across resource-constrained, distributed clients presents significant computational and communication challenges. While merging Low-Rank Adaptation (LoRA) with Federated Learning (FL) enables rank-based flexibility, the interdependence of the adaptation matrices ($\mathbf{A}$ and $\mathbf{B}$) often complicates optimization. In this work, we theoretically demonstrate that LoRA fine-tuning with Gaussian initialization and a frozen $\mathbf{A}$ matrix acts as a stochastic approximation of full fine-tuning, where batch gradients are subject to a random, rank-dependent perturbation. Motivated by this insight, we propose freezing and periodically resampling $\mathbf{A}$ matrices at the client level. This strategy decouples the $\mathbf{A}$ and $\mathbf{B}$ gradients, diminishes LoRA low-rank constraints and reduces both computational and uplink communication overheads by 50\%, allowing for the reallocation of resources toward higher adaptation ranks. Furthermore, we show that in this frozen-$\mathbf{A}$ regime, the adaptation rank $r$ directly governs the signal-to-noise ratio (SNR) of the perturbed gradients. Specifically, we find that the SNR increases linearly with $r$, implying that clients&#x27; learning rates must be dynamically scaled with their adaptation ranks for higher utility. Building on these foundations, we introduce SPRA-LoRA (Stochastic Projection Rank-Aware LoRA), a federated rank-aware fine-tuning strategy that utilizes frozen, resampled $\mathbf{A}$ matrices and rank-dependent learning rates for clients. We also prove its convergence with heterogeneous client resources. Our experiments across benchmark datasets demonstrate that SPRA-LoRA consistently outperforms state-of-the-art baselines with half the overhead on clients.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
