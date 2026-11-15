@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AGORA: Reliability-Aware Aggregation of LLM Judges via Item-Response Theory — NewsMatome</title>
-<meta name="description" content="AGORA: Reliability-Aware Aggregation of LLM Judges via Item-Response Theory（EN→JA 翻訳・出典付き）">
+<title>AGORA: Reliability-Aware Aggregation of LLM Judges on Small Evaluation Sets — NewsMatome</title>
+<meta name="description" content="AGORA: Reliability-Aware Aggregation of LLM Judges on Small Evaluation Sets（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/308acf2e109e.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/308acf2e109e.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/308acf2e109e.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="AGORA: Reliability-Aware Aggregation of LLM Judges via Item-Response Theory">
-<meta property="og:description" content="AGORA: Reliability-Aware Aggregation of LLM Judges via Item-Response Theory（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="AGORA: Reliability-Aware Aggregation of LLM Judges on Small Evaluation Sets">
+<meta property="og:description" content="AGORA: Reliability-Aware Aggregation of LLM Judges on Small Evaluation Sets（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"AGORA: Reliability-Aware Aggregation of LLM Judges via Item-Response Theory",
- "inLanguage":"ja","datePublished":"2026-11-06T07:00:00+09:00","dateModified":"2026-11-06T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"AGORA: Reliability-Aware Aggregation of LLM Judges on Small Evaluation Sets",
+ "inLanguage":"ja","datePublished":"2026-11-15T07:00:00+09:00","dateModified":"2026-11-15T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2611.05556","url":"https://liquitex-coder.github.io/worldtech-jp/articles/308acf2e109e.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">AI</a><span class="sep">›</span><span>AGORA: Reliability-Aware Aggregation of LLM Judges via Item-Response Theory</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">AI</a><span class="sep">›</span><span>AGORA: Reliability-Aware Aggregation of LLM Judges on Small Evaluation Sets</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>AGORA: Reliability-Aware Aggregation of LLM Judges via Item-Response Theory</h1>
+      <h1>AGORA: Reliability-Aware Aggregation of LLM Judges on Small Evaluation Sets</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/11/06 07:00</span><span>· 更新 2026/11/06</span>
+        <span>公開 2026/11/15 07:00</span><span>· 更新 2026/11/15</span>
       </div>
     </div>
     
@@ -74,24 +74,24 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2611.05556" rel="nofollow noopener">AGORA: Reliability-Aware Aggregation of LLM Judges via Item-Response Theory</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2611.05556" rel="nofollow noopener">AGORA: Reliability-Aware Aggregation of LLM Judges on Small Evaluation Sets</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2611.05556v1 Announce Type: new 
-Abstract: LLM-as-a-judge is a common substitute for costly human evaluation, and aggregating several judges is the standard remedy for any single judge&#x27;s bias. Judge pools mix judges of very different reliability, while the human-labeled sets that validate them hold a few hundred items or fewer. In this regime the per-item mean weights weak judges as heavily as strong ones, and confusion-table models such as Dawid-Skene must estimate a per-judge error table from too few items. We propose AGORA (Aggregation Of Reliability-weighted Assessments), an item-response-theory aggregator that places every item on one latent quality scale and describes each judge by a sensitivity parameter and ordered rating thresholds, so judge reliability is learned from all items jointly and without human labels. Across three benchmarks, AGORA matches or exceeds Dawid-Skene on large evaluation sets, and its advantage widens as the set shrinks toward a few hundred items. It remains accurate as pools grow more uneven, a label-free dispersion statistic indicates in advance when trust weighting helps, and its learned trust weights track per-judge human validity.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2611.05556v1 Announce Type: new 
-Abstract: LLM-as-a-judge is a common substitute for costly human evaluation, and aggregating several judges is the standard remedy for any single judge&#x27;s bias. Judge pools mix judges of very different reliability, while the human-labeled sets that validate them hold a few hundred items or fewer. In this regime the per-item mean weights weak judges as heavily as strong ones, and confusion-table models such as Dawid-Skene must estimate a per-judge error table from too few items. We propose AGORA (Aggregation Of Reliability-weighted Assessments), an item-response-theory aggregator that places every item on one latent quality scale and describes each judge by a sensitivity parameter and ordered rating thresholds, so judge reliability is learned from all items jointly and without human labels. Across three benchmarks, AGORA matches or exceeds Dawid-Skene on large evaluation sets, and its advantage widens as the set shrinks toward a few hundred items. It remains accurate as pools grow more uneven, a label-free dispersion statistic indicates in advance when trust weighting helps, and its learned trust weights track per-judge human validity.</div>
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2611.05556v2 Announce Type: replace 
+Abstract: LLM-as-a-judge is a common substitute for costly human evaluation, and aggregating several judges is the standard remedy for any single judge&#x27;s bias. Judge pools mix judges of very different reliability, while the human-labeled sets that validate them hold a few hundred items or fewer. In this regime the per-item mean weights weak judges as heavily as strong ones, and confusion-table models such as Dawid-Skene must estimate a per-judge error table from too few items. We propose AGORA (Aggregation Of Reliability-weighted Assessments), an item-response-theory aggregator that places every item on one latent quality scale and describes each judge by a sensitivity parameter and ordered rating thresholds, so judge reliability is learned from all items jointly and without human labels. Across three benchmarks, AGORA matches or exceeds Dawid-Skene on large evaluation sets, and its advantage widens as the set shrinks toward a few hundred items. It remains accurate as pools grow more uneven, a label-free dispersion statistic indicates in advance when trust weighting helps, and its learned trust weights track per-judge human validity. Code is available at https://github.com/JunhyungAhn/llm-as-judge-irt.</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2611.05556v2 Announce Type: replace 
+Abstract: LLM-as-a-judge is a common substitute for costly human evaluation, and aggregating several judges is the standard remedy for any single judge&#x27;s bias. Judge pools mix judges of very different reliability, while the human-labeled sets that validate them hold a few hundred items or fewer. In this regime the per-item mean weights weak judges as heavily as strong ones, and confusion-table models such as Dawid-Skene must estimate a per-judge error table from too few items. We propose AGORA (Aggregation Of Reliability-weighted Assessments), an item-response-theory aggregator that places every item on one latent quality scale and describes each judge by a sensitivity parameter and ordered rating thresholds, so judge reliability is learned from all items jointly and without human labels. Across three benchmarks, AGORA matches or exceeds Dawid-Skene on large evaluation sets, and its advantage widens as the set shrinks toward a few hundred items. It remains accurate as pools grow more uneven, a label-free dispersion statistic indicates in advance when trust weighting helps, and its learned trust weights track per-judge human validity. Code is available at https://github.com/JunhyungAhn/llm-as-judge-irt.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2611.05556v1 Announce Type: new 
-Abstract: LLM-as-a-judge is a common substitute for costly human evaluation, and aggregating several judges is the standard remedy for any single judge&#x27;s bias. Judge pools mix judges of very different reliability, while the human-labeled sets that validate them hold a few hundred items or fewer. In this regime the per-item mean weights weak judges as heavily as strong ones, and confusion-table models such as Dawid-Skene must estimate a per-judge error table from too few items. We propose AGORA (Aggregation Of Reliability-weighted Assessments), an item-response-theory aggregator that places every item on one latent quality scale and describes each judge by a sensitivity parameter and ordered rating thresholds, so judge reliability is learned from all items jointly and without human labels. Across three benchmarks, AGORA matches or exceeds Dawid-Skene on large evaluation sets, and its advantage widens as the set shrinks toward a few hundred items. It remains accurate as pools grow more uneven, a label-free dispersion statistic indicates in advance when trust weighting helps, and its learned trust weights track per-judge human validity.</p><a href="https://arxiv.org/abs/2611.05556" rel="nofollow noopener">原論文を読む →</a></div>
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2611.05556v2 Announce Type: replace 
+Abstract: LLM-as-a-judge is a common substitute for costly human evaluation, and aggregating several judges is the standard remedy for any single judge&#x27;s bias. Judge pools mix judges of very different reliability, while the human-labeled sets that validate them hold a few hundred items or fewer. In this regime the per-item mean weights weak judges as heavily as strong ones, and confusion-table models such as Dawid-Skene must estimate a per-judge error table from too few items. We propose AGORA (Aggregation Of Reliability-weighted Assessments), an item-response-theory aggregator that places every item on one latent quality scale and describes each judge by a sensitivity parameter and ordered rating thresholds, so judge reliability is learned from all items jointly and without human labels. Across three benchmarks, AGORA matches or exceeds Dawid-Skene on large evaluation sets, and its advantage widens as the set shrinks toward a few hundred items. It remains accurate as pools grow more uneven, a label-free dispersion statistic indicates in advance when trust weighting helps, and its learned trust weights track per-judge human validity. Code is available at https://github.com/JunhyungAhn/llm-as-judge-irt.</p><a href="https://arxiv.org/abs/2611.05556" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2611.05556" rel="nofollow noopener">https://arxiv.org/abs/2611.05556</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
     <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="f07a268d849a.html"><div class="sim">関連</div><div class="info"><b>Who May Overrule the Agent? Evidence-Gated Authority in LLM Review Institutions</b><div class="m">AI</div></div></a><a class="r" href="4aed649a245d.html"><div class="sim">関連</div><div class="info"><b>Agent Harness Awareness: Turning Verified Telemetry into Operational Control for Tool-Using Agents</b><div class="m">AI</div></div></a><a class="r" href="473a023bdb2d.html"><div class="sim">関連</div><div class="info"><b>Uncertainty-Aware Resource Orchestration for Agentic AI Systems</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="473743245dad.html"><div class="sim">関連</div><div class="info"><b>Zugwise: Domain-Aware Game Reconstruction for Digitizing Handwritten Chess Scoresheets</b><div class="m">AI</div></div></a><a class="r" href="511f6df35fdc.html"><div class="sim">関連</div><div class="info"><b>Cleaning an Agent&#x27;s History Hurts When the World Still Holds the Error</b><div class="m">AI</div></div></a><a class="r" href="71e20d332c04.html"><div class="sim">関連</div><div class="info"><b>Together Compiler: Continual Compilation for AI Inference</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

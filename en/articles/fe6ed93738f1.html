@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Advancing Weighted Partial MaxSAT Solving via Differentiable GPU Guidance — NewsMatome (EN)</title>
+<meta name="description" content="Advancing Weighted Partial MaxSAT Solving via Differentiable GPU Guidance — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/fe6ed93738f1.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/fe6ed93738f1.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/fe6ed93738f1.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/fe6ed93738f1.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Advancing Weighted Partial MaxSAT Solving via Differentiable GPU Guidance">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Advancing Weighted Partial MaxSAT Solving via Differentiable GPU Guidance",
+ "inLanguage":"en","datePublished":"2026-11-15T07:00:00+09:00","dateModified":"2026-11-15T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2611.15091","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/fe6ed93738f1.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/fe6ed93738f1.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Advancing Weighted Partial MaxSAT Solving via Differentiable GPU Guidance</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/11/15</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/fe6ed93738f1.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2611.15091" rel="nofollow noopener">https://arxiv.org/abs/2611.15091</a></span></div>
+  <div class="article-body"><p>arXiv:2611.15091v1 Announce Type: new 
+Abstract: We present a GPU-CPU hybrid framework for Weighted Partial MaxSAT (WPMAX-SAT) that complements state-of-the-art CPU solvers with differentiable GPU optimization. The GPU stage directly optimizes instance-specific categorical decision parameters without a training dataset or a pretrained predictive model. The central challenge in extending differentiable optimization to WPMAX-SAT is the hard/soft clause asymmetry: hard clauses represent inviolable feasibility constraints while soft clauses carry weights. We introduce a hierarchical differentiable loss that prioritizes hard clause satisfaction before optimizing the weighted soft objective, ensuring that GPU gradient descent leans towards the constraint structure of WPMAX-SAT. Our framework transforms the GPU-optimized variable logits to high-confidence assignments and transfers them to CPU solvers via two complementary modes: partial guidance, which injects the most confident perturbed partial variable assignments as soft clauses into $N$ parallel solver instances, and phase initialization, which guides the CDCL solver&#x27;s internal branching polarity with the full GPU assignment as a warm start to preserve the problem&#x27;s originality. We evaluate on all 229 instances of the MSE 2024 (most recent due to cancellation in 2025) anytime weighted benchmark with the top 2 winners as baselines; our hybrid framework improves the average solution score by up to 4.9% over tt-open-wbo-inc-Glucose and 4.8% over SPB-MaxSAT-c-FPS at a 300-second time limit, with the potential to obtain better solutions surpassing the best known solution recorded in the competition evaluation.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

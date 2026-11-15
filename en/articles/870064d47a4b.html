@@ -3,22 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Evaluating Local Language Model Agents for Reproducible Data Engineering: An Empirical Software Engineering Study of Mobility Workflows — NewsMatome (EN)</title>
-<meta name="description" content="Evaluating Local Language Model Agents for Reproducible Data Engineering: An Empirical Software Engineering Study of Mobility Workflows — original-language edition. Japanese translation available.">
+<title>Evaluating Local Language Model Agents for Data Engineering: An Empirical Software Engineering Study of Mobility Workflows — NewsMatome (EN)</title>
+<meta name="description" content="Evaluating Local Language Model Agents for Data Engineering: An Empirical Software Engineering Study of Mobility Workflows — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/870064d47a4b.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/870064d47a4b.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/870064d47a4b.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/870064d47a4b.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Evaluating Local Language Model Agents for Reproducible Data Engineering: An Empirical Software Engineering Study of Mobility Workflows">
+<meta property="og:title" content="Evaluating Local Language Model Agents for Data Engineering: An Empirical Software Engineering Study of Mobility Workflows">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Evaluating Local Language Model Agents for Reproducible Data Engineering: An Empirical Software Engineering Study of Mobility Workflows",
- "inLanguage":"en","datePublished":"2026-10-10T07:00:00+09:00","dateModified":"2026-10-10T07:00:00+09:00",
- "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Evaluating Local Language Model Agents for Data Engineering: An Empirical Software Engineering Study of Mobility Workflows",
+ "inLanguage":"en","datePublished":"2026-11-15T07:00:00+09:00","dateModified":"2026-11-15T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2610.11482","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/870064d47a4b.html"}
 </script>
@@ -32,18 +32,18 @@
 </div></header>
 <div class="wrap"><article class="article">
   <div class="article-head">
-    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Evaluating Local Language Model Agents for Reproducible Data Engineering: An Empirical Software Engineering Study of Mobility Workflows</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/10</span></div>
+    <h1>Evaluating Local Language Model Agents for Data Engineering: An Empirical Software Engineering Study of Mobility Workflows</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/11/15</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/870064d47a4b.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.11482" rel="nofollow noopener">https://arxiv.org/abs/2610.11482</a></span></div>
-  <div class="article-body"><p>arXiv:2610.11482v1 Announce Type: cross 
-Abstract: Context: Large language model (LLM) agents are increasingly used as software and data-engineering assistants, yet evidence about locally deployable open-weight agents remains limited. Existing evaluations often emphasize textual responses or isolated code generation rather than the validity of complete engineering artifacts.
-  Objectives: We evaluate whether local LLM agents can produce correct and reproducible data-engineering artifacts, quantify the effect of a closed-loop workspace condition, and examine trade-offs in model scale, architecture, quantization, runtime, tool use, and failure.
-  Methods: We introduce a benchmark of fifteen mobility-workflow tasks covering data discovery, connectors, transport-feed processing, semantic enrichment, feature engineering, validation, visualization, and reporting. Deterministic checkers assess generated scripts, tables, structured files, figures, and reports. Ten local configurations are evaluated in one-shot and closed-loop conditions, with five repetitions per model, mode, and task, yielding 1,500 scored attempts on a consumer-grade GPU.
-  Results: Among models larger than two billion parameters, the workspace condition increases pass rates by 26.7-52.0 percentage points over one-shot generation. The strongest configuration reaches 85.3% artifact-level success, and a quantized 9-billion-parameter model reaches 69.3% with an approximately 6.5 GB memory footprint. Gains are largest when intermediate artifacts expose errors the agent can inspect and repair.
-  Conclusion: Local open-weight agents can support a meaningful subset of software-intensive data-engineering work, but reliability depends on model capability, task verifiability, and deterministic validation. The benchmark provides a reproducible method for evaluating complete agent configurations before adoption in engineering workflows.</p></div>
+  <div class="article-body"><p>arXiv:2610.11482v2 Announce Type: replace-cross 
+Abstract: Context: Large language model (LLM) agents are increasingly used as software and data-engineering assistants, yet evidence about locally deployable open-weight agents remains limited. Existing evaluations often emphasise textual responses or isolated code rather than complete engineering artifacts.
+  Objectives: We evaluate whether local LLM agents can produce correct and reliable data-engineering artifacts, isolate the contribution of a closed-loop workspace and of input-structure knowledge, and examine trade-offs in runtime, cost, and failure behaviour.
+  Methods: We introduce a benchmark of fifteen mobility data-engineering tasks with deterministic checkers for the scripts, tables, structured files, figures, and reports they produce. Sixteen configurations from six model families are evaluated in three conditions (chat-only, chat-schema, agent-with-tools) with five repetitions per model, condition, and task, yielding 3,600 scored attempts on a consumer-grade GPU.
+  Results: A 4-billion-parameter model at 4-bit reaches 77.3%, a 9-billion-parameter model 80.0% within about 6.5 GB, and a 12-billion-parameter model from another family 81.3%, against 98.7% for the highest-scoring configuration, which solves 14 of 15 tasks in all five repetitions. Above two billion parameters the workspace loop raises pass rates by 24.0 to 65.3 points over uninformed one-shot generation, and its contribution exceeds that of the input-structure summary in eleven of fifteen tasks.
+  Conclusion: Open-weight models that fit on one consumer GPU support a meaningful share of data-engineering work once given a workspace loop, although capability still separates usable from unusable configurations and high-stakes outputs need validation. Being mobility-specific and checker-based, the benchmark characterizes the evaluated configurations, not all data-engineering practice.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Multi-head Quantum Neural Networks: Replacing Transformer Blocks with NISQ Modules inside a 30-Billion-Parameter LLM — NewsMatome (EN)</title>
+<meta name="description" content="Multi-head Quantum Neural Networks: Replacing Transformer Blocks with NISQ Modules inside a 30-Billion-Parameter LLM — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/052466937ce7.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/052466937ce7.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/052466937ce7.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/052466937ce7.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Multi-head Quantum Neural Networks: Replacing Transformer Blocks with NISQ Modules inside a 30-Billion-Parameter LLM">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Multi-head Quantum Neural Networks: Replacing Transformer Blocks with NISQ Modules inside a 30-Billion-Parameter LLM",
+ "inLanguage":"en","datePublished":"2026-11-15T07:00:00+09:00","dateModified":"2026-11-15T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2611.15250","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/052466937ce7.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/052466937ce7.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Multi-head Quantum Neural Networks: Replacing Transformer Blocks with NISQ Modules inside a 30-Billion-Parameter LLM</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/11/15</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/052466937ce7.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2611.15250" rel="nofollow noopener">https://arxiv.org/abs/2611.15250</a></span></div>
+  <div class="article-body"><p>arXiv:2611.15250v1 Announce Type: cross 
+Abstract: We introduce the multi-head quantum neural network (QNN), a quantum module compatible with noisy intermediate-scale quantum (NISQ) devices that can replace transformer blocks inside pre-trained large language models (LLMs) with little loss in accuracy and with far fewer parameters than the blocks it replaces. Encoding a model&#x27;s $D$ hidden neurons into a qubit register is the obstacle: amplitude encoding scales poorly in circuit depth and angle encoding in qubit count, so neither is practical at production-scale width. We instead partition the hidden space into $k$ disjoint heads, angle-encode each into an $n_q$-qubit register, process the heads in parallel, and couple them through constrained classical linear layers, the mixers. Performing surgery on Qwen3-30B-A3B-Instruct-2507, we show that a single multi-head QNN with $145\,281$ trainable parameters ($D=2048$, $k=32$, $n_q=8$, $L=4$) can replace a contiguous span of eight transformer blocks, displacing $16.33\%$ of the model&#x27;s parameters. Ablations show that, for a single replaced block, the quantum heads (circuits followed by a learned readout), and not the classical mixers alone, recover the displaced function, whereas for fused spans the mixers alone come within $1$-$3\%$ of the full module in perplexity. Whether this benefit is specific to trained, entangling quantum circuits is not established: controls that switch the entangler off (two seeds), or freeze the circuit at its initial or at uniformly random angles (one seed), beat the full module on held-out perplexity, and a parameter-matched classical multilayer perceptron remains a few percent ahead of the full module. We train classically with exact statevector simulation, then execute the quantum heads of our fusion checkpoints on a $156$-qubit IBM Heron processor, showing that NISQ-scale quantum modules can be installed in a production-scale LLM and run on hardware.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

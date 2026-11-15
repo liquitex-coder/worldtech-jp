@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ADAPT: Agentic Diff-Aware Patch Testing for Pull Requests — NewsMatome (EN)</title>
+<meta name="description" content="ADAPT: Agentic Diff-Aware Patch Testing for Pull Requests — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/6e1c05684056.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/6e1c05684056.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/6e1c05684056.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/6e1c05684056.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ADAPT: Agentic Diff-Aware Patch Testing for Pull Requests">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"ADAPT: Agentic Diff-Aware Patch Testing for Pull Requests",
+ "inLanguage":"en","datePublished":"2026-11-15T07:00:00+09:00","dateModified":"2026-11-15T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2611.16114","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/6e1c05684056.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/6e1c05684056.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>ADAPT: Agentic Diff-Aware Patch Testing for Pull Requests</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/11/15</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/6e1c05684056.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2611.16114" rel="nofollow noopener">https://arxiv.org/abs/2611.16114</a></span></div>
+  <div class="article-body"><p>arXiv:2611.16114v1 Announce Type: cross 
+Abstract: Modern software development relies on pull requests (PRs) that introduce small, targeted code changes. Once merged, these changes should be protected by focused tests that exercise the behavior the PR introduces, yet developers often submit PRs without such tests, leaving the new behavior unguarded against future regressions. Most test generation techniques target entire software units and optimize objectives such as code coverage rather than the behavior a change introduces, and prior diff-aware approaches have had limited success in capturing it.
+  We propose ADAPT (Agentic Diff-Aware Patch Testing), a regression test generation approach that uses an autonomous coding agent to produce change-focused tests for PRs. Given a PR, the agent analyzes the diff between the base and head versions to identify the modified functions and their context, then plans and generates candidate unit tests. A dedicated fail-to-pass (F2P) verification tool runs each candidate on both versions and, after F2P success, reports which executable changed lines remain uncovered; guided by this feedback, the agent iteratively refines its tests.
+  We evaluate ADAPT on the same 426 real-world PRs used by the prior state-of-the-art baseline, with GPT-4o and GPT-5-mini. ADAPT+GPT-4o reaches an F2P rate of 62.0% (264/426), compared with BLAST&#x27;s reported 35.4% (151/426), while ADAPT+GPT-5-mini reaches 89.9% (383/426). On 137 PRs shared with Change And Cover (ChaCo), ADAPT achieves full patch coverage on 83.9% of PRs, compared with 79.6% for ChaCo, at considerably lower time and cost. A manual evaluation confirms that the F2P-valid tests target each PR&#x27;s intended change, with mean scores of up to 4.54/5 for importance, 4.35/5 for assertion strength, and 4.49/5 for readability, often covering behavior beyond the developer-written tests.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

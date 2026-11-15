@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Where in the Input Does a One-Pass Decision Encoder Look? — NewsMatome (EN)</title>
+<meta name="description" content="Where in the Input Does a One-Pass Decision Encoder Look? — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/74fc34c8ad99.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/74fc34c8ad99.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/74fc34c8ad99.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/74fc34c8ad99.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Where in the Input Does a One-Pass Decision Encoder Look?">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Where in the Input Does a One-Pass Decision Encoder Look?",
+ "inLanguage":"en","datePublished":"2026-11-15T07:00:00+09:00","dateModified":"2026-11-15T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2611.16477","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/74fc34c8ad99.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/74fc34c8ad99.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Where in the Input Does a One-Pass Decision Encoder Look?</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/11/15</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/74fc34c8ad99.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2611.16477" rel="nofollow noopener">https://arxiv.org/abs/2611.16477</a></span></div>
+  <div class="article-body"><p>arXiv:2611.16477v1 Announce Type: cross 
+Abstract: Laya is a small model that answers a multiple-choice question about a text in one pass: the question, the options (each with a name and a description) and the text form one sequence of at most 512 tokens, the window, in the English release. A longer text is silently cut at the end, and we measure what that costs. Test documents place a held-out row&#x27;s text, the evidence, at a chosen token offset among distractor text; 177 items, five tasks, three checkpoints (released, short-row fine-tune, long-document fine-tune), four window sizes and 93,275 scored requests. When the evidence lies beyond the window, accuracy falls to 26.4% for the released checkpoint (27.2% for both fine-tunes), near the 27.0% of guessing and below the 35.6% of always giving the commonest label. Confidence gives no warning (AUROC 0.50 to 0.55 for telling cut from read requests; 0.5 = chance), and the runtime&#x27;s truncation flag also fires on requests whose evidence was visible. The released checkpoint reads visible evidence badly once text precedes it: 38.5% pooled against 60% when the evidence comes first, so a larger window alone gains +6.2 points. Fine-tuning on long documents adds +27.6 points on visible evidence over the short-row fine-tune (95% interval +22.3 to +33.1) and nothing on cut evidence. That is an in-family result: training rows and test documents share generator and question types, and the main filler is of the training kind. With encyclopedic filler never seen in training the gain is +13.2 (+9.9 to +16.6), with rows of other tasks as filler -2.0. Among training-free rearrangements a 312-token window scan helps most (+11.9 points over the default for the released checkpoint) at six to eleven forward passes. Documents are synthetic, labels are LLM-made and one backbone is studied, so these diagnose this model, not long documents in general.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

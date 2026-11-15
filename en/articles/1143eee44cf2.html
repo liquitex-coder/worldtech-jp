@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How many LLM-labelled rows does a decision encoder need, and how wrong can the labels be? — NewsMatome (EN)</title>
+<meta name="description" content="How many LLM-labelled rows does a decision encoder need, and how wrong can the labels be? — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/1143eee44cf2.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/1143eee44cf2.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/1143eee44cf2.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/1143eee44cf2.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How many LLM-labelled rows does a decision encoder need, and how wrong can the labels be?">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"How many LLM-labelled rows does a decision encoder need, and how wrong can the labels be?",
+ "inLanguage":"en","datePublished":"2026-11-15T07:00:00+09:00","dateModified":"2026-11-15T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2611.16498","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/1143eee44cf2.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/1143eee44cf2.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>How many LLM-labelled rows does a decision encoder need, and how wrong can the labels be?</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/11/15</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/1143eee44cf2.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2611.16498" rel="nofollow noopener">https://arxiv.org/abs/2611.16498</a></span></div>
+  <div class="article-body"><p>arXiv:2611.16498v1 Announce Type: new 
+Abstract: A decision encoder such as Laya reads a question with named options (for example, which department should handle a ticket) and a text, and picks an option. It reads both in one forward pass and returns a probability for every option, without writing any text. We ask how many LLM-written training rows such an encoder needs and how wrong those labels may be. We ran 19 fine-tunes of Laya (ModernBERT-large) on nested subsets of a 2,818-row pool and scored them on 1,065 held-out items from the same generator, so every test item is in-distribution and no out-of-family test was run. Accuracy rises from 69.4% before fine-tuning to 74.3% with 5% of the rows, 84.8% with 50% and 86.9% with all rows. The curve flattens, and a saturating fit with bootstrap intervals cannot pin down its plateau. Seed spread at 20% of the rows (s.d. 1.6 points) exceeds some of the steps between sizes. Giving small subsets as many updates as the full pool gains 1.9 points at 5% and 1.9 points at 20% of the rows (one seed; p=0.14 and 0.13), and at 20% that is below the 2.3-point difference between two ordinary seeds. A single run with 10% symmetric label noise shows no detectable change (-0.2 points, 95% interval -1.7 to +1.4); 20% costs 3.4 points and 40% costs 8.7 points. Confusable-pair noise at 20% costs 7.4 points, and under noise the model moves from over-confident to under-confident. An independent labeller disagrees with the gold labels on 3.5% of held-out items, and about half of its choice disagreements (16 of 33, leaving each item out of the partner map) name the partner option that the confusable-pair noise uses. Laya is +0.9 points ahead of a TF-IDF classifier trained on the same rows at full size (the interval includes zero) and +21.1 points ahead at 5% of the rows. Everything is synthetic, LLM-labelled and from one backbone, one trainer and mostly one seed.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
