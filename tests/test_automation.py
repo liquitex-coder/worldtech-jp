@@ -70,7 +70,8 @@ def test_llm_translator_disabled_without_key(monkeypatch):
 def test_llm_translator_built_when_key_and_sdk(monkeypatch):
     # covers: FR-21
     monkeypatch.setenv("ANTHROPIC_API_KEY", "test-key")
-    import sys, types
+    import sys
+    import types
     # 軽量なフェイク anthropic SDK を注入（実APIは呼ばない）
     fake = types.ModuleType("anthropic")
     fake.Anthropic = lambda *a, **k: object()

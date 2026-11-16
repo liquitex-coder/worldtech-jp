@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import hashlib
 import json
-from dataclasses import asdict, dataclass, field
+from dataclasses import asdict, dataclass
 from pathlib import Path
 
 # 13 カテゴリ（FR-23）。各カテゴリに専門エージェントを配置（FR-29）。
