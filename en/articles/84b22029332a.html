@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ReForge: Keeping ABR Algorithms Never Finished with Verified Large Language Model Edits — NewsMatome (EN)</title>
-<meta name="description" content="ReForge: Keeping ABR Algorithms Never Finished with Verified Large Language Model Edits — original-language edition. Japanese translation available.">
+<title>ReForge: Keeping ABR Algorithms Never Finished with Verified Large Language Model Revisions — NewsMatome (EN)</title>
+<meta name="description" content="ReForge: Keeping ABR Algorithms Never Finished with Verified Large Language Model Revisions — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/84b22029332a.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/84b22029332a.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/84b22029332a.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/84b22029332a.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ReForge: Keeping ABR Algorithms Never Finished with Verified Large Language Model Edits">
+<meta property="og:title" content="ReForge: Keeping ABR Algorithms Never Finished with Verified Large Language Model Revisions">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"ReForge: Keeping ABR Algorithms Never Finished with Verified Large Language Model Edits",
- "inLanguage":"en","datePublished":"2026-08-19T07:00:00+09:00","dateModified":"2026-08-19T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"ReForge: Keeping ABR Algorithms Never Finished with Verified Large Language Model Revisions",
+ "inLanguage":"en","datePublished":"2026-11-17T07:00:00+09:00","dateModified":"2026-11-17T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2608.15138","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/84b22029332a.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>ReForge: Keeping ABR Algorithms Never Finished with Verified Large Language Model Edits</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/08/19</span></div>
+    <h1>ReForge: Keeping ABR Algorithms Never Finished with Verified Large Language Model Revisions</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/11/17</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/84b22029332a.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.15138" rel="nofollow noopener">https://arxiv.org/abs/2608.15138</a></span></div>
-  <div class="article-body"><p>arXiv:2608.15138v1 Announce Type: new 
-Abstract: Designing an ABR algorithm for one network scenario takes an engineer months, and large language models now do this work in hours, matching or beating hand-built designs. But either way, the design fits only the world visible at its birth, and fails on the world that arrives after. We ask whether an ABR algorithm can keep pace with the world, redesigned in minutes as each scenario arrives, with every change proven harmless to every scenario already served. In this work, we propose ReForge, a continual heuristic learning framework that adapts to continuously changing scenarios. ReForge runs that routine with a large language model (LLM) in the loop. Each round the LLM reads where the current design falls short and proposes one small edit, and a replay over every network served so far decides. Specifically, what it edits is a single page of fuzzy rules that routes every decision to one of a frozen pool of pre-trained policies. The LLM writes the first page from measurements alone, then keeps improving it on its own. Each round it reads where the current rules fall short and proposes one small edit, and a replay over every network served so far decides whether the edit lands. We evaluate ReForge on nine real-world network families arriving one at a time as 3G, 4G, then 5G. A few edits per arrival lift mean QoE from 1.23 to 1.74, past the best single policy at 1.66 and to 94\% of an oracle, and even repair families the loop never saw, one rising from 0.30 to 0.80. All code, data, and experiment records will be open-sourced upon cleanup.</p></div>
+  <div class="article-body"><p>arXiv:2608.15138v2 Announce Type: replace 
+Abstract: Designing an ABR algorithm for a network scenario takes an engineer months, and large language models (LLMs) now do this work in hours. But either way, the algorithm is fixed once it is deployed. It fits the networks seen during its design and falls behind on the networks that arrive afterwards. We ask whether an ABR algorithm can keep being designed after deployment, revised as each new network arrives, without becoming worse on any network it already serves. We propose ReForge, which keeps a pool of existing ABR policies unchanged and lets an LLM revise only the rules that decide which policy chooses the next bitrate. When a new network arrives, the LLM reads how the current rules and every policy perform on the networks served so far and rewrites the rules. The rewrite is deployed only if a replay in simulation shows that it improves the served networks as a whole and makes none of them worse. A fast GPU simulator that replays every episode exactly makes this acceptance test cheap enough to run for every revision. We evaluate ReForge on nine real-world network datasets, with new networks arriving one at a time. The revisions raise the mean QoE from 1.43 to 1.79, past the best single policy at 1.66 and close to the 1.86 of selecting the best policy for each dataset, while the QoE on the networks served first does not drop. The gain also holds in a real video player. All code, data, and records will be available.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>
