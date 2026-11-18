@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Residual Deep Reinforcement Learning-Based Computed Torque Control for a Cable-Driven Lower-Limb Rehabilitation Robot under Disturbances and Parametric Uncertainties — NewsMatome (EN)</title>
-<meta name="description" content="Residual Deep Reinforcement Learning-Based Computed Torque Control for a Cable-Driven Lower-Limb Rehabilitation Robot under Disturbances and Parametric Uncertainties — original-language edition. Japanese translation available.">
+<title>Simulation-Based Evaluation of Residual DDPG-Augmented Computed Torque Control for a Cable-Driven Lower-Limb Rehabilitation Robot Model under Disturbances and Parametric Uncertainties — NewsMatome (EN)</title>
+<meta name="description" content="Simulation-Based Evaluation of Residual DDPG-Augmented Computed Torque Control for a Cable-Driven Lower-Limb Rehabilitation Robot Model under Disturbances and Parametric Uncertainties — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/90e0bf1df542.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/90e0bf1df542.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/90e0bf1df542.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/90e0bf1df542.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Residual Deep Reinforcement Learning-Based Computed Torque Control for a Cable-Driven Lower-Limb Rehabilitation Robot under Disturbances and Parametric Uncertainties">
+<meta property="og:title" content="Simulation-Based Evaluation of Residual DDPG-Augmented Computed Torque Control for a Cable-Driven Lower-Limb Rehabilitation Robot Model under Disturbances and Parametric Uncertainties">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Residual Deep Reinforcement Learning-Based Computed Torque Control for a Cable-Driven Lower-Limb Rehabilitation Robot under Disturbances and Parametric Uncertainties",
- "inLanguage":"en","datePublished":"2026-08-29T07:00:00+09:00","dateModified":"2026-08-29T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Simulation-Based Evaluation of Residual DDPG-Augmented Computed Torque Control for a Cable-Driven Lower-Limb Rehabilitation Robot Model under Disturbances and Parametric Uncertainties",
+ "inLanguage":"en","datePublished":"2026-11-19T07:00:00+09:00","dateModified":"2026-11-19T07:00:00+09:00",
  "author":{"@type":"Organization","name":"ロボット技術担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2608.26739","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/90e0bf1df542.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#ef4444"></span>ロボット技術</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Residual Deep Reinforcement Learning-Based Computed Torque Control for a Cable-Driven Lower-Limb Rehabilitation Robot under Disturbances and Parametric Uncertainties</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b></span></span><span>2026/08/29</span></div>
+    <h1>Simulation-Based Evaluation of Residual DDPG-Augmented Computed Torque Control for a Cable-Driven Lower-Limb Rehabilitation Robot Model under Disturbances and Parametric Uncertainties</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b></span></span><span>2026/11/19</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/90e0bf1df542.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.26739" rel="nofollow noopener">https://arxiv.org/abs/2608.26739</a></span></div>
-  <div class="article-body"><p>arXiv:2608.26739v1 Announce Type: new 
-Abstract: Accurate trajectory tracking in cable-driven lower-limb rehabilitation robots is challenging because model uncertainty, external disturbances, joint constraints, and pull-only cable actuation can degrade nominal control performance. Conventional model-based controllers provide an interpretable control structure but remain sensitive to model mismatch, whereas fully learning-based control can reduce transparency and complicate constraint-aware operation. This study proposes a residual deep reinforcement learning-enhanced computed torque control framework in which computed torque control generates the nominal command and a bounded Deep Deterministic Policy Gradient policy supplies only an additional compensating torque. The approach is evaluated in simulation under nominal, uncertain, disturbed, combined, and generalization conditions, together with trajectory-tracking, joint-limit, cable-demand, workspace-feasibility, and cable-Jacobian diagnostics. Across the evaluated conditions, the residual controller improves tracking and disturbance rejection relative to computed torque control while preserving the interpretable model-based command structure and satisfying the reported feasibility checks in the representative evaluation. Broader tests indicate that tracking improvements can persist beyond the representative case while also exposing trajectory-dependent constraint limitations. These results support bounded residual learning as a practical robustness-enhancement strategy for simulation-based rehabilitation robot control and motivate further constraint-aware and experimental validation.</p></div>
+  <div class="article-body"><p>arXiv:2608.26739v2 Announce Type: replace 
+Abstract: Nominal computed torque control (CTC) relies on accurate inverse dynamics; parameter mismatch and disturbances can leave tracking error, while joint limits and unilateral cable forces constrain motion. This numerical study evaluates a bounded Deep Deterministic Policy Gradient (DDPG) residual correction around nominal CTC for a planar three-degree-of-freedom, three-cable lower-limb rehabilitation robot model. In four simulation cases, we examine tracking, joint limits, workspace, cable-Jacobian conditioning and inferred cable demands. In a representative combined uncertainty/disturbance case, Cartesian RMS error was 0.0221419 m with CTC and 0.0128462 m with residual DDPG-CTC (approximately 42% lower). On a different circular reference, the residual branch nevertheless increased joint-limit-violating channel samples from 44 to 101. Separate supplemental experiments analyze training variability and checkpoints, alternative compensators, reward/action sensitivity, independently varied parameters and disturbances, trajectory transfer, constrained cable-force allocation and force lag. These studies show both improvements and failures, including early terminations and force-capacity-dependent degradation. The verified original algebraic force-backprojection path and later bounded-force simulations are distinguished; numerical allocations do not establish physical pretension or motor performance. Simscape and MSC ADAMS checks are numerical cross-model consistency assessments. No hardware, hardware-in-the-loop or patient tests were performed, and no clinical efficacy or physical safety guarantee is claimed.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

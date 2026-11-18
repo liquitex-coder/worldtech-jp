@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Interpretable-by-Design Descriptor Portfolios Match a 2048-Dimensional Foundation Embedding on Low-Data Molecular Assays — NewsMatome (EN)</title>
-<meta name="description" content="Interpretable-by-Design Descriptor Portfolios Match a 2048-Dimensional Foundation Embedding on Low-Data Molecular Assays — original-language edition. Japanese translation available.">
+<title>Feature Selection for Tabular Foundation Models: Exploring Feature Utility in Low-Data Molecular Prediction — NewsMatome (EN)</title>
+<meta name="description" content="Feature Selection for Tabular Foundation Models: Exploring Feature Utility in Low-Data Molecular Prediction — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/64e2c296852a.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/64e2c296852a.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/64e2c296852a.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/64e2c296852a.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Interpretable-by-Design Descriptor Portfolios Match a 2048-Dimensional Foundation Embedding on Low-Data Molecular Assays">
+<meta property="og:title" content="Feature Selection for Tabular Foundation Models: Exploring Feature Utility in Low-Data Molecular Prediction">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Interpretable-by-Design Descriptor Portfolios Match a 2048-Dimensional Foundation Embedding on Low-Data Molecular Assays",
- "inLanguage":"en","datePublished":"2026-09-30T07:00:00+09:00","dateModified":"2026-09-30T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Feature Selection for Tabular Foundation Models: Exploring Feature Utility in Low-Data Molecular Prediction",
+ "inLanguage":"en","datePublished":"2026-11-19T07:00:00+09:00","dateModified":"2026-11-19T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2609.30789","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/64e2c296852a.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Interpretable-by-Design Descriptor Portfolios Match a 2048-Dimensional Foundation Embedding on Low-Data Molecular Assays</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/30</span></div>
+    <h1>Feature Selection for Tabular Foundation Models: Exploring Feature Utility in Low-Data Molecular Prediction</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/11/19</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/64e2c296852a.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.30789" rel="nofollow noopener">https://arxiv.org/abs/2609.30789</a></span></div>
-  <div class="article-body"><p>arXiv:2609.30789v1 Announce Type: new 
-Abstract: In low-data structure-activity prediction, the choice of molecular representation can matter more than the choice of predictor, and tabular foundation models sharpen that effect. We ask whether a portfolio of compact, semantically named descriptor blocks can reach the accuracy of a 2048-dimensional CheMeleon embedding while staying auditable at the feature level, meaning that every input dimension carries a model name and a recorded training provenance. Starting from a fixed 11-dimensional physicochemical base, we greedily concatenate provenance-screened blocks using the labelled context alone. Across nine ADME/Tox assays and 50 evaluation cells, scored on common-coverage subsets restricted to the molecules that every representation covers, the portfolio reaches a mean test AUC of 0.762, against 0.764 for CheMeleon and 0.756 for Mordred. The pooled gap to CheMeleon is +0.003 AUC (task-bootstrap 95% CI [-0.020, +0.030]), which satisfies our predeclared pooled parity gate but not the per-assay gate. At 25 context labels the headline rule again satisfies the pooled gate; at 10 labels it does not. We also report four predeclared candidate-selection rules that we falsified. Post-freeze checks over ten seeds and three previously unseen assays support pooled competitiveness for compact, auditable representations; a same-width random-bundle control does not establish that greedy membership itself adds accuracy. Assay-level differences remain unresolved.</p></div>
+  <div class="article-body"><p>arXiv:2609.30789v4 Announce Type: replace 
+Abstract: Choosing features is difficult with few labeled molecules, even for a tabular foundation model that learns in context. We study this problem with TabPFN for low-data molecular property prediction, separating input width, feature meaning, and predictive usefulness while keeping contexts, query molecules, and predictor settings matched. On ADME/Tox assays from Therapeutics Data Commons, endpoint-matched assay predictions improve a compact RDKit descriptor baseline, and a provenance audit shows that most audited query molecules already occur in the predictors&#x27; training sources. Across 77 FS-Mol development tasks and 157 held-out test assays drawn from ChEMBL, broad RDKit descriptor and fingerprint families provide a strong default, rank-averaging TabPFN with support-fitted fingerprint forests improves upon both models, and learned weighting of family predictions adds further gains at a larger prediction budget. A utility-trained selector builds a traceable 16-column input from 238 sourceassay predictors, improving upon the baseline while trailing wider representations and equalwidth structural SVD coordinates. Named outputs identify what each feature predicts and where it comes from. Their usefulness for a new assay is assessed alongside the other input features, and paired removal and replacement tests measure what each selected output contributes. Together, these studies offer a protocol for evaluating feature selection, representation choice, and data provenance with a fixed tabular foundation model for few-shot molecular property prediction.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JigSLO: Solving the Resource Puzzle for Efficient Multi-LLM Serving — NewsMatome (EN)</title>
+<meta name="description" content="JigSLO: Solving the Resource Puzzle for Efficient Multi-LLM Serving — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/4e95d118c958.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/4e95d118c958.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/4e95d118c958.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/4e95d118c958.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JigSLO: Solving the Resource Puzzle for Efficient Multi-LLM Serving">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"JigSLO: Solving the Resource Puzzle for Efficient Multi-LLM Serving",
+ "inLanguage":"en","datePublished":"2026-11-19T07:00:00+09:00","dateModified":"2026-11-19T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2509.06261","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/4e95d118c958.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/4e95d118c958.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>JigSLO: Solving the Resource Puzzle for Efficient Multi-LLM Serving</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/11/19</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/4e95d118c958.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2509.06261" rel="nofollow noopener">https://arxiv.org/abs/2509.06261</a></span></div>
+  <div class="article-body"><p>arXiv:2509.06261v3 Announce Type: replace-cross 
+Abstract: GPU spatial sharing co-locates instances with complementary demands, such as compute-bound prefill and memory-bound decode, promising cost-efficient multi-LLM serving. Prior systems partition compute and coordinate shared memory capacity, but do not model bandwidth contention among co-located instances of heterogeneous LLMs. This contention makes each instance&#x27;s latency depend on the memory-access patterns of its co-runners, even when its own resource allocation remains unchanged. Drawing on extensive measurements, we find that the latency impact of bandwidth contention can be captured by a time-shared memory-access model with contended and uncontended periods, so the overall latency can be analytically estimated as a time-weighted average of the latency estimates for these periods. We propose JigSLO, a contention-aware multi-LLM serving system that manages memory resources and schedules each model&#x27;s prefill and decode phases as separate instances, treating their co-location as a placement decision. Its contention-aware predictor estimates per-instance latency under any co-location from standalone profiles alone. Guided by these predictions, its placement algorithm jointly selects each instance&#x27;s tensor parallelism, compute share, and batch configuration, pairing complementary memory-access patterns to maximize throughput within each model&#x27;s latency targets. JigSLO&#x27;s shared resource manager complements this on the capacity side, sharing weights, pooling KV cache, and transferring it between prefill and decode instances. Across three datasets covering chat, code generation, and long-context summarization, JigSLO outperforms state-of-the-art baselines by $2.3\times$ in SLO attainment and $1.2\times$ in throughput on average, matching their best attainment with half the GPUs on long-context workloads.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Depth-Aware Activation Steering via Attention Residuals — NewsMatome (EN)</title>
+<meta name="description" content="Depth-Aware Activation Steering via Attention Residuals — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/b41acf59f109.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/b41acf59f109.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/b41acf59f109.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/b41acf59f109.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Depth-Aware Activation Steering via Attention Residuals">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Depth-Aware Activation Steering via Attention Residuals",
+ "inLanguage":"en","datePublished":"2026-11-19T07:00:00+09:00","dateModified":"2026-11-19T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2611.21655","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/b41acf59f109.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/b41acf59f109.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Depth-Aware Activation Steering via Attention Residuals</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/11/19</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/b41acf59f109.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2611.21655" rel="nofollow noopener">https://arxiv.org/abs/2611.21655</a></span></div>
+  <div class="article-body"><p>arXiv:2611.21655v1 Announce Type: cross 
+Abstract: Activation steering is a simple, training-free way to modulate LLM behavior, yet existing methods typically inject vectors at a single layer and lack mechanisms for depth-aware propagation or internal verification. We combine two recent ideas - Attention Residuals (AttnRes) providing learnable cross-layer pathways, and Jacobian-lens (J-space) concept readout - into a lightweight depth-aware steering pipeline. On two small open models (Qwen3-0.6B and Qwen3.5-0.8B), distributing a persona vector according to AttnRes-style depth weights yields stronger internal alignment (deeper-layer concept cosine and rank, p&lt;0.0001) and stronger behavioral shifts than single-layer injection. The effect is sign-specific: reverse vectors invert all six metrics, random directions degrade alignment (p&lt;0.0001), and a short LoRA fine-tune erases the imprint. Injection rewires attention strictly downstream of the injection point (upstream JS = 0.00000). Three practical findings follow. First, a layer-wise geometric decomposition of cosine readouts: at the injection layer 123% of the increase is arithmetic, while 5-11 layers downstream 100% is dynamical. Second, an intensity window: effects are monotone over 0.3-0.7, then generation collapses (617 to 306 to 25 chars). Third, metric discipline: keyword-rule metrics fail LLM-judge validation (kappa &lt;= 0.09), and two rule-based conclusions were retracted. Training the depth weights on a steering objective (200 steps, frozen backbone) raises final alignment 10x on held-out prompts. Cross-persona vectors retain 96-99% of the effect: specificity holds against random, not semantic, directions. We contribute a practical, low-overhead depth-aware steering method with a careful evaluation protocol. Code and data are released.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Generative Semantic Segmentation via an Observable Semantic-Image Interface and Hierarchical Generator Evidence Alignment — NewsMatome (EN)</title>
-<meta name="description" content="Generative Semantic Segmentation via an Observable Semantic-Image Interface and Hierarchical Generator Evidence Alignment — original-language edition. Japanese translation available.">
+<title>Semantic Prism: Generative Segmentation with an Explicit Semantic-Image Interface — NewsMatome (EN)</title>
+<meta name="description" content="Semantic Prism: Generative Segmentation with an Explicit Semantic-Image Interface — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/19fe57804b8e.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/19fe57804b8e.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/19fe57804b8e.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/19fe57804b8e.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Generative Semantic Segmentation via an Observable Semantic-Image Interface and Hierarchical Generator Evidence Alignment">
+<meta property="og:title" content="Semantic Prism: Generative Segmentation with an Explicit Semantic-Image Interface">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Generative Semantic Segmentation via an Observable Semantic-Image Interface and Hierarchical Generator Evidence Alignment",
- "inLanguage":"en","datePublished":"2026-08-14T07:00:00+09:00","dateModified":"2026-08-14T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Semantic Prism: Generative Segmentation with an Explicit Semantic-Image Interface",
+ "inLanguage":"en","datePublished":"2026-11-19T07:00:00+09:00","dateModified":"2026-11-19T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2608.11537","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/19fe57804b8e.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Generative Semantic Segmentation via an Observable Semantic-Image Interface and Hierarchical Generator Evidence Alignment</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/08/14</span></div>
+    <h1>Semantic Prism: Generative Segmentation with an Explicit Semantic-Image Interface</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/11/19</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/19fe57804b8e.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.11537" rel="nofollow noopener">https://arxiv.org/abs/2608.11537</a></span></div>
-  <div class="article-body"><p>arXiv:2608.11537v1 Announce Type: cross 
-Abstract: Generative semantic segmentation exposes structured predictions as images, but direct color decoding is susceptible to color drift and boundary mixing, whereas latent-feature decoders that predict a separate output distribution may relegate the rendered image to an intermediate visualization. We present Semantic Prism, a conditional semantic-image generation-and-refinement framework with deterministic inference. A diffusion-distilled one-step generator renders a semantic RGB image; per-pixel distances from the rendered colors to a fixed class-color codebook define an explicit probabilistic interface. Hierarchical Generator Evidence Alignment spatially aligns multi-level generator features and uses a zero-initialized output projection to predict an additive residual in the interface logit space, retaining the image-defined interface as the reference for the final distribution. The interface and refined distributions further enable Contextual Interface--Hierarchy Disagreement (C-IHD), a fixed readout for ranking remaining pixel errors without an auxiliary predictor or additional forward pass. On the 500-image Cityscapes validation set, Semantic Prism achieves 72.07% mean intersection over union, 11.39 mIoU points above direct-interface decoding, with 0.41% expected calibration error. Matched-capacity ablations over three seeds support the benefit of jointly aligned multi-level evidence. A separately trained model attains 62.22% mIoU on BDD100K, while the Cityscapes-trained model reaches 46.89\% mIoU under source-frozen transfer to the Adverse Conditions Dataset with Correspondences, without target-domain adaptation. Across all three datasets, C-IHD consistently improves the area under the precision--recall curve for pixel-error ranking over maximum softmax probability on the same segmentation predictions; on ACDC, it raises AUPR from 0.6580 to 0.7557.</p></div>
+  <div class="article-body"><p>arXiv:2608.11537v2 Announce Type: replace-cross 
+Abstract: Conditional image generators can render segmentation maps as semantic RGB images, but color drift and boundary mixing can undermine direct decoding. We present Semantic Prism, a framework that combines an explicit semantic-image interface with hierarchical refinement for road-scene segmentation. A generator adapted from a diffusion-distilled backbone produces a semantic RGB image with a single denoising update per crop. Distances to a fixed class-color codebook define interface logits and pixelwise class probabilities. Hierarchical Generator Evidence Alignment (HGEA) combines spatially aligned multilevel features from the VAE encoder of the generator with the input image, generated semantic image, and interface probabilities to predict additive corrections to these logits. Contextual Interface Hierarchy Disagreement (C-IHD) combines pointwise uncertainty, local context, and interface-refinement disagreement in a fixed score for ranking pixel errors, without an auxiliary predictor or an additional network pass. On the 500-image Cityscapes validation set, Semantic Prism achieves 72.07% mean mIoU, improving on direct-interface decoding by 11.39 percentage points. Extensive capacity-matched ablations show higher mean mIoU for multilevel refinement than for flat and single-level alternatives. The Cityscapes-trained model transfers to ACDC Dataset, achieving 46.89% mIoU without target-domain adaptation. Beyond Cityscapes, on BDD100K dataset, a separately trained model achieves 62.22% mIoU on its full 1,000-image validation set. Across the 3 evaluated datasets, C-IHD improves pixel-error area under the AUPR over uncertainty derived from maximum softmax probability, with segmentation predictions held fixed for each comparison. In particular, on ACDC, AUPR increases from 0.6580 to 0.7557, demonstrating that Semantic Prism presents more effective error ranking under adverse-condition domain shift.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

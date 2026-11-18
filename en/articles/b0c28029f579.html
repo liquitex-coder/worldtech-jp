@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FM-Mamba: An Efficient Native 2D Selective State Space Model with Stability-Aware Discretization — NewsMatome (EN)</title>
+<meta name="description" content="FM-Mamba: An Efficient Native 2D Selective State Space Model with Stability-Aware Discretization — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/b0c28029f579.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/b0c28029f579.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/b0c28029f579.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/b0c28029f579.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FM-Mamba: An Efficient Native 2D Selective State Space Model with Stability-Aware Discretization">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"FM-Mamba: An Efficient Native 2D Selective State Space Model with Stability-Aware Discretization",
+ "inLanguage":"en","datePublished":"2026-11-19T07:00:00+09:00","dateModified":"2026-11-19T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2611.22061","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/b0c28029f579.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/b0c28029f579.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>FM-Mamba: An Efficient Native 2D Selective State Space Model with Stability-Aware Discretization</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/11/19</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/b0c28029f579.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2611.22061" rel="nofollow noopener">https://arxiv.org/abs/2611.22061</a></span></div>
+  <div class="article-body"><p>arXiv:2611.22061v1 Announce Type: cross 
+Abstract: When applied to two-dimensional features such as images, Mamba-based methods either flatten the feature map into 1D sequences and fuse multiple scans, which breaks spatial adjacency and multiplies computation, or recurse directly on the 2D grid but rescale the recurrence with a fixed input-independent factor and aggregate only the predecessors on a single anti-diagonal, leaving the discrete step unconstrained by 2D stability theory. We propose \textbf{FM-Mamba}, a native 2D selective state space model built on the general Fornasini--Marchesini (FM) model. Its coupled recurrence evolves along both spatial axes; cross-axis coupling induces a discrete diagonal-predecessor term $\tilde A_0$, and two independent input-dependent step sizes $\Delta_1(i,j)$, $\Delta_2(i,j)$ govern propagation along the two axes, so that the coefficients adapt per position and per direction. A normalized ratio $r_k=a_{0,k}/(a_{1,k}a_{2,k})$ yields a closed-form piecewise bound on the two step sizes; when a configuration falls outside the stable interval the steps are projected onto this bound, and the criterion is re-verified per position after training, which suppresses systematic local amplification without global damping. The recurrence is executed by a dual-diagonal wavefront scan: each update gathers information from two anti-diagonals, and the input enters the current state through a single projection, so that neither training nor inference flattens the feature map. Code is available at https://github.com/BitSsm/FM-Mamba-Runtime</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

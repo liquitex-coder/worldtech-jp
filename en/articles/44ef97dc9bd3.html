@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Symbolic Abstraction Refinement — NewsMatome (EN)</title>
+<meta name="description" content="Symbolic Abstraction Refinement — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/44ef97dc9bd3.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/44ef97dc9bd3.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/44ef97dc9bd3.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/44ef97dc9bd3.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Symbolic Abstraction Refinement">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Symbolic Abstraction Refinement",
+ "inLanguage":"en","datePublished":"2026-11-19T07:00:00+09:00","dateModified":"2026-11-19T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2611.22404","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/44ef97dc9bd3.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/44ef97dc9bd3.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Symbolic Abstraction Refinement</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/11/19</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/44ef97dc9bd3.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2611.22404" rel="nofollow noopener">https://arxiv.org/abs/2611.22404</a></span></div>
+  <div class="article-body"><p>arXiv:2611.22404v1 Announce Type: new 
+Abstract: Autonomous systems choose actions whose outcomes are uncertain and are subject to time constraints. Probabilistic timed automata (PTAs) model exactly this, and verifying one answers a question about the system&#x27;s decision-making: the maximum probability of reaching a goal, or the minimum probability of reaching a hazard, that a controller can guarantee. Verification normally works over symbolic states, each pairing a discrete location with a region of clock values, and its difficulty is that the best behavior generally varies within such a region. The PRISM verifier&#x27;s most capable PTA method responds by splitting regions until each is uniform, rebuilding the transitions that reach them and propagating the split backward through the state graph of a stochastic game, a cascade of graph reconstruction that partitions regions the property never depends on. We present SYMAR, which instead makes the value function symbolic: each symbolic state carries a function from sub-regions of its clock region to probability bounds, so refinement is the appearance of new sub-regions in that function, and previously generated states are never split nor their incoming transitions reconstructed. Both sources of PTA nondeterminism, the timing and the choice of actions, are captured implicitly by the preimage computation that produces those sub-regions. Heuristic forward search then bounds how much refinement is done at all, expanding an And-Or graph from the initial state along the most promising behaviors so that effort is confined to the property-relevant fragment, guided by bounds and preferred actions from a single unrefined run of the existing method; a partial-refinement backup keeps the otherwise combinatorial sub-region count lean, and every stored interval provably contains the true probability. On the PRISM PTA benchmarks, whose subproblems recur in autonomous systems (distributed agreement under contention, leader election, and self-configuration without central coordination), SYMAR is up to 108x faster, solves an instance on which the existing method exhausts the time limit, and is markedly less sensitive to the deadline constant, resolving one instance in a 37-node search graph, unchanged as the deadline triples, where the existing method needs 86,380 abstract states and 73 refinement rounds.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
