@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cross-Architecture Foundation-Model Distillation for Edge Flood Segmentation — NewsMatome (EN)</title>
-<meta name="description" content="Cross-Architecture Foundation-Model Distillation for Edge Flood Segmentation — original-language edition. Japanese translation available.">
+<title>Distilling a Geospatial Foundation Model into Compact Surface-Water Segmenters — NewsMatome (EN)</title>
+<meta name="description" content="Distilling a Geospatial Foundation Model into Compact Surface-Water Segmenters — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/725ed2d0e92e.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/725ed2d0e92e.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/725ed2d0e92e.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/725ed2d0e92e.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Cross-Architecture Foundation-Model Distillation for Edge Flood Segmentation">
+<meta property="og:title" content="Distilling a Geospatial Foundation Model into Compact Surface-Water Segmenters">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Cross-Architecture Foundation-Model Distillation for Edge Flood Segmentation",
- "inLanguage":"en","datePublished":"2026-09-19T07:00:00+09:00","dateModified":"2026-09-19T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Distilling a Geospatial Foundation Model into Compact Surface-Water Segmenters",
+ "inLanguage":"en","datePublished":"2026-11-20T07:00:00+09:00","dateModified":"2026-11-20T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2609.20441","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/725ed2d0e92e.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Cross-Architecture Foundation-Model Distillation for Edge Flood Segmentation</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/19</span></div>
+    <h1>Distilling a Geospatial Foundation Model into Compact Surface-Water Segmenters</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/11/20</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/725ed2d0e92e.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.20441" rel="nofollow noopener">https://arxiv.org/abs/2609.20441</a></span></div>
-  <div class="article-body"><p>arXiv:2609.20441v1 Announce Type: cross 
-Abstract: Geospatial foundation models can provide strong flood-segmentation performance, but their size limits deployment on memory-constrained edge hardware. We distill a 300-million-parameter Prithvi-EO-2.0 teacher, fine-tuned on the 252 manually labeled Sen1Floods11 training scenes, into a 0.7-million-parameter EfficientViT-B0 student. The teacher supervises additional unlabeled Sentinel-2 imagery, allowing the student training set to grow without new manual annotations. At the matched budget of 252 scenes, teacher-supervised training is competitive with direct training and improves STURM-Flood performance across tested configurations; a geometry-matched control shows that label source alone does not explain the difference. Scaling the teacher-supervised pool to 2,500 scenes narrows the remaining student--teacher gap: the float student reaches 0.787 water intersection over union on the Sen1Floods11 test split against 0.822 for the teacher, matches the teacher on STURM-Flood under our evaluation protocol, and remains below it on WorldFloods-v2. After activation replacement and quantization-aware training, the student runs as a 1.5-megabyte 8-bit integer (INT8) TensorRT engine on a Jetson Xavier NX at 5.57 milliseconds of graphics processing unit (GPU) compute per 512-by-512 image, with approximately 14 megabytes of runtime device memory. A fixed modified normalized difference water index (MNDWI) threshold is competitive with both models on the two clean external benchmarks, so we interpret those benchmarks as generalization tests rather than as evidence of learned-model superiority over a spectral rule. The results support the conclusion: foundation-model supervision can amplify a fixed manual annotation budget into a substantially larger training set and yield a compact, deployable edge model.</p></div>
+  <div class="article-body"><p>arXiv:2609.20441v2 Announce Type: replace-cross 
+Abstract: Geospatial foundation models segment surface water accurately, but their size limits deployment on edge hardware. Therefore, we distill a 300-million-parameter Prithvi-EO-2.0 teacher, fine-tuned on the 252 hand-labeled Sen1Floods11 training images, into compact student models. The teacher labels 2,500 Sentinel-2 images around flood alerts and supervises the students via its labels and probability maps, without manual annotation. A 0.7-million-parameter EfficientViT-B0 student achieves the teacher&#x27;s accuracy in water intersection over union (IoU) on WorldFloods-v2, STURM-Flood and 97 held-back WorldFloods events. Unlike prior work, we evaluate every model on four test sets from three public datasets and on two new dry-scene sets. Controlled comparisons show that teacher labels achieve human-level annotation quality for student training on the same images. The teacher&#x27;s probability maps account for much of its value, and the full pipeline adds 5.7 IoU points on the held-back events over training on hand labels alone. All students, with parameter counts ranging from about 1,000 to 32.5 million, perform within 2 IoU points of the teacher on WorldFloods-v2 and STURM-Flood. On a Jetson Xavier NX, the main student runs as a 1.6-megabyte mixed 8-bit integer and 16-bit floating-point engine at 4.9 milliseconds per 512-by-512 image, and a 12,230-parameter student runs in full 8-bit integer format within 0.5 IoU points of its 32-bit version. The main student outperforms a fixed water index by 11.5 IoU points on the held-back events and raises false alarms on under 10\% rather than 57.0\% of water-free windows, as unattended use requires.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

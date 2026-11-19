@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FlexMoE: One-for-All Nested Intra-Expert Pruning for MoE Language Models — NewsMatome (EN)</title>
-<meta name="description" content="FlexMoE: One-for-All Nested Intra-Expert Pruning for MoE Language Models — original-language edition. Japanese translation available.">
+<title>FlexMoE: Learning One-for-All Multi-Budget Expert Pruning for Flexible MoE Deployment — NewsMatome (EN)</title>
+<meta name="description" content="FlexMoE: Learning One-for-All Multi-Budget Expert Pruning for Flexible MoE Deployment — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/2c52c53d47c6.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/2c52c53d47c6.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/2c52c53d47c6.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/2c52c53d47c6.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="FlexMoE: One-for-All Nested Intra-Expert Pruning for MoE Language Models">
+<meta property="og:title" content="FlexMoE: Learning One-for-All Multi-Budget Expert Pruning for Flexible MoE Deployment">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"FlexMoE: One-for-All Nested Intra-Expert Pruning for MoE Language Models",
- "inLanguage":"en","datePublished":"2026-06-30T07:00:00+09:00","dateModified":"2026-06-30T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"FlexMoE: Learning One-for-All Multi-Budget Expert Pruning for Flexible MoE Deployment",
+ "inLanguage":"en","datePublished":"2026-11-20T07:00:00+09:00","dateModified":"2026-11-20T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.27866","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/2c52c53d47c6.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>FlexMoE: One-for-All Nested Intra-Expert Pruning for MoE Language Models</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/06/30</span></div>
+    <h1>FlexMoE: Learning One-for-All Multi-Budget Expert Pruning for Flexible MoE Deployment</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/11/20</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/2c52c53d47c6.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.27866" rel="nofollow noopener">https://arxiv.org/abs/2606.27866</a></span></div>
-  <div class="article-body"><p>arXiv:2606.27866v1 Announce Type: new 
-Abstract: Mixture-of-Experts (MoE) language models scale model ability with sparsely activated experts, making this architecture a standard recipe for modern large models. However, sparse activation does not remove the deployment burden of storing and serving all experts, and the available deployment budget can vary substantially across devices, users, and workloads. Existing MoE compression methods are still largely fixed-budget, typically optimizing one compressed endpoint at each chosen target budget. We study a different setting: converting a large pretrained MoE LLM into a nested family of deployable subnetworks across budgets. Our method first ranks expert FFN channels by their importance, then lets each expert learn a discrete action to prune its channels. By gradually increasing cost pressure, a single action-training run exports a series of action masks from high to low budgets, each of which identifies a reliable smaller subnetwork nested in the ranked base model. Moreover, we use a single recovery fine-tune at a mid pruning budget (40%) to recover degraded model quality and transfer the recovered model to other unseen budgets. Overall, our framework surpasses recent MoE compression baselines. Specifically, on Qwen2-57B-A14B, our method retains ~99.8% of base performance while pruning 50% of routed expert parameters even without fine-tuning. For deployment, our pruned subnetworks deliver real memory reduction and throughput gains, and further support realtime online budget switching with kernel-level co-design.</p></div>
+  <div class="article-body"><p>arXiv:2606.27866v2 Announce Type: replace 
+Abstract: Mixture-of-Experts (MoE) language models scale model capacity through sparse expert activation, yet deployment still requires storing and serving all experts. Moreover, deployment budgets can vary substantially across devices, users, and workloads. Existing MoE compression methods typically optimize a separate compressed model for each target budget. We introduce FlexMoE, a post-training one-for-all framework that converts a large pretrained MoE model into a multi-budget family of smaller deployable subnetworks. FlexMoE first ranks expert FFN channels by importance to construct a sliceable weight space shared across budgets, and then learns expert-wise discrete retention actions under gradually increasing cost pressure, allowing a single action-training run to produce reliable pruning masks across budgets. Moreover, only a single mid-budget fine-tune can further recover degraded performance and yields a shared recovered model that transfers to other unseen budgets, avoiding repeated per-budget recovery and separated checkpoint storage. Across tested MoE LLMs with diverse architectures and scales, FlexMoE consistently outperforms strong MoE compression baselines. In particular, on Qwen2-57B-A14B, it retains ~99.8% of base performance while pruning 50% of routed-expert parameters even without recovery fine-tuning. For deployment, pruned subnetworks deliver real memory reduction and end-to-end throughput gains, while our kernel co-design enables runtime budget switching without checkpoint reloading and delivers substantial inference acceleration.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

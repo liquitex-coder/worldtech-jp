@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Accurate and Resource-Efficient Federated Continual Learning — NewsMatome (EN)</title>
-<meta name="description" content="Accurate and Resource-Efficient Federated Continual Learning — original-language edition. Japanese translation available.">
+<title>FedRAN: Accurate and Efficient Analytic Federated Continual Learning — NewsMatome (EN)</title>
+<meta name="description" content="FedRAN: Accurate and Efficient Analytic Federated Continual Learning — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/a0e70404e34b.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/a0e70404e34b.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/a0e70404e34b.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/a0e70404e34b.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Accurate and Resource-Efficient Federated Continual Learning">
+<meta property="og:title" content="FedRAN: Accurate and Efficient Analytic Federated Continual Learning">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Accurate and Resource-Efficient Federated Continual Learning",
- "inLanguage":"en","datePublished":"2026-06-13T07:00:00+09:00","dateModified":"2026-06-13T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"FedRAN: Accurate and Efficient Analytic Federated Continual Learning",
+ "inLanguage":"en","datePublished":"2026-11-20T07:00:00+09:00","dateModified":"2026-11-20T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2606.11480","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/a0e70404e34b.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Accurate and Resource-Efficient Federated Continual Learning</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/06/13</span></div>
+    <h1>FedRAN: Accurate and Efficient Analytic Federated Continual Learning</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/11/20</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/a0e70404e34b.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2606.11480" rel="nofollow noopener">https://arxiv.org/abs/2606.11480</a></span></div>
-  <div class="article-body"><p>arXiv:2606.11480v1 Announce Type: new 
-Abstract: Federated continual learning (FCL) must learn from distributed task streams under limited resources, such as communication, computation, memory, and label availability. Existing FCL methods often rely on repeated local optimization, replay, and full supervision. Analytic alternatives avoid iterative training and replay, but using high-dimensional random features to improve accuracy requires a second-order feature statistic, the Gram matrix, which has a quadratic communication cost in the random feature size $M$. We propose FedRAN, a resource-aware analytic FCL framework that replaces gradient-based updates with compact random feature statistics. Each client transmits a truncated-SVD summary of its Gram matrix, reducing the dominant second-order upload from quadratic to linear in $M$ for fixed rank. The server performs a two-level QR-SVD subspace merge, spatially across clients and temporally across tasks, and solves a ridge classifier in closed form. FedRAN further supports label scarcity through prototype-based pseudo-labeling. Across CIFAR-100, ImageNet-R, and VTAB datasets, FedRAN improves average accuracy by up to 4.8 percentage points over the strongest baseline, uses 30.6-121.8$\times$ less per-client communication than optimization-based FCL, and is 190.3$\times$ faster on average than gradient-based baselines; with only 20% labels, pseudo-labeling improves average accuracy by up to 6.61 points. These results show that FedRAN enables accurate and resource-efficient FCL under communication, computation, and label constraints. The source code is available at https://github.com/JebacyrilArockiaraj/Fed-RAN-SSL.</p></div>
+  <div class="article-body"><p>arXiv:2606.11480v2 Announce Type: replace 
+Abstract: Federated continual learning (FCL) enables distributed clients to learn from evolving data streams while retaining knowledge from previously observed tasks. Existing optimization-based FCL methods often rely on repeated local training, incurring communication overhead and feature drift across clients. Analytic alternatives avoid iterative training, but high-dimensional random features used to improve accuracy require communicating a Gram matrix whose cost grows quadratically with feature dimension. Communication-efficient alternatives reduce this cost by statistically reconstructing the Gram matrix from first-order summaries. We propose FedRAN, a low-rank analytic FCL framework that instead compresses the required second-order structure directly through spectral summaries that are merged across clients and tasks. The retained rank explicitly controls the tradeoff between approximation fidelity and communication, reducing second-order communication from quadratic to linear in feature dimension for a fixed rank. FedRAN further supports label scarcity through prototype-based pseudo-labeling. Across CIFAR-100, ImageNet-R, and VTAB, FedRAN improves average accuracy by up to 4.8 percentage points over the strongest baseline, uses 30.6-121.8x less per-client communication, and is 190.3x faster than optimization-based baselines.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Equal Steps, Unequal Curvature: Where Muon&#x27;s Update Goes Wrong — NewsMatome (EN)</title>
+<meta name="description" content="Equal Steps, Unequal Curvature: Where Muon&#x27;s Update Goes Wrong — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/2c6f24fff2ab.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/2c6f24fff2ab.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/2c6f24fff2ab.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/2c6f24fff2ab.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Equal Steps, Unequal Curvature: Where Muon&#x27;s Update Goes Wrong">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Equal Steps, Unequal Curvature: Where Muon&#x27;s Update Goes Wrong",
+ "inLanguage":"en","datePublished":"2026-11-20T07:00:00+09:00","dateModified":"2026-11-20T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2611.24644","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/2c6f24fff2ab.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/2c6f24fff2ab.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Equal Steps, Unequal Curvature: Where Muon&#x27;s Update Goes Wrong</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/11/20</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/2c6f24fff2ab.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2611.24644" rel="nofollow noopener">https://arxiv.org/abs/2611.24644</a></span></div>
+  <div class="article-body"><p>arXiv:2611.24644v1 Announce Type: new 
+Abstract: Muon updates each hidden weight matrix along the polar factor of its momentum, the steepest-descent direction under the spectral norm. That choice fixes two allocations without consulting the loss: every singular direction of the momentum receives the same step, and in a non-square matrix each neuron&#x27;s step is set by its leverage score. Whether they are good is a question about curvature, which steepest-descent arguments do not answer; we measure it. Using held-out gradients and Hessian-vector products, we decompose Muon&#x27;s step by singular-value band and by neuron group and compute each group&#x27;s second-order optimal multiplier. In a 124M-parameter decoder trained on FineWeb-Edu, the multipliers rise monotonically from the top singular directions to the tail: Muon over-steps the high-curvature top of its spectrum. We prove in Lean when such a diagnostic licenses an intervention at Muon&#x27;s own update norm. On the measured curvature, the criterion predicts, and held-out losses confirm, that moving step length off the top helps mid-training and early in the cooldown, but not at its end. We then test interventions under per-step norm matching, tuned baselines and paired seeds. Orthogonalizing Q, K and V separately rather than as one fused matrix lowers the loss by 0.0250 nats and accounts for all of the gain of block-wise variants. A matmul-only, rotation-equivariant spectral tilt $\sigma^{-1/4}$ applied in the cooldown lowers the loss of this stronger baseline by a further 0.0120 nats, additively with NorMuon (0.0158 nats together, three seeds; the baseline needs about 4.3% more tokens to match), and by 0.0188 nats at 355M parameters (three seeds). Energy-matched Schatten-1 weight decay adds a further 0.0052 nats. Geometrically principled changes that do not act on the measured miscalibration, namely exact polar factors, steepest-descent input whitening and top-heavy decay, do not help.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

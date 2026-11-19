@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SANTA++: Sampling Attention through Representative Keys — NewsMatome (EN)</title>
+<meta name="description" content="SANTA++: Sampling Attention through Representative Keys — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/86f7f8aebc6a.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/86f7f8aebc6a.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/86f7f8aebc6a.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/86f7f8aebc6a.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SANTA++: Sampling Attention through Representative Keys">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"SANTA++: Sampling Attention through Representative Keys",
+ "inLanguage":"en","datePublished":"2026-11-20T07:00:00+09:00","dateModified":"2026-11-20T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2609.35629","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/86f7f8aebc6a.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/86f7f8aebc6a.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>SANTA++: Sampling Attention through Representative Keys</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/11/20</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/86f7f8aebc6a.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.35629" rel="nofollow noopener">https://arxiv.org/abs/2609.35629</a></span></div>
+  <div class="article-body"><p>arXiv:2609.35629v2 Announce Type: replace 
+Abstract: Attention often concentrates on a small subset of tokens in the context, but which subset matters changes from one query to the next. To exploit this changing structure, we introduce SANTA++, a training-free stochastic attention method that uses representative keys for memory-efficient selection without scanning the entire key-value (KV) cache. Cached keys are organized into teams, and the query scores one representative from each team to decide which teams to sample. We compute exact attention scores within the sampled teams and reweight each team&#x27;s contribution by the inverse of its inclusion probability. This importance sampling correction estimates attention over the full cache, with a sampling budget that lets us trade memory reads for accuracy. With Qwen2.5-7B-Instruct at 32K context, contiguous SANTA++ at S=1024 retains 95-98% of dense aggregate scores on LongBench v2, HELMET RAG, and RULER using 28-31% logical KV access. On RULER, SANTA++ outperforms Quest across the tested accuracy-access sweep, using 48.7% fewer KV reads at approximately 79% accuracy. It also outperforms MagicPIG at low access. At S=1024, our Triton implementation gives a 1.38x attention-operator speedup over the Flash backend of PyTorch scaled dot-product attention (Flash SDPA) in FP16. At batch eight, full-model decoding is 1.23x faster than dense Flash SDPA with matched INT4 model weights and FP16 KV-cache precision on an RTX 5090 Laptop GPU. Our kernels are available at https://github.com/OPUSLab/santapp-kernel-demo.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

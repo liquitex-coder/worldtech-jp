@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Molt: A Scalable PyTorch-Native Training Framework for Agentic Reinforcement Learning — NewsMatome (EN)</title>
-<meta name="description" content="Molt: A Scalable PyTorch-Native Training Framework for Agentic Reinforcement Learning — original-language edition. Japanese translation available.">
+<title>MOLT: A Hugging Face-Native, Minimal, and Scalable Framework for Agentic Reinforcement Learning — NewsMatome (EN)</title>
+<meta name="description" content="MOLT: A Hugging Face-Native, Minimal, and Scalable Framework for Agentic Reinforcement Learning — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/07607e097946.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/07607e097946.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/07607e097946.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/07607e097946.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Molt: A Scalable PyTorch-Native Training Framework for Agentic Reinforcement Learning">
+<meta property="og:title" content="MOLT: A Hugging Face-Native, Minimal, and Scalable Framework for Agentic Reinforcement Learning">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Molt: A Scalable PyTorch-Native Training Framework for Agentic Reinforcement Learning",
- "inLanguage":"en","datePublished":"2026-09-25T07:00:00+09:00","dateModified":"2026-09-25T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"MOLT: A Hugging Face-Native, Minimal, and Scalable Framework for Agentic Reinforcement Learning",
+ "inLanguage":"en","datePublished":"2026-11-20T07:00:00+09:00","dateModified":"2026-11-20T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.21653","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/07607e097946.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Molt: A Scalable PyTorch-Native Training Framework for Agentic Reinforcement Learning</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/25</span></div>
+    <h1>MOLT: A Hugging Face-Native, Minimal, and Scalable Framework for Agentic Reinforcement Learning</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/11/20</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/07607e097946.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.21653" rel="nofollow noopener">https://arxiv.org/abs/2607.21653</a></span></div>
-  <div class="article-body"><p>arXiv:2607.21653v3 Announce Type: replace 
-Abstract: Agentic reinforcement learning requires rapid experimentation with agents and learning algorithms, yet large policies and long, multimodal trajectories demand substantial distributed infrastructure. We present MOLT, a lightweight, PyTorch- and Hugging Face-native framework that brings these goals together through four contributions. MOLT combines direct loading of Hugging Face models with experimentally validated trillion-parameter scalability in approximately 9.2K lines of framework code. Unified OpenAI- and Anthropic-compatible interfaces integrate existing agents with automatic handling of context compaction. Fully asynchronous training overlaps agent rollouts and policy optimization, accommodating variable agent execution times. Distributed experience storage removes centralized rollout-memory bottlenecks for long, multimodal trajectories. We experimentally validate the complete RL training pipeline on a one-trillion-parameter policy and demonstrate sustained learning with a 30B mixture-of-experts agent, establishing MOLT as a lightweight foundation for large-scale agentic RL research.</p></div>
+  <div class="article-body"><p>arXiv:2607.21653v4 Announce Type: replace 
+Abstract: Agentic reinforcement learning (RL) research iterates quickly on agents, rewards, and learning algorithms, while policies have grown to hundreds of billions of parameters and beyond. Existing open frameworks force a choice: those that are easy to modify do not scale to the largest models, and those that scale rely on Megatron, which needs dedicated bridge code for every model family and several times more framework code. We present MOLT, an open-source framework built for research that is Hugging Face-native, minimal, and scalable. Its code is easy to modify: the entire RL path is approximately 9.2K lines of Python with one training backend and one rollout engine, so a researcher or an AI coding agent can read it in full and edit the code that actually runs. A Hugging Face checkpoint is loaded directly into a PyTorch FSDP2 trainer with tensor, expert, and context parallelism, so a new model family needs no bridge, and the same code scales from a 4B model to a 753B one. Existing OpenAI- and Anthropic-SDK agents are trained by redirecting their client, with automatic handling of agents that rewrite their own context; training is fully asynchronous; and trajectory data stay in a distributed object store. With MOLT, a 30B mixture-of-experts tool agent trains stably for 1,464 asynchronous updates, a visual computer-use agent improves on OSWorld, asynchronous training is 2.40 times faster than synchronous training, and pipeline throughput reaches 92% of a Megatron-based stack. Its trainer, NeMo AutoModel, trains models of one to 2.8 trillion parameters.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>
