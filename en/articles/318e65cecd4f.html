@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Linear RNN Scaling Laws: When Longer Sequences Beat More Sequences — NewsMatome (EN)</title>
-<meta name="description" content="Linear RNN Scaling Laws: When Longer Sequences Beat More Sequences — original-language edition. Japanese translation available.">
+<title>Learning from Transients: Linear RNN Scaling Laws in Stationary Prediction — NewsMatome (EN)</title>
+<meta name="description" content="Learning from Transients: Linear RNN Scaling Laws in Stationary Prediction — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/318e65cecd4f.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/318e65cecd4f.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/318e65cecd4f.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/318e65cecd4f.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linear RNN Scaling Laws: When Longer Sequences Beat More Sequences">
+<meta property="og:title" content="Learning from Transients: Linear RNN Scaling Laws in Stationary Prediction">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Linear RNN Scaling Laws: When Longer Sequences Beat More Sequences",
- "inLanguage":"en","datePublished":"2026-09-25T07:00:00+09:00","dateModified":"2026-09-25T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Learning from Transients: Linear RNN Scaling Laws in Stationary Prediction",
+ "inLanguage":"en","datePublished":"2026-11-21T07:00:00+09:00","dateModified":"2026-11-21T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2609.27964","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/318e65cecd4f.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Linear RNN Scaling Laws: When Longer Sequences Beat More Sequences</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/25</span></div>
+    <h1>Learning from Transients: Linear RNN Scaling Laws in Stationary Prediction</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/11/21</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/318e65cecd4f.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.27964" rel="nofollow noopener">https://arxiv.org/abs/2609.27964</a></span></div>
-  <div class="article-body"><p>arXiv:2609.27964v1 Announce Type: new 
-Abstract: Empirical scaling laws for autoregressive language models relate prediction loss to model size, data size, and optimization compute, but their theoretical origin is still poorly understood in sequential pretraining settings. We study this question in a tractable teacher--student model where a stable latent linear RNN generates trajectories and a sketched linear recurrent student is trained by safeguarded full-batch WSD gradient descent on next-token prediction. The sketch dimension $M$ plays the role of model size, while $N$ independent trajectories of length $P$ provide the training tokens. We allow the innovation and initialization covariances to have different power-law exponents $\alpha$ and $\theta$. The induced design spectrum produces explicit approximation, optimization, and statistical scaling laws separated by spectral crossovers. When $\theta\ge\alpha$, the original one-scale rates $M^{1-\beta_\alpha}$, $R^{(1-\beta_\alpha)/\alpha}$, and $(NP)^{-1}\min\{M,R^{1/\alpha}\}$ are recovered. When $\alpha-2r\le\theta&lt;\alpha$, the heavier initialization tail changes the rates beyond $P$-dependent model and optimization crossovers. The proof uses a covariance event only internally and a globally safeguarded step size on its complement. The variance retains the factor $(NP)^{-1}$, while sequence length also suppresses the initialization transient, so $N$ and $P$ cease to be fully interchangeable in the two-scale regime.</p></div>
+  <div class="article-body"><p>arXiv:2609.27964v3 Announce Type: replace 
+Abstract: Does the organization of a fixed number of transitions into independent trajectories affect a fixed stationary prediction task? We study a Gaussian-sketched linear recurrent teacher--student model, where independently initialized training trajectories create transients that can excite weak spectral directions. For full-batch gradient descent with stable deterministic learning rates, we establish matching stationary approximation, bias, variance, and total-risk scaling laws from dependent trajectory data. When initialization decays at least as fast spectrally as the innovations, trajectory count and length enter the leading variance rate through their product. With a heavier initialization tail, transient excitation can improve the trajectory-length-dependent finite-time bias and, at fixed transition count, variance, while the stationary oracle shift remains controlled by representation approximation. Under token and compute caps, constant-length trajectories attain the optimal risk scaling order within the theorem-controlled range. Synthetic experiments provide finite-scale evidence in this stylized model.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Post-Training Dilemma: Why We Should Rethink the Sequential SFT-RL Paradigm — NewsMatome (EN)</title>
+<meta name="description" content="The Post-Training Dilemma: Why We Should Rethink the Sequential SFT-RL Paradigm — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/45439d264d97.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/45439d264d97.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/45439d264d97.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/45439d264d97.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Post-Training Dilemma: Why We Should Rethink the Sequential SFT-RL Paradigm">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"The Post-Training Dilemma: Why We Should Rethink the Sequential SFT-RL Paradigm",
+ "inLanguage":"en","datePublished":"2026-11-21T07:00:00+09:00","dateModified":"2026-11-21T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2601.07389","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/45439d264d97.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/45439d264d97.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>The Post-Training Dilemma: Why We Should Rethink the Sequential SFT-RL Paradigm</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/11/21</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/45439d264d97.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2601.07389" rel="nofollow noopener">https://arxiv.org/abs/2601.07389</a></span></div>
+  <div class="article-body"><p>arXiv:2601.07389v3 Announce Type: replace 
+Abstract: This position paper argues that the sequential supervised fine-tuning followed by reinforcement learning (SFT-then-RL) pipeline---the de facto paradigm for large language model (LLM) post-training---has a fundamental property that cannot be fixed by hyperparameter tuning: SFT and RL optimize over nearly orthogonal parameter subspaces, so RL inevitably degrades the capabilities acquired during the preceding SFT phase. Under the Polyak-Lojasiewicz (PL) condition, which is empirically observed for over-parameterized networks, we show that RL increases the SFT loss by at least $\frac{\mu}{2}\mathrm{dist}(\theta_{\mathrm{RL}}, \Theta^*_{\mathrm{SFT}})^2$ for some $\mu&gt;0$. Although the KL penalty can constrain distributional shift, it cannot correct the underlying gradient misalignment between the two objectives. Experiments on Qwen3-0.6B across four tasks confirm the theoretical predictions: on MATH-500, Alpaca, HH-RLHF, and SST-2, the SFT loss increases after the RL phase. We identify the underlying mechanism as persistent near-orthogonality between the gradients of the two objectives, paired with opposing landscape dynamics: SFT flattens the loss landscape while RL re-sharpens it. Based on our analysis, we propose three promising research directions: (1) joint optimization of the two objectives with gradient surgery to resolve conflicting updates; (2) landscape-aware scheduling that terminates RL training at the theoretically optimal point; and (3) characterizing the model scale threshold above which SFT becomes unnecessary.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

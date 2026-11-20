@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ExiST: Existence-Aware Self-Training for Semi-Supervised Multi-Organ Segmentation — NewsMatome (EN)</title>
+<meta name="description" content="ExiST: Existence-Aware Self-Training for Semi-Supervised Multi-Organ Segmentation — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/1a8b51cf0d8a.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/1a8b51cf0d8a.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/1a8b51cf0d8a.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/1a8b51cf0d8a.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ExiST: Existence-Aware Self-Training for Semi-Supervised Multi-Organ Segmentation">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"ExiST: Existence-Aware Self-Training for Semi-Supervised Multi-Organ Segmentation",
+ "inLanguage":"en","datePublished":"2026-11-21T07:00:00+09:00","dateModified":"2026-11-21T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2611.23581","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/1a8b51cf0d8a.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/1a8b51cf0d8a.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>ExiST: Existence-Aware Self-Training for Semi-Supervised Multi-Organ Segmentation</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/11/21</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/1a8b51cf0d8a.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2611.23581" rel="nofollow noopener">https://arxiv.org/abs/2611.23581</a></span></div>
+  <div class="article-body"><p>arXiv:2611.23581v1 Announce Type: cross 
+Abstract: Semi-supervised multi-organ segmentation should learn more than a dozen organs from a handful of labeled scans, and the smallest organs occupy less than one percent of the foreground. We identify a failure mode of self-training that is specific to this regime. When a teacher misses a small organ in a scan, every voxel of that organ receives the confident pseudo-label background, and the student is trained toward the organ absence. Repeated over many scans, this loop extinguishes tail organs. In a pilot study, removing the gallbladder from the pseudo-labels reduced its Dice on AMOS from 36.5 to 1.0. We argue that a missing organ should be treated as unresolved rather than absent and propose Existence-aware Self-Training (ExiST). It builds pseudo-labels by leave-one-out consensus of independently trained networks, screens them with a quality gate on validation scans, and infers, per scan and per organ, whether the organ was found. For every unresolved organ, the background voxels of that scan receive the set-valued target, trained with a marginal cross-entropy that accepts either answer and a Dice term that skips uncertain voxels. We show that this loss never pushes a candidate organ toward absence and never favors one member of the set, which leaves the decision to labeled evidence. ExiST outperforms the current state-of-the-art methods and reaches 77.1 mean Dice on Synapse with 20% labeled scans and 75.9 on AMOS with 5% labeled scans.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

@@ -17,7 +17,7 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"Silver Rate Is (Almost) Optimal for Gradient Descent",
- "inLanguage":"en","datePublished":"2026-09-12T07:00:00+09:00","dateModified":"2026-09-12T07:00:00+09:00",
+ "inLanguage":"en","datePublished":"2026-11-21T07:00:00+09:00","dateModified":"2026-11-21T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2609.09152","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/77a3089adbeb.html"}
@@ -35,11 +35,13 @@
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
     <h1>Silver Rate Is (Almost) Optimal for Gradient Descent</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/12</span></div>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/11/21</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/77a3089adbeb.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.09152" rel="nofollow noopener">https://arxiv.org/abs/2609.09152</a></span></div>
-  <div class="article-body"><p>arXiv:2609.09152v2 Announce Type: replace-cross 
-Abstract: We study how far gradient descent (GD) can be accelerated by predetermined stepsizes in smooth convex optimization. Writing $p_{\mathrm{sil}}=\log_2(1+\sqrt{2})$, we prove an $\Omega\left(n^{-p_{\mathrm{sil}}-O(\sqrt{\log\log n/\log n})}\right)$ non-anytime lower bound. In the anytime setting, every infinite schedule has infinitely many horizons with error $\Omega\left(n^{-\frac{2p_{\mathrm{sil}}}{1+p_{\mathrm{sil}}}-O(\sqrt{\log\log n/\log n})}\right)$. Together with the silver-schedule upper bound [Altschuler and Parrilo, 2025] and the anytime upper bound [Zhang et al., 2025], our results determine the optimal polynomial convergence exponents in both settings.</p></div>
+  <div class="article-body"><p>arXiv:2609.09152v3 Announce Type: replace-cross 
+Abstract: Gradient descent (GD) is one of the most fundamental algorithms in optimization. Yet even for smooth convex objectives, the optimal rate among predetermined nonnegative stepsize schedules has remained unresolved. Altschuler and Parrilo [Mathematical Programming, 2025] showed that their recursive silver stepsize schedule achieves an $O(n^{-p_{\mathrm{sil}}})$ rate, where $p_{\mathrm{sil}}=\log_2(1+\sqrt2)\approx1.2716$, improving upon the classical $O(n^{-1})$ rate of constant-step GD. Although the optimality of $p_{\mathrm{sil}}$ has been well supported by numerical evidence for small $n$, a matching lower bound has remained missing.
+  In this paper, we prove an $\Omega(n^{-p_{\mathrm{sil}}-o(1)})$ lower bound for GD, showing that $p_{\mathrm{sil}}$ is the optimal convergence exponent. Additionally, we prove an anytime lower bound that matches the exponent $2p_{\mathrm{sil}}/(1+p_{\mathrm{sil}})\approx1.1195$ of the known upper bound [Zhang, Lee, Du, and Chen, COLT 2025].
+  Building on the approaches of [Ma and Chen, 2026; Jung, Cho, and Yun, 2026], we select specific iterations as checkpoints at which the GD trajectory explores a new coordinate, and we couple these coordinates using a chain of local functions. Our main technical contribution is a local hard function that bends the GD trajectory between successive checkpoints, resulting in a sharpened lower bound. For each prescribed stepsize schedule, we maximize this bound over admissible checkpoint sets. A recursive analysis of this maximum then yields a lower bound matching the silver exponent for every such schedule.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

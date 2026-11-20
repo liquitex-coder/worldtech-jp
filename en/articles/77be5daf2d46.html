@@ -3,22 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Balance of Benchmarks: Semantic Density Reweighting for Task-Conditioned Model Comparison — NewsMatome (EN)</title>
-<meta name="description" content="Balance of Benchmarks: Semantic Density Reweighting for Task-Conditioned Model Comparison — original-language edition. Japanese translation available.">
+<title>Balance of Benchmarks: Evidence Retention and Multiplicity-Aware Model Comparison — NewsMatome (EN)</title>
+<meta name="description" content="Balance of Benchmarks: Evidence Retention and Multiplicity-Aware Model Comparison — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/77be5daf2d46.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/77be5daf2d46.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/77be5daf2d46.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/77be5daf2d46.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Balance of Benchmarks: Semantic Density Reweighting for Task-Conditioned Model Comparison">
+<meta property="og:title" content="Balance of Benchmarks: Evidence Retention and Multiplicity-Aware Model Comparison">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Balance of Benchmarks: Semantic Density Reweighting for Task-Conditioned Model Comparison",
- "inLanguage":"en","datePublished":"2026-09-23T07:00:00+09:00","dateModified":"2026-09-23T07:00:00+09:00",
- "author":{"@type":"Organization","name":"AI担当エージェント"},
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Balance of Benchmarks: Evidence Retention and Multiplicity-Aware Model Comparison",
+ "inLanguage":"en","datePublished":"2026-11-21T07:00:00+09:00","dateModified":"2026-11-21T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2608.30044","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/77be5daf2d46.html"}
 </script>
@@ -32,14 +32,14 @@
 </div></header>
 <div class="wrap"><article class="article">
   <div class="article-head">
-    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Balance of Benchmarks: Semantic Density Reweighting for Task-Conditioned Model Comparison</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/23</span></div>
+    <h1>Balance of Benchmarks: Evidence Retention and Multiplicity-Aware Model Comparison</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/11/21</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/77be5daf2d46.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2608.30044" rel="nofollow noopener">https://arxiv.org/abs/2608.30044</a></span></div>
-  <div class="article-body"><p>arXiv:2608.30044v3 Announce Type: replace 
-Abstract: Model comparison increasingly relies on large collections of publicly reported benchmark scores, yet common aggregation strategies trade off evidence coverage against control over capability weighting. Manually curated suites leave potentially informative evaluations unused, while uniform averaging retains them but gives greater influence to capabilities that happen to be benchmarked more densely. We introduce Balance of Benchmarks (BoB), a framework that retains eligible benchmark evidence while adapting its influence for task-conditioned model comparison using only public aggregate scores. BoB combines semantic density weighting, score equating across benchmarks of different difficulty, and task-relevant residual pooling. We evaluate it on 605 configurations across 14 Artificial Analysis benchmarks and on WildScores, a collection of 148 developer-reported benchmarks evaluated with held-out source-lineage families. On WildScores, BoB-Support raises family-mean Spearman correlation from 0.764 under uniform standardized averaging to 0.823, reduces MAE from 6.19 to 5.10 normalized score points, and increases three-model shortlist hit rate from 65.3% to 72.6%. BoB-Constant reaches a Spearman correlation of 0.831 and a hit rate of 74.6%. Separately, density weighting reduces average ranking changes when benchmarks are repeated, including as paraphrased copies. BoB-Support also reduces retrospective three-model shortlist regret from 2.08 to 1.67 normalized score points. BoB makes benchmark inclusion, redundancy, and task relevance explicit and testable measurement choices, allowing existing benchmark evidence to be used more fully while moderating the influence of benchmark proliferation.</p></div>
+  <div class="article-body"><p>arXiv:2608.30044v4 Announce Type: replace-cross 
+Abstract: Benchmark aggregation requires decisions about how much evidence to use and how much influence each benchmark receives. Curated suites control influence through selection, which can exclude informative observations. A broader pool can retain those observations. With equal weighting, repeated or closely related benchmarks gain influence as their number grows. We introduce Balance of Benchmarks (BoB) to retain eligible observations and control their influence separately. We fit benchmark-specific response curves to place different difficulty ranges on a shared ability scale and use description similarity to downweight benchmarks in crowded neighborhoods. We test retention and density weighting in separate interventions on WildScores, a sparse collection of 148 developer-reported benchmarks, using 14 Artificial Analysis benchmarks as a controlled reference. With the model population fixed and entire source-lineage families held out, suite expansion improves held-out prediction under BoB and equal-weight equating on both WildScores and BIG-bench. Under substantial reporting overlap, density weighting improves robustness to multiplicity. Complete re-listings yield smaller mean rank displacement under BoB (0.63 versus 1.95 for equal-weight equating), with benefits also in paraphrased re-listings and supported affine fits. The benefit can reverse if models report different benchmarks, because a single weight per column gives models that report only part of a group less than its intended share. We therefore compute each model&#x27;s weights from the benchmarks it reports. This rule removes the reversal in controlled re-listings and keeps held-out prediction close to that of equal weighting. These comparisons separate evidence retention, benchmark influence, and reporting coverage and show why repeated entries need to be handled per model.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

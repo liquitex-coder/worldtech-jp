@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Let a Small Model Read First: Faster Prefill for Long Interleaved Image-Text Inputs — NewsMatome (EN)</title>
+<meta name="description" content="Let a Small Model Read First: Faster Prefill for Long Interleaved Image-Text Inputs — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/0e3c7b650343.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/0e3c7b650343.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/0e3c7b650343.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/0e3c7b650343.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Let a Small Model Read First: Faster Prefill for Long Interleaved Image-Text Inputs">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Let a Small Model Read First: Faster Prefill for Long Interleaved Image-Text Inputs",
+ "inLanguage":"en","datePublished":"2026-11-21T07:00:00+09:00","dateModified":"2026-11-21T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2611.24431","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/0e3c7b650343.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/0e3c7b650343.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Let a Small Model Read First: Faster Prefill for Long Interleaved Image-Text Inputs</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/11/21</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/0e3c7b650343.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2611.24431" rel="nofollow noopener">https://arxiv.org/abs/2611.24431</a></span></div>
+  <div class="article-body"><p>arXiv:2611.24431v1 Announce Type: cross 
+Abstract: Vision-language models (VLMs) can answer questions about long interleaved inputs, such as documents of many pages and collections of hundreds of images, but they are slow to start: on inputs of about 100K tokens, the prefill takes most of the wait for the first output token. A common approach prunes the input by scoring its tokens with the target model itself or with a small model of the same family that first writes an answer. However, this scoring takes much of the time that pruning saves. We find that the evidence for a question lies in a few whole units (images or paragraphs), and that a small hybrid model finds them with one attention head of an early layer, even at half image resolution. Based on these findings, we propose SkimPrefill, which lets the small hybrid model read the whole input first, up to that early layer, with images at half resolution. Most layers of the small hybrid model (Qwen3.5-0.8B) run in linear time, so this pass is short. SkimPrefill then ranks every unit with that head and gives the target the top units as an ordinary shorter prompt. One untrained selector serves targets of different model families. Extensive experiments on MMLongBench at 128K tokens, with 19 datasets of five task types, show the effectiveness of SkimPrefill. With 10% of the input tokens kept, SkimPrefill speeds up the prefill of Qwen3.5-9B, Gemma-4-12B and Qwen3-VL-32B by 3.7 times, 11.6 time and 8.2 times while maintaining their average accuracy.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

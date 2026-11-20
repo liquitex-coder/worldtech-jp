@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FlowMap-OPD: Rollout--Kernel Separation for On-Policy Distillation of Few-Step Flow-Map Generators — NewsMatome (EN)</title>
-<meta name="description" content="FlowMap-OPD: Rollout--Kernel Separation for On-Policy Distillation of Few-Step Flow-Map Generators — original-language edition. Japanese translation available.">
+<title>FlowMap-OPD: On-Policy Distillation for Few-Step Flow-Map Generators — NewsMatome (EN)</title>
+<meta name="description" content="FlowMap-OPD: On-Policy Distillation for Few-Step Flow-Map Generators — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/1e4ac18038ef.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/1e4ac18038ef.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/1e4ac18038ef.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/1e4ac18038ef.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="FlowMap-OPD: Rollout--Kernel Separation for On-Policy Distillation of Few-Step Flow-Map Generators">
+<meta property="og:title" content="FlowMap-OPD: On-Policy Distillation for Few-Step Flow-Map Generators">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"FlowMap-OPD: Rollout--Kernel Separation for On-Policy Distillation of Few-Step Flow-Map Generators",
- "inLanguage":"en","datePublished":"2026-10-02T07:00:00+09:00","dateModified":"2026-10-02T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"FlowMap-OPD: On-Policy Distillation for Few-Step Flow-Map Generators",
+ "inLanguage":"en","datePublished":"2026-11-21T07:00:00+09:00","dateModified":"2026-11-21T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2609.37851","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/1e4ac18038ef.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>FlowMap-OPD: Rollout--Kernel Separation for On-Policy Distillation of Few-Step Flow-Map Generators</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/10/02</span></div>
+    <h1>FlowMap-OPD: On-Policy Distillation for Few-Step Flow-Map Generators</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/11/21</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/1e4ac18038ef.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.37851" rel="nofollow noopener">https://arxiv.org/abs/2609.37851</a></span></div>
-  <div class="article-body"><p>arXiv:2609.37851v1 Announce Type: cross 
-Abstract: Few-step flow-map generators, including MeanFlow and consistency models, enable efficient sampling through long-range transport, yet their on-policy distillation remains underexplored. We introduce FlowMap-OPD, an on-policy distillation framework that separates student-state acquisition from teacher--student distribution comparison. A formulation based on state marginals establishes this separation, while flow--velocity consistency connects local supervision to the deployed long-range map. Within this framework, we develop flow-map, induced-velocity, and instantaneous-velocity distribution supervision, each paired with a separately specified native flow-map rollout. Cross-capacity ImageNet experiments across three teacher rewards identify instantaneous-velocity distribution supervision with independently tunable student consistency as the most effective choice. In text-to-image experiments, FlowMap-OPD demonstrates strong multi-specialist consolidation capabilities and surpasses multi-reward Flow-Map GRPO in task performance and convergence speed.</p></div>
+  <div class="article-body"><p>arXiv:2609.37851v2 Announce Type: replace-cross 
+Abstract: Few-step flow-map generators, such as MeanFlow and consistency models, sample in a few long-range jumps. On-policy distillation (OPD) trains a student on states drawn from its own sampler, but existing methods compare teacher and student through the local stochastic transitions of a multi-step sampler, which a flow-map student never deploys. We present FlowMap-OPD, the first systematic study of OPD for flow-map students. It separates state collection from supervision: the student collects states with its native few-step sampler, while the teacher supervises the flow map, velocities induced from it, or the instantaneous velocity linked to the map by a separately weighted consistency penalty. We find that instantaneous-velocity supervision with a small consistency weight, our chosen form, transfers the teacher&#x27;s gains best, whereas supervising the deployed map, although the natural choice, transfers them worst when teacher and student start from different pretrained models. This gives a counter-intuitive rule: \emph{sample with the flow map, learn the velocity}. As a further benefit, this form applies to any teacher that defines a velocity, including multi-step ones, and to students initialized from multi-step models. On FLUX and SD3.5, a single few-step student consolidates three specialist teachers within 300 updates, matches or exceeds each on its own benchmark (e.g., OCR 0.883 versus 0.850 on FLUX), and outperforms both multi-reward reinforcement learning and LoRA merging.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

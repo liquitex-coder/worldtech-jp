@@ -17,8 +17,8 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"Operational Proto-Introspection in Looped Language Models: Reading Correctness Before the Answer",
- "inLanguage":"en","datePublished":"2026-11-20T07:00:00+09:00","dateModified":"2026-11-20T07:00:00+09:00",
- "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "inLanguage":"en","datePublished":"2026-11-21T07:00:00+09:00","dateModified":"2026-11-21T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.18553","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/2260cee3254d.html"}
 </script>
@@ -32,13 +32,13 @@
 </div></header>
 <div class="wrap"><article class="article">
   <div class="article-head">
-    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
     <h1>Operational Proto-Introspection in Looped Language Models: Reading Correctness Before the Answer</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/11/20</span></div>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/11/21</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/2260cee3254d.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2607.18553" rel="nofollow noopener">https://arxiv.org/abs/2607.18553</a></span></div>
-  <div class="article-body"><p>arXiv:2607.18553v4 Announce Type: replace 
+  <div class="article-body"><p>arXiv:2607.18553v4 Announce Type: replace-cross 
 Abstract: Can one tell, while a language model reasons, whether its answer will be right? Looped models are a good place to ask: they run the same layers several times per token, leaving one hidden state per loop for a probe to read. I probe Ouro-RLTT, a 2.6B-parameter looped model, for what these states reveal about how its reasoning will end. I call such information operational proto-introspection: operational because it is defined by what a probe can read, and proto because nothing here shows that the model itself uses it.
   In part, yes. Reading the first 48 tokens of reasoning, from answers that state no answer yet, a probe on the hidden states reaches an AUROC of 0.758 on a synthetic logic task, against 0.515 for token confidence. Question difficulty is a rival explanation: on 1,164 further questions, token confidence plus simple features of the question predict about as well. It is not only difficulty: between two answers to the same question, the probe scores the correct one higher 74% of the time. A fine-tuned language model reading the same tokens does about as well. On GSM8K and on a second checkpoint this within-question test is unresolved.
   A probe that ranks finished candidate answers is weak at layer 8 on the first loop, much better on the second, and as accurate as the last layers by the third, on four Ouro checkpoints. The direction it reads is largely shared across loops: a probe trained on the last loop reads the first nearly as well as a probe trained there.
