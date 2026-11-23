@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CLOOPD: Closing the Learner Loop in On-Policy Distillation — NewsMatome (EN)</title>
-<meta name="description" content="CLOOPD: Closing the Learner Loop in On-Policy Distillation — original-language edition. Japanese translation available.">
+<title>SAVOR: Score Once, Learn Deeper in On-Policy Distillation — NewsMatome (EN)</title>
+<meta name="description" content="SAVOR: Score Once, Learn Deeper in On-Policy Distillation — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/a42246372aad.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/a42246372aad.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/a42246372aad.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/a42246372aad.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CLOOPD: Closing the Learner Loop in On-Policy Distillation">
+<meta property="og:title" content="SAVOR: Score Once, Learn Deeper in On-Policy Distillation">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"CLOOPD: Closing the Learner Loop in On-Policy Distillation",
- "inLanguage":"en","datePublished":"2026-09-23T07:00:00+09:00","dateModified":"2026-09-23T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"SAVOR: Score Once, Learn Deeper in On-Policy Distillation",
+ "inLanguage":"en","datePublished":"2026-11-24T07:00:00+09:00","dateModified":"2026-11-24T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2609.24141","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/a42246372aad.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>CLOOPD: Closing the Learner Loop in On-Policy Distillation</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/23</span></div>
+    <h1>SAVOR: Score Once, Learn Deeper in On-Policy Distillation</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/11/24</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/a42246372aad.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.24141" rel="nofollow noopener">https://arxiv.org/abs/2609.24141</a></span></div>
-  <div class="article-body"><p>arXiv:2609.24141v1 Announce Type: new 
-Abstract: On-policy distillation (OPD) pays twice for each fresh batch: the student generates trajectories and a stronger teacher scores them. Existing methods improve which trajectories are scored and how the teacher signal is constructed, but usually consume it with one actor update. We introduce CLOOPD, a closed-loop framework separating teacher-signal acquisition from student-side realization. CLOOPD selects an adaptive $\alpha$ waypoint inside a KL envelope, freezes the scored batch and its advantages, re-forwards the student after each actor pass, measures realization, and allocates actor work under a separate token budget. The framework includes deterministic two- and three-pass policies, token-priced CLOOPD-TPMR, and a budget-matched control. Across six 300-step runs on an 8-H20 node, every CLOOPD policy improves the one-pass TOP-D anchor at comparable teacher-token scale: macro accuracy rises from 15.41 to 17.78 with CLOOPD-Fixed2 and 19.36 with CLOOPD-Fixed3. At step 100, CLOOPD-Fixed3 reaches 15.35, nearly matching TOP-D at step 300 while using 67.2% fewer teacher-scored tokens and 28.0% fewer GPU-hours. Earlier 8-A100 ablations show adaptive $\alpha$ eliminates observed trust-envelope violations; a third pass adds headroom. These results position CLOOPD as a framework for budgeting how fully students learn from teacher-scored tokens.</p></div>
+  <div class="article-body"><p>arXiv:2609.24141v2 Announce Type: replace 
+Abstract: On-policy distillation (OPD) trains a student on its own samples with token-level scores from a stronger teacher, and it effectively transfers reasoning ability to small language models. Each training step pays for student rollouts and teacher scoring, yet common OPD configurations make a single pass over the scored batch and then discard it. We observe that reusing the batch alone is not enough, because no single fixed teacher target suits every batch. In our runs, a fixed $\alpha$ of 0.3 exceeds a KL envelope at every training step, while 0.2 leaves over a quarter of it unused. We propose SAVOR, which selects for each batch the strongest teacher target inside the KL envelope, freezes the scored batch, and reuses it for a fixed number of student updates without further teacher calls. On five math reasoning benchmarks with a 1.7B student and a 30B-A3B teacher, SAVOR raises macro accuracy over TOP-D from 15.41 to 17.78 with two passes and to 19.36 with three passes at about the same teacher budget. With three passes, SAVOR nearly matches the final accuracy of TOP-D after one third of training while using 67.2% fewer teacher-scored tokens. These results suggest budgeting reuse depth explicitly in OPD.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

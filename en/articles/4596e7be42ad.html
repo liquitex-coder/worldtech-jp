@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FUSE: An Evaluating Framework for Dangerous Capabilities of LLMs — NewsMatome (EN)</title>
-<meta name="description" content="FUSE: An Evaluating Framework for Dangerous Capabilities of LLMs — original-language edition. Japanese translation available.">
+<title>FUSE: A Modular Framework for Evaluating Dangerous Capabilities of LLMs — NewsMatome (EN)</title>
+<meta name="description" content="FUSE: A Modular Framework for Evaluating Dangerous Capabilities of LLMs — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/4596e7be42ad.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/4596e7be42ad.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/4596e7be42ad.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/4596e7be42ad.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="FUSE: An Evaluating Framework for Dangerous Capabilities of LLMs">
+<meta property="og:title" content="FUSE: A Modular Framework for Evaluating Dangerous Capabilities of LLMs">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"FUSE: An Evaluating Framework for Dangerous Capabilities of LLMs",
- "inLanguage":"en","datePublished":"2026-09-04T07:00:00+09:00","dateModified":"2026-09-04T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"FUSE: A Modular Framework for Evaluating Dangerous Capabilities of LLMs",
+ "inLanguage":"en","datePublished":"2026-11-24T07:00:00+09:00","dateModified":"2026-11-24T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2609.02168","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/4596e7be42ad.html"}
@@ -34,13 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>FUSE: An Evaluating Framework for Dangerous Capabilities of LLMs</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/04</span></div>
+    <h1>FUSE: A Modular Framework for Evaluating Dangerous Capabilities of LLMs</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/11/24</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/4596e7be42ad.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.02168" rel="nofollow noopener">https://arxiv.org/abs/2609.02168</a></span></div>
-  <div class="article-body"><p>arXiv:2609.02168v1 Announce Type: new 
-Abstract: Fragmented safety evaluation undermines the governance of dangerous AI capabilities. We present a modular framework that evaluates each model through three orthogonal pipelines---Knowledge ($K$), Defense ($D$), and Harm ($H$)---under a unified protocol, aggregating results into a standardized dangerous-capability profile $\phi$. Pluggable modules supply scenario seeds, knowledge banks, hazard queries, and judge rubrics, while the core evaluation engine remains unchanged across domains; the CB evaluation is complemented by a cyber pilot demonstrating protocol transfer.
-  Instantiating the framework with a chemical-biological (CB) module, we evaluate 12 commercial LLMs from four families. Our first contribution is a horizontal comparison of dangerous capability across models and model families: the three dimensions expose sharply divergent profiles---models with comparable knowledge differ in refusal resilience, and strong defenders do not generate less harmful content when they do comply---while family-level patterns further separate Claude, DeepSeek, and GPT models. The second is a temporal analysis of capability evolution: tracking $K$, $D$, and $H$ against model release dates reveals that dangerous capability has not monotonically declined; newer models deepen knowledge while only partially improving defense, showing that scaling and alignment progress do not uniformly translate into safety. Reliability is established via cross-judge consistency (bootstrap $\rho &gt; 0.79$, 4 of 5 judges) and pipeline orthogonality ($K$--$D$--$H$ inter-correlations $\rho \in [0.32, 0.52]$).</p></div>
+  <div class="article-body"><p>arXiv:2609.02168v2 Announce Type: replace 
+Abstract: Dangerous capabilities of large language models (LLMs) cannot yet be compared across models: knowledge, refusal, and harm benchmarks each cover one step of a misuse path, on different models, protocols, and scales, so regulators cannot tell which model poses greater risk. We present FUSE, a modular framework that defines dangerous capability as a model&#x27;s ability to advance a black-box adversary along a misuse path, and measures three stages of that path under one protocol: hazardous knowledge, estimated by item response theory; defense under multi-turn adversarial induction by a red-team agent; and the actionability of content produced once the model complies (harm). The stages form a fixed profile, not a scalar score, whose harm entry pairs how often a model complies with how severe its output is. New danger domains plug in as four-asset modules without changing the pipeline. On twelve commercial LLMs in the chemical-biological domain, the stages diverge: models with comparable knowledge differ markedly in defense, strong defenders do not produce less actionable content when they comply, and Claude, DeepSeek, and GPT occupy distinct regions of the profile. Across 41 months of releases, dangerous capability has not monotonically declined: knowledge rises within every family, defense diverges by family, and conditional severity does not fall. A tool-enhanced cybersecurity pilot on three models shows the same divergence between knowledge and defense. Three domain experts agree closely among themselves (ICC 0.91 for defense, 0.85 for harm); the judge preserves their ordering (Spearman 0.78 and 0.63) but scores 23.8 and 18.4 points higher on a 100-point scale, so we use it to rank models, not to measure absolute risk.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

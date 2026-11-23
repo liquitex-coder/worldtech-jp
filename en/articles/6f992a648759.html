@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One Behavior, Out of Order: Deterministic Execution and Parallel Simulation of ROS 2 Applications — NewsMatome (EN)</title>
+<meta name="description" content="One Behavior, Out of Order: Deterministic Execution and Parallel Simulation of ROS 2 Applications — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/6f992a648759.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/6f992a648759.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/6f992a648759.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/6f992a648759.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="One Behavior, Out of Order: Deterministic Execution and Parallel Simulation of ROS 2 Applications">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"One Behavior, Out of Order: Deterministic Execution and Parallel Simulation of ROS 2 Applications",
+ "inLanguage":"en","datePublished":"2026-11-24T07:00:00+09:00","dateModified":"2026-11-24T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"ロボット技術担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2611.26676","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/6f992a648759.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/6f992a648759.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#ef4444"></span>ロボット技術</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>One Behavior, Out of Order: Deterministic Execution and Parallel Simulation of ROS 2 Applications</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b></span></span><span>2026/11/24</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/6f992a648759.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2611.26676" rel="nofollow noopener">https://arxiv.org/abs/2611.26676</a></span></div>
+  <div class="article-body"><p>arXiv:2611.26676v1 Announce Type: new 
+Abstract: System-level simulation is widely used to validate robotic applications before hardware deployment. However, Robot Operating System 2 (ROS 2), a popular middleware for such applications, uses asynchronous publish-subscribe communication, which can make application behavior depend on scheduling and the platform. The behavior can then vary across runs and machines even with the same inputs. This nondeterminism makes faults hard to reproduce and tests unreliable. In this paper, we first give ROS 2 applications a lightweight coordination scheme in which every component, including event-driven ones, reads its inputs and writes its outputs at predefined time instants. By decoupling computation and communication, the scheme makes an application deterministic, that is, it always has one behavior for given inputs. Tests are thus repeatable, but for large applications they still take a long time. To speed up these tests, we then present an out-of-order parallel simulation algorithm. From the predefined read and write instants, it knows before the run which activations of components depend on which. It starts each activation as soon as those it depends on have finished. Finally, we implement the algorithm in a simulator that runs existing ROS 2 applications without any change to them or to ROS 2. We evaluate the simulator on industrial use cases and synthetic graphs. On the industrial use cases, it is up to 2.6 times faster than synchronous parallel simulation and needs an order of magnitude less memory for messages than asynchronous parallel simulation.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

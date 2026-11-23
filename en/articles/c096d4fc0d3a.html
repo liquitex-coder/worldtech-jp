@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gumbel Substitution: Removing Sampler Drift from RL Without Trusting the Sampler — NewsMatome (EN)</title>
+<meta name="description" content="Gumbel Substitution: Removing Sampler Drift from RL Without Trusting the Sampler — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/c096d4fc0d3a.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/c096d4fc0d3a.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/c096d4fc0d3a.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/c096d4fc0d3a.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gumbel Substitution: Removing Sampler Drift from RL Without Trusting the Sampler">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Gumbel Substitution: Removing Sampler Drift from RL Without Trusting the Sampler",
+ "inLanguage":"en","datePublished":"2026-11-24T07:00:00+09:00","dateModified":"2026-11-24T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2611.27375","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/c096d4fc0d3a.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/c096d4fc0d3a.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Gumbel Substitution: Removing Sampler Drift from RL Without Trusting the Sampler</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/11/24</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/c096d4fc0d3a.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2611.27375" rel="nofollow noopener">https://arxiv.org/abs/2611.27375</a></span></div>
+  <div class="article-body"><p>arXiv:2611.27375v1 Announce Type: new 
+Abstract: When RL rollouts come from untrusted samplers on arbitrary hardware, precision and checkpoint lag, the sampling distribution $q$ differs from the trainer&#x27;s policy $p$, and training on the sampler&#x27;s tokens adds a drift term equal to supervised fine-tuning toward $q$. Published corrections (TIS, MIS, IcePop, score centering, GSPO, CISPO) all need $q(y)$, which a permissionless sampler reports and can misreport. We introduce Gumbel substitution. The coordinator fixes public Gumbel noise for every token position, bit-identical across GPUs, and the sampler draws $y=\arg\max(\ell^q+G)$. The trainer recomputes $v^*=\arg\max(\ell^p+G)$, the token its own policy would have drawn with the same noise, and scores $v^*$ in the sampler&#x27;s context. For a sampler that follows the protocol, $v^*$ is an exact sample from $p$ given the prefix, so the drift vanishes in expectation for any $q$, without sampler-reported probabilities. We measure the residual left by the deployed heads, bound the one added by admission gates, and state what an adaptive sampler can still do. The same comparison gives a per-token match rate that admits and pays samplers. In the lab, on a 9B model with the same head on both sides, the expected drift of uncorrected training is at least 170 to 4,800 times that of substitution. On a 2B model under strong mismatch, uncorrected training collapses while substitution stays stable, comparable to MIS with score centering given the true $q$. On a permissionless network, a 9B model was trained for 158 optimizer steps on 15.75B tokens from heterogeneous samplers, with no skipped step and 1.21% of tokens substituted; it improved on all eight held-out benchmarks.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

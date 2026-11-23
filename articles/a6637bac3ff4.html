@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Saturation Makes Quantization Error Additive: A Coverage Model with a Certificate — NewsMatome</title>
-<meta name="description" content="Saturation Makes Quantization Error Additive: A Coverage Model with a Certificate（EN→JA 翻訳・出典付き）">
+<title>SaturQ: Saturation-Aware Mixed-Precision Quantization — NewsMatome</title>
+<meta name="description" content="SaturQ: Saturation-Aware Mixed-Precision Quantization（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/a6637bac3ff4.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/a6637bac3ff4.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/a6637bac3ff4.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="Saturation Makes Quantization Error Additive: A Coverage Model with a Certificate">
-<meta property="og:description" content="Saturation Makes Quantization Error Additive: A Coverage Model with a Certificate（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="SaturQ: Saturation-Aware Mixed-Precision Quantization">
+<meta property="og:description" content="SaturQ: Saturation-Aware Mixed-Precision Quantization（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Saturation Makes Quantization Error Additive: A Coverage Model with a Certificate",
- "inLanguage":"ja","datePublished":"2026-07-16T07:00:00+09:00","dateModified":"2026-07-16T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"SaturQ: Saturation-Aware Mixed-Precision Quantization",
+ "inLanguage":"ja","datePublished":"2026-11-24T07:00:00+09:00","dateModified":"2026-11-24T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2607.12266","url":"https://liquitex-coder.github.io/worldtech-jp/articles/a6637bac3ff4.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>Saturation Makes Quantization Error Additive: A Coverage Model with a Certificate</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>SaturQ: Saturation-Aware Mixed-Precision Quantization</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>Saturation Makes Quantization Error Additive: A Coverage Model with a Certificate</h1>
+      <h1>SaturQ: Saturation-Aware Mixed-Precision Quantization</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/07/16 07:00</span><span>· 更新 2026/07/16</span>
+        <span>公開 2026/11/24 07:00</span><span>· 更新 2026/11/24</span>
       </div>
     </div>
     
@@ -74,30 +74,24 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2607.12266" rel="nofollow noopener">Saturation Makes Quantization Error Additive: A Coverage Model with a Certificate</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2607.12266" rel="nofollow noopener">SaturQ: Saturation-Aware Mixed-Precision Quantization</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2607.12266v1 Announce Type: new 
-Abstract: Mixed-precision quantization must decide which parts of a model to keep at higher precision. A common premise, shared by sensitivity-based methods such as HAWQ and CoopQ, is that the loss from quantizing a set of layers can be reconstructed from per-layer or pairwise sensitivities measured in isolation. We test this premise at the 4-bit weight-and-activation precisions now being deployed, treating the change in loss $f(S)$ from quantizing a layer set $S$ as a set function on the Boolean cube and analyzing it through two classical changes of basis. This analysis yields two findings. First, across configurations drawn from the deployment distribution, 85--93\% of the variance of $f$ is explained by per-layer effects alone. Second, a monotone transform of a sum of per-layer terms reproduces $f$&#x27;s ranking of configurations, misordering at most 2\% of pairs.
-  We propose the coverage model $f(S)=c\bigl(1-\prod_{i\in S}(1-a_i)\bigr)$, which reproduces the measured variance profile of $f$ to within a few percent from its $L$ fitted break-rates. This structure supports two predictors of a configuration&#x27;s loss, each with $L+1$ parameters. The additive model is the optimal first-order predictor. By Parseval&#x27;s identity its mean-squared error equals the variance of $f$ left unexplained by per-layer effects, which we measure on full lattices, estimate out of sample at full-network scale, and report with every result as a certificate of how well any additive model can do. The coverage model itself is the second predictor.
-  As allocators at matched memory, they attain the lowest KL divergence among the compared allocators on models from 30B to 355B parameters. Below four bits, the resulting allocations continue to solve code and reasoning tasks at budgets where allocations from gradient sensitivities no longer produce terminating generations.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2607.12266v1 Announce Type: new 
-Abstract: Mixed-precision quantization must decide which parts of a model to keep at higher precision. A common premise, shared by sensitivity-based methods such as HAWQ and CoopQ, is that the loss from quantizing a set of layers can be reconstructed from per-layer or pairwise sensitivities measured in isolation. We test this premise at the 4-bit weight-and-activation precisions now being deployed, treating the change in loss $f(S)$ from quantizing a layer set $S$ as a set function on the Boolean cube and analyzing it through two classical changes of basis. This analysis yields two findings. First, across configurations drawn from the deployment distribution, 85--93\% of the variance of $f$ is explained by per-layer effects alone. Second, a monotone transform of a sum of per-layer terms reproduces $f$&#x27;s ranking of configurations, misordering at most 2\% of pairs.
-  We propose the coverage model $f(S)=c\bigl(1-\prod_{i\in S}(1-a_i)\bigr)$, which reproduces the measured variance profile of $f$ to within a few percent from its $L$ fitted break-rates. This structure supports two predictors of a configuration&#x27;s loss, each with $L+1$ parameters. The additive model is the optimal first-order predictor. By Parseval&#x27;s identity its mean-squared error equals the variance of $f$ left unexplained by per-layer effects, which we measure on full lattices, estimate out of sample at full-network scale, and report with every result as a certificate of how well any additive model can do. The coverage model itself is the second predictor.
-  As allocators at matched memory, they attain the lowest KL divergence among the compared allocators on models from 30B to 355B parameters. Below four bits, the resulting allocations continue to solve code and reasoning tasks at budgets where allocations from gradient sensitivities no longer produce terminating generations.</div>
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2607.12266v2 Announce Type: replace 
+Abstract: Mixed-precision quantization assigns each module of a language model its own precision format, such as NVFP4, FP8, or BF16, to minimize damage within a memory budget. Most allocators predict the damage of a configuration by summing per-unit sensitivities measured in unquantized networks. But the sensitivity of a unit \textit{saturates} as more units are quantized, so the sum overprices the heavily quantized configurations that tight budgets require. Assuming only that damage accumulates by an associative, increasing, continuous rule restricts it to the form $g\bigl(\sum_i b_i\bigr)$, with summed sensitivities as the case of linear $g$. We propose SaturQ, which uses a concave $g$, fits the per-unit parameters $b_i$ from a single Aumann--Shapley path integral, and allocates formats with a linear program. On Qwen3-30B-A3B, SaturQ lowers KL divergence to BF16 by 11--23\% relative to ModelOpt AutoQuantize at 4.2--6.0 effective bits, and it outperforms an interaction-aware allocator that measures up to 2{,}410 configurations while measuring only three. It also predicts the damage of unmeasured configurations with a median error of 6.9--11.4\%, lower than Gaussian-process and random-forest surrogates fit to 300 configurations, and served allocations of Qwen3.6-27B and GLM-5.2 (753B) run faster than vendor NVFP4 checkpoints at comparable accuracy.</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2607.12266v2 Announce Type: replace 
+Abstract: Mixed-precision quantization assigns each module of a language model its own precision format, such as NVFP4, FP8, or BF16, to minimize damage within a memory budget. Most allocators predict the damage of a configuration by summing per-unit sensitivities measured in unquantized networks. But the sensitivity of a unit \textit{saturates} as more units are quantized, so the sum overprices the heavily quantized configurations that tight budgets require. Assuming only that damage accumulates by an associative, increasing, continuous rule restricts it to the form $g\bigl(\sum_i b_i\bigr)$, with summed sensitivities as the case of linear $g$. We propose SaturQ, which uses a concave $g$, fits the per-unit parameters $b_i$ from a single Aumann--Shapley path integral, and allocates formats with a linear program. On Qwen3-30B-A3B, SaturQ lowers KL divergence to BF16 by 11--23\% relative to ModelOpt AutoQuantize at 4.2--6.0 effective bits, and it outperforms an interaction-aware allocator that measures up to 2{,}410 configurations while measuring only three. It also predicts the damage of unmeasured configurations with a median error of 6.9--11.4\%, lower than Gaussian-process and random-forest surrogates fit to 300 configurations, and served allocations of Qwen3.6-27B and GLM-5.2 (753B) run faster than vendor NVFP4 checkpoints at comparable accuracy.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2607.12266v1 Announce Type: new 
-Abstract: Mixed-precision quantization must decide which parts of a model to keep at higher precision. A common premise, shared by sensitivity-based methods such as HAWQ and CoopQ, is that the loss from quantizing a set of layers can be reconstructed from per-layer or pairwise sensitivities measured in isolation. We test this premise at the 4-bit weight-and-activation precisions now being deployed, treating the change in loss $f(S)$ from quantizing a layer set $S$ as a set function on the Boolean cube and analyzing it through two classical changes of basis. This analysis yields two findings. First, across configurations drawn from the deployment distribution, 85--93\% of the variance of $f$ is explained by per-layer effects alone. Second, a monotone transform of a sum of per-layer terms reproduces $f$&#x27;s ranking of configurations, misordering at most 2\% of pairs.
-  We propose the coverage model $f(S)=c\bigl(1-\prod_{i\in S}(1-a_i)\bigr)$, which reproduces the measured variance profile of $f$ to within a few percent from its $L$ fitted break-rates. This structure supports two predictors of a configuration&#x27;s loss, each with $L+1$ parameters. The additive model is the optimal first-order predictor. By Parseval&#x27;s identity its mean-squared error equals the variance of $f$ left unexplained by per-layer effects, which we measure on full lattices, estimate out of sample at full-network scale, and report with every result as a certificate of how well any additive model can do. The coverage model itself is the second predictor.
-  As allocators at matched memory, they attain the lowest KL divergence among the compared allocators on models from 30B to 355B parameters. Below four bits, the resulting allocations continue to solve code and reasoning tasks at budgets where allocations from gradient sensitivities no longer produce terminating generations.</p><a href="https://arxiv.org/abs/2607.12266" rel="nofollow noopener">原論文を読む →</a></div>
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2607.12266v2 Announce Type: replace 
+Abstract: Mixed-precision quantization assigns each module of a language model its own precision format, such as NVFP4, FP8, or BF16, to minimize damage within a memory budget. Most allocators predict the damage of a configuration by summing per-unit sensitivities measured in unquantized networks. But the sensitivity of a unit \textit{saturates} as more units are quantized, so the sum overprices the heavily quantized configurations that tight budgets require. Assuming only that damage accumulates by an associative, increasing, continuous rule restricts it to the form $g\bigl(\sum_i b_i\bigr)$, with summed sensitivities as the case of linear $g$. We propose SaturQ, which uses a concave $g$, fits the per-unit parameters $b_i$ from a single Aumann--Shapley path integral, and allocates formats with a linear program. On Qwen3-30B-A3B, SaturQ lowers KL divergence to BF16 by 11--23\% relative to ModelOpt AutoQuantize at 4.2--6.0 effective bits, and it outperforms an interaction-aware allocator that measures up to 2{,}410 configurations while measuring only three. It also predicts the damage of unmeasured configurations with a median error of 6.9--11.4\%, lower than Gaussian-process and random-forest surrogates fit to 300 configurations, and served allocations of Qwen3.6-27B and GLM-5.2 (753B) run faster than vendor NVFP4 checkpoints at comparable accuracy.</p><a href="https://arxiv.org/abs/2607.12266" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2607.12266" rel="nofollow noopener">https://arxiv.org/abs/2607.12266</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
     <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="a5c14178dab3.html"><div class="sim">関連</div><div class="info"><b>Optimal Adaptive Market Making: A Theoretical Framework for High-Yield Liquidity Provision in Perpetual Futures Markets</b><div class="m">AI</div></div></a><a class="r" href="aa5c3a854e4c.html"><div class="sim">関連</div><div class="info"><b>In-Context Reinforcement Learning under Non-Stationarity: A Survey</b><div class="m">AI</div></div></a><a class="r" href="ac3ce273b680.html"><div class="sim">関連</div><div class="info"><b>Ontology-Amplified Distillation and Contextuality Auditing for Sovereign Enterprise Language Models: A Combined Proof-of-Mechanism and Negative-Results Method Study</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="036e80097ea4.html"><div class="sim">関連</div><div class="info"><b>Adding One More Agent: How AI Team Size and Formation Shape Productivity and Diversity in Human-AI Brainstorming Teams</b><div class="m">AI</div></div></a><a class="r" href="d55ff3b0f9c3.html"><div class="sim">関連</div><div class="info"><b>Coherence by Construction: Synthesizing CTI Knowledge Graphs and the Formal Limits of Coherence Validation</b><div class="m">AI</div></div></a><a class="r" href="7ccc51f7d59b.html"><div class="sim">関連</div><div class="info"><b>TOUMAII: A 4.5M-Pair Tool-Calling Preference Dataset and Its Source-Agnostic Generator</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>
