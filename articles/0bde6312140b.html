@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BICPO-VLA: Behavior-Identified Continuation Preference Optimization for Smooth Asynchronous Vision-Language-Action Control — NewsMatome</title>
-<meta name="description" content="BICPO-VLA: Behavior-Identified Continuation Preference Optimization for Smooth Asynchronous Vision-Language-Action Control（EN→JA 翻訳・出典付き）">
+<title>FluentAct: Efficient Action Continuations for Asynchronous Vision-Language-Action Control — NewsMatome</title>
+<meta name="description" content="FluentAct: Efficient Action Continuations for Asynchronous Vision-Language-Action Control（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/0bde6312140b.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/0bde6312140b.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/0bde6312140b.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="BICPO-VLA: Behavior-Identified Continuation Preference Optimization for Smooth Asynchronous Vision-Language-Action Control">
-<meta property="og:description" content="BICPO-VLA: Behavior-Identified Continuation Preference Optimization for Smooth Asynchronous Vision-Language-Action Control（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="FluentAct: Efficient Action Continuations for Asynchronous Vision-Language-Action Control">
+<meta property="og:description" content="FluentAct: Efficient Action Continuations for Asynchronous Vision-Language-Action Control（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"BICPO-VLA: Behavior-Identified Continuation Preference Optimization for Smooth Asynchronous Vision-Language-Action Control",
- "inLanguage":"ja","datePublished":"2026-08-18T07:00:00+09:00","dateModified":"2026-08-18T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"FluentAct: Efficient Action Continuations for Asynchronous Vision-Language-Action Control",
+ "inLanguage":"ja","datePublished":"2026-11-26T07:00:00+09:00","dateModified":"2026-11-26T07:00:00+09:00",
  "author":{"@type":"Organization","name":"ロボット技術担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2608.13924","url":"https://liquitex-coder.github.io/worldtech-jp/articles/0bde6312140b.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">ロボット技術</a><span class="sep">›</span><span>BICPO-VLA: Behavior-Identified Continuation Preference Optimization for Smooth Asynchronous Vision-Language-Action Control</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">ロボット技術</a><span class="sep">›</span><span>FluentAct: Efficient Action Continuations for Asynchronous Vision-Language-Action Control</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>BICPO-VLA: Behavior-Identified Continuation Preference Optimization for Smooth Asynchronous Vision-Language-Action Control</h1>
+      <h1>FluentAct: Efficient Action Continuations for Asynchronous Vision-Language-Action Control</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ロ</span><span><b>ロボット技術担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/08/18 07:00</span><span>· 更新 2026/08/18</span>
+        <span>公開 2026/11/26 07:00</span><span>· 更新 2026/11/26</span>
       </div>
     </div>
     
@@ -74,24 +74,24 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2608.13924" rel="nofollow noopener">BICPO-VLA: Behavior-Identified Continuation Preference Optimization for Smooth Asynchronous Vision-Language-Action Control</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2608.13924" rel="nofollow noopener">FluentAct: Efficient Action Continuations for Asynchronous Vision-Language-Action Control</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2608.13924v1 Announce Type: new 
-Abstract: The request-to-handoff gap has three coupled sources: ambiguity about the behavior intended at request time, physical-state drift accumulated during action generation, and residual incompatibility when the new action finally assumes control. BICPO-VLA addresses them in sequence. First, an instruction-aware causal history encoder identifies the behavior supported by the command and current task progress. Second, sequential Haar subspace generation decomposes each action chunk into complementary pairwise scaffold and residual coefficients, enabling two specialized generation stages followed by exact reconstruction. By reducing iterative refinement in the original action space, it shortens the interval over which the robot continues moving before the new chunk becomes available. Finally, BICPO rolls the known outgoing actions to the actual handoff state and applies reference-relative Flow-DPO among behaviorally matched candidates, adapting the generated chunk to the remaining request-to-handoff mismatch without changing its intended behavior.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2608.13924v1 Announce Type: new 
-Abstract: The request-to-handoff gap has three coupled sources: ambiguity about the behavior intended at request time, physical-state drift accumulated during action generation, and residual incompatibility when the new action finally assumes control. BICPO-VLA addresses them in sequence. First, an instruction-aware causal history encoder identifies the behavior supported by the command and current task progress. Second, sequential Haar subspace generation decomposes each action chunk into complementary pairwise scaffold and residual coefficients, enabling two specialized generation stages followed by exact reconstruction. By reducing iterative refinement in the original action space, it shortens the interval over which the robot continues moving before the new chunk becomes available. Finally, BICPO rolls the known outgoing actions to the actual handoff state and applies reference-relative Flow-DPO among behaviorally matched candidates, adapting the generated chunk to the remaining request-to-handoff mismatch without changing its intended behavior.</div>
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2608.13924v2 Announce Type: replace 
+Abstract: Asynchronous vision-language-action (VLA) policies generate new action chunks while robots continue executing committed commands. Because the robot moves during inference, a chunk generated from an earlier observation can introduce abrupt command changes at handoff. To address this problem, we introduce FluentAct, a framework for efficient action continuation that improves command continuity at handoff. Instruction-aware history and retrieved memory provide task context, while a latent rollout of committed actions constructs the handoff context. An ordered Haar generator predicts pairwise averages and conditional differences with two forward evaluations of a shared action expert. During offline training, a frozen reference samples candidates under the same request and committed prefix. We rank these candidates by command continuity and train the policy with a reference-relative flow-energy objective. The trained policy generates continuations directly without online candidate ranking. FluentAct improves task completion over BehaviorVLA on CALVIN, RoboTwin 2.0 Hard, and six real-world manipulation tasks, achieving a CALVIN average sequence length of 4.52. On LIBERO, it achieves 99.1% success and reduces handoff command jump and trend mismatch by 21.3% and 20.7%, respectively, relative to the variant without preference training. In a separate timing study in unpaced LIBERO simulation on an RTX 4090, its median request-to-handoff latency is 153 ms, 32.5% lower than native $\pi_{0.5}$.</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2608.13924v2 Announce Type: replace 
+Abstract: Asynchronous vision-language-action (VLA) policies generate new action chunks while robots continue executing committed commands. Because the robot moves during inference, a chunk generated from an earlier observation can introduce abrupt command changes at handoff. To address this problem, we introduce FluentAct, a framework for efficient action continuation that improves command continuity at handoff. Instruction-aware history and retrieved memory provide task context, while a latent rollout of committed actions constructs the handoff context. An ordered Haar generator predicts pairwise averages and conditional differences with two forward evaluations of a shared action expert. During offline training, a frozen reference samples candidates under the same request and committed prefix. We rank these candidates by command continuity and train the policy with a reference-relative flow-energy objective. The trained policy generates continuations directly without online candidate ranking. FluentAct improves task completion over BehaviorVLA on CALVIN, RoboTwin 2.0 Hard, and six real-world manipulation tasks, achieving a CALVIN average sequence length of 4.52. On LIBERO, it achieves 99.1% success and reduces handoff command jump and trend mismatch by 21.3% and 20.7%, respectively, relative to the variant without preference training. In a separate timing study in unpaced LIBERO simulation on an RTX 4090, its median request-to-handoff latency is 153 ms, 32.5% lower than native $\pi_{0.5}$.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2608.13924v1 Announce Type: new 
-Abstract: The request-to-handoff gap has three coupled sources: ambiguity about the behavior intended at request time, physical-state drift accumulated during action generation, and residual incompatibility when the new action finally assumes control. BICPO-VLA addresses them in sequence. First, an instruction-aware causal history encoder identifies the behavior supported by the command and current task progress. Second, sequential Haar subspace generation decomposes each action chunk into complementary pairwise scaffold and residual coefficients, enabling two specialized generation stages followed by exact reconstruction. By reducing iterative refinement in the original action space, it shortens the interval over which the robot continues moving before the new chunk becomes available. Finally, BICPO rolls the known outgoing actions to the actual handoff state and applies reference-relative Flow-DPO among behaviorally matched candidates, adapting the generated chunk to the remaining request-to-handoff mismatch without changing its intended behavior.</p><a href="https://arxiv.org/abs/2608.13924" rel="nofollow noopener">原論文を読む →</a></div>
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2608.13924v2 Announce Type: replace 
+Abstract: Asynchronous vision-language-action (VLA) policies generate new action chunks while robots continue executing committed commands. Because the robot moves during inference, a chunk generated from an earlier observation can introduce abrupt command changes at handoff. To address this problem, we introduce FluentAct, a framework for efficient action continuation that improves command continuity at handoff. Instruction-aware history and retrieved memory provide task context, while a latent rollout of committed actions constructs the handoff context. An ordered Haar generator predicts pairwise averages and conditional differences with two forward evaluations of a shared action expert. During offline training, a frozen reference samples candidates under the same request and committed prefix. We rank these candidates by command continuity and train the policy with a reference-relative flow-energy objective. The trained policy generates continuations directly without online candidate ranking. FluentAct improves task completion over BehaviorVLA on CALVIN, RoboTwin 2.0 Hard, and six real-world manipulation tasks, achieving a CALVIN average sequence length of 4.52. On LIBERO, it achieves 99.1% success and reduces handoff command jump and trend mismatch by 21.3% and 20.7%, respectively, relative to the variant without preference training. In a separate timing study in unpaced LIBERO simulation on an RTX 4090, its median request-to-handoff latency is 153 ms, 32.5% lower than native $\pi_{0.5}$.</p><a href="https://arxiv.org/abs/2608.13924" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2608.13924" rel="nofollow noopener">https://arxiv.org/abs/2608.13924</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
     <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="e2b391ce26c2.html"><div class="sim">関連</div><div class="info"><b>Inducing Reward-Free Judging Rubrics that Reduce Over-Crediting in Agent Evaluation</b><div class="m">AI</div></div></a><a class="r" href="b9fdaebce323.html"><div class="sim">関連</div><div class="info"><b>Depth-Aware Sensitivity Analysis of Mixture-of-Experts Models via Magnitude-Based Expert Masking</b><div class="m">AI</div></div></a><a class="r" href="6545ec0a4aa6.html"><div class="sim">関連</div><div class="info"><b>Modular Cognitive Architecture Emerges in Large Language Models</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="73c1693a8bac.html"><div class="sim">関連</div><div class="info"><b>EvoMisty: Building, Optimizing, and Evolving Capabilities on a Social Robot</b><div class="m">ロボット技術</div></div></a><a class="r" href="a7fd7f765a1d.html"><div class="sim">関連</div><div class="info"><b>Learning from Human Corrections through Temporal Preferences</b><div class="m">ロボット技術</div></div></a><a class="r" href="8cfb834b250a.html"><div class="sim">関連</div><div class="info"><b>Geometric Control Analysis of an Internally Actuated Flying Wing</b><div class="m">ロボット技術</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>
