@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SparseHPS: A Unified Model for Human Pose and Shape across Depth Cameras and LiDARs — NewsMatome</title>
-<meta name="description" content="SparseHPS: A Unified Model for Human Pose and Shape across Depth Cameras and LiDARs（EN→JA 翻訳・出典付き）">
+<title>SparseHPS: A Unified Model for Human Pose and Shape Estimation across Depth Cameras and LiDARs — NewsMatome</title>
+<meta name="description" content="SparseHPS: A Unified Model for Human Pose and Shape Estimation across Depth Cameras and LiDARs（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/a9eb11060bfb.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/a9eb11060bfb.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/a9eb11060bfb.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="SparseHPS: A Unified Model for Human Pose and Shape across Depth Cameras and LiDARs">
-<meta property="og:description" content="SparseHPS: A Unified Model for Human Pose and Shape across Depth Cameras and LiDARs（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="SparseHPS: A Unified Model for Human Pose and Shape Estimation across Depth Cameras and LiDARs">
+<meta property="og:description" content="SparseHPS: A Unified Model for Human Pose and Shape Estimation across Depth Cameras and LiDARs（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"SparseHPS: A Unified Model for Human Pose and Shape across Depth Cameras and LiDARs",
- "inLanguage":"ja","datePublished":"2026-11-24T07:00:00+09:00","dateModified":"2026-11-24T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"SparseHPS: A Unified Model for Human Pose and Shape Estimation across Depth Cameras and LiDARs",
+ "inLanguage":"ja","datePublished":"2026-11-27T07:00:00+09:00","dateModified":"2026-11-27T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2611.26730","url":"https://liquitex-coder.github.io/worldtech-jp/articles/a9eb11060bfb.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>SparseHPS: A Unified Model for Human Pose and Shape across Depth Cameras and LiDARs</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>SparseHPS: A Unified Model for Human Pose and Shape Estimation across Depth Cameras and LiDARs</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>SparseHPS: A Unified Model for Human Pose and Shape across Depth Cameras and LiDARs</h1>
+      <h1>SparseHPS: A Unified Model for Human Pose and Shape Estimation across Depth Cameras and LiDARs</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/11/24 07:00</span><span>· 更新 2026/11/24</span>
+        <span>公開 2026/11/27 07:00</span><span>· 更新 2026/11/27</span>
       </div>
     </div>
     
@@ -74,16 +74,16 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2611.26730" rel="nofollow noopener">SparseHPS: A Unified Model for Human Pose and Shape across Depth Cameras and LiDARs</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2611.26730" rel="nofollow noopener">SparseHPS: A Unified Model for Human Pose and Shape Estimation across Depth Cameras and LiDARs</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2611.26730v1 Announce Type: cross 
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2611.26730v2 Announce Type: replace-cross 
 Abstract: Recovering 3D human pose and shape from point clouds is central to motion capture, robotics and self-driving vehicles, because depth cameras and LiDARs sense a person directly in metric 3D and work under any lighting. However, current approaches are each tailored to one sensor type: point density differs by more than ten times between devices, public datasets are labeled with incompatible body models, and LiDAR approaches need long input sequences to offset sparse scans. In this work, we present SparseHPS, a novel sensor-agnostic network that recovers SMPL-X pose, shape and global translation from a human point cloud with one set of weights, for single frames and streams alike. Specifically, SparseHPS encodes the cloud with a LitePT backbone over sparse voxels, represents every joint by a learnable query decoded with one common head, localizes the body by voting over voxels, and draws temporal context from a causal memory of tokens from the seven preceding frames. A single model is trained on ten datasets that mix rendered clouds with real depth-camera and LiDAR captures, all converted to one body model. Experiments demonstrate state-of-the-art results on the SLOPER4D and FreeMotion LiDAR benchmarks, where SparseHPS lowers the root-relative joint error by 22% and 11%, respectively, compared with the strongest prior method, which needs 32 frames. On real Azure Kinect captures of held-out HuMMan subjects, SparseHPS attains a joint error of 34.7 mm. Moreover, the current frame alone already yields the bulk of this accuracy.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2611.26730v1 Announce Type: cross 
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2611.26730v2 Announce Type: replace-cross 
 Abstract: Recovering 3D human pose and shape from point clouds is central to motion capture, robotics and self-driving vehicles, because depth cameras and LiDARs sense a person directly in metric 3D and work under any lighting. However, current approaches are each tailored to one sensor type: point density differs by more than ten times between devices, public datasets are labeled with incompatible body models, and LiDAR approaches need long input sequences to offset sparse scans. In this work, we present SparseHPS, a novel sensor-agnostic network that recovers SMPL-X pose, shape and global translation from a human point cloud with one set of weights, for single frames and streams alike. Specifically, SparseHPS encodes the cloud with a LitePT backbone over sparse voxels, represents every joint by a learnable query decoded with one common head, localizes the body by voting over voxels, and draws temporal context from a causal memory of tokens from the seven preceding frames. A single model is trained on ten datasets that mix rendered clouds with real depth-camera and LiDAR captures, all converted to one body model. Experiments demonstrate state-of-the-art results on the SLOPER4D and FreeMotion LiDAR benchmarks, where SparseHPS lowers the root-relative joint error by 22% and 11%, respectively, compared with the strongest prior method, which needs 32 frames. On real Azure Kinect captures of held-out HuMMan subjects, SparseHPS attains a joint error of 34.7 mm. Moreover, the current frame alone already yields the bulk of this accuracy.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2611.26730v1 Announce Type: cross 
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2611.26730v2 Announce Type: replace-cross 
 Abstract: Recovering 3D human pose and shape from point clouds is central to motion capture, robotics and self-driving vehicles, because depth cameras and LiDARs sense a person directly in metric 3D and work under any lighting. However, current approaches are each tailored to one sensor type: point density differs by more than ten times between devices, public datasets are labeled with incompatible body models, and LiDAR approaches need long input sequences to offset sparse scans. In this work, we present SparseHPS, a novel sensor-agnostic network that recovers SMPL-X pose, shape and global translation from a human point cloud with one set of weights, for single frames and streams alike. Specifically, SparseHPS encodes the cloud with a LitePT backbone over sparse voxels, represents every joint by a learnable query decoded with one common head, localizes the body by voting over voxels, and draws temporal context from a causal memory of tokens from the seven preceding frames. A single model is trained on ten datasets that mix rendered clouds with real depth-camera and LiDAR captures, all converted to one body model. Experiments demonstrate state-of-the-art results on the SLOPER4D and FreeMotion LiDAR benchmarks, where SparseHPS lowers the root-relative joint error by 22% and 11%, respectively, compared with the strongest prior method, which needs 32 frames. On real Azure Kinect captures of held-out HuMMan subjects, SparseHPS attains a joint error of 34.7 mm. Moreover, the current frame alone already yields the bulk of this accuracy.</p><a href="https://arxiv.org/abs/2611.26730" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2611.26730" rel="nofollow noopener">https://arxiv.org/abs/2611.26730</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
@@ -91,7 +91,7 @@ Abstract: Recovering 3D human pose and shape from point clouds is central to mot
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="036e80097ea4.html"><div class="sim">関連</div><div class="info"><b>Adding One More Agent: How AI Team Size and Formation Shape Productivity and Diversity in Human-AI Brainstorming Teams</b><div class="m">AI</div></div></a><a class="r" href="d55ff3b0f9c3.html"><div class="sim">関連</div><div class="info"><b>Coherence by Construction: Synthesizing CTI Knowledge Graphs and the Formal Limits of Coherence Validation</b><div class="m">AI</div></div></a><a class="r" href="7ccc51f7d59b.html"><div class="sim">関連</div><div class="info"><b>TOUMAII: A 4.5M-Pair Tool-Calling Preference Dataset and Its Source-Agnostic Generator</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="dce071d6582a.html"><div class="sim">関連</div><div class="info"><b>Irreducible Governance Structure for Autonomous Agent Systems: Fair Allocation, Strategy-Proofness, and Multi-Scale Composition</b><div class="m">AI</div></div></a><a class="r" href="b02e0bf3eddf.html"><div class="sim">関連</div><div class="info"><b>MOZAIC: An Audio-Video Deepfake Benchmark for Telling What Is Fake</b><div class="m">AI</div></div></a><a class="r" href="9b5199cc4b2a.html"><div class="sim">関連</div><div class="info"><b>Conservative Overlap Fuzzy Rough Sets for Incomplete Data</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

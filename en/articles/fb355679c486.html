@@ -17,7 +17,7 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"dKV Forcing: Separating Generation and Memory Representations through a Differentiable KV Cache",
- "inLanguage":"en","datePublished":"2026-11-24T07:00:00+09:00","dateModified":"2026-11-24T07:00:00+09:00",
+ "inLanguage":"en","datePublished":"2026-11-27T07:00:00+09:00","dateModified":"2026-11-27T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2611.01648","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/fb355679c486.html"}
@@ -35,10 +35,10 @@
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
     <h1>dKV Forcing: Separating Generation and Memory Representations through a Differentiable KV Cache</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/11/24</span></div>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/11/27</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/fb355679c486.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2611.01648" rel="nofollow noopener">https://arxiv.org/abs/2611.01648</a></span></div>
-  <div class="article-body"><p>arXiv:2611.01648v2 Announce Type: replace-cross 
+  <div class="article-body"><p>arXiv:2611.01648v3 Announce Type: replace-cross 
 Abstract: A causal video generator writes every segment it produces into a key--value (KV) cache, and later segments know the past only through it. Self-rollout training stops the gradient at this cache, and Self Gradient Forcing (SGF) restores it, but applies it to the same weights that generate the current segment. We find that writing and generating are different roles: in a pretrained generator the written KV already differs from the KV used for denoising, and on shared weights the gradient from future reads is negatively aligned with the gradient of generation. We propose dKV Forcing (dKV denotes differentiable KV), which gives the write its own parameters, a low-rank residual used only when a segment enters the cache, and trains them with the gradient of the later segments that read what they wrote. Opening this gradient through the cache in common use exhausts GPU memory. We trace this to checkpoint replay re-writing the cache, not to the gradient path, which removes the need for the second reconstruction pass of SGF. dKV Forcing keeps the cache as persistent differentiable pages and computes the exact gradient in one temporal traversal, with an $11\%$ lower memory peak and $28\%$ less resident memory. With pages that store hidden states, it trains 15\,s clips on which the two-pass reconstruction runs out of memory. Trained on 5\,s clips, dKV Forcing reaches the highest VBench-Long quality score at 60\,s and 240\,s and outperforms SGF by $3.6$ and $6.1$ points of aesthetic quality, with a higher dynamic degree.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OmniEVIE: Evidence-Vector-Informed Embedding for Multi-modal Retrieval — NewsMatome (EN)</title>
+<meta name="description" content="OmniEVIE: Evidence-Vector-Informed Embedding for Multi-modal Retrieval — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/1c2cab2037ee.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/1c2cab2037ee.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/1c2cab2037ee.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/1c2cab2037ee.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OmniEVIE: Evidence-Vector-Informed Embedding for Multi-modal Retrieval">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"OmniEVIE: Evidence-Vector-Informed Embedding for Multi-modal Retrieval",
+ "inLanguage":"en","datePublished":"2026-11-27T07:00:00+09:00","dateModified":"2026-11-27T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2611.32203","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/1c2cab2037ee.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/1c2cab2037ee.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>OmniEVIE: Evidence-Vector-Informed Embedding for Multi-modal Retrieval</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/11/27</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/1c2cab2037ee.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2611.32203" rel="nofollow noopener">https://arxiv.org/abs/2611.32203</a></span></div>
+  <div class="article-body"><p>arXiv:2611.32203v1 Announce Type: cross 
+Abstract: Multimodal retrieval must match dense pages, fine-grained entities, ordered video, and agent tools and memory. Single-vector embeddings lose local evidence, cross-encoders reread every recalled item online, and uncompressed late interaction is too large to serve. We present OmniEVIE, a 4.5B multi-vector embedding model covering text, images, visual documents, video, and tools with one compressed index and a three-stage retriever. Each record stores at most 128 int8 vectors of dimension 64 (9,472 bytes, or 8.82 GiB per million records), providing a mean vector, 1-bit signs, and int8 multi-vectors for coarse, middle, and final search while localizing each hit to a page region or video interval. Training, merging, indexing, and retrieval are co-designed: all tasks share one retrieval format, a three-grade evidence check removes false negatives, dynamic sampling follows the baseline-teacher gap, candidates are compressed with ST-HAC during training to match the index, stage-wise and specialist models are merged by parameter block, and a saliency gate with a noise floor refines query scoring. Trained on public datasets, OmniEVIE scores 60.68 (full d=2048 sequence) and 60.06 (K128 x d64 int8 index) on MMEB-V3 (190 tasks), 77.96 on MMEB-V2 (78 tasks), and 62.96 on ViDoRe V3 (48 tasks). On 1M and 5M records, a single-thread query takes 54.2 ms and 120.2 ms (11.1x and 25.3x faster than exact 4096-d single-vector search; 236x and 532x faster than full int8 MaxSim). Video is encoded directly from frames without a parsing model: on QVHighlights (1,083 queries), the peak falls inside the labeled segment for 78.0% of queries and the returned span (18% of video length) intersects it for 94.3% vs. 44.9% random. Weights and code: https://huggingface.co/tencent/OmniEVIE-4B and https://github.com/Tencent/OmniEVIE.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

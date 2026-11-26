@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ostinato: Low-Latency CPU-GPU MoE Inference for Local Agents — NewsMatome (EN)</title>
+<meta name="description" content="Ostinato: Low-Latency CPU-GPU MoE Inference for Local Agents — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/40b9112078a7.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/40b9112078a7.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/40b9112078a7.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/40b9112078a7.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ostinato: Low-Latency CPU-GPU MoE Inference for Local Agents">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Ostinato: Low-Latency CPU-GPU MoE Inference for Local Agents",
+ "inLanguage":"en","datePublished":"2026-11-27T07:00:00+09:00","dateModified":"2026-11-27T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2611.11533","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/40b9112078a7.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/40b9112078a7.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Ostinato: Low-Latency CPU-GPU MoE Inference for Local Agents</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/11/27</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/40b9112078a7.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2611.11533" rel="nofollow noopener">https://arxiv.org/abs/2611.11533</a></span></div>
+  <div class="article-body"><p>arXiv:2611.11533v2 Announce Type: replace-cross 
+Abstract: Language-model agents increasingly run on local workstations with consumer GPUs, where quantized mixture-of-experts (MoE) models split routed experts between GPU and host memory. Prefix-cached agent sessions alternate single-token decode with short tool-return prefills, typically up to a few hundred tokens. Short tool turns touch more experts than consumer GPUs can hold, yet direct roughly 85% of DeepSeek-V4-Flash&#x27;s routes to a static GPU pool while leaving 3.3-5.5 tokens per cold expert. Widely used local engines such as llama.cpp and KTransformers either copy tens of gigabytes over PCIe per turn, compute every route on the CPU while idling resident GPU experts, or budget GPU memory by whole layers and uniform per-layer quotas. We present Ostinato, a CPU-GPU MoE engine that reuses one static cross-layer GPU pool in place across every forward pass. During decode and short tool turns, Ostinato computes resident routes on the GPUs and sparse cold routes on the CPU, so short turns copy no expert weights; on long prefills, it deduplicates cold uploads; and for multi-GPU decode, all-zero expert slots with device-side synchronization capture each GPU&#x27;s decode step in one CUDA graph. Across held-out SWE and -bench sessions on three MoE models, Ostinato cuts median tool-turn waits by 2.5-6.6x and finishes sessions 1.36-3.83x faster than default baselines, staying 1.30-1.94x faster when baselines align their upload threshold and weight loading. It finishes sessions fastest across seven agent workloads, one to four GPUs, and up to eight concurrent sessions, while its cross-layer pool speeds up 335 GB DeepSeek-V4.1-Flash by 1.81-2.19x over llama.cpp&#x27;s expert cache.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

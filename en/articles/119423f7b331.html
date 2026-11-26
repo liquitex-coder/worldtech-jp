@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Concurrent Split Learning Through Stable Client Clustering — NewsMatome (EN)</title>
-<meta name="description" content="Concurrent Split Learning Through Stable Client Clustering — original-language edition. Japanese translation available.">
+<title>Reducing Fixed-Batch Client Idleness in Many-Client Edge Split Learning — NewsMatome (EN)</title>
+<meta name="description" content="Reducing Fixed-Batch Client Idleness in Many-Client Edge Split Learning — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/119423f7b331.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/119423f7b331.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/119423f7b331.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/119423f7b331.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Concurrent Split Learning Through Stable Client Clustering">
+<meta property="og:title" content="Reducing Fixed-Batch Client Idleness in Many-Client Edge Split Learning">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Concurrent Split Learning Through Stable Client Clustering",
- "inLanguage":"en","datePublished":"2026-09-26T07:00:00+09:00","dateModified":"2026-09-26T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Reducing Fixed-Batch Client Idleness in Many-Client Edge Split Learning",
+ "inLanguage":"en","datePublished":"2026-11-27T07:00:00+09:00","dateModified":"2026-11-27T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2609.29395","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/119423f7b331.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>Concurrent Split Learning Through Stable Client Clustering</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/09/26</span></div>
+    <h1>Reducing Fixed-Batch Client Idleness in Many-Client Edge Split Learning</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/11/27</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/119423f7b331.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.29395" rel="nofollow noopener">https://arxiv.org/abs/2609.29395</a></span></div>
-  <div class="article-body"><p>arXiv:2609.29395v1 Announce Type: cross 
-Abstract: Training with a fixed global batch limits how many distributed clients can provide examples in any one step. We examine a way to use additional server workers without increasing the batch processed by an individual workload. Global Clustered Parallel Split Learning (GCPSL) assigns clients to fixed clusters, executes a Parallel Split Learning with Global Sampling (GPSL) workload for each cluster concurrently, and periodically fuses the client and server model segments. In simulations with 256 logical clients, dividing the population across more workloads improves direct data participation, while smaller clusters can incur an accuracy cost. A four-H100 implementation of label-aware GCPSL reaches 85% CIFAR-10 validation accuracy in $6.13 \pm 0.15$ minutes over three matched runs, versus $19.09 \pm 0.45$ minutes when the same workloads are serialized. Within the four-GPU allocation, size-balanced and random fixed affiliations reach the target in similar mean times (5.70 and 5.66 minutes); size balancing increases direct participation by 3.25 percentage points. These measurements characterize a trade-off among execution concurrency, assignment information, participation, and accuracy for stable-client split learning.</p></div>
+  <div class="article-body"><p>arXiv:2609.29395v2 Announce Type: replace-cross 
+Abstract: Parallel Split Learning with Global Sampling (GPSL) trains a split model on a fixed-size batch drawn from the data of all clients. When the client population is much larger than the batch, most clients contribute no data in a round, and additional server capacity does not change this. We propose Global Clustered Parallel Split Learning (GCPSL), which assigns clients to stable clusters, runs one GPSL workload per cluster concurrently, and periodically fuses the split-model replicas. We derive the expected direct data participation under the batch sampler, which separates repeated sampling of the same clients from idling at the fusion barrier. With 256 clients, more clusters raise participation but reduce the client diversity seen by each workload. In three paired runs on four H100 GPUs, GCPSL raises direct data participation from 22% to 57-60%. With random or size-balanced clusters, it reaches 85% CIFAR-10 validation accuracy in 5.7 minutes, 1.6 times faster than GPSL with its batch sharded across the same GPUs. It matches per-step synchronized data-parallel GPSL at 85% and reaches 88% in about 10 instead of 19.5 minutes, without per-step global gradient or BatchNorm synchronization. Concurrent execution is 3.11 times faster than sequential execution of the same workloads.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LSTM-UT and Recurrent-Depth Transformers on Cellular Automata — NewsMatome</title>
-<meta name="description" content="LSTM-UT and Recurrent-Depth Transformers on Cellular Automata（EN→JA 翻訳・出典付き）">
+<title>LSTM-UT and Bounded Gated Memory for Looped Transformers — NewsMatome</title>
+<meta name="description" content="LSTM-UT and Bounded Gated Memory for Looped Transformers（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/37c25da58013.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/37c25da58013.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/37c25da58013.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="LSTM-UT and Recurrent-Depth Transformers on Cellular Automata">
-<meta property="og:description" content="LSTM-UT and Recurrent-Depth Transformers on Cellular Automata（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="LSTM-UT and Bounded Gated Memory for Looped Transformers">
+<meta property="og:description" content="LSTM-UT and Bounded Gated Memory for Looped Transformers（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"LSTM-UT and Recurrent-Depth Transformers on Cellular Automata",
- "inLanguage":"ja","datePublished":"2026-09-19T07:00:00+09:00","dateModified":"2026-09-19T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"LSTM-UT and Bounded Gated Memory for Looped Transformers",
+ "inLanguage":"ja","datePublished":"2026-11-27T07:00:00+09:00","dateModified":"2026-11-27T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2609.19521","url":"https://liquitex-coder.github.io/worldtech-jp/articles/37c25da58013.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>LSTM-UT and Recurrent-Depth Transformers on Cellular Automata</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>LSTM-UT and Bounded Gated Memory for Looped Transformers</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>LSTM-UT and Recurrent-Depth Transformers on Cellular Automata</h1>
+      <h1>LSTM-UT and Bounded Gated Memory for Looped Transformers</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/09/19 07:00</span><span>· 更新 2026/09/19</span>
+        <span>公開 2026/11/27 07:00</span><span>· 更新 2026/11/27</span>
       </div>
     </div>
     
@@ -74,24 +74,24 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2609.19521" rel="nofollow noopener">LSTM-UT and Recurrent-Depth Transformers on Cellular Automata</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2609.19521" rel="nofollow noopener">LSTM-UT and Bounded Gated Memory for Looped Transformers</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2609.19521v1 Announce Type: new 
-Abstract: Recurrent-depth Transformers apply shared computation repeatedly, but differ in how they retain information across steps. We compare a Block Universal Transformer (BUT), which carries only its current hidden state; CoTFormer, which also retains an expanding attention cache; and a new LSTM Universal Transformer (LSTM-UT) with bounded gated memory. On Rule 30 cellular automata, BUT extrapolates to unseen recurrent depths more reliably than CoTFormer, although its accuracy eventually degrades. State and cache interventions show that CoTFormer&#x27;s failure depends on their interaction: correcting the current state can temporarily restore accuracy, while retained history can undermine that correction. In a delayed-recall task, BUT also outperforms CoTFormer despite lacking direct access to past states; CoTFormer does not reliably select the requested cached representation. LSTM-UT improves both depth extrapolation and delayed recall over these baselines. The results support bounded gated memory as an effective inductive bias for repeated computation and later retrieval in these tasks.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2609.19521v1 Announce Type: new 
-Abstract: Recurrent-depth Transformers apply shared computation repeatedly, but differ in how they retain information across steps. We compare a Block Universal Transformer (BUT), which carries only its current hidden state; CoTFormer, which also retains an expanding attention cache; and a new LSTM Universal Transformer (LSTM-UT) with bounded gated memory. On Rule 30 cellular automata, BUT extrapolates to unseen recurrent depths more reliably than CoTFormer, although its accuracy eventually degrades. State and cache interventions show that CoTFormer&#x27;s failure depends on their interaction: correcting the current state can temporarily restore accuracy, while retained history can undermine that correction. In a delayed-recall task, BUT also outperforms CoTFormer despite lacking direct access to past states; CoTFormer does not reliably select the requested cached representation. LSTM-UT improves both depth extrapolation and delayed recall over these baselines. The results support bounded gated memory as an effective inductive bias for repeated computation and later retrieval in these tasks.</div>
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2609.19521v3 Announce Type: replace 
+Abstract: Can the loop of a looped Transformer serve as a rollout, with one application of the shared block per step of a dynamical system? We started with two existing designs, one that carries only its residual stream and one, CoTFormer, that also caches every earlier state. On Rule 30, a chaotic cellular automaton, both lose the computation shortly after their trained depth. LSTM-UT, which adds an LSTM-style gated cell, does not, and it recalls earlier states better. Taking it apart shows that each ability has a simpler source. For rollouts it is decay: a fixed decay on the plain model&#x27;s stream is sufficient. For recall it is an input-dependent gate: at the longest horizon a gated stream with no cell recalls as well as LSTM-UT, and no fixed decay helps. The two do not simply add, since a gated stream with a fixed decay does neither reliably. Storing every earlier state hurts extrapolation, where CoTFormer fits and rolls out further with its cache cut to the most recent repeat; in recall, the stored copy is looked up at the shortest horizon and not at the next. LSTM-UT, whose forget gate makes the decay itself input-dependent, is the only model in the leading group on both. The forget gate was added to the LSTM so that a state carried at weight one could be reset instead of accumulating; we find the same need over depth. In language modelling LSTM-UT is competitive with CoTFormer at lower training cost. Code is available at https://github.com/arskvnc22/lstm-ut</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2609.19521v3 Announce Type: replace 
+Abstract: Can the loop of a looped Transformer serve as a rollout, with one application of the shared block per step of a dynamical system? We started with two existing designs, one that carries only its residual stream and one, CoTFormer, that also caches every earlier state. On Rule 30, a chaotic cellular automaton, both lose the computation shortly after their trained depth. LSTM-UT, which adds an LSTM-style gated cell, does not, and it recalls earlier states better. Taking it apart shows that each ability has a simpler source. For rollouts it is decay: a fixed decay on the plain model&#x27;s stream is sufficient. For recall it is an input-dependent gate: at the longest horizon a gated stream with no cell recalls as well as LSTM-UT, and no fixed decay helps. The two do not simply add, since a gated stream with a fixed decay does neither reliably. Storing every earlier state hurts extrapolation, where CoTFormer fits and rolls out further with its cache cut to the most recent repeat; in recall, the stored copy is looked up at the shortest horizon and not at the next. LSTM-UT, whose forget gate makes the decay itself input-dependent, is the only model in the leading group on both. The forget gate was added to the LSTM so that a state carried at weight one could be reset instead of accumulating; we find the same need over depth. In language modelling LSTM-UT is competitive with CoTFormer at lower training cost. Code is available at https://github.com/arskvnc22/lstm-ut</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2609.19521v1 Announce Type: new 
-Abstract: Recurrent-depth Transformers apply shared computation repeatedly, but differ in how they retain information across steps. We compare a Block Universal Transformer (BUT), which carries only its current hidden state; CoTFormer, which also retains an expanding attention cache; and a new LSTM Universal Transformer (LSTM-UT) with bounded gated memory. On Rule 30 cellular automata, BUT extrapolates to unseen recurrent depths more reliably than CoTFormer, although its accuracy eventually degrades. State and cache interventions show that CoTFormer&#x27;s failure depends on their interaction: correcting the current state can temporarily restore accuracy, while retained history can undermine that correction. In a delayed-recall task, BUT also outperforms CoTFormer despite lacking direct access to past states; CoTFormer does not reliably select the requested cached representation. LSTM-UT improves both depth extrapolation and delayed recall over these baselines. The results support bounded gated memory as an effective inductive bias for repeated computation and later retrieval in these tasks.</p><a href="https://arxiv.org/abs/2609.19521" rel="nofollow noopener">原論文を読む →</a></div>
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2609.19521v3 Announce Type: replace 
+Abstract: Can the loop of a looped Transformer serve as a rollout, with one application of the shared block per step of a dynamical system? We started with two existing designs, one that carries only its residual stream and one, CoTFormer, that also caches every earlier state. On Rule 30, a chaotic cellular automaton, both lose the computation shortly after their trained depth. LSTM-UT, which adds an LSTM-style gated cell, does not, and it recalls earlier states better. Taking it apart shows that each ability has a simpler source. For rollouts it is decay: a fixed decay on the plain model&#x27;s stream is sufficient. For recall it is an input-dependent gate: at the longest horizon a gated stream with no cell recalls as well as LSTM-UT, and no fixed decay helps. The two do not simply add, since a gated stream with a fixed decay does neither reliably. Storing every earlier state hurts extrapolation, where CoTFormer fits and rolls out further with its cache cut to the most recent repeat; in recall, the stored copy is looked up at the shortest horizon and not at the next. LSTM-UT, whose forget gate makes the decay itself input-dependent, is the only model in the leading group on both. The forget gate was added to the LSTM so that a state carried at weight one could be reset instead of accumulating; we find the same need over depth. In language modelling LSTM-UT is competitive with CoTFormer at lower training cost. Code is available at https://github.com/arskvnc22/lstm-ut</p><a href="https://arxiv.org/abs/2609.19521" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2609.19521" rel="nofollow noopener">https://arxiv.org/abs/2609.19521</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
     <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="b92c247dcc1a.html"><div class="sim">関連</div><div class="info"><b>Regularized Emphatic Temporal-Difference Learning: Stability under Constant Stepsizes</b><div class="m">AI</div></div></a><a class="r" href="7b3bd791b71a.html"><div class="sim">関連</div><div class="info"><b>BioPhys-Bridge: A Benchmark for Interdisciplinary Scientific Reasoning in Physics-Grounded Biological Research</b><div class="m">AI</div></div></a><a class="r" href="8c88d48a4f44.html"><div class="sim">関連</div><div class="info"><b>What Do We Expect from LLMs? Mapping the Design of LLM Benchmarks</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="dce071d6582a.html"><div class="sim">関連</div><div class="info"><b>Irreducible Governance Structure for Autonomous Agent Systems: Fair Allocation, Strategy-Proofness, and Multi-Scale Composition</b><div class="m">AI</div></div></a><a class="r" href="b02e0bf3eddf.html"><div class="sim">関連</div><div class="info"><b>MOZAIC: An Audio-Video Deepfake Benchmark for Telling What Is Fake</b><div class="m">AI</div></div></a><a class="r" href="9b5199cc4b2a.html"><div class="sim">関連</div><div class="info"><b>Conservative Overlap Fuzzy Rough Sets for Incomplete Data</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

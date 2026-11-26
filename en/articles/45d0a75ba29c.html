@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agent Recovery Gone Wrong: Measuring Harm Beyond Duplicate Calls — NewsMatome (EN)</title>
+<meta name="description" content="Agent Recovery Gone Wrong: Measuring Harm Beyond Duplicate Calls — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/45d0a75ba29c.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/45d0a75ba29c.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/45d0a75ba29c.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/45d0a75ba29c.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Agent Recovery Gone Wrong: Measuring Harm Beyond Duplicate Calls">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Agent Recovery Gone Wrong: Measuring Harm Beyond Duplicate Calls",
+ "inLanguage":"en","datePublished":"2026-11-27T07:00:00+09:00","dateModified":"2026-11-27T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2611.31554","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/45d0a75ba29c.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/45d0a75ba29c.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Agent Recovery Gone Wrong: Measuring Harm Beyond Duplicate Calls</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/11/27</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/45d0a75ba29c.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2611.31554" rel="nofollow noopener">https://arxiv.org/abs/2611.31554</a></span></div>
+  <div class="article-body"><p>arXiv:2611.31554v1 Announce Type: new 
+Abstract: Code-executing LLM agents submit blocks of code that issue several API writes. If a block fails after some of its writes have taken effect, the agent rewrites the block and continues. It is unknown how often such a recovery harms the external state when the failure occurs naturally in the code written by the agent. In this paper, we measure it on recorded trajectories of AppWorld agents. In a stratified random sample of 200 candidate episodes across ten models, 145 are partial executions confirmed by the database state. In the sample, 30 of 143 confirmed partial executions with a determinable outcome are followed by a harmful recovery, and its violation remains at the end of the run, which gives a stratification-weighted estimate of 24.6%. Two thirds of the harmful recoveries duplicate an effect, and the rest delete user data or make a wrong first-time write, e.g., an order of a wrong product. A rule that searches for repeated calls finds 75% of duplications but only 41% of all harm. We also examine two sources of operation identity for an idempotency contract. In a small pilot (17 episodes, one local model), identifiers supplied by the model do not detectably reduce harm, because the model issues a new identifier for the same operation. Identity derived from the call content, evaluated counterfactually on the sample, would have matched every harmful write in 14 to 18 of the 30 harmful recoveries, but in none of those with a wrong first-time write, and it would also have matched writes required by the task in 30 episodes. Based on these results, we outline design requirements for safer agent recovery.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

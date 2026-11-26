@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reproducing the Speech Labels of Qwen3-Omni&#x27;s Talker: Mimi in bf16, and a Last-Frame Pitfall — NewsMatome (EN)</title>
+<meta name="description" content="Reproducing the Speech Labels of Qwen3-Omni&#x27;s Talker: Mimi in bf16, and a Last-Frame Pitfall — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/99502c3ca2aa.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/99502c3ca2aa.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/99502c3ca2aa.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/99502c3ca2aa.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Reproducing the Speech Labels of Qwen3-Omni&#x27;s Talker: Mimi in bf16, and a Last-Frame Pitfall">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Reproducing the Speech Labels of Qwen3-Omni&#x27;s Talker: Mimi in bf16, and a Last-Frame Pitfall",
+ "inLanguage":"en","datePublished":"2026-11-27T07:00:00+09:00","dateModified":"2026-11-27T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2611.32286","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/99502c3ca2aa.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/99502c3ca2aa.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Reproducing the Speech Labels of Qwen3-Omni&#x27;s Talker: Mimi in bf16, and a Last-Frame Pitfall</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/11/27</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/99502c3ca2aa.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2611.32286" rel="nofollow noopener">https://arxiv.org/abs/2611.32286</a></span></div>
+  <div class="article-body"><p>arXiv:2611.32286v1 Announce Type: cross 
+Abstract: Qwen3-Omni speaks through a Talker predicting 16 codebooks of a 12.5 Hz audio codec, but the encoder that made its training labels was not released, so new voices cannot be trained on matching labels. We identify this encoder from the released model&#x27;s behavior. White-box regression shows that the codebook embeddings of the Talker, its multi-token predictor and the Code2Wav decoder match the first 16 codebooks of kyutai&#x27;s Mimi layer by layer. A decoder-based test looks convincing but fails calibration: decoders trained on known labels cannot tell them apart. Teacher-forced Talker likelihoods, calibrated with 13 code language models trained on known labels, do tell implementations apart: the Talker prefers labels from kyutai&#x27;s moshi package with bf16 weights over every other variant we tried. Loudness normalization and band-limiting of 20% or more of the data are ruled out. Separately, transformers&#x27; MimiModel encodes the last frame differently from kyutai&#x27;s encoder unless the input length is a multiple of 1920 samples. After LoRA fine-tuning on its labels, 44--55% of generated sentences end in a noise burst, and the same frame costs the Mimi-based CSM-1B 119 nats; padding the input removes both. We release the encoding recipe, a label checker and a Talker fine-tuning toolkit.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

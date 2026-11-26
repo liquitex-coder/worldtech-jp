@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Danger of Double Precision: Working Precision as a Hidden Constraint in Gaussian Process Maximum Likelihood — NewsMatome (EN)</title>
+<meta name="description" content="The Danger of Double Precision: Working Precision as a Hidden Constraint in Gaussian Process Maximum Likelihood — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/7233f21222b5.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/7233f21222b5.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/7233f21222b5.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/7233f21222b5.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Danger of Double Precision: Working Precision as a Hidden Constraint in Gaussian Process Maximum Likelihood">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"The Danger of Double Precision: Working Precision as a Hidden Constraint in Gaussian Process Maximum Likelihood",
+ "inLanguage":"en","datePublished":"2026-11-27T07:00:00+09:00","dateModified":"2026-11-27T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2611.33647","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/7233f21222b5.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/7233f21222b5.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>The Danger of Double Precision: Working Precision as a Hidden Constraint in Gaussian Process Maximum Likelihood</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/11/27</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/7233f21222b5.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2611.33647" rel="nofollow noopener">https://arxiv.org/abs/2611.33647</a></span></div>
+  <div class="article-body"><p>arXiv:2611.33647v1 Announce Type: new 
+Abstract: Gaussian process (GP) hyperparameters are routinely fitted by maximizing the marginal likelihood in IEEE double precision, although for smooth kernels and noiseless data the covariance matrix is often more ill conditioned than double precision can resolve. For a squared-exponential kernel on a design with a Bayesian-optimization cluster, refits over a range of significand widths, judged against a high-precision reference, show that the double-precision fit is a different model and that fits converge only once the width exceeds the base-2 logarithm of the covariance condition number, about 70 bits. Cholesky failure acts as an implicit conditioning constraint, caused mostly by rounding of the kernel entries; the constrained solution predicted from the working precision alone is within 20% of the best Powell fits at five of the six precisions from 40 to 64 bits, with a local expansion proved for the idealized problem. Across 43 kernels, designs and problem settings, including negative controls that double precision already resolves, the bits needed follow the log condition number at the reference optimum plus a tolerance-dependent offset, and at the loosest tolerance double precision suffices for the Matern 1.5 kernel but not for the squared-exponential kernel on clustered designs. Double-precision hyperparameters overstate the posterior standard deviation near the design cluster and, on a quadratic objective whose likelihood heads to the flat limit, stall closed-loop active learning. Promoting the whole likelihood to 80 significand bits recovers the reference accuracy on every fixed design tested, whereas a fixed jitter trades failures for a posterior bias.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

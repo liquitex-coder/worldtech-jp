@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Concurrent Split Learning Through Stable Client Clustering — NewsMatome</title>
-<meta name="description" content="Concurrent Split Learning Through Stable Client Clustering（EN→JA 翻訳・出典付き）">
+<title>Reducing Fixed-Batch Client Idleness in Many-Client Edge Split Learning — NewsMatome</title>
+<meta name="description" content="Reducing Fixed-Batch Client Idleness in Many-Client Edge Split Learning（EN→JA 翻訳・出典付き）">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/articles/119423f7b331.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/119423f7b331.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/119423f7b331.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="NewsMatome">
-<meta property="og:title" content="Concurrent Split Learning Through Stable Client Clustering">
-<meta property="og:description" content="Concurrent Split Learning Through Stable Client Clustering（EN→JA 翻訳・出典付き）">
+<meta property="og:title" content="Reducing Fixed-Batch Client Idleness in Many-Client Edge Split Learning">
+<meta property="og:description" content="Reducing Fixed-Batch Client Idleness in Many-Client Edge Split Learning（EN→JA 翻訳・出典付き）">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://picsum.photos" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"Concurrent Split Learning Through Stable Client Clustering",
- "inLanguage":"ja","datePublished":"2026-09-26T07:00:00+09:00","dateModified":"2026-09-26T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Reducing Fixed-Batch Client Idleness in Many-Client Edge Split Learning",
+ "inLanguage":"ja","datePublished":"2026-11-27T07:00:00+09:00","dateModified":"2026-11-27T07:00:00+09:00",
  "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2609.29395","url":"https://liquitex-coder.github.io/worldtech-jp/articles/119423f7b331.html"}
@@ -53,7 +53,7 @@
 </header>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>Concurrent Split Learning Through Stable Client Clustering</span></div>
+  <div class="breadcrumb"><a href="../index.html">ホーム</a><span class="sep">›</span><a href="#">アルゴリズム</a><span class="sep">›</span><span>Reducing Fixed-Batch Client Idleness in Many-Client Edge Split Learning</span></div>
   <article class="article">
     <div class="article-head">
       <div class="toprow">
@@ -61,10 +61,10 @@
         <span class="kind-tag kind-paper">Paper</span>
         <span class="badge-translate">🌐 EN→JA 翻訳</span>
       </div>
-      <h1>Concurrent Split Learning Through Stable Client Clustering</h1>
+      <h1>Reducing Fixed-Batch Client Idleness in Many-Client Edge Split Learning</h1>
       <div class="article-byline">
         <span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b>収集・日本語化・監修</span></span>
-        <span>公開 2026/09/26 07:00</span><span>· 更新 2026/09/26</span>
+        <span>公開 2026/11/27 07:00</span><span>· 更新 2026/11/27</span>
       </div>
     </div>
     
@@ -74,24 +74,24 @@
       <span class="lbl" id="depthNote">— 標準の文章で表示中</span>
     </div>
     <div class="source-bar"><span class="lang">EN → JA</span>
-      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2609.29395" rel="nofollow noopener">Concurrent Split Learning Through Stable Client Clustering</a>。引用は範囲に留め、原文を併記します。</span></div>
+      <span>海外の一次情報を翻訳・要約。原文：<a href="https://arxiv.org/abs/2609.29395" rel="nofollow noopener">Reducing Fixed-Batch Client Idleness in Many-Client Edge Split Learning</a>。引用は範囲に留め、原文を併記します。</span></div>
     <div class="parallel-toggle"><span class="switch-ui" id="parallelSwitch" role="switch" aria-checked="false"></span><span class="ai-mark">対訳ビュー</span><span class="muted">原文を併記</span></div>
     <div class="parallel" id="parallelView" style="display:none;">
-      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2609.29395v1 Announce Type: cross 
-Abstract: Training with a fixed global batch limits how many distributed clients can provide examples in any one step. We examine a way to use additional server workers without increasing the batch processed by an individual workload. Global Clustered Parallel Split Learning (GCPSL) assigns clients to fixed clusters, executes a Parallel Split Learning with Global Sampling (GPSL) workload for each cluster concurrently, and periodically fuses the client and server model segments. In simulations with 256 logical clients, dividing the population across more workloads improves direct data participation, while smaller clusters can incur an accuracy cost. A four-H100 implementation of label-aware GCPSL reaches 85% CIFAR-10 validation accuracy in $6.13 \pm 0.15$ minutes over three matched runs, versus $19.09 \pm 0.45$ minutes when the same workloads are serialized. Within the four-GPU allocation, size-balanced and random fixed affiliations reach the target in similar mean times (5.70 and 5.66 minutes); size balancing increases direct participation by 3.25 percentage points. These measurements characterize a trade-off among execution concurrency, assignment information, participation, and accuracy for stable-client split learning.</div>
-      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2609.29395v1 Announce Type: cross 
-Abstract: Training with a fixed global batch limits how many distributed clients can provide examples in any one step. We examine a way to use additional server workers without increasing the batch processed by an individual workload. Global Clustered Parallel Split Learning (GCPSL) assigns clients to fixed clusters, executes a Parallel Split Learning with Global Sampling (GPSL) workload for each cluster concurrently, and periodically fuses the client and server model segments. In simulations with 256 logical clients, dividing the population across more workloads improves direct data participation, while smaller clusters can incur an accuracy cost. A four-H100 implementation of label-aware GCPSL reaches 85% CIFAR-10 validation accuracy in $6.13 \pm 0.15$ minutes over three matched runs, versus $19.09 \pm 0.45$ minutes when the same workloads are serialized. Within the four-GPU allocation, size-balanced and random fixed affiliations reach the target in similar mean times (5.70 and 5.66 minutes); size balancing increases direct participation by 3.25 percentage points. These measurements characterize a trade-off among execution concurrency, assignment information, participation, and accuracy for stable-client split learning.</div>
+      <div class="col src"><span class="tag">ORIGINAL · EN</span>arXiv:2609.29395v2 Announce Type: replace-cross 
+Abstract: Parallel Split Learning with Global Sampling (GPSL) trains a split model on a fixed-size batch drawn from the data of all clients. When the client population is much larger than the batch, most clients contribute no data in a round, and additional server capacity does not change this. We propose Global Clustered Parallel Split Learning (GCPSL), which assigns clients to stable clusters, runs one GPSL workload per cluster concurrently, and periodically fuses the split-model replicas. We derive the expected direct data participation under the batch sampler, which separates repeated sampling of the same clients from idling at the fusion barrier. With 256 clients, more clusters raise participation but reduce the client diversity seen by each workload. In three paired runs on four H100 GPUs, GCPSL raises direct data participation from 22% to 57-60%. With random or size-balanced clusters, it reaches 85% CIFAR-10 validation accuracy in 5.7 minutes, 1.6 times faster than GPSL with its batch sharded across the same GPUs. It matches per-step synchronized data-parallel GPSL at 85% and reaches 88% in about 10 instead of 19.5 minutes, without per-step global gradient or BatchNorm synchronization. Concurrent execution is 3.11 times faster than sequential execution of the same workloads.</div>
+      <div class="col"><span class="tag">日本語訳 · JA</span>arXiv:2609.29395v2 Announce Type: replace-cross 
+Abstract: Parallel Split Learning with Global Sampling (GPSL) trains a split model on a fixed-size batch drawn from the data of all clients. When the client population is much larger than the batch, most clients contribute no data in a round, and additional server capacity does not change this. We propose Global Clustered Parallel Split Learning (GCPSL), which assigns clients to stable clusters, runs one GPSL workload per cluster concurrently, and periodically fuses the split-model replicas. We derive the expected direct data participation under the batch sampler, which separates repeated sampling of the same clients from idling at the fusion barrier. With 256 clients, more clusters raise participation but reduce the client diversity seen by each workload. In three paired runs on four H100 GPUs, GCPSL raises direct data participation from 22% to 57-60%. With random or size-balanced clusters, it reaches 85% CIFAR-10 validation accuracy in 5.7 minutes, 1.6 times faster than GPSL with its batch sharded across the same GPUs. It matches per-step synchronized data-parallel GPSL at 85% and reaches 88% in about 10 instead of 19.5 minutes, without per-step global gradient or BatchNorm synchronization. Concurrent execution is 3.11 times faster than sequential execution of the same workloads.</div>
     </div>
     <div class="article-body">
-      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2609.29395v1 Announce Type: cross 
-Abstract: Training with a fixed global batch limits how many distributed clients can provide examples in any one step. We examine a way to use additional server workers without increasing the batch processed by an individual workload. Global Clustered Parallel Split Learning (GCPSL) assigns clients to fixed clusters, executes a Parallel Split Learning with Global Sampling (GPSL) workload for each cluster concurrently, and periodically fuses the client and server model segments. In simulations with 256 logical clients, dividing the population across more workloads improves direct data participation, while smaller clusters can incur an accuracy cost. A four-H100 implementation of label-aware GCPSL reaches 85% CIFAR-10 validation accuracy in $6.13 \pm 0.15$ minutes over three matched runs, versus $19.09 \pm 0.45$ minutes when the same workloads are serialized. Within the four-GPU allocation, size-balanced and random fixed affiliations reach the target in similar mean times (5.70 and 5.66 minutes); size balancing increases direct participation by 3.25 percentage points. These measurements characterize a trade-off among execution concurrency, assignment information, participation, and accuracy for stable-client split learning.</p><a href="https://arxiv.org/abs/2609.29395" rel="nofollow noopener">原論文を読む →</a></div>
+      <div class="paper-card"><div class="pc-tag">PAPER</div><p class="abstract">arXiv:2609.29395v2 Announce Type: replace-cross 
+Abstract: Parallel Split Learning with Global Sampling (GPSL) trains a split model on a fixed-size batch drawn from the data of all clients. When the client population is much larger than the batch, most clients contribute no data in a round, and additional server capacity does not change this. We propose Global Clustered Parallel Split Learning (GCPSL), which assigns clients to stable clusters, runs one GPSL workload per cluster concurrently, and periodically fuses the split-model replicas. We derive the expected direct data participation under the batch sampler, which separates repeated sampling of the same clients from idling at the fusion barrier. With 256 clients, more clusters raise participation but reduce the client diversity seen by each workload. In three paired runs on four H100 GPUs, GCPSL raises direct data participation from 22% to 57-60%. With random or size-balanced clusters, it reaches 85% CIFAR-10 validation accuracy in 5.7 minutes, 1.6 times faster than GPSL with its batch sharded across the same GPUs. It matches per-step synchronized data-parallel GPSL at 85% and reaches 88% in about 10 instead of 19.5 minutes, without per-step global gradient or BatchNorm synchronization. Concurrent execution is 3.11 times faster than sequential execution of the same workloads.</p><a href="https://arxiv.org/abs/2609.29395" rel="nofollow noopener">原論文を読む →</a></div>
     </div>
     <div class="source-bar" style="margin-top:30px;"><span class="lang">出典</span><span>原文：<a href="https://arxiv.org/abs/2609.29395" rel="nofollow noopener">https://arxiv.org/abs/2609.29395</a>。本記事は収集→日本語化パイプラインの自動生成です。</span></div>
     <div class="share"><a class="x" href="#">X でシェア</a><a class="fb" href="#">Facebook</a><a class="line" href="#">LINE</a><a class="hatena" href="#">はてブ</a></div>
     <div class="ask"><div class="ahead"><span class="ai-mark"></span><b>この記事に質問する</b><span class="muted" style="font-size:11px;">本文に基づき回答・出典明示（推測しません）</span></div>
       <div class="abody"><div class="qrow"><input id="askInput" type="text" placeholder="例：要点は？"><button class="send" id="askSend">質問</button></div>
         <div class="ans" id="askAns" style="display:none;">本文・出典に基づいて回答します<span class="cite">¶ 本文</span>。本文に無い内容は「分かりません」と答え、捏造しません（NFR-8）。</div></div></div>
-    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="2907ba2fb91d.html"><div class="sim">関連</div><div class="info"><b>When Should Forecasting Agents Reason? Behavioral Stress Tests for Reliability Routing</b><div class="m">AI</div></div></a><a class="r" href="18734c63e6d8.html"><div class="sim">関連</div><div class="info"><b>TW3Cast: A Frozen Router of Lightly Fine-Tuned Foundation Models for Time-Series Forecasting on GIFT-Eval, Selected Entirely on the Training Split</b><div class="m">AI</div></div></a><a class="r" href="b301ad5404a1.html"><div class="sim">関連</div><div class="info"><b>PAWS: Policy-driven Agentic World Simulation</b><div class="m">AI</div></div></a></div>
+    <div class="ai-related"><h3><span class="ai-mark"></span>意味が近い記事</h3><div class="sub">内容の意味で関連付け（言語横断）。</div><a class="r" href="dce071d6582a.html"><div class="sim">関連</div><div class="info"><b>Irreducible Governance Structure for Autonomous Agent Systems: Fair Allocation, Strategy-Proofness, and Multi-Scale Composition</b><div class="m">AI</div></div></a><a class="r" href="b02e0bf3eddf.html"><div class="sim">関連</div><div class="info"><b>MOZAIC: An Audio-Video Deepfake Benchmark for Telling What Is Fake</b><div class="m">AI</div></div></a><a class="r" href="9b5199cc4b2a.html"><div class="sim">関連</div><div class="info"><b>Conservative Overlap Fuzzy Rough Sets for Incomplete Data</b><div class="m">AI</div></div></a></div>
     <section class="comments"><h2>コメント</h2><div class="cnt">0件のコメント</div>
       <div class="empty-state"><div class="ico">💬</div><p>まだコメントはありません。最初のコメントを投稿しましょう。</p></div>
       <form class="comment-form" onsubmit="return false;"><textarea placeholder="コメントを投稿（雛形のため送信は無効）"></textarea><button type="submit">コメントする</button></form></section>

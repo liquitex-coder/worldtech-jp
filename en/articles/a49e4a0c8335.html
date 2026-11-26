@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PointEvent: Rethinking Event-based Tiny Object Detection via Serialized Motion Evidence Accumulation — NewsMatome (EN)</title>
-<meta name="description" content="PointEvent: Rethinking Event-based Tiny Object Detection via Serialized Motion Evidence Accumulation — original-language edition. Japanese translation available.">
+<title>PointEvent: Polarity-Conditioned Motion Evidence Accumulation for Event-Based Tiny Object Detection — NewsMatome (EN)</title>
+<meta name="description" content="PointEvent: Polarity-Conditioned Motion Evidence Accumulation for Event-Based Tiny Object Detection — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/a49e4a0c8335.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/a49e4a0c8335.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/a49e4a0c8335.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/a49e4a0c8335.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PointEvent: Rethinking Event-based Tiny Object Detection via Serialized Motion Evidence Accumulation">
+<meta property="og:title" content="PointEvent: Polarity-Conditioned Motion Evidence Accumulation for Event-Based Tiny Object Detection">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"PointEvent: Rethinking Event-based Tiny Object Detection via Serialized Motion Evidence Accumulation",
- "inLanguage":"en","datePublished":"2026-09-19T07:00:00+09:00","dateModified":"2026-09-19T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"PointEvent: Polarity-Conditioned Motion Evidence Accumulation for Event-Based Tiny Object Detection",
+ "inLanguage":"en","datePublished":"2026-11-27T07:00:00+09:00","dateModified":"2026-11-27T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2609.20066","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/a49e4a0c8335.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>PointEvent: Rethinking Event-based Tiny Object Detection via Serialized Motion Evidence Accumulation</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/09/19</span></div>
+    <h1>PointEvent: Polarity-Conditioned Motion Evidence Accumulation for Event-Based Tiny Object Detection</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/11/27</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/a49e4a0c8335.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2609.20066" rel="nofollow noopener">https://arxiv.org/abs/2609.20066</a></span></div>
-  <div class="article-body"><p>arXiv:2609.20066v1 Announce Type: cross 
-Abstract: Event cameras offer high temporal resolution and motion sensitivity for tiny UAV detection, yet distant targets generate sparse and fragmented events that are easily overwhelmed by clutter and ego-motion. Existing methods mainly rely on dense event representations or local sparse spatiotemporal modeling, resulting in redundant computation or fragmented modeling of motion continuity across distant asynchronous events. To address this limitation, we introduce serialized motion evidence accumulation, which treats motion continuity as an ordered evidence propagation process. Specifically, the same event stream is organized into locality-preserving spatiotemporal paths and chronology-preserving temporal paths through the latent complementary serializations. Based on this principle, we propose PointEvent, a lightweight event-wise state-space framework that alternates serialized scans across the complementary orders, progressively consolidating fragmented motion evidence beyond fixed local neighborhoods. A high-resolution event branch preserves fine-grained target responses, while compact context modulation suppresses interference. Experiments demonstrate that PointEvent achieves SOTA with the fewest parameters and fastest measured inference among the compared methods. Code: https://github.com/wzz-z/PointEvent</p></div>
+  <div class="article-body"><p>arXiv:2609.20066v3 Announce Type: replace-cross 
+Abstract: Event cameras offer high temporal resolution and motion sensitivity for tiny UAV detection, but distant targets produce sparse, fragmented events easily overwhelmed by clutter and noise. Dense aggregation mixes weak target responses with background activity, while local spatiotemporal modeling may fail to connect distant observations. Polarity encodes the sign of brightness change; a moving target tends to produce opposite polarities at its leading and trailing boundaries, whose spatial arrangement indicates motion direction. We propose PointEvent, which serializes events into complementary spatiotemporal and timestamp orders. Spatiotemporal orders preserve x-y-t locality, while timestamp orders preserve temporal succession across spatial neighborhoods, establishing long-range propagation paths. Along each path, a recurrent state accumulates evidence, while polarity routes each event to its corresponding state subspace. This separates how evidence propagates from where it is written. Experiments on EV-UAV and ES-UAV demonstrate state-of-the-art accuracy with the fewest parameters (0.12M) and fastest measured inference (29.9 ms) among compared methods. Code: https://github.com/wzz-z/PointEvent</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

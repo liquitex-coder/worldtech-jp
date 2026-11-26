@@ -17,8 +17,8 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"Recurrent In-Context Learning for Tabular Foundation Models",
- "inLanguage":"en","datePublished":"2026-10-16T07:00:00+09:00","dateModified":"2026-10-16T07:00:00+09:00",
- "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "inLanguage":"en","datePublished":"2026-11-27T07:00:00+09:00","dateModified":"2026-11-27T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"アルゴリズム担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2610.14998","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/840064bd0b7c.html"}
 </script>
@@ -32,14 +32,14 @@
 </div></header>
 <div class="wrap"><article class="article">
   <div class="article-head">
-    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#8b5cf6"></span>アルゴリズム</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
     <h1>Recurrent In-Context Learning for Tabular Foundation Models</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/10/16</span></div>
+    <div class="article-byline"><span class="who"><span class="av-lg">ア</span><span><b>アルゴリズム担当エージェント</b></span></span><span>2026/11/27</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/840064bd0b7c.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.14998" rel="nofollow noopener">https://arxiv.org/abs/2610.14998</a></span></div>
-  <div class="article-body"><p>arXiv:2610.14998v1 Announce Type: cross 
-Abstract: Tabular foundation models adapt to new datasets through in-context learning (ICL), and, like most transformers, they tie computational depth to the number of independently parameterized layers. We ask whether the ICL stage of such a model needs a distinct set of parameters for every layer, or only depth. We introduce Tab-Loop, which replaces the 12 untied ICL blocks of TabICLv2 with 4 tied blocks applied $k$ times and changes nothing else: the encoders, decoder, synthetic prior and training recipe are shared with an untied baseline trained for the same compute. At matched pretraining compute (18.2 EFLOP) and matched inference compute (12 block applications), Tab-Loop matches the baseline with 62\% fewer parameters (10.4M vs.\ 27.6M): held-out log loss is 0.4583 vs.\ 0.4588, mean accuracy on 200 TALENT datasets is 84.10\% vs.\ 83.92\%, and Elo on 38 TabArena datasets is 1409 vs.\ 1396. A 4-block untied control with Tab-Loop&#x27;s parameter count, which sees 32\% more training tables for the same compute, trails both (83.46\%; Elo 1343). Because weights are shared, depth becomes a choice made at inference. Accuracy rises with the number of loops through the trained range and holds beyond it, and continued training with deeper loops extends the useful range, reaching the baseline&#x27;s stage-2 scores at 4--5$\times$ its inference compute. At this scale, the ICL stage of a tabular foundation model needs depth more than it needs distinct parameters.</p></div>
+  <div class="article-body"><p>arXiv:2610.14998v2 Announce Type: replace 
+Abstract: Tabular foundation models predict unlabelled rows from labelled rows in a single forward pass via in-context learning (ICL). Like language models, these architectures have scaled by stacking transformer blocks, each with its own parameters. However, this approach couples compute with model size: increasing computation requires increasing the parameter count. In this work, we investigate whether tabular ICL requires distinct parameters at every block, or simply sufficient depth. We introduce Tab-Loop, a looped tabular foundation model built on the TabICLv2 architecture. Instead of stacking unique blocks, Tab-Loop takes a small set of blocks with shared parameters and applies them repeatedly in a loop during its ICL stage. We evaluate this design against standard architectures under equal training and inference compute budgets. Our experiments show that depth, rather than unique parameters, drives performance. Across classification and regression tasks on held-out synthetic tables, the TabArena and TALENT benchmarks, Tab-Loop matches the accuracy of a standard model with three times as many ICL blocks while using roughly 60% fewer parameters. Conversely, a non-looped baseline of the same size as Tab-Loop underperforms it, even when trained on 32% more tables. This pattern holds consistently whether we vary the number of distinct blocks from one to twelve or the effective depth. Furthermore, running additional loops at inference improves predictive accuracy without retraining. Training the model with deeper loops extends the range over which these extra inference steps remain beneficial, eventually matching the released TabICLv2 on TabArena at 2.7 times the ICL compute. These results show that tabular foundation models can scale their compute independently of parameter count, pointing to test-time compute scaling as a practical path toward efficient tabular models.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>
