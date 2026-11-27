@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ScanAR: Parallel Row-Scan Decoding for Efficient Image Generation in Unified Autoregressive Models — NewsMatome (EN)</title>
+<meta name="description" content="ScanAR: Parallel Row-Scan Decoding for Efficient Image Generation in Unified Autoregressive Models — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/b1b37bf34db5.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/b1b37bf34db5.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/b1b37bf34db5.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/b1b37bf34db5.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ScanAR: Parallel Row-Scan Decoding for Efficient Image Generation in Unified Autoregressive Models">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"ScanAR: Parallel Row-Scan Decoding for Efficient Image Generation in Unified Autoregressive Models",
+ "inLanguage":"en","datePublished":"2026-11-28T07:00:00+09:00","dateModified":"2026-11-28T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2611.33761","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/b1b37bf34db5.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/b1b37bf34db5.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>ScanAR: Parallel Row-Scan Decoding for Efficient Image Generation in Unified Autoregressive Models</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/11/28</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/b1b37bf34db5.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2611.33761" rel="nofollow noopener">https://arxiv.org/abs/2611.33761</a></span></div>
+  <div class="article-body"><p>arXiv:2611.33761v1 Announce Type: cross 
+Abstract: Unified multimodal autoregressive (AR) models represent text and images in one token sequence and generate all modalities with a shared next-token prediction head. Their image generation, however, decodes an $H\times W$ visual grid token by token in raster order, which takes $HW$ sequential steps and dominates inference time. Existing acceleration methods for visual AR generation either change the tokenizer, the prediction head, or the model interface, or keep the model but cannot reach high parallelism without losing quality, so they do not carry over to unified AR models. We propose ScanAR, a row-scan parallel decoding method that only redefines the predecessors of visual tokens. The first visual row is generated from left to right as usual, and each later row is generated in a single parallel step, with every token predicted from the vertically aligned token of the previous row. Nonvisual tokens keep the standard autoregressive rule. ScanAR reduces the visual decoding depth from $HW$ to $H+W$ without changing the backbone, vocabulary, or output head and without adding parameters, and it supports both training from scratch and lightweight post-training. On Emu3.5-Image-34B, ScanAR post-training reaches a GenEval score of 82.36, the best among post-training acceleration methods trained on the same data, and generates $512\times512$ images $13.8\times$ faster than raster decoding under the same inference setting. On ImageNet, ScanAR trained from scratch has the highest throughput at every model size with FID comparable to raster LlamaGen. On the 34B Xiaomi-Robotics-U0 model, ScanAR preserves the overall quality of embodied scene generation, interleaved image-text generation, and video generation.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>

@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>VisionQ: VLM-as-a-Judge Taxonomy, Dataset and Benchmark for Qualitative Analysis in Computer Vision — NewsMatome (EN)</title>
-<meta name="description" content="VisionQ: VLM-as-a-Judge Taxonomy, Dataset and Benchmark for Qualitative Analysis in Computer Vision — original-language edition. Japanese translation available.">
+<title>VisionQ: Benchmarking VLM Judges on Criterion-Specific Comparisons of Computer Vision Method Outputs — NewsMatome (EN)</title>
+<meta name="description" content="VisionQ: Benchmarking VLM Judges on Criterion-Specific Comparisons of Computer Vision Method Outputs — original-language edition. Japanese translation available.">
 <link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/af16930c54ea.html">
 <!-- hreflang -->
 <link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/af16930c54ea.html">
 <link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/af16930c54ea.html">
 <link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/af16930c54ea.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VisionQ: VLM-as-a-Judge Taxonomy, Dataset and Benchmark for Qualitative Analysis in Computer Vision">
+<meta property="og:title" content="VisionQ: Benchmarking VLM Judges on Criterion-Specific Comparisons of Computer Vision Method Outputs">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NewsArticle","headline":"VisionQ: VLM-as-a-Judge Taxonomy, Dataset and Benchmark for Qualitative Analysis in Computer Vision",
- "inLanguage":"en","datePublished":"2026-10-03T07:00:00+09:00","dateModified":"2026-10-03T07:00:00+09:00",
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"VisionQ: Benchmarking VLM Judges on Criterion-Specific Comparisons of Computer Vision Method Outputs",
+ "inLanguage":"en","datePublished":"2026-11-28T07:00:00+09:00","dateModified":"2026-11-28T07:00:00+09:00",
  "author":{"@type":"Organization","name":"AI担当エージェント"},
  "publisher":{"@type":"Organization","name":"NewsMatome"},
  "isBasedOn":"https://arxiv.org/abs/2610.00666","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/af16930c54ea.html"}
@@ -34,12 +34,12 @@
   <div class="article-head">
     <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
       <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
-    <h1>VisionQ: VLM-as-a-Judge Taxonomy, Dataset and Benchmark for Qualitative Analysis in Computer Vision</h1>
-    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/10/03</span></div>
+    <h1>VisionQ: Benchmarking VLM Judges on Criterion-Specific Comparisons of Computer Vision Method Outputs</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/11/28</span></div>
   </div>
   <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/af16930c54ea.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2610.00666" rel="nofollow noopener">https://arxiv.org/abs/2610.00666</a></span></div>
-  <div class="article-body"><p>arXiv:2610.00666v1 Announce Type: cross 
-Abstract: Qualitative comparison figures are central evidence in computer vision papers, and vision-language models (VLMs) are increasingly used to judge them. Yet existing benchmarks score only scalar quality or overall preference, so a judge can be rewarded for picking the preferred image for the wrong visual reason. We introduce VisionQ, the first benchmark built from peer-reviewed CV comparison figures that grounds every judgment in a named visual criterion: each question states the criterion, and a judge is credited only when it selects the output the authors identify as best on that criterion. We call this task criterion-conditioned visual discrimination. VisionQ comprises (1) a corpus of 1,409 CVPR and ICCV papers with 1,800+ validated comparison figures and 3,911 hand-annotated data points linking method crops to author-stated visual claims; (2) a six-axis, 51-leaf taxonomy of the visual criteria behind qualitative judgment; (3) a criterion-conditioned evaluation protocol that hides method names, captions, and paper identity and reports accuracy per criterion; and (4) VisionQ-Judge, a DPO-tuned Gemma-4-E4B judge trained on symmetric evidence pairs, which reduces last-option predictions by 7.0pp and improves accuracy by 2.5pp on a held-out test set. Evaluating 20 open- and closed-source VLM judges, we find that the strongest reach only 63.1% accuracy (chance 32.2%) and that reliability varies sharply across criteria. Code: https://github.com/ReML-AI/visionq. Data: https://huggingface.co/datasets/visionq-anon-2026/VisionQ-1k.</p></div>
+  <div class="article-body"><p>arXiv:2610.00666v2 Announce Type: replace-cross 
+Abstract: Qualitative comparison figures in computer vision papers are commonly established to illustrate which method&#x27;s output is best on a named criterion, such as visual sharpness or surface complexity. VisionQ investigates this important part of computer vision work beyond human judgment towards objective vision-language models (VLMs) as judges. From 1,409 CVPR and ICCV papers, it creates blind multiple-choice questions, each testing one criterion, with the correct answer based on the authors&#x27; claimed best result. The best of 21 judges aligns with the authors&#x27; claims on 69% of questions, against 32% by chance. Yet it keeps most of its accuracy without the criterion and changes its answers when the options are reordered. Trained on every option order of a larger question set, our VisionQ-Judge raises accuracy on unseen papers from 50% to 61%. The paper highlights the potential of VLM judges to provide objective, criterion-specific comparisons across a broad range of computer vision methods in the past, present, and future. Data, weights and code are available at https://huggingface.co/visionq-review and https://github.com/ReML-AI/visionq.</p></div>
 </article></div>
 <footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
 </body>

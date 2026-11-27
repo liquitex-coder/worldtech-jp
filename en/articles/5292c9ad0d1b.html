@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reproducible by Seed? Not on GPUs: Batch-Dependent Non-Determinism in Text-to-Image Models — NewsMatome (EN)</title>
+<meta name="description" content="Reproducible by Seed? Not on GPUs: Batch-Dependent Non-Determinism in Text-to-Image Models — original-language edition. Japanese translation available.">
+<link rel="canonical" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/5292c9ad0d1b.html">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://liquitex-coder.github.io/worldtech-jp/articles/5292c9ad0d1b.html">
+<link rel="alternate" hreflang="en" href="https://liquitex-coder.github.io/worldtech-jp/en/articles/5292c9ad0d1b.html">
+<link rel="alternate" hreflang="x-default" href="https://liquitex-coder.github.io/worldtech-jp/articles/5292c9ad0d1b.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Reproducible by Seed? Not on GPUs: Batch-Dependent Non-Determinism in Text-to-Image Models">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Reproducible by Seed? Not on GPUs: Batch-Dependent Non-Determinism in Text-to-Image Models",
+ "inLanguage":"en","datePublished":"2026-11-28T07:00:00+09:00","dateModified":"2026-11-28T07:00:00+09:00",
+ "author":{"@type":"Organization","name":"AI担当エージェント"},
+ "publisher":{"@type":"Organization","name":"NewsMatome"},
+ "isBasedOn":"https://arxiv.org/abs/2611.30545","url":"https://liquitex-coder.github.io/worldtech-jp/en/articles/5292c9ad0d1b.html"}
+</script>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="../../index.html"><span class="dot"></span><span>NewsMatome<small>WORLD TECH</small></span></a>
+  <span class="topbar-spacer"></span>
+  <div class="lang-select"><a href="../../articles/5292c9ad0d1b.html" title="日本語訳">日本語</a><a class="on" href="#">EN</a></div>
+</div></header>
+<div class="wrap"><article class="article">
+  <div class="article-head">
+    <div class="toprow"><span class="chip"><span class="cdot" style="background:#3b5bff"></span>AI</span>
+      <span class="kind-tag kind-paper">Paper</span><span class="badge-translate">EN · original</span></div>
+    <h1>Reproducible by Seed? Not on GPUs: Batch-Dependent Non-Determinism in Text-to-Image Models</h1>
+    <div class="article-byline"><span class="who"><span class="av-lg">A</span><span><b>AI担当エージェント</b></span></span><span>2026/11/28</span></div>
+  </div>
+  <div class="source-bar"><span class="lang">EN</span><span>Original-language text (excerpt). 日本語訳は <a href="../../articles/5292c9ad0d1b.html">こちら</a>。 Source: <a href="https://arxiv.org/abs/2611.30545" rel="nofollow noopener">https://arxiv.org/abs/2611.30545</a></span></div>
+  <div class="article-body"><p>arXiv:2611.30545v2 Announce Type: replace 
+Abstract: In text to image AI models, fixing the prompt and the random seed is widely assumed to fix the image. We show that it does not on GPUs. We evaluate six text-to-image models (diffusion and autoregressive) under four numerical precisions and quantizations on three GPU types (RTX A6000, RTX 6000 Ada, and H100 NVL), across up to 100 prompts per set for all six models. For each configuration we compare, with the prompt and seed fixed, the image generated alone with the image generated inside a batch, and we also compare across GPUs. Every replay control reported here is bit-exact, so the variation is not random noise: the execution setting, mainly the batch composition and the GPU, decides the output. The effect is large and model dependent. Structural similarity between the single-image and the batched output falls to 0.580 for an autoregressive model in bf16 and to 0.551 with int8. For a second autoregressive model in bf16 it falls to 0.261 with sampled decoding and to 0.229 with greedy decoding, and for an fp8 diffusion model to 0.68. A diffusion model in bf16 stays close to the batch-1 output (0.96-0.98) but changes every image. In most cases the batched image is a different but equally valid image; in some, such as prompts with digits and counters, it is visibly worse. Cross-GPU differences are of the same order as the batch effect: for one autoregressive model in bf16 compared across two GPU architectures (RTX 6000 Ada versus RTX A6000), no image is bit-identical and the cross-GPU LPIPS (0.355 to 0.383) matches the batch effect within one GPU (0.347 to 0.381). The consequences are direct: seeds do not make results reproducible, benchmarks and image-quality comparisons that mix batch sizes or hardware can be biased, and safety audits and A/B tests on generated images need the serving setup reported.</p></div>
+</article></div>
+<footer class="footer"><div class="footer-note">© 2026 NewsMatome. Excerpt only — see the original source.</div></footer>
+</body>
+</html>
